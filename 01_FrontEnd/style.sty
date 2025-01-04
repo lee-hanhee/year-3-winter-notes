@@ -1,0 +1,256 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=0.6in]{geometry} % Page Dimensions
+% \renewcommand{\familydefault}{\sfdefault}
+% \renewcommand\textbullet{\ensuremath{\bullet}}
+\usepackage{siunitx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Logistics %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath, amsthm, amssymb} % must have math p
+\usepackage{cancel} % Allows for the use of \cancel{}
+\usepackage{enumitem} % Lists
+\usepackage{bm} % Bold math with \bm{}
+\usepackage{graphicx} % images
+\usepackage{bbm} % bold blackboard math
+\usepackage{physics} % various physics related changes
+\usepackage{xcolor} % more colors
+\usepackage{float} % allows for the use of [H] in figures
+\usepackage{multicol} % Include the package for multiple columns
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{parskip} % automatically skip paragraphs
+\setlength\parindent{0pt} % no indent
+\everymath{\displaystyle} % automatically display style
+\usepackage{makeidx} % used to make indexes
+
+% Fancy Header
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+% Allows for hyperlinking
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=my-blue,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% GRAPHICS %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz} % Drawing capabilities
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pgfplots} % Plotting capabilities
+\pgfplotsset{compat=1.14}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% COLORS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{my-blue}{RGB}{93,169,233}
+\definecolor{my-pink}{RGB}{238,118,116}
+\definecolor{my-green}{RGB}{0,191,0}
+\definecolor{my-orange}{HTML}{FE5F55}
+\definecolor{background}{HTML}{f2f2f2}
+\definecolor{my-yellow}{HTML}{F6BD60}
+\definecolor{my-purple}{RGB}{153,102,255}
+\definecolor{my-teal}{RGB}{0,128,128}
+\definecolor{my-black}{RGB}{0,0,0}
+\definecolor{my-red}{RGB}{255,0,0}
+\definecolor{my-light-blue}{RGB}{173,216,230}
+\definecolor{my-bronze}{RGB}{205,127,50}
+
+\definecolor{my-turquoise}{RGB}{64,224,208}   % Turquoise
+\definecolor{my-gold}{RGB}{255,215,0}         % Gold
+\definecolor{my-coral}{RGB}{255,127,80}       % Coral
+\definecolor{my-lavender}{RGB}{230,230,250}   % Lavender
+\definecolor{my-salmon}{RGB}{250,128,114}     % Salmon
+\definecolor{my-olive}{RGB}{128,128,0}        % Olive
+\definecolor{my-navy}{RGB}{0,0,128}           % Navy
+\definecolor{my-silver}{RGB}{192,192,192}     % Silver
+\definecolor{my-lime}{RGB}{0,255,0}           % Lime
+\definecolor{my-maroon}{RGB}{128,0,0}         % Maroon
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% BOXES %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[breakable,many]{tcolorbox}
+% Math
+
+\tcbset{simple/.style={
+    breakable,
+    enhanced,
+    outer arc=0pt,
+    arc = 0pt,
+    colback=background, % Background color
+    colframe=background, % Border Color
+    coltitle=black, % Title Color
+    fonttitle=\bfseries,
+    attach title to upper,
+    after title={:\ },
+    segmentation style={dashed, gray},
+    }
+}
+
+\tcbset{color-labeled/.style={
+  breakable,
+  enhanced,
+  outer arc=0pt,
+  arc=0pt,
+  colframe=#1,
+  colback=#1!5,
+  attach title to upper,
+  coltitle=#1!200,
+  after title={\medbreak},
+  }
+}
+
+\tcbset{one-sided-color/.style={
+    breakable,
+    enhanced,
+    boxrule=0pt,
+    frame hidden,
+    borderline west={2pt}{0pt}{#1},
+    colback=#1!10,
+    coltitle=#1!200,
+    after title={:\ },
+    sharp corners,
+    attach title to upper,
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%   Box Definitions %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% add a `\thetcbcounter` to the end if you want to keep track of numberings.
+\newtcolorbox[auto counter]{example}{
+    one-sided-color=my-black,
+    title=\textbf{Example},
+}
+
+\newtcolorbox{definition}{
+    one-sided-color=my-green,
+    title=\textbf{Definition},
+}
+
+\newtcolorbox{process}{
+    one-sided-color=my-yellow,
+    title=\textbf{Process},
+}
+
+\newtcolorbox{theorem}{
+    one-sided-color=my-blue,
+    title=\textbf{Theorem},
+}
+
+\newtcolorbox{intuition}{
+    one-sided-color=my-teal,
+    title=\textbf{Intuition/Tips},
+}
+
+\newtcolorbox{derivation}{
+    one-sided-color=my-purple,
+    title=\textbf{Derivation},
+}
+
+\newtcolorbox{warning}{
+    one-sided-color=my-red,
+    title=\textbf{Warning},
+}
+
+\newtcolorbox{summary}{
+    one-sided-color=my-bronze,
+    title=\textbf{Summary},
+}
+
+\newtcolorbox{algo}{
+    one-sided-color=my-gold,
+    title=\textbf{Algorithm},
+}
+
+\newtcolorbox{terminology}{
+    one-sided-color=my-light-blue,
+    title=\textbf{Terminology},
+}
+
+\newtcolorbox[auto counter]{solution}{
+    simple,
+    title={Solution \thetcbcounter},
+}
+
+% NEW COMMANDS
+
+\renewcommand\textbullet{\ensuremath{\bullet}}
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    }}
+
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\usepackage{pst-plot}
+
+% IMAGES 
+% Define a new command for a standardized figure
+\newcommand{\customFigure}[3][]{%
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+        \caption{#3}
+    \end{figure}
+}
+
+% CODE
+\usepackage{listings} % Import the listings package
+\usepackage{xcolor}   % For customizing colors
+
+% Define the style for pseudocode
+\lstdefinestyle{pseudocode}{
+    backgroundcolor=\color{white},   % Background color
+    commentstyle=\color{gray},       % Style for comments
+    keywordstyle=\color{blue},       % Style for keywords
+    numberstyle=\tiny\color{gray},   % Style for line numbers
+    basicstyle=\ttfamily\footnotesize,  % Basic font style
+    breaklines=true,                 % Line breaking
+    captionpos=b,                    % Caption position
+    keepspaces=true,                 % Keep spaces in text
+    numbers=left,                    % Line numbers on the left
+    numbersep=5pt,                   % Space between line numbers and code
+    showspaces=false,                % Do not show spaces
+    showstringspaces=false,          % Do not show spaces in strings
+    showtabs=false,                  % Do not show tab characters
+    tabsize=4,                       % Size of tabs
+    xleftmargin=0pt,                 % Set left margin to zero for left alignment
+    frame=single                     % Adds a frame around the code
+}
+
+% Apply the style to pseudocode
+\lstset{style=pseudocode}
