@@ -1,0 +1,111 @@
+\begin{summary}
+    \begin{itemize}
+        \item The kernel is the part of the operating system (OS) that interacts with hardware (it runs in kernel mode).
+        \item System calls are the interface between user and kernel mode:
+        \begin{itemize}
+            \item Every program must use this interface!
+        \end{itemize}
+        \item File format and instructions to define a simple “Hello world” (in 168 bytes):
+        \begin{itemize}
+            \item Difference between API and ABI.
+            \item How to explore system calls.
+        \end{itemize}
+        \item Different kernel architectures shift how much code runs in kernel mode.
+    \end{itemize}    
+\end{summary}
+
+\begin{faq}
+    \begin{itemize}
+        \item What is difference b/w printf and write?
+    \end{itemize}
+\end{faq}
+\subsection{File Descriptor (Abstraction)}
+\begin{motivation}
+    Since our processes are independent, we need an explicit way to transfer data.
+\end{motivation}
+
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{IPC:} Inter-process communication is transferring data b/w two processes.
+        \item \textbf{File Descriptor:} A resource that users may either read bytes from or write bytes to (identified by an index stored in a process).
+        \begin{itemize}
+            \item e.g. File or terminal.
+        \end{itemize}
+    \end{enumerate}
+\end{definition}
+
+\subsubsection{System Calls Make Requests to the Operating System}
+\begin{definition}
+\begin{verbatim}
+ssize_t write(int fd, const void *buf, size_t count);
+Description: writes bytes from a byte array to a file descriptor
+    fd    - the file descriptor
+    buf   - the address of the start of the byte array (called a buffer)
+    count - how many bytes to write from the buffer
+
+void exit_group(int status);
+Description: exits the current process and sets an exit status code
+    status - the exit status code (0–255)
+\end{verbatim}    
+\end{definition}
+
+\begin{example}
+    \textbf{Hypothetical "Hello World" Program}
+\begin{lstlisting}[language=C]
+void _start(void) {
+    write(1, "Hello world\n", 12);
+    exit_group(0);
+}
+\end{lstlisting}
+\end{example}
+
+\begin{warning}
+    System calls uses registers, while C is stack based.
+\end{warning}
+
+\subsubsection{API Tells You What and ABI Tells You How}
+\begin{definition}
+    \begin{itemize}
+        \item Application Programming Interface (API) abstracts the details and describes the arguments and return value of a function.
+        \begin{itemize}
+            \item e.g. A function takes 2 integer arguments
+        \end{itemize}
+        \item Application Binary Interface (ABI) specifies the details, specifically how to pass arguments and where the return value is.
+        \begin{itemize}
+            \item e.g. The same function using the C calling convention (arguments on the stack)
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsection{Programs on Linux Use the ELF Filer Format}
+\begin{definition}
+    Executable and Linkable Format (ELF) specifies both executables and libraries
+    \begin{itemize}
+        \item Always starts with the 4 bytes: 0x7F 0x45 0x4C 0x46 or with ASCII encoding: DEL 'E' 'L' 'F'
+        \item These 4 bytes are called “magic”, and that’s how you know what kind of file this is (other file formats may have a different number of bytes)
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Bytes Represent an ELF File}
+\begin{definition}
+    
+\end{definition}
+
+\subsection{Kernels}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Kernel mode} is a privilege level on your CPU that gives access to more instructions.
+        \item The kernel is the part of your operating system that runs in kernel mode.
+        \item These instructions allow only trusted software to interact with hardware:
+        \begin{itemize}
+            \item e.g., only the kernel can manage virtual memory for processes.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsection{System Calls Transition Between User and Kernel Mode}
+\begin{definition}
+    
+\end{definition}
+
+\subsection{System Calls Are Traceable}

@@ -1,0 +1,183 @@
+\documentclass[twoside]{article}
+\usepackage{style}
+\title{ECE353 Cheatsheet}
+\author{Hanhee Lee}
+\lhead{ECE353}
+\rhead{Hanhee Lee}
+
+\begin{document}
+\maketitle
+
+\section{Operating System Structure}
+\subsection{Useful Terminal Commands}
+\begin{summary}
+    \begin{itemize}
+        \item \texttt{./hello-world-linux-aarch64} to run hello world.
+        \item \texttt{readelf -a <FILE>} to see the ELF header.
+        \item \texttt{strace <PROGRAM>} to trace all the system calls a process makes on Linux.
+    \end{itemize}
+\end{summary}
+\subsection{Program:}
+\begin{definition}
+    A file containing all the instructions and data required to run.
+\end{definition}
+
+\subsection{Process:}
+\begin{definition}
+    An instance of running a program.
+    \customFigure[0.5]{Images/L1_0.png}{Process}
+\end{definition}
+
+\subsubsection{What happens to global variables when you compile?}
+\begin{definition}
+    The compiler needs to pick a random address for each global variable when you compile.
+\end{definition}
+
+\subsubsection{What happens if two processes run the same program?}
+\begin{definition}
+    \begin{itemize}
+        \item Was the address of local the same b/w the two processes? No, different physical memory.
+        \item Was the address of global the same b/w the two processes? Yes, but uses virtual memory.
+    \end{itemize}
+\end{definition}
+
+\subsection{File Descriptor:}
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{IPC:} Inter-process communication is transferring data b/w two processes.
+        \item \textbf{File Descriptor:} A resource that users may either read bytes from or write bytes to (identified by an index stored in a process).
+        \begin{itemize}
+            \item e.g. File or terminal.
+            \item e.g. 0 is standard input, 1 is standard output, and 2 is standard error.
+        \end{itemize}
+    \end{enumerate}
+\end{definition}
+
+\subsection{System Calls}
+\begin{definition}
+    System calls are the interface b/w user and kernel mode.
+\end{definition}
+
+\subsubsection{System Calls Make Requests to the Operating System}
+\begin{definition}
+\begin{lstlisting}[language=C]
+ssize_t write(int fd, const void *buf, size_t count);
+\end{lstlisting}
+\begin{itemize}
+    \item Description: writes bytes from a byte array to a file descriptor
+    \begin{itemize}
+        \item fd: the file descriptor
+        \item buf: the address of the start of the byte array (called a buffer)
+        \item count: how many bytes to write from the buffer
+    \end{itemize}
+\end{itemize}
+
+\begin{lstlisting}[language=C]
+void exit_group(int status);
+\end{lstlisting}
+
+\begin{itemize}
+    \item Description: exits the current process and sets an exit status code
+    \begin{itemize}
+        \item status: the exit status code (0–255)
+    \end{itemize}
+\end{itemize}  
+\end{definition}
+
+\subsection{API and ABI}
+\begin{definition}
+    \begin{itemize}
+        \item Application Programming Interface (API) abstracts the details and describes the arguments and return value of a function.
+        \item Application Binary Interface (ABI) specifies the details, specifically how to pass arguments and where the return value is.
+    \end{itemize}
+\end{definition}
+
+\subsection{Magic}
+\begin{definition}
+    The "magic bytes" refer to the first 4 bytes of a file that uniquely identify the file format. 
+\end{definition}
+
+\subsubsection{Programs on Linux Use the ELF File Format}
+\begin{definition}
+    Executable and Linkable Format (ELF) specifies both executables and libraries.
+    \begin{itemize}
+        \item Always starts with the 4 bytes: 0x7F 0x45 0x4C 0x46 or with ASCII encoding: DEL 'E' 'L' 'F'
+    \end{itemize}
+\end{definition}
+
+\begin{example} \textbf{Hello World ELF File}
+    \begin{enumerate}
+        \item \textbf{168 Byte Program:}
+        \begin{itemize}
+            \item Tells the OS to load the entire executable file into memory at address \texttt{0x10000}.
+            \item The file header is 64 bytes, and the ``program header'' is 56 bytes (120 bytes total).
+            \item The next 36 bytes are instructions, followed by 12 bytes for the string:
+                \begin{itemize}
+                    \item \texttt{"Hello world\textbackslash n"}
+                    \item Instructions start at \texttt{0x10078} (\texttt{0x78} is 120).
+                    \item The string (data) starts at \texttt{0x1009C} (\texttt{0x9C} is 156).
+                \end{itemize}
+        \end{itemize} 
+        \customFigure[0.5]{Images/L1_1.png}{ELF File Division}
+        \item \textbf{C Program:} Takes 500 bytes.
+        \item \textbf{Python Program:} Takes 2000 bytes.
+        \item \textbf{Java Program:} Takes 2000000 bytes.
+    \end{enumerate}
+\end{example}
+
+\subsection{Kernel}
+\begin{definition}
+    Kernel is a core part of the operating system that interacts with hardware that runs in kernel mode. 
+\end{definition}
+
+\subsubsection{Kernel Mode}
+\begin{definition}
+    Kernel mode is a privilege level on your CPU that gives access to more instructions.
+\end{definition}
+
+\subsubsection{Levels of Privelege}
+\begin{definition}
+    \customFigure[0.5]{Images/L1_2.png}{Levels of Privelege}
+\end{definition}
+
+\subsubsection{System Calls Transition Between User and Kernel Mode}
+\begin{definition}
+    \customFigure[0.5]{Images/L1_3.png}{System Calls Transition}
+\end{definition}
+
+\subsubsection{Different Tpyes of Kernel Architectures}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Monolithic Kernel:} All the services are in the kernel.
+        \customFigure[0.5]{Images/L1_4.png}{Monolithic Kernel}
+        \item \textbf{Microkernel:} Only the essential services are in the kernel.
+        \customFigure[0.5]{Images/L1_5.png}{Microkernel}
+        \item \textbf{Hybrid Kernel:} A mix of monolithic and microkernel.
+        \item \textbf{Nanokernel and picokernel:} Even smaller services than microkernel.
+    \end{itemize}
+\end{definition}
+
+\begin{warning}
+    Short answer question.
+\end{warning}
+
+\cleardoublepage
+
+\section{Virtualization}
+\begin{definition}
+    Share one resource by mimicking multiple independent copies.
+\end{definition}
+\cleardoublepage
+
+\section{Concurrency}
+\begin{definition}
+    Handle multiple things happening at the same time.
+\end{definition}
+\cleardoublepage
+
+\section{Persistence}
+\begin{definition}
+    Retain data consistency even without power.
+\end{definition}
+
+\end{document}

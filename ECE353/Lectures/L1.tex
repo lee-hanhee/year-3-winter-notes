@@ -1,0 +1,81 @@
+\begin{summary}
+    \begin{itemize}
+        \item 
+    \end{itemize}    
+\end{summary}
+
+\subsection{Three OS Concepts}
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{Virtualization:} Share one resource by mimicking multiple independent copies.
+        \item \textbf{Concurrency:} Handle multiple things happening at the same time.
+        \item \textbf{Persistence:} Retain data consistency even without power. 
+    \end{enumerate}
+\end{definition}
+
+\subsection{OS Manages Resources}
+\begin{definition}
+    Insert picture. 
+\end{definition}
+
+\subsection{Program}
+\begin{definition}
+    A file containing all the instructions and data required to run. 
+\end{definition}
+
+\subsection{Process (Abstraction)}
+\begin{definition}
+    An instance of running a program.
+\end{definition}
+
+\subsubsection{Basic Requirements for a Process}
+\begin{definition}
+    Insert picture w/ virtual memory. 
+\end{definition}
+
+\subsection{Process (Abstraction)}
+
+\subsubsection{Static}
+\begin{definition}
+    Only able to use the global variable in the current C file.     
+\end{definition}
+
+\subsubsection{Motivation for Virtualization}
+\begin{motivation}
+    How to run two different programs at the same time?
+        Insert code. 
+        \begin{itemize}
+            \item Was the address of local the same b/w 2 processes? Different address in physical memory b/w different processes.
+            \item Was the address of global the same b/w 2 processes? Same address in physical memory b/w different processes, but uses virtual memory.
+            \item What else may be needed for a process?  
+        \end{itemize}
+\end{motivation}
+
+\begin{warning}
+    Local variables are stored on the stack. 
+\end{warning}
+
+\subsubsection{Does the OS allocate different stacks for each process?}
+\begin{definition}
+    The stacks for each process need to be in physical memory. One option is the operating system just allocates any unused memory for the stack. 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{definition}
+
+\subsubsection{What about global variables?}
+\begin{definition}
+    The compiler needs to pick an address (random) for each variable when you compile.
+    \begin{itemize}
+        \item What if we had a global registry of addresses? Impossible (too much space and know memory addresses ahead of time).
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Potential Memory Layout for Multiple Processes}
+\begin{definition}
+    Insert picture.
+\end{definition}
+
+\begin{warning}
+    Process 1 wants to use more memory than its allocated.
+\end{warning}
