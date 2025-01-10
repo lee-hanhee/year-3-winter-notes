@@ -1,0 +1,93 @@
+\subsubsection{Learning algorithm}
+
+\subsubsection{Linear regression}
+\begin{example}
+    \begin{equation}
+        W \cdot x = y
+    \end{equation}
+    \begin{itemize}
+        \item E: $x$, $y$
+        \item P: Error rate (e.g. mean squared error)
+        \item T: Predict y from x (i.e. $\hat y$)
+        \item M: Linear model $(W)$
+        \item Learn: 
+    \end{itemize}
+\end{example}
+
+\subsection{Linear transformations}
+\begin{definition}
+    Transform from one vector space to another.
+    \begin{equation*}
+        W \cdot x
+    \end{equation*}
+\end{definition}
+
+\begin{example} Linear transformations warped to a prediction target.
+    \begin{equation*}
+        \text{Link}(W \cdot x) = y
+    \end{equation*}
+    \begin{itemize}
+        \item $x$: Input features
+        \item $y$: Output / target 
+        \item $W$: Linear transformation 
+        \item $\text{Link}$: Warping function 
+        \item If $x$ has dim $50$ and W projects to dimension $100$, what is the shape of $W$? $100 \times 50$.
+        \item If $W$ is learnable, how many parameters does $W$ have? $100 \times 50 = 5000$.
+    \end{itemize}
+\end{example}
+
+\subsection{How does a generalized linear model make a prediction?}
+\begin{definition}
+    By either mapping to a line (regression) or separating data by a line (i.e. hyperplane) (classification).
+\end{definition}
+
+\subsection{Representation}
+\begin{definition}
+    \begin{itemize}
+        \item Feature vectors
+        \item Embeddings
+        \item Latent codes
+        \item Intermediate activations, etc.
+    \end{itemize}
+\end{definition}
+
+\subsection{Neural networks}
+\begin{definition}
+    Learnable (optimizable) transformations of data
+\end{definition}
+
+\subsubsection{2-Layer Neural Net (MLP)}
+\begin{example} By stacking linear transforms with activation functions. 
+    \begin{equation*}
+        \text{Link}(W_2 \cdot \text{relu} (W_1 \cdot x)) = y
+    \end{equation*}
+    \begin{itemize}
+        \item E: x and y
+        \item P: Mean squared error 
+        \item T: Predict y from x
+        \item M: Neural net ($W_1$, $W_2$)  
+        \item Learn: Gradient descent
+    \end{itemize}
+\end{example}
+
+\subsubsection{Encoder-Decoder View of Neural Networks}
+\begin{equation*}
+    x \underset{\text{Encode}}{\mapsto} z \underset{\text{Decode}}{\mapsto} \hat x'
+\end{equation*}
+
+Language translation via text encoder/decoders.
+\begin{example}
+    Using learned representations for new problems
+\end{example}
+
+Encoder and decoder view of Supervised Learning.
+
+\begin{example} PCA
+    
+\end{example}
+
+
+
+\subsection{Specifying an ML task}
+
+\subsection{Landscape of tools and approaches}

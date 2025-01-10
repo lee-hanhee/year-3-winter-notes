@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  8 JAN 2025 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  8 JAN 2025 21:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/1_Process/ECE356_Process.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/1_Process/ECE356_Process.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1051,8 +1051,8 @@ Package: listings 2024/02/21 1.10 (Carsten Heinz)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./ECE353_Cheatsheet.aux)
-\openout1 = `ECE353_Cheatsheet.aux'.
+) (./ECE356_Process.aux)
+\openout1 = `ECE356_Process.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -1142,9 +1142,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 8.
- (./ECE353_Cheatsheet.out) (./ECE353_Cheatsheet.out)
+ (./ECE356_Process.out) (./ECE356_Process.out)
 \@outlinefile=\write4
-\openout4 = `ECE353_Cheatsheet.out'.
+\openout4 = `ECE356_Process.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
@@ -1188,7 +1188,11 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (./ECE356_Process.toc)
+\tf@toc=\write5
+\openout5 = `ECE356_Process.toc'.
+
+ [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
 Non-PDF special ignored!
@@ -1214,27 +1218,29 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./ECE353_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2
+
+] (./ECE356_Process.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ECE353_Cheatsheet.out' has not changed.
+Package rerunfilecheck Info: File `ECE356_Process.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 50475 strings out of 474116
- 1185625 string characters out of 5743682
- 1928187 words of memory out of 5000000
- 72020 multiletter control sequences out of 15000+600000
- 582865 words of font info for 65 fonts, out of 8000000 for 9000
+ 50605 strings out of 474116
+ 1188410 string characters out of 5743682
+ 1945187 words of memory out of 5000000
+ 72142 multiletter control sequences out of 15000+600000
+ 591857 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,107p,822b,913s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on ECE353_Cheatsheet.pdf (1 page, 65342 bytes).
+ 99i,11n,107p,814b,982s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
+Output written on ECE356_Process.pdf (2 pages, 123948 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
+ 48 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

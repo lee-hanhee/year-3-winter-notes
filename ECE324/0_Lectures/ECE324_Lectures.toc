@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Why Systems Software?}{3}{section.1}%
+\contentsline {subsubsection}{\numberline {1.0.1}Learning algorithm}{3}{subsubsection.1.0.1}%
+\contentsline {subsubsection}{\numberline {1.0.2}Linear regression}{3}{subsubsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.1}Linear transformations}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}How does a generalized linear model make a prediction?}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Representation}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Neural networks}{3}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}2-Layer Neural Net (MLP)}{3}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Encoder-Decoder View of Neural Networks}{4}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Specifying an ML task}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Landscape of tools and approaches}{4}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Kernels}{5}{section.2}%

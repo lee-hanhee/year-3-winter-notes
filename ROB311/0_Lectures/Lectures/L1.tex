@@ -1,0 +1,150 @@
+\begin{summary}
+    \begin{itemize}
+        \item This course will focus on planning
+        \item Variables:
+        \begin{itemize}
+            \item State: $\mathbf{x}(t)$
+            \item Action(s): $\mathbf{u}(t)$
+            \item Measurement: $\mathbf{y}_k^{(i)}$
+            \item Context: $\mathbf{z}_k^{(i)}$
+            \item Old Context: $\mathbf{z}_{k-1}^{(i)}$
+            \item Plan: $\mathbf{p}_k^{(i)}$
+            \item (i): Ith agent
+        \end{itemize}
+        \item Conversion to DT is necessary because robots are digitalized system and then converted back to CT for execution.
+    \end{itemize}
+\end{summary}
+    
+
+\begin{faq}
+    \begin{itemize}
+        \item What does the environment do?
+        \item What is the joint action set?
+    \end{itemize}
+\end{faq}
+
+\subsection{Components of a Robotic System}
+\begin{summary}
+    \customFigure[0.75]{../Images/L1_4.png}{Components of a Robotic System (Words)}
+    \customFigure[0.75]{../Images/L1_5.png}{Components of a Robotic System (Math)}
+\end{summary}
+
+\subsubsection{Overview (Robots, the Environment)}
+\begin{definition}
+    \customFigure[0.5]{../Images/L1_0.png}{Overview (Robots, the Environment)} 
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Environment \(\rightarrow\) previous actions + current state \(\rightarrow\) robot \(\rightarrow\) new action \(\rightarrow\) environment
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Robot (Sensors, Actuators, the Brain)}
+\begin{definition}
+    \customFigure[0.5]{../Images/L1_1.png}{Robot (Sensors, Actuators, the Brain)} 
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Measurements can be noisy and inaccurate if not a perfect sensor. 
+        \item Measurements go into the brain which can create a plan.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Brain (Tracker, Planner, Memory)}
+\begin{definition}
+    \customFigure[0.5]{../Images/L1_2.png}{Brain (Tracker, Planner, Memory)} 
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item The tracker takes in the measurements and old context and updates the context.
+        \item The planner takes in the context and creates a plan.
+        \item The memory stores the context.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Environment (Physics, State)}
+\begin{definition}
+    \customFigure[0.25]{../Images/L1_3.png}{Environment (Physics, State)} 
+\end{definition}
+
+\subsection{Equations of a Robotic System}
+
+\subsubsection{Sensing}
+\begin{definition}
+    Take a measurement:
+    \[
+    \mathbf{y}^{(i)}(t) = \text{sns}^{(i)}\big(\mathbf{x}(t), \mathbf{u}(t), t\big)
+    \]
+
+    Convert the measurement into a discrete-time signal using a sampling period of \( T^{(i)} \):
+    \[
+    \mathbf{y}_k^{(i)} = \text{dt}\big(\mathbf{y}^{(i)}(t), t, T^{(i)}\big)
+    \]
+    \customFigure[0.25]{../Images/L1_6.png}{Sensing}
+\end{definition}
+
+\subsubsection{Tracking}
+\begin{definition}
+    Track (update) the context:
+    \[
+    \mathbf{z}_k^{(i)} = \text{trk}^{(i)}\big(\mathbf{z}_{k-1}^{(i)}, \mathbf{y}_k^{(i)}, k\big)
+    \]
+    \customFigure[0.25]{../Images/L1_7.png}{Tracking}
+\end{definition}
+
+\subsubsection{Planning}
+\begin{definition}
+    Make a plan:
+    \[
+    \mathbf{p}_k^{(i)} = \text{pln}^{(i)}\big(\mathbf{z}_k^{(i)}, k\big)
+    \]
+    \customFigure[0.25]{../Images/L1_8.png}{Planning}
+\end{definition}
+
+\subsubsection{Acting}
+\begin{definition}
+    Convert the plan into a continuous-time signal using a sampling period of \( T^{(i)} \):
+    \[
+    \mathbf{p}(t) = \text{ct}\big(\mathbf{p}_k^{(i)}, t, T^{(i)}\big)
+    \]
+
+    Execute the plan:
+    \[
+    \mathbf{u}^{(i)}(t) = \text{act}^{(i)}\big(\mathbf{p}^{(i)}(t), t\big)
+    \]
+    \customFigure[0.25]{../Images/L1_9.png}{Acting}
+\end{definition}
+
+\subsubsection{Simulating}
+\begin{definition}
+    Simulate the environment's response:
+    \[
+    \dot{\mathbf{x}}(t) = \text{phy}\big(\mathbf{x}(t), \mathbf{u}(t), t\big)
+    \]
+    \customFigure[0.35]{../Images/L1_10.png}{Simulating}
+\end{definition}
+
+\subsection{Setup of Planning Problems}
+\begin{summary}
+In a planning problem, it is assumed that:
+    \begin{itemize}
+        \item the environment is representable using a discrete set of states, $\mathcal{S}$
+        \item for each state, $s \in \mathcal{S}$, each agent, $i$, has a discrete set of actions, $\mathcal{A}_i(s)$, with $\mathcal{A}(s) := \times_i \mathcal{A}_i(s)$
+        \item a \textbf{move} is any tuple, $(s, a)$, where $s \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \item a \textbf{transition} is any 3-tuple, $(s, a, s')$, where $s, s' \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \item the transition resulting from a move may be deterministic/stochastic
+        \item $rwd_i(s, a, s')$ is agent $i$'s reward for the transition, $(s, a, s')$
+        \item a \textbf{path} is any sequence of transitions of the form
+        \[
+        p = \left\langle (s^{(0)}, a^{(1)}, s^{(1)}), (s^{(1)}, a^{(2)}, s^{(2)}), \ldots \right\rangle
+        \]
+        \item each agent wants to realize a path that maximizes its own reward
+    \end{itemize}
+\end{summary}
+
+\begin{warning}
+    $\mathcal{A}(s)$ is the joint action set of all agents at state $s$.
+\end{warning}

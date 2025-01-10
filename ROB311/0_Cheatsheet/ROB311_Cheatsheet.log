@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  8 JAN 2025 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  9 JAN 2025 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Cheatsheet/ROB311_Cheatsheet.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Cheatsheet/ROB311_Cheatsheet.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1051,8 +1051,8 @@ Package: listings 2024/02/21 1.10 (Carsten Heinz)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./ECE353_Cheatsheet.aux)
-\openout1 = `ECE353_Cheatsheet.aux'.
+) (./ROB311_Cheatsheet.aux)
+\openout1 = `ROB311_Cheatsheet.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -1142,9 +1142,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 8.
- (./ECE353_Cheatsheet.out) (./ECE353_Cheatsheet.out)
+ (./ROB311_Cheatsheet.out) (./ROB311_Cheatsheet.out)
 \@outlinefile=\write4
-\openout4 = `ECE353_Cheatsheet.out'.
+\openout4 = `ROB311_Cheatsheet.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
@@ -1159,36 +1159,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count417
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 10.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 10.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 10.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+ [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
 Non-PDF special ignored!
@@ -1205,6 +1176,8 @@ Non-PDF special ignored!
 <special> header=pst-math.pro
 Non-PDF special ignored!
 <special> header=pstricks-add.pro
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
+
 
 Non-PDF special ignored!
 <special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
@@ -1214,27 +1187,27 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./ECE353_Cheatsheet.aux)
+] (./ROB311_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ECE353_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `ROB311_Cheatsheet.out' has not changed.
+(rerunfilecheck)             Checksum: 84D8F1DF5C5ABDA29C5CCEDB9E80C2BB;2531.
  ) 
 Here is how much of TeX's memory you used:
- 50475 strings out of 474116
- 1185625 string characters out of 5743682
- 1928187 words of memory out of 5000000
- 72020 multiletter control sequences out of 15000+600000
- 582865 words of font info for 65 fonts, out of 8000000 for 9000
+ 50386 strings out of 474116
+ 1183339 string characters out of 5743682
+ 1935187 words of memory out of 5000000
+ 71954 multiletter control sequences out of 15000+600000
+ 567819 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,107p,822b,913s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on ECE353_Cheatsheet.pdf (1 page, 65342 bytes).
+ 99i,11n,107p,822b,915s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
+Output written on ROB311_Cheatsheet.pdf (1 page, 57245 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

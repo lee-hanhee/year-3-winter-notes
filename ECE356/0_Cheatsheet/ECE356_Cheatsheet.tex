@@ -1,0 +1,77 @@
+\documentclass[5pt]{extarticle} % Note the extarticle document class
+\usepackage[margin=0.05in]{geometry} % Set 0.3-inch margins
+\usepackage{multicol}              % For multi-column support
+\usepackage{lipsum}                % Dummy text generator (optional)
+\usepackage{amssymb} % math symbols
+\setlength{\parskip}{0ex}
+\setlength\parindent{0pt} % no indent
+%% optional packages -- documentation at ctan.org
+\usepackage{graphicx}  % image handline
+\usepackage{amsmath}   % enhanced equation environments
+\usepackage{tikz}      % block diagrams
+\usetikzlibrary{positioning}  % allow relative positioning of tikz elements
+\usepackage{pgfplots}  % package for plots, based on tikz
+\usepackage{hyperref}
+\usepackage{paracol}             % Import paracol package
+\usepackage{float}
+
+\newcommand{\customFigure}[3][]{%
+    \vspace{-1.5em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+    \end{figure}
+}
+
+\begin{document}
+\begin{paracol}{3}
+    {\tiny
+
+    \textcolor{red}{\textbf{Modelling CS}} $u$: control input, $y$: plant output
+
+    \textcolor{blue}{\textbf{State variable}} CS is in state variable form if \\ 
+    $\overset{\cdot}{x}_1 = f_1 (t,x_1,\ldots,x_n,u), \ldots, \overset{\cdot}{x}_n = f_n (t,x_1,\ldots,x_n,u)$ \\
+    $y=h(t,x_1,\ldots,x_n,u)$ is a collection of $n$ 1st order ODEs. 
+
+    \textcolor{blue}{\textbf{Time-Invariant (TI)}} CS is TI if $f_i(\cdot)$ does not depend on $t$.
+
+    \textcolor{blue}{\textbf{State space (SS)}} TI CS is in SS form if $ \dot{x} = f(x, u), y = h(x, u)$ where $x(t) \in \mathbb{R}^n$ is called the state.
+
+    \textcolor{blue}{\textbf{Single-input-single-output (SISO)}} CS is SISO if $u(t), y(t) \in \mathbb{R}$.
+
+    \textcolor{blue}{\textbf{LTI}} CS in SS form is LTI if $ \dot{x} = Ax + Bu, \; y = Cx + Du$ \\
+    $A \in \mathbb{R}^{n \times n}, \; B \in \mathbb{R}^{n \times m}, \; C \in \mathbb{R}^{p \times n}, \; D \in \mathbb{R}^{p \times m}$ \\ 
+    where $ x(t) \in \mathbb{R}^n, \; u(t) \in \mathbb{R}^m, \; y(t) \in \mathbb{R}^p. $
+
+    \textcolor{blue}{\textbf{Input-Output (IO)}} LTI CS is in IO form if \\
+    $ \frac{d^n y}{dt^n} + a_{n-1} \frac{d^{n-1} y}{dt^{n-1}} + \cdot + a_1 \frac{dy}{dt} + a_0 y = b_m \frac{d^m u}{dt^m} + \cdot + b_1 \frac{du}{dt} + b_0 u $ \\
+    where $ m \leq n$ (causality)
+
+    \textcolor{orange}{\textbf{IO to SS Model}} 1.  Define $x$ s.t. highest order derivative in $\overset{\cdot}{x}$ \\
+    2. Write $\overset{\cdot}{x} = Ax + Bu = f(x,u)$ by isolating for components of $\overset{\cdot}{x}$\\ 
+    3. Write $y = Cx + Du = h(x,u)$ by setting measurement output $y$ to component of $x$ 
+
+    \textcolor{red}{\textbf{Equilibria}} $y_d$ (steady state) b/c if $y(0) = y_d$ at $t=0$, then $y(t) = y_d \; \forall t \geq 0$.
+
+    \textcolor{blue}{\textbf{Equilibrium pair}} Consider the system $\overset{\cdot}{x} = f(x,u)$. The pair $(\bar{x}, \bar{u})$ is an equilibrium pair if $f(\bar{x}, \bar{u}) = 0$.
+
+    \textcolor{blue}{\textbf{Equilibrium point}} $\bar{x}$ is an equilibrium point w/ control $u=\bar{u}$. \\
+    *If $u=\bar{u}$ and $x(0) = \bar{x}$ then $x(t) = \bar{x} \; \forall t \geq 0$ (i.e. a system that starts at equilibrium remains at equilibrium).
+
+    \textcolor{orange}{\textbf{Find Equilibrium Pair/Point}} 1. Set $f(x,u) = 0$ \\
+    2. Solve $f(x,u) = 0$ to find $(x,u) = (\bar{x}, \bar{u})$. \\
+    3. If specific $u = \bar{u}$, then find $x = \bar{x}$ by solving $f(x,\bar{u}) = 0$.
+
+    \textcolor{red}{\textbf{Linearization Nonlinear System}} Consider system $\overset{\cdot}{x} = f(x,u)$ w/ equ. pair $(\bar{x}, \bar{u})$, then error coordinates around equ. pair $\delta x = x - \bar{x}$, $\delta u = u - \bar{u}$, $\delta y = y - h(\bar{x},\bar{u})$ w/ \\
+    $\delta \overset{\cdot}{x} = A \delta x + B \delta u$, $A = \frac{\partial f (\bar{x}, \bar{u})}{\partial \underline{x}}  \in \mathbb{R}^{n_1 \times n_1}$, $B = \frac{\partial f (\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}^{n_1}$, \\
+    $\delta y = C \delta x + D \delta u$, $C = \frac{\partial h}{\partial \underline{x}} (\bar{x}, \bar{u}) \in \mathbb{R}^{1 \times n_1}$, $D = \frac{\partial h(\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}$ \\
+    *Only valid at equ. pairs.
+    \customFigure[0.25]{../Images/L3_0.png}
+
+
+
+
+        }
+\end{paracol}
+
+\end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  8 JAN 2025 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  9 JAN 2025 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures/ROB311_Lectures.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures/ROB311_Lectures.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1051,8 +1051,8 @@ Package: listings 2024/02/21 1.10 (Carsten Heinz)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./ECE353_Cheatsheet.aux)
-\openout1 = `ECE353_Cheatsheet.aux'.
+) (./ROB311_Lectures.aux)
+\openout1 = `ROB311_Lectures.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -1142,9 +1142,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 8.
- (./ECE353_Cheatsheet.out) (./ECE353_Cheatsheet.out)
+ (./ROB311_Lectures.out) (./ROB311_Lectures.out)
 \@outlinefile=\write4
-\openout4 = `ECE353_Cheatsheet.out'.
+\openout4 = `ROB311_Lectures.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
@@ -1188,7 +1188,64 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (./ROB311_Lectures.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+)
+\tf@toc=\write5
+\openout5 = `ROB311_Lectures.toc'.
+
+ (./Lectures/L1.tex
+
+./Lectures/L1.tex:6: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6     \begin{table}[ht]
+                         
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./Lectures/L1.tex:6: Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.6     \begin{table}[ht]
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Lectures/L1.tex:6: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.6     \begin{table}[ht]
+                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+<../Images/L1_4.png, id=77, 599.23875pt x 317.185pt>
+File: ../Images/L1_4.png Graphic file (type png)
+<use ../Images/L1_4.png>
+Package pdftex.def Info: ../Images/L1_4.png  used on input line 29.
+(pdftex.def)             Requested size: 374.33807pt x 198.14816pt.
+<../Images/L1_5.png, id=79, 605.26125pt x 304.13625pt>
+File: ../Images/L1_5.png Graphic file (type png)
+<use ../Images/L1_5.png>
+Package pdftex.def Info: ../Images/L1_5.png  used on input line 30.
+(pdftex.def)             Requested size: 374.33807pt x 188.10309pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
 Non-PDF special ignored!
@@ -1214,27 +1271,96 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./ECE353_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<../Images/L1_0.png, id=92, 534.99875pt x 376.40625pt>
+File: ../Images/L1_0.png Graphic file (type png)
+<use ../Images/L1_0.png>
+Package pdftex.def Info: ../Images/L1_0.png  used on input line 35.
+(pdftex.def)             Requested size: 249.55872pt x 175.58421pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <../Images/L1_4.png> <../Images/L1_5.png>]
+<../Images/L1_1.png, id=101, 626.34pt x 212.795pt>
+File: ../Images/L1_1.png Graphic file (type png)
+<use ../Images/L1_1.png>
+Package pdftex.def Info: ../Images/L1_1.png  used on input line 43.
+(pdftex.def)             Requested size: 249.55872pt x 84.7853pt.
+<../Images/L1_2.png, id=102, 519.9425pt x 240.9pt>
+File: ../Images/L1_2.png Graphic file (type png)
+<use ../Images/L1_2.png>
+Package pdftex.def Info: ../Images/L1_2.png  used on input line 51.
+(pdftex.def)             Requested size: 249.55872pt x 115.62332pt.
+<../Images/L1_3.png, id=103, 575.14874pt x 236.885pt>
+File: ../Images/L1_3.png Graphic file (type png)
+<use ../Images/L1_3.png>
+Package pdftex.def Info: ../Images/L1_3.png  used on input line 59.
+(pdftex.def)             Requested size: 249.55872pt x 102.78389pt.
+
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+ [3 <../Images/L1_0.png> <../Images/L1_1.png> <../Images/L1_2.png>]
+<../Images/L1_6.png, id=114, 193.72375pt x 173.64874pt>
+File: ../Images/L1_6.png Graphic file (type png)
+<use ../Images/L1_6.png>
+Package pdftex.def Info: ../Images/L1_6.png  used on input line 69.
+(pdftex.def)             Requested size: 249.55872pt x 223.70044pt.
+<../Images/L1_7.png, id=115, 215.80624pt x 269.005pt>
+File: ../Images/L1_7.png Graphic file (type png)
+<use ../Images/L1_7.png>
+Package pdftex.def Info: ../Images/L1_7.png  used on input line 74.
+(pdftex.def)             Requested size: 249.55872pt x 311.08961pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <../Images/L1_3.png> <../Images/L1_6.png>]
+<../Images/L1_8.png, id=124, 207.77625pt x 276.03125pt>
+File: ../Images/L1_8.png Graphic file (type png)
+<use ../Images/L1_8.png>
+Package pdftex.def Info: ../Images/L1_8.png  used on input line 79.
+(pdftex.def)             Requested size: 249.55872pt x 331.55171pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <../Images/L1_7.png>]
+<../Images/L1_9.png, id=131, 197.73875pt x 171.64125pt>
+File: ../Images/L1_9.png Graphic file (type png)
+<use ../Images/L1_9.png>
+Package pdftex.def Info: ../Images/L1_9.png  used on input line 84.
+(pdftex.def)             Requested size: 249.55872pt x 216.62527pt.
+<../Images/L1_10.png, id=132, 517.935pt x 279.0425pt>
+File: ../Images/L1_10.png Graphic file (type png)
+<use ../Images/L1_10.png>
+Package pdftex.def Info: ../Images/L1_10.png  used on input line 89.
+(pdftex.def)             Requested size: 249.55872pt x 134.45407pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <../Images/L1_8.png> <../Images/L1_9.png>]) [7 <../Images/L1_10.png>] [8
+
+] (./Lectures/L2.tex) [9] [10
+
+] (./ROB311_Lectures.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ECE353_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `ROB311_Lectures.out' has not changed.
+(rerunfilecheck)             Checksum: E65619B07AEA8D4B974817E4B07796CE;2308.
  ) 
 Here is how much of TeX's memory you used:
- 50475 strings out of 474116
- 1185625 string characters out of 5743682
- 1928187 words of memory out of 5000000
- 72020 multiletter control sequences out of 15000+600000
- 582865 words of font info for 65 fonts, out of 8000000 for 9000
+ 50790 strings out of 474116
+ 1191524 string characters out of 5743682
+ 1945187 words of memory out of 5000000
+ 72270 multiletter control sequences out of 15000+600000
+ 609643 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,107p,822b,913s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on ECE353_Cheatsheet.pdf (1 page, 65342 bytes).
+ 99i,11n,107p,816b,1316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on ROB311_Lectures.pdf (10 pages, 448500 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
