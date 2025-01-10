@@ -1,0 +1,263 @@
+\subsection{2 RVs}
+\begin{notes}
+    RVs are neither random nor a variable. 
+    \begin{equation*}
+        \underline{Z} = (X,Y)
+    \end{equation*}
+    \customFigure[0.5]{../Images/L3_0.png}{Mapping of RVs}
+\end{notes}
+
+\subsection{Joint PMF/PDF}
+\begin{definition}
+    \begin{equation}
+    P_{X,Y}(x, y) = P[X = x, Y = y]
+    \end{equation}
+    
+    \begin{equation}
+    f_{X,Y}(x, y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x, y)
+    \end{equation}
+    
+    \begin{equation}
+    P[(X, Y) \in A] = \int \int_{(x, y) \in A} f_{X,Y}(x, y) \, dx \, dy
+    \end{equation}
+\end{definition}
+
+\begin{example} Jointly Gaussian RVs $X$ and $Y$ with ($\mu_1, \mu_2, \sigma_1^2, \sigma_2^2, \rho$)
+    \[
+    f_{X,Y}(x, y) = \frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2}} 
+    \exp \left\{ 
+    -\frac{1}{2(1-\rho^2)} 
+    \left[ 
+    \left(\frac{x-\mu_1}{\sigma_1}\right)^2 
+    - 2\rho \left(\frac{x-\mu_1}{\sigma_1}\right) \left(\frac{y-\mu_2}{\sigma_2}\right) 
+    + \left(\frac{y-\mu_2}{\sigma_2}\right)^2 
+    \right] 
+    \right\}
+    \]
+\end{example}
+
+\subsection{Expectations}
+\begin{definition}
+    \[
+    E[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f_{X,Y}(x, y) \, dx \, dy
+    \]
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item $g(X,Y)$ is also an RV, but inside the integral or sum, you use $x$ and $y$ as dummy variables to vary through the values of the RVs.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Correlation}
+\begin{definition}
+    \begin{equation}
+        E[XY]
+    \end{equation}
+\end{definition}
+
+\subsubsection{Covariance}
+\begin{definition}
+    \begin{equation}
+        \text{Cov}[X, Y] = E[(X - \mu_X)(Y - \mu_Y)] = E[XY] - \mu_X \mu_Y = E[XY] - E[X]E[Y]
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Mean shifted to 0.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Correlation Coefficient}
+\begin{definition}
+    \begin{equation}
+        \rho_{X,Y} = E \left[ \left(\frac{X - \mu_X}{\sigma_X} \right) \left( \frac{Y - \mu_Y}{\sigma_Y} \right) \right] = \frac{\text{Cov}[X, Y]}{\sigma_X \sigma_Y}
+    \end{equation}
+    \begin{itemize}
+        \item $|\rho_{X,Y}| \leq 1$
+    \end{itemize}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Mean shifted to 0 and normalized by the standard deviation.
+    \end{itemize}
+\end{notes}
+
+\subsection{Marginal PMF/PDF}
+\begin{definition}
+    \begin{equation}
+    P_X(x) = \sum_{j=1}^{\infty} P_{X,Y}(x, y_j), \quad P_Y(y) = \sum_{j=1}^{\infty} P_{X,Y}(x_j, y)
+    \end{equation}
+    
+    \begin{equation}
+    f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy, \quad f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Total probability theorem is being used here.
+    \end{itemize}
+\end{notes}
+
+\begin{example} Jointly Gaussian $X$ and $Y$:
+    \begin{align*}
+        f_X(x) &= \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy \\
+               &= \dots \quad (\text{completing the square}) \\
+               &= \frac{1}{\sqrt{2\pi} \sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}, \quad \text{marginally Gaussian}
+    \end{align*}
+    \begin{itemize}
+        \item Gaussian RVs has a property that the PDF of a single variable is equal to the marginal Gaussian of two variables.
+    \end{itemize}
+\end{example}
+
+\subsection{Conditional PMF/PDF}
+\begin{definition}
+    \begin{equation}
+    P_{X|Y}(x|y) \triangleq P[X = x | Y = y] = \frac{P_{X,Y}(x, y)}{P_Y(y)}
+    \end{equation}
+    
+    \begin{equation}
+    f_{X|Y}(x|y) \triangleq \frac{f_{X,Y}(x, y)}{f_Y(y)}
+    \end{equation}
+\end{definition}
+
+\subsection{Bayes' Rule}
+\begin{definition}
+    \begin{equation}
+    P_{Y|X}(x|y) = \frac{P_{X,Y}(x, y)}{P_X(x)} = \frac{P_{X|Y}(x|y) P_Y(y)}{\sum_{j=1}^\infty P_{X,Y}(x, y_j) P_Y (y_j)}
+    \end{equation}
+    
+    \begin{equation}
+    f_{Y|X}(y|x) = \frac{f_{X,Y}(x, y)}{f_X(x)} = \frac{f_{X|Y}(x|y) f_Y(y)}{\int_{-\infty}^\infty f_{X|Y}(x|y') f_Y(y') \, dy'}
+    \end{equation}  
+\end{definition}
+
+\subsection{Independent vs. Uncorrelated vs. Orthogonal}
+\begin{definition} 
+    \begin{enumerate}
+        \item Independent:
+        \begin{equation}
+        f_{X|Y}(x|y) = f_X(x) \; \forall y
+        \Leftrightarrow 
+        f_{X,Y}(x, y) = f_X(x) f_Y(y) 
+        \end{equation}
+        \item Uncorrelated:
+        \begin{equation}
+        \text{Cov}[X, Y] = 0 \quad \Leftrightarrow \quad \rho_{X,Y} = 0
+        \end{equation}
+        \item Orthogonal:
+        \begin{equation}
+        E[XY] = 0
+        \end{equation}
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    If independent, then uncorrelated.
+\end{theorem}
+
+\begin{derivation}
+    \begin{align*}
+    \text{Independent} & \implies E[XY] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y f_{X,Y}(x, y) \, dx \, dy \\
+    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y f_X(x) f_Y(y) \, dx \, dy \\
+    &= \left( \int_{-\infty}^{\infty} x f_X(x) \, dx \right) \left( \int_{-\infty}^{\infty} y f_Y(y) \, dy \right) \\
+    &\implies E[XY] = E[X] E[Y] \\
+    &\implies \text{Cov}[X, Y] = 0, \quad \text{uncorrelated} \\
+    &\not\Leftarrow \text{in general.}
+    \end{align*}
+\end{derivation}
+
+\begin{example} Jointly Gaussian RVs $X$ and $Y$: If uncorrelated, i.e. $\rho_{X,Y} = 0$, then $X$ and $Y$ are independent.
+    \begin{align*}
+    f_{X,Y}(x, y) &= \frac{1}{2\pi \sigma_1 \sigma_2} 
+    \exp \left\{ 
+    -\frac{1}{2} 
+    \left[ 
+    \left(\frac{x-\mu_1}{\sigma_1}\right)^2 
+    + 
+    \left(\frac{y-\mu_2}{\sigma_2}\right)^2 
+    \right] 
+    \right\} \\
+    &= \frac{1}{\sqrt{2\pi} \sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}} 
+    \cdot 
+    \frac{1}{\sqrt{2\pi} \sigma_2} e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}} \\
+    &= f_X(x) f_Y(y) \quad \text{independent}
+    \end{align*}
+\end{example}
+
+\subsection{Conditional Expectation}
+\begin{definition}
+    \begin{equation}
+        E[Y] = E[E[Y|X]]
+    \end{equation}
+    \begin{equation}
+        E[h(Y)] = E[E[h(Y)|X]]
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item $E[E[Y|X]]$ is w.r.t. $X$.
+        \item $E[Y|X]$ is w.r.t. $Y$.
+    \end{itemize}
+\end{notes}
+
+\begin{derivation}
+    \begin{align*}
+    E[Y] &= \int_{-\infty}^\infty \int_{-\infty}^\infty y f_{X,Y}(x, y) \, dx \, dy \\
+            &= \int_{-\infty}^\infty \int_{-\infty}^\infty y f_{Y|X}(y|x) f_X(x) \, dx \, dy \\
+            &= \int_{-\infty}^\infty \left( \int_{-\infty}^\infty y f_{Y|X}(y|x) \, dy \right) f_X(x) \, dx \\
+            &= \int_{-\infty}^\infty E[Y|X=x] f_X(x) \, dx \quad \text{(using the total probability theorem)} \\
+            &= \int_{-\infty}^\infty g(x) f_X(x) \, dx \\
+            &= E[g(X)] \\ 
+            &= E[E[Y|X]].
+    \end{align*}
+\end{derivation}
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} An unknown voltage. \( X \sim \text{Uniform}(0,1) \). Measurement from a (bad) voltmeter: \( Y \sim \text{Uniform}(0, X) \).
+    
+        \begin{align*}
+            f_X(x) &= 
+            \begin{cases} 
+                1, & 0 < x < 1 \\ 
+                0, & \text{otherwise}
+            \end{cases} \\
+            f_{Y|X}(y|x) &= 
+            \begin{cases} 
+                \frac{1}{x}, & 0 < y < x \\ 
+                0, & \text{otherwise}
+            \end{cases}
+        \end{align*}
+        \begin{itemize}
+            \item \textbf{Note:} Area under PDF is 1.
+        \end{itemize}
+
+        \customFigure[0.25]{../Images/L3_1.png}{Uniform Distribution of $X$}
+        \customFigure[0.25]{../Images/L3_2.png}{Uniform Distribution of $Y$}
+
+    
+        \item \textbf{Expected Value (Average Reading of Bad Voltmeter):}
+        \begin{align*}
+            E[Y] &= E[E[Y|X]] \\
+                 &= E\left[\frac{X}{2}\right] \quad \text{Since in the middle of 0 and x}\\
+                 &= \frac{1}{2} \cdot E[X] \\ 
+                 &= \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4} \quad \text{Since $E[X]$ (i.e. mean) is 0.5}
+        \end{align*}
+    
+        \item \textbf{The Long Way:}
+        \begin{align*}
+            f_Y(y) &= \int_{-\infty}^{\infty} f_{Y|X}(y|x) f_X(x) \, dx \\
+                   &= \int_{y}^1 f_{Y|X}(y|x) f_X(x) \, dx \\
+                   &= \int_{y}^1 \frac{1}{x} \cdot 1 \, dx \\
+                   &= -\ln y. \\
+            E[Y] &= \int_{0}^1 y \cdot (-\ln y) \, dy = \dots = \frac{1}{4}
+        \end{align*}
+    
+        \item \textbf{Question:} Suppose \( Y = \frac{1}{8} \). What is "best" given \( X \)? This will be the quesiton for the rest of the course.
+    \end{enumerate}    
+\end{example}

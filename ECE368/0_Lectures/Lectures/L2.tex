@@ -1,104 +1,10 @@
-\begin{summary}
-
-\end{summary}
-
-\begin{faq}
-    \begin{itemize}
-        \item How to study? Practice, practice.
-        \item What textbooks? Use 2024 version of Murphy, Leon Garcia as main reference, Bishop, 4th textbook is intro.
-        \item How is HW graded? Effort, and tutorials are used to explain soln. 
-    \end{itemize}
-\end{faq}
-
-\subsection{Sample Space}
-\begin{motivation}
-    If you have 4 sheeps and a flea, the probability that starting from sheep 1, the flea will jump to sheep 4 in 10 steps is 0.2.
-    \begin{itemize}
-        \item Ambigious as there are 2 different interpretations for the sample space (i.e. space of probability is not clear):
-        \begin{itemize}
-            \item Set of sheeps
-            \item Set of number of steps
-        \end{itemize}
-    \end{itemize}
-\end{motivation}
-
-\subsection{Probability Definitions}
-\begin{definition}
-    \begin{itemize}
-        \item \textbf{Random Experiment:} An outcome (realization) for each run. 
-        \item \textbf{Sample Space $\Omega$:} Set of all possible outcomes.
-        \item \textbf{Events:} (measurable) subsets of $\Omega$.
-        \item \textbf{Probability of Event A:} $P[A] \equiv P[\text{'outcome is in A'}]$.
-    \end{itemize}
-\end{definition}
-
-\begin{example} \textbf{Roll Fair Die}
-    \begin{itemize}
-        \item $\Omega = \{1, 2, 3, 4, 5, 6\}$.
-        \item $P[\text{'even number'}] = \frac{1}{2}$.
-    \end{itemize}
-\end{example}
-
-\subsection{Axioms of Probability}
-\begin{definition}
-    \begin{enumerate}
-        \item $P[A] \geq 0$ for all $A \in \Omega$.
-        \item $P[\Omega] = 1$.
-        \item If $A \cap B = \emptyset$, then $P[A \cup B] = P[A] + P[B]$ for all $A, B \in \Omega$.
-        \customFigure[0.25]{Images/L1_0.png}{3rd Axiom}
-    \end{enumerate}
-\end{definition}
-
-\subsection{Conditional Probability}
-\begin{definition}
-    \begin{equation}
-        P[A|B] = \frac{P[A \cap B]}{P[B]}
-    \end{equation}
-    \begin{itemize}
-        \item $|$: Given event (data/obs.).
-    \end{itemize}
-    \customFigure[0.25]{Images/L1_1.png}{Conditional Probability}
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item Changing sample space to $B$.
-        \item Conditional probability satisfy the 3 axioms, can be viewed as probability measure on new sample space B.
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Consequences of Conditional Probability}
-\begin{definition}
-    \begin{equation}
-        P[A \cap B] = P[A|B]P[B] = P[B|A]P[A]
-    \end{equation}
-\end{definition}
-
-\subsubsection{Independence}
-\begin{definition}
-    $A$ and $B$ are independent iff 
-    \begin{equation}
-        P[A \cap B] = P[A]P[B] \iff P[A|B] = P[A] \iff P[B|A] = P[B]
-    \end{equation}
-\end{definition}
-
-\subsubsection{Importance of Labelling}
-\begin{example} \textbf{Toss 2 Fair Coins}
-    \begin{enumerate}
-        \item \textbf{Given:} Given that one of the coins is heads, what is the probability that the other coin is tails?
-        \item \textbf{Wrong Solution:} $\frac{1}{2}$ since $\{HH, HT, TH, TT\}$, so $P[T|H] = \frac{1}{2}$, which assumes that the coins are distinguishable (i.e. coin \#1 is heads)
-        \item \textbf{Correct Solution:} $\frac{2}{3}$ since $\{HH, HT, TH\}$ as we didn't specify which coin was heads, so $P[T|H] = \frac{2}{3}$, which assumes that the coins are indistinguishable.
-    \end{enumerate}
-    
-\end{example}
-
 \subsection{Total Probability}
 \begin{definition}
     If $H_1,\ldots,H_n$ form a partition of $\Omega$, then
     \begin{equation}
         P[A] = \sum_{i=1}^{n} P[A|H_i]P[H_i]
     \end{equation}
-    \customFigure[0.5]{Images/L1_2.png}{Total Probability}
+    \customFigure[0.5]{../Images/L1_2.png}{Total Probability}
 \end{definition}
 
 \subsection{Bayes' Rule}
@@ -132,14 +38,17 @@
 \end{warning}
 
 \subsubsection{Interpretation of Bayes' Rule}
-\begin{definition}
-    
-\end{definition}
+\begin{notes}
+    Taking one component of the total probability and normalizing it by the sum of all components.
+\end{notes}
 
 \subsection{Random Variables}
 \begin{motivation} \textbf{Coin Toss}
-    Mapping of each outcome to a real number, i.e. $w \in \Omega$ is the outcome of a coin toss, and $X(w) = 1$ if heads and $X(w) = 0$ if tails.
-    \customFigure[0.5]{Images/L1_3.png}{Random Variables}
+    Mapping of each outcome to a real number
+    \begin{itemize}
+        \item $w \in \Omega$ is the outcome of a coin toss, and $X$ is the RV, so $H \rightarrow 0$ and $T \rightarrow 1$.
+    \end{itemize}
+    \customFigure[0.5]{../Images/L1_3.png}{Random Variables}
     \begin{itemize}
         \item Mapping is deterministic function. RV is not random or variable.
     \end{itemize}
@@ -149,6 +58,8 @@
     Mapping from $\Omega$ to $\mathbb{R}$.
 \end{definition}
 
+\subsection{Distribution of RV}
+
 \subsubsection{Cumulative Distribution Function (CDF) of RV}
 \begin{definition}
     \begin{equation}
@@ -156,7 +67,7 @@
     \end{equation}
 \end{definition}
 
-\subsubsection{Discrete RV PMF}
+\subsubsection{Discrete RV Probability Mass Function (PMF)}
 \begin{definition}
     \begin{equation}
         P_X(x_j) \equiv P[X=x_j] \quad j=1,2,3,\ldots 
@@ -167,10 +78,10 @@
     \begin{equation}
         P_X(k) = \binom{n}{k} p^k (1-p)^{n-k}
     \end{equation}
-    \customFigure[0.5]{Images/L1_4.png}{Binomial RV}
+    \customFigure[0.5]{../Images/L1_4.png}{Binomial RV}
 \end{example}
 
-\subsubsection{Continuous RV PDF}
+\subsubsection{Continuous RV Probability Density Function (PDF)}
 \begin{definition}
     \begin{equation}
         f_X(x) \equiv \frac{d}{dx} F_X(x)
@@ -184,12 +95,15 @@
     \begin{equation}
         f_X (x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
     \end{equation}
-    \customFigure[0.5]{Images/L1_5.png}{Gaussian RV}
+    \customFigure[0.5]{../Images/L1_5.png}{Gaussian RV}
     \begin{itemize}
-        \item $p[X \in A] = \int_{A} f_X(x) dx$.
-        \item \textbf{Note:} Discrete RV has pdf w/ $\delta$ functions.
+        \item $P[X \in A] = \int_{A} f_X(x) dx$.
     \end{itemize}
 \end{example}
+
+\begin{notes}
+    Discrete RV has pdf w/ $\delta$ functions.
+\end{notes}
 
 \subsubsection{Conditional PMF/PDF}
 \begin{definition}
@@ -217,7 +131,10 @@
     \end{equation}
 
     \begin{itemize}
-        \item \textbf{Memoryless Property:} $P_X[k|X > m] = \frac{p(1-p)^{k-1}}{(1-p)^m} = p(1-p)^{k-m-1}$. So it only cares about the additional trials. 
+        \item \textbf{Memoryless Property:} $P_X[k|X > m] = \frac{p(1-p)^{k-1}}{(1-p)^m} = p(1-p)^{k-m-1}$. 
+        \begin{itemize}
+            \item So it only cares about the additional trials (i.e. same as resetting after $m$ trials).
+        \end{itemize}
     \end{itemize}
     
 \end{example}
@@ -225,10 +142,10 @@
 \subsection{Expected Values}
 \begin{definition}
     \begin{equation}
-        E[X] = \int_{-\infty}^{\infty} x f_X(x) dx \overset{\text{If int. values}}{=} \sum_{k} k f_X(k)
+        E[X] = \int_{-\infty}^{\infty} x f_X(x) dx \overset{\text{If int. values}}{=} \sum_{k=-\infty}^{\infty} k f_X(k)
     \end{equation}
     \begin{equation}
-        E[h(X)] = \int_{-\infty}^{\infty} h(x) f_X(x) dx \overset{\text{If int. values}}{=} \sum_{k} h(k) f_X(k)
+        E[h(X)] = \int_{-\infty}^{\infty} h(x) f_X(x) dx \overset{\text{If int. values}}{=} \sum_{k=-\infty}^{\infty} h(k) f_X(k)
     \end{equation}
     \begin{equation}
         \text{Var}[X] = E[(X - E[X])^2] = E[X^2] - E[X]^2
@@ -238,7 +155,7 @@
     \end{equation}
 \end{definition}
 
-\begin{example} \textbf{Lottery Ticket}
+\begin{example} \textbf{Lottery Ticket (Geometric RV)}
     \begin{enumerate}
         \item \textbf{Given:} Buying one lottery ticket per week
         \begin{itemize}
@@ -249,7 +166,4 @@
         \item \textbf{Solution:} $E[X] = \sum_{k=1}^{\infty} k(1 - p)^{k-1}p = \ldots = \frac{1}{p} = 10^7$ weeks.
         \item \textbf{Extension (Memoryless Property):} If I have already played for 999999 weeks, what is the expected number of weeks to win the jackpot? $E[X-999999|X>999999] = E[X] = 10^7$ weeks.
     \end{enumerate}
-    
 \end{example}
-
-

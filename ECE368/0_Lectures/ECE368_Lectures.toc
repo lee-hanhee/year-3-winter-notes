@@ -1,0 +1,33 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}L1: Probability Review}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Sample Space}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Probability Definitions}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Axioms of Probability}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Conditional Probability}{3}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Consequences of Conditional Probability}{3}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Independence}{3}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}Importance of Labelling}{3}{subsubsection.1.4.3}%
+\contentsline {section}{\numberline {2}L2: Probability Review}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Total Probability}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Bayes' Rule}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Posteriori Probability, Priori Probability (Prior), Likelihood}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Interpretation of Bayes' Rule}{4}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Random Variables}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Distribution of RV}{5}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Cumulative Distribution Function (CDF) of RV}{5}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Discrete RV Probability Mass Function (PMF)}{5}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Continuous RV Probability Density Function (PDF)}{5}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Conditional PMF/PDF}{6}{subsubsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.5}Expected Values}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}L3: Probability Review}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}2 RVs}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Joint PMF/PDF}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Expectations}{8}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Correlation}{8}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Covariance}{9}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Correlation Coefficient}{9}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Marginal PMF/PDF}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Conditional PMF/PDF}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Bayes' Rule}{10}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Independent vs. Uncorrelated vs. Orthogonal}{10}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Conditional Expectation}{10}{subsection.3.8}%

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  7 JAN 2025 16:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  10 JAN 2025 14:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/ECE368_Lectures.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/ECE368_Lectures.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Lectures/ECE368_Lectures.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Lectures/ECE368_Lectures.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1199,7 +1199,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `ECE368_Lectures.toc'.
 
- (./Lectures/L1.tex [1
+ [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
 Non-PDF special ignored!
@@ -1225,71 +1225,87 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-<Images/L1_0.png, id=114, 260.975pt x 99.37125pt>
-File: Images/L1_0.png Graphic file (type png)
-<use Images/L1_0.png>
-Package pdftex.def Info: Images/L1_0.png  used on input line 48.
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./Lectures/L1.tex
+<../Images/L1_0.png, id=179, 260.975pt x 99.37125pt>
+File: ../Images/L1_0.png Graphic file (type png)
+<use ../Images/L1_0.png>
+Package pdftex.def Info: ../Images/L1_0.png  used on input line 48.
 (pdftex.def)             Requested size: 124.77936pt x 47.51266pt.
-<Images/L1_1.png, id=116, 204.765pt x 81.30376pt>
-File: Images/L1_1.png Graphic file (type png)
-<use Images/L1_1.png>
-Package pdftex.def Info: Images/L1_1.png  used on input line 60.
+ [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+<../Images/L1_1.png, id=194, 204.765pt x 81.30376pt>
+File: ../Images/L1_1.png Graphic file (type png)
+<use ../Images/L1_1.png>
+Package pdftex.def Info: ../Images/L1_1.png  used on input line 60.
 (pdftex.def)             Requested size: 124.77936pt x 49.54558pt.
- [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./Images/L1_0.png>]
-<Images/L1_2.png, id=131, 378.41376pt x 118.4425pt>
-File: Images/L1_2.png Graphic file (type png)
-<use Images/L1_2.png>
-Package pdftex.def Info: Images/L1_2.png  used on input line 101.
+) [3 <../Images/L1_0.png> <../Images/L1_1.png>] (./Lectures/L2.tex
+<../Images/L1_2.png, id=210, 378.41376pt x 118.4425pt>
+File: ../Images/L1_2.png Graphic file (type png)
+<use ../Images/L1_2.png>
+Package pdftex.def Info: ../Images/L1_2.png  used on input line 7.
 (pdftex.def)             Requested size: 249.55872pt x 78.11082pt.
-
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
- [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./Images/L1_1.png> <./Images/L1_2.png>]
-<Images/L1_3.png, id=150, 377.41pt x 76.285pt>
-File: Images/L1_3.png Graphic file (type png)
-<use Images/L1_3.png>
-Package pdftex.def Info: Images/L1_3.png  used on input line 142.
+<../Images/L1_3.png, id=211, 377.41pt x 76.285pt>
+File: ../Images/L1_3.png Graphic file (type png)
+<use ../Images/L1_3.png>
+Package pdftex.def Info: ../Images/L1_3.png  used on input line 51.
 (pdftex.def)             Requested size: 249.55872pt x 50.44254pt.
- [4 <./Images/L1_3.png>]
-<Images/L1_4.png, id=162, 244.915pt x 104.39pt>
-File: Images/L1_4.png Graphic file (type png)
-<use Images/L1_4.png>
-Package pdftex.def Info: Images/L1_4.png  used on input line 170.
+
+Underfull \vbox (badness 6675) has occurred while \output is active []
+
+ [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L1_2.png>]
+<../Images/L1_4.png, id=224, 244.915pt x 104.39pt>
+File: ../Images/L1_4.png Graphic file (type png)
+<use ../Images/L1_4.png>
+Package pdftex.def Info: ../Images/L1_4.png  used on input line 81.
 (pdftex.def)             Requested size: 249.55872pt x 106.37123pt.
-<Images/L1_5.png, id=163, 280.04625pt x 138.5175pt>
-File: Images/L1_5.png Graphic file (type png)
-<use Images/L1_5.png>
-Package pdftex.def Info: Images/L1_5.png  used on input line 187.
+<../Images/L1_5.png, id=225, 280.04625pt x 138.5175pt>
+File: ../Images/L1_5.png Graphic file (type png)
+<use ../Images/L1_5.png>
+Package pdftex.def Info: ../Images/L1_5.png  used on input line 98.
 (pdftex.def)             Requested size: 249.55872pt x 123.44292pt.
+ [5 <../Images/L1_3.png> <../Images/L1_4.png>] [6 <../Images/L1_5.png>]) [7] (./Lectures/L3.tex
+<../Images/L3_0.png, id=274, 609.27625pt x 196.735pt>
+File: ../Images/L3_0.png Graphic file (type png)
+<use ../Images/L3_0.png>
+Package pdftex.def Info: ../Images/L3_0.png  used on input line 7.
+(pdftex.def)             Requested size: 249.55872pt x 80.58081pt.
+
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+ [8 <../Images/L3_0.png>] [9] [10]
+<../Images/L3_1.png, id=314, 204.765pt x 107.40125pt>
+File: ../Images/L3_1.png Graphic file (type png)
+<use ../Images/L3_1.png>
+Package pdftex.def Info: ../Images/L3_1.png  used on input line 240.
+(pdftex.def)             Requested size: 124.77936pt x 65.4491pt.
+<../Images/L3_2.png, id=315, 206.7725pt x 100.375pt>
+File: ../Images/L3_2.png Graphic file (type png)
+<use ../Images/L3_2.png>
+Package pdftex.def Info: ../Images/L3_2.png  used on input line 241.
+(pdftex.def)             Requested size: 124.77936pt x 60.57312pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./Images/L1_4.png> <./Images/L1_5.png>]) [6] [7
-
-] [8
-
-] (./ECE368_Lectures.aux)
+ [11 <../Images/L3_1.png> <../Images/L3_2.png>]) [12] (./ECE368_Lectures.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE368_Lectures.out' has not changed.
-(rerunfilecheck)             Checksum: 56A7AA8F904FECD233C785AD22761B19;3488.
+(rerunfilecheck)             Checksum: A814FAC18D986E75175068E307DBFEF1;5755.
  ) 
 Here is how much of TeX's memory you used:
- 50865 strings out of 474116
- 1192550 string characters out of 5743682
- 1957187 words of memory out of 5000000
- 72307 multiletter control sequences out of 15000+600000
+ 50993 strings out of 474116
+ 1194857 string characters out of 5743682
+ 1955187 words of memory out of 5000000
+ 72380 multiletter control sequences out of 15000+600000
  615616 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,107p,807b,1316s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ECE368_Lectures.pdf (8 pages, 333108 bytes).
+ 99i,17n,107p,818b,1318s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ECE368_Lectures.pdf (12 pages, 427751 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 122 named destinations out of 1000 (max. 500000)
+ 314 words of extra memory for PDF output out of 10000 (max. 10000000)
 

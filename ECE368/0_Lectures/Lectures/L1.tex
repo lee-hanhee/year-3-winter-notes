@@ -1,0 +1,95 @@
+\begin{summary}
+
+\end{summary}
+
+\begin{faq}
+    \begin{itemize}
+        \item How to study? Practice, practice.
+        \item What textbooks? Use 2024 version of Murphy, Leon Garcia as main reference, Bishop, 4th textbook is intro.
+        \item How is HW graded? Effort, and tutorials are used to explain soln. 
+    \end{itemize}
+\end{faq}
+
+\subsection{Sample Space}
+\begin{motivation}
+    If you have 4 sheeps and a flea, the probability that starting from sheep 1, the flea will jump to sheep 4 in 10 steps is 0.2.
+    \begin{itemize}
+        \item Ambigious as there are 2 different interpretations for the sample space (i.e. space of probability is not clear):
+        \begin{itemize}
+            \item Set of sheeps
+            \item Set of number of steps
+        \end{itemize}
+    \end{itemize}
+\end{motivation}
+
+\subsection{Probability Definitions}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Random Experiment:} An outcome (realization) for each run. 
+        \item \textbf{Sample Space $\Omega$:} Set of all possible outcomes.
+        \item \textbf{Events:} (measurable) subsets of $\Omega$.
+        \item \textbf{Probability of Event A:} $P[A] \equiv P[\text{'outcome is in A'}]$.
+    \end{itemize}
+\end{definition}
+
+\begin{example} \textbf{Roll Fair Die}
+    \begin{itemize}
+        \item $\Omega = \{1, 2, 3, 4, 5, 6\}$.
+        \item $P[\text{'even number'}] = \frac{1}{2}$.
+    \end{itemize}
+\end{example}
+
+\subsection{Axioms of Probability}
+\begin{definition}
+    \begin{enumerate}
+        \item $P[A] \geq 0$ for all $A \in \Omega$.
+        \item $P[\Omega] = 1$.
+        \item If $A \cap B = \emptyset$, then $P[A \cup B] = P[A] + P[B]$ for all $A, B \in \Omega$.
+        \customFigure[0.25]{../Images/L1_0.png}{3rd Axiom}
+    \end{enumerate}
+\end{definition}
+
+\subsection{Conditional Probability}
+\begin{definition}
+    \begin{equation}
+        P[A|B] = \frac{P[A \cap B]}{P[B]}
+    \end{equation}
+    \begin{itemize}
+        \item $|$: Given event (data/obs.).
+    \end{itemize}
+    \customFigure[0.25]{../Images/L1_1.png}{Conditional Probability}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Changing sample space to $B$.
+        \item Conditional probability satisfy the 3 axioms (i.e. are probabilities), can be viewed as probability measure on new sample space B.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Consequences of Conditional Probability}
+\begin{definition}
+    \begin{equation}
+        P[A \cap B] = P[A|B]P[B] = P[B|A]P[A]
+    \end{equation}
+\end{definition}
+
+\subsubsection{Independence}
+\begin{definition}
+    $A$ and $B$ are independent iff 
+    \begin{equation}
+        P[A \cap B] = P[A]P[B] \iff P[A|B] = P[A] \iff P[B|A] = P[B]
+    \end{equation}
+\end{definition}
+
+\subsubsection{Importance of Labelling}
+\begin{example} \textbf{Toss 2 Fair Coins}
+    \begin{enumerate}
+        \item \textbf{Given:} Given that one of the coins is heads, what is the probability that the other coin is tails?
+        \item \textbf{Wrong Solution:} $\frac{1}{2}$ since $\{HH, HT, TH, TT\}$, so $P[T|H] = \frac{1}{2}$, which assumes that the coins are distinguishable (i.e. coin \#1 is heads)
+        \item \textbf{Correct Solution:} $\frac{2}{3}$ since $\{HH, HT, TH\}$ as we didn't specify which coin was heads, so $P[T|H] = \frac{2}{3}$, which assumes that the coins are indistinguishable.
+    \end{enumerate}
+    
+\end{example}
+
+
