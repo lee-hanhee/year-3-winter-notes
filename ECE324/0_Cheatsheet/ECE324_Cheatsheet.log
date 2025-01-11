@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  9 JAN 2025 10:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  11 JAN 2025 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Lectures/ECE324_Lectures.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Lectures/ECE324_Lectures.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1051,8 +1051,8 @@ Package: listings 2024/02/21 1.10 (Carsten Heinz)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./ECE324_Lectures.aux)
-\openout1 = `ECE324_Lectures.aux'.
+) (./ECE324_Cheatsheet.aux)
+\openout1 = `ECE324_Cheatsheet.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -1142,9 +1142,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 8.
- (./ECE324_Lectures.out) (./ECE324_Lectures.out)
+ (./ECE324_Cheatsheet.out) (./ECE324_Cheatsheet.out)
 \@outlinefile=\write4
-\openout4 = `ECE324_Lectures.out'.
+\openout4 = `ECE324_Cheatsheet.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
@@ -1159,46 +1159,46 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count417
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10.
+<../Images/L2_0.png, id=43, 870.25125pt x 465.74pt>
+File: ../Images/L2_0.png Graphic file (type png)
+<use ../Images/L2_0.png>
+Package pdftex.def Info: ../Images/L2_0.png  used on input line 13.
+(pdftex.def)             Requested size: 249.55872pt x 133.55453pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 10.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 10.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 10.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <10> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <7> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 10.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+(Font)              <5> on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./ECE324_Lectures.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
 )
-\tf@toc=\write5
-\openout5 = `ECE324_Lectures.toc'.
-
+<../Images/L2_2.png, id=45, 654.445pt x 331.2375pt>
+File: ../Images/L2_2.png Graphic file (type png)
+<use ../Images/L2_2.png>
+Package pdftex.def Info: ../Images/L2_2.png  used on input line 71.
+(pdftex.def)             Requested size: 249.55872pt x 126.31126pt.
  [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
@@ -1216,6 +1216,8 @@ Non-PDF special ignored!
 <special> header=pst-math.pro
 Non-PDF special ignored!
 <special> header=pstricks-add.pro
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
+
 
 Non-PDF special ignored!
 <special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
@@ -1225,38 +1227,38 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2
-
-] (./Lectures/L1.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1.
-
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]) [4] (./Lectures/L2.tex) [5
-
-] [6
-
-] (./ECE324_Lectures.aux)
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L2_0.png>]
+<../Images/L2_3.png, id=65, 693.59125pt x 329.23pt>
+File: ../Images/L2_3.png Graphic file (type png)
+<use ../Images/L2_3.png>
+Package pdftex.def Info: ../Images/L2_3.png  used on input line 76.
+(pdftex.def)             Requested size: 249.55872pt x 118.4574pt.
+<../Images/L2_4.png, id=66, 883.3pt x 359.3425pt>
+File: ../Images/L2_4.png Graphic file (type png)
+<use ../Images/L2_4.png>
+Package pdftex.def Info: ../Images/L2_4.png  used on input line 81.
+(pdftex.def)             Requested size: 299.47351pt x 121.82939pt.
+ [2 <../Images/L2_2.png> <../Images/L2_3.png> <../Images/L2_4.png>] [3] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ECE324_Lectures.out' has not changed.
-(rerunfilecheck)             Checksum: 64137F8C86E8E54552B9011BDCE720F3;2214.
+Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
+(rerunfilecheck)             Checksum: BC555BF594CA75D6FA6B375901B7F91D;1367.
  ) 
 Here is how much of TeX's memory you used:
- 50735 strings out of 474116
- 1190383 string characters out of 5743682
- 1952187 words of memory out of 5000000
- 72221 multiletter control sequences out of 15000+600000
- 615616 words of font info for 95 fonts, out of 8000000 for 9000
+ 50660 strings out of 474116
+ 1189383 string characters out of 5743682
+ 1951187 words of memory out of 5000000
+ 72174 multiletter control sequences out of 15000+600000
+ 591799 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,107p,816b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Lectures.pdf (6 pages, 185598 bytes).
+ 99i,11n,107p,822b,1184s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on ECE324_Cheatsheet.pdf (3 pages, 1180510 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 25 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

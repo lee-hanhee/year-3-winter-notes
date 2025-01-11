@@ -1,7 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1736521178.5992 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1736521180.78133 0
+["pdflatex"] 1736618052.04896 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1736618054.31203 0
   "../Images/L3_0.png" 1736520944.32925 98616 c327c5fce6e0c787cd3ae52cf1b6de31 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1736521178.16881 4298 3c4e4d4fb47d456ccf92c1871d20ceb7 ""
+  "../Images/L3_1.png" 1736617366.11581 49267 efc77f06cb2f65c5c2287d796f02ff15 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1736618051.61043 5403 bc34c0d58d65f78899462311692256fc ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -12,6 +13,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb" 1248133631 35457 884c5a936fbb3fae6a4c18058662d654 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -185,9 +187,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE356_Cheatsheet.aux" 1736521180.57436 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "ECE356_Cheatsheet.out" 1736521180.0891 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE356_Cheatsheet.tex" 1736521178.16881 4298 3c4e4d4fb47d456ccf92c1871d20ceb7 ""
+  "ECE356_Cheatsheet.aux" 1736618054.09909 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "ECE356_Cheatsheet.out" 1736618053.57508 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE356_Cheatsheet.tex" 1736618051.61043 5403 bc34c0d58d65f78899462311692256fc ""
   (generated)
   "ECE356_Cheatsheet.aux"
   "ECE356_Cheatsheet.log"

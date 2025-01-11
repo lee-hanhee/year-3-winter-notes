@@ -21,6 +21,7 @@
         \centering
         \includegraphics[width=#1\textwidth]{#2}
     \end{figure}
+    \vspace{-1.5em}
 }
 
 \begin{document}
@@ -67,6 +68,19 @@
     $\delta y = C \delta x + D \delta u$, $C = \frac{\partial h}{\partial \underline{x}} (\bar{x}, \bar{u}) \in \mathbb{R}^{1 \times n_1}$, $D = \frac{\partial h(\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}$ \\
     *Only valid at equ. pairs.
     \customFigure[0.25]{../Images/L3_0.png}
+
+    \textcolor{blue}{\textbf{Linear Approx.}} Given a diff. fcn. $f: \mathbb{R} \rightarrow \mathbb{R}$, its linear approx. at $\bar{x}$ is $f_{\text{lin}} = f(\bar{x}) + f'(\bar{x})(x-\bar{x})$. \\
+    *Remainder Thm: $f(x) = f_{\text{lin}} + r(x)$ where $\lim_{x \rightarrow \bar{x}} \frac{r(x)}{x-\bar{x}} = 0$. 
+    \customFigure[0.1]{../Images/L3_1.png}
+    
+    *Note: Can provide a good approx. near $\bar{x}$ but not globally. 
+    
+    *Gen. $f: \mathbb{R}^{n_1} \rightarrow \mathbb{R}^{n_2}$, $f(x) = f(\bar{x}) + \frac{\partial f}{\partial x}(\bar{x})(x-\bar{x}) + R(x)$ \\
+    *Jacobian: $\frac{\partial f}{\partial x} (\bar{x})  = \begin{bmatrix} \frac{\partial f}{\partial x_1} (\bar{x})  & \ldots & \frac{\partial f}{\partial x_{n_1}} (\bar{x}) \end{bmatrix} \in \mathbb{R}^{n_2 \times n_1}$ 
+
+    \textcolor{orange}{\textbf{Linearization Steps}} 1. Find equ. pair $(\bar{x}, \bar{u})$ \\
+    2. Derive $A,B,C,D$ and then evaluate at $(\bar{x}, \bar{u})$ \\
+    3. Write $\delta \overset{\cdot}{x} = A \delta x + B \delta u$ and $\delta y = C \delta x + D \delta u$ \\
 
 
 

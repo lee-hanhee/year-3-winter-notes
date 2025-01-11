@@ -1,0 +1,111 @@
+\documentclass[twoside]{article}
+\usepackage{style}
+\title{ROB311 Cheatsheet}
+\author{Hanhee Lee}
+\lhead{ROB311}
+\rhead{Hanhee Lee}
+
+\begin{document}
+
+\subsection{Learning representations of data}
+\subsubsection{AI/MI/ML/DL}
+\begin{definition}
+    \customFigure[0.5]{../Images/L2_0.png}{} 
+\end{definition}
+\subsubsection{Learning algorithms}
+\begin{definition}
+    \textquotedblleft A \colorbox{orange}{\textbf{computer program M}} is said to \colorbox{red}{\textbf{learn}} from \colorbox{cyan}{\textbf{experience E}} with respect to some class of \colorbox{yellow}{\textbf{tasks T}} and \colorbox{violet}{\textbf{performance measure P}}, if its performance at \colorbox{yellow}{\textbf{tasks in T}}, as measured by \colorbox{violet}{\textbf{P}}, improves with \colorbox{cyan}{\textbf{experience E}}\textquotedblright
+
+\vspace{1em}
+
+\noindent
+\begin{itemize}
+    \item \textbf{\color{cyan}experience E} $\sim$ Data
+    \item \textbf{\color{violet}performance measure P} $\sim$ Loss function, evaluation metric
+    \item \textbf{\color{yellow}tasks T} $\sim$ ``Prediction problem''
+    \item \textbf{\color{orange}computer program M} $\sim$ Model
+    \item \textbf{\color{red}learn} $\sim$ Optimize
+\end{itemize}
+
+\end{definition}
+
+\subsubsection{Linear models}
+\begin{example} \textbf{Linear Regression}
+    \begin{equation}
+        W \cdot x = y
+    \end{equation}
+    \begin{itemize}
+        \item \textcolor{teal}{\textbf{E}} (x and y)
+        \item \textcolor{purple}{\textbf{P}} mean squared error
+        \item \textcolor{yellow}{\textbf{T}} Predict y from x
+        \item \textcolor{orange}{\textbf{M}} Linear model (W)
+        \item \textcolor{red}{\textbf{learn?}} Analytical solution or gradient descent
+    \end{itemize}
+\end{example}
+
+\begin{example} \textbf{Generalized Linear models in equations}
+    \begin{equation}
+        \text{Link}(W \cdot x) = y
+    \end{equation}
+    \begin{itemize}
+        \item $x$: Input features
+        \item $W$: Linear transformation
+        \item $y$: Output / target
+        \item $\text{Link}(x)$: Warping function
+    \end{itemize}
+    \begin{enumerate}
+        \item If $x$ has dim $50$ and $W$ projects to dimension $100$, what is the shape of $W$?
+        \begin{itemize}
+            \item $W$ is a $100 \times 50$ matrix
+        \end{itemize}
+        \item If $W$ is learnable, how many parameters does $W$ have?
+        \begin{itemize}
+            \item $100 \times 50 = 5000$ parameters
+        \end{itemize}
+    \end{enumerate}
+    
+\end{example}
+
+\begin{notes} \textbf{How does a generalized linear model make a prediction?}
+    By either mapping to a line or separating data by a line (hyperplane)
+    \customFigure[0.5]{../Images/L2_2.png}{}
+\end{notes}
+
+\begin{notes} \textbf{What can we do when the data cannot be separated by a line?}
+    Resort to different decision surfaces.
+    \customFigure[0.5]{../Images/L2_3.png}{}
+\end{notes}
+
+\subsubsection{Representations}
+\begin{notes}
+    \customFigure[0.6]{../Images/L2_4.png}{}
+\end{notes}
+
+\subsection{Neural networks}
+\begin{definition}
+    Learnable (optimizable) transformations of data.
+    \begin{equation}
+        x \overset{\text{Model}}{\mapsto} y
+    \end{equation}
+\end{definition}
+
+\subsubsection{2-layer MLP}
+\begin{definition}
+    \begin{equation}
+        \text{Link}(W_2 \cdot \text{relu}(W_1 \cdot x)) = y
+    \end{equation}
+
+\begin{itemize}
+    \item \textcolor{teal}{\textbf{E}} (x and y)
+    \item \textcolor{purple}{\textbf{P}} ? mean squared error
+    \item \textcolor{yellow}{\textbf{T}} ? Predict y from x
+    \item \textcolor{orange}{\textbf{M}} ? Neural net (W1, W2)
+    \item \textcolor{red}{\textbf{learn?}} gradient descent
+\end{itemize}
+\end{definition}
+
+\subsubsection{Geometric intuition}
+
+\subsubsection{Encoder-Decoder view}
+
+\end{document}

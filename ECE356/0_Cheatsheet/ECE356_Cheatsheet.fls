@@ -316,11 +316,17 @@ INPUT ../Images/L3_0.png
 INPUT ../Images/L3_0.png
 INPUT ../Images/L3_0.png
 INPUT ../Images/L3_0.png
+INPUT ../Images/L3_1.png
+INPUT ../Images/L3_1.png
+INPUT ../Images/L3_1.png
+INPUT ../Images/L3_1.png
+INPUT ../Images/L3_1.png
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ECE356_Cheatsheet.aux
 INPUT ./ECE356_Cheatsheet.out
 INPUT ./ECE356_Cheatsheet.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
