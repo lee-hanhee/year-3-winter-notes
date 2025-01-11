@@ -1,4 +1,4 @@
-\documentclass[twoside]{article}
+\documentclass{article}
 \usepackage{style}
 \title{ROB311 Cheatsheet}
 \author{Hanhee Lee}
@@ -30,20 +30,20 @@
 \end{definition}
 
 \subsubsection{Linear models}
-\begin{example} \textbf{Linear Regression}
+\begin{definition} \textbf{Linear Regression}
     \begin{equation}
         W \cdot x = y
     \end{equation}
     \begin{itemize}
-        \item \textcolor{teal}{\textbf{E}} (x and y)
-        \item \textcolor{purple}{\textbf{P}} mean squared error
-        \item \textcolor{yellow}{\textbf{T}} Predict y from x
-        \item \textcolor{orange}{\textbf{M}} Linear model (W)
+        \item \textcolor{teal}{\textbf{E?}} (x and y)
+        \item \textcolor{purple}{\textbf{P?}} mean squared error
+        \item \textcolor{yellow}{\textbf{T?}} Predict y from x
+        \item \textcolor{orange}{\textbf{M?}} Linear model (W)
         \item \textcolor{red}{\textbf{learn?}} Analytical solution or gradient descent
     \end{itemize}
-\end{example}
+\end{definition}
 
-\begin{example} \textbf{Generalized Linear models in equations}
+\begin{definition} \textbf{Generalized Linear models in equations}
     \begin{equation}
         \text{Link}(W \cdot x) = y
     \end{equation}
@@ -53,6 +53,9 @@
         \item $y$: Output / target
         \item $\text{Link}(x)$: Warping function
     \end{itemize}
+\end{definition}
+
+\begin{example}
     \begin{enumerate}
         \item If $x$ has dim $50$ and $W$ projects to dimension $100$, what is the shape of $W$?
         \begin{itemize}
@@ -63,7 +66,6 @@
             \item $100 \times 50 = 5000$ parameters
         \end{itemize}
     \end{enumerate}
-    
 \end{example}
 
 \begin{notes} \textbf{How does a generalized linear model make a prediction?}
@@ -77,6 +79,15 @@
 \end{notes}
 
 \subsubsection{Representations}
+\begin{definition}
+    \textbf{Representation} is a way of encoding data.
+    \begin{equation}
+        x \overset{\text{Representation}}{\mapsto} z
+    \end{equation}
+    \begin{itemize}
+        \item $z$: Feature vectors, embeddings, latent codes, intermediate activations, etc.
+    \end{itemize}
+\end{definition}
 \begin{notes}
     \customFigure[0.6]{../Images/L2_4.png}{}
 \end{notes}
@@ -90,22 +101,151 @@
 \end{definition}
 
 \subsubsection{2-layer MLP}
-\begin{definition}
+\begin{definition} By stacking linear transforms with activation functions.
     \begin{equation}
         \text{Link}(W_2 \cdot \text{relu}(W_1 \cdot x)) = y
     \end{equation}
+    \begin{itemize}
+        \item $x$: Input features.
+        \item $W_1, W_2$: Linear transformations or Weight Matrices.
+        \item $\text{relu}(x) = \max(0,x)$: Non-linear activation function, s.t. $f'(x) = 1$ if $x > 0$ and $0$ otherwise.
+        \item $y$: Output / target. 
+    \end{itemize}
+    \vspace{1em}
 
-\begin{itemize}
-    \item \textcolor{teal}{\textbf{E}} (x and y)
-    \item \textcolor{purple}{\textbf{P}} ? mean squared error
-    \item \textcolor{yellow}{\textbf{T}} ? Predict y from x
-    \item \textcolor{orange}{\textbf{M}} ? Neural net (W1, W2)
-    \item \textcolor{red}{\textbf{learn?}} gradient descent
-\end{itemize}
+    \begin{itemize}
+        \item \textcolor{teal}{\textbf{E?}} (x and y)
+        \item \textcolor{purple}{\textbf{P?}} mean squared error
+        \item \textcolor{yellow}{\textbf{T?}} Predict y from x
+        \item \textcolor{orange}{\textbf{M?}} Neural net (W1, W2)
+        \item \textcolor{red}{\textbf{learn?}} gradient descent
+    \end{itemize}
 \end{definition}
 
+\begin{example}
+    \begin{enumerate}
+        \item What purpose does relu serve? 
+            \begin{itemize}
+                \item Introduces non-linearity into the model, allowing it to learn more complex functions.
+            \end{itemize}       
+        \item If $x$ has dim $50$ and $y$ dim $10$, we have layer size of $50$, how many parameters do we have?
+            \begin{itemize}
+                \item $W_1$ is a $50 \times 50$ matrix, so it has $50 \times 50 = 2500$ parameters.
+                \item $W_2$ is a $10 \times 50$ matrix, so it has $10 \times 50 = 500$ parameters.
+                \item Total parameters: $2500 + 500 = 3000$ parameters. IS THIS CORRECT?
+            \end{itemize} 
+    \end{enumerate}
+\end{example}
+
 \subsubsection{Geometric intuition}
+\begin{notes} \textbf{Decision surfaces}
+    Different ways of cutting up space to make predictions.
+    \customFigure[0.5]{../Images/L2_5.png}{}
+\end{notes}
+
+\begin{notes} \textbf{Linear Transformation}
+    Transform data from one vector space to another
+    \begin{equation}
+        W \cdot x 
+    \end{equation}
+\end{notes}
+
+\begin{notes} \textbf{SVD of Linear Transformation} 
+    Factorizing matrices into geometrical transformations.
+    \begin{equation}
+        W = U \Sigma V^T
+    \end{equation}
+    \begin{itemize}
+        \item $U,V$: Rotation
+        \item $\Sigma$: Scaling
+    \end{itemize}
+\end{notes}
+
+\begin{notes} \textbf{Affine Transformation}
+    \begin{equation}
+        W \cdot x + b
+    \end{equation}
+    \begin{itemize}
+        \item $b$: Bias vector
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{itemize}
+        \item Translate (b)
+        \item Rotate (W-SVD)
+        \item Reflect (W-SVD)
+        \item Scale (W-SVD)
+        \item Project up or down (dimensionality of $W \mathbf{x}$)
+    \end{itemize}
+\end{notes}
+
+\begin{notes} \textbf{ReLU} Rectified linear unit, which has a geometric effect of "gating", some info passes, some doesn't.
+    \customFigure[0.5]{../Images/L2_8.png}{}
+\end{notes}
+
+\begin{notes} \textbf{Neural nets} Learn to warp space to make better predictions.
+    \customFigure[0.5]{../Images/L2_6.png}{}
+    \customFigure[0.5]{../Images/L2_7.png}{}
+\end{notes}
 
 \subsubsection{Encoder-Decoder view}
+\begin{definition}
+    \begin{equation}
+        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $z$: Embeddings, latent vectors, learned representations.
+    \end{itemize}
+\end{definition}
+
+\begin{example} \textbf{Supervised Learning}
+    \begin{equation}
+        x \overset{\text{Model}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $\mathrm{Model}(x) = \mathrm{Decoder}\bigl(\mathrm{Encoder}(x)\bigr)$
+        \item $\mathrm{Decoder}(z) = \mathrm{Pred}(z)$
+    \end{itemize}
+    
+\end{example}
+
+\begin{example} \textbf{PCA}
+    \begin{equation}
+        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $\text{Encoder}(x) = W \cdot x$
+        \item $\text{Decoder}(z) = W^{-1} \cdot z$
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{itemize}
+        \item \textcolor{teal}{\textbf{E?}} $x$
+        \item \textcolor{purple}{\textbf{P?}} Reconstruction loss
+        \item \textcolor{yellow}{\textbf{T?}} Reduce dimension
+        \item \textcolor{orange}{\textbf{M?}} W
+        \item \textcolor{red}{\textbf{learn?}} Eigendecompositions
+    \end{itemize}
+\end{example}
+
+\begin{example} \textbf{Neural Networks}
+    \begin{equation}
+        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $\text{Encoder}(x) = \text{Neural Network}$
+        \item $\text{Decoder}(z) = \text{Neural Network}$
+    \end{itemize}
+\end{example}
+
+\subsubsection{Typical ML Pipeline}
+\begin{notes}
+    \begin{itemize}
+        \item Setup data $(x,y)$
+        \item Define a model: $y = f(x,\theta)$
+        \item Training algorithm to find $\theta$
+        \item Evaluate the model.
+    \end{itemize}
+\end{notes}
 
 \end{document}
