@@ -29,6 +29,17 @@
 \everymath{\displaystyle} % automatically display style
 \usepackage{makeidx} % used to make indexes
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% TABLE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+
 % Fancy Header
 \usepackage{fancyhdr}
 \setlength{\headheight}{15.2pt}
@@ -240,22 +251,24 @@
 
 % Define the style for pseudocode
 \lstdefinestyle{pseudocode}{
-    backgroundcolor=\color{white},   % Background color
-    commentstyle=\color{gray},       % Style for comments
-    keywordstyle=\color{blue},       % Style for keywords
-    numberstyle=\tiny\color{gray},   % Style for line numbers
-    basicstyle=\ttfamily\footnotesize,  % Basic font style
-    breaklines=true,                 % Line breaking
-    captionpos=b,                    % Caption position
-    keepspaces=true,                 % Keep spaces in text
-    numbers=left,                    % Line numbers on the left
-    numbersep=5pt,                   % Space between line numbers and code
-    showspaces=false,                % Do not show spaces
-    showstringspaces=false,          % Do not show spaces in strings
-    showtabs=false,                  % Do not show tab characters
-    tabsize=4,                       % Size of tabs
-    xleftmargin=0pt,                 % Set left margin to zero for left alignment
-    frame=single                     % Adds a frame around the code
+    backgroundcolor=\color{white},      % Background color
+    commentstyle=\itshape\color{gray}, % Style for comments (italic and gray)
+    keywordstyle=\bfseries\color{blue},% Style for keywords (bold and blue)
+    numberstyle=\tiny\color{gray},     % Style for line numbers (tiny and gray)
+    basicstyle=\ttfamily\footnotesize, % Basic font style (typewriter font, small size)
+    breaklines=true,                   % Enable line breaking
+    captionpos=b,                      % Position captions at the bottom
+    keepspaces=true,                   % Preserve spaces in text
+    numbers=left,                      % Display line numbers on the left
+    numbersep=5pt,                     % Space between line numbers and code
+    showspaces=false,                  % Hide spaces
+    showstringspaces=false,            % Hide spaces in strings
+    showtabs=false,                    % Hide tab characters
+    tabsize=4,                         % Set tab size to 4 spaces
+    xleftmargin=10pt,                  % Adds left margin for better alignment
+    frame=single,                      % Add a frame around the code
+    mathescape=true,                   % Enable math mode for $...$ expressions
+    escapeinside={(*}{*)}              % Allow LaTeX formatting using (*...*)
 }
 
 % Apply the style to pseudocode

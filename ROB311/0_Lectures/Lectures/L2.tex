@@ -1,0 +1,360 @@
+\begin{summary}
+    \begin{itemize}
+        \item Not responsible for proofs, but know when to use each algorithm.
+    \end{itemize}
+\end{summary}
+\subsection{Setup}
+\begin{definition} In a search problem, it is assumed that: 
+    \begin{itemize}
+        \item There is only one agent (us).
+        \item For each state, $s \in S$, we have a discrete set of actions, $\mathcal{A}(s)$.
+        \item The transition resulting from a move, $(s, a)$, is deterministic; the resulting state is $tr(s, a)$.
+        \item $cst(s, a, tr(s, a))$ is our cost for the transition, $(s, a, tr(s, a))$.
+        \item We want to realize a path that minimizes our cost.
+    \end{itemize}
+    
+    A search problem may have no solutions, in which case, we define the solution as \texttt{NULL}.
+\end{definition}
+
+\subsection{Search Graphs}
+\begin{definition}
+    In a search graph (a graph representing a search problem):
+    \begin{itemize}
+        \item $S$ is defined by the vertices.
+        \item $\mathcal{G}$ is a subset of the vertices.
+        \item $s^{(0)}$ is some vertex.
+        \item $tr(\cdot, \cdot)$ and $\mathcal{T}$ are defined by the edges.
+        \item $cst(\cdot, \cdot, \cdot)$ is defined by the edge weights.
+    \end{itemize}
+\end{definition}
+
+\subsection{Path Trees}
+\begin{definition}
+    A search algorithm explores a tree of possible paths. 
+    \begin{itemize}
+        \item In such a tree, each node represents the path from the root to itself.
+        \begin{itemize}
+            \item The node may also include other info (such as the path's origiin, cost, etc).
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsection{Search Algorithms}
+\begin{definition}
+    All search algorithms follow the template below:
+
+\begin{lstlisting}
+$\mathcal{O} \gets \{(\langle \rangle, 0)\}$ (*\hfill $\triangleright$ initialize a set of open nodes*) 
+SEARCH($\mathcal{O}$)
+\end{lstlisting}
+\begin{itemize}
+    \item $\langle \rangle$ is the empty path, and $0$ is the cost of the empty path.
+\end{itemize}
+
+\begin{lstlisting}
+procedure SEARCH($\mathcal{O}$)
+    if $\mathcal{O} = \emptyset$ then
+        return NULL  (*\hfill $\triangleright$ the search algorithm failed to find a path to a goal*)
+    $n \gets \textsc{Remove}(\mathcal{O})$ (*\hfill $\triangleright$ "explore" a node $n$*)
+    if $\textsc{dst}(n) \in \mathcal{G}$ then
+        return $n$ (*\hfill $\triangleright$ the search algorithm found a path to a goal*)
+    for $n' \in \textsc{chl}(n)$ do
+        $\mathcal{O} \gets \mathcal{O} \cup \{n'\}$ (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+    SEARCH($\mathcal{O}$)
+\end{lstlisting}
+\begin{itemize}
+    \item Explore: Remove a node from the open set.
+    \item Exapnd: Generate the children of the node.
+    \item Export: Add the children to the open set.
+\end{itemize}
+
+\end{definition}
+
+\begin{warning}
+    The key difference is in the order that \textsc{Remove}($\cdot$) removes nodes.
+\end{warning}
+
+\subsubsection{Characteristics of a Search Algorithm}
+\begin{definition}
+    We want to choose \texttt{REMOVE(·)} so that the algorithm exhibits the following characteristics:
+
+    \begin{center}
+        \begin{tabular}{|p{3cm}|p{9cm}|}
+        \hline
+        \textbf{Characteristic} & \textbf{Description} \\ \hline
+        Halting & Terminates after finitely many nodes explored \\ \hline
+        Sound & Returned (possibly NULL) solution is correct \\ \hline
+        Complete & Halting and sound when a non-NULL solution exists \\ \hline
+        Optimal & Returns an optimal solution when multiple exist \\ \hline
+        Time Efficient & Minimizes the nodes \textbf{explored}/expanded/exported \\ \hline
+        Space Efficient & Minimizes the nodes simultaneously open \\ \hline
+        \end{tabular}
+    \end{center}
+    \vspace{1em}   
+    \begin{itemize}
+        \item Will be using explored for time efficiency.
+    \end{itemize} 
+    \vspace{1em}
+
+    The characteristics of the algorithm also depend on several properties of the path tree over which it searches. These properties include:
+    \begin{itemize}
+        \item Branching factor: $b$ ($b < \infty$), the maximum number of children a node can have.
+        \item Depth: $d$, the length of the longest path.
+        \item Length of the shortest solution: $l^*$
+        \item Cost of the cheapest solution: $c^*$
+        \item Cost of the cheapest edge: $\epsilon$ 
+    \end{itemize}
+
+    We want to choose \texttt{REMOVE($\cdot$)} so that the algorithm exhibits the aforementioned characteristics for as many path trees as possible.
+
+\end{definition}
+
+\subsubsection{Breadth First Search (BFS)}
+\begin{definition}
+    Explores the least-recently expanded open node first.
+    \begin{center}
+        \begin{tabular}{|p{3cm}|p{3cm}|}
+        \hline
+        \textbf{Property} & \textbf{Description} \\ \hline
+        Halting & $d < \infty$ \newline non-NULL \\ \hline
+        Sound & always \\ \hline
+        Complete & always \\ \hline
+        Optimal & constant cst \\ \hline
+        Time & $b^{l^*}$ \\ \hline
+        Space & $b^{l^* + 1}$ \\ \hline
+        \end{tabular}
+    \end{center}
+\end{definition}
+
+\subsubsection{Depth First Search (DFS)}
+\begin{definition}
+    Explores the most-recently expanded open node first.
+    \begin{center}
+        \begin{tabular}{|p{3cm}|p{3cm}|}
+        \hline
+        \textbf{Property} & \textbf{Description} \\ \hline
+        Halting & $d < \infty$ \\ \hline
+        Sound & always \\ \hline
+        Complete & $d < \infty$ \\ \hline
+        Optimal & never \\ \hline
+        Time & $b^d$ \\ \hline
+        Space & $bd$ \\ \hline
+        \end{tabular}
+    \end{center}    
+\end{definition}
+
+\subsubsection{Iterative Deepening DFS (IDDFS)}
+\begin{definition}
+    Same as DFS but with iterative deepening.
+    \begin{center}
+        \begin{tabular}{|p{3cm}|p{3cm}|}
+        \hline
+        \textbf{Property} & \textbf{Description} \\ \hline
+        Halting & always \\ \hline
+        Sound & always \\ \hline
+        Complete & always \\ \hline
+        Optimal & constant cst \\ \hline
+        Time & $b^{l^*}$ \\ \hline
+        Space & $bl^*$ \\ \hline
+        \end{tabular}
+    \end{center}    
+\end{definition}
+
+\subsubsection{Cheapest-First Search (CFS)}
+\begin{definition}
+    Explores the cheapest open node first.
+    \begin{center}
+        \begin{tabular}{|p{3cm}|p{3cm}|}
+        \hline
+        \textbf{Property} & \textbf{Description} \\ \hline
+        Halting & $d < \infty$ \newline non-NULL \\ \hline
+        Sound & yes \\ \hline
+        Complete & $\epsilon > 0$ \\ \hline
+        Optimal & $\epsilon > 0$ \\ \hline
+        Time & $b^{c^*/\epsilon}$ \\ \hline
+        Space & $b^{c^*/\epsilon + 1}$ \\ \hline
+        \end{tabular}
+    \end{center}    
+\end{definition}
+
+\subsection{Modifications to Search Algorithms}
+\subsubsection{Depth-Limiting}
+\begin{definition}
+    Depth limit of $d_{\text{max}}$ to any search algorithm by modifying \texttt{SEARCH($\cdot$)} as follows:
+\begin{lstlisting}
+procedure SEARCHDL($\mathcal{O}$, $d_{\text{max}}$):
+    if $\mathcal{O} = \emptyset$ then
+        return NULL (*\hfill $\triangleright$ the search algorithm failed to find a path to a goal*)
+    $n \leftarrow \text{REMOVE}(\mathcal{O})$ (*\hfill $\triangleright$ "explore" a node, $n$*)
+    if dst($n$) $\in \mathcal{G}$ then
+        return $n$ (*\hfill $\triangleright$ the search algorithm found a path to a goal*)
+    for $n' \in \text{chl}(n)$ do (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+        if len($n'$) $\leq d_{\text{max}}$ then (*\hfill $\triangleright$ unless the child is too long*)
+            $\mathcal{O} \leftarrow \mathcal{O} \cup \{n'\}$
+    SEARCHDL($\mathcal{O}$, $d_{\text{max}}$)
+\end{lstlisting}
+
+\end{definition}
+
+\subsubsection{Iterative Deepening}
+\begin{definition}
+    Iteratively increase the depth-limit, $d_{\max}$, to any search algorithm w/ depth-limiting, by placing \texttt{SEARCHDL($\cdot$)} in a wrapper, \texttt{SEARCHID($\cdot$)}:
+\begin{lstlisting}
+procedure SEARCHID():
+    $n \leftarrow \text{NULL}$
+    $d_{\text{max}} \leftarrow 0$
+    (*$\triangleright$ while a solution has not been found, reset the open set, run the search algorithm, then increase the depth-limit*)
+    while $n = \text{NULL}$ do
+        $\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
+        $n \leftarrow \text{SEARCHDL}(\mathcal{O}, d_{\text{max}})$
+        $d_{\text{max}} \leftarrow d_{\text{max}} + 1$
+    return $n$
+\end{lstlisting}
+    
+\end{definition}
+
+\begin{warning}
+    Increasing $d_{\text{max}}$ can be done in different ways.
+\end{warning}
+
+\subsubsection{Cost-Limiting}
+\begin{definition}
+    Cost limit of $c_{\text{max}}$ to any search algorithm by modifying \texttt{SEARCH($\cdot$)} as follows:
+
+\begin{lstlisting}
+procedure SEARCHCL($\mathcal{O}$, $c_{\text{max}}$):
+    if $\mathcal{O} = \emptyset$ then
+        return NULL (*\hfill $\triangleright$ the search algorithm failed to find a path to a goal*)
+    $n \leftarrow \text{REMOVE}(\mathcal{O})$ (*\hfill $\triangleright$ "explore" a node, $n$*)
+    if dst($n$) $\in \mathcal{G}$ then
+        return $n$ (*\hfill $\triangleright$ the search algorithm found a path to a goal*)
+    for $n' \in \text{chl}(n)$ do (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+        if cst($n'$) $\leq c_{\text{max}}$ then (*\hfill $\triangleright$ unless the child is too expensive*)
+            $\mathcal{O} \leftarrow \mathcal{O} \cup \{n'\}$
+    SEARCHCL($\mathcal{O}$, $c_{\text{max}}$)
+\end{lstlisting}
+
+\end{definition}
+
+\subsubsection{Iterative-Inflating}
+\begin{definition}
+    Iteratively increase the cost limit, $c_{\text{max}}$, to any search algorithm with cost-limiting, by placing \texttt{SEARCHCL($\cdot$)} in a wrapper, \texttt{SEARCHII($\cdot$)}:
+
+\begin{lstlisting}
+procedure SEARCHII():
+    $n \leftarrow \text{NULL}$
+    $c_{\text{max}} \leftarrow 0$
+    (*$\triangleright$ while a solution has not been found, reset the open set, run the search algorithm, then increase the cost-limit*)
+    while $n = \text{NULL}$ do
+        $\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
+        $n \leftarrow \text{SEARCHCL}(\mathcal{O}, c_{\text{max}})$
+        $c_{\text{max}} \leftarrow c_{\text{max}} + \epsilon$
+    return $n$
+\end{lstlisting}
+
+\end{definition}
+
+\begin{warning}
+    Increasing $c_{\text{max}}$ can be done in different ways.
+\end{warning}
+
+\subsubsection{Intra-Path Cycle Checking}
+\begin{definition}
+    Do not expand a path if it is cyclic. Modify \texttt{SEARCH($\cdot$)} as follows:
+
+\begin{lstlisting}
+procedure SEARCH($\mathcal{O}$):
+    if $\mathcal{O} = \emptyset$ then
+        return NULL
+    $n \leftarrow \text{REMOVE}(\mathcal{O})$
+    if dst($n$) $\in \mathcal{G}$ then
+        return $n$
+    for $n' \in \text{chl}(n)$ do (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+        if not CYCLIC($n'$) then (*\hfill $\triangleright$ unless the child is cyclic*)
+            $\mathcal{O} \leftarrow \mathcal{O} \cup \{n'\}$
+    SEARCH($\mathcal{O}$)
+\end{lstlisting}
+\begin{itemize}
+    \item Optimately of an algorithm is preserved provided $\epsilon>0$.
+\end{itemize}
+
+\end{definition}
+
+\subsubsection{Inter-Path Cycle Checking}
+\begin{definition}
+    We modify \texttt{SEARCH($\cdot$)} as follows:
+
+\begin{lstlisting}
+procedure SEARCH($\mathcal{O}$, $\mathcal{C}$):
+    if $\mathcal{O} = \emptyset$ then
+        return NULL
+    $n \leftarrow \text{REMOVE}(\mathcal{O})$
+    $\mathcal{C} \leftarrow \mathcal{C} \cup \{n\}$ (*\hfill $\triangleright$ add $n$ to the closed set*)
+    if dst($n$) $\in \mathcal{G}$ then
+        return $n$
+    for $n' \in \text{chl}(n)$ do (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+        if $n' \notin \mathcal{C}$ then (*\hfill $\triangleright$ unless the child's destination is closed*)
+            $\mathcal{O} \leftarrow \mathcal{O} \cup \{n'\}$
+    SEARCH($\mathcal{O}$, $\mathcal{C}$)
+\end{lstlisting}
+
+and then call the algorithm as follows:
+
+\begin{lstlisting}[mathescape=true, escapeinside={(*}{*)}, numbers=left, frame=single]
+$\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
+$\mathcal{C} \leftarrow \emptyset$ (*\hfill $\triangleright$ initialize a set of closed vertices*)
+SEARCH($\mathcal{O}$, $\mathcal{C}$)
+\end{lstlisting}
+
+\end{definition}
+
+\subsection{Informed Search Algorithms}
+\begin{motivation}
+    We want to somehow explore more "promising" paths first.    
+\end{motivation}
+
+\subsubsection{Estimated Cost}
+\begin{definition}
+    $\text{ecst}(\cdot)$, to estimate the total cost to a goal given a path, $p$, based on the following:
+    \begin{itemize}
+        \item Cost of path $p$: $\text{cst}(p)$
+        \item Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$: $\text{hur} : S \to \mathbb{R}_+$
+        \begin{itemize}
+            \item $\text{hur}(s)$ estimates the cost to get to $\mathcal{G}$ from $s$ and $\text{hur}(p)$ means $\text{hur}(\text{dst}(p))$.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Some common choices for $\text{ecst}(\cdot)$ include:
+    \begin{enumerate}
+        \item $\text{ecst}(p) = \text{hur}(p)$; called nearest-first search (NFS)
+        \item $\text{ecst}(p) = \text{cst}(p) + \text{hur}(p)$; called A$^*$ (A-star)
+    \end{enumerate}
+\end{example}
+\subsubsection{Heuristics}
+
+
+\subsubsection{Heuristic-First Search (HFS)}
+
+\subsubsection{A-Star Search (A*)}
+
+\subsubsection{Iterative Inflating A-Star Search (IIA*)}
+
+\subsubsection{Designing Heuristics via Problem Relaxation}
+
+\subsubsection{Combining Heuristics}
+
+
+
+\subsection{Characteristics of an Informed Search Algorithm}
+
+\subsection{Anytime Search Algorithms}
+
+\subsection{Formulating a Search Problem}
+
+
+
+
+
+
