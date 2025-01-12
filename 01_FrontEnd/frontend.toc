@@ -5,3 +5,6 @@
 \contentsline {section}{\numberline {2}Tailwind CSS}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Custom Styles}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Clean Code}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}GSAP (GreenSock Animation Platform)}{2}{section.3}%
+\contentsline {section}{\numberline {4}Framer Motion}{2}{section.4}%
+\contentsline {section}{\numberline {5}3JS}{2}{section.5}%
