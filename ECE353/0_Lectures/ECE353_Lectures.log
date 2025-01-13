@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  12 JAN 2025 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  13 JAN 2025 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1195,10 +1195,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
-)
-\tf@toc=\write5
-\openout5 = `ECE353_Lectures.toc'.
-
  [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
@@ -1225,49 +1221,131 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./Lectures/L0.tex
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+\tf@toc=\write5
+\openout5 = `ECE353_Lectures.toc'.
+
+ [2] (./Lectures/L0.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 63.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]) [3] (./Lectures/L1.tex
-<../Images/L1_0.png, id=250, 395.4775pt x 290.08376pt>
+) [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]) [4] (./Lectures/L1.tex
+<../Images/L1_0.png, id=289, 395.4775pt x 290.08376pt>
 File: ../Images/L1_0.png Graphic file (type png)
 <use ../Images/L1_0.png>
 Package pdftex.def Info: ../Images/L1_0.png  used on input line 36.
 (pdftex.def)             Requested size: 249.55872pt x 183.05472pt.
- [4 <../Images/L1_0.png>]) [5] (./Lectures/L2.tex (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+ [5 <../Images/L1_0.png>] [6] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-) [6]
-<../Images/L1_1.png, id=284, 954.56625pt x 529.98pt>
+)
+<../Images/L1_1.png, id=306, 954.56625pt x 529.98pt>
 File: ../Images/L1_1.png Graphic file (type png)
 <use ../Images/L1_1.png>
-Package pdftex.def Info: ../Images/L1_1.png  used on input line 117.
+Package pdftex.def Info: ../Images/L1_1.png  used on input line 198.
 (pdftex.def)             Requested size: 249.55872pt x 138.5517pt.
-<../Images/L1_2.png, id=285, 892.33376pt x 552.0625pt>
+ [7]
+<../Images/L1_2.png, id=327, 892.33376pt x 552.0625pt>
 File: ../Images/L1_2.png Graphic file (type png)
 <use ../Images/L1_2.png>
-Package pdftex.def Info: ../Images/L1_2.png  used on input line 136.
+Package pdftex.def Info: ../Images/L1_2.png  used on input line 217.
 (pdftex.def)             Requested size: 249.55872pt x 154.39111pt.
- [7 <../Images/L1_1.png>]
-<../Images/L1_3.png, id=298, 932.48375pt x 211.79124pt>
+<../Images/L1_3.png, id=328, 932.48375pt x 211.79124pt>
 File: ../Images/L1_3.png Graphic file (type png)
 <use ../Images/L1_3.png>
-Package pdftex.def Info: ../Images/L1_3.png  used on input line 141.
+Package pdftex.def Info: ../Images/L1_3.png  used on input line 222.
 (pdftex.def)             Requested size: 249.55872pt x 56.68025pt.
-<../Images/L1_4.png, id=299, 927.465pt x 296.10625pt>
+ [8 <../Images/L1_1.png> <../Images/L1_2.png>]
+<../Images/L1_4.png, id=340, 927.465pt x 296.10625pt>
 File: ../Images/L1_4.png Graphic file (type png)
 <use ../Images/L1_4.png>
-Package pdftex.def Info: ../Images/L1_4.png  used on input line 148.
+Package pdftex.def Info: ../Images/L1_4.png  used on input line 229.
 (pdftex.def)             Requested size: 249.55872pt x 79.67413pt.
-<../Images/L1_5.png, id=300, 928.46875pt x 282.05376pt>
+<../Images/L1_5.png, id=341, 928.46875pt x 282.05376pt>
 File: ../Images/L1_5.png Graphic file (type png)
 <use ../Images/L1_5.png>
-Package pdftex.def Info: ../Images/L1_5.png  used on input line 150.
+Package pdftex.def Info: ../Images/L1_5.png  used on input line 231.
 (pdftex.def)             Requested size: 249.55872pt x 75.81122pt.
- [8 <../Images/L1_2.png> <../Images/L1_3.png> <../Images/L1_4.png> <../Images/L1_5.png>]) [9] (./Lectures/L3.tex
-<../Images/L3_1.png, id=317, 1098.1025pt x 458.71375pt>
+) [9 <../Images/L1_3.png> <../Images/L1_4.png> <../Images/L1_5.png>] (./Lectures/L2.tex
+<../Images/L3_1.png, id=352, 1098.1025pt x 458.71375pt>
 File: ../Images/L3_1.png Graphic file (type png)
 <use ../Images/L3_1.png>
-Package p
+Package pdftex.def Info: ../Images/L3_1.png  used on input line 32.
+(pdftex.def)             Requested size: 249.55872pt x 104.24904pt.
+<../Images/L3_2.png, id=353, 1295.84125pt x 556.0775pt>
+File: ../Images/L3_2.png Graphic file (type png)
+<use ../Images/L3_2.png>
+Package pdftex.def Info: ../Images/L3_2.png  used on input line 42.
+(pdftex.def)             Requested size: 249.55872pt x 107.08978pt.
+ [10 <../Images/L3_1.png> <../Images/L3_2.png>]
+<../Images/L3_4.png, id=362, 1268.74pt x 542.025pt>
+File: ../Images/L3_4.png Graphic file (type png)
+<use ../Images/L3_4.png>
+Package pdftex.def Info: ../Images/L3_4.png  used on input line 60.
+(pdftex.def)             Requested size: 249.55872pt x 106.60835pt.
+<../Images/L3_3.png, id=363, 591.20876pt x 226.8475pt>
+File: ../Images/L3_3.png Graphic file (type png)
+<use ../Images/L3_3.png>
+Package pdftex.def Info: ../Images/L3_3.png  used on input line 64.
+(pdftex.def)             Requested size: 249.55872pt x 95.75642pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 87.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<../Images/L3_6.png, id=364, 952.55875pt x 464.73625pt>
+File: ../Images/L3_6.png Graphic file (type png)
+<use ../Images/L3_6.png>
+Package pdftex.def Info: ../Images/L3_6.png  used on input line 135.
+(pdftex.def)             Requested size: 249.55872pt x 121.75044pt.
+<../Images/L3_7.png, id=365, 690.58pt x 232.87pt>
+File: ../Images/L3_7.png Graphic file (type png)
+<use ../Images/L3_7.png>
+Package pdftex.def Info: ../Images/L3_7.png  used on input line 138.
+(pdftex.def)             Requested size: 249.55872pt x 84.15292pt.
+<../Images/L3_8.png, id=366, 1002.74625pt x 617.30624pt>
+File: ../Images/L3_8.png Graphic file (type png)
+<use ../Images/L3_8.png>
+Package pdftex.def Info: ../Images/L3_8.png  used on input line 141.
+(pdftex.def)             Requested size: 249.55872pt x 153.62915pt.
+<../Images/L3_9.png, id=367, 1253.68375pt x 716.6775pt>
+File: ../Images/L3_9.png Graphic file (type png)
+<use ../Images/L3_9.png>
+Package pdftex.def Info: ../Images/L3_9.png  used on input line 144.
+(pdftex.def)             Requested size: 249.55872pt x 142.65495pt.
+ [11{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <../Images/L3_4.png> <../Images/L3_3.png>] [12 <../Images/L3_6.png> <../Images/L3_7.png>] [13 <../Images/L3_8.png> <../Images/L3_9.png>]) [14] (./Lectures/L3.tex
+<../Images/L3_10.png, id=433, 544.0325pt x 524.96124pt>
+File: ../Images/L3_10.png Graphic file (type png)
+<use ../Images/L3_10.png>
+Package pdftex.def Info: ../Images/L3_10.png  used on input line 48.
+(pdftex.def)             Requested size: 249.55872pt x 240.81224pt.
+ [15]
+<../Images/L3_11.png, id=438, 1242.6425pt x 467.7475pt>
+File: ../Images/L3_11.png Graphic file (type png)
+<use ../Images/L3_11.png>
+Package pdftex.def Info: ../Images/L3_11.png  used on input line 74.
+(pdftex.def)             Requested size: 249.55872pt x 93.93324pt.
+ [16 <../Images/L3_10.png> <../Images/L3_11.png>]) [17] (./ECE353_Lectures.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+Package rerunfilecheck Info: File `ECE353_Lectures.out' has not changed.
+(rerunfilecheck)             Checksum: 4F3C01E8199B1F87570B03E95B9D63F3;8306.
+ ) 
+Here is how much of TeX's memory you used:
+ 51573 strings out of 474116
+ 1201904 string characters out of 5743682
+ 2014187 words of memory out of 5000000
+ 72899 multiletter control sequences out of 15000+600000
+ 620255 words of font info for 101 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,11n,107p,816b,1769s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on ECE353_Lectures.pdf (17 pages, 1661801 bytes).
+PDF statistics:
+ 542 PDF objects out of 1000 (max. 8388607)
+ 464 compressed objects within 5 object streams
+ 166 named destinations out of 1000 (max. 500000)
+ 453 words of extra memory for PDF output out of 10000 (max. 10000000)
+

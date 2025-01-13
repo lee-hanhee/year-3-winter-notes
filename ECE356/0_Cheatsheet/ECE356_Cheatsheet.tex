@@ -63,7 +63,7 @@
     2. Solve $f(x,u) = 0$ to find $(x,u) = (\bar{x}, \bar{u})$. \\
     3. If specific $u = \bar{u}$, then find $x = \bar{x}$ by solving $f(x,\bar{u}) = 0$.
 
-    \textcolor{red}{\textbf{Linearization Nonlinear System}} Consider system $\overset{\cdot}{x} = f(x,u)$ w/ equ. pair $(\bar{x}, \bar{u})$, then error coordinates around equ. pair $\delta x = x - \bar{x}$, $\delta u = u - \bar{u}$, $\delta y = y - h(\bar{x},\bar{u})$ w/ \\
+    \textcolor{red}{\textbf{Linearization of Nonlinear System}} Consider system $\overset{\cdot}{x} = f(x,u)$ w/ equ. pair $(\bar{x}, \bar{u})$, then error coordinates around equ. pair $\delta x = x - \bar{x}$, $\delta u = u - \bar{u}$, $\delta y = y - h(\bar{x},\bar{u})$ w/ \\
     $\delta \overset{\cdot}{x} = A \delta x + B \delta u$, $A = \frac{\partial f (\bar{x}, \bar{u})}{\partial \underline{x}}  \in \mathbb{R}^{n_1 \times n_1}$, $B = \frac{\partial f (\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}^{n_1}$, \\
     $\delta y = C \delta x + D \delta u$, $C = \frac{\partial h}{\partial \underline{x}} (\bar{x}, \bar{u}) \in \mathbb{R}^{1 \times n_1}$, $D = \frac{\partial h(\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}$ \\
     *Only valid at equ. pairs.
@@ -82,8 +82,52 @@
     2. Derive $A,B,C,D$ and then evaluate at $(\bar{x}, \bar{u})$ \\
     3. Write $\delta \overset{\cdot}{x} = A \delta x + B \delta u$ and $\delta y = C \delta x + D \delta u$ \\
 
+    \textcolor{red}{\textbf{Laplace Transform}} Given a fcn $f: \mathbb{R}_+ \to \mathbb{R}^n$, its Laplace transform is 
+    $F(s) = \mathcal{L} \{ f(t) \} := \int_{0^-}^{\infty} f(t) e^{-st} \, dt$, $s \in \mathbb{C}$. \\ 
+    *$\mathcal{L}: f(t) \mapsto F(s)$, $t \in \mathbb{R}_+$ (time domain) \& $s \in \mathbb{C}$ (Laplace domain).
+    
+    \textcolor{blue}{\textbf{P.W. CTS:}} A fcn $f: \mathbb{R}_+ \to \mathbb{R}^n$ is \textbf{p.w. cts} if on every finite interval of $\mathbb{R}$, $f(\cdot)$ has at most a finite \# of discontinuity points ($t_i$) and the limits 
+    $\lim_{t \to t_i^+} f(t)$, $\lim_{t \to t_i^-} f(t)$ are finite.
 
+    \customFigure[0.1]{../Images/L4_0.png}
 
+    \textcolor{blue}{\textbf{Exp. Order}} A function $f: \mathbb{R}_+ \to \mathbb{R}^n$ is of \textbf{exp. order} if $\exists$ constants $K, \rho, T > 0$ s.t. $\|f(t)\| \leq K e^{\rho t}$, $\forall t \geq T$.
+
+    \textcolor{blue}{\textbf{Existence of LT Thm}} If $f(\cdot)$ is p.w. cts and of exp. order w/ constants $K, \rho, T > 0$, then $F(\cdot)$ exists and is defined $\forall \, s \in D := \{s \in \mathbb{C} : \text{Re}(s) > \rho\}$ and $F(\cdot)$ is analytic on $D$. \\
+    *$D$: Region of convergence (ROC), open half plane. \\
+    \customFigure[0.1]{../Images/L4_1.png}
+
+    \textcolor{blue}{\textbf{Unit Step}} $\mathbf{1}(t) := 
+        \begin{cases} 
+        1, & \text{if } t \geq 0 \\ 
+        0, & \text{otherwise}
+        \end{cases}$
+
+    \textcolor{blue}{\textbf{Table of Common Laplace Transforms:}} $f(t) \; \mid \; F(s)$ \\ 
+    $\mathbf{1}(t) \mapsto \frac{1}{s} \, \quad t \mathbf{1}(t) \mapsto \frac{1}{s^2} \quad t^k \, \mathbf{1}(t) \mapsto \frac{k!}{s^{k+1}} \quad e^{at} \, \mathbf{1}(t) \mapsto \frac{1}{s-a}$ \\ 
+    $t^n e^{at} \, \mathbf{1}(t) \mapsto \frac{n!}{(s-a)^{n+1}} \quad \sin(at) \, \mathbf{1}(t) \mapsto \frac{a}{s^2 + a^2} \quad $ \\
+    $ \cos(at) \, \mathbf{1}(t) \mapsto \frac{s}{s^2 + a^2} $
+
+    \textcolor{blue}{\textbf{Prop. of Laplace Transform}} \textbf{Linearity:} \\ 
+    $\mathcal{L} \{c f(t) + g(t)\} = c \mathcal{L} \{f(t)\} + \mathcal{L} \{g(t)\}, c \sim \text{constant}.$  
+    
+    \textbf{Differentiation:} If the Laplace transform of $f'(t)$ exists, then $\mathcal{L} \{f'(t)\} = s \mathcal{L} \{f(t)\} - f(0^-).$  \\
+    If the Laplace transform of $f^{(n)}(t) := \frac{d^n f}{dt^n}(t)$ exists, then \\ 
+    $\mathcal{L} \{f^{(n)}(t)\} = s^n \mathcal{L} \{f(t)\} - \sum_{i=1}^n s^{n-i} f^{(i-1)}(0^-).$  
+    
+    \textbf{Integration:}  
+    $\mathcal{L} \left\{\int_0^t f(\tau) d\tau \right\} = \frac{1}{s} \mathcal{L} \{f(t)\}.$  
+    
+    \textbf{Convolution:} Let $(f * g)(t) := \int_0^t f(\tau) g(t-\tau) d\tau$, then \\ 
+    $\mathcal{L} \{(f * g)(t)\} = \mathcal{L} \{f(t)\} \mathcal{L} \{g(t)\}.$  
+    
+    \textbf{Time Delay:} $\mathcal{L} \{f(t-T) \mathbf{1}(t-T)\} = e^{-Ts} \mathcal{L} \{f(t)\}, t \geq 0.$  
+    
+    \textbf{Multiplication by $t$:} $\mathcal{L} \{t f(t)\} = -\frac{d}{ds} [\mathcal{L} \{f(t)\}].$  
+    
+    \textbf{Shift in $s$:} $\mathcal{L} \{e^{at} f(t)\} = F(s-a) = \mathcal{L} \{f(t)\}\big|_{s \to s-a}$, where $F(s) = \mathcal{L} \{f(t)\}$ \& $a ~ \text{const}$. \\   
+    
+    \textcolor{red}{\textbf{Cauchy's Residue THM}}
 
         }
 \end{paracol}

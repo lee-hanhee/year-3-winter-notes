@@ -1,158 +1,204 @@
 \begin{summary}
     \begin{itemize}
-        \item The kernel is the part of the operating system (OS) that interacts with hardware (it runs in kernel mode).
-        \item System calls are the interface between user and kernel mode:
+        \item \texttt{ldd <executable>}: Shows which dynamic libraries are used by the executable.
+        \item \texttt{-Db\_sanitize=address}: Add the flag to Meson to detect memory leaks, which was built into the compiler, but you have to recompile.
+        \item \texttt{valgrind <executable>}: Detect memory leaks from malloc and free. 
         \begin{itemize}
-            \item Every program must use this interface!
+            \item \textbf{Warning:} GNU C library (libc.so) may allocate memroy for its own uses, so it doesn't bother to free.
         \end{itemize}
-        \item File format and instructions to define a simple “Hello world” (in 168 bytes):
-        \begin{itemize}
-            \item Difference between API and ABI.
-            \item How to explore system calls.
-        \end{itemize}
-        \item Different kernel architectures shift how much code runs in kernel mode.
-    \end{itemize}    
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{itemize}
+        \item Know the high-level rules of ABI changes without API changes.
+    \end{itemize}
 \end{summary}
 
 \begin{faq}
-    \begin{itemize}
-        \item What is difference b/w printf and write?
-    \end{itemize}
+
 \end{faq}
-\subsection{File Descriptor (Abstraction)}
+
+\subsection{What is an Operating System?}
+\begin{definition}
+    An operating system consists of a kernel and libraries required for your application.
+\end{definition}
+
+\begin{warning}
+    OS have different libraries for different applications.
+\end{warning}
+
+\subsection{Normal Compilation in C}
+\begin{definition}
+    \customFigure[0.5]{../Images/L3_1.png}{}
+\end{definition}
+
+\begin{notes}
+    Object files (.o) are ELF files with code for functions.
+\end{notes}
+
+\subsection{Static Libraries and Dynamic Libraries}
+\subsubsection{Static Libraries}
+\begin{definition}
+    \customFigure[0.5]{../Images/L3_2.png}{}
+    \begin{itemize}
+        \item Static libraries are included at link time.
+    \end{itemize}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item Put all .o files into a single .a file (i.e. library), then link the library with the application.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Dynamic Libraries}
 \begin{motivation}
-    Since our processes are independent, we need an explicit way to transfer data.
+    C standard library (.so) is a dynamic library that is a collection of .o files containing funciton defintiions.
 \end{motivation}
 
 \begin{definition}
-    \begin{enumerate}
-        \item \textbf{IPC:} Inter-process communication is transferring data b/w two processes.
-        \item \textbf{File Descriptor:} A resource that users may either read bytes from or write bytes to (identified by an index stored in a process).
+    \customFigure[0.5]{../Images/L3_4.png}{}
+    \begin{itemize}
+        \item Dynamic libraries are included at runtime.
+        \item Dynamic libraries are for reusable code. Multiple applications can use the same library.
+        \customFigure[0.5]{../Images/L3_3.png}{}
         \begin{itemize}
-            \item e.g. File or terminal.
-            \item e.g. 0 is standard input, 1 is standard output, and 2 is standard error.
+            \item  The operating system only loads \texttt{libc.so} in memory once, and shares it.
         \end{itemize}
-    \end{enumerate}
-\end{definition}
-
-\subsection{System Calls}
-\begin{definition}
-    System calls are the interface b/w user and kernel mode.
-\end{definition}
-
-\subsubsection{System Calls Make Requests to the Operating System}
-\begin{definition}
-\begin{lstlisting}[language=C]
-ssize_t write(int fd, const void *buf, size_t count);
-\end{lstlisting}
-\begin{itemize}
-    \item Description: writes bytes from a byte array to a file descriptor
-    \begin{itemize}
-        \item fd: the file descriptor
-        \item buf: the address of the start of the byte array (called a buffer)
-        \item count: how many bytes to write from the buffer
+        \item Dynamic libraries allow easier debugging. 
+        \begin{itemize}
+            \item Control dynamic linking with environment variables \texttt{LD\_LIBRARY\_PATH} and \texttt{LD\_PRELOAD}.
+        \end{itemize}
     \end{itemize}
-\end{itemize}
-
-\begin{lstlisting}[language=C]
-void exit_group(int status);
-\end{lstlisting}
-
-\begin{itemize}
-    \item Description: exits the current process and sets an exit status code
-    \begin{itemize}
-        \item status: the exit status code (0–255)
-    \end{itemize}
-\end{itemize}  
 \end{definition}
+
+\subsubsection{Comparison of Static and Dynamic Libraries}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Static:} Statically linking basically copies the \texttt{.o} files directly into the executable
+        \begin{itemize}
+            \item Statically linking prevents re-using libraries (commonly used libraries have many duplicates)
+            \item Any updates to a static library requires the executable to be \textbf{recompiled}
+        \end{itemize}
+        \item \textbf{Dynamic:} The executable has a reference to the dynamic library
+        \begin{itemize}
+            \item Dynamic libraries updates can break executables.
+            \begin{itemize}
+                \item A dynamic library update may subtly change the ABI causing a crash.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{notes}
 
 \begin{example}
-    \textbf{Hypothetical "Hello World" Program}
-\begin{lstlisting}[language=C]
-void _start(void) {
-    write(1, "Hello world\n", 12);
-    exit_group(0);
-}
-\end{lstlisting}
-\end{example}
-
-\begin{warning}
-    System calls uses registers, while C is stack based.
-\end{warning}
-
-\subsection{API Tells You What and ABI Tells You How}
-\begin{definition}
-    \begin{itemize}
-        \item Application Programming Interface (API) abstracts the details and describes the arguments and return value of a function.
-        \item Application Binary Interface (ABI) specifies the details, specifically how to pass arguments and where the return value is.
-    \end{itemize}
-\end{definition}
-
-\subsection{Magic}
-\begin{definition}
-    The "magic bytes" refer to the first 4 bytes of a file that uniquely identify the file format. 
-\end{definition}
-
-\subsubsection{Programs on Linux Use the ELF File Format}
-\begin{definition}
-    Executable and Linkable Format (ELF) specifies both executables and libraries.
-    \begin{itemize}
-        \item Always starts with the 4 bytes: 0x7F 0x45 0x4C 0x46 or with ASCII encoding: DEL 'E' 'L' 'F'
-    \end{itemize}
-\end{definition}
-
-\begin{example} \textbf{Hello World ELF File}
     \begin{enumerate}
-        \item \textbf{168 Byte Program:}
+        \item \textbf{Dynamic Library ABI Changes:}
         \begin{itemize}
-            \item Tells the OS to load the entire executable file into memory at address \texttt{0x10000}.
-            \item The file header is 64 bytes, and the ``program header'' is 56 bytes (120 bytes total).
-            \item The next 36 bytes are instructions, followed by 12 bytes for the string:
-                \begin{itemize}
-                    \item \texttt{"Hello world\textbackslash n"}
-                    \item Instructions start at \texttt{0x10078} (\texttt{0x78} is 120).
-                    \item The string (data) starts at \texttt{0x1009C} (\texttt{0x9C} is 156).
-                \end{itemize}
-        \end{itemize} 
-        \customFigure[0.5]{../Images/L1_1.png}{ELF File Division}
-        \item \textbf{C Program:} Takes 500 bytes.
-        \item \textbf{Python Program:} Takes 2000 bytes.
-        \item \textbf{Java Program:} Takes 2000000 bytes.
+            \item \textbf{Given:} Consider the following in a dynamic library:
+            \begin{itemize}
+                \item A \texttt{struct} with multiple fields corresponding to a specific data layout (C ABI).
+                \item An executable accesses the fields of the \texttt{struct} used by a dynamic library.
+            \end{itemize}
+            \item \textbf{Problem:} Now, if a dynamic library reorders the fields:
+            \begin{itemize}
+                \item The executable uses the old offsets and is now wrong.
+            \end{itemize}
+            \item \textbf{Note:} This is OK if the dynamic library never exposes the fields of a \texttt{struct}.
+        \end{itemize}
+    
+        \item \textbf{C Uses a Consistent ABI for Structs:}
+        \begin{itemize}
+            \item \texttt{struct}s are laid out in memory with the fields matching the declaration order.
+            \item C compilers ensure the ABI (Application Binary Interface) of \texttt{struct}s is consistent for an architecture.
+            \item Consider the following structures:
+            \begin{itemize}
+                \item Library v1:
+        \begin{lstlisting}[language=C]
+struct point {
+    int y;
+    int x;
+};
+        \end{lstlisting}
+        \item Library v2:
+        \begin{lstlisting}[language=C]
+struct point {
+    int x;
+    int y;
+};
+            \end{lstlisting}
+            \end{itemize}
+            \item For v1, the \texttt{x} field is offset by 4 bytes from the start of \texttt{struct point}'s base.
+            \item For v2, it is offset by 0 bytes, and this difference will cause problems.
+        \end{itemize}
+    
+        \item \textbf{After Compilation the Translation Differs for Each Version:}
+        \customFigure[0.5]{../Images/L3_6.png}{}
+    
+        \item \textbf{Point API Has 4 Functions:}
+        \customFigure[0.5]{../Images/L3_7.png}{}
+        
+        \item \textbf{ABI Stable Code Should Always Print "1,2" for Both Lines:}
+        \customFigure[0.5]{../Images/L3_8.png}{}
+
+        \item \textbf{Mismatched Versions Don't Agree on the Location of X and Y:}
+        \customFigure[0.5]{../Images/L3_9.png}{}
+        
+        \item \textbf{Takeaways:} The definition of struct point in both libraries is different. Order of x and y change. 
+        \begin{itemize}
+            \item Our code works correctly if the compiled and linked versions match. If you expose a struct it becomes part of your ABI.
+            \item A proper stable ABI would hide the struct from point.h
+        \end{itemize}
     \end{enumerate}
 \end{example}
 
-\subsection{Kernel}
+\subsection{Semantic Versioning}
 \begin{definition}
-    Kernel is a core part of the operating system that interacts with hardware that runs in kernel mode. 
-\end{definition}
-
-\subsubsection{Kernel Mode}
-\begin{definition}
-    Kernel mode is a privilege level on your CPU that gives access to more instructions.
-\end{definition}
-
-\subsubsection{Levels of Privelege}
-\begin{definition}
-    \customFigure[0.5]{../Images/L1_2.png}{Levels of Privelege}
-\end{definition}
-
-\subsubsection{System Calls Transition Between User and Kernel Mode}
-\begin{definition}
-    \customFigure[0.5]{../Images/L1_3.png}{System Calls Transition}
-\end{definition}
-
-\subsubsection{Different Tpyes of Kernel Architectures}
-\begin{definition}
+    Given a version number \texttt{MAJOR.MINOR.PATCH}, increment the:
     \begin{itemize}
-        \item \textbf{Monolithic Kernel:} All the services are in the kernel.
-        \customFigure[0.5]{../Images/L1_4.png}{Monolithic Kernel}
-        \item \textbf{Microkernel:} Only the essential services are in the kernel.
-        \customFigure[0.5]{../Images/L1_5.png}{Microkernel}
-        \item \textbf{Hybrid Kernel:} A mix of monolithic and microkernel.
-        \item \textbf{Nanokernel and picokernel:} Even smaller services than microkernel.
+        \item \textbf{MAJOR} version when you make incompatible API/\textbf{ABI} changes.
+        \item \textbf{MINOR} version when you add functionality in a backwards-compatible manner.
+        \item \textbf{PATCH} version when you make backwards-compatible bug fixes.
     \end{itemize}
 \end{definition}
 
-\begin{warning}
-    Short answer question.
-\end{warning}
+\subsection{System Calls are Rare in C}
+\begin{definition}
+    Most system calls have corresponding function calls in C, but may:
+    \begin{itemize}
+        \item Set \texttt{errno}
+        \item Buffer reads and writes (reduce the number of system calls)
+        \item Simplify interfaces (function combines two system calls)
+        \item Add new features
+    \end{itemize}
+\end{definition}
+
+\subsubsection{C exit}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{System Call Exit (or exit\_group):} Program stops at that point.
+        \item \textbf{C Exit:} Feature to register functions to call on program exit (e.g. \texttt{atexit}).
+        \begin{itemize}
+            \item i.e. Runs the function when the program exits.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+\begin{example}
+\begin{lstlisting}[language=C]
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    void fini(void) {
+        puts("Do fini");
+    }
+    
+    int main(void) {
+        atexit(fini);
+        puts("Do main");
+        return 0;
+    }
+\end{lstlisting}
+    \begin{itemize}
+        \item Return 0 is the same as calling \texttt{exit(0)}.
+    \end{itemize}
+\end{example}
+
