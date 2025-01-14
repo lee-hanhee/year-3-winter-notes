@@ -127,7 +127,34 @@
     
     \textbf{Shift in $s$:} $\mathcal{L} \{e^{at} f(t)\} = F(s-a) = \mathcal{L} \{f(t)\}\big|_{s \to s-a}$, where $F(s) = \mathcal{L} \{f(t)\}$ \& $a ~ \text{const}$. \\   
     
-    \textcolor{red}{\textbf{Cauchy's Residue THM}}
+    \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
+    $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
+    $= \lim_{w \to \infty} \frac{1}{2\pi} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
+    
+    \textbf{Zero:} $z \in \mathbb{C}$ is a zero of $F(s)$ if $F(z) = 0$.  
+
+    \textbf{Pole:} $p \in \mathbb{C}$ is a pole of $F(s)$ if $\frac{1}{F(p)} = 0$.  
+
+    \switchcolumn
+
+    \textcolor{blue}{\textbf{Cauchy's Residue THM}} If $F(s)$ is analytic (complex diff.) everywhere except at isolated poles $\{p_1, \dots, p_N\}$, then \\
+    $\mathcal{L}^{-1} \{ F(s) \} = \sum_{i=1}^N \text{Res} \left[ F(s) e^{st}, s = p_i \right] \mathbf{1}(t)$,  \\
+    *$\text{Res}[F(s)e^{st}, s = p_i]$: Residue of $F(s)e^{st}$ at $s = p_i$.  
+    
+    \textcolor{blue}{\textbf{Residue Computation}} Let $G(s)$ be a complex analytic fcn w/ a pole at $s = p$, $r$ be the multiplicity of the pole $p$. Then  
+    $\text{Res}[G(s), s = p] = \frac{1}{(r-1)!} \lim_{s \to p} \frac{d^{r-1}}{ds^{r-1}} \left[ G(s) (s-p)^r \right]$.  
+
+    \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = y^{(n-1)}(0) = 0$ and \\ 
+    $u(0) = \cdots = u^{(m-1)}(0) = 0$. Then the TF from $u$ to $y$ is \\
+    $G(s) := \frac{y(s)}{u(s)} = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$. \\
+    *\textbf{0 Ini. Conds.:} $y_0(s) = G(s) u(s)$ \\
+    *\textbf{$\emptyset$ Ini. Conds.:} $y_{\emptyset}(s) = y_0(s) + \frac{\text{poly. based on initial conds.}}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$
+
+    \textcolor{blue}{\textbf{Impulse Response:}} Given CS modeled by TF $G(s)$, its IR is  
+    $g(t) := \mathcal{L}^{-1} \{ G(s) \}$. \\
+    *$y(t) = \mathcal{L}^{-1} \{ Y(s) \} = \mathcal{L}^{-1} \{ G(s) U(s) \} = (g * u)(t).$  \\
+    *If $u(t) = \delta(t)$, then $y(t) = (g * u)(t) = g(t) \text{ and } \mathcal{L} \{\delta(t)\} = 1.$  \\
+    
 
         }
 \end{paracol}
