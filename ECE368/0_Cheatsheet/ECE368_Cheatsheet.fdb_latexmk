@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1736791365.57961 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1736791367.71041 0
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1736791364.10902 2291 4c723729265cf22a0e24153e0251674b ""
+["pdflatex"] 1736866279.82815 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1736866282.0391 0
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1736866279.65035 4996 6f8fe04d0fd4ee1ef8cc67b9517bb95a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -183,9 +183,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE368_Cheatsheet.aux" 1736791367.51426 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "ECE368_Cheatsheet.out" 1736791367.05493 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE368_Cheatsheet.tex" 1736791364.10902 2291 4c723729265cf22a0e24153e0251674b ""
+  "ECE368_Cheatsheet.aux" 1736866281.77865 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "ECE368_Cheatsheet.out" 1736866281.30359 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE368_Cheatsheet.tex" 1736866279.65035 4996 6f8fe04d0fd4ee1ef8cc67b9517bb95a ""
   (generated)
   "ECE368_Cheatsheet.aux"
   "ECE368_Cheatsheet.log"

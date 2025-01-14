@@ -20,9 +20,46 @@
 
 \begin{paracol}{3}
     {\tiny
-    \textcolor{red}{\textbf{2 RVs:}} 
+    \textcolor{red}{\textbf{Intro:}} \textcolor{blue}{\textbf{Random Experiment:}} An outcome for each run.  
 
-    \textcolor{blue}{\textbf{Joint PMF:}} $P_{X,Y}(x, y) = P[X = x, Y = y]$
+    \textcolor{blue}{\textbf{Sample Space $\Omega$:}} Set of all possible outcomes.
+
+    \textcolor{blue}{\textbf{Event:}} Subsets of $\Omega$.
+
+    \textcolor{blue}{\textbf{Prob. of Event A:}} $P(A) = \frac{\text{Number of outcomes in A}}{\text{Number of outcomes in } \Omega}$
+
+    \textcolor{blue}{\textbf{Axioms:}} $P(A) \geq 0 \; \forall A \in \Omega$, $P(\Omega) = 1$, \\
+    If $A \cap B = \emptyset$, then $P(A \cup B) = P(A) + P(B) \; \forall A, B \in \Omega$
+
+    \textcolor{blue}{\textbf{Cond. Prob.}} $P(A|B) = \frac{P(A \cap B)}{P(B)} \\
+    *P(A \cap B) = P(A|B) P(B) = P(B|A) P(A)$
+
+    \textcolor{darkgreen}{\textbf{Independence:}} $P(A|B) = P(A) \Leftrightarrow P(A \cap B) = P(A) P(B)$
+
+    \textcolor{blue}{\textbf{Total Prob. Thm:}} If $H_1, H_2, \ldots, H_n$ form a partition of $\Omega$, then $P(A) = \sum_{i=1}^n P(A|H_i) P(H_i)$.
+
+    \textcolor{blue}{\textbf{Bayes' Rule:}} $P(H_k|A) = \frac{P(H_k \cap A)}{P(A)} = \frac{P(A|H_k) P(H_k)}{\sum_{i=1}^n P(A|H_i) P(H_i)}$ \\
+    *Posteriori: $P(H_k|A)$, Likelihood: $P(A|H_k)$, Prior: $P(H_k)$ 
+
+    \textcolor{red}{\textbf{1 RV:}} \textcolor{blue}{\textbf{CDF:}} $F_X(x) = P[X \leq x]$ 
+
+    \textcolor{blue}{\textbf{PMF:}} $P_X(x_j) = P[X = x_j] \; j=1,2,\ldots$
+
+    \textcolor{blue}{\textbf{PDF:}} $f_X(x) = \frac{d}{dx} F_X(x)$ \\
+    *$P[a \leq X \leq b] = \int_a^b f_X(x) \, dx$ IS THIS CORRECT?
+
+    \textcolor{blue}{\textbf{Cond. PMF:}} $P_X(x|A) = P[X = x|A] = \frac{P[X = x, A]}{P[A]}$ IS THIS CORRECT?
+
+    \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X}(x|A) = \frac{f_{X,A}(x, a)}{f_A(a)}$ IS THIS CORRECT?
+
+    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] = \int_{-\infty}^{\infty} h(x) f_X(x) dx \mid \sum_{k=-\infty}^{\infty} h(k) f_X(k)$ \\
+
+    \textcolor{darkgreen}{\textbf{Variance:}} $\text{Var}[X] = E[(X - \mu)^2] = E[X^2] - E[X]^2$
+
+    \textcolor{darkgreen}{\textbf{Cond. Exp.:}} $E[X|A] = \int_{-\infty}^{\infty} x f_X(x|A) \, dx$ 
+
+
+    \textcolor{red}{\textbf{2 RVs:}}  \textcolor{blue}{\textbf{Joint PMF:}} $P_{X,Y}(x, y) = P[X = x, Y = y]$
 
     \textcolor{blue}{\textbf{Joint PDF:}} $f_{X,Y}(x, y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x, y)$ \\
     *$P[(X, Y) \in A] = \int \int_{(x, y) \in A} f_{X,Y}(x, y) \, dx \, dy$
@@ -31,11 +68,20 @@
 
     \textcolor{darkgreen}{\textbf{Correlation:}} $E[XY]$
 
-    \textcolor{darkgreen}{\textbf{Covariance:}} $\text{Cov}[X, Y] = E[XY] - E[X]E[Y]$
+    \textcolor{darkgreen}{\textbf{Covariance:}} $\text{Cov}[X, Y] \text{=} E[(X - \mu_X)(Y - \mu_Y)] \text{=} E[XY] - E[X] E[Y]$
 
-    \textcolor{darkgreen}{\textbf{Correlation Coefficient:}} $\rho_{X,Y} = \frac{\text{Cov}[X, Y]}{\sigma_X \sigma_Y}$
+    \textcolor{darkgreen}{\textbf{Correlation Coeff.:}} $\rho_{X,Y} \text{=} E\left[ \left( \frac{X - \mu_X}{\sigma_X} \right) \left( \frac{Y - \mu_Y}{\sigma_Y} \right) \right] = \frac{\text{Cov}[X, Y]}{\sigma_X \sigma_Y}$
 
-    \textcolor{blue}{\textbf{Bayes' Rule}} $f_{Y|X}(y|x) = \frac{f_{X,Y} (x,y)}{f_X (x)} = \frac{f_{X|Y} (x|y) f_Y (y)}{\int_{-\infty}^{\infty} f_{X|Y} (x|y') f_Y (y') \, dy'}$
+    \textcolor{blue}{\textbf{Marginal PMF:}} $P_X(x) = \sum_{j=1}^\infty P_{X,Y}(x, y_j)$
+
+    \textcolor{blue}{\textbf{Marginal PDF:}} $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy$
+
+    \textcolor{blue}{\textbf{Conditional PMF:}} $P_{X|Y}(x|Y) = P[X = x|Y = y] = \frac{P_{X,Y}(x, y)}{P_Y(y)}$
+
+    \textcolor{blue}{\textbf{Conditional PDF:}} $f_{X|Y}(x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)}$
+
+    \textcolor{blue}{\textbf{Bayes' Rule}} $f_{Y|X}(y|x) = \frac{f_{X,Y} (x,y)}{f_X (x)} = \frac{f_{X|Y} (x|y) f_Y (y)}{\int_{-\infty}^{\infty} f_{X|Y} (x|y') f_Y (y') \, dy'}$ \\
+    *$P_{Y|X}(y|x) = \frac{P_{X,Y}(x, y)}{P_X(x)} = \frac{P_{X|Y}(x|y) P_Y(y)}{\sum_{j=1}^\infty P_{X|Y}(x|y_j) P_Y(y_j)}$
 
     \textcolor{blue}{\textbf{Independent:}} $f_{X|Y}(x|y) = f_X(x) \; \forall y \Leftrightarrow f_{X,Y}(x, y) = f_X(x) f_Y(y) $ 
     *If independent, then uncorrelated.

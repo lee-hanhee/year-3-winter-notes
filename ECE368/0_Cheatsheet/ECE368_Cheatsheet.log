@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  13 JAN 2025 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  14 JAN 2025 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -693,22 +693,47 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (4.20322pt too wide) in paragraph at lines 30--31
+Overfull \hbox (1.76544pt too wide) in paragraph at lines 41--43
+[][] \OT1/cmr/bx/n/5 Bayes' Rule:[] $\OML/cmm/m/it/5 P\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 H[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 ) = [] = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Overfull \hbox (4.20322pt too wide) in paragraph at lines 67--68
 [][] \OT1/cmr/bx/n/5 Ex-pec-ta-tion:[] $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 g\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 X; Y\OT1/cmr/m/n/5 )] = [][] [][] \OML/cmm/m/it/5 g\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 ) \OML/cmm/m/it/5 dx dy$ 
  []
 
 
-Overfull \hbox (26.25807pt too wide) in paragraph at lines 38--39
+Overfull \hbox (12.95424pt too wide) in paragraph at lines 71--72
+[][] \OT1/cmr/bx/n/5 Co-vari-ance:[] $[]\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X; Y\OT1/cmr/m/n/5 ][]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [(\OML/cmm/m/it/5 X \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^V[]\OT1/cmr/m/n/5 )(\OML/cmm/m/it/5 Y \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^V[]\OT1/cmr/m/n/5 )][]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 XY\OT1/cmr/m/n/5 ] \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ]$ 
+ []
+
+
+Overfull \hbox (17.92416pt too wide) in paragraph at lines 73--74
+[][] \OT1/cmr/bx/n/5 Cor-re-la-tion Co-eff.:[] $\OML/cmm/m/it/5 ^^Z[][]E [] \OT1/cmr/m/n/5 = []$ 
+ []
+
+
+Overfull \hbox (12.40273pt too wide) in paragraph at lines 79--80
+[][] \OT1/cmr/bx/n/5 Con-di-tional PMF:[] $\OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 P\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X \OT1/cmr/m/n/5 = \OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 Y \OT1/cmr/m/n/5 = \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 ] = []$ 
+ []
+
+
+Overfull \hbox (26.25807pt too wide) in paragraph at lines 83--85
 [][] \OT1/cmr/bx/n/5 Bayes' Rule[] $\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 y\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) = [] = []$ 
  []
 
 
-Overfull \hbox (21.35489pt too wide) in paragraph at lines 40--42
+Overfull \hbox (21.35489pt too wide) in paragraph at lines 86--88
 [][] \OT1/cmr/bx/n/5 In-de-pen-dent:[] $\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 y \OMS/cmsy/m/n/5 , \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 )$
  []
 
 
-Overfull \hbox (4.78519pt too wide) in paragraph at lines 47--49
+Overfull \hbox (4.78519pt too wide) in paragraph at lines 93--95
 [][] \OT1/cmr/bx/n/5 Con-di-tional Ex-pec-ta-tion:[] $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ] = \OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]]$ or $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 h\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]]$ 
  []
 
@@ -725,13 +750,13 @@ Package rerunfilecheck Info: File `ECE368_Cheatsheet.out' has not changed.
 Here is how much of TeX's memory you used:
  31653 strings out of 474116
  743049 string characters out of 5743682
- 1936187 words of memory out of 5000000
+ 1954187 words of memory out of 5000000
  53538 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,5n,93p,792b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
-Output written on ECE368_Cheatsheet.pdf (1 page, 66776 bytes).
+Output written on ECE368_Cheatsheet.pdf (1 page, 79145 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
