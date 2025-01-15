@@ -92,7 +92,23 @@
     \textcolor{blue}{\textbf{Conditional Expectation:}} $E[Y] = E[E[Y|X]]$ or $E[E[h(Y)|X]]$ \\
     *$E[E[Y|X]]$ w.r.t. $X \mid E[Y|X]$ w.r.t. $Y$. 
 
-    \textcolor{red}{\textbf{Estimation:}}
+    \textcolor{red}{\textbf{Estimation:}} Estimate unknown parameter $\theta$ from $n$ i.i.d. measurements $X_1, X_2, \ldots, X_n$, $\hat{\Theta}(\underline{X}) = g(X_1, X_2, \ldots, X_n)$
+
+    \textcolor{blue}{\textbf{Estimation Error:}} $\hat{\Theta}(\underline{X}) - \theta$. 
+
+    \textcolor{blue}{\textbf{Unbiased:}} $\hat{\Theta}(\underline{X})$ is unbiased if $E[\hat{\Theta}(\underline{X})] = \theta$. \\
+    *\textbf{Asymptotically unbiased:} $\lim_{n \to \infty} E[\hat{\Theta}(\underline{X})] = \theta$.
+
+    \textcolor{blue}{\textbf{Consistent:}} $\hat{\Theta}(\underline{X})$ is consistent if $\hat{\Theta}(\underline{X}) \rightarrow \theta$ as $n \to \infty$ or $\forall \epsilon >0, \lim_{n \to \infty} P[|\hat{\Theta}(\underline{X}) - \theta| < \epsilon] \rightarrow 1$.
+
+    \textcolor{darkgreen}{\textbf{Sample Mean:}} $M_n = \frac{1}{n} S_n = \frac{1}{n} \sum_{i=1}^n X_i$. \\
+    *Given a sequence of i.i.d. RVs, $X_1, X_2, \ldots, X_n$, $M_n$ is unbiased and consistent.
+
+    \textcolor{blue}{\textbf{Weal Law of Large \#s}} $\lim_{n \to \infty} P[|M_n - \mu| < \epsilon] = 1 \; \forall \epsilon > 0$.
+
+    \textcolor{red}{\textbf{Maximum Likelihood Estimation:}} Choose parameter $\theta$ that is most likely to generate the obs. $x_1, x_2, \ldots, x_n$. \\
+    *Discrete $X$: $\hat{\Theta} = \arg \max_\theta P_{\underline{X}} (\underline{x} | \theta) \overset{\text{log}}{=} \arg \max_\theta \sum_{i=1}^n \log P_X(x_i | \theta)$ \\
+    *Cont. $X$: $\hat{\Theta} = \arg \max_\theta f_{\underline{X}} (\underline{x} | \theta) \overset{\text{log}}{=} \arg \max_\theta \sum_{i=1}^n \log f_X(x_i | \theta)$
 
 
     }

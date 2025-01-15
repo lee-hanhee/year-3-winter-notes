@@ -1,0 +1,183 @@
+\subsection{Parameter Estimation:}
+\begin{motivation}
+    The readout of a sensor is $X = \theta + N$ volts
+    \customFigure[0.5]{../Images/L4_0.png}{}
+    \begin{itemize}
+        \item There is some noise $N$ in the sensor, so we want to estimate the true value of $\theta$ (unknown parameter to be estimated)
+        \begin{itemize}
+            \item Mean and/or variance of $X$. 
+        \end{itemize}
+    \end{itemize}
+\end{motivation}
+
+\subsection{Estimator:}
+\begin{definition}
+    Perform $n$ independent and identically distributed (i.i.d.) measurements/observations of $X_i$: $X_1, X_2, \ldots, X_n$.
+    \begin{equation}
+        \hat{\Theta} = g(X_1, X_2, \ldots, X_n) = g(\mathbf{X})
+    \end{equation}
+\end{definition}
+
+\subsubsection{Estimation Error:}
+\begin{definition}
+    \begin{equation}
+        \hat{\Theta}(\underline{X}) - \theta
+    \end{equation}
+\end{definition}
+
+\subsubsection{Unbiased}
+\begin{definition}
+    The estimator $\hat{\Theta}$ is unbiased if 
+    \begin{equation}
+        \mathbb{E}[\hat{\Theta}(\underline{X})] = \theta
+    \end{equation}
+    \begin{itemize}
+        \item \textbf{Asymptotically Unbiased:} $\lim_{n \to \infty} \mathbb{E}[\hat{\Theta}(\underline{X})] = \theta$ (big data)
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Consistent}
+\begin{definition}
+    The estimator $\hat{\Theta}$ is consistent if $\hat{\Theta} \rightarrow \theta$ as $n \to \infty$, in probability, i.e., $\forall \epsilon > 0$,
+    \begin{equation}
+        \lim_{n \to \infty} P(|\hat{\Theta}(\underline{X}) - \theta| > \epsilon) \rightarrow 1
+    \end{equation}
+    as $n \to \infty$.
+\end{definition}
+
+\subsection{Sample Mean \& Law of Large Numbers}
+\begin{definition}
+    Given a sequence of i.i.d. random variables (RVs), $X_1, X_2, \dots, X_n$, w/ unknown mean $\mu$, estimate $\mu$. Let $S_n = X_1 + X_2 + \dots + X_n$.  
+    The \textit{sample mean} is  
+    \[
+    M_n = \frac{1}{n} S_n
+    \]
+    
+    \begin{itemize}
+        \item How good is $M_n$ as an estimator of $\mu$?
+        \begin{itemize}
+            \item Use unbiased and consistent to evaluate $M_n$.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Previous voltage measurement, e.g.,  
+    \[
+    X_i = \mu + N_i
+    \]
+    where $\mu$ is the true value and $N_i$ is the noise.
+    \vspace{1em}
+
+    If we assume $N_i$ are i.i.d. with zero mean,  
+    \[
+    E[X_i] = E[\mu + N_i] = E[\mu] + E[N_i] = \mu + 0 = \mu, \quad \forall i
+    \]
+\end{example}
+
+\subsubsection{Digression for Sum of RVs (not necessarily independent or identically distributed)}
+\begin{derivation} 
+    \begin{align*}
+        E[S_n] &= E[X_1 + \dots + X_n] \\
+        &= E[X_1] + \dots + E[X_n]
+    \end{align*}
+\end{derivation}
+
+\begin{derivation}
+    \begin{align*}
+        \text{Var}[S_n] &= E\left[(S_n - E[S_n])^2\right] \\
+        &= E\left[\left(\sum_{i=1}^n X_i - E[X_i]\right)^2\right] \\
+        &= E\left[\sum_{i=1}^n \sum_{j=1}^n (X_i - E[X_i])(X_j - E[X_j])\right] \\
+        &= \sum_{i=1}^n \sum_{j=1}^n E\left[(X_i - E[X_i])(X_j - E[X_j])\right] \\
+        &= \sum_{i=1}^n \sum_{j=1}^n \text{Cov}[X_i, X_j] \\
+        &= \sum_{i=1}^n \text{Var}[X_i] + \sum \sum_{i \neq j} \text{Cov}[X_i, X_j]
+    \end{align*}
+\end{derivation}
+
+\subsubsection{Unbiased (i.i.d.)}
+\begin{derivation}
+    \begin{align*}
+        E[M_n] &= E\left[\frac{1}{n} S_n\right] \\
+        &= \frac{1}{n} \left(E[X_1] + \dots + E[X_n]\right) \\
+        &= \frac{1}{n} (n\mu) \quad \text{since $X_i$ are i.i.d.} \\
+        &= \mu \Rightarrow \text{Unbiased!}
+    \end{align*}
+\end{derivation}
+
+\subsubsection{Consistent (i.i.d.)}
+\begin{derivation}
+    \begin{align*}
+        \text{Var}[M_n] &= \text{Var}\left[\frac{1}{n} S_n\right] \\
+        &= \frac{1}{n^2} \text{Var}[S_n] \quad \text{taking out constant requires squaring}\\
+        &= \frac{1}{n^2} \left(\sum_{i=1}^n \text{Var}[X_i] + \sum \sum_{i \neq j} \text{Cov}[X_i, X_j]\right) \\
+        &= \frac{1}{n^2} (n \sigma^2) \quad \sigma^2 \triangleq \text{Var}[X_i] \text{ and $X_i$ are i.i.d.} \\
+        &= \frac{\sigma^2}{n} \to 0 \text{ as } n \to \infty.
+    \end{align*}
+    \begin{itemize}
+        \item This means that there is no variance in the sample mean as $n$ approaches infinity, so it converges to the true mean.
+    \end{itemize}
+    \vspace{1em}
+
+    Recall the Chebyshev Inequality:
+    \begin{align*}
+        P\left[|X - E[X]| \geq \epsilon\right] &\leq \frac{\text{Var}[X]}{\epsilon^2}, \quad \forall \epsilon > 0.
+    \end{align*}
+
+    Substitute in $M_n$:
+    \begin{align*}
+        P\left[|M_n - E[M_n]| \geq \epsilon\right] &\leq \frac{\text{Var}[M_n]}{\epsilon^2} \\
+        P\left[|M_n - \mu| \geq \epsilon\right] &\leq \frac{\sigma^2}{n \epsilon^2} \\
+        \Rightarrow P\left[|M_n - \mu| < \epsilon\right] &\geq 1 - \frac{\sigma^2}{n \epsilon^2} \to 1 \text{ as } n \to \infty \text{ then it is consistent} \\
+    \end{align*}
+\end{derivation}
+
+\subsubsection{Weak Law of Large Numbers}
+\begin{definition}
+    Even if $\sigma$ is infinite, then $\forall \epsilon > 0$, 
+    \begin{equation*}
+        \lim_{n \to \infty} P\left[|M_n - \mu| < \epsilon\right] = 1
+    \end{equation*}
+\end{definition}
+
+\subsubsection{Confidence Interval: Finding $n$}
+\begin{example}
+    Measure an unknown voltage $\theta$ for $n$ times and obtain independent measurements:
+    \[
+    X_i = \theta + N_i,
+    \]
+    where $N_i$ are i.i.d. random variables with mean $0$ and variance $1$.
+
+    \begin{itemize}
+        \item We want to determine how many measurements $n$ are sufficient so that 
+        \[
+        P\left(|M_n - \theta| < 0.1\right) \geq 0.95,
+        \]
+        where $0.1$ is the desired precision and $0.95$ is the confidence level.
+        
+        \item The sample mean is given by:
+        \[
+        M_n = \frac{1}{n} \sum_{i=1}^n X_i = \theta + \frac{1}{n} \sum_{i=1}^n N_i.
+        \]
+
+        \item The variance of the sample mean is:
+        \[
+        \sigma^2 = \text{Var}[M_n] = \text{Var}[N_i] = 1.
+        \]
+
+        \item Using Chebyshev's inequality:
+        \[
+        1 - \frac{\sigma^2}{n\epsilon^2} \geq 0.95,
+        \]
+        where $\epsilon = 0.1$ (precision).
+
+        \item Solving for $n$:
+        \begin{align*}
+        1 - \frac{1}{n(0.1)^2} &\geq 0.95, \\
+        \frac{1}{n(0.1)^2} &\leq 0.05, \\
+        n &\geq 2000.
+        \end{align*}
+    \end{itemize}
+
+    Thus, at least $2000$ measurements are needed to achieve the desired precision and confidence level.
+\end{example}
+

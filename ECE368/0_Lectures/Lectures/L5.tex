@@ -1,0 +1,38 @@
+\subsection{Maximum Likelihood Estimation}
+\begin{motivation}
+    Choose parameter $\theta$ that is most likely to generate the observation $x_1,x_2,\ldots,x_n$.
+    \customFigure[0.5]{../Images/L5_0.png}{}
+\end{motivation}
+
+\begin{definition}
+    \begin{equation}
+        \hat{\Theta} = \arg\max_\theta \, P_{\underline{X}}(\underline{x}|\theta), \text{ discrete } X.
+    \end{equation}
+        
+    \begin{equation}
+        \hat{\Theta} = \arg\max_\theta \, f_{\underline{X}}(\underline{x}|\theta), \text{ continuous } X.
+    \end{equation}
+        
+\end{definition}
+
+\subsubsection{Log-Likelihood}
+\begin{definition}
+    \begin{equation}
+        \hat{\theta} = \arg\max_\theta \sum_{i=1}^n \log P_X(x_i|\theta) 
+    \end{equation}
+
+    \begin{equation}
+        \hat{\theta} = \arg\max_\theta \sum_{i=1}^n \log f_X(x_i|\theta).
+    \end{equation}    
+\end{definition}
+
+\begin{example}
+    
+\end{example}
+
+\begin{notes}
+    
+\end{notes}
+
+
+
