@@ -82,18 +82,19 @@
     2. Derive $A,B,C,D$ and then evaluate at $(\bar{x}, \bar{u})$ \\
     3. Write $\delta \overset{\cdot}{x} = A \delta x + B \delta u$ and $\delta y = C \delta x + D \delta u$ \\
 
-    \textcolor{red}{\textbf{Laplace Transform}} Given a fcn $f: \mathbb{R}_+ \to \mathbb{R}^n$, its Laplace transform is 
+    \textcolor{red}{\textbf{Laplace Transform}} Given a fcn $f: \mathbb{R}_+ = [0,\infty) \to \mathbb{R}^n$, its Laplace transform is 
     $F(s) = \mathcal{L} \{ f(t) \} := \int_{0^-}^{\infty} f(t) e^{-st} \, dt$, $s \in \mathbb{C}$. \\ 
-    *$\mathcal{L}: f(t) \mapsto F(s)$, $t \in \mathbb{R}_+$ (time domain) \& $s \in \mathbb{C}$ (Laplace domain).
+    *$\mathcal{L:} f(t) \mapsto F(s)$, $t \in \mathbb{R}_+$ (time dom.) \& $s \in \mathbb{C}$ (Laplace dom.).
     
-    \textcolor{blue}{\textbf{P.W. CTS:}} A fcn $f: \mathbb{R}_+ \to \mathbb{R}^n$ is \textbf{p.w. cts} if on every finite interval of $\mathbb{R}$, $f(\cdot)$ has at most a finite \# of discontinuity points ($t_i$) and the limits 
+    \textcolor{blue}{\textbf{P.W. CTS:}} A fcn $f: \mathbb{R}_+ \to \mathbb{R}^n$ is \textbf{p.w. cts} if on every finite interval of $\mathbb{R}$, $f(t)$ has at most a finite \# of discontinuity points ($t_i$) and the limits 
     $\lim_{t \to t_i^+} f(t)$, $\lim_{t \to t_i^-} f(t)$ are finite.
 
     \customFigure[0.1]{../Images/L4_0.png}
 
     \textcolor{blue}{\textbf{Exp. Order}} A function $f: \mathbb{R}_+ \to \mathbb{R}^n$ is of \textbf{exp. order} if $\exists$ constants $K, \rho, T > 0$ s.t. $\|f(t)\| \leq K e^{\rho t}$, $\forall t \geq T$.
 
-    \textcolor{blue}{\textbf{Existence of LT Thm}} If $f(\cdot)$ is p.w. cts and of exp. order w/ constants $K, \rho, T > 0$, then $F(\cdot)$ exists and is defined $\forall \, s \in D := \{s \in \mathbb{C} : \text{Re}(s) > \rho\}$ and $F(\cdot)$ is analytic on $D$. \\
+    \textcolor{blue}{\textbf{Existence of LT Thm}} If $f(t)$ is p.w. cts and of exp. order w/ constants $K, \rho, T > 0$, then $F(\cdot)$ exists and is defined $\forall \, s \in D := \{s \in \mathbb{C} : \text{Re}(s) > \rho\}$ and $F(\cdot)$ is analytic on $D$. \\
+    *Analytic fcn iff differentiable fcn. \\
     *$D$: Region of convergence (ROC), open half plane. \\
     \customFigure[0.1]{../Images/L4_1.png}
 
@@ -118,24 +119,30 @@
     \textbf{Integration:}  
     $\mathcal{L} \left\{\int_0^t f(\tau) d\tau \right\} = \frac{1}{s} \mathcal{L} \{f(t)\}.$  
     
-    \textbf{Convolution:} Let $(f * g)(t) := \int_0^t f(\tau) g(t-\tau) d\tau$, then \\ 
+    \textbf{Convolution:} Let $(f * g)(t) := \int_0^t f(\tau) g(t-\tau) d\tau = \int_0^t f(t-\tau) g(\tau) d\tau$, then
     $\mathcal{L} \{(f * g)(t)\} = \mathcal{L} \{f(t)\} \mathcal{L} \{g(t)\}.$  
     
-    \textbf{Time Delay:} $\mathcal{L} \{f(t-T) \mathbf{1}(t-T)\} = e^{-Ts} \mathcal{L} \{f(t)\}, t \geq 0.$  
+    \textbf{Time Delay:} $\mathcal{L} \{f(t-T) \mathbf{1}(t-T)\} = e^{-Ts} \mathcal{L} \{f(t)\}, T \geq 0.$  
     
     \textbf{Multiplication by $t$:} $\mathcal{L} \{t f(t)\} = -\frac{d}{ds} [\mathcal{L} \{f(t)\}].$  
     
-    \textbf{Shift in $s$:} $\mathcal{L} \{e^{at} f(t)\} = F(s-a) = \mathcal{L} \{f(t)\}\big|_{s \to s-a}$, where $F(s) = \mathcal{L} \{f(t)\}$ \& $a ~ \text{const}$. \\   
+    \textbf{Shift in $s$:} $\mathcal{L} \{e^{at} f(t)\} = \mathcal{L} \{f(t)\}\big|_{s \to s-a} = F(s-a)$, where $F(s) = \mathcal{L} \{f(t)\}$ \& $a ~ \text{const}$. \\   
+
+    \textcolor{blue}{\textbf{Trig. Id.}} $2 \sin(2t) = 2 \sin(t) \cos(t)$, $\sin(a-b) = \sin(a) \cos(b) - \cos(a) \sin(b)$, $\cos(a-b) = \cos(a) \cos(b) + \sin(a) \sin(b)$
     
+    \textcolor{orange}{\textbf{LT Steps:}} 1. Write $f(t)$ as a sum and use linearity \\
+    *Trig. id. may be useful. \\
+    2. Use prop. of LT and common LT to find $F(s)$  
+
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
     $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
     $= \lim_{w \to \infty} \frac{1}{2\pi} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
+
+    \switchcolumn
     
     \textbf{Zero:} $z \in \mathbb{C}$ is a zero of $F(s)$ if $F(z) = 0$.  
 
     \textbf{Pole:} $p \in \mathbb{C}$ is a pole of $F(s)$ if $\frac{1}{F(p)} = 0$.  
-
-    \switchcolumn
 
     \textcolor{blue}{\textbf{Cauchy's Residue THM}} If $F(s)$ is analytic (complex diff.) everywhere except at isolated poles $\{p_1, \dots, p_N\}$, then \\
     $\mathcal{L}^{-1} \{ F(s) \} = \sum_{i=1}^N \text{Res} \left[ F(s) e^{st}, s = p_i \right] \mathbf{1}(t)$,  \\
@@ -143,6 +150,13 @@
     
     \textcolor{blue}{\textbf{Residue Computation}} Let $G(s)$ be a complex analytic fcn w/ a pole at $s = p$, $r$ be the multiplicity of the pole $p$. Then  
     $\text{Res}[G(s), s = p] = \frac{1}{(r-1)!} \lim_{s \to p} \frac{d^{r-1}}{ds^{r-1}} \left[ G(s) (s-p)^r \right]$.  
+
+    \textcolor{orange}{\textbf{Inv. LT Partial Frac.:}} 1. Factorize $F(s)$ into canonical form. \\
+    2. Find coefficients of partial fraction and use LT table to find inverse LT. \\
+    *Complete the square. 
+
+    \textcolor{orange}{\textbf{Inv. LT Residue:}} 1. Find poles of $F(s)$ and their residues. \\
+    2. Use Cauchy's Residue THM to find inverse LT.
 
     \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = y^{(n-1)}(0) = 0$ and \\ 
     $u(0) = \cdots = u^{(m-1)}(0) = 0$. Then the TF from $u$ to $y$ is \\
