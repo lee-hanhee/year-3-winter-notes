@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1736793642.73746 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" "ECE353_Lectures.pdf" "ECE353_Lectures" 1736793650.1929 0
+["pdflatex"] 1736903637.5322 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" "ECE353_Lectures.pdf" "ECE353_Lectures" 1736903645.76493 0
   "../Images/L1_0.png" 1736218279.93595 57044 882bd67830ee81e6b3be851ea7ab3d55 ""
   "../Images/L1_1.png" 1736219446.06864 500950 510ce7ac05dd4598ad41b9d29cf34030 ""
   "../Images/L1_2.png" 1736219756.36856 203113 15cadabe0516577bc98caf42c5486125 ""
@@ -16,7 +16,7 @@
   "../Images/L3_7.png" 1736706175.53392 118260 e63db963d1f5fd85c4d81912f21e3df6 ""
   "../Images/L3_8.png" 1736706187.62113 212002 00fbc3278064a09be27a85923c6e133f ""
   "../Images/L3_9.png" 1736706201.95704 319635 3552e0629aef7e12396448ff0570d1c4 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" 1736785027.79248 640 760c0cc4df9470090a95d4e4defcaf44 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" 1736903634.18069 792 61008ee707fb4803c458657ce0130841 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -353,10 +353,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE353_Lectures.aux" 1736793649.76359 8218 29644c7c22ec737d1ad4f84dc6937f3d "pdflatex"
-  "ECE353_Lectures.out" 1736793649.76635 8306 4f3c01e8199b1f87570b03e95b9d63f3 "pdflatex"
-  "ECE353_Lectures.tex" 1736785027.79248 640 760c0cc4df9470090a95d4e4defcaf44 ""
-  "ECE353_Lectures.toc" 1736793649.76697 4199 6ccb0fa56a2e92f7f5dd496cccc2e080 "pdflatex"
+  "ECE353_Lectures.aux" 1736903645.31636 8218 29644c7c22ec737d1ad4f84dc6937f3d "pdflatex"
+  "ECE353_Lectures.out" 1736903645.31926 8306 4f3c01e8199b1f87570b03e95b9d63f3 "pdflatex"
+  "ECE353_Lectures.tex" 1736903634.18069 792 61008ee707fb4803c458657ce0130841 ""
+  "ECE353_Lectures.toc" 1736903645.3199 4199 6ccb0fa56a2e92f7f5dd496cccc2e080 "pdflatex"
   "Lectures/L0.tex" 1736185078.77643 3431 fcfe676275f57413e2423ffab4c504e7 ""
   "Lectures/L1.tex" 1736784630.05131 8572 0f8605b1d30d0c67543d4dc7c6c58284 ""
   "Lectures/L2.tex" 1736784639.10716 7693 7941b22ec8fd612b7fbbbebab189a9ff ""

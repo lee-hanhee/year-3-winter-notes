@@ -1,8 +1,8 @@
-PWD /Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures
+PWD /Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz
 INPUT /usr/local/texlive/2024/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures/ROB311_Lectures.tex
+INPUT /Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz/ROB311_Lectures.tex
 OUTPUT ROB311_Lectures.log
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -574,9 +574,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-OUTPUT ROB311_Lectures.toc
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+OUTPUT ROB311_Lectures.toc
 INPUT ./Lectures/L1.tex
 INPUT ./Lectures/L1.tex
 INPUT Lectures/L1.tex

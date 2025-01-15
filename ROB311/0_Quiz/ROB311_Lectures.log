@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  10 JAN 2025 23:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  14 JAN 2025 20:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures/ROB311_Lectures.tex
-(/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Lectures/ROB311_Lectures.tex
+**/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz/ROB311_Lectures.tex
+(/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz/ROB311_Lectures.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -1255,10 +1255,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
-)
-\tf@toc=\write5
-\openout5 = `ROB311_Lectures.toc'.
-
  [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
@@ -1285,95 +1281,99 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./Lectures/L1.tex
-<../Images/L1_4.png, id=224, 599.23875pt x 317.185pt>
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+\tf@toc=\write5
+\openout5 = `ROB311_Lectures.toc'.
+
+ [2] (./Lectures/L1.tex
+<../Images/L1_4.png, id=243, 599.23875pt x 317.185pt>
 File: ../Images/L1_4.png Graphic file (type png)
 <use ../Images/L1_4.png>
 Package pdftex.def Info: ../Images/L1_4.png  used on input line 28.
 (pdftex.def)             Requested size: 374.33807pt x 198.14816pt.
-<../Images/L1_5.png, id=226, 605.26125pt x 304.13625pt>
+<../Images/L1_5.png, id=245, 605.26125pt x 304.13625pt>
 File: ../Images/L1_5.png Graphic file (type png)
 <use ../Images/L1_5.png>
 Package pdftex.def Info: ../Images/L1_5.png  used on input line 29.
 (pdftex.def)             Requested size: 374.33807pt x 188.10309pt.
- [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <../Images/L1_4.png>]
-<../Images/L1_0.png, id=240, 534.99875pt x 376.40625pt>
+ [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <../Images/L1_4.png>]
+<../Images/L1_0.png, id=259, 534.99875pt x 376.40625pt>
 File: ../Images/L1_0.png Graphic file (type png)
 <use ../Images/L1_0.png>
 Package pdftex.def Info: ../Images/L1_0.png  used on input line 34.
 (pdftex.def)             Requested size: 249.55872pt x 175.58421pt.
-<../Images/L1_1.png, id=241, 626.34pt x 212.795pt>
+<../Images/L1_1.png, id=260, 626.34pt x 212.795pt>
 File: ../Images/L1_1.png Graphic file (type png)
 <use ../Images/L1_1.png>
 Package pdftex.def Info: ../Images/L1_1.png  used on input line 45.
 (pdftex.def)             Requested size: 249.55872pt x 84.7853pt.
- [3 <../Images/L1_5.png> <../Images/L1_0.png>]
-<../Images/L1_2.png, id=250, 519.9425pt x 240.9pt>
+ [4 <../Images/L1_5.png> <../Images/L1_0.png>]
+<../Images/L1_2.png, id=269, 519.9425pt x 240.9pt>
 File: ../Images/L1_2.png Graphic file (type png)
 <use ../Images/L1_2.png>
 Package pdftex.def Info: ../Images/L1_2.png  used on input line 57.
 (pdftex.def)             Requested size: 249.55872pt x 115.62332pt.
-<../Images/L1_3.png, id=251, 575.14874pt x 236.885pt>
+<../Images/L1_3.png, id=270, 575.14874pt x 236.885pt>
 File: ../Images/L1_3.png Graphic file (type png)
 <use ../Images/L1_3.png>
 Package pdftex.def Info: ../Images/L1_3.png  used on input line 70.
 (pdftex.def)             Requested size: 124.77936pt x 51.39194pt.
-<../Images/L1_6.png, id=252, 193.72375pt x 173.64874pt>
+<../Images/L1_6.png, id=271, 193.72375pt x 173.64874pt>
 File: ../Images/L1_6.png Graphic file (type png)
 <use ../Images/L1_6.png>
 Package pdftex.def Info: ../Images/L1_6.png  used on input line 86.
 (pdftex.def)             Requested size: 124.77936pt x 111.85022pt.
- [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L1_1.png> <../Images/L1_2.png> <../Images/L1_3.png>]
-<../Images/L1_7.png, id=264, 215.80624pt x 269.005pt>
+ [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L1_1.png> <../Images/L1_2.png> <../Images/L1_3.png>]
+<../Images/L1_7.png, id=283, 215.80624pt x 269.005pt>
 File: ../Images/L1_7.png Graphic file (type png)
 <use ../Images/L1_7.png>
 Package pdftex.def Info: ../Images/L1_7.png  used on input line 95.
 (pdftex.def)             Requested size: 124.77936pt x 155.53865pt.
-<../Images/L1_8.png, id=265, 207.77625pt x 276.03125pt>
+<../Images/L1_8.png, id=284, 207.77625pt x 276.03125pt>
 File: ../Images/L1_8.png Graphic file (type png)
 <use ../Images/L1_8.png>
 Package pdftex.def Info: ../Images/L1_8.png  used on input line 104.
 (pdftex.def)             Requested size: 124.77936pt x 165.76743pt.
- [5 <../Images/L1_6.png> <../Images/L1_7.png>]
-<../Images/L1_9.png, id=274, 197.73875pt x 171.64125pt>
+ [6 <../Images/L1_6.png> <../Images/L1_7.png>]
+<../Images/L1_9.png, id=293, 197.73875pt x 171.64125pt>
 File: ../Images/L1_9.png Graphic file (type png)
 <use ../Images/L1_9.png>
 Package pdftex.def Info: ../Images/L1_9.png  used on input line 118.
 (pdftex.def)             Requested size: 124.77936pt x 108.31264pt.
-<../Images/L1_10.png, id=275, 517.935pt x 279.0425pt>
+<../Images/L1_10.png, id=294, 517.935pt x 279.0425pt>
 File: ../Images/L1_10.png Graphic file (type png)
 <use ../Images/L1_10.png>
 Package pdftex.def Info: ../Images/L1_10.png  used on input line 127.
 (pdftex.def)             Requested size: 174.69414pt x 94.11955pt.
- [6 <../Images/L1_8.png> <../Images/L1_9.png> <../Images/L1_10.png>]) (./Lectures/L2.tex
+ [7 <../Images/L1_8.png> <../Images/L1_9.png> <../Images/L1_10.png>]) (./Lectures/L2.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 16.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [7]
+) [8]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 79.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [8{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [9] [10]) [11] [12] (./ROB311_Lectures.aux)
+) [9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [10] [11]) [12] [13] (./ROB311_Lectures.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ROB311_Lectures.out' has not changed.
-(rerunfilecheck)             Checksum: A4BF654893AE7F0388763253EC1978C8;7485.
+(rerunfilecheck)             Checksum: 005CBF9D68CD2103A8515FAC0B26A662;8080.
  ) 
 Here is how much of TeX's memory you used:
- 52935 strings out of 474116
- 1228598 string characters out of 5743682
+ 52942 strings out of 474116
+ 1228653 string characters out of 5743682
  2195187 words of memory out of 5000000
- 74257 multiletter control sequences out of 15000+600000
+ 74260 multiletter control sequences out of 15000+600000
  638659 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,816b,1493s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,107p,812b,1493s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ROB311_Lectures.pdf (12 pages, 681862 bytes).
+Output written on ROB311_Lectures.pdf (13 pages, 683954 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 151 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 571 PDF objects out of 1000 (max. 8388607)
+ 481 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 420 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,45 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Prologue}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Components of a Robotic System}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Overview (Robots, the Environment)}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Robot (Sensors, Actuators, the Brain)}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Brain (Tracker, Planner, Memory)}{5}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Environment (Physics, State)}{5}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}Equations of a Robotic System}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Sensing}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Tracking}{6}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Planning}{6}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Acting}{7}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Simulating}{7}{subsubsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.3}Setup of Planning Problems}{8}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Uninformed Search Algorithms}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Setup}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Search Graphs}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Path Trees}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Search Algorithms}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Characteristics of a Search Algorithm}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Breadth First Search (BFS)}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Depth First Search (DFS)}{10}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Iterative Deepening DFS (IDDFS)}{10}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Cheapest-First Search (CFS)}{10}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Modifications to Search Algorithms}{10}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Depth-Limiting}{10}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Iterative Deepening}{11}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Cost-Limiting}{11}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Iterative-Inflating}{11}{subsubsection.2.5.4}%
+\contentsline {subsubsection}{\numberline {2.5.5}Intra-Path Cycle Checking}{12}{subsubsection.2.5.5}%
+\contentsline {subsubsection}{\numberline {2.5.6}Inter-Path Cycle Checking}{12}{subsubsection.2.5.6}%
+\contentsline {subsection}{\numberline {2.6}Informed Search Algorithms}{12}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Estimated Cost}{12}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Heuristics}{13}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Heuristic-First Search (HFS)}{13}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}A-Star Search (A*)}{13}{subsubsection.2.6.4}%
+\contentsline {subsubsection}{\numberline {2.6.5}Iterative Inflating A-Star Search (IIA*)}{13}{subsubsection.2.6.5}%
+\contentsline {subsubsection}{\numberline {2.6.6}Designing Heuristics via Problem Relaxation}{13}{subsubsection.2.6.6}%
+\contentsline {subsubsection}{\numberline {2.6.7}Combining Heuristics}{13}{subsubsection.2.6.7}%
+\contentsline {subsection}{\numberline {2.7}Characteristics of an Informed Search Algorithm}{13}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Anytime Search Algorithms}{13}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Formulating a Search Problem}{13}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Informed Search Algorithms}{13}{section.3}%
+\contentsline {section}{\numberline {4}Probability Review}{13}{section.4}%
+\contentsline {section}{\numberline {5}Probabilistic Inference Problems}{13}{section.5}%
