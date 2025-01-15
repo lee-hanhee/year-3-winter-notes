@@ -637,6 +637,11 @@ INPUT ../Images/L4_0.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT ../Images/L4_1.png
+INPUT ../Images/L4_1.png
+INPUT ../Images/L4_1.png
+INPUT ../Images/L4_1.png
+INPUT ../Images/L4_1.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT ./Lectures/L5.tex
 INPUT ./Lectures/L5.tex

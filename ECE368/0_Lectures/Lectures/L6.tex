@@ -1,0 +1,140 @@
+\subsection{MLE for Categorical Random Variables}
+\begin{example}
+    \begin{enumerate}
+        \item We say that $X \sim \text{Cat}(\underline{\theta})$ if 
+        \[
+        P[X = m] = \theta_m, \quad m = 1, 2, \dots, M.
+        \]
+        The parameter $\underline{\theta}$ is a vector:
+        \[
+        \underline{\theta} = 
+        \begin{bmatrix}
+        \theta_1 \\
+        \theta_2 \\
+        \vdots \\
+        \theta_M
+        \end{bmatrix},
+        \]
+        such that $\theta_m \geq 0$ and $\sum_{m=1}^M \theta_m = 1.$
+    
+        \item Given $n$ i.i.d. observations $X_1, \dots, X_n$, we aim to find the maximum likelihood estimator (MLE) of $\underline{\theta}$.
+    
+        \item Define $n_m$ as the number of observations that equal $m$:
+        \[
+        n_m = \sum_{i=1}^n 1(x_i = m),
+        \]
+        where $1(x_i = m)$ is the indicator function. Note that $\sum_{m=1}^M n_m = n.$
+    
+        \item The likelihood function is:
+        \[
+        p_{\underline{X}}(\underline{x} \mid \underline{\theta}) = \prod_{m=1}^M \theta_m^{n_m}.
+        \]
+        Taking the log, we get:
+        \[
+        \log p_{\underline{X}}(\underline{x} \mid \underline{\theta}) = \sum_{m=1}^M n_m \log \theta_m.
+        \]
+    
+        \item To find the optimal $\underline{\theta}$, we minimize the negative log-likelihood:
+        \[
+        \min_{\underline{\theta}} -\sum_{m=1}^M n_m \log \theta_m,
+        \]
+        subject to the constraints $\theta_m \geq 0$ for $1 \leq m \leq M$ and $\sum_{m=1}^M \theta_m = 1.$
+    
+        \item Solving this optimization problem, the MLE is:
+        \[
+        \hat{\theta}_m = \frac{N_m}{n}, \quad \underline{\hat{\theta}} = 
+        \begin{bmatrix}
+        \frac{N_1}{n} \\
+        \vdots \\
+        \frac{N_m}{n}
+        \end{bmatrix}.
+        \]
+    \end{enumerate}
+\end{example}
+\newpage
+
+\subsection{MLE for Gaussian Random Variables}
+\begin{example}
+    \begin{enumerate}
+        \item Given $n$ i.i.d. observations $X_1, \dots, X_n$ of a Gaussian random variable with parameters $(\mu, \sigma^2)$, we aim to find the maximum likelihood estimators (MLEs) of $\mu$ and $\sigma^2$.
+
+        \begin{align*}
+        f_{\underline{X}}(\underline{x} | \mu, \sigma^2) &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi} \sigma} \exp\left(-\frac{(x_i - \mu)^2}{2\sigma^2}\right), \\
+        \log f_{\underline{X}}(\underline{x} | \mu, \sigma^2) &= \sum_{i=1}^n \left(-\frac{(x_i - \mu)^2}{2\sigma^2} - \log \sigma - \log \sqrt{2\pi}\right).
+        \end{align*}
+    
+        \item To find $\mu$, take the derivative of the log-likelihood with respect to $\mu$ and set it to zero:
+        \begin{align*}
+        0 &= \frac{\partial}{\partial \mu} \sum_{i=1}^n \left(-\frac{(x_i - \mu)^2}{2\sigma^2}\right), \\
+        0 &= \frac{1}{n} \sum_{i=1}^n x_i - \mu, \\
+        \mu &= \frac{1}{n} \sum_{i=1}^n x_i.
+        \end{align*}
+    
+        \item To find $\sigma^2$, take the derivative of the log-likelihood with respect to $\sigma^2$ and set it to zero:
+        \begin{align*}
+        0 &= \frac{\partial}{\partial \sigma^2} \sum_{i=1}^n \left(-\frac{(x_i - \mu)^2}{2\sigma^2} - \frac{1}{2} \log \sigma^2\right), \\
+        0 &= -\frac{1}{2} \sum_{i=1}^n \left(\frac{(x_i - \mu)^2}{\sigma^4}\right) + \frac{1}{2\sigma^2}, \\
+        \sigma^2 &= \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2.
+        \end{align*}
+    
+        \item Thus, the MLEs are:
+        \begin{align*}
+        \hat{\mu} &= \frac{1}{n} \sum_{i=1}^n X_i, \quad \text{(sample mean)} \\
+        \hat{\sigma}^2 &= \frac{1}{n} \sum_{i=1}^n (X_i - \hat{\mu})^2. \quad \text{(sample variance)}
+        \end{align*}
+    \end{enumerate}
+\end{example}
+
+\subsection{Will the Sun Rise Tomorrow? (Laplace's Problem)}
+\begin{example}
+    \begin{itemize}
+        \item Observation: The Sun has risen for $n$ consecutive days. Estimate the probability that it will rise tomorrow.
+        \item Model: Assume $n$ i.i.d. Bernoulli random variables $X_1, \dots, X_n$ with $P[X_i = 1] = \theta$.
+    \end{itemize}
+\end{example}
+\subsubsection{Frequentist Approach}
+\begin{example}
+    \begin{enumerate}
+        \item The Maximum Likelihood Estimator (MLE) is:
+        \[
+        \hat{\theta} = \frac{K}{n} = \frac{\sum_{i=1}^n X_i}{n}.
+        \]
+        \item If $K = n$ (i.e., the Sun has risen every day so far), then:
+        \[
+        \hat{\theta} = \frac{n}{n} = 1.
+        \]
+        \item Conclusion: The Sun will rise tomorrow with probability $1$, regardless of what $n$ is, based on the Frequentist approach.
+    \end{enumerate}
+\end{example}
+
+\subsubsection{Bayesian Approach}
+\begin{example}
+    \begin{enumerate}
+        \item Assume that $\theta$ is not fixed but drawn from a uniform distribution in $[0, 1]$.
+        \item We want to find:
+        \[
+        P[X_{n+1} = 1 | X_1 = 1, \dots, X_n = 1].
+        \]
+        Using Bayes' Theorem:
+        \[
+        P[X_{n+1} = 1 | X_1 = 1, \dots, X_n = 1] = \frac{P[X_1 = 1, \dots, X_{n+1} = 1]}{P[X_1 = 1, \dots, X_n = 1]}.
+        \]
+        \item Compute $P[X_1 = 1, \dots, X_n = 1]$:
+        \[
+        P[X_1 = 1, \dots, X_n = 1] = \int_0^1 P[X_1 = 1, \dots, X_n = 1 | \Theta = \theta] f_\Theta(\theta) \, d\theta.
+        \]
+        Since $f_\Theta(\theta) = 1$ (uniform prior) and $P[X_1 = 1, \dots, X_n = 1 | \Theta = \theta] = \theta^n$, we have:
+        \[
+        P[X_1 = 1, \dots, X_n = 1] = \int_0^1 \theta^n \, d\theta = \frac{1}{n+1}.
+        \]
+        \item Compute $P[X_1 = 1, \dots, X_{n+1} = 1]$ similarly:
+        \[
+        P[X_1 = 1, \dots, X_{n+1} = 1] = \int_0^1 \theta^{n+1} \, d\theta = \frac{1}{n+2}.
+        \]
+        \item Combine results:
+        \[
+        P[X_{n+1} = 1 | X_1 = 1, \dots, X_n = 1] = \frac{\frac{1}{n+2}}{\frac{1}{n+1}} = \frac{n+1}{n+2}.
+        \]
+        \item Conclusion: As $n$ increases, the probability approaches $1$, providing more certainty with more data.
+    \end{enumerate}
+\end{example}

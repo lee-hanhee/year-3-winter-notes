@@ -26,12 +26,91 @@
     \end{equation}    
 \end{definition}
 
+\begin{derivation}
+    \begin{align*}
+        \text{i.i.d. } X_1, X_2, \dots, X_n &\implies \\
+        p_{\underline{X}}(\underline{x} | \theta) &= \prod_{i=1}^n p_{X_i}(x_i | \theta) \\
+        &= \prod_{i=1}^n p_X(x_i | \theta) \quad \text{drop the i due to i.i.d. assumption}\\
+        \log p_{\underline{X}}(\underline{x} | \theta) &= \sum_{i=1}^n \log p_X(x_i | \theta).
+    \end{align*}
+\end{derivation}
+
 \begin{example}
-    
+    \begin{enumerate}
+        \item \textbf{Model and Observations:}
+        \begin{itemize}
+            \item Assume a biased coin with probability $\theta$ of showing heads. 
+            \item Toss the coin $n$ times and obtain Bernoulli random variables $X_1, \dots, X_n$ such that:
+            \[
+            \text{"heads" } \to 1, \quad \text{"tails" } \to 0.
+            \]
+            \item Total number of heads is:
+            \[
+            k = \sum_{i=1}^n X_i.
+            \]
+            For example:
+            \[
+            \underline{x} = (1, 0, 0, 0, 1, 1, 0, 1, 1, 1), \quad k = 6.
+            \]
+            \item Probability of observing $\underline{x}$ given $\theta$ is:
+            \[
+            p_{\underline{X}}(\underline{x} | \theta) = \theta^k (1 - \theta)^{n - k}.
+            \]
+            It is sufficient to know only $k$.
+        \end{itemize}
+        
+        \item \textbf{Log-Likelihood and Maximization:}
+        \begin{itemize}
+            \item The log-likelihood function is:
+            \[
+            \log p_{\underline{X}}(\underline{x} | \theta) = k \log(\theta) + (n - k) \log(1 - \theta).
+            \]
+            \item To maximize the log-likelihood over $\theta$, set:
+            \begin{align*}
+            0 &= \frac{\partial}{\partial \theta} \log p_{\underline{X}}(\underline{x} | \theta), \\
+            0 &= \frac{k}{\theta} - \frac{n - k}{1 - \theta}, \\
+            \theta &= \frac{k}{n}.
+            \end{align*}
+            \item Thus, the Maximum Likelihood Estimator (MLE) is:
+            \[
+            \hat{\Theta} = \frac{k}{n}, \quad \text{where } k = \sum_{i=1}^n X_i.
+            \]
+            This corresponds to the observed frequency of heads.
+        \end{itemize}
+        
+        \item \textbf{Examples:}
+        \begin{itemize}
+            \item For $\underline{x} = (1, 0, 0, 0, 1, 1, 0, 1, 1, 1)$:
+            \begin{align*}
+            p_X(\underline{x} | \theta) &= \theta^6 (1 - \theta)^4, \\
+            \hat{\theta} &= \frac{6}{10} = 0.6.
+            \end{align*}
+            \item For $\underline{x} = (0, 1, 1, 1, 0, 0, 1, 0, 1, 0)$:
+            \begin{align*}
+            p_X(\underline{x} | \theta) &= \theta^5 (1 - \theta)^5, \\
+            \hat{\theta} &= \frac{5}{10} = 0.5.
+            \end{align*}
+        \end{itemize}
+    \end{enumerate}
 \end{example}
 
 \begin{notes}
+    \begin{itemize}
+        \item[1.] $K$ is a sufficient statistic for this Maximum Likelihood (ML) estimator.
     
+        \item[2.] The expectation of the estimator $\hat{\theta}$ is:
+        \begin{align*}
+        E[\hat{\Theta}] &= E\left[\frac{1}{n} \sum_{i=1}^n X_i \right] \\
+        &= \frac{1}{n} \sum_{i=1}^n E[X_i] \\
+        &= \frac{1}{n} (n \theta) \\
+        &= \theta \quad \text{(Unbiased)}.
+        \end{align*}
+        \begin{itemize}
+            \item $E[X_i] = (1)\theta + (0)(1 - \theta) = \theta$
+        \end{itemize}
+        
+        \item[3.] In fact, $\hat{\theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is the sample mean, and $\theta$ is the true mean. Therefore, $\hat{\theta} \to \theta$ in probability, which implies that $\hat{\theta}$ is \textit{consistent}.
+    \end{itemize}    
 \end{notes}
 
 
