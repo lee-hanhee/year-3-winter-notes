@@ -309,10 +309,6 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{definition}
 
 \subsection{Informed Search Algorithms}
-\begin{motivation}
-    We want to somehow explore more "promising" paths first.    
-\end{motivation}
-
 \subsubsection{Estimated Cost}
 \begin{definition}
     $\text{ecst}(\cdot)$, to estimate the total cost to a goal given a path, $p$, based on the following:
@@ -332,6 +328,14 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \item $\text{ecst}(p) = \text{cst}(p) + \text{hur}(p)$; called A$^*$ (A-star)
     \end{enumerate}
 \end{example}
+
+\subsection{Characteristics of an Informed Search Algorithm}
+\begin{definition}
+    \begin{enumerate}
+        \item Heuristic: $\text{hur}(\cdot)$
+        \item Cost estimation: $\text{ecst}(\cdot)$
+    \end{enumerate}
+\end{definition}
 \subsubsection{Heuristics}
 
 
@@ -344,10 +348,6 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \subsubsection{Designing Heuristics via Problem Relaxation}
 
 \subsubsection{Combining Heuristics}
-
-
-
-\subsection{Characteristics of an Informed Search Algorithm}
 
 \subsection{Anytime Search Algorithms}
 

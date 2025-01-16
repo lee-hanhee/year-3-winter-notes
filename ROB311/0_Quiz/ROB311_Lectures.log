@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  14 JAN 2025 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  15 JAN 2025 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1317,24 +1317,24 @@ Package pdftex.def Info: ../Images/L1_2.png  used on input line 57.
 File: ../Images/L1_3.png Graphic file (type png)
 <use ../Images/L1_3.png>
 Package pdftex.def Info: ../Images/L1_3.png  used on input line 70.
-(pdftex.def)             Requested size: 124.77936pt x 51.39194pt.
+(pdftex.def)             Requested size: 199.64392pt x 82.22421pt.
 <../Images/L1_6.png, id=271, 193.72375pt x 173.64874pt>
 File: ../Images/L1_6.png Graphic file (type png)
 <use ../Images/L1_6.png>
 Package pdftex.def Info: ../Images/L1_6.png  used on input line 86.
 (pdftex.def)             Requested size: 124.77936pt x 111.85022pt.
- [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L1_1.png> <../Images/L1_2.png> <../Images/L1_3.png>]
-<../Images/L1_7.png, id=283, 215.80624pt x 269.005pt>
+ [5 <../Images/L1_1.png> <../Images/L1_2.png> <../Images/L1_3.png>]
+<../Images/L1_7.png, id=282, 215.80624pt x 269.005pt>
 File: ../Images/L1_7.png Graphic file (type png)
 <use ../Images/L1_7.png>
 Package pdftex.def Info: ../Images/L1_7.png  used on input line 95.
 (pdftex.def)             Requested size: 124.77936pt x 155.53865pt.
-<../Images/L1_8.png, id=284, 207.77625pt x 276.03125pt>
+<../Images/L1_8.png, id=283, 207.77625pt x 276.03125pt>
 File: ../Images/L1_8.png Graphic file (type png)
 <use ../Images/L1_8.png>
 Package pdftex.def Info: ../Images/L1_8.png  used on input line 104.
 (pdftex.def)             Requested size: 124.77936pt x 165.76743pt.
- [6 <../Images/L1_6.png> <../Images/L1_7.png>]
+ [6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L1_6.png> <../Images/L1_7.png>]
 <../Images/L1_9.png, id=293, 197.73875pt x 171.64125pt>
 File: ../Images/L1_9.png Graphic file (type png)
 <use ../Images/L1_9.png>
@@ -1359,21 +1359,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ROB311_Lectures.out' has not changed.
-(rerunfilecheck)             Checksum: 005CBF9D68CD2103A8515FAC0B26A662;8080.
+(rerunfilecheck)             Checksum: 119E9D55588F5428D85FAC89AE68DA4C;8080.
  ) 
 Here is how much of TeX's memory you used:
- 52942 strings out of 474116
- 1228653 string characters out of 5743682
+ 52940 strings out of 474116
+ 1228570 string characters out of 5743682
  2195187 words of memory out of 5000000
- 74260 multiletter control sequences out of 15000+600000
+ 74256 multiletter control sequences out of 15000+600000
  638659 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,107p,812b,1493s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ROB311_Lectures.pdf (13 pages, 683954 bytes).
+Output written on ROB311_Lectures.pdf (13 pages, 683664 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 484 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
  420 words of extra memory for PDF output out of 10000 (max. 10000000)
 
