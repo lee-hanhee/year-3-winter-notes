@@ -158,16 +158,15 @@
     \textcolor{orange}{\textbf{Inv. LT Residue:}} 1. Find poles of $F(s)$ and their residues. \\
     2. Use Cauchy's Residue THM to find inverse LT.
 
-    \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = y^{(n-1)}(0) = 0$ and \\ 
-    $u(0) = \cdots = u^{(m-1)}(0) = 0$. Then the TF from $u$ to $y$ is \\
-    $G(s) := \frac{y(s)}{u(s)} = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$. \\
+    \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = \frac{d^{(n-1)}y}{dt^{(n-1)}}(0) = 0$ and \\ 
+    $u(0) = \cdots = \frac{d^{(m-1)} u}{dt^{(m-1)}}(0) = 0$. Then the TF from $u$ to $y$ is \\
+    $G(s) := \frac{y(s)}{U(s)} = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$. \\
     *\textbf{0 Ini. Conds.:} $y_0(s) = G(s) u(s)$ \\
     *\textbf{$\emptyset$ Ini. Conds.:} $y_{\emptyset}(s) = y_0(s) + \frac{\text{poly. based on initial conds.}}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$
 
     \textcolor{blue}{\textbf{Impulse Response:}} Given CS modeled by TF $G(s)$, its IR is  
     $g(t) := \mathcal{L}^{-1} \{ G(s) \}$. \\
-    *$y(t) = \mathcal{L}^{-1} \{ Y(s) \} = \mathcal{L}^{-1} \{ G(s) U(s) \} = (g * u)(t).$  \\
-    *If $u(t) = \delta(t)$, then $y(t) = (g * u)(t) = g(t) \text{ and } \mathcal{L} \{\delta(t)\} = 1.$  \\
+    *$\mathcal{L} \{\delta(t) \} = 1$, then if $u(t) \text{=} \delta(t)$, then $Y(s) = U(s) G(s) = G(s)$.
     
 
         }
