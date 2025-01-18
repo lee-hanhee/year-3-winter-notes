@@ -52,9 +52,9 @@
 
     \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X}(x|A) = \frac{f_{X,A}(x, a)}{f_A(a)}$ IS THIS CORRECT?
 
-    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] = \int_{-\infty}^{\infty} h(x) f_X(x) dx \mid \sum_{k=-\infty}^{\infty} h(k) f_X(k)$ \\
+    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] \text{=} \int_{-\infty}^{\infty} h(x) f_X(x) dx \mid \sum_{k=-\infty}^{\infty} h(k) P_X(x_i \text{=} k)$ \\
 
-    \textcolor{darkgreen}{\textbf{Variance:}} $\text{Var}[X] = E[(X - \mu)^2] = E[X^2] - E[X]^2$
+    \textcolor{darkgreen}{\textbf{Variance:}} $\sigma_X^2 = \text{Var}[X] = E[(X - E[X])^2] = E[X^2] - E[X]^2$
 
     \textcolor{darkgreen}{\textbf{Cond. Exp.:}} $E[X|A] = \int_{-\infty}^{\infty} x f_X(x|A) \, dx$ 
 
@@ -104,7 +104,7 @@
     \textcolor{darkgreen}{\textbf{Sample Mean:}} $M_n = \frac{1}{n} S_n = \frac{1}{n} \sum_{i=1}^n X_i$. \\
     *Given a sequence of i.i.d. RVs, $X_1, X_2, \ldots, X_n$, $M_n$ is unbiased and consistent.
 
-    \textcolor{blue}{\textbf{Weal Law of Large \#s}} $\lim_{n \to \infty} P[|M_n - \mu| < \epsilon] = 1 \; \forall \epsilon > 0$.
+    \textcolor{blue}{\textbf{Weak Law of Large \#s}} $\lim_{n \to \infty} P[|M_n - \mu| < \epsilon] = 1 \; \forall \epsilon > 0$.
 
     \textcolor{red}{\textbf{Maximum Likelihood Estimation:}} Choose parameter $\theta$ that is most likely to generate the obs. $x_1, x_2, \ldots, x_n$. \\
     *Discrete $X$: $\hat{\Theta} = \arg \max_\theta P_{\underline{X}} (\underline{x} | \theta) \overset{\text{log}}{=} \arg \max_\theta \sum_{i=1}^n \log P_X(x_i | \theta)$ \\

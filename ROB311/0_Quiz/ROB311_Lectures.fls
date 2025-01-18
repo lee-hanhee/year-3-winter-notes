@@ -667,6 +667,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmtt10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT ./Lectures/L3.tex
+INPUT ./Lectures/L3.tex
+INPUT Lectures/L3.tex
 INPUT ROB311_Lectures.aux
 INPUT ./ROB311_Lectures.out
 INPUT ./ROB311_Lectures.out
