@@ -14,20 +14,38 @@
         \item Conversion to DT is necessary because robots are digitalized system and then converted back to CT for execution.
     \end{itemize}
 \end{summary}
-    
 
-\begin{faq}
+\subsection{Setup of Planning Problems}
+\begin{summary}
+In a planning problem, it is assumed that:
     \begin{itemize}
-        \item What does the environment do?
-        \item What is the joint action set?
+        \item the environment is representable using a discrete set of states, $\mathcal{S}$
+        \item for each state, $s \in \mathcal{S}$, each agent, $i$, has a discrete set of actions, $\mathcal{A}_i(s)$, with $\mathcal{A}(s) := \times_i \mathcal{A}_i(s)$ (joint action set)
+        \item a \textbf{move} is any tuple, $(s, a)$, where $s \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \item a \textbf{transition} is any 3-tuple, $(s, a, s')$, where $s, s' \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \begin{itemize}
+            \item the transition resulting from a move may be deterministic/stochastic
+        \end{itemize}
+        \item $\text{rwd}_i(s, a, s')$ is agent $i$'s reward for the transition, $(s, a, s')$
+        \item a \textbf{path} is any sequence of transitions of the form
+        \[
+        p = \left\langle (s^{(0)}, a^{(1)}, s^{(1)}), (s^{(1)}, a^{(2)}, s^{(2)}), \ldots \right\rangle
+        \]
+        \item each agent wants to realize a path that maximizes its own reward
     \end{itemize}
-\end{faq}
+\end{summary}
+
+\begin{warning}
+    $\mathcal{A}(s)$ is the joint action set of all agents at state $s$.
+\end{warning}
+\newpage
 
 \subsection{Components of a Robotic System}
 \begin{summary}
     \customFigure[0.75]{../Images/L1_4.png}{Components of a Robotic System (Words)}
     \customFigure[0.75]{../Images/L1_5.png}{Components of a Robotic System (Math)}
 \end{summary}
+\newpage
 
 \subsubsection{Overview (Robots, the Environment)}
 \begin{definition}
@@ -51,6 +69,7 @@
         \item Measurements go into the brain which can create a plan.
     \end{itemize}
 \end{notes}
+\newpage
 
 \subsubsection{Brain (Tracker, Planner, Memory)}
 \begin{definition}
@@ -69,6 +88,7 @@
 \begin{definition}
     \customFigure[0.4]{../Images/L1_3.png}{Environment (Physics, State)} 
 \end{definition}
+\newpage
 
 \subsection{Equations of a Robotic System}
 
@@ -94,6 +114,7 @@
     \]
     \customFigure[0.25]{../Images/L1_7.png}{Tracking}
 \end{definition}
+\newpage
 
 \subsubsection{Planning}
 \begin{definition}
@@ -117,6 +138,7 @@
     \]
     \customFigure[0.25]{../Images/L1_9.png}{Acting}
 \end{definition}
+\newpage
 
 \subsubsection{Simulating}
 \begin{definition}
@@ -126,25 +148,3 @@
     \]
     \customFigure[0.35]{../Images/L1_10.png}{Simulating}
 \end{definition}
-
-\subsection{Setup of Planning Problems}
-\begin{summary}
-In a planning problem, it is assumed that:
-    \begin{itemize}
-        \item the environment is representable using a discrete set of states, $\mathcal{S}$
-        \item for each state, $s \in \mathcal{S}$, each agent, $i$, has a discrete set of actions, $\mathcal{A}_i(s)$, with $\mathcal{A}(s) := \times_i \mathcal{A}_i(s)$
-        \item a \textbf{move} is any tuple, $(s, a)$, where $s \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
-        \item a \textbf{transition} is any 3-tuple, $(s, a, s')$, where $s, s' \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
-        \item the transition resulting from a move may be deterministic/stochastic
-        \item $rwd_i(s, a, s')$ is agent $i$'s reward for the transition, $(s, a, s')$
-        \item a \textbf{path} is any sequence of transitions of the form
-        \[
-        p = \left\langle (s^{(0)}, a^{(1)}, s^{(1)}), (s^{(1)}, a^{(2)}, s^{(2)}), \ldots \right\rangle
-        \]
-        \item each agent wants to realize a path that maximizes its own reward
-    \end{itemize}
-\end{summary}
-
-\begin{warning}
-    $\mathcal{A}(s)$ is the joint action set of all agents at state $s$.
-\end{warning}

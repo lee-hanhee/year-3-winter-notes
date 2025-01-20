@@ -336,8 +336,8 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \item Cost estimation: $\text{ecst}(\cdot)$
     \end{enumerate}
 \end{definition}
-\subsubsection{Heuristics}
 
+\subsubsection{Heuristics}
 
 \subsubsection{Heuristic-First Search (HFS)}
 
@@ -352,6 +352,222 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \subsection{Anytime Search Algorithms}
 
 \subsection{Formulating a Search Problem}
+\newpage
+
+\subsection{Canonical Examples}
+\begin{process} \textbf{How to setup a search problem?}
+    \begin{enumerate}
+        \item Givne a search graph, we need to define the following:
+        \begin{itemize}
+            \item $\mathcal{S}$: set of vertices
+            \item $\mathcal{G}$: goal states (subset of $\mathcal{S}$)
+            \item $s^{(0)}$: initial state
+            \item $\mathcal{T}$: set of edges (defined by $\text{tr}(\cdot, \cdot)$)
+            \begin{itemize}
+                \item $\text{tr}(\cdot, \cdot)$: transition function
+            \end{itemize}
+            \item $\text{cst}(\cdot, \cdot, \cdot)$: cost function (defined by edge weights)
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L2_0.png}{}
+    \customFigure[0.5]{../Images/L2_1.png}{}
+\end{example}
+\newpage
+
+\begin{example}
+    \customFigure[0.5]{../Images/L2_9.png}{}
+    \customFigure[0.5]{../Images/L2_10.png}{}
+    \begin{itemize}
+        \item $\mathcal{S} = \{0,\ldots,4 \}^2$
+        \item $\mathcal{G} = \left\{ \begin{bmatrix}
+            1 \\
+            4
+        \end{bmatrix} \right\}$
+        \item $s^{(0)} = \begin{bmatrix}
+            1 \\
+            0
+        \end{bmatrix}$
+    \end{itemize}
+\end{example}
+\newpage
+
+
+\begin{process} \textbf{How to setup a path tree?}
+    \begin{enumerate}
+        \item Start at $s^{(0)}$
+        \item Choose a path until you reach a goal state.
+        \item Repeat until you have found all paths (probably infinite).
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L2_2.png}{}
+    \customFigure[0.5]{../Images/L2_3.png}{}
+\end{example}
+
+\newpage
+
+\begin{process} \textbf{When to use each algorithm?}
+    \begin{enumerate}
+        \item Find properties needed for the problem and match them to the characteristics of the algorithm.
+        \item Choose the algorithm that best matches the properties.
+        \begin{itemize}
+            \item \textbf{BFS:} 
+            \item \textbf{DFS:} 
+            \item \textbf{IDDFS:} 
+            \item \textbf{CFS:}
+            \item \textbf{A*:} 
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    
+\end{example}
+\newpage
+
+\begin{process} \textbf{How to Trace Through a Search Algorithm}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example} \textbf{BFS}
+    
+\end{example}
+
+\begin{example} \textbf{DFS}
+    
+\end{example}
+
+\begin{example} \textbf{IDDFS}
+
+\end{example}
+
+\begin{example} \textbf{CFS}
+
+\end{example}
+
+\begin{example} \textbf{HFS}
+    
+\end{example}
+
+\begin{example} \textbf{A*}
+
+\end{example}
+
+\begin{example} \textbf{IIA*}
+    
+\end{example}
+
+\begin{example} \textbf{WA*}
+    
+\end{example}
+\newpage
+
+\begin{process} \textbf{How to Figure Out Soln. w/o Performing Search Algorithm?}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example} 
+    
+\end{example}
+\newpage
+
+\begin{process} \textbf{How to Prove Consistent/Admissible Given a Search Graph?}
+   
+    \textbf{Admissible:}
+    \begin{enumerate}
+        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$ or $\text{rwd}(s,a,\text{tr}(s,a))$. If consistent, then it is admissible.
+        \item Check $\forall s \in \mathcal{G}$, $\text{hur}(s) = 0$. If not, then it is not admissible.
+        \item For each $s \in \mathcal{S}$, calculate $\text{hur}^*(s)$ (i.e. actual cost of optimal soln.) using the search graph.
+        \begin{enumerate}
+            \item Start at $s$ and choose path that gives the lowest cost or highest reward to $s \in \mathcal{G}$. 
+        \end{enumerate}
+        \item Check if $\text{hur}(s) \leq \text{hur}^*(s) \; \forall s \in \mathcal{S}$. If not, then it is not admissible.
+        \item Repeat $\forall s \in \mathcal{S}$. 
+        \item If all are true, then it is admissible.
+    \end{enumerate}
+    \vspace{1em}
+
+    \textbf{Consistent:}
+    \begin{enumerate}
+        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$ or $\text{rwd}(s,a,\text{tr}(s,a))$. 
+        \item Check $\forall s \in \mathcal{G}$, $\text{hur}(s) = 0$. If not, then it is not consistent.
+        \item For each $s \in \mathcal{S}$, calculate $\text{hur}(s) - \text{hur}(\text{tr}(s, a))$.
+        \begin{enumerate}
+            \item check if it is $\leq \text{cst}(s,a,\text{tr}(s,a))$ or $\geq \text{rwd}(s,a,\text{tr}(s,a))$. If not, then it is not consistent.
+            \item Repeat $\forall a \in \mathcal{A}(s)$
+        \end{enumerate}
+        \item Repeat $\forall s \in \mathcal{S}$.
+        \item If all are true, then it is consistent.
+    \end{enumerate}
+\end{process}
+
+\begin{warning}
+    Be careful of bidirectional edges bc for consistency you need compute the cost of the heuristic edge in both directions.
+\end{warning}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L2_8.png}{Jungle ($s^{(0)}$), Desert, Swamp, Mountain, Plains (Goal)}
+
+    \textbf{Admissible:}
+    \begin{enumerate}
+        \item \textbf{$s=$Plains:} $\text{hur}(\text{Plains}) = 0$ 
+        \item \textbf{$s=$Jungle:} $\text{hur}(\text{Jungle}) = 3 \leq \text{hur}^*(\text{Jungle}) = 2 + 1 + 2 = 5$
+        \item \textbf{$s=$Desert:} $\text{hur}(\text{Desert}) = 2 \leq \text{hur}^*(\text{Desert}) = 1 + 2$
+        \item \textbf{$s=$Swamp:} $\text{hur}(\text{Swamp}) = 1 \leq \text{hur}^*(\text{Swamp}) = 2$
+        \item \textbf{$s=$Mountain:} $\text{hur}(\text{Mountain}) = 1 \leq \text{hur}^*(\text{Mountain}) = 1$
+        \item Therefore, it is admissible.
+    \end{enumerate}
+    \vspace{1em}
+
+    \textbf{Consistent:}
+    \begin{enumerate}
+        \item \textbf{$s=$Plains:} $\text{hur}(\text{Plains}) = 0$
+        \item \textbf{$s=$Jungle:}
+        \begin{enumerate}
+            \item $\text{hur}(\text{Jungle}) - \text{hur}(\text{Desert}) = 3 - 2 = 1 \leq \text{cst}(\text{Jungle}, \cdot, \text{Desert}) = 2$
+            \item $\text{hur}(\text{Jungle}) - \text{hur}(\text{Swamp}) = 3 - 1 = 2 \leq \text{cst}(\text{Jungle}, \cdot, \text{Swamp}) = 4$
+            \item $\text{hur}(\text{Jungle}) - \text{hur}(\text{Mountain}) = 3 - 1 = 2 \leq \text{cst}(\text{Jungle}, \cdot, \text{Mountain}) = 6$
+        \end{enumerate}
+        \item \textbf{$s=$Desert:} 
+        \begin{enumerate}
+            \item $\text{hur}(\text{Desert}) - \text{hur}(\text{Jungle}) = 2 - 3 = -1 \leq \text{cst}(\text{Desert}, \cdot, \text{Jungle}) = 2$
+            \item $\text{hur}(\text{Desert}) - \text{hur}(\text{Swamp}) = 2 - 1 = 1 \leq \text{cst}(\text{Desert}, \cdot, \text{Swamp}) = 1$
+        \end{enumerate}
+        \item \textbf{$s=$Swamp:}
+        \begin{enumerate}
+             \item $\text{hur}(\text{Swamp}) - \text{hur}(\text{Mountain}) = 1 - 1 = 0 \leq \text{cst}(\text{Swamp}, \cdot, \text{Mountain}) = 3$
+            \item $\text{hur}(\text{Swamp}) - \text{hur}(\text{Plains}) = 1 - 0 = 1 \leq \text{cst}(\text{Swamp}, \cdot, \text{Plains}) = 2$
+        \end{enumerate}
+        \item \textbf{$s=$Mountain:} 
+        \begin{enumerate}
+            \item $\text{hur}(\text{Mountain}) - \text{hur}(\text{Jungle}) = 1 - 3 = -2 \leq \text{cst}(\text{Mountain}, \cdot, \text{Desert}) = 6$
+            \item $\text{hur}(\text{Mountain}) - \text{hur}(\text{Plains}) = 1 - 0 = 1 \leq \text{cst}(\text{Mountain}, \cdot, \text{Plains}) = 1$
+        \end{enumerate}
+        \item Therefore, it is consistent.
+    \end{enumerate}
+\end{example}
+\newpage
+
+\begin{process} \textbf{How to Design Heuristic via Problem Relaxation?}
+    \begin{enumerate}
+        \item Make an assumption to simplify the problem as a relaxed problem. 
+        \item Find the cost of the optimal solution of the relaxed problem, $\text{cst}_{\text{rel}}(s)$.
+        \item HOW TO FIND THE COST OF THE OPTIMAL SOLUTION?
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L2_11.png}{}
+\end{example}
+
 
 
 

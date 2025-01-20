@@ -1,0 +1,117 @@
+\begin{summary}
+    
+\end{summary}
+
+\begin{example}
+    Different ways to formulate the CSP problem. 
+    \begin{itemize}
+        \item How can you formualte the CSP problem in a different way? Can I get a specific example?
+        \begin{itemize}
+            \item The domain could be set to everything, then set the constraints later.
+        \end{itemize}
+        \item What is the constraint graph showing? Grouping the variables
+        \item How do you check consistency in a CSP?
+        \item Why can you use any search algorithm when you formulate this as a search problem? 
+        \item What does a node contain? A node contans a path. 
+        \begin{itemize}
+            \item How does that match the example on slide 10. It does. 
+        \end{itemize}
+        \item Why is formulalting a CSP problem as a search problem a bad idea? B/c you have to search through all possible combinations, but if you find a constraint then you can prune the search space.
+        \begin{itemize}
+            \item A lot easier to see if there is a solution or not. But in a search problem, you see if there's a solution and how to get to it. 
+        \end{itemize}
+    \end{itemize}
+\end{example}
+
+\subsection{Admissible and Consistent}
+\begin{summary}
+    Want a way to learn heuristics.
+\end{summary}
+\newpage
+
+\begin{process} \textbf{How to Setup a CSP?}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L3_0.png}{}
+    \customFigure[0.5]{../Images/L3_1.png}{}
+    \customFigure[0.5]{../Images/L3_2.png}{}
+\end{example}
+\newpage
+
+\begin{process} \textbf{How to build a hyper-graph?}
+    \begin{enumerate}
+        \item Circle the variables that appear in constraint $C_i$.
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L3_3.png}{}
+\end{example}
+
+\begin{process} \textbf{How to build a path tree?}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L3_4.png}{}
+    \customFigure[0.5]{../Images/L3_5.png}{}
+\end{example}
+
+\begin{process} \textbf{How to determine a solution to a CSP?}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L3_8.png}{}
+\end{example}
+
+\begin{process} \textbf{How to check $k$-Consistency?} FIS
+    \begin{enumerate}
+        \item Given a set of variables $\mathcal{V}$ w/ $\text{dom}(V) = \{v_1,\ldots,v_{\text{len}(V)}\} \; \forall V \in \mathcal{V}$ and a set of contraints $\mathcal{C}$ w/ $\text{scp}(C) = \{V_1,\ldots,V_{\text{len}(C)}\} \; \forall C \in \mathcal{C}$, check $k$-consistency.
+        \item For each $C \in \mathcal{C}$, do the following:
+        \begin{enumerate}
+            \item For $V \in \text{scp}(C)$, fix $V$ to a value in $\text{dom}(V)$.
+            \begin{enumerate}
+                \item For the other $V \in \text{scp}(C)$, check if the constraint is satisfied by trying all combinations.  
+            \end{enumerate}
+            \item If there is one combination that doesn't satisfy the constraint, then the CSP is not $k$-consistent.
+            \item Repeat $\forall V \in \text{scp}(C)$.
+        \end{enumerate}
+        \item Repeat $\forall C \in \mathcal{C}$.
+        \item If all constraints are satisfied, then the CSP is $k$-consistent.
+    \end{enumerate}
+\end{process}
+
+\begin{process} \textbf{How to Enforce $k$-Consistency?} FIX
+    \begin{enumerate}
+        \item Given a set of variables $\mathcal{V}$ w/ $\text{dom}(V) = \{v_1,\ldots,v_{\text{len}(V)}\} \; \forall V \in \mathcal{V}$ and a set of contraints $\mathcal{C}$ w/ $\text{scp}(C) = \{V_1,\ldots,V_{\text{len}(C)}\} \; \forall C \in \mathcal{C}$, enforce $k$-consistency.
+        \item For each $C \in \mathcal{C}$, do the following:
+        \begin{enumerate}
+            \item For $V \in \text{scp}(C)$, fix $V$ to a value in $\text{dom}(V)$.
+            \begin{enumerate}
+                \item For the other $V \in \text{scp}(C)$, check if the constraint is satisfied by trying all combinations. If the constraint is not satisfied, then remove the value from $\text{dom}(V)$.
+            \end{enumerate}
+            \item Repeat $\forall V \in \text{scp}(C)$.
+        \end{enumerate}
+        \item Check the resulting $\text{dom}(V) = \{v_1,\ldots,v_{\text{len}(V)}\} \; \forall V \in \mathcal{V}$ w/ the other constraints.
+        \item Repeat $\forall C \in \mathcal{C}$. 
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L3_6.png}{}    
+    \customFigure[0.5]{../Images/L3_7.png}{}    
+\end{example}
+\newpage
+
+
+
+
