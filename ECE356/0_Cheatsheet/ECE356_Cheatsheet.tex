@@ -129,6 +129,8 @@
     \textbf{Shift in $s$:} $\mathcal{L} \{e^{at} f(t)\} = \mathcal{L} \{f(t)\}\big|_{s \to s-a} = F(s-a)$, where $F(s) = \mathcal{L} \{f(t)\}$ \& $a ~ \text{const}$. \\   
 
     \textcolor{blue}{\textbf{Trig. Id.}} $2 \sin(2t) = 2 \sin(t) \cos(t)$, $\sin(a-b) = \sin(a) \cos(b) - \cos(a) \sin(b)$, $\cos(a-b) = \cos(a) \cos(b) + \sin(a) \sin(b)$
+
+    \textcolor{blue}{\textbf{Complete the Square:}} $a x^2 + b x + c = a (x + \frac{b}{2a})^2 - \frac{b^2}{4a} + c$
     
     \textcolor{orange}{\textbf{LT Steps:}} 1. Write $f(t)$ as a sum and use linearity \\
     *Trig. id. may be useful. \\
@@ -137,8 +139,6 @@
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
     $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
     $= \lim_{w \to \infty} \frac{1}{2\pi} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
-
-    \switchcolumn
     
     \textbf{Zero:} $z \in \mathbb{C}$ is a zero of $F(s)$ if $F(z) = 0$.  
 

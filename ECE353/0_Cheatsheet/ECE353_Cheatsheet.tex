@@ -14,6 +14,12 @@
         \toprule
         \textbf{Terminal Command} \\
         \midrule
+        \texttt{readelf -a <FILE>} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item See the ELF header of a file.
+        \end{itemize}} \\
+        \midrule
         \texttt{strace <PROGRAM>} \\
         \multicolumn{1}{p{\linewidth}}{
         \begin{itemize}
@@ -42,6 +48,38 @@
     \end{center}
 \end{summary}
 \newpage
+
+\section{C Programming}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{l}
+        \toprule
+        \textbf{C Programming Syntax} \\
+        \midrule
+        \texttt{static} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Only able to use the global variable in the current C file.
+        \end{itemize}} \\
+        \midrule
+        \texttt{static} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Only able to use the global variable in the current C file.
+        \end{itemize}} \\
+        \midrule
+        \texttt{static} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Only able to use the global variable in the current C file.
+        \end{itemize}} \\
+        \midrule
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
 
 \section{Functions}
 \begin{summary}
@@ -203,12 +241,30 @@ void exit(int status);
 
 \section{Operating System Structure}
 
+\subsection{3 Operating System Concepts}
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{Virtualization:} Share one resource by mimicking multiple independent copies.
+        \item \textbf{Concurrency:} Handle multiple things happening at the same time.
+        \item \textbf{Persistence:} Retain data consistency even without power. 
+    \end{enumerate}
+\end{definition}
+
 \subsection{Different Types of Kernels}
 
 \section{Processes}
 \begin{definition}
     An instance of running a program.
+    \begin{itemize}
+        \item \textbf{Program:} A file containing all the instructions and data required to run. 
+    \end{itemize}
+    \customFigure[0.3]{../Images/L1_0.png}{Process}
 \end{definition}
+
+\subsection{Hello World}
+\begin{example}
+    
+\end{example}
 
 \section{Threads}
 
