@@ -151,8 +151,8 @@
     \textcolor{blue}{\textbf{Residue Computation}} Let $G(s)$ be a complex analytic fcn w/ a pole at $s = p$, $r$ be the multiplicity of the pole $p$. Then  
     $\text{Res}[G(s), s = p] = \frac{1}{(r-1)!} \lim_{s \to p} \frac{d^{r-1}}{ds^{r-1}} \left[ G(s) (s-p)^r \right]$.  
 
-    \textcolor{orange}{\textbf{Inv. LT Partial Frac.:}} 1. Factorize $F(s)$ into canonical form. \\
-    2. Find coefficients of partial fraction and use LT table to find inverse LT. \\
+    \textcolor{orange}{\textbf{Inv. LT Partial Frac.:}} 1. Factorize $F(s)$ into partial fractions. \\
+    2. Find coefficients and use LT table to find inverse LT. \\
     *Complete the square. 
 
     \textcolor{orange}{\textbf{Inv. LT Residue:}} 1. Find poles of $F(s)$ and their residues. \\
@@ -163,6 +163,16 @@
     $G(s) := \frac{y(s)}{U(s)} = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$. \\
     *\textbf{0 Ini. Conds.:} $y_0(s) = G(s) u(s)$ \\
     *\textbf{$\emptyset$ Ini. Conds.:} $y_{\emptyset}(s) = y_0(s) + \frac{\text{poly. based on initial conds.}}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$
+
+    \textcolor{orange}{\textbf{TF Steps (IO to TF):}} 1. Given IO form of CS, assume zero initial conds. \\
+    2. Find $G(s)$ by taking LT of IO form and forming $Y(s)/U(s)$. \\
+    *Careful: $Y(s)/U(s) = G(s)$ not $U(s)/Y(s) = G(s)$.
+    
+    \textcolor{orange}{\textbf{TF Steps (SS to TF):}} 1. Given SS form of CS, assume zero initial conds. \\
+    2. Solve for $\underline{x}$ in terms of $u$ and $y$, and put into IO form. \\
+    3. Find $G(s)$ by taking LT of IO form and forming $Y(s)/U(s)$. \\
+    1. Solve $G(s) = C (sI - A)^{-1} B + D$.
+
 
     \textcolor{blue}{\textbf{Impulse Response:}} Given CS modeled by TF $G(s)$, its IR is  
     $g(t) := \mathcal{L}^{-1} \{ G(s) \}$. \\
