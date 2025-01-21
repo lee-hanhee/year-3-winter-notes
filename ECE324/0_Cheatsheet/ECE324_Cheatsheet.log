@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  16 JAN 2025 09:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  21 JAN 2025 16:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1159,38 +1159,33 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count417
-<../Images/L2_0.png, id=51, 870.25125pt x 465.74pt>
-File: ../Images/L2_0.png Graphic file (type png)
-<use ../Images/L2_0.png>
-Package pdftex.def Info: ../Images/L2_0.png  used on input line 13.
-(pdftex.def)             Requested size: 249.55872pt x 133.55453pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 23.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 23.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 23.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 23.
+(Font)              <10> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 23.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+(Font)              <5> on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1221,65 +1216,72 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L2_0.png>]
-<../Images/L2_2.png, id=70, 654.445pt x 331.2375pt>
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<../Images/L2_0.png, id=100, 870.25125pt x 465.74pt>
+File: ../Images/L2_0.png Graphic file (type png)
+<use ../Images/L2_0.png>
+Package pdftex.def Info: ../Images/L2_0.png  used on input line 105.
+(pdftex.def)             Requested size: 249.55872pt x 133.55453pt.
+ [2 <../Images/L2_0.png>]
+<../Images/L2_2.png, id=108, 654.445pt x 331.2375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
-Package pdftex.def Info: ../Images/L2_2.png  used on input line 73.
+Package pdftex.def Info: ../Images/L2_2.png  used on input line 165.
 (pdftex.def)             Requested size: 249.55872pt x 126.31126pt.
-<../Images/L2_3.png, id=71, 693.59125pt x 329.23pt>
+<../Images/L2_3.png, id=109, 693.59125pt x 329.23pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
-Package pdftex.def Info: ../Images/L2_3.png  used on input line 78.
+Package pdftex.def Info: ../Images/L2_3.png  used on input line 170.
 (pdftex.def)             Requested size: 249.55872pt x 118.4574pt.
-<../Images/L2_4.png, id=72, 883.3pt x 359.3425pt>
+ [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L2_2.png>]
+<../Images/L2_4.png, id=123, 883.3pt x 359.3425pt>
 File: ../Images/L2_4.png Graphic file (type png)
 <use ../Images/L2_4.png>
-Package pdftex.def Info: ../Images/L2_4.png  used on input line 92.
+Package pdftex.def Info: ../Images/L2_4.png  used on input line 184.
 (pdftex.def)             Requested size: 299.47351pt x 121.82939pt.
- [2 <../Images/L2_2.png> <../Images/L2_3.png>]
-<../Images/L2_5.png, id=84, 740.7675pt x 362.35374pt>
+ [4 <../Images/L2_3.png> <../Images/L2_4.png>]
+<../Images/L2_5.png, id=138, 740.7675pt x 362.35374pt>
 File: ../Images/L2_5.png Graphic file (type png)
 <use ../Images/L2_5.png>
-Package pdftex.def Info: ../Images/L2_5.png  used on input line 143.
+Package pdftex.def Info: ../Images/L2_5.png  used on input line 235.
 (pdftex.def)             Requested size: 249.55872pt x 122.07071pt.
- [3 <../Images/L2_4.png>]
-<../Images/L2_8.png, id=98, 457.71pt x 349.305pt>
+<../Images/L2_8.png, id=139, 457.71pt x 349.305pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
-Package pdftex.def Info: ../Images/L2_8.png  used on input line 183.
+Package pdftex.def Info: ../Images/L2_8.png  used on input line 275.
 (pdftex.def)             Requested size: 249.55872pt x 190.45006pt.
-<../Images/L2_6.png, id=99, 825.0825pt x 223.83624pt>
+ [5 <../Images/L2_5.png>]
+<../Images/L2_6.png, id=154, 825.0825pt x 223.83624pt>
 File: ../Images/L2_6.png Graphic file (type png)
 <use ../Images/L2_6.png>
-Package pdftex.def Info: ../Images/L2_6.png  used on input line 187.
+Package pdftex.def Info: ../Images/L2_6.png  used on input line 279.
 (pdftex.def)             Requested size: 249.55872pt x 67.70128pt.
-<../Images/L2_7.png, id=100, 841.1425pt x 276.03125pt>
+<../Images/L2_7.png, id=155, 841.1425pt x 276.03125pt>
 File: ../Images/L2_7.png Graphic file (type png)
 <use ../Images/L2_7.png>
-Package pdftex.def Info: ../Images/L2_7.png  used on input line 188.
+Package pdftex.def Info: ../Images/L2_7.png  used on input line 280.
 (pdftex.def)             Requested size: 249.55872pt x 81.89603pt.
- [4 <../Images/L2_5.png> <../Images/L2_8.png>] [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L2_6.png> <../Images/L2_7.png>] [6] (./ECE324_Cheatsheet.aux)
+ [6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L2_8.png> <../Images/L2_6.png> <../Images/L2_7.png>] [7] [8] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: 9A72EAFDAAC520E25371BC699B92343E;1610.
+(rerunfilecheck)             Checksum: 852EAAA15CB722D74D321FDAF62B1A11;4454.
  ) 
 Here is how much of TeX's memory you used:
- 50750 strings out of 474116
- 1191102 string characters out of 5743682
- 1951187 words of memory out of 5000000
- 72238 multiletter control sequences out of 15000+600000
- 600620 words of font info for 71 fonts, out of 8000000 for 9000
+ 50798 strings out of 474116
+ 1191783 string characters out of 5743682
+ 1959187 words of memory out of 5000000
+ 72271 multiletter control sequences out of 15000+600000
+ 606617 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,107p,822b,1317s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,107p,950b,1316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Cheatsheet.pdf (6 pages, 3691194 bytes).
+Output written on ECE324_Cheatsheet.pdf (8 pages, 3700107 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

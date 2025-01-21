@@ -63,7 +63,7 @@
     2. Solve $f(x,u) = 0$ to find $(x,u) = (\bar{x}, \bar{u})$. \\
     3. If specific $u = \bar{u}$, then find $x = \bar{x}$ by solving $f(x,\bar{u}) = 0$.
 
-    \textcolor{red}{\textbf{Linearization of Nonlinear System}} Consider system $\overset{\cdot}{x} = f(x,u)$ w/ equ. pair $(\bar{x}, \bar{u})$, then error coordinates around equ. pair $\delta x = x - \bar{x}$, $\delta u = u - \bar{u}$, $\delta y = y - h(\bar{x},\bar{u})$ w/ \\
+    \textcolor{red}{\textbf{Linearization of Nonlinear System}} Consider system $\overset{\cdot}{x} = f(x,u)$ w/ equ. pair $(\bar{x}, \bar{u})$, then error coordinates around equ. pair $\delta x = x - \bar{x}$, $\delta u \text{=} u - \bar{u}$, $\delta y \text{=} y - h(\bar{x},\bar{u})$ $\delta \overset{\cdot}{x} \text{=} \overset{\cdot}{x} - f(\bar{x},\bar{u})$ w/ \\
     $\delta \overset{\cdot}{x} = A \delta x + B \delta u$, $A = \frac{\partial f (\bar{x}, \bar{u})}{\partial \underline{x}}  \in \mathbb{R}^{n_1 \times n_1}$, $B = \frac{\partial f (\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}^{n_1}$, \\
     $\delta y = C \delta x + D \delta u$, $C = \frac{\partial h}{\partial \underline{x}} (\bar{x}, \bar{u}) \in \mathbb{R}^{1 \times n_1}$, $D = \frac{\partial h(\bar{x}, \bar{u})}{\partial u} \in \mathbb{R}$ \\
     *Only valid at equ. pairs.
