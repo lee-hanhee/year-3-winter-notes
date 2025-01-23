@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737352595.12389 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1737352602.9448 0
+["pdflatex"] 1737661263.44266 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1737661270.51516 0
   "../Images/L1_0.png" 1736973573.92376 72335 afba6478e14fdfff963b9c2bb0bdd4b0 ""
   "../Images/L1_1.png" 1736973573.92436 54800 e2953d841aa189dfde1cfae341b41add ""
   "../Images/L1_10.png" 1736973573.92489 51114 ff549d09c6d245914ae12be0ae36fc0e ""
@@ -28,7 +28,7 @@
   "../Images/L3_6.png" 1737341500.69765 113884 ba42115ab1a7c4c244dd970769acea4b ""
   "../Images/L3_7.png" 1737341510.39859 50443 fe09ec02f2ecfbd5dbabe5f079dbd7af ""
   "../Images/L3_8.png" 1737349812.16569 69224 bbc99baeb79a3899ecb5df53a6150e37 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" 1737352583.6665 436 9c7bb6936e73f05a5c220c8e2ac36ecf ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" 1737656304.39061 460 fd6c130866a8d4a187d76f29dd0193f7 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -394,10 +394,11 @@
   "Lectures/L1.tex" 1737337833.60568 5171 63f3367de8ae5c85d0dfe9248676d9d9 ""
   "Lectures/L2.tex" 1737351706.42311 21700 d4fcad9d1b223a974c9025e52053290d ""
   "Lectures/L3.tex" 1737352563.15003 4642 005875e99876bca80120df7f0b84cb39 ""
-  "ROB311_Quiz_1.aux" 1737352602.2194 10306 0a8294c41050f092f5884264c554e439 "pdflatex"
-  "ROB311_Quiz_1.out" 1737352602.22261 8421 c9d7a41040682001513fbd78c64129b0 "pdflatex"
-  "ROB311_Quiz_1.tex" 1737352583.6665 436 9c7bb6936e73f05a5c220c8e2ac36ecf ""
-  "ROB311_Quiz_1.toc" 1737352602.22341 4365 9406f375f0cf50346d7256cac403bfad "pdflatex"
+  "Lectures/L4.tex" 1737661263.05303 3091 5416f4df2dd3c92626a3e21d370255b0 ""
+  "ROB311_Quiz_1.aux" 1737661269.99107 11524 30da7383f3db84503b2ef0ce7ba1f7f1 "pdflatex"
+  "ROB311_Quiz_1.out" 1737661269.99428 10109 ccbc4b3eebf8730900476fca7d9c68b9 "pdflatex"
+  "ROB311_Quiz_1.tex" 1737656304.39061 460 fd6c130866a8d4a187d76f29dd0193f7 ""
+  "ROB311_Quiz_1.toc" 1737661269.99489 5214 71037ab9f9d850cc8c6c9b31f8380857 "pdflatex"
   "style.sty" 1736973573.92169 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "ROB311_Quiz_1.aux"

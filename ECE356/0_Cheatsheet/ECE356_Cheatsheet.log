@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  21 JAN 2025 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  23 JAN 2025 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,9 +735,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
+
+Overfull \hbox (6.67386pt too wide) in paragraph at lines 179--184
+[][] \OT1/cmr/bx/n/5 In-verse:[] \OT1/cmr/m/n/5 1. For $\OML/cmm/m/it/5 A \OMS/cmsy/m/n/5 2 \U/msb/m/n/5 R[]$\OT1/cmr/m/n/5 , find $[[](\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 )][][](\OMS/cmsy/m/n/5 ^^@\OT1/cmr/m/n/5 1)[][](\OML/cmm/m/it/5 A[]\OT1/cmr/m/n/5 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
+
+ []
+
+<../Images/L9_0.png, id=12, 741.77126pt x 65.24374pt>
+File: ../Images/L9_0.png Graphic file (type png)
+<use ../Images/L9_0.png>
+Package pdftex.def Info: ../Images/L9_0.png  used on input line 190.
+(pdftex.def)             Requested size: 151.76689pt x 13.34816pt.
+<../Images/L9_1.png, id=13, 755.82375pt x 88.33pt>
+File: ../Images/L9_1.png Graphic file (type png)
+<use ../Images/L9_1.png>
+Package pdftex.def Info: ../Images/L9_1.png  used on input line 191.
+(pdftex.def)             Requested size: 151.76689pt x 17.73576pt.
+<../Images/L9_2.png, id=14, 756.8275pt x 91.34125pt>
+File: ../Images/L9_2.png Graphic file (type png)
+<use ../Images/L9_2.png>
+Package pdftex.def Info: ../Images/L9_2.png  used on input line 193.
+(pdftex.def)             Requested size: 151.76689pt x 18.3167pt.
+<../Images/L9_3.png, id=15, 1031.855pt x 291.0875pt>
+File: ../Images/L9_3.png Graphic file (type png)
+<use ../Images/L9_3.png>
+Package pdftex.def Info: ../Images/L9_3.png  used on input line 196.
+(pdftex.def)             Requested size: 182.12212pt x 51.37634pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png>] [2] (./ECE356_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png>] [2 <../Images/L9_0.png> <../Images/L9_1.png> <../Images/L9_2.png> <../Images/L9_3.png>] (./ECE356_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -746,18 +776,18 @@ Package rerunfilecheck Info: File `ECE356_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31760 strings out of 474116
- 745041 string characters out of 5743682
- 1987187 words of memory out of 5000000
- 53640 multiletter control sequences out of 15000+600000
+ 31788 strings out of 474116
+ 745737 string characters out of 5743682
+ 1991187 words of memory out of 5000000
+ 53668 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,792b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (2 pages, 251202 bytes).
+Output written on ECE356_Cheatsheet.pdf (2 pages, 457002 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

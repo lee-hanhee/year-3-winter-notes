@@ -1,0 +1,124 @@
+
+\begin{enumerate}
+    \item \textbf{Assume prior:} 
+    \[
+    p_\Theta(\theta) \text{ or } f_\Theta(\theta) \quad \text{(Bayesian)}
+    \]
+    Observations: \( \bar{X} = x \).
+
+    \item \textbf{LMS Estimator:}
+    \begin{align*}
+        \hat{\theta} &= g(x) = \mathbb{E}[\Theta \mid \bar{X} = x] \\
+        \text{or } \hat{\Theta} &= g(\bar{X}) = \mathbb{E}[\Theta \mid \bar{X}].
+    \end{align*}
+
+    \textbf{Note:}
+    \begin{itemize}
+        \item \textbf{MAP:} Use the most probable \( \theta \) given \( x \).
+        \item \textbf{LMS:} Use the expected value (conditional on \( \bar{X} = x \)) of \( \Theta \), i.e., the "Conditional Expectation Estimator."
+    \end{itemize}
+
+    \item \textbf{Unbiasedness of LMS Estimator:}
+    \begin{align*}
+        \mathbb{E}[\hat{\Theta}] &= \mathbb{E}[\mathbb{E}[\Theta \mid \bar{X}]] = \mathbb{E}[\Theta], \\
+        \implies \mathbb{E}[\hat{\Theta} - \Theta] &= 0.
+    \end{align*}
+
+    \item \textbf{LMS Estimator Minimizes Conditional MSE:}
+    \[
+    \mathbb{E}\big[(\Theta - \hat{\Theta})^2 \mid \bar{X} = x \big].
+    \]
+    \textbf{Proof:}
+    \begin{enumerate}
+        \item First, suppose no observations: \( \hat{\Theta} \) is a constant.
+        \begin{align*}
+            \hat{\Theta} &= \arg\min_c \mathbb{E}\big[(\Theta - c)^2\big], \\
+            0 &= \frac{d}{dc} \big[ -2\mathbb{E}[\Theta] + 2c \big], \\
+            c &= \mathbb{E}[\Theta].
+        \end{align*}
+
+        \item Alternate view:
+        \begin{align*}
+            \mathbb{E}\big[(\Theta - c)^2\big] &= \mathrm{Var}[\Theta] + (\mathbb{E}[\Theta] - c)^2.
+        \end{align*}
+        To minimize: Set bias \( \mathbb{E}[\Theta] - c \) to zero.
+
+        \item Now, with observations \( \bar{X} = x \):
+        \begin{align*}
+            \mathbb{E}\big[(\Theta - g(x))^2 \mid \bar{X} = x\big] &= \mathrm{Var}[\Theta \mid \bar{X} = x] + (\mathbb{E}[\Theta \mid \bar{X} = x] - g(x))^2.
+        \end{align*}
+        To minimize: Set \( g(x) = \mathbb{E}[\Theta \mid \bar{X} = x] \).
+    \end{enumerate}
+
+    \item \textbf{Conclusion:}
+    \[
+    \hat{\Theta} = g(x) = \mathbb{E}[\Theta \mid \bar{X} = x].
+    \]
+\end{enumerate}
+
+\begin{enumerate}
+    \item \textbf{Example: Prior Coin Toss Problem}
+    \begin{align*}
+        \hat{\theta}_{\text{LMS}} &= \mathbb{E}[\Theta \mid X = k] \\
+        &= \frac{k + \alpha}{n + \alpha + \beta}.
+    \end{align*}
+
+    \item \textbf{Example: Prior Voltage Problem}
+    \begin{enumerate}
+        \item \textbf{Setup:}
+        \begin{itemize}
+            \item Unknown voltage \( \Theta \).
+            \item Prior: \( \Theta \sim \text{Uniform}[0, 1] \).
+            \item Volt meter reading \( Y \) given \( \Theta \): \( Y \sim \text{Uniform}[0, \Theta] \).
+            \item Independent measurements: \( Y_1, \dots, Y_n \) given \( \Theta \).
+        \end{itemize}
+
+        \item \textbf{Likelihood:}
+        \begin{align*}
+            f_{Y \mid \Theta}(\mathbf{y} \mid \theta) &= \prod_{i=1}^n f_{Y}(y_i \mid \theta) \\
+            &= \frac{1}{\theta^n} \cdot 1(\theta \geq \max_i y_i).
+        \end{align*}
+
+        \item \textbf{Posterior:}
+        \begin{align*}
+            f_{\Theta \mid Y}(\theta \mid \mathbf{y}) &= \frac{\frac{1}{\theta^n} \cdot 1(\theta \geq \max_i y_i)}{f_Y(\mathbf{y})}.
+        \end{align*}
+
+        \item \textbf{Estimators:}
+        \begin{itemize}
+            \item Maximum Likelihood (ML): 
+            \[
+            \hat{\theta} = \max_{1 \leq i \leq n} y_i.
+            \]
+
+            \item LMS:
+            \[
+            \hat{\theta} = \mathbb{E}[\Theta \mid Y = y] = \int_{0}^\infty \theta f_{\Theta \mid Y}(\theta \mid y) d\theta.
+            \]
+        \end{itemize}
+
+        \item \textbf{Derivation for LMS:}
+        \begin{enumerate}
+            \item Compute \( f_Y(y) \) for \( n = 1 \):
+            \begin{align*}
+                f_Y(y) &= \int_y^1 \frac{1}{\theta} d\theta \\
+                &= \ln(\theta) \Big|_y^1 \\
+                &= -\ln(y).
+            \end{align*}
+
+            \item Compute \( \hat{\theta} \) for \( n = 1 \):
+            \begin{align*}
+                \hat{\theta} &= \int_y^1 \frac{\theta \cdot 1(\theta \geq y)}{-\ln(y)} d\theta \\
+                &= \frac{1}{-\ln(y)} \int_y^1 \theta d\theta \\
+                &= \frac{1}{-\ln(y)} \cdot \frac{y^2 - 1}{2}.
+            \end{align*}
+        \end{enumerate}
+
+        \item \textbf{Graphical Interpretation:}
+        \begin{itemize}
+            \item \( f_{\Theta \mid Y}(\theta \mid y) = \frac{1}{-\ln(y)} \cdot 1(\theta \geq y) \cdot 1(0 \leq \theta \leq 1) \).
+            \item The MAP estimator corresponds to the most probable \( \theta \).
+            \item The LMS estimator minimizes the mean squared error, representing the "safest" choice.
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}

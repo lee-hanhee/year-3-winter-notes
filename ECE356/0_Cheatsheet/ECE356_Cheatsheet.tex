@@ -167,17 +167,32 @@
     \textcolor{orange}{\textbf{TF Steps (IO to TF):}} 1. Given IO form of CS, assume zero initial conds. \\
     2. Find $G(s)$ by taking LT of IO form and forming $Y(s)/U(s)$. \\
     *Careful: $Y(s)/U(s) = G(s)$ not $U(s)/Y(s) = G(s)$.
-    
-    \textcolor{orange}{\textbf{TF Steps (SS to TF):}} 1. Given SS form of CS, assume zero initial conds. \\
-    2. Solve for $\underline{x}$ in terms of $u$ and $y$, and put into IO form. \\
-    3. Find $G(s)$ by taking LT of IO form and forming $Y(s)/U(s)$. \\
-    1. Solve $G(s) = C (sI - A)^{-1} B + D$.
-
 
     \textcolor{blue}{\textbf{Impulse Response:}} Given CS modeled by TF $G(s)$, its IR is  
     $g(t) := \mathcal{L}^{-1} \{ G(s) \}$. \\
     *$\mathcal{L} \{\delta(t) \} = 1$, then if $u(t) \text{=} \delta(t)$, then $Y(s) = U(s) G(s) = G(s)$.
-    
+
+    \textcolor{red}{\textbf{SS to TF:}} $G(s) = C (sI - A)^{-1} B + D$ s.t. $y(s) = G(s) U(s)$. \\
+    *$\overset{\cdot}{x} = Ax + Bu, \; y = Cx + Du$ \\
+    *Assume $x(0) = 0 \in \mathbb{R}^n$ (zero initial conds.). 
+
+    \textcolor{orange}{\textbf{Inverse:}} 1. For $A \in \mathbb{R}^{n \times n}$, find $[\text{cof}(A)]_{(i,j)} \text{=} (-1)^{i+j} \text{det}(A_{(i,j)})$. \\ 
+    *$A_{(i,j)}$: $A$ w/ row $i$ and col. $j$ removed. \\
+    2. Assemble $\text{cof}(A)$ and find $\text{det}(A) = \sum_{j=1}^n a_{ij} [\text{cof}(A)]_{(i,j)}$ \\
+    w/ fixed $i$ or $\text{det}(A) = \sum_{i=1}^n a_{ij} [\text{cof}(A)]_{(i,j)}$ w/ fixed $j$. \\
+    3. Find $A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A) = \frac{1}{\text{det}(A)} [\text{cof}(A)]^T$.
+
+    \textcolor{orange}{\textbf{TF (SS to TF):}} 1. Given SS form, assume zero initial conds. \\
+    2. Solve $G(s) = C (sI - A)^{-1} B + D$. \\
+    *If $C = \begin{bmatrix} 0 \; \cdot \; 1 \; \cdot \; 0 \end{bmatrix}$ and $B = \begin{bmatrix} 0 \; \cdot \; 1 \; \cdot \; 0 \end{bmatrix}$, then only need to compute ith row \& jth col. of $\text{adj}(sI - A)$. \\
+
+    \textcolor{red}{\textbf{Block Diagram}} \textcolor{blue}{\textbf{Types of Blocks:}} \\
+    \textcolor{black}{\textbf{Cascade:}} $y_2 = (G_1(s) G_2(s)) U $ \customFigure[0.25]{../Images/L9_0.png} \\
+    \textcolor{black}{\textbf{Parallel}} $y = (G_1(s) + G_2(s)) U$ \customFigure[0.25]{../Images/L9_1.png} \\
+    \textcolor{black}{\textbf{Feedback}} $y = \left(\frac{G_1(s)}{1 + G_1(s) G_2(s)}\right) R$ \customFigure[0.25]{../Images/L9_2.png} 
+
+    \textcolor{blue}{\textbf{Manipulations:}} \\
+    \customFigure[0.3]{../Images/L9_3.png} 
 
         }
 \end{paracol}

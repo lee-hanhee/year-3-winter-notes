@@ -126,35 +126,4 @@
     \end{itemize}    
 \end{notes}
 
-\subsection{Sample Mean is Not Always an ML Estimator}
-\begin{example}
-    Given an unknown voltage \( x \), we measure it using a voltmeter that outputs a random reading \( Y \) that is uniform in \( [0, x] \). Suppose we make \( n \) i.i.d. measurements \( Y_1, \dots, Y_n \) and wish to estimate \( \mu = \frac{x}{2} = \mathbb{E}[Y] \).
-    \begin{enumerate}
-        \item \textbf{Sample Mean:} 
-        \[
-        \hat{\mu} = \frac{1}{n} \sum_{i=1}^n Y_i \quad \cdots (1)
-        \]
-
-        \item \textbf{To Find the ML Estimator:}
-        \begin{align*}
-            f_Y(\mathbf{y} \mid \mu) &= \prod_{i=1}^n f_Y(y_i \mid \mu) \\
-            &= \prod_{i=1}^n \frac{1}{2\mu} \cdot 1(0 \leq y_i \leq 2\mu) \\
-            &= \frac{1}{(2\mu)^n} \prod_{i=1}^n 1(0 \leq y_i \leq 2\mu).
-        \end{align*}
-        
-        The likelihood is maximized for:
-        \[
-        \arg\max_{\mu} f_Y(\mathbf{y} \mid \mu) = \max_{1 \leq i \leq n} \frac{1}{2} Y_i.
-        \]
-
-        Therefore:
-        \[
-        \hat{\mu} = \max_{1 \leq i \leq n} \frac{1}{2} Y_i \quad \cdots (2)
-        \]
-
-        \item Clearly, \( (1) \neq (2) \).
-    \end{enumerate}
-\end{example}
-
-
 

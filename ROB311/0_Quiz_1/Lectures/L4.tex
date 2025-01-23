@@ -1,0 +1,79 @@
+\section{Learning Problems}
+\begin{definition}
+    In a learning problem, we assume that there is some (unknown) relationship, 
+    \begin{equation*}
+        f: \mathcal{X} \rightarrow \mathcal{Y}
+    \end{equation*}
+    s.t. $x \mapsto_f y$
+    \vspace{1em}
+
+    Find $h: \mathcal{X} \rightarrow \mathcal{Y}$ (hypothesis) s.t. $h \approx f$, given some data about $f$: 
+
+    \begin{itemize}
+        \item $\text{in}(\mathcal{D}) = \{x \text{ s.t. } (x,y) \in \mathcal{D}\}$
+        \item $\text{out}(\mathcal{D}) = \{y \text{ s.t. } (x,y) \in \mathcal{D}\}$
+    \end{itemize}
+\end{definition}
+
+\subsection{Classification vs. Regression Problems}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Classification Problems:} $\mathcal{X} \subseteq \mathbb{R}^n$ and $\mathcal{Y} \subseteq \mathbb{N}$
+        \item \textbf{Regression Problems:} $\mathcal{X} \subseteq \mathbb{R}^n$ and $\mathcal{Y} \subseteq \mathbb{R}$
+    \end{itemize}
+\end{definition}
+
+\subsection{Feature Spaces}
+\begin{definition}
+    It is often easier to learn relationships from high-level features (instead of the raw input).
+\end{definition}
+
+\subsection{Feasibility of Learning}
+\begin{motivation}
+    More than one function (hypothesis) may be consistent with the data.
+\end{motivation}
+
+\begin{notes}
+    So it may appear that finding the correct one should be impossible. 
+\end{notes}
+
+\subsubsection{Probably Approximately Correct (PAC) Estimations}
+\begin{example}
+    Take $N$ i.i.d. samples (i.e. take out a ball from an urn, record its color, and put it back in).
+    \begin{itemize}
+        \item $\nu \rightarrow \mu$ (empirical distribution $\rightarrow$ true distribution) as $N \rightarrow \infty$
+    \end{itemize}
+\end{example}
+
+\subsubsection{Hoeffding's Inequality}
+\begin{definition}
+    Let $\mu$ denote the probability of an event, and $\nu$ denote its relative frequency in a sample size $N$. Then, for any $\epsilon > 0$,
+    \begin{equation}
+        P(|\nu - \mu| > \epsilon) \leq 2e^{-2\epsilon^2N}
+    \end{equation}
+    \begin{itemize}
+        \item $\nu$: Relative frequency in the sample (known)
+        \item $\mu$: Probabillity of drawing a blue ball (unknown)
+        \item $N \rightarrow \infty$: $\nu \rightarrow \mu$
+        \item $\epsilon$: How close we want $\nu$ to be to $\mu$
+        \item $\epsilon \rightarrow 0$: Probability will be 1
+        \item $\epsilon \rightarrow \infty$: $\nu \rightarrow \mu$
+        \item $\mu \overset{?}{\approx} \nu $: $\mu$ is probably approximately equal to $nu$.
+    \end{itemize}
+\end{definition}
+
+\begin{warning}
+    We can approximate the true distribution with high probability by taking a large enough sample size, NOT guaranteeing that we can find the true distribution.
+    \begin{itemize}
+        \item Don't need to know where this theorem comes from.
+    \end{itemize}
+\end{warning}
+
+Consider determining the class of a randomly chosen target point. If we ask a K-ary question about the points in $\mathcal{D}$
+
+\subsubsection{PAC Learning}
+
+\subsection{Decision Trees}
+
+\subsubsection{Structure of a Decision Tree}
+

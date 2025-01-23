@@ -755,6 +755,9 @@ INPUT ../Images/L3_7.png
 INPUT ../Images/L3_7.png
 INPUT ../Images/L3_7.png
 INPUT ../Images/L3_7.png
+INPUT ./Lectures/L4.tex
+INPUT ./Lectures/L4.tex
+INPUT Lectures/L4.tex
 INPUT ROB311_Quiz_1.aux
 INPUT ./ROB311_Quiz_1.out
 INPUT ./ROB311_Quiz_1.out
