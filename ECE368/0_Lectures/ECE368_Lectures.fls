@@ -651,6 +651,15 @@ INPUT ../Images/L5_0.png
 INPUT ./Lectures/L6.tex
 INPUT ./Lectures/L6.tex
 INPUT Lectures/L6.tex
+INPUT ./Lectures/L7.tex
+INPUT ./Lectures/L7.tex
+INPUT Lectures/L7.tex
+INPUT ./Lectures/L8.tex
+INPUT ./Lectures/L8.tex
+INPUT Lectures/L8.tex
+INPUT ./Lectures/L9.tex
+INPUT ./Lectures/L9.tex
+INPUT Lectures/L9.tex
 INPUT ECE368_Lectures.aux
 INPUT ./ECE368_Lectures.out
 INPUT ./ECE368_Lectures.out

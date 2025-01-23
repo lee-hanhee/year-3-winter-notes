@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  23 JAN 2025 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  23 JAN 2025 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1217,46 +1217,46 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<../Images/L2_0.png, id=164, 870.25125pt x 465.74pt>
+<../Images/L2_0.png, id=168, 870.25125pt x 465.74pt>
 File: ../Images/L2_0.png Graphic file (type png)
 <use ../Images/L2_0.png>
 Package pdftex.def Info: ../Images/L2_0.png  used on input line 105.
 (pdftex.def)             Requested size: 249.55872pt x 133.55453pt.
  [2 <../Images/L2_0.png>]
-<../Images/L2_2.png, id=172, 654.445pt x 331.2375pt>
+<../Images/L2_2.png, id=176, 654.445pt x 331.2375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
 Package pdftex.def Info: ../Images/L2_2.png  used on input line 165.
 (pdftex.def)             Requested size: 249.55872pt x 126.31126pt.
-<../Images/L2_3.png, id=173, 693.59125pt x 329.23pt>
+<../Images/L2_3.png, id=177, 693.59125pt x 329.23pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
 Package pdftex.def Info: ../Images/L2_3.png  used on input line 170.
 (pdftex.def)             Requested size: 249.55872pt x 118.4574pt.
  [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L2_2.png>]
-<../Images/L2_4.png, id=188, 883.3pt x 359.3425pt>
+<../Images/L2_4.png, id=192, 883.3pt x 359.3425pt>
 File: ../Images/L2_4.png Graphic file (type png)
 <use ../Images/L2_4.png>
 Package pdftex.def Info: ../Images/L2_4.png  used on input line 184.
 (pdftex.def)             Requested size: 299.47351pt x 121.82939pt.
  [4 <../Images/L2_3.png> <../Images/L2_4.png>]
-<../Images/L2_5.png, id=203, 740.7675pt x 362.35374pt>
+<../Images/L2_5.png, id=207, 740.7675pt x 362.35374pt>
 File: ../Images/L2_5.png Graphic file (type png)
 <use ../Images/L2_5.png>
 Package pdftex.def Info: ../Images/L2_5.png  used on input line 235.
 (pdftex.def)             Requested size: 249.55872pt x 122.07071pt.
-<../Images/L2_8.png, id=204, 457.71pt x 349.305pt>
+<../Images/L2_8.png, id=208, 457.71pt x 349.305pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
 Package pdftex.def Info: ../Images/L2_8.png  used on input line 275.
 (pdftex.def)             Requested size: 249.55872pt x 190.45006pt.
  [5 <../Images/L2_5.png>]
-<../Images/L2_6.png, id=219, 825.0825pt x 223.83624pt>
+<../Images/L2_6.png, id=223, 825.0825pt x 223.83624pt>
 File: ../Images/L2_6.png Graphic file (type png)
 <use ../Images/L2_6.png>
 Package pdftex.def Info: ../Images/L2_6.png  used on input line 279.
 (pdftex.def)             Requested size: 249.55872pt x 67.70128pt.
-<../Images/L2_7.png, id=220, 841.1425pt x 276.03125pt>
+<../Images/L2_7.png, id=224, 841.1425pt x 276.03125pt>
 File: ../Images/L2_7.png Graphic file (type png)
 <use ../Images/L2_7.png>
 Package pdftex.def Info: ../Images/L2_7.png  used on input line 280.
@@ -1267,21 +1267,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: AECCF3FA013924A99E037F2211B53F34;8236.
+(rerunfilecheck)             Checksum: A9098F31D856D96AF178549516AA4341;8364.
  ) 
 Here is how much of TeX's memory you used:
- 50857 strings out of 474116
- 1192682 string characters out of 5743682
+ 50861 strings out of 474116
+ 1192746 string characters out of 5743682
  1959187 words of memory out of 5000000
- 72305 multiletter control sequences out of 15000+600000
+ 72308 multiletter control sequences out of 15000+600000
  606617 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,950b,1316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Cheatsheet.pdf (10 pages, 3714337 bytes).
+Output written on ECE324_Cheatsheet.pdf (10 pages, 3714798 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 283 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 287 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

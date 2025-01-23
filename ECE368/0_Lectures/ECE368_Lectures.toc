@@ -52,3 +52,6 @@
 \contentsline {subsection}{\numberline {6.3}Will the Sun Rise Tomorrow? (Laplace's Problem)}{21}{subsection.6.3}%
 \contentsline {subsubsection}{\numberline {6.3.1}Frequentist Approach}{22}{subsubsection.6.3.1}%
 \contentsline {subsubsection}{\numberline {6.3.2}Bayesian Approach}{22}{subsubsection.6.3.2}%
+\contentsline {section}{\numberline {7}L7: Maximum A Posteriori (MAP) Estimation}{23}{section.7}%
+\contentsline {section}{\numberline {8}L8: MAP Conjugate Prior}{24}{section.8}%
+\contentsline {section}{\numberline {9}L9: Least Mean Squares (LMS) Estimation}{25}{section.9}%
