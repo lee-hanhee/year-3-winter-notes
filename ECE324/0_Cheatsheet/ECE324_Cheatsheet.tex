@@ -360,6 +360,133 @@
     
 \end{summary}
 
+\section{Representation Learning and Variational Autoencoders}
+\begin{summary}
+    \begin{itemize}
+        \item How do we optimize without gradients?
+        \begin{itemize}
+            \item Heuristics such as grid search, random search, Bayesian optimization, grad student.
+        \end{itemize}
+        \item How does Bayesian Optimization work? (in a nut shell)
+        \begin{itemize}
+            \item Model the complex objective function with a surrogate model (GP), and optimize the surrogate model by using the max and min of the acquistion to find the next point to evaluate on the objective function and get the uncertainty of the surrogate model.
+        \end{itemize}
+        \item How do we learn on data without labels?
+        \begin{itemize}
+            \item Unsupervised learning, self-supervised learning, semi-supervised learning, transfer learning, multi-task learning, meta-learning.
+        \end{itemize}
+    \end{itemize}
+\end{summary}
+
+\subsection{Principal Component Analysis}
+\begin{definition}
+    PCA uses linear transformations for dimension reduction.
+\end{definition}
+
+\subsubsection{PCA Limitations}
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{Capacity for representation:} PCA finds linear correlations and cannot capture non-guassian structure.
+        \item \textbf{Interpretability:} Other tensor decomposition like non-negative factorization are more interpretable.
+    \end{enumerate}
+\end{definition}
+
+\section{Autoencoders (AE)}
+
+\subsection{Non-Linear Dimensionality Reduction}
+\begin{definition}
+    The encoder maps input to lower dimension and decoder reconstruct the input.
+\end{definition}
+
+\subsection{Loss Function of an AE}
+\begin{definition}
+    Autoencoders are trained to minimize reconstruction error.
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item If our data is binary, what loss function should you use? Binary cross entropy.
+    \end{itemize}
+\end{notes}
+
+\subsection{Different Types of AEs}
+
+\subsubsection{Sparse Autoencoders (SAEs): Feature Selection}
+\begin{definition}
+    SAE encourage latent representations with only few active neurons. 
+    \begin{equation}
+        \Omega(\theta) = \lambda \sum_i \left| \theta_i \right|
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item What regularization technique encourages sparsity? L1 regularization.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Denoising Autoencoders (DAEs): Robust Features}
+\begin{definition}
+    DAEs enhance robustness by training on noisy inputs
+\end{definition}
+
+\subsection{Anomaly Detection with AEs: Detecting Outliers}
+\begin{definition}
+    AEs can detect anomalies by analyizing high reconstruction errors.
+    \begin{equation}
+        A(\mathbf{x}) = ||\mathbf{x} - \hat{\mathbf{x}}||^2
+    \end{equation}
+    \begin{equation}
+        A(\mathbf{x}) > \text{Threshold}
+    \end{equation}
+\end{definition}
+
+\subsection{Latent Space of AEs}
+\begin{definition}
+    The latent space of an autoencoder may not be continuous
+\end{definition}
+
+\section{Variational Autoencoders (VAEs): A Probabilistic Approach}
+\begin{summary}
+    \begin{itemize}
+        \item Work on any data. 
+    \end{itemize}
+\end{summary}
+\begin{definition}
+    VAEs learn smooth latent spaces by modelling probability distributions.
+\end{definition}
+
+\subsection{VAE's Encoder and Decoder}
+\begin{definition}
+    The encoder maps input to a distribution, the decoder samples from it.
+    \begin{equation}
+        f_{\text{enc},\phi} (\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \mu(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item $\sigma^2(\mathbf{x}) \mathbf{I}$: Diagonal covariance matrix, so it is independent.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Reparameterization Trick}
+\begin{definition}
+    Reparameterization makes sampling differentiable for VAE training.
+\end{definition}
+
+\subsection{VAE's Loss Function: Reconstruction and KL Divergence}
+\begin{definition}
+    Balances reconstruction and latent space regularization.
+    \begin{equation}
+        L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))
+    \end{equation}
+\end{definition}
+
+\subsection{VAE are generative models}
+\begin{definition}
+    VAE's latent space is continuous and allows sampling new data
+\end{definition}
 
 
 \end{document}
