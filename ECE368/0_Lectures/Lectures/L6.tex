@@ -136,6 +136,11 @@
         \[
         P[X_1 = 1, \dots, X_n = 1] = \int_0^1 P[X_1 = 1, \dots, X_n = 1 | \Theta = \theta] f_\Theta(\theta) \, d\theta.
         \]
+        \begin{itemize}
+            \item The joint probability is calculated by integrating the product of the likelihood and the prior (i.e. marginalizing over $\theta$).
+            \item The likilihood becomes $\theta^n$ because the observations are i.i.d.
+            \item The prior is uniform, so $f_\Theta(\theta) = 1$.
+        \end{itemize}
         Since $f_\Theta(\theta) = 1$ (uniform prior) and $P[X_1 = 1, \dots, X_n = 1 | \Theta = \theta] = \theta^n$, we have:
         \[
         P[X_1 = 1, \dots, X_n = 1] = \int_0^1 \theta^n \, d\theta = \frac{1}{n+1}.
