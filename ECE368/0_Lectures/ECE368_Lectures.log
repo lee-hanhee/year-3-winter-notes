@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  16 JAN 2025 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  22 JAN 2025 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,12 +1320,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]) [16] (./Lectures/L5.tex
-<../Images/L5_0.png, id=469, 448.67625pt x 66.2475pt>
+<../Images/L5_0.png, id=468, 448.67625pt x 66.2475pt>
 File: ../Images/L5_0.png Graphic file (type png)
 <use ../Images/L5_0.png>
-Package pdftex.def Info: ../Images/L5_0.png  used on input line 4.
+Package pdftex.def Info: ../Images/L5_0.png  used on input line 10.
 (pdftex.def)             Requested size: 249.55872pt x 36.84764pt.
- [17 <../Images/L5_0.png>]) [18] (./Lectures/L6.tex [19] [20]) [21] (./ECE368_Lectures.aux)
+ [17 <../Images/L5_0.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]) [19] (./Lectures/L6.tex [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]) [22] (./ECE368_Lectures.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1334,18 +1340,18 @@ Package rerunfilecheck Info: File `ECE368_Lectures.out' has not changed.
 (rerunfilecheck)             Checksum: 5E5F57EE8DEE5DCC7CA3E91C74391E5E;10150.
  ) 
 Here is how much of TeX's memory you used:
- 51145 strings out of 474116
- 1197174 string characters out of 5743682
- 1954187 words of memory out of 5000000
- 72449 multiletter control sequences out of 15000+600000
- 628700 words of font info for 99 fonts, out of 8000000 for 9000
+ 51142 strings out of 474116
+ 1197145 string characters out of 5743682
+ 1956187 words of memory out of 5000000
+ 72448 multiletter control sequences out of 15000+600000
+ 619879 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,107p,818b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,107p,818b,1318s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ECE368_Lectures.pdf (21 pages, 556140 bytes).
+Output written on ECE368_Lectures.pdf (22 pages, 556170 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 560 compressed objects within 6 object streams
- 192 named destinations out of 1000 (max. 500000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
+ 193 named destinations out of 1000 (max. 500000)
  497 words of extra memory for PDF output out of 10000 (max. 10000000)
 

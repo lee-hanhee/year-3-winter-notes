@@ -5,6 +5,9 @@
         \[
         P[X = m] = \theta_m, \quad m = 1, 2, \dots, M.
         \]
+        \begin{itemize}
+            \item Going from 2 to $M$ categories is a generalization of the Bernoulli distribution.
+        \end{itemize}
         The parameter $\underline{\theta}$ is a vector:
         \[
         \underline{\theta} = 
@@ -29,6 +32,9 @@
         \[
         p_{\underline{X}}(\underline{x} \mid \underline{\theta}) = \prod_{m=1}^M \theta_m^{n_m}.
         \]
+        \begin{itemize}
+            \item Similar to the Bernoulli distribution, but with $M$ categories.
+        \end{itemize}
         Taking the log, we get:
         \[
         \log p_{\underline{X}}(\underline{x} \mid \underline{\theta}) = \sum_{m=1}^M n_m \log \theta_m.
@@ -42,7 +48,7 @@
     
         \item Solving this optimization problem, the MLE is:
         \[
-        \hat{\theta}_m = \frac{N_m}{n}, \quad \underline{\hat{\theta}} = 
+        \hat{\Theta}_m = \frac{N_m}{n} = \frac{\sum_{i=1}^{n} 1(X_i = n)}{n}, \quad \underline{\hat{\Theta}} = 
         \begin{bmatrix}
         \frac{N_1}{n} \\
         \vdots \\
@@ -82,6 +88,10 @@
         \hat{\mu} &= \frac{1}{n} \sum_{i=1}^n X_i, \quad \text{(sample mean)} \\
         \hat{\sigma}^2 &= \frac{1}{n} \sum_{i=1}^n (X_i - \hat{\mu})^2. \quad \text{(sample variance)}
         \end{align*}
+        \begin{itemize}
+            \item Note: The sample variance is biased, so we often use $\frac{1}{n-1}$ instead of $\frac{1}{n}$ to make it unbiased.
+            \item Note: The sample mean is unbiased.
+        \end{itemize}
     \end{enumerate}
 \end{example}
 
@@ -103,15 +113,18 @@
         \[
         \hat{\theta} = \frac{n}{n} = 1.
         \]
-        \item Conclusion: The Sun will rise tomorrow with probability $1$, regardless of what $n$ is, based on the Frequentist approach.
+        \item Conclusion: The Sun will rise tomorrow with probability $1$, regardless of what $n$ is, based on the Frequentist approach. 
+        \begin{itemize}
+            \item This doesn't make sense b/c if $n=1$ then we are assuming 100\% it will rise based on one observation.
+        \end{itemize}
     \end{enumerate}
 \end{example}
 
 \subsubsection{Bayesian Approach}
 \begin{example}
     \begin{enumerate}
-        \item Assume that $\theta$ is not fixed but drawn from a uniform distribution in $[0, 1]$.
-        \item We want to find:
+        \item Assume that $\theta$ is not fixed but drawn from a uniform distribution in $[0, 1]$. This means that the probability of the Sun rising is based on a uniform distribution.
+        \item We want to find the probability that the sun will rise tomorrow given that it has risen for $n$ consecutive days:
         \[
         P[X_{n+1} = 1 | X_1 = 1, \dots, X_n = 1].
         \]

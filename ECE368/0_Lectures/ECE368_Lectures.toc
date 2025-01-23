@@ -46,9 +46,9 @@
 \contentsline {section}{\numberline {5}L5: Sample Mean and Maximum Likelihood Estimation}{17}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Maximum Likelihood Estimation}{17}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Log-Likelihood}{17}{subsubsection.5.1.1}%
-\contentsline {section}{\numberline {6}L6: Maximum Likelihood and Laplace}{19}{section.6}%
-\contentsline {subsection}{\numberline {6.1}MLE for Categorical Random Variables}{19}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}MLE for Gaussian Random Variables}{20}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Will the Sun Rise Tomorrow? (Laplace's Problem)}{20}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Frequentist Approach}{20}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}Bayesian Approach}{21}{subsubsection.6.3.2}%
+\contentsline {section}{\numberline {6}L6: Maximum Likelihood and Laplace}{20}{section.6}%
+\contentsline {subsection}{\numberline {6.1}MLE for Categorical Random Variables}{20}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}MLE for Gaussian Random Variables}{21}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Will the Sun Rise Tomorrow? (Laplace's Problem)}{21}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Frequentist Approach}{22}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Bayesian Approach}{22}{subsubsection.6.3.2}%

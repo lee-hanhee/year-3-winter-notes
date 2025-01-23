@@ -5,16 +5,16 @@
     \begin{itemize}
         \item There is some noise $N$ in the sensor, so we want to estimate the true value of $\theta$ (unknown parameter to be estimated)
         \begin{itemize}
-            \item Mean and/or variance of $X$. 
+            \item e.g. Mean and/or variance of $X$. 
         \end{itemize}
     \end{itemize}
 \end{motivation}
 
 \subsection{Estimator:}
 \begin{definition}
-    Perform $n$ independent and identically distributed (i.i.d.) measurements/observations of $X_i$: $X_1, X_2, \ldots, X_n$.
+    Perform $n$ independent and identically distributed (i.i.d.) measurements/observations of $X$: $X_1, X_2, \ldots, X_n$.
     \begin{equation}
-        \hat{\Theta} = g(X_1, X_2, \ldots, X_n) = g(\mathbf{X})
+        \hat{\Theta} = \hat{\Theta}(\underline{X}) = g(X_1, X_2, \ldots, X_n) 
     \end{equation}
     \customFigure[0.5]{../Images/L4_1.png}{}
 \end{definition}
@@ -39,7 +39,7 @@
 
 \subsubsection{Consistent}
 \begin{definition}
-    The estimator $\hat{\Theta}$ is consistent if $\hat{\Theta} \rightarrow \theta$ as $n \to \infty$, in probability, i.e., $\forall \epsilon > 0$,
+    The estimator $\hat{\Theta}$ is consistent if $\hat{\Theta}(\underline{X}) \rightarrow \theta$ as $n \to \infty$, in probability, i.e., $\forall \epsilon > 0$,
     \begin{equation}
         \lim_{n \to \infty} P(|\hat{\Theta}(\underline{X}) - \theta| < \epsilon) \rightarrow 1
     \end{equation}
@@ -100,7 +100,7 @@
     \begin{align*}
         E[M_n] &= E\left[\frac{1}{n} S_n\right] \\
         &= \frac{1}{n} \left(E[X_1] + \dots + E[X_n]\right) \\
-        &= \frac{1}{n} (n\mu) \quad \text{since $X_i$ are i.i.d.} \\
+        &= \frac{1}{n} (n\mu) \quad \text{since $X_i$ are i.i.d. so same expectation} \\
         &= \mu \Rightarrow \text{Unbiased!}
     \end{align*}
 \end{derivation}
@@ -111,7 +111,7 @@
         \text{Var}[M_n] &= \text{Var}\left[\frac{1}{n} S_n\right] \\
         &= \frac{1}{n^2} \text{Var}[S_n] \quad \text{taking out constant requires squaring}\\
         &= \frac{1}{n^2} \left(\sum_{i=1}^n \text{Var}[X_i] + \sum \sum_{i \neq j} \text{Cov}[X_i, X_j]\right) \\
-        &= \frac{1}{n^2} (n \sigma^2) \quad \sigma^2 \triangleq \text{Var}[X_i] \text{ and $X_i$ are i.i.d.} \\
+        &= \frac{1}{n^2} (n \sigma^2) \quad \sigma^2 \triangleq \text{Var}[X_i] \text{ and $X_i$ are i.i.d. so covariance is 0} \\
         &= \frac{\sigma^2}{n} \to 0 \text{ as } n \to \infty.
     \end{align*}
     \begin{itemize}
@@ -164,10 +164,13 @@
         M_n = \frac{1}{n} \sum_{i=1}^n X_i = \theta + \frac{1}{n} \sum_{i=1}^n N_i.
         \]
 
-        \item The variance of the sample mean is:
+        \item The variance of $X_i$ is:
         \[
-        \sigma^2 = \text{Var}[M_n] = \text{Var}[N_i] = 1.
+        \sigma^2 = \text{Var}[X_i] = \text{Var}[\theta + N_i] = \text{Var}[N_i] = 1.
         \]
+        \begin{itemize}
+            \item $\text{Var}[aX + b] = a^2 \text{Var}[X]$, where $a = 1$ and $b = \theta$.
+        \end{itemize}
 
         \item Using Chebyshev's inequality:
         \[

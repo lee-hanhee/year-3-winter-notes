@@ -1,3 +1,9 @@
+\begin{faq}
+    \begin{itemize}
+        \item Why can we say that it is consistent for the last example?
+    \end{itemize}
+\end{faq}
+
 \subsection{Maximum Likelihood Estimation}
 \begin{motivation}
     Choose parameter $\theta$ that is most likely to generate the observation $x_1,x_2,\ldots,x_n$.
@@ -26,6 +32,10 @@
     \end{equation}    
 \end{definition}
 
+\begin{warning}
+    Can only go from argmax of fcn to argmax of log fcn, if it is i.i.d. 
+\end{warning}
+
 \begin{derivation}
     \begin{align*}
         \text{i.i.d. } X_1, X_2, \dots, X_n &\implies \\
@@ -39,7 +49,7 @@
     \begin{enumerate}
         \item \textbf{Model and Observations:}
         \begin{itemize}
-            \item Assume a biased coin with probability $\theta$ of showing heads. 
+            \item Assume a biased coin with probability $\theta$ of showing heads. Find ML estimator for $\theta$.
             \item Toss the coin $n$ times and obtain Bernoulli random variables $X_1, \dots, X_n$ such that:
             \[
             \text{"heads" } \to 1, \quad \text{"tails" } \to 0.
@@ -52,11 +62,14 @@
             \[
             \underline{x} = (1, 0, 0, 0, 1, 1, 0, 1, 1, 1), \quad k = 6.
             \]
-            \item Probability of observing $\underline{x}$ given $\theta$ is:
+            \item Probability of observations $x_1,\ldots,x_n$ corresponding to parameter $\theta$ is:
             \[
             p_{\underline{X}}(\underline{x} | \theta) = \theta^k (1 - \theta)^{n - k}.
             \]
-            It is sufficient to know only $k$.
+            \begin{itemize}
+                \item It is sufficient to know only $k$.
+                \item Note: Don't need the $\binom{n}{k}$ term because we are given the specific sequence of heads and tails.
+            \end{itemize}
         \end{itemize}
         
         \item \textbf{Log-Likelihood and Maximization:}
@@ -75,7 +88,7 @@
             \[
             \hat{\Theta} = \frac{k}{n}, \quad \text{where } k = \sum_{i=1}^n X_i.
             \]
-            This corresponds to the observed frequency of heads.
+            This corresponds to the observed frequency of heads, which is intuitive b/c the more heads we see, the more likely the coin is biased towards heads.
         \end{itemize}
         
         \item \textbf{Examples:}
@@ -96,7 +109,7 @@
 
 \begin{notes}
     \begin{itemize}
-        \item[1.] $K$ is a sufficient statistic for this Maximum Likelihood (ML) estimator.
+        \item[1.] $k$ is a sufficient statistic for this Maximum Likelihood (ML) estimator.
     
         \item[2.] The expectation of the estimator $\hat{\theta}$ is:
         \begin{align*}
@@ -109,7 +122,7 @@
             \item $E[X_i] = (1)\theta + (0)(1 - \theta) = \theta$
         \end{itemize}
         
-        \item[3.] In fact, $\hat{\theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is the sample mean, and $\theta$ is the true mean. Therefore, $\hat{\theta} \to \theta$ in probability, which implies that $\hat{\theta}$ is \textit{consistent}.
+        \item[3.] In fact, $\hat{\Theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is the sample mean, and $\theta$ is the true mean. Therefore, $\hat{\theta} \to \theta$ in probability, which implies that $\hat{\theta}$ is \textit{consistent}.
     \end{itemize}    
 \end{notes}
 
