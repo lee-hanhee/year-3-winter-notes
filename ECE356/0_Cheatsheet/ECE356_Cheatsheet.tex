@@ -162,7 +162,7 @@
     $u(0) = \cdots = \frac{d^{(m-1)} u}{dt^{(m-1)}}(0) = 0$. Then the TF from $u$ to $y$ is \\
     $G(s) := \frac{y(s)}{U(s)} = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$. \\
     *\textbf{0 Ini. Conds.:} $y_0(s) = G(s) u(s)$ \\
-    *\textbf{$\emptyset$ Ini. Conds.:} $y_{\emptyset}(s) = y_0(s) + \frac{\text{poly. based on initial conds.}}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$
+    *\textbf{$\emptyset$ Ini. Conds.:} $y_{\emptyset}(s) = y_0(s) + \frac{\text{poly. based on initial conds.}}{s^n + a_{n-1} s^{n-1} + \cdots + a_0}$ \\
 
     \textcolor{orange}{\textbf{TF Steps (IO to TF):}} 1. Given IO form of CS, assume zero initial conds. \\
     2. Find $G(s)$ by taking LT of IO form and forming $Y(s)/U(s)$. \\
@@ -173,26 +173,46 @@
     *$\mathcal{L} \{\delta(t) \} = 1$, then if $u(t) \text{=} \delta(t)$, then $Y(s) = U(s) G(s) = G(s)$.
 
     \textcolor{red}{\textbf{SS to TF:}} $G(s) = C (sI - A)^{-1} B + D$ s.t. $y(s) = G(s) U(s)$. \\
-    *$\overset{\cdot}{x} = Ax + Bu, \; y = Cx + Du$ \\
-    *Assume $x(0) = 0 \in \mathbb{R}^n$ (zero initial conds.). 
+    *Assume $x(0) = 0 \in \mathbb{R}^n$ (zero initial conds.). \\
+    *\textbf{LTI:} $G(s)$ of an LTI system is always a rational fcn. \\ 
+    *\textbf{Not Invertible:} Values of $s$ s.t. $sI - A$ not invertible can correspond to poles of $G(s)$.
 
     \textcolor{orange}{\textbf{Inverse:}} 1. For $A \in \mathbb{R}^{n \times n}$, find $[\text{cof}(A)]_{(i,j)} \text{=} (-1)^{i+j} \text{det}(A_{(i,j)})$. \\ 
     *$A_{(i,j)}$: $A$ w/ row $i$ and col. $j$ removed. \\
     2. Assemble $\text{cof}(A)$ and find $\text{det}(A) = \sum_{j=1}^n a_{ij} [\text{cof}(A)]_{(i,j)}$ \\
     w/ fixed $i$ or $\text{det}(A) = \sum_{i=1}^n a_{ij} [\text{cof}(A)]_{(i,j)}$ w/ fixed $j$. \\
-    3. Find $A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A) = \frac{1}{\text{det}(A)} [\text{cof}(A)]^T$.
+    3. Find $A^{-1} = \frac{1}{\text{det}(A)} \text{adj}(A) = \frac{1}{\text{det}(A)} [\text{cof}(A)]^T$. \\
+    *$2\times2: A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
 
     \textcolor{orange}{\textbf{TF (SS to TF):}} 1. Given SS form, assume zero initial conds. \\
     2. Solve $G(s) = C (sI - A)^{-1} B + D$. \\
-    *If $C = \begin{bmatrix} 0 \; \cdot \; 1 \; \cdot \; 0 \end{bmatrix}$ and $B = \begin{bmatrix} 0 \; \cdot \; 1 \; \cdot \; 0 \end{bmatrix}$, then only need to compute ith row \& jth col. of $\text{adj}(sI - A)$. \\
+    *If $C \text{=} \begin{bmatrix} 0 \; \cdot \; 1_i \; \cdot \; 0 \end{bmatrix}$ \& $B \text{=} \begin{bmatrix} 0 \; \cdot \; 1_j \; \cdot \; 0 \end{bmatrix}$, then only need ith row \& jth col. of $\text{adj}(sI - A)$ s.t. $G(s) \text{=} \frac{[\text{adj}(sI - A)]_{(i,j)}}{\text{det}(sI - A)} + D$. \\
+    WHAT TO DO IF MULTIPLE NON ZERO ENTRIES $i$ and $j$? 
+
+    \textcolor{red}{\textbf{TF to SS:}} Consider $G(s) = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0} = \frac{N(s)}{D(s)}$, where $m < n$ (i.e. $G(s)$ is strictly proper). Then the SS form is \\
+    *$A = \begin{bmatrix} 0 & 1 & 0 & \cdots & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & 0 & 1 \\ -a_0 & -a_1 & -a_2 & \cdots & -a_{n-1} \end{bmatrix}$, $B = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{bmatrix}$, \\
+    $C = \begin{bmatrix} b_m & b_{m-1} & \cdots & b_1 & \mid & 0 & 0 & \cdots & 0 \end{bmatrix}$, $D = 0$. \\
+    *\textbf{Unique:} State space of a TF is not unique. 
+
+    \textcolor{red}{\textbf{Summary:}} \customFigure[0.25]{../Images/L8_0.png}
 
     \textcolor{red}{\textbf{Block Diagram}} \textcolor{blue}{\textbf{Types of Blocks:}} \\
-    \textcolor{black}{\textbf{Cascade:}} $y_2 = (G_1(s) G_2(s)) U $ \customFigure[0.25]{../Images/L9_0.png} \\
+    \textcolor{black}{\textbf{Cascade:}} $y_2 = (G_1(s) G_2(s)) U \overset{\text{SISO}}{=} y_2 = (G_2(s)G_1(s)) U$ \customFigure[0.25]{../Images/L9_0.png} \\
     \textcolor{black}{\textbf{Parallel}} $y = (G_1(s) + G_2(s)) U$ \customFigure[0.25]{../Images/L9_1.png} \\
-    \textcolor{black}{\textbf{Feedback}} $y = \left(\frac{G_1(s)}{1 + G_1(s) G_2(s)}\right) R$ \customFigure[0.25]{../Images/L9_2.png} 
+    \textcolor{black}{\textbf{Feedback}} $y = \left(\frac{G_1(s)}{1 + G_1(s) G_2(s)}\right) R$ \customFigure[0.25]{../Images/L9_2.png} \\
+    *\textbf{SC:} Unity Feedback Loop (UFL) if $G_2(s) = 1$.
 
-    \textcolor{blue}{\textbf{Manipulations:}} \\
+    \textcolor{blue}{\textbf{Manipulations:}} 1. $y = G(U_1 - U_2) = GU_1 + GU_2$ \\
+    2. $y_1 = G U \quad y_2 = U \; \mid \; y_1 = G U \quad y_2 = G \frac{1}{G} U$ \\ 
+    3. From feedback loop to UFL. 
     \customFigure[0.3]{../Images/L9_3.png} 
+
+    \textcolor{orange}{\textbf{Find TF from Block Diagram:}} 1. Start from in $\rightarrow$ out, making simplifications using block diagram rules. \\
+    2. Simplify until you get the form $U(s) \rightarrow \boxed{G(s)} \rightarrow Y(s)$.
+
+    \textcolor{red}{\textbf{Time Response:}} \textcolor{blue}{\textbf{Elementary Terms:}} $\mathbf{1}(t) \leftarrow \text{pole @ 0}$ \\
+    $t^n \mathbf{1}(t) \leftarrow \text{pole @ $0$ w/ mult. $n$} \; \mid \; e^{at} \mathbf{1}(t) \leftarrow \text{pole @ } a$ \\
+    $\sin(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega \; \mid \; \cos(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega$ \\
 
         }
 \end{paracol}
