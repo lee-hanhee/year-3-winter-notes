@@ -1,33 +1,3 @@
-\section{Learning Problems}
-\begin{definition}
-    In a learning problem, we assume that there is some (unknown) relationship, 
-    \begin{equation*}
-        f: \mathcal{X} \rightarrow \mathcal{Y}
-    \end{equation*}
-    s.t. $x \mapsto_f y$
-    \vspace{1em}
-
-    Find $h: \mathcal{X} \rightarrow \mathcal{Y}$ (hypothesis) s.t. $h \approx f$, given some data about $f$: 
-
-    \begin{itemize}
-        \item $\text{in}(\mathcal{D}) = \{x \text{ s.t. } (x,y) \in \mathcal{D}\}$
-        \item $\text{out}(\mathcal{D}) = \{y \text{ s.t. } (x,y) \in \mathcal{D}\}$
-    \end{itemize}
-\end{definition}
-
-\subsection{Classification vs. Regression Problems}
-\begin{definition}
-    \begin{itemize}
-        \item \textbf{Classification Problems:} $\mathcal{X} \subseteq \mathbb{R}^n$ and $\mathcal{Y} \subseteq \mathbb{N}$
-        \item \textbf{Regression Problems:} $\mathcal{X} \subseteq \mathbb{R}^n$ and $\mathcal{Y} \subseteq \mathbb{R}$
-    \end{itemize}
-\end{definition}
-
-\subsection{Feature Spaces}
-\begin{definition}
-    It is often easier to learn relationships from high-level features (instead of the raw input).
-\end{definition}
-
 \subsection{Feasibility of Learning}
 \begin{motivation}
     More than one function (hypothesis) may be consistent with the data.
@@ -73,7 +43,5 @@ Consider determining the class of a randomly chosen target point. If we ask a K-
 
 \subsubsection{PAC Learning}
 
-\subsection{Decision Trees}
 
-\subsubsection{Structure of a Decision Tree}
 

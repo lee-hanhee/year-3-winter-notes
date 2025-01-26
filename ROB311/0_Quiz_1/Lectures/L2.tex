@@ -1,8 +1,66 @@
+
 \begin{summary}
-    \begin{itemize}
-        \item Not responsible for proofs, but know when to use each algorithm.
-    \end{itemize}
+    \begin{center}
+        \begin{tabular}{lcccccc}
+        \toprule
+        \textbf{Alg.} & Halting & Sound & Complete & Optimal & Time & Space \\
+        \midrule
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{center}
+            \textbf{Uninformed Search Algorithms}
+        \end{center}} \\
+        \midrule
+        \textbf{BFS} & $d<\infty$, non-\texttt{NULL} & always & always & constant cst & $b^{l^{*}}$ & $b^{l^{*} + 1}$ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Explores the least-recently expanded open node first.
+        \end{itemize}} \\
+        \midrule
+        \textbf{DFS} & $d<\infty$ & always & $d < \infty$ & never & $b^{d}$ & $bd$ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Explores the most-recently expanded open node first.
+        \end{itemize}} \\
+        \midrule
+        \textbf{IDDFS} & always & always & always & constant cst & $b^{l^{*}}$ & $bl^{*}$ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Same as DFS but with iterative deepening.
+        \end{itemize}} \\
+        \midrule
+        \textbf{CFS} & $d<\infty$, non-\texttt{NULL} & yes & $\epsilon >0$ & $\epsilon >0$ & $b^{c^{*} / \epsilon}$ & $b^{c^{*}/\epsilon + 1}$ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Explores the cheapest open node first.
+        \end{itemize}} \\
+        \midrule
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{center}
+            \textbf{Informed Search Algorithms}
+        \end{center}} \\
+        \midrule
+        \textbf{HFS} & $d<\infty$ & never & never & never & - & - \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Explores the node with the smallest hur-value first.
+        \end{itemize}} \\
+        \midrule
+        \textbf{A$^*$} & hur admissible, $\epsilon > 0$ & always & hur admissible, $\epsilon > 0$ & hur admissible, $\epsilon > 0$ & $O\left(b^{c^{*}/\epsilon}\right)$ & $O\left(b^{c^{*}/\epsilon + 1}\right)$ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Explores the node with the smallest ecst-value first.
+        \end{itemize}} \\
+        \midrule
+        \textbf{IIA$^*$} & always & always & always & always & $b^{l^{*}}$ & $bl^{*} $ \\
+        \multicolumn{7}{p{\linewidth}}{
+        \begin{itemize}
+            \item Same as A$^*$ but with iterative inflating on ecst.
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{summary}
+
 \subsection{Setup}
 \begin{definition} In a search problem, it is assumed that: 
     \begin{itemize}
@@ -107,74 +165,6 @@ procedure SEARCH($\mathcal{O}$)
 
     We want to choose \texttt{REMOVE($\cdot$)} so that the algorithm exhibits the aforementioned characteristics for as many path trees as possible.
 
-\end{definition}
-
-\subsubsection{Breadth First Search (BFS)}
-\begin{definition}
-    Explores the least-recently expanded open node first.
-    \begin{center}
-        \begin{tabular}{|p{3cm}|p{3cm}|}
-        \hline
-        \textbf{Property} & \textbf{Description} \\ \hline
-        Halting & $d < \infty$ \newline non-NULL \\ \hline
-        Sound & always \\ \hline
-        Complete & always \\ \hline
-        Optimal & constant cst \\ \hline
-        Time & $b^{l^*}$ \\ \hline
-        Space & $b^{l^* + 1}$ \\ \hline
-        \end{tabular}
-    \end{center}
-\end{definition}
-
-\subsubsection{Depth First Search (DFS)}
-\begin{definition}
-    Explores the most-recently expanded open node first.
-    \begin{center}
-        \begin{tabular}{|p{3cm}|p{3cm}|}
-        \hline
-        \textbf{Property} & \textbf{Description} \\ \hline
-        Halting & $d < \infty$ \\ \hline
-        Sound & always \\ \hline
-        Complete & $d < \infty$ \\ \hline
-        Optimal & never \\ \hline
-        Time & $b^d$ \\ \hline
-        Space & $bd$ \\ \hline
-        \end{tabular}
-    \end{center}    
-\end{definition}
-
-\subsubsection{Iterative Deepening DFS (IDDFS)}
-\begin{definition}
-    Same as DFS but with iterative deepening.
-    \begin{center}
-        \begin{tabular}{|p{3cm}|p{3cm}|}
-        \hline
-        \textbf{Property} & \textbf{Description} \\ \hline
-        Halting & always \\ \hline
-        Sound & always \\ \hline
-        Complete & always \\ \hline
-        Optimal & constant cst \\ \hline
-        Time & $b^{l^*}$ \\ \hline
-        Space & $bl^*$ \\ \hline
-        \end{tabular}
-    \end{center}    
-\end{definition}
-
-\subsubsection{Cheapest-First Search (CFS)}
-\begin{definition}
-    Explores the cheapest open node first.
-    \begin{center}
-        \begin{tabular}{|p{3cm}|p{3cm}|}
-        \hline
-        \textbf{Property} & \textbf{Description} \\ \hline
-        Halting & $d < \infty$ \newline non-NULL \\ \hline
-        Sound & yes \\ \hline
-        Complete & $\epsilon > 0$ \\ \hline
-        Optimal & $\epsilon > 0$ \\ \hline
-        Time & $b^{c^*/\epsilon}$ \\ \hline
-        Space & $b^{c^*/\epsilon + 1}$ \\ \hline
-        \end{tabular}
-    \end{center}    
 \end{definition}
 
 \subsection{Modifications to Search Algorithms}
@@ -339,12 +329,6 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
 \subsubsection{Heuristics}
 
-\subsubsection{Heuristic-First Search (HFS)}
-
-\subsubsection{A-Star Search (A*)}
-
-\subsubsection{Iterative Inflating A-Star Search (IIA*)}
-
 \subsubsection{Designing Heuristics via Problem Relaxation}
 
 \subsubsection{Combining Heuristics}
@@ -429,35 +413,176 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{example}
 \newpage
 
-\begin{process} \textbf{How to Trace Through a Search Algorithm}
+\begin{example}
+    \customFigure[0.5]{../Images/LR_0.png}{}
+\end{example}
+
+\begin{process} \textbf{BFS}
     \begin{enumerate}
-        \item 
+        \item Start at $s_0$ 
+        \item Expand all neighboring nodes of the current node and add them to the open set (queue).
+        \item Remove the current node from the open set and mark it as visited.
+        \item Repeat steps 2 and 3 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
 \begin{example} \textbf{BFS}
-    
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A\}$ \\
+        $A$ & $\{B, C, D\}$ \\
+        $AB$ & $\{C, D, E\}$ \\
+        $ABC$ & $\{D, E\}$ \\
+        $ABCD$ & $\{E\}$ \\
+        $ABCDE$ & $\{\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+
+\begin{process} \textbf{DFS}
+    \begin{enumerate}
+        \item Start at $s_0$ (initial state).
+        \item Push the initial node onto the stack.
+        \item Pop a node from the stack and expand it.
+        \item Push all unvisited children of the current node onto the stack.
+        \item Repeat steps 3 and 4 until the goal state is reached or the stack is empty.
+    \end{enumerate}
+\end{process}
 
 \begin{example} \textbf{DFS}
-    
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A\}$ \\
+        $A$ & $\{B,C,D\}$ \\
+        $AD$ & $\{B,C,E\}$ \\
+        $ADE$ & $\{C, B\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+
+
+\begin{process} \textbf{IDDFS}
+    \begin{enumerate}
+        \item Start with a depth limit of 0.
+        \item Perform Depth-First Search (DFS) up to the current depth limit.
+        \item If the goal state is not reached and there are unexplored nodes, increment the depth limit and repeat step 2.
+        \item Continue until the goal state is found or all nodes are explored.
+    \end{enumerate}
+\end{process}
 
 \begin{example} \textbf{IDDFS}
-
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Depth} & \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+        0 & & $\{A\}$ \\
+        0 & A & $\{\}$ \\
+        \midrule
+        1 & $A$ & $\{B, C, D\}$ \\
+        1 & $AB$ & $\{C, D\}$ \\
+        1 & $AC$ & $\{D\}$ \\
+        1 & $AD$ & $\{\}$ \\
+        \midrule
+        2 & $AD$ & $\{E\}$ \\
+        2 & $ADE$ & $\{\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+
+\begin{process} \textbf{CFS}
+    \begin{enumerate}
+        \item Start at $s_0$ (initial state).
+        \item Initialize the open set (priority queue) with the initial state and its cost.
+        \item Remove the node with the lowest cost from the open set.
+        \item Expand the node and add all unvisited neighbors to the open set with their cumulative costs.
+        \item Repeat steps 3 and 4 until the goal state is reached or the open set is empty.
+    \end{enumerate}
+\end{process}
 
 \begin{example} \textbf{CFS}
-
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A \mid 0\}$ \\
+        $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ \\
+        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3\}$ \\
+        $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
+        $ABCE$ & $\{AC \mid 4, \; AD \mid 6, \; ABCD \mid 6\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+
+\begin{process} \textbf{HFS}
+    \begin{enumerate}
+        \item Start at $s_0$ (initial state).
+        \item Initialize the open set with the initial state and its heuristic value.
+        \item Remove the node with the lowest heuristic value from the open set.
+        \item Expand the node and add all unvisited neighbors to the open set with their heuristic values.
+        \item Repeat steps 3 and 4 until the goal state is reached or the open set is empty.
+    \end{enumerate}
+\end{process}
 
 \begin{example} \textbf{HFS}
-    
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A \mid 3\}$ \\
+        $A$ & $\{AB \mid 2, \; AC \mid 1, \; AD \mid 1\}$ \\
+        $AC$ & $\{AB \mid 2, \; AD \mid 1, \; ACE \mid 0\}$ \\
+        $ACE$ & $\{AB \mid 2, \; AD \mid 1\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
 
-\begin{example} \textbf{A*}
 
+\begin{process} \textbf{A$^*$}
+    \begin{enumerate}
+        \item Start at $s_0$ 
+        \item Choose path in open set that gives lowest $\text{esct}(p) = \text{cst}(p) + \text{hur}(p)$.
+        \item Expand and export children onto open set.
+        \item Repeat until goal state is reached.
+    \end{enumerate}
+\end{process}
+
+\begin{example} \textbf{A$^*$}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A \mid 3 \}$ \\
+        $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
+        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1, \; \cancel{ABA} \quad \text{intra} \}$ \\
+        $ABC$ & $\{AC \mid 5, AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0 \}$ \\
+        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0 \}$ \\
+        $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6 \}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+
+% \multicolumn{2}{p{\linewidth}}{
+%     \begin{itemize}
+%         \item See the ELF header of a file.
+%     \end{itemize}} \\
+
+
 
 \begin{example} \textbf{IIA*}
     
@@ -567,6 +692,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \begin{example}
     \customFigure[0.5]{../Images/L2_11.png}{}
 \end{example}
+
 
 
 

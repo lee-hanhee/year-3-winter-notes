@@ -135,6 +135,8 @@
     \textcolor{orange}{\textbf{LT Steps:}} 1. Write $f(t)$ as a sum and use linearity \\
     *Trig. id. may be useful. \\
     2. Use prop. of LT and common LT to find $F(s)$  
+    
+    \switchcolumn
 
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
     $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
@@ -156,7 +158,8 @@
     *Complete the square. 
 
     \textcolor{orange}{\textbf{Inv. LT Residue:}} 1. Find poles of $F(s)$ and their residues. \\
-    2. Use Cauchy's Residue THM to find inverse LT.
+    2. Use Cauchy's Residue THM to find inverse LT. \\
+    *Note: Complex Conjugate (CC) poles $\rightarrow$ CC residues (use Euler).
 
     \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = \frac{d^{(n-1)}y}{dt^{(n-1)}}(0) = 0$ and \\ 
     $u(0) = \cdots = \frac{d^{(m-1)} u}{dt^{(m-1)}}(0) = 0$. Then the TF from $u$ to $y$ is \\
@@ -187,7 +190,7 @@
     \textcolor{orange}{\textbf{TF (SS to TF):}} 1. Given SS form, assume zero initial conds. \\
     2. Solve $G(s) = C (sI - A)^{-1} B + D$. \\
     *If $C \text{=} \begin{bmatrix} 0 \; \cdot \; 1_i \; \cdot \; 0 \end{bmatrix}$ \& $B \text{=} \begin{bmatrix} 0 \; \cdot \; 1_j \; \cdot \; 0 \end{bmatrix}$, then only need ith row \& jth col. of $\text{adj}(sI - A)$ s.t. $G(s) \text{=} \frac{[\text{adj}(sI - A)]_{(i,j)}}{\text{det}(sI - A)} + D$. \\
-    WHAT TO DO IF MULTIPLE NON ZERO ENTRIES $i$ and $j$? 
+    *Multiple $i$, $j$ non-zero entries: Work it out using MM.
 
     \textcolor{red}{\textbf{TF to SS:}} Consider $G(s) = \frac{b_m s^m + \cdots + b_0}{s^n + a_{n-1} s^{n-1} + \cdots + a_0} = \frac{N(s)}{D(s)}$, where $m < n$ (i.e. $G(s)$ is strictly proper). Then the SS form is \\
     *$A = \begin{bmatrix} 0 & 1 & 0 & \cdots & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & 0 & 1 \\ -a_0 & -a_1 & -a_2 & \cdots & -a_{n-1} \end{bmatrix}$, $B = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{bmatrix}$, \\

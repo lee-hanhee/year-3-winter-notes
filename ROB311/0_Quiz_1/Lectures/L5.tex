@@ -1,0 +1,156 @@
+\subsection{Decision Trees}
+\begin{motivation}
+    A simple model used for classification problems.
+    \vspace{1em}
+
+    We want to find the minimum \# of condition vertices (or questions) needed to "sufficiently discriminate" (identify the class of every point in \(\mathcal{D}\)).
+\end{motivation}
+\subsubsection{Structure}
+\begin{definition}
+    Each vertex in a decision tree is either:
+    \begin{enumerate}
+        \item A \textbf{condition vertex}: a vertex that sorts points based on a question.
+        \item A \textbf{decision vertex}: a vertex that assigns all points a specific class.
+    \end{enumerate}
+\end{definition}
+
+\begin{warning}
+    \begin{itemize}
+        \item More condition vertices improve discrimination.
+        \item Less condition vertices improve generalization.
+    \end{itemize}
+\end{warning}
+
+\subsection{Building a Decision Tree: The General Case}
+\begin{motivation}
+    Suppose points do not necessarily belong to a unique class.
+    \vspace{1em}
+
+    In the context of decision trees:
+    \begin{itemize}
+        \item \(X\) is the class of a randomly chosen target point.
+        \item \(Y\) is the answer to a \(K\)-ary question for \(X\).
+    \end{itemize}
+
+    Maximize \(IG(X|Y)\) (i.e. choose the question to maximize the information gained).
+\end{motivation}
+
+\subsubsection{Entropy, Conditional Entropy, and Information Gain}
+\begin{definition}
+    The \textbf{entropy} of a random variable \(X\) (in \(K\)-its) is defined as
+    \begin{equation*}
+        H(X) = -\sum_{\forall x \in X} p_X(x) \log_K(p_X(x)).
+    \end{equation*}
+
+    The \textbf{conditional entropy} of a random variable, \(X\), given a random variable \(Y\), is
+    \begin{equation*}
+        H(X|Y) = -\sum_{\forall y \in Y} \sum_{\forall x \in X} p_{X|Y}(x | y) \log_K(p_{X|Y}(x|y)).
+    \end{equation*}
+
+    The \textbf{information gain} from \(Y\) is:
+    \begin{equation*}
+        IG(X|Y) = H(X) - H(X|Y).
+    \end{equation*}
+\end{definition}
+
+\begin{warning}
+    \begin{itemize}
+        \item There are $\infty$ many potential questions, but there are only finite many ways to split the dataset. 
+    \end{itemize}
+\end{warning}
+\newpage
+
+\begin{process}
+    \begin{enumerate}
+        \item Calculate \(H(X)\) (i.e. entropy before the split).
+        \item Calculate \(H(X|Y)\) (i.e. entropy after the split).
+        \begin{enumerate}
+            \item Calculate entropy for each subset of \(X\) based on the question, \(Y\).
+            \item Calculate the weighted average of the entropies.
+        \end{enumerate}
+        \item Calculate \(IG(X|Y) = H(X) - H(X|Y)\).
+    \end{enumerate}
+\end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L5_0.png}{}    
+\end{example}
+
+\begin{example} \textbf{2-Ary Question}
+    \begin{enumerate}
+        \item \textbf{Given:} $X= \{0,1,2\}$, $Y = 
+        \begin{cases} 
+        1, & \text{if } x_1 \leq 3 \quad (\text{Yes}) \\
+        0, & \text{if } x_1 > 3 \quad (\text{No})
+        \end{cases}$, 
+        \item \textbf{Problem:} $IG(X|Y) = ?$
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
+            \item Entropy after the split: 
+            \begin{enumerate}
+                \item $H(X_{\text{left}}) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$ 
+                \item $H(X_{\text{right}}) = \frac{2}{5} \log_2 \left(\frac{5}{2}\right) + \frac{3}{5} \log_2 \left(\frac{5}{3}\right)$.
+                \item Weighted Avg. Entropy: $H(X|Y) = \frac{5}{10} H(X_{\text{left}}) + \frac{5}{10} H(X_{\text{right}})$
+            \end{enumerate}
+            \item $IG(X|Y) = H(X) - H(X|Y)$
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+
+\begin{example} \textbf{2-Ary Question}
+    \begin{enumerate}
+        \item \textbf{Given:} $X= \{0,1,2\}$, $Y = 
+        \begin{cases} 
+        1, & \text{if } x_2 \leq 3 \quad (\text{Yes}) \\
+        0, & \text{if } x_2 > 3 \quad (\text{No})
+        \end{cases}$, 
+        \item \textbf{Problem:} $IG(X|Y) = ?$
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
+            \item Entropy after the split: 
+            \begin{enumerate}
+                \item $H(X_{\text{top}}) = \frac{3}{3} \log_2 \left(\frac{3}{3}\right)$ 
+                \item $H(X_{\text{bottom}}) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)+ \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$.
+                \item Weighted Avg. Entropy: $H(X|Y) = \frac{3}{10} H(X_{\text{top}}) + \frac{7}{10} H(X_{\text{bottom}})$
+            \end{enumerate}
+            \item $IG(X|Y) = H(X) - H(X|Y)$
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+
+\begin{example} \textbf{3-Ary Question}
+    \begin{enumerate}
+        \item \textbf{Given:} $X= \{0,1,2\}$, $Y = \begin{cases}
+        1, & \text{if } x_1 \leq 3 \text{ and } x_2 \leq 3 \\
+        2, & \text{if } x_1 \leq 3 \text{ and } x_2 > 3 \\
+        3, & \text{if } x_1 > 3 
+        \end{cases}$
+        \item \textbf{Problem:} $IG(X|Y) = ?$
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
+            \item Entropy after the split:
+            \begin{enumerate}
+                \item $H(X_1) = \frac{3}{3} \log_2\left(\frac{3}{3}\right)$
+                \item $H(X_2) = \frac{2}{2} \log_2\left(\frac{2}{2}\right)$
+                \item $H(X_3) = \frac{2}{5} \log_2\left(\frac{5}{2}\right) + \frac{3}{5} \log_2\left(\frac{5}{3}\right)$
+                \item $H(X|Y) = \frac{3}{10} H(X_1) + \frac{2}{10} H(X_2) + \frac{5}{10} H(X_3)$
+            \end{enumerate}
+            \item $IG(X|Y) = H(X) - H(X|Y)$
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+
+\begin{example} \textbf{Decision Tree}
+    \begin{enumerate}
+        \item \textbf{Given:} $X= \{0,1,2\}$
+        \item \textbf{Problem:} Draw a decision tree using binary conditions of the form, \(x_i \leq k\), where \(i \in \{1, 2\}\) and \(k \in \mathbb{Z}\), that maximizes the information gained at each level.
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item 
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+

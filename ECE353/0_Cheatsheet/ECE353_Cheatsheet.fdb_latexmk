@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1737337341.62661 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex" "ECE353_Cheatsheet.pdf" "ECE353_Cheatsheet" 1737337345.371 0
+["pdflatex"] 1737831008.4438 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex" "ECE353_Cheatsheet.pdf" "ECE353_Cheatsheet" 1737831012.32124 0
   "../Images/L1_0.png" 1736973573.83297 57044 882bd67830ee81e6b3be851ea7ab3d55 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex" 1737333071.77754 9672 8f3845c45f2946e7e44a83bf09285a47 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Cheatsheet/ECE353_Cheatsheet.tex" 1737831008.05589 9838 bc3e92da74afe1fe8871de0c9459e322 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -315,9 +315,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE353_Cheatsheet.aux" 1737337344.98619 1997 3b4a2c261520627ab26fa78316dfeb91 "pdflatex"
-  "ECE353_Cheatsheet.out" 1737337344.98803 1723 47dc5dbc38efc8d29944faf0e6aef028 "pdflatex"
-  "ECE353_Cheatsheet.tex" 1737333071.77754 9672 8f3845c45f2946e7e44a83bf09285a47 ""
+  "ECE353_Cheatsheet.aux" 1737831011.95448 1997 3b4a2c261520627ab26fa78316dfeb91 "pdflatex"
+  "ECE353_Cheatsheet.out" 1737831011.95598 1723 47dc5dbc38efc8d29944faf0e6aef028 "pdflatex"
+  "ECE353_Cheatsheet.tex" 1737831008.05589 9838 bc3e92da74afe1fe8871de0c9459e322 ""
   "style.sty" 1737337336.7471 7637 e407d765cf962525e6b0965aed7b5e38 ""
   (generated)
   "ECE353_Cheatsheet.aux"

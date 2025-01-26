@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  19 JAN 2025 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  25 JAN 2025 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1178,41 +1178,41 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count421
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 13.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 13.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 13.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 13.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 13.
+(Font)              <10> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 13.
+(Font)              <7> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 13.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+(Font)              <5> on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 17.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (12.0pt too wide) in paragraph at lines 13--48
+Overfull \hbox (12.0pt too wide) in paragraph at lines 19--54
  [] 
  []
 
@@ -1245,7 +1245,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 55--79
+Overfull \hbox (12.0pt too wide) in paragraph at lines 61--85
  [] 
  []
 
@@ -1257,7 +1257,7 @@ File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 <../Images/L1_0.png, id=130, 395.4775pt x 290.08376pt>
 File: ../Images/L1_0.png Graphic file (type png)
 <use ../Images/L1_0.png>
-Package pdftex.def Info: ../Images/L1_0.png  used on input line 261.
+Package pdftex.def Info: ../Images/L1_0.png  used on input line 267.
 (pdftex.def)             Requested size: 149.73676pt x 109.83017pt.
  [5
 
@@ -1270,15 +1270,15 @@ Package rerunfilecheck Info: File `ECE353_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: 47DC5DBC38EFC8D29944FAF0E6AEF028;1723.
  ) 
 Here is how much of TeX's memory you used:
- 51264 strings out of 474116
- 1196006 string characters out of 5743682
+ 51265 strings out of 474116
+ 1196021 string characters out of 5743682
  2160187 words of memory out of 5000000
- 72723 multiletter control sequences out of 15000+600000
+ 72724 multiletter control sequences out of 15000+600000
  598436 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,822b,1580s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on ECE353_Cheatsheet.pdf (5 pages, 208408 bytes).
+Output written on ECE353_Cheatsheet.pdf (5 pages, 208846 bytes).
 PDF statistics:
  192 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams

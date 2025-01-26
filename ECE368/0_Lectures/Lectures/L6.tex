@@ -161,6 +161,17 @@
 \begin{example}
     Given an unknown voltage \( x \), we measure it using a voltmeter that outputs a random reading \( Y \) that is uniform in \( [0, x] \). Suppose we make \( n \) i.i.d. measurements \( Y_1, \dots, Y_n \) and wish to estimate \( \mu = \frac{x}{2} = \mathbb{E}[Y] \).
     \begin{enumerate}
+        \item PDF of \( Y \):
+        \begin{equation*}
+            f_Y(y \mid \mu) = 
+            \begin{cases}
+                \frac{1}{2\mu} & \text{if } 0 \leq y \leq 2\mu, \\
+                0 & \text{otherwise}.
+            \end{cases}
+        \end{equation*}
+        \begin{itemize}
+            \item This is a uniform distribution, where $x = 2\mu$. 
+        \end{itemize}
         \item \textbf{Sample Mean:} 
         \[
         \hat{\mu} = \frac{1}{n} \sum_{i=1}^n Y_i \quad \cdots (1)
@@ -172,6 +183,9 @@
             &= \prod_{i=1}^n \frac{1}{2\mu} \cdot 1(0 \leq y_i \leq 2\mu) \\
             &= \frac{1}{(2\mu)^n} \prod_{i=1}^n 1(0 \leq y_i \leq 2\mu).
         \end{align*}
+        \begin{itemize}
+            \item The indicator function ensures that all measurements are within the range \( [0, 2\mu] \) for the likelihood to be non-zero. Therefore, $\mu$ must be chosen such that all data points lie within this range.
+        \end{itemize}
         
         The likelihood is maximized for:
         \[
@@ -182,6 +196,10 @@
         \[
         \hat{\mu} = \max_{1 \leq i \leq n} \frac{1}{2} Y_i \quad \cdots (2)
         \]
+        \begin{itemize}
+            \item The likelihood is non-zero only if $\mu$ is greater than or equal to the maximum of the measurements because all data points must lie within the range $[0, 2\mu]$. 
+            \item i.e. $2 \mu > \max_{1 \leq i \leq n} Y_i$, which is to ensure that ALL measurements are within the range $[0, 2\mu]$, so this must be $\mu$.
+        \end{itemize}
 
         \item Clearly, \( (1) \neq (2) \).
     \end{enumerate}

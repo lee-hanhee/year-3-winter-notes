@@ -1,0 +1,122 @@
+\subsection{ML Estimator (Frequentist Approach)}
+\begin{definition}
+    \begin{itemize}
+        \item Assume $\theta$ is \textbf{fixed} and find the "best" $\theta$:
+        \[
+        \hat{\theta} = \arg\max_{\theta} P_{\underline{X}}(\underline{x}|\theta) \quad \text{or} \quad \hat{\theta} = \arg\max_{\theta} f_{\underline{X}}(\underline{x}|\theta).
+        \]
+        \item Every $\theta$ value specifies a \textbf{different probability space} (e.g., coin, universe, etc.) for our experiment.
+    \end{itemize}
+\end{definition}
+
+\subsection{MAP Estimator (Bayesian Approach)}
+\begin{definition}
+    \begin{enumerate}
+        \item Assume \textbf{random} parameter $\Theta$ in the \textbf{same sample space} as our experiment.
+        \item Assume we have a \textbf{prior} pmf/pdf for $\Theta$: $P_\Theta(\theta)$ or $f_\Theta(\theta)$.
+        \item Find the most probable $\theta$ given the observations $\underline{X} = \underline{x}$:
+        \[
+        \hat{\theta} = \arg\max_{\theta} P_{\Theta|\underline{X}}(\theta|\underline{x}), \quad \text{if } \theta \text{ discrete},
+        \]
+        \[
+        \hat{\theta} = \arg\max_{\theta} f_{\Theta|\underline{X}}(\theta|\underline{x}), \quad \text{if } \theta \text{ continuous}.
+        \]
+        \begin{itemize}
+            \item \textbf{Posterior Distribution:} $f_{\Theta|\underline{X}} (\theta|\underline{x})$.
+        \end{itemize}
+    \end{enumerate}
+\end{definition}
+
+\subsubsection{Four Cases of Bayes' Rule}
+\begin{definition}
+    \[
+    P_{\Theta|\underline{X}}(\theta|\underline{x}) =
+    \begin{cases}
+        \frac{P_{\underline{X}|\Theta}(\underline{x}|\theta)P_\Theta(\theta)}{P_{\underline{X}}(\underline{x})}, & \text{if } \underline{X} \text{ discrete}, \\
+        \frac{f_{\underline{X}|\Theta}(\underline{x}|\theta)f_\Theta(\theta)}{f_{\underline{X}}(\underline{x})}, & \text{if } \underline{X} \text{ continuous}.
+    \end{cases}
+    \]
+
+    \[
+    f_{\Theta|\underline{X}}(\theta|\underline{x}) =
+    \begin{cases}
+        \frac{P_{\underline{X}|\Theta}(\underline{x}|\theta)f_\Theta(\theta)}{P_{\underline{X}}(\underline{x})}, & \text{if } \underline{X} \text{ discrete}, \\
+        \frac{f_{\underline{X}|\Theta}(\underline{x}|\theta)f_\Theta(\theta)}{f_{\underline{X}}(\underline{x})}, & \text{if } \underline{X} \text{ continuous}.
+    \end{cases}
+    \]
+\end{definition}
+
+\begin{notes}
+    The denominator $f_{\underline{X}}(\underline{x})$ is independent of $\theta$:
+    \[
+    f_{\underline{X}}(\underline{x}) = \int_{-\infty}^{\infty} f_{\underline{X}|\Theta}(\underline{x}|\theta) f_\Theta(\theta) d\theta.
+    \]
+\end{notes}
+
+\subsection{Comparison: ML vs MAP}
+\begin{definition}
+    \[
+        \hat{\theta}_{ML} = \arg\max_{\theta} p_{\underline{X}|\Theta}(\underline{x}|\theta),
+    \]
+    \[
+        \hat{\theta}_{MAP} = \arg\max_{\theta} p_{\underline{X}|\Theta}(\underline{x}|\theta)p_\Theta(\theta).
+    \]
+    The expressions are algebraically similar, but the philosophies differ.
+\end{definition}
+
+\subsection{Example: Unknown Voltage}
+\begin{enumerate}
+    \item Assume prior knowledge that $\theta$ is uniformly distributed in $[0, 1]$:
+    \[
+    f_\Theta(\theta) =
+    \begin{cases}
+        1, & 0 \leq \theta \leq 1, \\
+        0, & \text{otherwise}.
+    \end{cases}
+    \]
+    \item We measure it using a voltmeter that outputs random readings $\underline{Y} = [y_1, y_2, \dots, y_n]$, uniformly distributed in $[0, \theta]$. How to estimate $\theta$?
+\end{enumerate}
+
+\subsection*{To Warm Up: ML Estimation (Ignoring the Prior)}
+\begin{align*}
+f_{\underline{Y}|\Theta}(\underline{y}|\theta) &= \prod_{i=1}^n f_{Y|\Theta}(y_i|\theta) \\
+&= \frac{1}{\theta^n} \prod_{i=1}^n 1(0 \leq y_i \leq \theta).
+\end{align*}
+\[
+\hat{\theta}_{ML} = \arg\max_{\theta} \frac{1}{\theta^n} 1(\theta \geq \max_{1 \leq i \leq n} y_i) = \max_{1 \leq i \leq n} y_i.
+\]
+
+\subsection*{Solution: MAP Estimation}
+\begin{align*}
+f_{\Theta|\underline{Y}}(\theta|\underline{y}) &= \frac{f_{\underline{Y}|\Theta}(\underline{y}|\theta) f_\Theta(\theta)}{f_{\underline{Y}}(\underline{y})} \\
+&\propto f_{\underline{Y}|\Theta}(\underline{y}|\theta) f_\Theta(\theta) \\
+&= \frac{1}{\theta^n} 1(\theta \geq \max_{1 \leq i \leq n} y_i) 1(0 \leq \theta \leq 1).
+\end{align*}
+\[
+\hat{\theta}_{MAP} = \arg\max_{\theta} \frac{1}{\theta^n} 1(\theta \geq \max_{1 \leq i \leq n} y_i) 1(0 \leq \theta \leq 1) = \max_{1 \leq i \leq n} y_i.
+\]
+
+\subsection*{What If the Prior Is Different?}
+Suppose the prior is:
+\[
+f_\Theta(\theta) =
+\begin{cases}
+    2, & \frac{1}{2} \leq \theta \leq 1, \\
+    0, & \text{otherwise}.
+\end{cases}
+\]
+This means "The voltage is at least $\frac{1}{2}$ but no more than 1." Then:
+\begin{align*}
+f_{\Theta|\underline{Y}}(\theta|\underline{y}) &\propto \frac{1}{\theta^n} 1(\theta \geq \max_{1 \leq i \leq n} y_i) 1\left(\frac{1}{2} \leq \theta \leq 1\right),
+\end{align*}
+\[
+\hat{\theta}_{MAP} = \max \left\{\max_{1 \leq i \leq n} y_i, \frac{1}{2}\right\}.
+\]
+
+\begin{notes}
+    \begin{enumerate}
+        \item $\max_{1 \leq i \leq n} y_i$ is a sufficient statistic for ML and MAP in this scenario.
+        \item $\hat{\theta}_{MAP} \to \max_{1 \leq i \leq n} y_i$ as $n \to \infty$, regardless of the prior.
+        \item MAP optimization typically requires more computational effort than ML estimation.
+    \end{enumerate}
+\end{notes}
