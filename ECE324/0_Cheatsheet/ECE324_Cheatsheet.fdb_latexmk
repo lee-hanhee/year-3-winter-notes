@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737867421.04962 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1737867433.09753 0
+["pdflatex"] 1737867476.84326 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1737867490.05441 0
   "../Images/L2_0.png" 1736973573.75507 307535 eb44cf12ca87434390661c755265c22e ""
   "../Images/L2_10.png" 1737856402.95288 326893 ff5f18575ba0b3f7a3feaf1053abc387 ""
   "../Images/L2_11.png" 1737856506.29493 755333 d7915f9b9e6539a5e32b462c425046cc ""
@@ -379,14 +379,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1737867432.57799 16953 4f33b2ec57558a9ddf749dc9d45ffdd4 "pdflatex"
-  "ECE324_Cheatsheet.out" 1737867432.58237 15110 5ecd6a0d49aa198530d63354e71998d6 "pdflatex"
+  "ECE324_Cheatsheet.aux" 1737867489.52229 17189 d1c03abe528c3c417b26ddbc5a767aa5 "pdflatex"
+  "ECE324_Cheatsheet.out" 1737867489.52538 15383 dcc18abf6e4ebad35930ec872fd6d9d3 "pdflatex"
   "ECE324_Cheatsheet.tex" 1737863766.30298 6317 c0f4afd6ee9367cea05a91a32334ee3e ""
   "Lectures/L2.tex" 1737856586.20584 10348 7a5f75095d00d417758c7210f14836fa ""
   "Lectures/L3.tex" 1737861256.99164 9047 c447f267348f4a318db1b71a34a21c10 ""
   "Lectures/L4.tex" 1737867350.60646 21199 afc69984093ef4edcd5fdcfffa4212e2 ""
   "Lectures/L5.tex" 1737867415.55692 437 1bf90a15821654f51bc78145fe95b222 ""
-  "Lectures/L6.tex" 1737854773.09487 898 b0ff73ad76b1fc24c972b557d0520ca0 ""
+  "Lectures/L6.tex" 1737867465.35842 958 b3c585c3368f908f6d8e09409d1f9eaf ""
   "style.sty" 1737861981.04606 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "ECE324_Cheatsheet.aux"
