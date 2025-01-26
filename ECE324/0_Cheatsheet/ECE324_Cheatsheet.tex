@@ -58,287 +58,34 @@
 \begin{example}
     
 \end{example}
+\newpage
 
-\section{L2 ML}
-\begin{summary}
-    \begin{itemize}
-        \item What does it mean when a computer program learns?
-        \item What is a neural network?
-        \item What is something that a AI model CANNOT do right now?
-    \end{itemize}
-\end{summary}
+\begin{center}
+    \section*{L2: A tour of learning algorithms, representations, and neural networks}
+\end{center}
+\input{Lectures/L2.tex}
+\newpage
 
-\section{L3 Neural Networks}
-\begin{summary}
-    \begin{itemize}
-        \item What is a neural network (NN)?
-        \item How is a GLM and a neural network related?
-        \item What is a representation? Other names for this?
-        \item How do NN make predictions?
-        \item How do NN learn?
-    \end{itemize}
-\end{summary}
+\begin{center}
+    \section*{L3: Multilayer Perceptrons (MLPs)}
+\end{center}
+\input{Lectures/L3.tex}
+\newpage
 
-\section{L4 Neural Network Engineering}
-\begin{summary}
-    \begin{itemize}
-        \item What is a MLP?
-        \item What is an inductive bias and why might they be useful?
-        \item What is the difference between hyperparameters and parameters?
-        \item How do we optimize all parameters in a model?
-    \end{itemize}
-\end{summary}
+\begin{center}
+    \section*{L4: Neural Network Engineering}
+\end{center}
+\input{Lectures/L4.tex}
+\newpage
 
-\section{L5 Optimizing Hyperparameters}
-\begin{summary}
-    \begin{itemize}
-        \item What stategies can help a NN converge when traiing?
-        \item What hyperparameters does a NN architecture have?
-        \item How can we optimize parameters without gradients? 
-        \item DL requires a lot of data, what can we do wehn data is scarce?
-    \end{itemize}
-\end{summary}
+\begin{center}
+    \section{L5 Optimizing Hyperparameters}
+\end{center}
+\input{Lectures/L5.tex}
+\newpage
 
-\subsection{Learning representations of data}
-\subsubsection{AI/MI/ML/DL}
-\begin{definition}
-    \customFigure[0.5]{../Images/L2_0.png}{} 
-\end{definition}
-\subsubsection{Learning algorithms}
-\begin{definition}
-    \textquotedblleft A \colorbox{orange}{\textbf{computer program M}} is said to \colorbox{red}{\textbf{learn}} from \colorbox{cyan}{\textbf{experience E}} with respect to some class of \colorbox{yellow}{\textbf{tasks T}} and \colorbox{violet}{\textbf{performance measure P}}, if its performance at \colorbox{yellow}{\textbf{tasks in T}}, as measured by \colorbox{violet}{\textbf{P}}, improves with \colorbox{cyan}{\textbf{experience E}}\textquotedblright
-
-\vspace{1em}
-
-\noindent
-\begin{itemize}
-    \item \textbf{\color{cyan}experience E} $\sim$ Data
-    \item \textbf{\color{violet}performance measure P} $\sim$ Loss function, evaluation metric
-    \item \textbf{\color{yellow}tasks T} $\sim$ ``Prediction problem''
-    \item \textbf{\color{orange}computer program M} $\sim$ Model
-    \item \textbf{\color{red}learn} $\sim$ Optimize
-\end{itemize}
-
-\end{definition}
-
-\subsubsection{Linear models}
-\begin{definition} \textbf{Linear Regression}
-    \begin{equation}
-        W \cdot x = y
-    \end{equation}
-    \begin{itemize}
-        \item \textcolor{teal}{\textbf{E?}} (x and y)
-        \item \textcolor{purple}{\textbf{P?}} mean squared error
-        \item \textcolor{yellow}{\textbf{T?}} Predict y from x
-        \item \textcolor{orange}{\textbf{M?}} Linear model (W)
-        \item \textcolor{red}{\textbf{learn?}} Analytical solution or gradient descent
-    \end{itemize}
-\end{definition}
-
-\begin{definition} \textbf{Generalized Linear models in equations}
-    \begin{equation}
-        \text{Link}(W \cdot x) = y
-    \end{equation}
-    \begin{itemize}
-        \item $x$: Input features
-        \item $W$: Linear transformation
-        \item $y$: Output / target
-        \item $\text{Link}(x)$: Warping function
-    \end{itemize}
-\end{definition}
-
-\begin{example}
-    \begin{enumerate}
-        \item If $x$ has dim $50$ and $W$ projects to dimension $100$, what is the shape of $W$?
-        \begin{itemize}
-            \item $W$ is a $100 \times 50$ matrix
-        \end{itemize}
-        \item If $W$ is learnable, how many parameters does $W$ have?
-        \begin{itemize}
-            \item $100 \times 50 = 5000$ parameters
-        \end{itemize}
-    \end{enumerate}
-\end{example}
-
-\begin{notes} \textbf{How does a generalized linear model make a prediction?}
-    By either mapping to a line or separating data by a line (hyperplane)
-    \customFigure[0.5]{../Images/L2_2.png}{}
-\end{notes}
-
-\begin{notes} \textbf{What can we do when the data cannot be separated by a line?}
-    Resort to different decision surfaces.
-    \customFigure[0.5]{../Images/L2_3.png}{}
-\end{notes}
-
-\subsubsection{Representations}
-\begin{definition}
-    \textbf{Representation} is a way of encoding data.
-    \begin{equation}
-        x \overset{\text{Representation}}{\mapsto} z
-    \end{equation}
-    \begin{itemize}
-        \item $z$: Feature vectors, embeddings, latent codes, intermediate activations, etc.
-    \end{itemize}
-\end{definition}
-\begin{notes}
-    \customFigure[0.6]{../Images/L2_4.png}{}
-\end{notes}
-
-\subsection{Neural networks}
-\begin{definition}
-    Learnable (optimizable) transformations of data.
-    \begin{equation}
-        x \overset{\text{Model}}{\mapsto} y
-    \end{equation}
-\end{definition}
-
-\subsubsection{2-layer MLP}
-\begin{definition} By stacking linear transforms with activation functions.
-    \begin{equation}
-        \text{Link}(W_2 \cdot \text{relu}(W_1 \cdot x)) = y
-    \end{equation}
-    \begin{itemize}
-        \item $x$: Input features.
-        \item $W_1, W_2$: Linear transformations or Weight Matrices.
-        \item $\text{relu}(x) = \max(0,x)$: Non-linear activation function, s.t. $f'(x) = 1$ if $x > 0$ and $0$ otherwise.
-        \item $y$: Output / target. 
-    \end{itemize}
-    \vspace{1em}
-
-    \begin{itemize}
-        \item \textcolor{teal}{\textbf{E?}} (x and y)
-        \item \textcolor{purple}{\textbf{P?}} mean squared error
-        \item \textcolor{yellow}{\textbf{T?}} Predict y from x
-        \item \textcolor{orange}{\textbf{M?}} Neural net (W1, W2)
-        \item \textcolor{red}{\textbf{learn?}} gradient descent
-    \end{itemize}
-\end{definition}
-
-\begin{example}
-    \begin{enumerate}
-        \item What purpose does relu serve? 
-            \begin{itemize}
-                \item Introduces non-linearity into the model, allowing it to learn more complex functions.
-            \end{itemize}       
-        \item If $x$ has dim $50$ and $y$ dim $10$, we have layer size of $50$, how many parameters do we have?
-            \begin{itemize}
-                \item $W_1$ is a $50 \times 50$ matrix, so it has $50 \times 50 = 2500$ parameters.
-                \item $W_2$ is a $10 \times 50$ matrix, so it has $10 \times 50 = 500$ parameters.
-                \item Total parameters: $2500 + 500 = 3000$ parameters. IS THIS CORRECT?
-            \end{itemize} 
-    \end{enumerate}
-\end{example}
-
-\subsubsection{Geometric intuition}
-\begin{notes} \textbf{Decision surfaces}
-    Different ways of cutting up space to make predictions.
-    \customFigure[0.5]{../Images/L2_5.png}{}
-\end{notes}
-
-\begin{notes} \textbf{Linear Transformation}
-    Transform data from one vector space to another
-    \begin{equation}
-        W \cdot x 
-    \end{equation}
-\end{notes}
-
-\begin{notes} \textbf{SVD of Linear Transformation} 
-    Factorizing matrices into geometrical transformations.
-    \begin{equation}
-        W = U \Sigma V^T
-    \end{equation}
-    \begin{itemize}
-        \item $U,V$: Rotation
-        \item $\Sigma$: Scaling
-    \end{itemize}
-\end{notes}
-
-\begin{notes} \textbf{Affine Transformation}
-    \begin{equation}
-        W \cdot x + b
-    \end{equation}
-    \begin{itemize}
-        \item $b$: Bias vector
-    \end{itemize}
-    \vspace{1em}
-
-    \begin{itemize}
-        \item Translate (b)
-        \item Rotate (W-SVD)
-        \item Reflect (W-SVD)
-        \item Scale (W-SVD)
-        \item Project up or down (dimensionality of $W \mathbf{x}$)
-    \end{itemize}
-\end{notes}
-
-\begin{notes} \textbf{ReLU} Rectified linear unit, which has a geometric effect of "gating", some info passes, some doesn't.
-    \customFigure[0.5]{../Images/L2_8.png}{}
-\end{notes}
-
-\begin{notes} \textbf{Neural nets} Learn to warp space to make better predictions.
-    \customFigure[0.5]{../Images/L2_6.png}{}
-    \customFigure[0.5]{../Images/L2_7.png}{}
-\end{notes}
-
-\subsubsection{Encoder-Decoder view}
-\begin{definition}
-    \begin{equation}
-        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
-    \end{equation}
-    \begin{itemize}
-        \item $z$: Embeddings, latent vectors, learned representations.
-    \end{itemize}
-\end{definition}
-
-\begin{example} \textbf{Supervised Learning}
-    \begin{equation}
-        x \overset{\text{Model}}{\mapsto} y
-    \end{equation}
-    \begin{itemize}
-        \item $\mathrm{Model}(x) = \mathrm{Decoder}\bigl(\mathrm{Encoder}(x)\bigr)$
-        \item $\mathrm{Decoder}(z) = \mathrm{Pred}(z)$
-    \end{itemize}
-    
-\end{example}
-
-\begin{example} \textbf{PCA}
-    \begin{equation}
-        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
-    \end{equation}
-    \begin{itemize}
-        \item $\text{Encoder}(x) = W \cdot x$
-        \item $\text{Decoder}(z) = W^{-1} \cdot z$
-    \end{itemize}
-    \vspace{1em}
-
-    \begin{itemize}
-        \item \textcolor{teal}{\textbf{E?}} $x$
-        \item \textcolor{purple}{\textbf{P?}} Reconstruction loss
-        \item \textcolor{yellow}{\textbf{T?}} Reduce dimension
-        \item \textcolor{orange}{\textbf{M?}} W
-        \item \textcolor{red}{\textbf{learn?}} Eigendecompositions
-    \end{itemize}
-\end{example}
-
-\begin{example} \textbf{Neural Networks}
-    \begin{equation}
-        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
-    \end{equation}
-    \begin{itemize}
-        \item $\text{Encoder}(x) = \text{Neural Network}$
-        \item $\text{Decoder}(z) = \text{Neural Network}$
-    \end{itemize}
-\end{example}
-
-\subsubsection{Typical ML Pipeline}
-\begin{notes}
-    \begin{itemize}
-        \item Setup data $(x,y)$
-        \item Define a model: $y = f(x,\theta)$
-        \item Training algorithm to find $\theta$
-        \item Evaluate the model.
-    \end{itemize}
-\end{notes}
+\section{L6: Representation Learning and Variational Autoencoders}
+\input{Lectures/L6.tex}
 
 \subsection{Recap}
 \begin{summary}
@@ -351,30 +98,6 @@
         \end{itemize}
         \item What is the difference between hyperparameters and parameters? Hyperparameters are set before training (usually discrete), parameters are learned during training (continuous to learn).
         \item How do we optimize all parameters in a model? Back propagation.
-    \end{itemize}
-\end{summary}
-\newpage
-
-\subsection{Optimizing Hyperparameters}
-\begin{summary}
-    
-\end{summary}
-
-\section{Representation Learning and Variational Autoencoders}
-\begin{summary}
-    \begin{itemize}
-        \item How do we optimize without gradients?
-        \begin{itemize}
-            \item Heuristics such as grid search, random search, Bayesian optimization, grad student.
-        \end{itemize}
-        \item How does Bayesian Optimization work? (in a nut shell)
-        \begin{itemize}
-            \item Model the complex objective function with a surrogate model (GP), and optimize the surrogate model by using the max and min of the acquistion to find the next point to evaluate on the objective function and get the uncertainty of the surrogate model.
-        \end{itemize}
-        \item How do we learn on data without labels?
-        \begin{itemize}
-            \item Unsupervised learning, self-supervised learning, semi-supervised learning, transfer learning, multi-task learning, meta-learning.
-        \end{itemize}
     \end{itemize}
 \end{summary}
 
@@ -499,8 +222,5 @@
         \item If it was a colour image, then it would be $3 \times 28 \times 28 = 2352$.
     \end{itemize}
 \end{notes}
-
-Testng
-
 
 \end{document}

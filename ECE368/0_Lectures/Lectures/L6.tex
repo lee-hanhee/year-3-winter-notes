@@ -184,7 +184,7 @@
             &= \frac{1}{(2\mu)^n} \prod_{i=1}^n 1(0 \leq y_i \leq 2\mu).
         \end{align*}
         \begin{itemize}
-            \item The indicator function ensures that all measurements are within the range \( [0, 2\mu] \) for the likelihood to be non-zero. Therefore, $\mu$ must be chosen such that all data points lie within this range.
+            \item The indicator function ensures that all measurements are within the range \( [0, 2\mu] \) for the likelihood to be non-zero. This is done because we assume that Y is uniformly distributed in \( [0, 2\mu] \).
         \end{itemize}
         
         The likelihood is maximized for:
@@ -198,7 +198,7 @@
         \]
         \begin{itemize}
             \item The likelihood is non-zero only if $\mu$ is greater than or equal to the maximum of the measurements because all data points must lie within the range $[0, 2\mu]$. 
-            \item i.e. $2 \mu > \max_{1 \leq i \leq n} Y_i$, which is to ensure that ALL measurements are within the range $[0, 2\mu]$, so this must be $\mu$.
+            \item i.e. $2 \mu \geq \max_{1 \leq i \leq n} Y_i$, which is to ensure that ALL measurements are within the range $[0, 2\mu]$, so this must be $\mu$.
         \end{itemize}
 
         \item Clearly, \( (1) \neq (2) \).

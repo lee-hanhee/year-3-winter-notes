@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  23 JAN 2025 22:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  25 JAN 2025 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1307,7 +1307,7 @@ File: ../Images/L5_0.png Graphic file (type png)
 Package pdftex.def Info: ../Images/L5_0.png  used on input line 10.
 (pdftex.def)             Requested size: 249.55872pt x 36.84764pt.
  [18 <../Images/L5_0.png>] [19]) [20] (./Lectures/L6.tex [21] [22] [23]) [24] (./Lectures/L7.tex [25]) [26] (./Lectures/L8.tex) [27] (./Lectures/L9.tex
-<../Images/L9_0.png, id=623, 560.0925pt x 285.065pt>
+<../Images/L9_0.png, id=622, 560.0925pt x 285.065pt>
 File: ../Images/L9_0.png Graphic file (type png)
 <use ../Images/L9_0.png>
 Package pdftex.def Info: ../Images/L9_0.png  used on input line 120.
@@ -1322,17 +1322,17 @@ Package rerunfilecheck Info: File `ECE368_Lectures.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  51248 strings out of 474116
- 1198512 string characters out of 5743682
- 1957187 words of memory out of 5000000
- 72488 multiletter control sequences out of 15000+600000
+ 1198523 string characters out of 5743682
+ 1958187 words of memory out of 5000000
+ 72489 multiletter control sequences out of 15000+600000
  628700 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,107p,818b,1340s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,107p,818b,1338s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ECE368_Lectures.pdf (30 pages, 676253 bytes).
+Output written on ECE368_Lectures.pdf (30 pages, 676233 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 694 compressed objects within 7 object streams
- 247 named destinations out of 1000 (max. 500000)
+ 796 PDF objects out of 1000 (max. 8388607)
+ 692 compressed objects within 7 object streams
+ 246 named destinations out of 1000 (max. 500000)
  590 words of extra memory for PDF output out of 10000 (max. 10000000)
 
