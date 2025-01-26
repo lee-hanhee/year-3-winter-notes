@@ -87,140 +87,18 @@
 \section{L6: Representation Learning and Variational Autoencoders}
 \input{Lectures/L6.tex}
 
-\subsection{Recap}
-\begin{summary}
-    \begin{itemize}
-        \item What is a MLP? Vector-in vector-out optimizable, learnable transformation of data.
-        \item What is an inductive bias and why might they be useful? Set of assumptions that the learner puts on a model for a task, makes an algorithm learn one pattern over another.
-        \begin{itemize}
-            \item Let certain patterns be learnable (restricting the hypothesis space).
-            \item Last layer in the GLM: Restricting output values to 0 and 1. 
-        \end{itemize}
-        \item What is the difference between hyperparameters and parameters? Hyperparameters are set before training (usually discrete), parameters are learned during training (continuous to learn).
-        \item How do we optimize all parameters in a model? Back propagation.
-    \end{itemize}
-\end{summary}
-
-\subsection{Principal Component Analysis}
-\begin{definition}
-    PCA uses linear transformations for dimension reduction.
-\end{definition}
-
-\subsubsection{PCA Limitations}
-\begin{definition}
-    \begin{enumerate}
-        \item \textbf{Capacity for representation:} PCA finds linear correlations and cannot capture non-guassian structure.
-        \item \textbf{Interpretability:} Other tensor decomposition like non-negative factorization are more interpretable.
-    \end{enumerate}
-\end{definition}
-
-\section{Autoencoders (AE)}
-
-\subsection{Non-Linear Dimensionality Reduction}
-\begin{definition}
-    The encoder maps input to lower dimension and decoder reconstruct the input.
-\end{definition}
-
-\subsection{Loss Function of an AE}
-\begin{definition}
-    Autoencoders are trained to minimize reconstruction error.
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item If our data is binary, what loss function should you use? Binary cross entropy.
-    \end{itemize}
-\end{notes}
-
-\subsection{Different Types of AEs}
-
-\subsubsection{Sparse Autoencoders (SAEs): Feature Selection}
-\begin{definition}
-    SAE encourage latent representations with only few active neurons. 
-    \begin{equation}
-        \Omega(\theta) = \lambda \sum_i \left| \theta_i \right|
-    \end{equation}
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item What regularization technique encourages sparsity? L1 regularization.
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Denoising Autoencoders (DAEs): Robust Features}
-\begin{definition}
-    DAEs enhance robustness by training on noisy inputs
-\end{definition}
-
-\subsection{Anomaly Detection with AEs: Detecting Outliers}
-\begin{definition}
-    AEs can detect anomalies by analyizing high reconstruction errors.
-    \begin{equation}
-        A(\mathbf{x}) = ||\mathbf{x} - \hat{\mathbf{x}}||^2
-    \end{equation}
-    \begin{equation}
-        A(\mathbf{x}) > \text{Threshold}
-    \end{equation}
-\end{definition}
-
-\subsection{Latent Space of AEs}
-\begin{definition}
-    The latent space of an autoencoder may not be continuous
-\end{definition}
-
-\section{Variational Autoencoders (VAEs): A Probabilistic Approach}
-\begin{summary}
-    \begin{itemize}
-        \item Work on any data. 
-    \end{itemize}
-\end{summary}
-\begin{definition}
-    VAEs learn smooth latent spaces by modelling probability distributions.
-\end{definition}
-
-\subsection{VAE's Encoder and Decoder}
-\begin{definition}
-    The encoder maps input to a distribution, the decoder samples from it.
-    \begin{equation}
-        f_{\text{enc},\phi} (\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \mu(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})
-    \end{equation}
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item $\sigma^2(\mathbf{x}) \mathbf{I}$: Diagonal covariance matrix, so it is independent.
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Reparameterization Trick}
-\begin{definition}
-    Reparameterization makes sampling differentiable for VAE training.
-\end{definition}
-
-\subsection{VAE's Loss Function: Reconstruction and KL Divergence}
-\begin{definition}
-    Balances reconstruction and latent space regularization.
-    \begin{equation}
-        L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))
-    \end{equation}
-\end{definition}
-
-\subsection{VAE are generative models}
-\begin{definition}
-    VAE's latent space is continuous and allows sampling new data
-\end{definition}
-
-\subsection{Assignment 1:}
-\begin{definition}
-    Geometry of high dimensional space. 
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item What is the dimensionality of Fashion-MNIST? Higher bounded is 784 because it is a 28x28 image, but the lower bound is ill-definied (many answers)
-        \item If it was a colour image, then it would be $3 \times 28 \times 28 = 2352$.
-    \end{itemize}
-\end{notes}
+% \subsection{Recap}
+% \begin{summary}
+%     \begin{itemize}
+%         \item What is a MLP? Vector-in vector-out optimizable, learnable transformation of data.
+%         \item What is an inductive bias and why might they be useful? Set of assumptions that the learner puts on a model for a task, makes an algorithm learn one pattern over another.
+%         \begin{itemize}
+%             \item Let certain patterns be learnable (restricting the hypothesis space).
+%             \item Last layer in the GLM: Restricting output values to 0 and 1. 
+%         \end{itemize}
+%         \item What is the difference between hyperparameters and parameters? Hyperparameters are set before training (usually discrete), parameters are learned during training (continuous to learn).
+%         \item How do we optimize all parameters in a model? Back propagation.
+%     \end{itemize}
+% \end{summary}
 
 \end{document}

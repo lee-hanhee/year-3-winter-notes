@@ -16,5 +16,213 @@
 \end{summary}
 
 \section{Autoencoders}
+\subsection{PCA}
+\begin{definition}
+    PCA uses linear transformation for dimension reduction
+\end{definition}
 
-\section{Variational Autoencoders}
+\subsubsection{PCA Limitations}
+\begin{definition}
+    \begin{enumerate}
+        \item \textbf{Capacity for representation:} PCA finds linear correlations and cannot capture non-guassian structure.
+        \customFigure[0.5]{../Images/L6_0.png}{}
+        \item \textbf{Interpretability:} Other tensor decomposition like non-negative factorization are more interpretable.
+        \customFigure[0.5]{../Images/L6_1.png}{}
+    \end{enumerate}
+\end{definition}
+
+\subsection{AE: Non-Linear Dimensionality Reduction}
+\begin{definition}
+    The encoder maps input to lower dimension and decoder reconstruct the input.
+    \[
+    x \overset{\text{Encode}}{\mapsto} z \overset{\text{Decode}}{\mapsto} x'
+    \]
+    \begin{itemize}
+        \item $f_{\text{enc}}(x), \; \text{Encoder}(x) = \text{Neural network}$
+        \item $f_{\text{dec}}(z), \; \text{Decoder}(z) = \text{Neural network}$ 
+        \item Key Feature: Bottleneck (latent space) forces the network to learn a compressed representation.
+    \end{itemize}
+\end{definition}
+
+\subsection{Loss Function of an AE}
+\begin{definition}
+    Autoencoders are trained to minimize reconstruction error.
+    \[
+    L_{AE} = \left\| \mathbf{x} - f_{\text{dec}}(f_{\text{enc}}(\mathbf{x})) \right\|^2 = \left\| \mathbf{x} - \hat{\mathbf{x}} \right\|^2
+    \]
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item If our data is binary, what loss function should you use? Binary cross entropy.
+    \end{itemize}
+\end{notes}
+
+\subsection{Different Types of AEs}
+
+\subsubsection{Sparse Autoencoders (SAEs): Feature Selection}
+\begin{definition}
+    SAE encourage latent representations with only few active neurons. 
+    \begin{equation}
+        \Omega(\theta) = \lambda \sum_i \left| \theta_i \right| \rightarrow L_{AE} + \Omega(z, \theta)
+    \end{equation}
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item What regularization technique encourages sparsity? L1 regularization.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Denoising Autoencoders (DAEs): Robust Features}
+\begin{definition}
+    DAEs enhance robustness by training on noisy inputs
+    \[
+    \tilde{\mathbf{x}} = \mathbf{x} + \text{noise}
+    \]
+
+    \[
+    L_{DAE} = \left\| \mathbf{x} - f_{\text{dec}}(f_{\text{enc}}(\tilde{\mathbf{x}})) \right\|^2
+    \]
+    \customFigure[0.5]{../Images/L6_2.png}{}
+\end{definition}
+
+\subsection{Anomaly Detection with AEs: Detecting Outliers}
+\begin{definition}
+    AEs can detect anomalies by analyizing high reconstruction errors.
+    \begin{equation}
+        A(\mathbf{x}) = ||\mathbf{x} - \hat{\mathbf{x}}||^2
+    \end{equation}
+    \begin{equation}
+        A(\mathbf{x}) > \text{Threshold}
+    \end{equation}
+\end{definition}
+
+\subsection{Latent Space of AEs}
+\begin{definition}
+    The latent space of an autoencoder may not be continuous
+    \begin{itemize}
+        \item AEs can act like hashmaps: Mapping data to a discrete index and back. 
+    \end{itemize}
+    \customFigure[0.5]{../Images/L6_3.png}{}
+\end{definition}
+\newpage
+
+\section{Variational Autoencoders (VAEs): A Probabilistic Approach}
+\begin{warning}
+    Works on any data.
+\end{warning}
+
+\begin{definition}
+    VAEs learn smooth latent spaces by modelling probability distributions.
+    \[
+    \mathbf{x} \xrightarrow{\text{Encode}} \mathbf{z} \xrightarrow{\text{Decode}} \mathbf{x}'
+    \]
+    \begin{itemize}
+        \item $f_{\text{enc}, \phi}(\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \boldsymbol{\mu}(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})$
+        \begin{itemize}
+            \item $\boldsymbol{\mu}(\mathbf{x})$: Mean of the distribution
+            \item $\sigma^2(\mathbf{x})$: Variance of the distribution (independent)
+        \end{itemize}
+        \item $f_{\text{dec}}(\mathbf{z})$
+    \end{itemize}
+\end{definition}
+
+\subsection{VAE's Encoder and Decoder}
+\begin{definition}
+    The encoder maps input to a distribution, the decoder samples from it.
+\end{definition}
+
+\subsubsection{Reparameterization Trick}
+\begin{motivation}
+    \begin{enumerate}
+        \item In this model, the encoder estimates parameters for a distribution in the latent space, from which the decoder samples to generate an output sample.
+
+        \[
+        f_{\text{enc}, \phi}(\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \boldsymbol{\mu}(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})
+        \]        
+        \customFigure[0.5]{../Images/L6_11.png}{}
+        \item What might be a problem with this setup? Sampling is not differentiable.
+    \end{enumerate}
+\end{motivation}
+\begin{definition}
+    Reparameterization makes sampling differentiable for VAE training.
+    \begin{itemize}
+        \item \textbf{Sample (Non-differentiable):}
+        \[
+        \mathbf{z} \sim \mathcal{N}(\mu, \sigma^2 \mathbf{I})
+        \]
+        
+        \item \textbf{Reparametrize (Differentiable):}
+        \[
+        \epsilon \sim \mathcal{N}(0, \mathbf{I}) \quad \text{Sample constant noise}
+        \]
+        \[
+        \mathbf{z} = \mu + \sigma \odot \epsilon \quad \text{Compute } \mathbf{z} \text{ as a deterministic function}
+        \]
+    \end{itemize}
+\end{definition}
+
+\subsection{VAE's Loss Function: Reconstruction and KL Divergence}
+\begin{definition}
+    Balances reconstruction and latent space regularization.
+    \begin{equation}
+        L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))
+    \end{equation}
+    \begin{align*}
+        KL(P \| Q) &= KL\left(\mathcal{N}(\mu_1, \sigma_1^2) \| \mathcal{N}(\mu_2, \sigma_2^2)\right) \\
+        &= \frac{1}{2} \left[ \log\left(\frac{\sigma_2^2}{\sigma_1^2}\right) 
+        + \frac{\sigma_1^2 + (\mu_1 - \mu_2)^2}{\sigma_2^2} - 1 \right]
+    \end{align*}
+\end{definition}
+
+\subsection{VAE are generative models}
+\begin{definition}
+    VAE's latent space is continuous and allows sampling new data
+    \customFigure[0.5]{../Images/L6_4.png}{}
+\end{definition}
+\newpage
+
+\section{Representation Learning}
+
+\subsection{Cosine Distance: A Metric for High Dimensions}
+\begin{definition}
+    Likely better suitan than Euclidean distance in high dimensions.
+    \[
+    d_{\text{cos}}(\mathbf{u}, \mathbf{v}) = 1 - \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|}
+    \]
+
+    \[
+    d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \sqrt{\sum_{i=1}^n (u_i - v_i)^2}
+    \]
+\end{definition}
+
+\begin{warning}
+    May be appear in A1.
+\end{warning}
+
+\subsection{Manifold Hypothesis: Data in Low Dimensions}
+\begin{notes}
+    Real-world data resides on lower-dimensionality manifolds.
+    \customFigure[0.5]{../Images/L6_9.png}{1D String (Manifold) in 2D Space}
+    \begin{itemize}
+        \item What is the dimensionality of Fashion-MNIST? Higher bounded is 784 because it is a 28x28 image, but the lower bound is ill-definied (many answers)
+        \item If it was a colour image, then it would be $3 \times 28 \times 28 = 2352$.
+    \end{itemize}
+\end{notes}
+
+\subsection{Hierarchical Organization in NN Depth}
+\begin{notes}
+    Learning low to high level abstractions across different layers.
+    \customFigure[0.5]{../Images/L6_10.png}{}
+\end{notes}
+
+\subsection{Contrastive Learning}
+\begin{notes}
+    Embed similar data close together. 
+    \begin{itemize}
+        \item \textbf{Positive Pairs:} Similar data points
+        \item \textbf{Negative Pairs:} Dissimilar data points
+    \end{itemize}
+    \customFigure[0.5]{../Images/L6_12.png}{}
+\end{notes}

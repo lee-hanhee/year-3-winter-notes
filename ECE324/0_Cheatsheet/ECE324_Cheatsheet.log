@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  25 JAN 2025 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  26 JAN 2025 10:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1282,79 +1282,79 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 10.
 
-<../Images/L2_0.png, id=324, 870.25125pt x 465.74pt>
+<../Images/L2_0.png, id=340, 870.25125pt x 465.74pt>
 File: ../Images/L2_0.png Graphic file (type png)
 <use ../Images/L2_0.png>
 Package pdftex.def Info: ../Images/L2_0.png  used on input line 12.
 (pdftex.def)             Requested size: 249.55872pt x 133.55453pt.
 [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L2_0.png>]
-<../Images/L2_2.png, id=337, 654.445pt x 331.2375pt>
+<../Images/L2_2.png, id=353, 654.445pt x 331.2375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
 Package pdftex.def Info: ../Images/L2_2.png  used on input line 77.
 (pdftex.def)             Requested size: 249.55872pt x 126.31126pt.
-<../Images/L2_3.png, id=338, 693.59125pt x 329.23pt>
+<../Images/L2_3.png, id=354, 693.59125pt x 329.23pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
 Package pdftex.def Info: ../Images/L2_3.png  used on input line 82.
 (pdftex.def)             Requested size: 249.55872pt x 118.4574pt.
  [3 <../Images/L2_2.png> <../Images/L2_3.png>]
-<../Images/L2_9.png, id=351, 824.07875pt x 197.73875pt>
+<../Images/L2_9.png, id=367, 824.07875pt x 197.73875pt>
 File: ../Images/L2_9.png Graphic file (type png)
 <use ../Images/L2_9.png>
 Package pdftex.def Info: ../Images/L2_9.png  used on input line 100.
 (pdftex.def)             Requested size: 249.55872pt x 59.88026pt.
-<../Images/L2_5.png, id=352, 740.7675pt x 362.35374pt>
+<../Images/L2_5.png, id=368, 740.7675pt x 362.35374pt>
 File: ../Images/L2_5.png Graphic file (type png)
 <use ../Images/L2_5.png>
 Package pdftex.def Info: ../Images/L2_5.png  used on input line 152.
 (pdftex.def)             Requested size: 249.55872pt x 122.07071pt.
  [4 <../Images/L2_9.png>]
-<../Images/L2_8.png, id=369, 457.71pt x 349.305pt>
+<../Images/L2_8.png, id=385, 457.71pt x 349.305pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
 Package pdftex.def Info: ../Images/L2_8.png  used on input line 211.
 (pdftex.def)             Requested size: 249.55872pt x 190.45006pt.
  [5 <../Images/L2_5.png>]
-<../Images/L2_6.png, id=381, 825.0825pt x 223.83624pt>
+<../Images/L2_6.png, id=397, 825.0825pt x 223.83624pt>
 File: ../Images/L2_6.png Graphic file (type png)
 <use ../Images/L2_6.png>
 Package pdftex.def Info: ../Images/L2_6.png  used on input line 216.
 (pdftex.def)             Requested size: 249.55872pt x 67.70128pt.
-<../Images/L2_7.png, id=382, 841.1425pt x 276.03125pt>
+<../Images/L2_7.png, id=398, 841.1425pt x 276.03125pt>
 File: ../Images/L2_7.png Graphic file (type png)
 <use ../Images/L2_7.png>
 Package pdftex.def Info: ../Images/L2_7.png  used on input line 217.
 (pdftex.def)             Requested size: 249.55872pt x 81.89603pt.
  [6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L2_8.png> <../Images/L2_6.png> <../Images/L2_7.png>] [7]
-<../Images/L2_10.png, id=407, 668.4975pt x 295.1025pt>
+<../Images/L2_10.png, id=423, 668.4975pt x 295.1025pt>
 File: ../Images/L2_10.png Graphic file (type png)
 <use ../Images/L2_10.png>
 Package pdftex.def Info: ../Images/L2_10.png  used on input line 279.
 (pdftex.def)             Requested size: 249.55872pt x 110.16333pt.
-<../Images/L2_11.png, id=408, 819.06pt x 300.12125pt>
+<../Images/L2_11.png, id=424, 819.06pt x 300.12125pt>
 File: ../Images/L2_11.png Graphic file (type png)
 <use ../Images/L2_11.png>
 Package pdftex.def Info: ../Images/L2_11.png  used on input line 281.
 (pdftex.def)             Requested size: 249.55872pt x 91.44296pt.
-<../Images/L2_12.png, id=409, 771.88374pt x 286.06876pt>
+<../Images/L2_12.png, id=425, 771.88374pt x 286.06876pt>
 File: ../Images/L2_12.png Graphic file (type png)
 <use ../Images/L2_12.png>
 Package pdftex.def Info: ../Images/L2_12.png  used on input line 283.
 (pdftex.def)             Requested size: 249.55872pt x 92.48671pt.
-<../Images/L2_13.png, id=410, 818.05624pt x 283.0575pt>
+<../Images/L2_13.png, id=426, 818.05624pt x 283.0575pt>
 File: ../Images/L2_13.png Graphic file (type png)
 <use ../Images/L2_13.png>
 Package pdftex.def Info: ../Images/L2_13.png  used on input line 285.
 (pdftex.def)             Requested size: 249.55872pt x 86.34752pt.
  [8 <../Images/L2_10.png> <../Images/L2_11.png> <../Images/L2_12.png> <../Images/L2_13.png>]) [9] (./Lectures/L3.tex
-<../Images/L3_12.png, id=427, 817.0525pt x 404.51125pt>
+<../Images/L3_12.png, id=443, 817.0525pt x 404.51125pt>
 File: ../Images/L3_12.png Graphic file (type png)
 <use ../Images/L3_12.png>
 Package pdftex.def Info: ../Images/L3_12.png  used on input line 72.
 (pdftex.def)             Requested size: 249.55872pt x 123.55165pt.
  [10]
-<../Images/L3_4.png, id=433, 434.62375pt x 270.00874pt>
+<../Images/L3_4.png, id=449, 434.62375pt x 270.00874pt>
 File: ../Images/L3_4.png Graphic file (type png)
 <use ../Images/L3_4.png>
 Package pdftex.def Info: ../Images/L3_4.png  used on input line 132.
@@ -1364,57 +1364,57 @@ File: ../Images/L3_4.png Graphic file (type png)
 <use ../Images/L3_4.png>
 Package pdftex.def Info: ../Images/L3_4.png  used on input line 154.
 (pdftex.def)             Requested size: 249.55872pt x 155.03957pt.
-<../Images/L3_5.png, id=440, 459.7175pt x 146.5475pt>
+<../Images/L3_5.png, id=456, 459.7175pt x 146.5475pt>
 File: ../Images/L3_5.png Graphic file (type png)
 <use ../Images/L3_5.png>
 Package pdftex.def Info: ../Images/L3_5.png  used on input line 166.
 (pdftex.def)             Requested size: 249.55872pt x 79.55484pt.
  [12 <../Images/L3_4.png>]
-<../Images/L3_6.png, id=449, 426.59375pt x 319.1925pt>
+<../Images/L3_6.png, id=465, 426.59375pt x 319.1925pt>
 File: ../Images/L3_6.png Graphic file (type png)
 <use ../Images/L3_6.png>
 Package pdftex.def Info: ../Images/L3_6.png  used on input line 179.
 (pdftex.def)             Requested size: 249.55872pt x 186.73416pt.
-<../Images/L3_7.png, id=450, 457.71pt x 326.21875pt>
+<../Images/L3_7.png, id=466, 457.71pt x 326.21875pt>
 File: ../Images/L3_7.png Graphic file (type png)
 <use ../Images/L3_7.png>
 Package pdftex.def Info: ../Images/L3_7.png  used on input line 191.
 (pdftex.def)             Requested size: 249.55872pt x 177.86284pt.
  [13 <../Images/L3_5.png> <../Images/L3_6.png>]
-<../Images/L3_8.png, id=460, 534.99875pt x 138.5175pt>
+<../Images/L3_8.png, id=476, 534.99875pt x 138.5175pt>
 File: ../Images/L3_8.png Graphic file (type png)
 <use ../Images/L3_8.png>
 Package pdftex.def Info: ../Images/L3_8.png  used on input line 203.
 (pdftex.def)             Requested size: 249.55872pt x 64.61497pt.
-<../Images/L3_9.png, id=461, 714.67pt x 139.52126pt>
+<../Images/L3_9.png, id=477, 714.67pt x 139.52126pt>
 File: ../Images/L3_9.png Graphic file (type png)
 <use ../Images/L3_9.png>
 Package pdftex.def Info: ../Images/L3_9.png  used on input line 211.
 (pdftex.def)             Requested size: 249.55872pt x 48.72032pt.
-<../Images/L3_11.png, id=462, 866.23625pt x 454.69875pt>
+<../Images/L3_11.png, id=478, 866.23625pt x 454.69875pt>
 File: ../Images/L3_11.png Graphic file (type png)
 <use ../Images/L3_11.png>
 Package pdftex.def Info: ../Images/L3_11.png  used on input line 227.
 (pdftex.def)             Requested size: 374.33807pt x 196.49492pt.
  [14 <../Images/L3_7.png> <../Images/L3_8.png> <../Images/L3_9.png>]
-<../Images/L3_3.png, id=475, 543.02875pt x 367.3725pt>
+<../Images/L3_3.png, id=491, 543.02875pt x 367.3725pt>
 File: ../Images/L3_3.png Graphic file (type png)
 <use ../Images/L3_3.png>
 Package pdftex.def Info: ../Images/L3_3.png  used on input line 240.
 (pdftex.def)             Requested size: 249.55872pt x 168.83083pt.
  [15 <../Images/L3_11.png>]
-<../Images/L3_13.png, id=482, 644.4075pt x 321.2pt>
+<../Images/L3_13.png, id=499, 644.4075pt x 321.2pt>
 File: ../Images/L3_13.png Graphic file (type png)
 <use ../Images/L3_13.png>
 Package pdftex.def Info: ../Images/L3_13.png  used on input line 257.
 (pdftex.def)             Requested size: 249.55872pt x 124.3902pt.
 ) [16 <../Images/L3_3.png> <../Images/L3_13.png>] (./Lectures/L4.tex [17]
-<../Images/L4_0.png, id=499, 689.57625pt x 369.38pt>
+<../Images/L4_0.png, id=515, 689.57625pt x 369.38pt>
 File: ../Images/L4_0.png Graphic file (type png)
 <use ../Images/L4_0.png>
 Package pdftex.def Info: ../Images/L4_0.png  used on input line 47.
 (pdftex.def)             Requested size: 249.55872pt x 133.68123pt.
-<../Images/L4_1.png, id=500, 543.02875pt x 372.39125pt>
+<../Images/L4_1.png, id=516, 543.02875pt x 372.39125pt>
 File: ../Images/L4_1.png Graphic file (type png)
 <use ../Images/L4_1.png>
 Package pdftex.def Info: ../Images/L4_1.png  used on input line 55.
@@ -1425,12 +1425,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 25--58
  []
 
 [18 <../Images/L4_0.png> <../Images/L4_1.png>]
-<../Images/L4_2.png, id=509, 796.9775pt x 228.855pt>
+<../Images/L4_2.png, id=525, 796.9775pt x 228.855pt>
 File: ../Images/L4_2.png Graphic file (type png)
 <use ../Images/L4_2.png>
 Package pdftex.def Info: ../Images/L4_2.png  used on input line 78.
 (pdftex.def)             Requested size: 249.55872pt x 71.66017pt.
-<../Images/L4_3.png, id=510, 603.25375pt x 343.2825pt>
+<../Images/L4_3.png, id=526, 603.25375pt x 343.2825pt>
 File: ../Images/L4_3.png Graphic file (type png)
 <use ../Images/L4_3.png>
 Package pdftex.def Info: ../Images/L4_3.png  used on input line 92.
@@ -1441,12 +1441,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 64--95
  []
 
 [19 <../Images/L4_2.png> <../Images/L4_3.png>]
-<../Images/L4_4.png, id=520, 728.7225pt x 128.48pt>
+<../Images/L4_4.png, id=536, 728.7225pt x 128.48pt>
 File: ../Images/L4_4.png Graphic file (type png)
 <use ../Images/L4_4.png>
 Package pdftex.def Info: ../Images/L4_4.png  used on input line 116.
 (pdftex.def)             Requested size: 249.55872pt x 43.99825pt.
-<../Images/L4_5.png, id=521, 374.39874pt x 364.36125pt>
+<../Images/L4_5.png, id=537, 374.39874pt x 364.36125pt>
 File: ../Images/L4_5.png Graphic file (type png)
 <use ../Images/L4_5.png>
 Package pdftex.def Info: ../Images/L4_5.png  used on input line 123.
@@ -1457,12 +1457,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 101--126
  []
 
 [20 <../Images/L4_4.png> <../Images/L4_5.png>]
-<../Images/L4_6.png, id=530, 594.22pt x 281.05pt>
+<../Images/L4_6.png, id=546, 594.22pt x 281.05pt>
 File: ../Images/L4_6.png Graphic file (type png)
 <use ../Images/L4_6.png>
 Package pdftex.def Info: ../Images/L4_6.png  used on input line 168.
 (pdftex.def)             Requested size: 199.64392pt x 94.42786pt.
-<../Images/L4_7.png, id=531, 434.62375pt x 351.3125pt>
+<../Images/L4_7.png, id=547, 434.62375pt x 351.3125pt>
 File: ../Images/L4_7.png Graphic file (type png)
 <use ../Images/L4_7.png>
 Package pdftex.def Info: ../Images/L4_7.png  used on input line 175.
@@ -1473,12 +1473,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 133--178
  []
 
 [21 <../Images/L4_6.png> <../Images/L4_7.png>]
-<../Images/L4_8.png, id=540, 440.64626pt x 344.28625pt>
+<../Images/L4_8.png, id=556, 440.64626pt x 344.28625pt>
 File: ../Images/L4_8.png Graphic file (type png)
 <use ../Images/L4_8.png>
 Package pdftex.def Info: ../Images/L4_8.png  used on input line 198.
 (pdftex.def)             Requested size: 249.55872pt x 194.98438pt.
-<../Images/L4_9.png, id=541, 549.05125pt x 278.03876pt>
+<../Images/L4_9.png, id=557, 549.05125pt x 278.03876pt>
 File: ../Images/L4_9.png Graphic file (type png)
 <use ../Images/L4_9.png>
 Package pdftex.def Info: ../Images/L4_9.png  used on input line 211.
@@ -1489,7 +1489,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 184--214
  []
 
 [22 <../Images/L4_8.png> <../Images/L4_9.png>]
-<../Images/L4_10.png, id=550, 697.60625pt x 403.5075pt>
+<../Images/L4_10.png, id=566, 697.60625pt x 403.5075pt>
 File: ../Images/L4_10.png Graphic file (type png)
 <use ../Images/L4_10.png>
 Package pdftex.def Info: ../Images/L4_10.png  used on input line 241.
@@ -1504,12 +1504,12 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 28
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<../Images/L4_11.png, id=557, 395.4775pt x 304.13625pt>
+<../Images/L4_11.png, id=573, 395.4775pt x 304.13625pt>
 File: ../Images/L4_11.png Graphic file (type png)
 <use ../Images/L4_11.png>
 Package pdftex.def Info: ../Images/L4_11.png  used on input line 297.
 (pdftex.def)             Requested size: 149.73676pt x 115.15067pt.
-<../Images/L4_12.png, id=558, 460.72125pt x 314.17375pt>
+<../Images/L4_12.png, id=574, 460.72125pt x 314.17375pt>
 File: ../Images/L4_12.png Graphic file (type png)
 <use ../Images/L4_12.png>
 Package pdftex.def Info: ../Images/L4_12.png  used on input line 297.
@@ -1520,12 +1520,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 262--300
  []
 
 [24 <../Images/L4_11.png> <../Images/L4_12.png>]
-<../Images/L4_13.png, id=568, 538.01pt x 238.8925pt>
+<../Images/L4_13.png, id=584, 538.01pt x 238.8925pt>
 File: ../Images/L4_13.png Graphic file (type png)
 <use ../Images/L4_13.png>
 Package pdftex.def Info: ../Images/L4_13.png  used on input line 326.
 (pdftex.def)             Requested size: 249.55872pt x 110.81047pt.
-<../Images/L4_14.png, id=569, 627.34375pt x 352.31625pt>
+<../Images/L4_14.png, id=585, 627.34375pt x 352.31625pt>
 File: ../Images/L4_14.png Graphic file (type png)
 <use ../Images/L4_14.png>
 Package pdftex.def Info: ../Images/L4_14.png  used on input line 338.
@@ -1536,7 +1536,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 306--353
  []
 
 [25 <../Images/L4_13.png> <../Images/L4_14.png>]
-<../Images/L4_15.png, id=579, 504.88625pt x 307.1475pt>
+<../Images/L4_15.png, id=595, 504.88625pt x 307.1475pt>
 File: ../Images/L4_15.png Graphic file (type png)
 <use ../Images/L4_15.png>
 Package pdftex.def Info: ../Images/L4_15.png  used on input line 368.
@@ -1547,17 +1547,17 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 359--371
  []
 
 [26 <../Images/L4_15.png>]
-<../Images/L4_16.png, id=586, 448.67625pt x 141.52875pt>
+<../Images/L4_16.png, id=602, 448.67625pt x 141.52875pt>
 File: ../Images/L4_16.png Graphic file (type png)
 <use ../Images/L4_16.png>
 Package pdftex.def Info: ../Images/L4_16.png  used on input line 392.
 (pdftex.def)             Requested size: 149.73676pt x 47.23155pt.
-<../Images/L4_17.png, id=587, 570.13pt x 319.1925pt>
+<../Images/L4_17.png, id=603, 570.13pt x 319.1925pt>
 File: ../Images/L4_17.png Graphic file (type png)
 <use ../Images/L4_17.png>
 Package pdftex.def Info: ../Images/L4_17.png  used on input line 399.
 (pdftex.def)             Requested size: 149.73676pt x 83.83067pt.
-<../Images/L4_18.png, id=588, 598.235pt x 331.2375pt>
+<../Images/L4_18.png, id=604, 598.235pt x 331.2375pt>
 File: ../Images/L4_18.png Graphic file (type png)
 <use ../Images/L4_18.png>
 Package pdftex.def Info: ../Images/L4_18.png  used on input line 406.
@@ -1568,12 +1568,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 378--409
  []
 
 [27 <../Images/L4_16.png> <../Images/L4_17.png> <../Images/L4_18.png>]
-<../Images/L4_19.png, id=599, 757.83125pt x 334.24875pt>
+<../Images/L4_19.png, id=615, 757.83125pt x 334.24875pt>
 File: ../Images/L4_19.png Graphic file (type png)
 <use ../Images/L4_19.png>
 Package pdftex.def Info: ../Images/L4_19.png  used on input line 424.
 (pdftex.def)             Requested size: 149.73676pt x 66.04272pt.
-<../Images/L4_20.png, id=600, 353.32pt x 294.09875pt>
+<../Images/L4_20.png, id=616, 353.32pt x 294.09875pt>
 File: ../Images/L4_20.png Graphic file (type png)
 <use ../Images/L4_20.png>
 Package pdftex.def Info: ../Images/L4_20.png  used on input line 460.
@@ -1584,12 +1584,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 415--463
  []
 
 [28 <../Images/L4_19.png> <../Images/L4_20.png>]
-<../Images/L4_21.png, id=609, 525.965pt x 351.3125pt>
+<../Images/L4_21.png, id=625, 525.965pt x 351.3125pt>
 File: ../Images/L4_21.png Graphic file (type png)
 <use ../Images/L4_21.png>
 Package pdftex.def Info: ../Images/L4_21.png  used on input line 479.
 (pdftex.def)             Requested size: 249.55872pt x 166.6929pt.
-<../Images/L4_22.png, id=610, 738.76pt x 334.24875pt>
+<../Images/L4_22.png, id=626, 738.76pt x 334.24875pt>
 File: ../Images/L4_22.png Graphic file (type png)
 <use ../Images/L4_22.png>
 Package pdftex.def Info: ../Images/L4_22.png  used on input line 486.
@@ -1600,12 +1600,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 469--517
  []
 
 [29 <../Images/L4_21.png> <../Images/L4_22.png>]
-<../Images/L4_23.png, id=619, 532.99126pt x 370.38374pt>
+<../Images/L4_23.png, id=635, 532.99126pt x 370.38374pt>
 File: ../Images/L4_23.png Graphic file (type png)
 <use ../Images/L4_23.png>
 Package pdftex.def Info: ../Images/L4_23.png  used on input line 533.
 (pdftex.def)             Requested size: 249.55872pt x 173.41914pt.
-<../Images/L4_26.png, id=620, 690.58pt x 246.9225pt>
+<../Images/L4_26.png, id=636, 690.58pt x 246.9225pt>
 File: ../Images/L4_26.png Graphic file (type png)
 <use ../Images/L4_26.png>
 Package pdftex.def Info: ../Images/L4_26.png  used on input line 553.
@@ -1616,47 +1616,130 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 524--556
  []
 
 [30 <../Images/L4_23.png> <../Images/L4_26.png>]
-<../Images/L4_24.png, id=629, 778.91pt x 314.17375pt>
+<../Images/L4_24.png, id=645, 778.91pt x 314.17375pt>
 File: ../Images/L4_24.png Graphic file (type png)
 <use ../Images/L4_24.png>
 Package pdftex.def Info: ../Images/L4_24.png  used on input line 571.
 (pdftex.def)             Requested size: 249.55872pt x 100.65749pt.
-<../Images/L4_25.png, id=630, 825.0825pt x 282.05376pt>
-File: ../Images/L4_25.png Graphic file (type png)
-<use ../Images/L4_25.png>
-Package pdftex.def Info: ../Images/L4_25.png  used on input line 584.
-(pdftex.def)             Requested size: 249.55872pt x 85.30968pt.
-<../Images/L4_27.png, id=631, 558.085pt x 383.4325pt>
+<../Images/L4_27.png, id=646, 558.085pt x 383.4325pt>
 File: ../Images/L4_27.png Graphic file (type png)
 <use ../Images/L4_27.png>
-Package pdftex.def Info: ../Images/L4_27.png  used on input line 591.
-(pdftex.def)             Requested size: 249.55872pt x 171.46065pt.
+Package pdftex.def Info: ../Images/L4_27.png  used on input line 590.
+(pdftex.def)             Requested size: 149.73676pt x 102.87288pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 562--594
+Overfull \hbox (12.0pt too wide) in paragraph at lines 562--593
  [] 
  []
 
-[31]) [32 <../Images/L4_24.png> <../Images/L4_25.png> <../Images/L4_27.png>] (./Lectures/L5.tex) [33] (./Lectures/L6.tex) [34] [35] [36] (./ECE324_Cheatsheet.aux)
+) [31 <../Images/L4_24.png> <../Images/L4_27.png>] (./Lectures/L5.tex
+<../Images/L5_2.png, id=656, 398.48875pt x 368.37625pt>
+File: ../Images/L5_2.png Graphic file (type png)
+<use ../Images/L5_2.png>
+Package pdftex.def Info: ../Images/L5_2.png  used on input line 16.
+(pdftex.def)             Requested size: 249.55872pt x 230.70111pt.
+<../Images/L5_0.png, id=657, 714.67pt x 299.1175pt>
+File: ../Images/L5_0.png Graphic file (type png)
+<use ../Images/L5_0.png>
+Package pdftex.def Info: ../Images/L5_0.png  used on input line 32.
+(pdftex.def)             Requested size: 249.55872pt x 104.45079pt.
+ [32 <../Images/L5_2.png>] [33 <../Images/L5_0.png>]
+<../Images/L5_3.png, id=670, 649.42625pt x 307.1475pt>
+File: ../Images/L5_3.png Graphic file (type png)
+<use ../Images/L5_3.png>
+Package pdftex.def Info: ../Images/L5_3.png  used on input line 48.
+(pdftex.def)             Requested size: 149.73676pt x 70.81584pt.
+<../Images/L5_4.png, id=671, 653.44125pt x 314.17375pt>
+File: ../Images/L5_4.png Graphic file (type png)
+<use ../Images/L5_4.png>
+Package pdftex.def Info: ../Images/L5_4.png  used on input line 55.
+(pdftex.def)             Requested size: 149.73676pt x 71.98997pt.
+<../Images/L5_5.png, id=672, 645.41125pt x 312.16624pt>
+File: ../Images/L5_5.png Graphic file (type png)
+<use ../Images/L5_5.png>
+Package pdftex.def Info: ../Images/L5_5.png  used on input line 62.
+(pdftex.def)             Requested size: 149.73676pt x 72.4207pt.
+<../Images/L5_6.png, id=673, 681.54625pt x 326.21875pt>
+File: ../Images/L5_6.png Graphic file (type png)
+<use ../Images/L5_6.png>
+Package pdftex.def Info: ../Images/L5_6.png  used on input line 69.
+(pdftex.def)             Requested size: 149.73676pt x 71.66878pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 39--72
+ [] 
+ []
+
+[34 <../Images/L5_3.png> <../Images/L5_4.png> <../Images/L5_5.png> <../Images/L5_6.png>]) [35] (./Lectures/L6.tex
+<../Images/L6_0.png, id=698, 413.545pt x 342.27875pt>
+File: ../Images/L6_0.png Graphic file (type png)
+<use ../Images/L6_0.png>
+Package pdftex.def Info: ../Images/L6_0.png  used on input line 28.
+(pdftex.def)             Requested size: 249.55872pt x 206.55438pt.
+<../Images/L6_1.png, id=699, 833.1125pt x 227.85126pt>
+File: ../Images/L6_1.png Graphic file (type png)
+<use ../Images/L6_1.png>
+Package pdftex.def Info: ../Images/L6_1.png  used on input line 30.
+(pdftex.def)             Requested size: 249.55872pt x 68.25159pt.
+ [36 <../Images/L6_0.png> <../Images/L6_1.png>]
+<../Images/L6_2.png, id=710, 276.03125pt x 216.81pt>
+File: ../Images/L6_2.png Graphic file (type png)
+<use ../Images/L6_2.png>
+Package pdftex.def Info: ../Images/L6_2.png  used on input line 87.
+(pdftex.def)             Requested size: 249.55872pt x 196.02702pt.
+ [37]
+<../Images/L6_3.png, id=717, 239.89626pt x 246.9225pt>
+File: ../Images/L6_3.png Graphic file (type png)
+<use ../Images/L6_3.png>
+Package pdftex.def Info: ../Images/L6_3.png  used on input line 107.
+(pdftex.def)             Requested size: 249.55872pt x 256.87244pt.
+ [38 <../Images/L6_2.png> <../Images/L6_3.png>]
+<../Images/L6_11.png, id=728, 398.48875pt x 152.57pt>
+File: ../Images/L6_11.png Graphic file (type png)
+<use ../Images/L6_11.png>
+Package pdftex.def Info: ../Images/L6_11.png  used on input line 144.
+(pdftex.def)             Requested size: 249.55872pt x 95.54924pt.
+ [39 <../Images/L6_11.png>]
+<../Images/L6_4.png, id=739, 629.35126pt x 214.8025pt>
+File: ../Images/L6_4.png Graphic file (type png)
+<use ../Images/L6_4.png>
+Package pdftex.def Info: ../Images/L6_4.png  used on input line 182.
+(pdftex.def)             Requested size: 249.55872pt x 85.17545pt.
+ [40 <../Images/L6_4.png>]
+<../Images/L6_9.png, id=746, 367.3725pt x 208.78pt>
+File: ../Images/L6_9.png Graphic file (type png)
+<use ../Images/L6_9.png>
+Package pdftex.def Info: ../Images/L6_9.png  used on input line 207.
+(pdftex.def)             Requested size: 249.55872pt x 141.82832pt.
+<../Images/L6_10.png, id=747, 899.36pt x 295.1025pt>
+File: ../Images/L6_10.png Graphic file (type png)
+<use ../Images/L6_10.png>
+Package pdftex.def Info: ../Images/L6_10.png  used on input line 217.
+(pdftex.def)             Requested size: 249.55872pt x 81.88515pt.
+<../Images/L6_12.png, id=748, 707.64375pt x 187.70125pt>
+File: ../Images/L6_12.png Graphic file (type png)
+<use ../Images/L6_12.png>
+Package pdftex.def Info: ../Images/L6_12.png  used on input line 227.
+(pdftex.def)             Requested size: 249.55872pt x 66.19476pt.
+ [41 <../Images/L6_9.png> <../Images/L6_10.png>]) [42 <../Images/L6_12.png>] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: DCC18ABF6E4EBAD35930EC872FD6D9D3;15383.
+(rerunfilecheck)             Checksum: CA890BD3BDA6FEB704E88EF3B93F8E73;16433.
  ) 
 Here is how much of TeX's memory you used:
- 53001 strings out of 474116
- 1234389 string characters out of 5743682
+ 53154 strings out of 474116
+ 1237711 string characters out of 5743682
  1954187 words of memory out of 5000000
- 74293 multiletter control sequences out of 15000+600000
+ 74414 multiletter control sequences out of 15000+600000
  606936 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,107p,950b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ECE324_Cheatsheet.pdf (36 pages, 15205004 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on ECE324_Cheatsheet.pdf (42 pages, 20209167 bytes).
 PDF statistics:
- 782 PDF objects out of 1000 (max. 8388607)
- 608 compressed objects within 7 object streams
- 202 named destinations out of 1000 (max. 500000)
- 871 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 678 compressed objects within 7 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 973 words of extra memory for PDF output out of 10000 (max. 10000000)
 
