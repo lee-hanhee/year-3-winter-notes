@@ -58,8 +58,16 @@
 \contentsline {subsection}{\numberline {7.2}MAP Estimator (Bayesian Approach)}{25}{subsection.7.2}%
 \contentsline {subsubsection}{\numberline {7.2.1}Four Cases of Bayes' Rule}{25}{subsubsection.7.2.1}%
 \contentsline {subsection}{\numberline {7.3}Comparison: ML vs MAP}{25}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Example: Unknown Voltage}{26}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.4}Example: Unknown Voltage (REVIEW)}{26}{subsection.7.4}%
 \contentsline {section}{\numberline {8}L8: MAP Conjugate Prior}{27}{section.8}%
-\contentsline {section}{\numberline {9}L9: Least Mean Squares (LMS) Estimation}{28}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Example: Prior Coin Toss Problem}{28}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Example: Prior Voltage Problem}{29}{subsection.9.2}%
+\contentsline {subsection}{\numberline {8.1}Example: Coin Tosses}{27}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}MAP Estimation}{27}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}What is a good choice for $f_\Theta (\theta )$?}{27}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}Beta Prior}{28}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Digression: Beta Function and Beta Random Variables}{28}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Properties of the Beta Distribution}{28}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Visualization of the Beta Prior}{29}{subsubsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.3}Conjugate Priors}{30}{subsection.8.3}%
+\contentsline {section}{\numberline {9}L9: Least Mean Squares (LMS) Estimation}{31}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Example: Prior Coin Toss Problem}{31}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Example: Prior Voltage Problem}{32}{subsection.9.2}%

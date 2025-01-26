@@ -1,0 +1,150 @@
+\subsection{Example: Coin Tosses}
+\begin{example}
+    \begin{itemize}
+        \item Let $\theta = P(\text{Heads})$.
+        \item Let $X$ be the number of heads from $n$ independent tosses.
+        \item Given observation $X$, find the MAP (Maximum a Posteriori) estimate for $\theta$.
+    \end{itemize}
+    
+    The likelihood is given by:
+    \[
+    P_{X|\theta}(k | \Theta) = \binom{n}{k} \theta^k (1 - \theta)^{n-k}.
+    \]
+    
+    The posterior distribution is proportional to:
+    \[
+    f_{\Theta|X}(\theta | k) \propto \binom{n}{k} \theta^k (1 - \theta)^{n-k} f_\Theta(\theta).
+    \]
+\end{example}
+
+\subsubsection{MAP Estimation}
+\begin{example} We will consider only integer $\alpha$ and $\beta$.
+    \begin{align*}
+    f_{\Theta|X}(\theta | k) &= \frac{\binom{n}{k} \theta^k (1-\theta)^{n-k} \cdot B(\alpha, \beta) \theta^{\alpha-1} (1-\theta)^{\beta-1}}{f_X(k)} \\
+    &\propto \theta^{k+\alpha-1} (1-\theta)^{n-k+\beta-1}.
+    \end{align*}
+    
+    To normalize the posterior:
+    \begin{align*}
+    f_{\theta|X}(\theta | k) &= \frac{1}{B(k+\alpha, n-k+\beta)} \theta^{k+\alpha-1} (1-\theta)^{n-k+\beta-1}.
+    \end{align*}
+    \begin{itemize}
+        \item i.e. To have the integrating PDF equal to 1, we need to divide by $B(k+\alpha, n-k+\beta)$.
+    \end{itemize}
+    
+    The MAP (Maximum a Posteriori) estimate is given by:
+    \begin{align*}
+    \hat{\theta}_{\text{MAP}} &= \arg\max_{\theta} f_{\Theta|X}(\theta | k) \\
+    &= \frac{k + \alpha - 1}{n + \alpha + \beta - 2}.
+    \end{align*}  
+\end{example}
+
+\begin{notes}
+    \begin{enumerate}
+        \item Without using any prior, the MLE (Maximum Likelihood Estimate) is:
+        \[
+        \hat{\theta}_{ML} = \frac{k}{n}.
+        \]
+        \item For $\alpha = \beta = 1$ (uniform prior), $\hat{\theta}_{MAP} = \hat{\theta}_{ML}$.
+        \item For general $\alpha$ and $\beta$, we can interpret the $\beta$ prior as conducting $\alpha + \beta -2$ prior coin tosses and observing $\alpha - 1$ heads.
+        \item As $n \to \infty$, the impact of the prior diminishes, and $\hat{\theta}_{MAP} \to \hat{\theta}_{ML}$.
+    \end{enumerate}
+\end{notes}
+
+\subsubsection{What is a good choice for $f_\Theta(\theta)$?}
+\begin{motivation}
+    We aim for a prior that provides a rich representation of prior belief/information and facilitates numerical calculation and optimization.
+\end{motivation}
+
+\subsection{Beta Prior}
+\begin{definition}
+    Consider the \textbf{Beta prior}, where $\Theta$ is a Beta random variable with parameters $\alpha > 0$ and $\beta > 0$:
+        \[
+        f_\Theta(\theta) = 
+        \begin{cases} 
+        \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta-1}, & 0 < \theta < 1, \\
+        0, & \text{otherwise}.
+        \end{cases}
+        \]
+        Here, $B(\alpha, \beta)$ is the Beta function. 
+\end{definition}
+
+\subsubsection{Digression: Beta Function and Beta Random Variables}
+\begin{definition}
+    \begin{itemize}
+        \item The Beta function can also be expressed in terms of the Gamma function:
+        \[
+        B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)},
+        \]
+        where $\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} \, dt$ is the Gamma function.
+    \end{itemize}
+\end{definition}
+
+\begin{derivation}
+    \begin{align*}
+        1 = \int_0^1 f_\Theta(\theta) \, d\theta &= \int_0^1 \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta-1} \, d\theta, \\
+        &\rightarrow B(\alpha, \beta) = \int_0^1 \theta^{\alpha-1} (1 - \theta)^{\beta-1} \, d\theta.
+    \end{align*}
+\end{derivation}
+
+\subsubsection{Properties of the Beta Distribution}
+\begin{definition}
+    Properties of the Gamma function:
+    \begin{enumerate}
+        \item $\Gamma(x+1) = x \Gamma(x)$. For integer $m$, $\Gamma(m+1) = m!$.
+        \item For integers $\alpha$ and $\beta$:
+        \[
+        B(\alpha, \beta) = \frac{(\alpha+\beta-1)!}{(\alpha-1)!(\beta-1)!} = \beta \binom{\alpha+\beta-1}{\alpha-1}.
+        \]
+        \item Expected Value of a Beta Random Variable
+        \[
+        E[\theta] = \int_0^1 \theta \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta-1} \, d\theta = \frac{\alpha}{\alpha + \beta}.
+        \]
+        \item The max of Beta PDF (i.e. mode) is $\theta = \frac{\alpha - 1}{\alpha + \beta - 2}$.
+    \end{enumerate}
+\end{definition}
+
+\begin{derivation}
+    \begin{enumerate}
+        \item Expectation:
+        \begin{align*}
+            E[\Theta] &= \int_0^1 \theta \cdot \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta-1} \, d\theta \\
+            &= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \int_0^1 \theta^{\alpha} (1-\theta)^{\beta-1} \, d\theta \\
+            &= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} B(\alpha + 1, \beta) \\
+            &= \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} \cdot \frac{\Gamma(\alpha + 1) \Gamma(\beta)}{\Gamma(\alpha + \beta + 1)} \\
+            &= \frac{\Gamma(\alpha + 1) \Gamma(\beta)}{\Gamma(\alpha) \Gamma(\beta)} \cdot \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha + \beta + 1)} \\
+            &= \frac{\alpha}{\alpha + \beta}.
+        \end{align*}
+        \item Mode: 
+        To find the mode, take the derivative with respect to $\theta$:
+        \begin{align*}
+        \log f_\theta(\theta) &= \log \frac{1}{B(\alpha, \beta)} + (\alpha - 1) \log \theta + (\beta - 1) \log (1 - \theta). \\
+        0 &= \frac{d}{d\theta} \log f_\theta(\theta) \\
+        &= (\alpha - 1) \frac{1}{\theta} + (\beta - 1) \cdot \frac{-1}{1 - \theta}.
+        \end{align*}
+        
+        Simplify and solve for $\theta$:
+        \begin{align*}
+        \theta &= \frac{\alpha - 1}{\alpha + \beta - 2}, \quad \text{for } \alpha, \beta > 1.
+            \end{align*}
+    \end{enumerate}
+\end{derivation}
+
+\subsubsection{Visualization of the Beta Prior}
+\begin{notes}
+    \begin{itemize}
+        \item Larger $\alpha$ and $\beta$ imply greater certainty in the prior.
+    \end{itemize}
+    \customFigure[0.5]{../Images/L8_0.png}{}
+\end{notes}
+
+\subsection{Conjugate Priors}
+\begin{notes}
+    For ease of algebraic manipulation, we prefer priors $f_\Theta (\theta)$ with the same functional form as the posterior $f_{\Theta | \underline{X}}(\theta | \underline{x})$. Examples:
+    \begin{itemize}
+        \item Beta prior for Bernoulli, binomial, and geometric distributions.
+        \item Dirichlet prior for categorical and multinomial distributions.
+        \item Gamma prior for Poisson, exponential, and Gaussian distributions.
+        \item Gaussian prior for Gaussian distributions.
+    \end{itemize}
+\end{notes}

@@ -572,6 +572,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT ../Images/L1_0.png
 INPUT ../Images/L1_0.png
@@ -583,7 +584,6 @@ INPUT ../Images/L1_1.png
 INPUT ../Images/L1_1.png
 INPUT ../Images/L1_1.png
 INPUT ../Images/L1_1.png
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT ./Lectures/L2.tex
 INPUT ./Lectures/L2.tex
 INPUT Lectures/L2.tex
@@ -660,6 +660,11 @@ INPUT Lectures/L7.tex
 INPUT ./Lectures/L8.tex
 INPUT ./Lectures/L8.tex
 INPUT Lectures/L8.tex
+INPUT ../Images/L8_0.png
+INPUT ../Images/L8_0.png
+INPUT ../Images/L8_0.png
+INPUT ../Images/L8_0.png
+INPUT ../Images/L8_0.png
 INPUT ./Lectures/L9.tex
 INPUT ./Lectures/L9.tex
 INPUT Lectures/L9.tex
