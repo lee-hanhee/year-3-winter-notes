@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  21 JAN 2025 10:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  26 JAN 2025 14:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -743,13 +743,28 @@ Overfull \hbox (4.78519pt too wide) in paragraph at lines 92--94
  []
 
 
-Overfull \hbox (20.41415pt too wide) in paragraph at lines 109--112
-\OT1/cmr/m/n/5 *Discrete $\OML/cmm/m/it/5 X$\OT1/cmr/m/n/5 : $[] = [] [][] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] [][] [][] [] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
+Overfull \hbox (14.0591pt too wide) in paragraph at lines 111--114
+\OT1/cmr/m/n/5 *Disc: $[] = [] [][] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] = [] [][] [][] [] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
  []
 
 
-Overfull \hbox (11.79024pt too wide) in paragraph at lines 109--112
-\OT1/cmr/m/n/5 *Cont. $\OML/cmm/m/it/5 X$\OT1/cmr/m/n/5 : $[] = [] [][] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] [][] [][] [] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
+Overfull \hbox (13.79175pt too wide) in paragraph at lines 111--114
+\OT1/cmr/m/n/5 *Cont: $[] = [] [][] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] = [] [][] [][] [] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--128
+
+ []
+
+
+Overfull \hbox (2.52557pt too wide) in paragraph at lines 141--143
+[][] \OT1/cmr/bx/n/5 Least Mean Squares (LMS) Es-ti-ma-tion:[] \OT1/cmr/m/n/5 As-sume prior $\OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+
  []
 
 [1
@@ -763,18 +778,18 @@ Package rerunfilecheck Info: File `ECE368_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31653 strings out of 474116
- 743049 string characters out of 5743682
- 1965187 words of memory out of 5000000
- 53538 multiletter control sequences out of 15000+600000
+ 31655 strings out of 474116
+ 743103 string characters out of 5743682
+ 1982187 words of memory out of 5000000
+ 53540 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,93p,792b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
-Output written on ECE368_Cheatsheet.pdf (1 page, 85307 bytes).
+ 84i,10n,93p,792b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
+Output written on ECE368_Cheatsheet.pdf (1 page, 95132 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

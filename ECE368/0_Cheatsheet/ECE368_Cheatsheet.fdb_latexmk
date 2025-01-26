@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1737473679.74096 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1737473681.99131 0
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1737473679.30876 6815 9ed6d1500a6ca3c62ebc4ce69f357d56 ""
+["pdflatex"] 1737918479.15884 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1737918481.36647 0
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1737918478.8312 9453 3a84a7d971a0bdd5bc6c1eb48dc4527b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -12,6 +12,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb" 1248133631 35457 884c5a936fbb3fae6a4c18058662d654 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -183,9 +184,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE368_Cheatsheet.aux" 1737473681.78173 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "ECE368_Cheatsheet.out" 1737473681.30693 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE368_Cheatsheet.tex" 1737473679.30876 6815 9ed6d1500a6ca3c62ebc4ce69f357d56 ""
+  "ECE368_Cheatsheet.aux" 1737918481.15047 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "ECE368_Cheatsheet.out" 1737918480.66659 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE368_Cheatsheet.tex" 1737918478.8312 9453 3a84a7d971a0bdd5bc6c1eb48dc4527b ""
   (generated)
   "ECE368_Cheatsheet.aux"
   "ECE368_Cheatsheet.log"
