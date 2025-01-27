@@ -1,5 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1738012670.11524 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1738012672.80243 0
+["pdflatex"] 1738019888.65942 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1738019892.61401 0
+  "../Images/L10_0.png" 1738010925.35637 37084 707c1419dc617e409e6c88babeca8842 ""
+  "../Images/L10_1.png" 1738018036.91222 213217 248454eeed78a60578a701016e437892 ""
+  "../Images/L10_2.png" 1738010977.92437 103705 4d636a92ee7505449236c247cdd1712c ""
+  "../Images/L10_3.png" 1738018474.44139 186902 6f3841fd11f601772d87f7f025e2f0d1 ""
+  "../Images/L10_4.png" 1738018515.81295 146895 9de60216a33a0552aabdf3b5a8de784d ""
+  "../Images/L12_0.png" 1738019510.35439 54937 30ba05f239399bd3ec87f8e8b0122193 ""
+  "../Images/L12_1.png" 1738019523.26635 51904 bcbd9a29ce8098b268413615912f8f02 ""
+  "../Images/L12_2.png" 1738019535.74581 61564 803b3eb3beacb93ad40ed735e59acea9 ""
   "../Images/L3_0.png" 1736973573.87699 98616 c327c5fce6e0c787cd3ae52cf1b6de31 ""
   "../Images/L3_1.png" 1736973573.87793 49267 efc77f06cb2f65c5c2287d796f02ff15 ""
   "../Images/L4_0.png" 1736973573.87866 36558 fff45aa54c665f2978ab16ab066848c4 ""
@@ -9,7 +17,7 @@
   "../Images/L9_1.png" 1737667807.77088 49263 4047ef821ea47b6136a0013aa1f2a035 ""
   "../Images/L9_2.png" 1737667823.62356 58141 77e98fa79e79188e409358c77914be04 ""
   "../Images/L9_3.png" 1737668478.57478 178576 40304837cfef8c3162a7fb927e149520 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1738012667.44409 17597 287d46699900ada3102603aabb428db1 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1738019885.38418 20270 297d4cb13d13017bed8616eb9d93be80 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -194,9 +202,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE356_Cheatsheet.aux" 1738012672.58917 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "ECE356_Cheatsheet.out" 1738012671.56301 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE356_Cheatsheet.tex" 1738012667.44409 17597 287d46699900ada3102603aabb428db1 ""
+  "ECE356_Cheatsheet.aux" 1738019892.37164 162 fa61bf9ecf9314f94d51aa32222a725c "pdflatex"
+  "ECE356_Cheatsheet.out" 1738019890.29834 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE356_Cheatsheet.tex" 1738019885.38418 20270 297d4cb13d13017bed8616eb9d93be80 ""
   (generated)
   "ECE356_Cheatsheet.aux"
   "ECE356_Cheatsheet.log"

@@ -135,8 +135,6 @@
     \textcolor{orange}{\textbf{LT Steps:}} 1. Write $f(t)$ as a sum and use linearity \\
     *Trig. id. may be useful. \\
     2. Use prop. of LT and common LT to find $F(s)$  
-    
-    \switchcolumn
 
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
     $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
@@ -213,17 +211,38 @@
     \textcolor{orange}{\textbf{Find TF from Block Diagram:}} 1. Start from in $\rightarrow$ out, making simplifications using block diagram rules. \\
     2. Simplify until you get the form $U(s) \rightarrow \boxed{G(s)} \rightarrow Y(s)$.
 
-    \switchcolumn
-
     \textcolor{red}{\textbf{Time Response of Elementary Terms:}} $\mathbf{1}(t) \leftarrow \text{pole @ 0}$ \\
     $t^n \mathbf{1}(t) \leftarrow \text{pole @ $0$ w/ mult. $n$} \; \mid \; e^{at} \mathbf{1}(t) \leftarrow \text{pole @ } a$ \\
-    $\sin(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega \; \mid \; \cos(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega$ \\
+    $\sin(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega \; \mid \; \cos(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega$ 
 
-    \textcolor{blue}{\textbf{Real Pole:}} 
+    \textcolor{blue}{\textbf{Real Pole:}} $y(s) \text{=} \frac{1}{s+a}$, real pole at $s = -a$, then $y(t) \text{=} e^{-at} \mathbf{1}(t)$ \\
+    1. $a>0 \implies \lim_{t \rightarrow \infty} y(t) \text{=} 0 \mid$ 2. $a<0 \implies \lim_{t \rightarrow \infty} y(t) \text{=} \infty$. \\
+    3. $a=0 \implies y(t) = \mathbf{1}(t)$ is constant.
+    \customFigure[0.1]{../Images/L10_0.png}
 
-    \textcolor{blue}{\textbf{Pair of Complex Conjugate Poles:}} 
+    \textcolor{green}{\textbf{Time Constant:}} When $a>0$, $\tau = \frac{1}{a}$ is the time constant of the pole $s=-a$.
 
-    \textcolor{blue}{\textbf{Repeated Poles:}} 
+    \textcolor{blue}{\textbf{Pair of Comp. Conj. Poles:}} \\
+    $y(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2} = \frac{\omega_n^2}{(s + \sigma)^2 + \omega_d^2}$, $|\zeta| < 1$, then \\
+    $y(t) = \frac{\omega_n}{\sqrt{1 - \zeta^2}} e^{-\sigma t} \sin(\omega_d t) \mathbf{1}(t)$ \\
+    *Poles: $s_{1,2} = - \zeta \omega_n \pm j \omega_n \sqrt{1 - \zeta^2} = -\sigma \pm j \omega_d$ \\
+    *$\zeta$: Damping ratio (or damping coefficient) \\
+    *$\sigma$: Decay/growth rate $\mid$ $\omega_d$: Freq. of oscillation \\
+    *$\omega_n \left[\frac{\text{radians}}{\text{seconds}} \right]$: Undamped natural freq. \\
+    *$\omega_d \left[\frac{\text{radians}}{\text{seconds}} \right]$: Damped natural freq. \\
+
+    \textcolor{green}{\textbf{Damping Ratio Effect:}} $0 < \zeta_1 < \zeta_2 < 1$, then \\
+    \customFigure[0.2]{../Images/L10_3.png}
+
+    $-1 < \zeta_4 < \zeta_3 < 0$, then $\sigma = \zeta \omega_n <0$, (exp. envelop $\uparrow$) \\
+    \customFigure[0.2]{../Images/L10_4.png}
+
+    \textcolor{blue}{\textbf{Class. of 2nd Order Systems:}} $y(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$, then \\
+    \customFigure[0.2]{../Images/L10_1.png}
+
+    \textcolor{blue}{\textbf{Loc. of Poles and Behavior:}} $\sigma = \zeta \omega_n$, $\omega_d = \omega_n \sqrt{1 - \zeta^2}$ \\
+    *$\zeta = \frac{\sigma}{\sqrt{\sigma^2 + \omega_d^2}} \mid \omega_n = \sqrt{\sigma^2 + \omega_d^2}$ \\
+    \customFigure[0.2]{../Images/L10_2.png}
 
     \textcolor{red}{\textbf{Control Spec. of 2nd Order Systems:}} \textcolor{blue}{\textbf{Step Response:}} Given a TF $G(s)$, its SR is $y(t)$ resulting from applying the input $u(t) = \mathbf{1}(t)$, i.e. $\mathcal{L}^{-1} \left\{G(s) \frac{1}{s} \right\}$.
 
@@ -249,6 +268,18 @@
     \textcolor{green}{\textbf{\% Overshoot}:} $\% \text{OS} = \frac{\text{[peak value]} - \text{[steady-state value]}}{\text{[steady-state value]}} \times 100\%$ \\
     *$\text{\% OS} = \text{OS} \times 100 \%$. \\
     *$\text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \iff \zeta = \frac{-\ln(\text{OS})}{\sqrt{\pi^2 + (\ln(\text{OS}))^2}}$.
+
+    \textcolor{red}{\textbf{Transient Performance Satisfaction:}} Admissible region for the poles of $G(s)$ s.t. the step response meets all three spec. \\
+    \textcolor{blue}{\textbf{Rise Time:}} $T_r \approx \frac{1.8}{\omega_n} \leq T_r^d \overset{\text{approx.}}{\iff} \omega_n \geq \frac{1.8}{T_r^d} \equiv \omega_n^d$ 
+
+    \customFigure[0.1]{../Images/L12_0.png}
+
+    \textcolor{blue}{\textbf{Settling Time:}} $T_s \approx \frac{4}{\zeta \omega_n} = \frac{4}{\sigma} \leq T_s^d \overset{\text{approx.}}{\iff} \sigma \geq \frac{4}{T_s^d} \equiv \sigma^d$ 
+    \customFigure[0.1]{../Images/L12_1.png}
+
+    \textcolor{blue}{\textbf{OS:}} $\text{OS} = \text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \leq \text{OS}^d \overset{\text{approx.}}{\iff}$\\ 
+    $\zeta \geq \frac{-\ln(\text{OS}^d)}{\sqrt{\pi^2 + (\ln(\text{OS}^d))^2}} \equiv \zeta^d$ 
+    \customFigure[0.1]{../Images/L12_2.png}
 
 
         }
