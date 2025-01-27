@@ -278,6 +278,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter
 INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/paracol/paracol.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/paracol/paracol.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 INPUT ./ECE368_Cheatsheet.aux
 INPUT ./ECE368_Cheatsheet.aux
 INPUT ECE368_Cheatsheet.aux
@@ -309,6 +311,21 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ../Images/TB_0.png
+INPUT ../Images/TB_0.png
+INPUT ../Images/TB_0.png
+INPUT ../Images/TB_0.png
+INPUT ../Images/TB_0.png
+INPUT ../Images/TB_1.png
+INPUT ../Images/TB_1.png
+INPUT ../Images/TB_1.png
+INPUT ../Images/TB_1.png
+INPUT ../Images/TB_1.png
+INPUT ../Images/TB_2.png
+INPUT ../Images/TB_2.png
+INPUT ../Images/TB_2.png
+INPUT ../Images/TB_2.png
+INPUT ../Images/TB_2.png
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ECE368_Cheatsheet.aux
 INPUT ./ECE368_Cheatsheet.out
@@ -319,4 +336,5 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb

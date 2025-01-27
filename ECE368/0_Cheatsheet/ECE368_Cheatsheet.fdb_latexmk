@@ -1,6 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1737918479.15884 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1737918481.36647 0
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1737918478.8312 9453 3a84a7d971a0bdd5bc6c1eb48dc4527b ""
+["pdflatex"] 1737991598.81125 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1737991601.11239 0
+  "../Images/TB_0.png" 1737987088.43812 28707 a6ac34f277e1dfc611151ebb8d095cd2 ""
+  "../Images/TB_1.png" 1737987433.99669 73503 63ebae41b5d6d8f741856b7e528fd85c ""
+  "../Images/TB_2.png" 1737987799.15792 39338 f50f64462b04843f0e44be2ad3e43544 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1737991598.4584 14005 0804c50c86ce529b8eeedf8b95022ca8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -12,6 +15,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb" 1248133631 33536 2645d35275aa4ba040fe69615db002f1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb" 1248133631 35457 884c5a936fbb3fae6a4c18058662d654 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -140,6 +144,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/extsizes/extarticle.cls" 1137110130 20602 3112294ba237d94ce4a1502cfef3594f ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -184,9 +189,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE368_Cheatsheet.aux" 1737918481.15047 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
-  "ECE368_Cheatsheet.out" 1737918480.66659 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE368_Cheatsheet.tex" 1737918478.8312 9453 3a84a7d971a0bdd5bc6c1eb48dc4527b ""
+  "ECE368_Cheatsheet.aux" 1737991600.89213 162 55205a9e8a8eca30d36afb389b0617bf "pdflatex"
+  "ECE368_Cheatsheet.out" 1737991600.2794 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE368_Cheatsheet.tex" 1737991598.4584 14005 0804c50c86ce529b8eeedf8b95022ca8 ""
   (generated)
   "ECE368_Cheatsheet.aux"
   "ECE368_Cheatsheet.log"

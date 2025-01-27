@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  26 JAN 2025 14:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  27 JAN 2025 10:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -596,6 +596,13 @@ Package: paracol 2018/12/31 v1.35
 \pcol@tempboxb=\box117
 \pcol@colorins=\insert252
 \pcol@everyvbox=\toks44
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count341
+\float@exts=\toks45
+\float@box=\box118
+\@float@everytoks=\toks46
+\@floatcapt=\box119
 )
 
 LaTeX Warning: Unused global option(s):
@@ -604,24 +611,24 @@ LaTeX Warning: Unused global option(s):
 (./ECE368_Cheatsheet.aux)
 \openout1 = `ECE368_Cheatsheet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -659,17 +666,17 @@ LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count341
+\scratchcounter=\count342
 \scratchdimen=\dimen299
-\scratchbox=\box118
-\nofMPsegments=\count342
-\nofMParguments=\count343
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count344
+\scratchbox=\box120
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count345
 \MPscratchDim=\dimen300
-\MPnumerator=\count345
-\makeMPintoPDFobject=\count346
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -678,98 +685,93 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 19.
+ on input line 29.
 
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 29.
 (./ECE368_Cheatsheet.out) (./ECE368_Cheatsheet.out)
 \@outlinefile=\write4
 \openout4 = `ECE368_Cheatsheet.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (1.76544pt too wide) in paragraph at lines 41--43
-[][] \OT1/cmr/bx/n/5 Bayes' Rule:[] $\OML/cmm/m/it/5 P\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 H[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 ) = [] = []$ 
- []
-
-
-Overfull \hbox (1.15321pt too wide) in paragraph at lines 55--56
+Overfull \hbox (1.15321pt too wide) in paragraph at lines 65--66
 [][] \OT1/cmr/bx/n/5 Exp.:[] $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 h\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 )][] [][] \OML/cmm/m/it/5 h\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 dx \OMS/cmsy/m/n/5 j [][] \OML/cmm/m/it/5 h\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 k\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[][]k\OT1/cmr/m/n/5 )$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 
-Overfull \hbox (4.20322pt too wide) in paragraph at lines 66--67
-[][] \OT1/cmr/bx/n/5 Ex-pec-ta-tion:[] $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 g\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 X; Y\OT1/cmr/m/n/5 )] = [][] [][] \OML/cmm/m/it/5 g\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 ) \OML/cmm/m/it/5 dx dy$ 
- []
-
-
-Overfull \hbox (12.95424pt too wide) in paragraph at lines 70--71
-[][] \OT1/cmr/bx/n/5 Co-vari-ance:[] $[]\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X; Y\OT1/cmr/m/n/5 ][]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [(\OML/cmm/m/it/5 X \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^V[]\OT1/cmr/m/n/5 )(\OML/cmm/m/it/5 Y \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 ^^V[]\OT1/cmr/m/n/5 )][]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 XY\OT1/cmr/m/n/5 ] \OMS/cmsy/m/n/5 ^^@ \OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ]$ 
- []
-
-
-Overfull \hbox (17.92416pt too wide) in paragraph at lines 72--73
-[][] \OT1/cmr/bx/n/5 Cor-re-la-tion Co-eff.:[] $\OML/cmm/m/it/5 ^^Z[][]E [] \OT1/cmr/m/n/5 = []$ 
- []
-
-
-Overfull \hbox (12.40273pt too wide) in paragraph at lines 78--79
-[][] \OT1/cmr/bx/n/5 Con-di-tional PMF:[] $\OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 P\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 X \OT1/cmr/m/n/5 = \OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 Y \OT1/cmr/m/n/5 = \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 ] = []$ 
- []
-
-
-Overfull \hbox (26.25807pt too wide) in paragraph at lines 82--84
-[][] \OT1/cmr/bx/n/5 Bayes' Rule[] $\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 y\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) = [] = []$ 
- []
-
-
-Overfull \hbox (21.35489pt too wide) in paragraph at lines 85--87
-[][] \OT1/cmr/bx/n/5 In-de-pen-dent:[] $\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 8\OML/cmm/m/it/5 y \OMS/cmsy/m/n/5 , \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x; y\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 )$
- []
-
-
-Overfull \hbox (4.78519pt too wide) in paragraph at lines 92--94
-[][] \OT1/cmr/bx/n/5 Con-di-tional Ex-pec-ta-tion:[] $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 ] = \OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 Y\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]]$ or $\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 E\OT1/cmr/m/n/5 [\OML/cmm/m/it/5 h\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 X\OT1/cmr/m/n/5 ]]$ 
- []
-
-
-Overfull \hbox (14.0591pt too wide) in paragraph at lines 111--114
+Overfull \hbox (14.0591pt too wide) in paragraph at lines 122--125
 \OT1/cmr/m/n/5 *Disc: $[] = [] [][] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] = [] [][] [][] [] \OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
  []
 
 
-Overfull \hbox (13.79175pt too wide) in paragraph at lines 111--114
+Overfull \hbox (13.79175pt too wide) in paragraph at lines 122--125
 \OT1/cmr/m/n/5 *Cont: $[] = [] [][] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 ([]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 ) [] [] = [] [][] [][] [] \OML/cmm/m/it/5 f[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 x[]\OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--128
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
 
  []
 
 
-Overfull \hbox (2.52557pt too wide) in paragraph at lines 141--143
+Underfull \hbox (badness 10000) in paragraph at lines 148--152
+
+ []
+
+
+Overfull \hbox (2.52557pt too wide) in paragraph at lines 156--158
 [][] \OT1/cmr/bx/n/5 Least Mean Squares (LMS) Es-ti-ma-tion:[] \OT1/cmr/m/n/5 As-sume prior $\OML/cmm/m/it/5 P[]\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 ^^R\OT1/cmr/m/n/5 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+<../Images/TB_0.png, id=7, 537.00626pt x 90.3375pt>
+File: ../Images/TB_0.png Graphic file (type png)
+<use ../Images/TB_0.png>
+Package pdftex.def Info: ../Images/TB_0.png  used on input line 172.
+(pdftex.def)             Requested size: 117.0757pt x 19.6951pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+<../Images/TB_1.png, id=9, 378.41376pt x 293.095pt>
+File: ../Images/TB_1.png Graphic file (type png)
+<use ../Images/TB_1.png>
+Package pdftex.def Info: ../Images/TB_1.png  used on input line 180.
+(pdftex.def)             Requested size: 64.39297pt x 49.87468pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
+
+ []
+
+<../Images/TB_2.png, id=10, 347.2975pt x 195.73125pt>
+File: ../Images/TB_2.png Graphic file (type png)
+<use ../Images/TB_2.png>
+Package pdftex.def Info: ../Images/TB_2.png  used on input line 187.
+(pdftex.def)             Requested size: 64.39297pt x 36.29034pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./ECE368_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/TB_0.png> <../Images/TB_1.png> <../Images/TB_2.png>] (./ECE368_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -778,18 +780,18 @@ Package rerunfilecheck Info: File `ECE368_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31655 strings out of 474116
- 743103 string characters out of 5743682
- 1982187 words of memory out of 5000000
- 53540 multiletter control sequences out of 15000+600000
+ 31773 strings out of 474116
+ 745291 string characters out of 5743682
+ 2011187 words of memory out of 5000000
+ 53654 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,93p,792b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE368_Cheatsheet.pdf (1 page, 95132 bytes).
+ 84i,10n,93p,792b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
+Output written on ECE368_Cheatsheet.pdf (1 page, 205102 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
