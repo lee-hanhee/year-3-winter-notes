@@ -213,9 +213,43 @@
     \textcolor{orange}{\textbf{Find TF from Block Diagram:}} 1. Start from in $\rightarrow$ out, making simplifications using block diagram rules. \\
     2. Simplify until you get the form $U(s) \rightarrow \boxed{G(s)} \rightarrow Y(s)$.
 
-    \textcolor{red}{\textbf{Time Response:}} \textcolor{blue}{\textbf{Elementary Terms:}} $\mathbf{1}(t) \leftarrow \text{pole @ 0}$ \\
+    \switchcolumn
+
+    \textcolor{red}{\textbf{Time Response of Elementary Terms:}} $\mathbf{1}(t) \leftarrow \text{pole @ 0}$ \\
     $t^n \mathbf{1}(t) \leftarrow \text{pole @ $0$ w/ mult. $n$} \; \mid \; e^{at} \mathbf{1}(t) \leftarrow \text{pole @ } a$ \\
     $\sin(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega \; \mid \; \cos(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega$ \\
+
+    \textcolor{blue}{\textbf{Real Pole:}} 
+
+    \textcolor{blue}{\textbf{Pair of Complex Conjugate Poles:}} 
+
+    \textcolor{blue}{\textbf{Repeated Poles:}} 
+
+    \textcolor{red}{\textbf{Control Spec. of 2nd Order Systems:}} \textcolor{blue}{\textbf{Step Response:}} Given a TF $G(s)$, its SR is $y(t)$ resulting from applying the input $u(t) = \mathbf{1}(t)$, i.e. $\mathcal{L}^{-1} \left\{G(s) \frac{1}{s} \right\}$.
+
+    \textcolor{blue}{\textbf{Control Spec.}} A control spec. is a criterion specifiying how we would like a CS to behave. 
+
+    \textcolor{blue}{\textbf{Metrics:}} Used to quantify the transient performance of 2nd order systems w/ $0 < \zeta < 1$.
+
+    \textcolor{green}{\textbf{Rise Time}:} $T_r$ is the time it takes $y(t)$ to go from 10\% to 90\% of its steady-state value.
+
+    \textcolor{orange}{\textbf{Rise Time:}} 1. Find $t_1 > 0$ s.t. $y(t_1) = 0.1$. \\ 
+    2. Find $t_2 > 0$ s.t. $y(t_2) = 0.9$. \\
+    3. Compute $T_r = t_2 - t_1$. Approx. $T_r \approx \frac{1.8}{\omega_n}$. 
+
+    \textcolor{green}{\textbf{Settling Time}:} $T_s$ is the time required to reach and stay within 2\% of the steady-state value.
+
+    \textcolor{orange}{\textbf{Settling Time:}} 1. Look at $|y(t) - 1|$ and find when it is first that $|y(t) - 1| \leq 0.02$. Approx.: $T_s \approx \frac{4}{\zeta \omega_n}$.
+
+    \textcolor{green}{\textbf{Peak Time}:} $T_p$ is the time required to reach the maximum (peak) value.
+
+    \textcolor{orange}{\textbf{Peak Time:}} 1. Find the first time when $\overset{\cdot}{y}(t) = 0$. \\
+    *$T_p = \frac{\pi}{\omega_d} = \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}}$.
+
+    \textcolor{green}{\textbf{\% Overshoot}:} $\% \text{OS} = \frac{\text{[peak value]} - \text{[steady-state value]}}{\text{[steady-state value]}} \times 100\%$ \\
+    *$\text{\% OS} = \text{OS} \times 100 \%$. \\
+    *$\text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \iff \zeta = \frac{-\ln(\text{OS})}{\sqrt{\pi^2 + (\ln(\text{OS}))^2}}$.
+
 
         }
 \end{paracol}
