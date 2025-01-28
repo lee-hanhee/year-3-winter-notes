@@ -901,6 +901,14 @@ INPUT ../Images/L6_12.png
 INPUT ../Images/L6_12.png
 INPUT ../Images/L6_12.png
 INPUT ../Images/L6_12.png
+INPUT ./Lectures/L7.tex
+INPUT ./Lectures/L7.tex
+INPUT Lectures/L7.tex
+INPUT ../Images/L7_0.png
+INPUT ../Images/L7_0.png
+INPUT ../Images/L7_0.png
+INPUT ../Images/L7_0.png
+INPUT ../Images/L7_0.png
 INPUT ECE324_Cheatsheet.aux
 INPUT ./ECE324_Cheatsheet.out
 INPUT ./ECE324_Cheatsheet.out

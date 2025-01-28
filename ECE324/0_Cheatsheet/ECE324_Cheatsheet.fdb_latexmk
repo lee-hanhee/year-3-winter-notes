@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737906448.55222 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1737906462.07819 0
+["pdflatex"] 1738086975.3119 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1738086989.47988 0
   "../Images/L2_0.png" 1736973573.75507 307535 eb44cf12ca87434390661c755265c22e ""
   "../Images/L2_10.png" 1737856402.95288 326893 ff5f18575ba0b3f7a3feaf1053abc387 ""
   "../Images/L2_11.png" 1737856506.29493 755333 d7915f9b9e6539a5e32b462c425046cc ""
@@ -64,7 +64,8 @@
   "../Images/L6_3.png" 1737902984.77621 240510 fdd4d5c51379de1734a9019c68ef4cb5 ""
   "../Images/L6_4.png" 1737902998.93882 168283 ed2c5a11529737117c80739aeff87e8a ""
   "../Images/L6_9.png" 1737903090.99671 191357 99b8827c84fdc5825caa5cbfcd7e36c0 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1737875991.42503 2439 faa5c53846938074bc8910909e5490c5 ""
+  "../Images/L7_0.png" 1738086091.45113 333085 c501ead3abe0433111a43fa8355dedc8 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1738085254.22079 2604 5c97c3fd58e2dc030cc7857dcbe45cff ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -394,14 +395,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1737906461.60616 19636 4ce7e2cbffd23a36593731139d6f5e2c "pdflatex"
-  "ECE324_Cheatsheet.out" 1737906461.60936 16433 ca890bd3bda6feb704e88ef3b93f8e73 "pdflatex"
-  "ECE324_Cheatsheet.tex" 1737875991.42503 2439 faa5c53846938074bc8910909e5490c5 ""
+  "ECE324_Cheatsheet.aux" 1738086989.00131 22210 ad3ab59353ca09854c73f2f82f1a742d "pdflatex"
+  "ECE324_Cheatsheet.out" 1738086989.00497 20032 0e79d467e5781e2df013a4ecd787fcd2 "pdflatex"
+  "ECE324_Cheatsheet.tex" 1738085254.22079 2604 5c97c3fd58e2dc030cc7857dcbe45cff ""
   "Lectures/L2.tex" 1737856586.20584 10348 7a5f75095d00d417758c7210f14836fa ""
   "Lectures/L3.tex" 1737861256.99164 9047 c447f267348f4a318db1b71a34a21c10 ""
   "Lectures/L4.tex" 1737872485.8701 21145 68ae4dfd51d2dc27e6f1c7b6ccc5f13e ""
   "Lectures/L5.tex" 1737875650.73791 5515 d6009a7b22b0cc8edb06866a61cd19f7 ""
   "Lectures/L6.tex" 1737906440.43827 8497 93540e82e0d942e3d7b8a9e0a8f326f7 ""
+  "Lectures/L7.tex" 1738086965.68888 4121 68d59a842556d32b0fe8a94e1ae8061c ""
   "style.sty" 1737861981.04606 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "ECE324_Cheatsheet.aux"
