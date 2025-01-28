@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  27 JAN 2025 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  27 JAN 2025 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,13 +833,13 @@ Package rerunfilecheck Info: File `ECE356_Cheatsheet.out' has not changed.
 Here is how much of TeX's memory you used:
  31852 strings out of 474116
  747365 string characters out of 5743682
- 2012187 words of memory out of 5000000
+ 2011187 words of memory out of 5000000
  53731 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,792b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (3 pages, 1215547 bytes).
+Output written on ECE356_Cheatsheet.pdf (3 pages, 1215523 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream
