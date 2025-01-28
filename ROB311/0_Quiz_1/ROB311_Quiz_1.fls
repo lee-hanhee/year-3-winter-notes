@@ -652,6 +652,11 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmtt10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
@@ -662,11 +667,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmtcsc10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmtcsc10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmtt10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ../Images/L2_0.png
 INPUT ../Images/L2_0.png
 INPUT ../Images/L2_0.png

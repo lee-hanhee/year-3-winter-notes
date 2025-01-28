@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737908940.04443 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1737908947.58615 0
+["pdflatex"] 1738074275.13476 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1738074282.54038 0
   "../Images/L1_0.png" 1736973573.92376 72335 afba6478e14fdfff963b9c2bb0bdd4b0 ""
   "../Images/L1_1.png" 1736973573.92436 54800 e2953d841aa189dfde1cfae341b41add ""
   "../Images/L1_10.png" 1736973573.92489 51114 ff549d09c6d245914ae12be0ae36fc0e ""
@@ -394,15 +394,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Lectures/L1.tex" 1737337833.60568 5171 63f3367de8ae5c85d0dfe9248676d9d9 ""
-  "Lectures/L2.tex" 1737841398.97844 27086 a23425a77dcc1db4c9b6b8619c13a11b ""
+  "Lectures/L1.tex" 1738071384.05828 5177 1b63a56a9154efeff3ca499ae0477653 ""
+  "Lectures/L2.tex" 1738074251.34084 29621 b4b25f03c69b24c9228ffd836166be1a ""
   "Lectures/L3.tex" 1737845085.71547 6638 9b1f2268029ad217f6370f5b99783098 ""
   "Lectures/L4.tex" 1737851526.74217 1888 e520b545ebf76c0e1d5b797a2cb2f9bd ""
   "Lectures/L5.tex" 1737850046.05054 6662 df2377adf57ed10ecdde3cb06cb7c990 ""
-  "ROB311_Quiz_1.aux" 1737908947.06604 11846 b20bb55bae8be8716471d132127a12c5 "pdflatex"
-  "ROB311_Quiz_1.out" 1737908947.06932 9679 6592bcc734265d3840dab3ae2617f768 "pdflatex"
+  "ROB311_Quiz_1.aux" 1738074282.01939 11646 54555499499dadf9daeddde3fd47dc60 "pdflatex"
+  "ROB311_Quiz_1.out" 1738074282.02262 9091 32bf69159a0b72ff85d76242d4125f97 "pdflatex"
   "ROB311_Quiz_1.tex" 1737908931.51981 1987 fef8a8a37d869328e97c47a3ac95ffc1 ""
-  "ROB311_Quiz_1.toc" 1737908947.0699 5185 0306ade77fdef711e6d84bf66d92d634 "pdflatex"
+  "ROB311_Quiz_1.toc" 1738074282.02332 5026 26225702ea549d4587aee98958b15706 "pdflatex"
   "style.sty" 1736973573.92169 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
   (generated)
   "ROB311_Quiz_1.aux"

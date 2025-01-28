@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  26 JAN 2025 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  28 JAN 2025 09:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1286,62 +1286,62 @@ Non-PDF special ignored!
 \openout5 = `ROB311_Quiz_1.toc'.
 
  [2] (./Lectures/L1.tex [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-<../Images/L1_4.png, id=315, 599.23875pt x 317.185pt>
+<../Images/L1_4.png, id=310, 599.23875pt x 317.185pt>
 File: ../Images/L1_4.png Graphic file (type png)
 <use ../Images/L1_4.png>
 Package pdftex.def Info: ../Images/L1_4.png  used on input line 45.
 (pdftex.def)             Requested size: 374.33807pt x 198.14816pt.
-<../Images/L1_5.png, id=317, 605.26125pt x 304.13625pt>
+<../Images/L1_5.png, id=312, 605.26125pt x 304.13625pt>
 File: ../Images/L1_5.png Graphic file (type png)
 <use ../Images/L1_5.png>
 Package pdftex.def Info: ../Images/L1_5.png  used on input line 46.
 (pdftex.def)             Requested size: 374.33807pt x 188.10309pt.
  [4 <../Images/L1_4.png> <../Images/L1_5.png>]
-<../Images/L1_0.png, id=326, 534.99875pt x 376.40625pt>
+<../Images/L1_0.png, id=321, 534.99875pt x 376.40625pt>
 File: ../Images/L1_0.png Graphic file (type png)
 <use ../Images/L1_0.png>
 Package pdftex.def Info: ../Images/L1_0.png  used on input line 52.
 (pdftex.def)             Requested size: 249.55872pt x 175.58421pt.
-<../Images/L1_1.png, id=327, 626.34pt x 212.795pt>
+<../Images/L1_1.png, id=322, 626.34pt x 212.795pt>
 File: ../Images/L1_1.png Graphic file (type png)
 <use ../Images/L1_1.png>
 Package pdftex.def Info: ../Images/L1_1.png  used on input line 63.
 (pdftex.def)             Requested size: 249.55872pt x 84.7853pt.
  [5 <../Images/L1_0.png> <../Images/L1_1.png>]
-<../Images/L1_2.png, id=336, 519.9425pt x 240.9pt>
+<../Images/L1_2.png, id=331, 519.9425pt x 240.9pt>
 File: ../Images/L1_2.png Graphic file (type png)
 <use ../Images/L1_2.png>
 Package pdftex.def Info: ../Images/L1_2.png  used on input line 76.
 (pdftex.def)             Requested size: 249.55872pt x 115.62332pt.
-<../Images/L1_3.png, id=337, 575.14874pt x 236.885pt>
+<../Images/L1_3.png, id=332, 575.14874pt x 236.885pt>
 File: ../Images/L1_3.png Graphic file (type png)
 <use ../Images/L1_3.png>
 Package pdftex.def Info: ../Images/L1_3.png  used on input line 89.
 (pdftex.def)             Requested size: 199.64392pt x 82.22421pt.
  [6 <../Images/L1_2.png> <../Images/L1_3.png>]
-<../Images/L1_6.png, id=347, 193.72375pt x 173.64874pt>
+<../Images/L1_6.png, id=341, 193.72375pt x 173.64874pt>
 File: ../Images/L1_6.png Graphic file (type png)
 <use ../Images/L1_6.png>
 Package pdftex.def Info: ../Images/L1_6.png  used on input line 106.
 (pdftex.def)             Requested size: 124.77936pt x 111.85022pt.
-<../Images/L1_7.png, id=348, 215.80624pt x 269.005pt>
+<../Images/L1_7.png, id=342, 215.80624pt x 269.005pt>
 File: ../Images/L1_7.png Graphic file (type png)
 <use ../Images/L1_7.png>
 Package pdftex.def Info: ../Images/L1_7.png  used on input line 115.
 (pdftex.def)             Requested size: 124.77936pt x 155.53865pt.
  [7 <../Images/L1_6.png> <../Images/L1_7.png>]
-<../Images/L1_8.png, id=358, 207.77625pt x 276.03125pt>
+<../Images/L1_8.png, id=353, 207.77625pt x 276.03125pt>
 File: ../Images/L1_8.png Graphic file (type png)
 <use ../Images/L1_8.png>
 Package pdftex.def Info: ../Images/L1_8.png  used on input line 125.
 (pdftex.def)             Requested size: 124.77936pt x 165.76743pt.
-<../Images/L1_9.png, id=359, 197.73875pt x 171.64125pt>
+<../Images/L1_9.png, id=354, 197.73875pt x 171.64125pt>
 File: ../Images/L1_9.png Graphic file (type png)
 <use ../Images/L1_9.png>
 Package pdftex.def Info: ../Images/L1_9.png  used on input line 139.
 (pdftex.def)             Requested size: 124.77936pt x 108.31264pt.
  [8 <../Images/L1_8.png> <../Images/L1_9.png>]
-<../Images/L1_10.png, id=368, 517.935pt x 279.0425pt>
+<../Images/L1_10.png, id=363, 517.935pt x 279.0425pt>
 File: ../Images/L1_10.png Graphic file (type png)
 <use ../Images/L1_10.png>
 Package pdftex.def Info: ../Images/L1_10.png  used on input line 149.
@@ -1351,141 +1351,146 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 13
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (17.37567pt too wide) in paragraph at lines 4--61
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 13.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (17.37567pt too wide) in paragraph at lines 3--84
  [] 
  []
 
-[10]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 137.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [11{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [12] [13] [14]
-<../Images/L2_0.png, id=497, 444.66125pt x 238.8925pt>
+[10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 91--132
+ [] 
+ []
+
+[11] [12] [13] [14] [15] [16]
+<../Images/L2_0.png, id=495, 444.66125pt x 238.8925pt>
 File: ../Images/L2_0.png Graphic file (type png)
 <use ../Images/L2_0.png>
-Package pdftex.def Info: ../Images/L2_0.png  used on input line 359.
+Package pdftex.def Info: ../Images/L2_0.png  used on input line 439.
 (pdftex.def)             Requested size: 249.55872pt x 134.07414pt.
-<../Images/L2_1.png, id=498, 422.57875pt x 68.255pt>
+<../Images/L2_1.png, id=496, 422.57875pt x 68.255pt>
 File: ../Images/L2_1.png Graphic file (type png)
 <use ../Images/L2_1.png>
-Package pdftex.def Info: ../Images/L2_1.png  used on input line 360.
+Package pdftex.def Info: ../Images/L2_1.png  used on input line 440.
 (pdftex.def)             Requested size: 249.55872pt x 40.30966pt.
- [15 <../Images/L2_0.png> <../Images/L2_1.png>]
-<../Images/L2_9.png, id=509, 445.665pt x 263.98625pt>
+ [17 <../Images/L2_0.png> <../Images/L2_1.png>]
+<../Images/L2_9.png, id=507, 445.665pt x 263.98625pt>
 File: ../Images/L2_9.png Graphic file (type png)
 <use ../Images/L2_9.png>
-Package pdftex.def Info: ../Images/L2_9.png  used on input line 365.
+Package pdftex.def Info: ../Images/L2_9.png  used on input line 445.
 (pdftex.def)             Requested size: 249.55872pt x 147.82323pt.
-<../Images/L2_10.png, id=510, 413.545pt x 277.035pt>
+<../Images/L2_10.png, id=508, 413.545pt x 277.035pt>
 File: ../Images/L2_10.png Graphic file (type png)
 <use ../Images/L2_10.png>
-Package pdftex.def Info: ../Images/L2_10.png  used on input line 366.
+Package pdftex.def Info: ../Images/L2_10.png  used on input line 446.
 (pdftex.def)             Requested size: 249.55872pt x 167.18185pt.
- [16 <../Images/L2_9.png> <../Images/L2_10.png>]
-<../Images/L2_2.png, id=520, 415.5525pt x 201.75375pt>
+ [18 <../Images/L2_9.png> <../Images/L2_10.png>]
+<../Images/L2_2.png, id=518, 415.5525pt x 201.75375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
-Package pdftex.def Info: ../Images/L2_2.png  used on input line 391.
+Package pdftex.def Info: ../Images/L2_2.png  used on input line 471.
 (pdftex.def)             Requested size: 249.55872pt x 121.16092pt.
-<../Images/L2_3.png, id=521, 406.51875pt x 208.78pt>
+<../Images/L2_3.png, id=519, 406.51875pt x 208.78pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
-Package pdftex.def Info: ../Images/L2_3.png  used on input line 392.
+Package pdftex.def Info: ../Images/L2_3.png  used on input line 472.
 (pdftex.def)             Requested size: 249.55872pt x 128.16795pt.
- [17 <../Images/L2_2.png> <../Images/L2_3.png>] [18]
-<../Images/LR_0.png, id=541, 603.25375pt x 246.9225pt>
+ [19 <../Images/L2_2.png> <../Images/L2_3.png>] [20]
+<../Images/LR_0.png, id=540, 603.25375pt x 246.9225pt>
 File: ../Images/LR_0.png Graphic file (type png)
 <use ../Images/LR_0.png>
-Package pdftex.def Info: ../Images/LR_0.png  used on input line 417.
+Package pdftex.def Info: ../Images/LR_0.png  used on input line 497.
 (pdftex.def)             Requested size: 249.55872pt x 102.14688pt.
- [19 <../Images/LR_0.png>] [20] [21] [22]
-<../Images/L2_8.png, id=601, 446.66875pt x 228.855pt>
+ [21 <../Images/LR_0.png>] [22] [23]
+<../Images/L2_8.png, id=593, 446.66875pt x 228.855pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
-Package pdftex.def Info: ../Images/L2_8.png  used on input line 642.
+Package pdftex.def Info: ../Images/L2_8.png  used on input line 710.
 (pdftex.def)             Requested size: 249.55872pt x 127.86458pt.
- [23 <../Images/L2_8.png>] [24]
-<../Images/L2_11.png, id=648, 412.54124pt x 278.03876pt>
+ [24 <../Images/L2_8.png>] [25]
+<../Images/L2_11.png, id=641, 412.54124pt x 278.03876pt>
 File: ../Images/L2_11.png Graphic file (type png)
 <use ../Images/L2_11.png>
-Package pdftex.def Info: ../Images/L2_11.png  used on input line 693.
+Package pdftex.def Info: ../Images/L2_11.png  used on input line 761.
 (pdftex.def)             Requested size: 249.55872pt x 168.19487pt.
-) [25 <../Images/L2_11.png>] (./Lectures/L3.tex [26]
-<../Images/L3_0.png, id=664, 588.1975pt x 390.45876pt>
+) [26 <../Images/L2_11.png>] (./Lectures/L3.tex [27]
+<../Images/L3_0.png, id=656, 588.1975pt x 390.45876pt>
 File: ../Images/L3_0.png Graphic file (type png)
 <use ../Images/L3_0.png>
 Package pdftex.def Info: ../Images/L3_0.png  used on input line 44.
 (pdftex.def)             Requested size: 249.55872pt x 165.65976pt.
-<../Images/L3_1.png, id=665, 544.0325pt x 272.01625pt>
+<../Images/L3_1.png, id=657, 544.0325pt x 272.01625pt>
 File: ../Images/L3_1.png Graphic file (type png)
 <use ../Images/L3_1.png>
 Package pdftex.def Info: ../Images/L3_1.png  used on input line 45.
 (pdftex.def)             Requested size: 249.55872pt x 124.78033pt.
-<../Images/L3_2.png, id=666, 515.9275pt x 405.515pt>
+<../Images/L3_2.png, id=658, 515.9275pt x 405.515pt>
 File: ../Images/L3_2.png Graphic file (type png)
 <use ../Images/L3_2.png>
 Package pdftex.def Info: ../Images/L3_2.png  used on input line 46.
 (pdftex.def)             Requested size: 249.55872pt x 196.14857pt.
- [27 <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L3_2.png>]
-<../Images/L3_3.png, id=678, 488.82625pt x 349.305pt>
+ [28 <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L3_2.png>]
+<../Images/L3_3.png, id=670, 488.82625pt x 349.305pt>
 File: ../Images/L3_3.png Graphic file (type png)
 <use ../Images/L3_3.png>
 Package pdftex.def Info: ../Images/L3_3.png  used on input line 57.
 (pdftex.def)             Requested size: 249.55872pt x 178.32973pt.
-<../Images/L3_4.png, id=679, 621.32124pt x 367.3725pt>
+<../Images/L3_4.png, id=671, 621.32124pt x 367.3725pt>
 File: ../Images/L3_4.png Graphic file (type png)
 <use ../Images/L3_4.png>
 Package pdftex.def Info: ../Images/L3_4.png  used on input line 67.
 (pdftex.def)             Requested size: 249.55872pt x 147.5574pt.
-<../Images/L3_5.png, id=680, 616.3025pt x 300.12125pt>
+<../Images/L3_5.png, id=672, 616.3025pt x 300.12125pt>
 File: ../Images/L3_5.png Graphic file (type png)
 <use ../Images/L3_5.png>
 Package pdftex.def Info: ../Images/L3_5.png  used on input line 68.
 (pdftex.def)             Requested size: 249.55872pt x 121.52554pt.
- [28 <../Images/L3_3.png> <../Images/L3_4.png> <../Images/L3_5.png>]
-<../Images/L3_8.png, id=696, 483.8075pt x 74.2775pt>
+ [29 <../Images/L3_3.png> <../Images/L3_4.png> <../Images/L3_5.png>]
+<../Images/L3_8.png, id=687, 483.8075pt x 74.2775pt>
 File: ../Images/L3_8.png Graphic file (type png)
 <use ../Images/L3_8.png>
 Package pdftex.def Info: ../Images/L3_8.png  used on input line 78.
 (pdftex.def)             Requested size: 249.55872pt x 38.31396pt.
- [29 <../Images/L3_8.png>] [30]
-<../Images/L3_6.png, id=722, 265.99374pt x 245.91875pt>
+ [30 <../Images/L3_8.png>] [31]
+<../Images/L3_6.png, id=715, 265.99374pt x 245.91875pt>
 File: ../Images/L3_6.png Graphic file (type png)
 <use ../Images/L3_6.png>
 Package pdftex.def Info: ../Images/L3_6.png  used on input line 125.
 (pdftex.def)             Requested size: 249.55872pt x 230.72836pt.
-<../Images/L3_7.png, id=723, 221.82875pt x 129.48375pt>
+<../Images/L3_7.png, id=716, 221.82875pt x 129.48375pt>
 File: ../Images/L3_7.png Graphic file (type png)
 <use ../Images/L3_7.png>
 Package pdftex.def Info: ../Images/L3_7.png  used on input line 126.
 (pdftex.def)             Requested size: 249.55872pt x 145.66884pt.
- [31 <../Images/L3_6.png> <../Images/L3_7.png>]) (./Lectures/L4.tex [32]) (./Lectures/L5.tex [33]
-<../Images/L5_0.png, id=749, 274.02374pt x 230.8625pt>
+ [32 <../Images/L3_6.png> <../Images/L3_7.png>]) (./Lectures/L4.tex [33]) (./Lectures/L5.tex [34]
+<../Images/L5_0.png, id=741, 274.02374pt x 230.8625pt>
 File: ../Images/L5_0.png Graphic file (type png)
 <use ../Images/L5_0.png>
 Package pdftex.def Info: ../Images/L5_0.png  used on input line 76.
 (pdftex.def)             Requested size: 249.55872pt x 210.25427pt.
- [34 <../Images/L5_0.png>]) [35] (./ROB311_Quiz_1.aux)
+ [35 <../Images/L5_0.png>]) [36] (./ROB311_Quiz_1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ROB311_Quiz_1.out' has not changed.
-(rerunfilecheck)             Checksum: 6592BCC734265D3840DAB3AE2617F768;9679.
+(rerunfilecheck)             Checksum: 32BF69159A0B72FF85D76242D4125F97;9091.
  ) 
 Here is how much of TeX's memory you used:
- 53384 strings out of 474116
- 1235703 string characters out of 5743682
- 2170187 words of memory out of 5000000
+ 53377 strings out of 474116
+ 1235629 string characters out of 5743682
+ 2147187 words of memory out of 5000000
  74481 multiletter control sequences out of 15000+600000
  638659 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,107p,812b,1493s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,20n,107p,812b,1487s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ROB311_Quiz_1.pdf (35 pages, 3116456 bytes).
+Output written on ROB311_Quiz_1.pdf (36 pages, 3118299 bytes).
 PDF statistics:
- 994 PDF objects out of 1000 (max. 8388607)
- 837 compressed objects within 9 object streams
- 367 named destinations out of 1000 (max. 500000)
- 611 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 983 PDF objects out of 1000 (max. 8388607)
+ 825 compressed objects within 9 object streams
+ 360 named destinations out of 1000 (max. 500000)
+ 603 words of extra memory for PDF output out of 10000 (max. 10000000)
 

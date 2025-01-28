@@ -1,9 +1,25 @@
-
 \begin{summary}
     \begin{center}
         \begin{tabular}{lcccccc}
         \toprule
         \textbf{Alg.} & Halting & Sound & Complete & Optimal & Time & Space \\
+        \midrule
+        \multicolumn{7}{p{\linewidth}}{
+            Choose \texttt{REMOVE(·)} so algo. exhibits the characteristics:
+            \begin{itemize}
+                \item \textbf{Halting:} Terminates after finitely many nodes explored $\mid$ \textbf{Sound:} Returned (possibly NULL) soln. is correct 
+                \item \textbf{Complete:} Halting \& sound when a non-NULL soln. exists $\mid$ \textbf{Opt.:} Returns an opt. soln. when mult. exist 
+                \item \textbf{Time:} Minimizes nodes \textbf{explored}/expanded/exported $\mid$ \textbf{Space:} Minimizes nodes simultaneously open
+            \end{itemize}} \\
+        \midrule
+        \multicolumn{7}{p{\linewidth}}{
+            Choose \texttt{REMOVE($\cdot$)} so algo. exhibits the characteristics for as many path trees as possible. 
+            \begin{itemize}
+                \item $b$ ($b < \infty$): Branching factor (the maximum number of children a node can have)
+                \item $d$: Depth (the length of the longest path), $l^*$: Length of the shortest solution
+                \item $c^*$: Cost of the cheapest solution, $\epsilon$: Cost of the cheapest edge
+            \end{itemize}
+        } \\
         \midrule
         \multicolumn{7}{p{\linewidth}}{
         \begin{center}
@@ -42,13 +58,13 @@
         \textbf{HFS} & $d<\infty$ & never & never & never & - & - \\
         \multicolumn{7}{p{\linewidth}}{
         \begin{itemize}
-            \item Explores the node with the smallest hur-value first.
+            \item Explores the node with the smallest hur-value first, $\text{ecst}(p) = \text{hur}(p)$
         \end{itemize}} \\
         \midrule
         \textbf{A$^*$} & hur admissible, $\epsilon > 0$ & always & hur admissible, $\epsilon > 0$ & hur admissible, $\epsilon > 0$ & $O\left(b^{c^{*}/\epsilon}\right)$ & $O\left(b^{c^{*}/\epsilon + 1}\right)$ \\
         \multicolumn{7}{p{\linewidth}}{
         \begin{itemize}
-            \item Explores the node with the smallest ecst-value first.
+            \item Explores the node with the smallest ecst-value first, $\text{ecst}(p) = \text{cst}(p) + \text{hur}(p)$
         \end{itemize}} \\
         \midrule
         \textbf{IIA$^*$} & always & always & always & always & $b^{l^{*}}$ & $bl^{*} $ \\
@@ -56,10 +72,66 @@
         \begin{itemize}
             \item Same as A$^*$ but with iterative inflating on ecst.
         \end{itemize}} \\
+        \midrule
+        \textbf{WA$^*$} & - & - & - & - & - & - \\
+        \multicolumn{7}{p{\linewidth}}{
+            \begin{itemize}
+                \item Same as A$^*$ but $\text{ecst}(s) = \text{wcst}(s) + (1-w)\text{hur}(s)$ w/ $w \in [0,1]$
+                \item $w=0$: HFS, $w=0.5$: A$^*$, $w=1$: CFS, iteratively increasing $w$ from 0 to 1: anytime version of $WA^*$
+            \end{itemize}} \\
         \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
+
+\subsection{Modifications to Search Algorithms:}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{l}
+        \toprule
+        \textbf{Modifications} \\
+        \midrule
+        \textbf{Depth-Limiting} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Enforce a depth limit, $d_{\text{max}}$, to any search algorithm.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Iterative-Deepening} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Iteratively increase the depth-limit to any search algorithm w/ depth-limiting.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Cost-Limiting} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Enforce a cost limit of $c_\text{max}$ to any search algorithm.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Iterative Inflating} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Iteratively increase the cost limit, $c_{\text{max}}$, to any search algorithm w/ cost-limiting.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Intra-Path Cycle Checking} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Do not expand a path if it is cyclic.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Inter-Path Cycle Checking} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Do not expand a path if its destination is that of an explored path. 
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
 \subsection{Setup}
 \begin{definition} In a search problem, it is assumed that: 
@@ -132,45 +204,9 @@ procedure SEARCH($\mathcal{O}$)
     The key difference is in the order that \textsc{Remove}($\cdot$) removes nodes.
 \end{warning}
 
-\subsubsection{Characteristics of a Search Algorithm}
-\begin{definition}
-    We want to choose \texttt{REMOVE(·)} so that the algorithm exhibits the following characteristics:
-
-    \begin{center}
-        \begin{tabular}{|p{3cm}|p{9cm}|}
-        \hline
-        \textbf{Characteristic} & \textbf{Description} \\ \hline
-        Halting & Terminates after finitely many nodes explored \\ \hline
-        Sound & Returned (possibly NULL) solution is correct \\ \hline
-        Complete & Halting and sound when a non-NULL solution exists \\ \hline
-        Optimal & Returns an optimal solution when multiple exist \\ \hline
-        Time Efficient & Minimizes the nodes \textbf{explored}/expanded/exported \\ \hline
-        Space Efficient & Minimizes the nodes simultaneously open \\ \hline
-        \end{tabular}
-    \end{center}
-    \vspace{1em}   
-    \begin{itemize}
-        \item Will be using explored for time efficiency.
-    \end{itemize} 
-    \vspace{1em}
-
-    The characteristics of the algorithm also depend on several properties of the path tree over which it searches. These properties include:
-    \begin{itemize}
-        \item Branching factor: $b$ ($b < \infty$), the maximum number of children a node can have.
-        \item Depth: $d$, the length of the longest path.
-        \item Length of the shortest solution: $l^*$
-        \item Cost of the cheapest solution: $c^*$
-        \item Cost of the cheapest edge: $\epsilon$ 
-    \end{itemize}
-
-    We want to choose \texttt{REMOVE($\cdot$)} so that the algorithm exhibits the aforementioned characteristics for as many path trees as possible.
-
-\end{definition}
-
 \subsection{Modifications to Search Algorithms}
 \subsubsection{Depth-Limiting}
 \begin{definition}
-    Depth limit of $d_{\text{max}}$ to any search algorithm by modifying \texttt{SEARCH($\cdot$)} as follows:
 \begin{lstlisting}
 procedure SEARCHDL($\mathcal{O}$, $d_{\text{max}}$):
     if $\mathcal{O} = \emptyset$ then
@@ -188,7 +224,6 @@ procedure SEARCHDL($\mathcal{O}$, $d_{\text{max}}$):
 
 \subsubsection{Iterative Deepening}
 \begin{definition}
-    Iteratively increase the depth-limit, $d_{\max}$, to any search algorithm w/ depth-limiting, by placing \texttt{SEARCHDL($\cdot$)} in a wrapper, \texttt{SEARCHID($\cdot$)}:
 \begin{lstlisting}
 procedure SEARCHID():
     $n \leftarrow \text{NULL}$
@@ -209,7 +244,6 @@ procedure SEARCHID():
 
 \subsubsection{Cost-Limiting}
 \begin{definition}
-    Cost limit of $c_{\text{max}}$ to any search algorithm by modifying \texttt{SEARCH($\cdot$)} as follows:
 
 \begin{lstlisting}
 procedure SEARCHCL($\mathcal{O}$, $c_{\text{max}}$):
@@ -225,11 +259,10 @@ procedure SEARCHCL($\mathcal{O}$, $c_{\text{max}}$):
 \end{lstlisting}
 
 \end{definition}
+\newpage
 
 \subsubsection{Iterative-Inflating}
 \begin{definition}
-    Iteratively increase the cost limit, $c_{\text{max}}$, to any search algorithm with cost-limiting, by placing \texttt{SEARCHCL($\cdot$)} in a wrapper, \texttt{SEARCHII($\cdot$)}:
-
 \begin{lstlisting}
 procedure SEARCHII():
     $n \leftarrow \text{NULL}$
@@ -250,8 +283,6 @@ procedure SEARCHII():
 
 \subsubsection{Intra-Path Cycle Checking}
 \begin{definition}
-    Do not expand a path if it is cyclic. Modify \texttt{SEARCH($\cdot$)} as follows:
-
 \begin{lstlisting}
 procedure SEARCH($\mathcal{O}$):
     if $\mathcal{O} = \emptyset$ then
@@ -272,8 +303,6 @@ procedure SEARCH($\mathcal{O}$):
 
 \subsubsection{Inter-Path Cycle Checking}
 \begin{definition}
-    We modify \texttt{SEARCH($\cdot$)} as follows:
-
 \begin{lstlisting}
 procedure SEARCH($\mathcal{O}$, $\mathcal{C}$):
     if $\mathcal{O} = \emptyset$ then
@@ -297,45 +326,96 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{lstlisting}
 
 \end{definition}
+\newpage
 
 \subsection{Informed Search Algorithms}
 \subsubsection{Estimated Cost}
 \begin{definition}
-    $\text{ecst}(\cdot)$, to estimate the total cost to a goal given a path, $p$, based on the following:
+    $\text{ecst}(\cdot)$: estimate of the total cost to a goal given a path, $p$, based on:
     \begin{itemize}
-        \item Cost of path $p$: $\text{cst}(p)$
-        \item Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$: $\text{hur} : S \to \mathbb{R}_+$
+        \item $\text{cst}(p)$: Cost of path $p$
+        \item $\text{hur} : S \to \mathbb{R}_+$: Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$
         \begin{itemize}
             \item $\text{hur}(s)$ estimates the cost to get to $\mathcal{G}$ from $s$ and $\text{hur}(p)$ means $\text{hur}(\text{dst}(p))$.
         \end{itemize}
     \end{itemize}
 \end{definition}
 
-\begin{example}
-    Some common choices for $\text{ecst}(\cdot)$ include:
-    \begin{enumerate}
-        \item $\text{ecst}(p) = \text{hur}(p)$; called nearest-first search (NFS)
-        \item $\text{ecst}(p) = \text{cst}(p) + \text{hur}(p)$; called A$^*$ (A-star)
-    \end{enumerate}
-\end{example}
-
-\subsection{Characteristics of an Informed Search Algorithm}
+\subsubsection{Admissible}
 \begin{definition}
-    \begin{enumerate}
-        \item Heuristic: $\text{hur}(\cdot)$
-        \item Cost estimation: $\text{ecst}(\cdot)$
-    \end{enumerate}
+    A heuristic, $\text{hur}(\cdot)$, is said to be \textbf{admissible} if
+
+    \begin{equation*}
+        \text{hur}(s) \leq \text{hur}^*(s)
+    \end{equation*}
+
+    for all $s \in \mathcal{S}$ and
+
+    \begin{equation*}
+        \text{hur}(s) = 0
+    \end{equation*}
+
+    for all $s \in \mathcal{G}$.
 \end{definition}
 
-\subsubsection{Heuristics}
+\subsubsection{Consistent}
+\begin{definition}
+    A heuristic, $\text{hur}(\cdot)$, is said to be \textbf{consistent} if
 
-\subsubsection{Designing Heuristics via Problem Relaxation}
+    \begin{equation*}
+        \underbrace{\text{hur}(s) - \text{hur}(\text{tr}(s,a))}_{\text{estimated cost of the transition }(s,a,\text{tr}(s,a))}
+        \leq 
+        \underbrace{\text{cst}(s,a,\text{tr}(s,a))}_{\text{true cost of the transition, }(s,a,\text{tr}(s,a))}
+    \end{equation*}
+
+    for all $s \in \mathcal{S}$, and $a \in \mathcal{A}(s)$, and
+
+    \begin{equation*}
+        \text{hur}(s) = 0
+    \end{equation*}
+
+    for all $s \in \mathcal{G}$.
+\end{definition}
+
+\subsubsection{Domination}
+\begin{definition}
+    If $\text{hur}_1$ and $\text{hur}_2$ are admissible, then:
+    \begin{itemize}
+        \item $\text{hur}_1$ \textbf{strongly dominates} $\text{hur}_2$ if for all $s \in \mathcal{S} \setminus \mathcal{G}$:
+        \begin{equation*}
+            \text{hur}_1(s) > \text{hur}_2(s)
+        \end{equation*}
+
+        \item $\text{hur}_1$ \textbf{weakly dominates} $\text{hur}_2$ if for all $s \in \mathcal{S}$:
+        \begin{equation*}
+            \text{hur}_1(s) \geq \text{hur}_2(s)
+        \end{equation*}
+        and for some $s \in \mathcal{S}$:
+        \begin{equation*}
+            \text{hur}_1(s) > \text{hur}_2(s)
+        \end{equation*}
+    \end{itemize}
+\end{definition}
 
 \subsubsection{Combining Heuristics}
+\begin{definition}
+    If $\{ \text{hur}_k(\cdot) \}_k$ are admissible (resp. consistent), then $\max_k \{\text{hur}_k\} (\cdot)$ is also admissible (resp. consistent).
+\end{definition}
 
-\subsection{Anytime Search Algorithms}
+\begin{definition}
+    If $\text{hur}_{\max} \equiv \max \{\text{hur}_1, \text{hur}_2\}$, then if $\text{hur}_k$ is consistent:
+    \[
+    \text{hur}_k(s) - \text{hur}_k(\text{tr}(s,a)) \leq \text{cst}(s,a,\text{tr}(s,a))
+    \]
+    \[
+    \text{hur}_{\max} (s)= \text{hur}_{\max}(\text{tr}(s,a)) - \text{cst}^*(s,a,\text{tr}(s,a))
+    \]
+\end{definition}
 
-\subsection{Formulating a Search Problem}
+\subsubsection{Anytime Search Algorithms}
+\begin{definition}
+    An \textbf{anytime algorithm} finds a solution quickly (even if it is sub-optimal), and then iteratively improves it (if time permits).
+\end{definition}
 \newpage
 
 \subsection{Canonical Examples}
@@ -525,6 +605,12 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     \end{center}
 \end{example}
 
+\begin{warning}
+    \begin{itemize}
+        \item How to perform shortcut? 
+    \end{itemize}
+\end{warning}
+
 \begin{process} \textbf{HFS}
     \begin{enumerate}
         \item Start at $s_0$ (initial state).
@@ -577,29 +663,11 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     \end{center}
 \end{example}
 
-% \multicolumn{2}{p{\linewidth}}{
-%     \begin{itemize}
-%         \item See the ELF header of a file.
-%     \end{itemize}} \\
-
-
-
 \begin{example} \textbf{IIA*}
     
 \end{example}
 
 \begin{example} \textbf{WA*}
-    
-\end{example}
-\newpage
-
-\begin{process} \textbf{How to Figure Out Soln. w/o Performing Search Algorithm?}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{process}
-
-\begin{example} 
     
 \end{example}
 \newpage
