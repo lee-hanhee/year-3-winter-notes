@@ -1,10 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}L1: Probability Review}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Sample Space}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Sample Space}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Probability Definitions}{3}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Axioms of Probability}{3}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Conditional Probability}{3}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Consequences of Conditional Probability}{3}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.1}Consequences of Conditional Probability}{4}{subsubsection.1.4.1}%
 \contentsline {subsubsection}{\numberline {1.4.2}Independence}{4}{subsubsection.1.4.2}%
 \contentsline {subsubsection}{\numberline {1.4.3}Importance of Labelling}{4}{subsubsection.1.4.3}%
 \contentsline {section}{\numberline {2}L2: Probability Review}{5}{section.2}%
@@ -71,3 +71,6 @@
 \contentsline {section}{\numberline {9}L9: Least Mean Squares (LMS) Estimation}{31}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Example: Prior Coin Toss Problem}{31}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Example: Prior Voltage Problem}{32}{subsection.9.2}%
+\contentsline {section}{\numberline {10}L10: Hypothesis Testing}{34}{section.10}%
+\contentsline {section}{\numberline {11}L11: Bayesian Hypothesis Testing}{35}{section.11}%
+\contentsline {section}{\numberline {12}L13: Min Cost \& Naive Bayes}{36}{section.12}%

@@ -569,11 +569,11 @@ INPUT ./Lectures/L1.tex
 INPUT ./Lectures/L1.tex
 INPUT Lectures/L1.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT ../Images/L1_0.png
 INPUT ../Images/L1_0.png
 INPUT ../Images/L1_0.png
