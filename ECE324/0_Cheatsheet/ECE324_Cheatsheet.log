@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  28 JAN 2025 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  28 JAN 2025 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1719,13 +1719,129 @@ File: ../Images/L6_12.png Graphic file (type png)
 <use ../Images/L6_12.png>
 Package pdftex.def Info: ../Images/L6_12.png  used on input line 227.
 (pdftex.def)             Requested size: 249.55872pt x 66.19476pt.
- [41 <../Images/L6_9.png> <../Images/L6_10.png>]) [42 <../Images/L6_12.png>] (./Lectures/L7.tex [43]
-<../Images/L7_0.png, id=844, 796.9775pt x 470.75874pt>
+ [41 <../Images/L6_9.png> <../Images/L6_10.png>]) [42 <../Images/L6_12.png>] (./Lectures/L7.tex
+<../Images/L7_1.png, id=838, 847.165pt x 288.07625pt>
+File: ../Images/L7_1.png Graphic file (type png)
+<use ../Images/L7_1.png>
+Package pdftex.def Info: ../Images/L7_1.png  used on input line 7.
+(pdftex.def)             Requested size: 249.55872pt x 84.85867pt.
+<../Images/L7_4.png, id=839, 531.9875pt x 225.84375pt>
+File: ../Images/L7_4.png Graphic file (type png)
+<use ../Images/L7_4.png>
+Package pdftex.def Info: ../Images/L7_4.png  used on input line 8.
+(pdftex.def)             Requested size: 249.55872pt x 105.94325pt.
+<../Images/L7_2.png, id=840, 791.95876pt x 235.88126pt>
+File: ../Images/L7_2.png Graphic file (type png)
+<use ../Images/L7_2.png>
+Package pdftex.def Info: ../Images/L7_2.png  used on input line 15.
+(pdftex.def)             Requested size: 249.55872pt x 74.32817pt.
+<../Images/L7_3.png, id=841, 866.23625pt x 196.735pt>
+File: ../Images/L7_3.png Graphic file (type png)
+<use ../Images/L7_3.png>
+Package pdftex.def Info: ../Images/L7_3.png  used on input line 26.
+(pdftex.def)             Requested size: 249.55872pt x 56.67944pt.
+<../Images/L7_5.png, id=842, 603.25375pt x 194.7275pt>
+File: ../Images/L7_5.png Graphic file (type png)
+<use ../Images/L7_5.png>
+Package pdftex.def Info: ../Images/L7_5.png  used on input line 27.
+(pdftex.def)             Requested size: 249.55872pt x 80.55486pt.
+ [43 <../Images/L7_1.png> <../Images/L7_4.png> <../Images/L7_2.png>] [44 <../Images/L7_3.png> <../Images/L7_5.png>]
+<../Images/L7_0.png, id=863, 796.9775pt x 470.75874pt>
 File: ../Images/L7_0.png Graphic file (type png)
 <use ../Images/L7_0.png>
-Package pdftex.def Info: ../Images/L7_0.png  used on input line 29.
+Package pdftex.def Info: ../Images/L7_0.png  used on input line 34.
 (pdftex.def)             Requested size: 249.55872pt x 147.40625pt.
- [44 <../Images/L7_0.png>] [45]) [46] (./ECE324_Cheatsheet.aux)
+<../Images/L7_6.png, id=864, 878.28125pt x 332.24126pt>
+File: ../Images/L7_6.png Graphic file (type png)
+<use ../Images/L7_6.png>
+Package pdftex.def Info: ../Images/L7_6.png  used on input line 40.
+(pdftex.def)             Requested size: 249.55872pt x 94.40584pt.
+<../Images/L7_7.png, id=865, 856.19875pt x 348.30125pt>
+File: ../Images/L7_7.png Graphic file (type png)
+<use ../Images/L7_7.png>
+Package pdftex.def Info: ../Images/L7_7.png  used on input line 46.
+(pdftex.def)             Requested size: 249.55872pt x 101.5203pt.
+<../Images/L7_8.png, id=866, 854.19125pt x 243.91125pt>
+File: ../Images/L7_8.png Graphic file (type png)
+<use ../Images/L7_8.png>
+Package pdftex.def Info: ../Images/L7_8.png  used on input line 47.
+(pdftex.def)             Requested size: 249.55872pt x 71.25722pt.
+ [45 <../Images/L7_0.png> <../Images/L7_6.png> <../Images/L7_7.png>]
+<../Images/L7_9.png, id=877, 912.40875pt x 389.455pt>
+File: ../Images/L7_9.png Graphic file (type png)
+<use ../Images/L7_9.png>
+Package pdftex.def Info: ../Images/L7_9.png  used on input line 53.
+(pdftex.def)             Requested size: 249.55872pt x 106.52104pt.
+<../Images/L7_10.png, id=878, 902.37125pt x 384.43625pt>
+File: ../Images/L7_10.png Graphic file (type png)
+<use ../Images/L7_10.png>
+Package pdftex.def Info: ../Images/L7_10.png  used on input line 57.
+(pdftex.def)             Requested size: 249.55872pt x 106.31569pt.
+ [46 <../Images/L7_8.png> <../Images/L7_9.png> <../Images/L7_10.png>]
+<../Images/L7_11.png, id=889, 744.7825pt x 298.11375pt>
+File: ../Images/L7_11.png Graphic file (type png)
+<use ../Images/L7_11.png>
+Package pdftex.def Info: ../Images/L7_11.png  used on input line 91.
+(pdftex.def)             Requested size: 249.55872pt x 99.8926pt.
+<../Images/L7_12.png, id=890, 763.85374pt x 286.06876pt>
+File: ../Images/L7_12.png Graphic file (type png)
+<use ../Images/L7_12.png>
+Package pdftex.def Info: ../Images/L7_12.png  used on input line 97.
+(pdftex.def)             Requested size: 249.55872pt x 93.46013pt.
+<../Images/L7_13.png, id=891, 872.25874pt x 367.3725pt>
+File: ../Images/L7_13.png Graphic file (type png)
+<use ../Images/L7_13.png>
+Package pdftex.def Info: ../Images/L7_13.png  used on input line 103.
+(pdftex.def)             Requested size: 249.55872pt x 105.10585pt.
+ [47 <../Images/L7_11.png> <../Images/L7_12.png>]
+<../Images/L7_14.png, id=900, 833.1125pt x 316.18124pt>
+File: ../Images/L7_14.png Graphic file (type png)
+<use ../Images/L7_14.png>
+Package pdftex.def Info: ../Images/L7_14.png  used on input line 112.
+(pdftex.def)             Requested size: 249.55872pt x 94.71036pt.
+<../Images/L7_15.png, id=901, 830.10126pt x 201.75375pt>
+File: ../Images/L7_15.png Graphic file (type png)
+<use ../Images/L7_15.png>
+Package pdftex.def Info: ../Images/L7_15.png  used on input line 113.
+(pdftex.def)             Requested size: 249.55872pt x 60.6528pt.
+<../Images/L7_16.png, id=902, 836.12375pt x 346.29375pt>
+File: ../Images/L7_16.png Graphic file (type png)
+<use ../Images/L7_16.png>
+Package pdftex.def Info: ../Images/L7_16.png  used on input line 122.
+(pdftex.def)             Requested size: 249.55872pt x 103.35522pt.
+<../Images/L7_17.png, id=903, 859.21pt x 336.25626pt>
+File: ../Images/L7_17.png Graphic file (type png)
+<use ../Images/L7_17.png>
+Package pdftex.def Info: ../Images/L7_17.png  used on input line 123.
+(pdftex.def)             Requested size: 249.55872pt x 97.66574pt.
+ [48 <../Images/L7_13.png> <../Images/L7_14.png> <../Images/L7_15.png> <../Images/L7_16.png>]
+<../Images/L7_18.png, id=916, 821.0675pt x 387.4475pt>
+File: ../Images/L7_18.png Graphic file (type png)
+<use ../Images/L7_18.png>
+Package pdftex.def Info: ../Images/L7_18.png  used on input line 129.
+(pdftex.def)             Requested size: 249.55872pt x 117.76042pt.
+<../Images/L7_19.png, id=917, 515.9275pt x 365.365pt>
+File: ../Images/L7_19.png Graphic file (type png)
+<use ../Images/L7_19.png>
+Package pdftex.def Info: ../Images/L7_19.png  used on input line 135.
+(pdftex.def)             Requested size: 249.55872pt x 176.72794pt.
+<../Images/L7_20.png, id=918, 730.73pt x 301.125pt>
+File: ../Images/L7_20.png Graphic file (type png)
+<use ../Images/L7_20.png>
+Package pdftex.def Info: ../Images/L7_20.png  used on input line 141.
+(pdftex.def)             Requested size: 249.55872pt x 102.84062pt.
+ [49 <../Images/L7_17.png> <../Images/L7_18.png> <../Images/L7_19.png>]
+<../Images/L7_21.png, id=930, 827.09pt x 243.91125pt>
+File: ../Images/L7_21.png Graphic file (type png)
+<use ../Images/L7_21.png>
+Package pdftex.def Info: ../Images/L7_21.png  used on input line 147.
+(pdftex.def)             Requested size: 249.55872pt x 73.5945pt.
+<../Images/L7_22.png, id=931, 834.11626pt x 332.24126pt>
+File: ../Images/L7_22.png Graphic file (type png)
+<use ../Images/L7_22.png>
+Package pdftex.def Info: ../Images/L7_22.png  used on input line 153.
+(pdftex.def)             Requested size: 249.55872pt x 99.39938pt.
+) [50 <../Images/L7_20.png> <../Images/L7_21.png> <../Images/L7_22.png>] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1734,18 +1850,18 @@ Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: 0E79D467E5781E2DF013A4ECD787FCD2;20032.
  ) 
 Here is how much of TeX's memory you used:
- 53228 strings out of 474116
- 1238926 string characters out of 5743682
+ 53412 strings out of 474116
+ 1243315 string characters out of 5743682
  1954187 words of memory out of 5000000
- 74459 multiletter control sequences out of 15000+600000
+ 74617 multiletter control sequences out of 15000+600000
  606936 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,107p,950b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ECE324_Cheatsheet.pdf (46 pages, 20422843 bytes).
+Output written on ECE324_Cheatsheet.pdf (50 pages, 23166969 bytes).
 PDF statistics:
- 990 PDF objects out of 1000 (max. 8388607)
- 773 compressed objects within 8 object streams
- 260 named destinations out of 1000 (max. 500000)
- 1122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1078 PDF objects out of 1200 (max. 8388607)
+ 812 compressed objects within 9 object streams
+ 286 named destinations out of 1000 (max. 500000)
+ 1232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
