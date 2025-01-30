@@ -1019,6 +1019,9 @@ INPUT ../Images/L7_22.png
 INPUT ../Images/L7_22.png
 INPUT ../Images/L7_22.png
 INPUT ../Images/L7_22.png
+INPUT ./Lectures/L8.tex
+INPUT ./Lectures/L8.tex
+INPUT Lectures/L8.tex
 INPUT ECE324_Cheatsheet.aux
 INPUT ./ECE324_Cheatsheet.out
 INPUT ./ECE324_Cheatsheet.out
