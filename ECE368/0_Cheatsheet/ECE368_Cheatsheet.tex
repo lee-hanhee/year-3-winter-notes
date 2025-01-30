@@ -164,50 +164,88 @@
 
     \textcolor{blue}{\textbf{Conditional Exp.}} $E[X|Y] = \int_{-\infty}^{\infty} x f_{X|Y} (x|y) \, dx$
 
-    \switchcolumn
-
     \textcolor{red}{\textbf{Binary Hyp. Testing:}} $H_0$: Null Hyp., $H_1$: Alt. Hyp. \\
 
-    \customFigure[0.2]{../Images/TB_0.png}
-
     \textcolor{blue}{\textbf{TI Err. (False Rejection):}} Reject $H_0$ when $H_0$ is true. \\
-    *$\alpha(R) = P[X \in R \mid H_0]$ 
+    *$\alpha(R) = P[\underline{X} \in R \mid H_0]$ 
 
     \textcolor{blue}{\textbf{TII Err. (False Accept.):}} Accept $H_0$ when $H_1$ is true. \\
-    *$\beta(R) = P[X \in R^c \mid H_1]$ \\
+    *$\beta(R) = P[\underline{X} \in R^c \mid H_1]$ \\
 
     \customFigure[0.11]{../Images/TB_1.png}
 
     \textcolor{blue}{\textbf{Likelihood Ratio Test:}} For each value of $\underline{x}$, \\
-    *$L(\underline{x}) = \frac{P_{\underline{X}|H_1} (\underline{x}|H_1)}{P_{\underline{X}|H_0} (\underline{x}|H_0)} \; \mid \; L(\underline{x}) = \frac{f_{\underline{X}|H_1} (\underline{x}|H_1)}{f_{\underline{X}|H_0} (\underline{x}|H_0)}$ \\
-    *\textbf{ML Rule:} $L(\underline{x}) \leq 1 \Rightarrow \text{Accept } H_0 \; \mid \; L(\underline{x}) > 1 \Rightarrow \text{Reject } H_0$ \\
-    *\textbf{General:} $L(\underline{x}) \leq \xi \Rightarrow \text{Accept } H_0 \; \mid \; L(\underline{x}) > \xi \Rightarrow \text{Reject } H_0$ \\
+    *$L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x}|H_1)}{P_{\underline{X}} (\underline{x}|H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} 1 \text{ or } \xi$ \\
+    *\textbf{MLT:} $1$, \textbf{LRT:} $\xi$
+
+    \textcolor{blue}{\textbf{Neyman-Pearson Lemma:}} Given a false rejection prob. ($\alpha$), the LRT offers the smallest possible false accept. prob. ($\beta$), and vice versa. \\
+    *LRT produces ($\alpha,\beta$) pairs that lie on the efficient frontier.
+
+    \customFigure[0.1]{../Images/L10_0.png}{}
     
-    \customFigure[0.11]{../Images/TB_2.png}
+    % Given $L(X), \xi$ so that \\ 
+    % $P[L(X) > \xi \mid H_0] = \alpha$ and $P[L(X) \leq \xi \mid H_1] = \beta$,
+    % then for any other test (rejection region) w/ $P[X \in R \mid H_0] \leq \alpha$, then $P[X \notin R \mid H_1] \geq \beta$.
 
-    \textcolor{blue}{\textbf{Neyman-Pearson Lemma:}} Given $L(X), \xi$ so that \\ 
-    $P[L(X) > \xi \mid H_0] = \alpha$ and $P[L(X) \leq \xi \mid H_1] = \beta$,
-    then for any other test (rejection region) w/ $P[X \in R \mid H_0] \leq \alpha$, then $P[X \notin R \mid H_1] \geq \beta$.
+    % \textcolor{darkgreen}{\textbf{Sig. Testing:}} Given $X_1, \ldots, X_n$, find a rejection reg. so a level of T1 err. is achieved: $P[\text{Reject } H_0 \mid H_0] = \alpha$. \\
+    % *$\alpha$: Significance level, $1 - \alpha$: Confidence level.
 
-    \textcolor{darkgreen}{\textbf{Sig. Testing:}} Given $X_1, \ldots, X_n$, find a rejection reg. so a level of T1 err. is achieved: $P[\text{Reject } H_0 \mid H_0] = \alpha$. \\
-    *$\alpha$: Significance level, $1 - \alpha$: Confidence level.
+    \textcolor{blue}{\textbf{Bayesian Hyp. Testing:}} \textcolor{darkgreen}{\textbf{MAP Rule:}} \\ 
+    $L(\underline{x}) = \frac{p_{\underline{X}} (\underline{x} | H_1)}{p_{\underline{X}} (\underline{x} | H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} \frac{P[H_0]}{P[H_1]}$ 
+    
+    % Selects hyp. w/ higher a posteriori prob, reject $H_0$ if: \\
+    % $p(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} p(H_0 \mid \underline{x}) \; \mid \; f(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} f(H_0 \mid \underline{x})$ \\
+    % $p_{\underline{X}} (\underline{x} | H_1) P[H_1] \overset{H_1}{\underset{H_0}{\gtrless}} p_{\underline{X}} (\underline{x} | H_0) P[H_0]$ \\
+    
+    % $p(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} p(\underline{x} \mid H_0)\pi_0 \; \mid \; f(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} f(\underline{x} \mid H_0)\,\pi_0$ \\
+    % *$p(H_j \mid \underline{x}) \text{=} \frac{p_{\underline{X}} (\underline{x} \mid H_j) P [H_j]}{p_{\underline{X}} (\underline{x} \mid H_0) P[H_0] + p_{\underline{X}} (\underline{x} \mid H_1) P[H_1]}$: A posteriori 
 
-    \textcolor{blue}{\textbf{Bayesian Hyp. Testing:}} \textcolor{darkgreen}{\textbf{MAP Rule:}} Selects hyp. w/ higher a posteriori prob, reject $H_0$ if: \\
-    $p(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} p(H_0 \mid \underline{x}) \; \mid \; f(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} f(H_0 \mid \underline{x})$ \\
-    $p(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} p(\underline{x} \mid H_0)\pi_0 \; \mid \; f(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} f(\underline{x} \mid H_0)\,\pi_0$ \\
-    *$p(H_j \mid \underline{x}) \text{=} \frac{p_{\underline{X}} (\underline{x} \mid H_j) P [H_j]}{p_{\underline{X}} (\underline{x} \mid H_0) P[H_0] + p_{\underline{X}} (\underline{x} \mid H_1) P[H_1]}$: A posteriori 
+    \textcolor{darkgreen}{\textbf{Min. Cost Bayes' Dec. Rule:}} $C_{ij}$ is cost of choosing $H_j$ when $H_i$ is true. Given obs. $\underline{X} = \underline{x}$, the exp. cost of choosing \\ 
+    $H_j$ is $A_j (\underline{x}) = \sum_{i=0}^1 C_{ij} \, P[H_i | \underline{X} = \underline{x}]$. \\
+    
+    % $\text{Min. Cost Detection} = \sum_{i=0}^1 \sum_{j=0}^1 C_{ij} \, P[\text{decide } j \mid H_i] \, \pi_i$ \\
+    % *$j=0$: Accept $H_0$, $j=1$: Reject $H_0$
 
-    \textcolor{darkgreen}{\textbf{Min. Cost Bayes' Dec. Rule:}} $C_{i,j}$ is cost of accepting $H_j$ when $H_i$ is in place, so
-    the MCBDR minimizes the avg. cost $\text{Min. Cost Detection} = \sum_{i=0}^1 \sum_{j=0}^1 C_{ij} \, P[\text{decide } j \mid H_i] \, \pi_i$ \\
-    *$j=0$: Accept $H_0$, $j=1$: Reject $H_0$
-
-    \textcolor{darkgreen}{\textbf{Min. Cost Dec. Rule:}} Given $\Lambda(\underline{x}) = \frac{f_{\underline{X}} (\underline{x} \mid H_1)}{f_{\underline{X}} (\underline{x} \mid H_0)}$, then \\
-    Accept $H_0$ if $\Lambda(\underline{x}) < \frac{\pi_0 (C_{01} - C_{00})}{\pi_1 (C_{10} - C_{11})}$. \\
-    Accept $H_1$ if $\Lambda(\underline{x}) \geq \frac{\pi_0 (C_{01} - C_{00})}{\pi_1 (C_{10} - C_{11})}$.
+    \textcolor{darkgreen}{\textbf{Min. Cost Dec. Rule:}} 
+    $L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x} \mid H_1)}{P_{\underline{X}} (\underline{x} \mid H_0)}\overset{H_1}{\underset{H_0}{\gtrless}} \frac{(C_{01} - C_{00}) P[H_0]}{(C_{10} - C_{11})P[H_1]}$. \\
+    *$C_{01}$: False accept. cost, $C_{10}$: False reject. cost.
 
     \textcolor{blue}{\textbf{Naive Bayes Assumption:}} Assume $X_1 \ldots, X_n$ (features) are ind., then $p_{\underline{X} \mid \Theta} (\underline{x} \mid \theta) \Pi_{i=1}^n p_X (x_i \mid \theta)$.
 
     \textbf{Notation:} $P_{\underline{X} | \Theta} (\underline{x} | \theta)$, only put RVs in subscript, not values. $P_{\underline{X}} (\underline{x} | H_i)$, didn't put $H$ in subscript b/c it's not a RV.
+
+    \textbf{Binomial} \# of successes in $n$ trials, each w/ prob. $p$ \\
+    $ b(x \mid n, p) = \binom{n}{x} p^x (1 - p)^{n - x}, x = 0, 1, 2, \dots $ \\
+    *$ E[X] = \mu = np \; \mid \; Var(X) = \sigma^2 = np(1 - p) $
+
+    \textbf{Multinomial} \# of $x_i$ successes in $n$ trials, each w/ prob. $p_i$ \\
+    $ f(x_i \mid p_i \forall i, n) = \frac{n!}{x_1! \dots x_m!} p_1^{x_1} \dots p_m^{x_m} $  \\
+    *$ \sum_{i} x_i = n $, and $ \sum_{i=1}^{m} p_i = 1 $ \\
+    *$ E[X_i] = \mu_i = np_i \; \mid \; Var(X_i) = \sigma^2_i = np_i(1 - p_i) $
+
+    \textbf{Hypergeometric} \# of successes in $n$ draws from $N$ items, $k$ of which are successes \\
+    $ h(x \mid N, n, k) = \frac{\binom{k}{x} \binom{N-k}{n-x}}{\binom{N}{n}}$ \\
+    *$\max\{0, n - (N - k)\} \leq x \leq \min\{n, k\} $ \\
+    *$E[X] = \mu = \frac{nk}{N} \; \mid \; Var(X) = \sigma^2 = \frac{N-n}{N-1} \cdot n \cdot \frac{k}{N} \cdot \left(1 - \frac{k}{N} \right) $
+
+    \textbf{Negative Binomial} \# of trials until $k$ successes, each w/ prob. $p$ \\
+    $ b^*(x \mid k, p) = \binom{x-1}{k-1} p^k (1 - p)^{x - k}$ \\
+    *$x \geq k, x = k, k+1, \dots $ \\
+    *$ E[X] = \mu = \frac{k}{p} \; \mid \; Var(X) = \sigma^2 = \frac{k(1 - p)}{p^2} $
+
+    \textbf{Geometric} \# of trials until 1st success, each w/ prob. $p$ \\
+    $ g(x \mid p) = p(1 - p)^{x - 1}$ \\
+    *$x \geq 1, x = 1, 2, 3, \dots $ \\
+    *$ E[X] = \mu = \frac{1}{p} \; \mid \; Var(X) = \sigma^2 = \frac{1 - p}{p^2} $
+
+    \textbf{Poisson} \# of events in a fixed interval w/ rate $\lambda$ \\
+    $ p(x \mid \lambda t) = \frac{e^{-\lambda t} (\lambda t)^x}{x!}$ \\
+    *$x \geq 0, x = 0, 1, 2, \dots $ \\
+    *$ E[X] = \mu = \lambda t \; \mid \; Var(X) = \sigma^2 = \lambda t $
+
+    \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
+    2. Use table to find $Q(x)$ for $x \geq 0$. \\
+
 
     }
 \end{paracol}
