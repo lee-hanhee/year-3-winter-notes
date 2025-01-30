@@ -12,14 +12,13 @@
                 \item \textbf{Time:} Minimizes nodes \textbf{explored}/expanded/exported $\mid$ \textbf{Space:} Minimizes nodes simultaneously open
             \end{itemize}} \\
         \midrule
-        \multicolumn{7}{p{\linewidtwh}}{
+        \multicolumn{7}{p{\linewidth}}{
             Choose \texttt{REMOVE($\cdot$)} so algo. exhibits the characteristics for as many path trees as possible. 
             \begin{itemize}
                 \item $b$ ($b < \infty$): Branching factor (the maximum number of children a node can have)
                 \item $d$: Depth (the length of the longest path), $l^*$: Length of the shortest solution
                 \item $c^*$: Cost of the cheapest solution, $\epsilon$: Cost of the cheapest edge
-            \end{itemize}
-        } \\
+            \end{itemize}} \\
         \midrule
         \multicolumn{7}{p{\linewidth}}{
         \begin{center}
@@ -170,7 +169,7 @@
 \end{definition}
 
 \subsection{Search Algorithms}
-\begin{definition}
+\begin{algo}
     All search algorithms follow the template below:
 
 \begin{lstlisting}
@@ -178,7 +177,7 @@ $\mathcal{O} \gets \{(\langle \rangle, 0)\}$ (*\hfill $\triangleright$ initializ
 SEARCH($\mathcal{O}$)
 \end{lstlisting}
 \begin{itemize}
-    \item $\langle \rangle$ is the empty path, and $0$ is the cost of the empty path.
+    \item $\langle \rangle$: Empty path, $0$: Cost of empty path.
 \end{itemize}
 
 \begin{lstlisting}
@@ -188,17 +187,17 @@ procedure SEARCH($\mathcal{O}$)
     $n \gets \textsc{Remove}(\mathcal{O})$ (*\hfill $\triangleright$ "explore" a node $n$*)
     if $\textsc{dst}(n) \in \mathcal{G}$ then
         return $n$ (*\hfill $\triangleright$ the search algorithm found a path to a goal*)
-    for $n' \in \textsc{chl}(n)$ do
-        $\mathcal{O} \gets \mathcal{O} \cup \{n'\}$ (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+    for $n' \in \textsc{chl}(n)$ do (*\hfill $\triangleright$ "expand" $n$ and "export" its children*)
+        $\mathcal{O} \gets \mathcal{O} \cup \{n'\}$ 
     SEARCH($\mathcal{O}$)
 \end{lstlisting}
 \begin{itemize}
     \item Explore: Remove a node from the open set.
-    \item Exapnd: Generate the children of the node.
+    \item Expand: Generate the children of the node.
     \item Export: Add the children to the open set.
 \end{itemize}
 
-\end{definition}
+\end{algo}
 
 \begin{warning}
     The key difference is in the order that \textsc{Remove}($\cdot$) removes nodes.
@@ -206,7 +205,7 @@ procedure SEARCH($\mathcal{O}$)
 
 \subsection{Modifications to Search Algorithms}
 \subsubsection{Depth-Limiting}
-\begin{definition}
+\begin{algo}
 \begin{lstlisting}
 procedure SEARCHDL($\mathcal{O}$, $d_{\text{max}}$):
     if $\mathcal{O} = \emptyset$ then
@@ -220,14 +219,14 @@ procedure SEARCHDL($\mathcal{O}$, $d_{\text{max}}$):
     SEARCHDL($\mathcal{O}$, $d_{\text{max}}$)
 \end{lstlisting}
 
-\end{definition}
+\end{algo}
 
 \subsubsection{Iterative Deepening}
-\begin{definition}
+\begin{algo}
 \begin{lstlisting}
 procedure SEARCHID():
     $n \leftarrow \text{NULL}$
-    $d_{\text{max}} \leftarrow 0$
+    $d_{\text{max}} = 0$
     (*$\triangleright$ while a solution has not been found, reset the open set, run the search algorithm, then increase the depth-limit*)
     while $n = \text{NULL}$ do
         $\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
@@ -236,14 +235,14 @@ procedure SEARCHID():
     return $n$
 \end{lstlisting}
     
-\end{definition}
+\end{algo}
 
 \begin{warning}
     Increasing $d_{\text{max}}$ can be done in different ways.
 \end{warning}
 
 \subsubsection{Cost-Limiting}
-\begin{definition}
+\begin{algo}
 
 \begin{lstlisting}
 procedure SEARCHCL($\mathcal{O}$, $c_{\text{max}}$):
@@ -258,15 +257,15 @@ procedure SEARCHCL($\mathcal{O}$, $c_{\text{max}}$):
     SEARCHCL($\mathcal{O}$, $c_{\text{max}}$)
 \end{lstlisting}
 
-\end{definition}
+\end{algo}
 \newpage
 
 \subsubsection{Iterative-Inflating}
-\begin{definition}
+\begin{algo}
 \begin{lstlisting}
 procedure SEARCHII():
     $n \leftarrow \text{NULL}$
-    $c_{\text{max}} \leftarrow 0$
+    $c_{\text{max}} = 0$
     (*$\triangleright$ while a solution has not been found, reset the open set, run the search algorithm, then increase the cost-limit*)
     while $n = \text{NULL}$ do
         $\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
@@ -275,14 +274,14 @@ procedure SEARCHII():
     return $n$
 \end{lstlisting}
 
-\end{definition}
+\end{algo}
 
 \begin{warning}
     Increasing $c_{\text{max}}$ can be done in different ways.
 \end{warning}
 
 \subsubsection{Intra-Path Cycle Checking}
-\begin{definition}
+\begin{algo}
 \begin{lstlisting}
 procedure SEARCH($\mathcal{O}$):
     if $\mathcal{O} = \emptyset$ then
@@ -298,11 +297,10 @@ procedure SEARCH($\mathcal{O}$):
 \begin{itemize}
     \item Optimately of an algorithm is preserved provided $\epsilon>0$.
 \end{itemize}
-
-\end{definition}
+\end{algo}
 
 \subsubsection{Inter-Path Cycle Checking}
-\begin{definition}
+\begin{algo}
 \begin{lstlisting}
 procedure SEARCH($\mathcal{O}$, $\mathcal{C}$):
     if $\mathcal{O} = \emptyset$ then
@@ -321,20 +319,20 @@ and then call the algorithm as follows:
 
 \begin{lstlisting}[mathescape=true, escapeinside={(*}{*)}, numbers=left, frame=single]
 $\mathcal{O} \leftarrow \{(\langle \rangle, 0)\}$
-$\mathcal{C} \leftarrow \emptyset$ (*\hfill $\triangleright$ initialize a set of closed vertices*)
+$\mathcal{C} \leftarrow \{\}$ (*\hfill $\triangleright$ initialize a set of closed vertices*)
 SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{lstlisting}
 
-\end{definition}
+\end{algo}
 \newpage
 
 \subsection{Informed Search Algorithms}
 \subsubsection{Estimated Cost}
 \begin{definition}
-    $\text{ecst}(\cdot)$: estimate of the total cost to a goal given a path, $p$, based on:
+    $\text{ecst}(\cdot)$: estimate the total cost to a goal given a path, $p$, based on:
     \begin{itemize}
         \item $\text{cst}(p)$: Cost of path $p$
-        \item $\text{hur} : S \to \mathbb{R}_+$: Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$
+        \item $\text{hur}: S \to \mathbb{R}_+$: Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$
         \begin{itemize}
             \item $\text{hur}(s)$ estimates the cost to get to $\mathcal{G}$ from $s$ and $\text{hur}(p)$ means $\text{hur}(\text{dst}(p))$.
         \end{itemize}
@@ -377,6 +375,10 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     for all $s \in \mathcal{G}$.
 \end{definition}
 
+\begin{theorem}
+    If a heuristic, $\text{hur}(\cdot)$, is consistent, then it is also admissible.
+\end{theorem}
+
 \subsubsection{Domination}
 \begin{definition}
     If $\text{hur}_1$ and $\text{hur}_2$ are admissible, then:
@@ -395,6 +397,14 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
             \text{hur}_1(s) > \text{hur}_2(s)
         \end{equation*}
     \end{itemize}
+\end{definition}
+
+\subsubsection{Designing Heuristics via Problem Relaxation}
+\begin{definition}
+    Let $\text{hur}^*_{\text{ori}}$ be the perfect heuristic for a search problem, and $\text{cst}^*_{\text{rel}}$ be the optimal cost for a relaxed version of the problem. Then
+    \[
+    \text{cst}^*_{\text{rel}}(s) \leq \text{hur}^*_{\text{ori}}(s) \text{ for all } s \in \mathcal{S}.
+    \]
 \end{definition}
 
 \subsubsection{Combining Heuristics}

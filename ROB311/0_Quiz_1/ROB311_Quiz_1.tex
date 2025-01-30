@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage{style}
-\title{ECE353 Lectures}
+\title{ROB311 Quiz 1}
 \author{Hanhee Lee}
 \lhead{ECE353}
 \rhead{Hanhee Lee}
@@ -26,8 +26,6 @@
 \begin{center}
     \section*{Learning Problems}
 \end{center}
-
-\section{PAC Learning}
 \begin{definition}
     Assume that there is some (unknown) relationship, 
     \begin{equation*}
@@ -35,7 +33,7 @@
     \end{equation*}
     \begin{itemize}
         \item $\mathcal{X}$: Input Space
-        \item $\mathcal{Y}$: Output Space (i.e. Information we desire about input)
+        \item $\mathcal{Y}$: Output Space (i.e. information we desire about input)
     \end{itemize}
     \vspace{1em}
 
@@ -60,9 +58,11 @@
 
 \subsection{Feature Spaces}
 \begin{definition}
-    It is often easier to learn relationships from high-level features (instead of the raw input).
+    It is often easier to learn relationships from high-level features (instead of the raw input). We will need mapping b/w input space and feature space:
+    $$\phi: \mathcal{X} \rightarrow \mathcal{F}$$
 \end{definition}
 
+\section{PAC Learning}
 \input{Lectures/L4.tex}
 
 \section{Decision Trees}
