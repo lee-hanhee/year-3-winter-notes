@@ -220,16 +220,20 @@
     3. $a=0 \implies y(t) = \mathbf{1}(t)$ is constant.
     \customFigure[0.1]{../Images/L10_0.png}
 
-    \textcolor{green}{\textbf{Time Constant:}} When $a>0$, $\tau = \frac{1}{a}$ is the time constant of the pole $s=-a$.
+    \textcolor{green}{\textbf{Time Constant:}} $\tau = \frac{1}{a}$ of the pole $s=-a$ for $a>0$
 
     \textcolor{blue}{\textbf{Pair of Comp. Conj. Poles:}} \\
     $y(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2} = \frac{\omega_n^2}{(s + \sigma)^2 + \omega_d^2}$, $|\zeta| < 1$, then \\
     $y(t) = \frac{\omega_n}{\sqrt{1 - \zeta^2}} e^{-\sigma t} \sin(\omega_d t) \mathbf{1}(t)$ \\
     *Poles: $s_{1,2} = - \zeta \omega_n \pm j \omega_n \sqrt{1 - \zeta^2} = -\sigma \pm j \omega_d$ \\
-    *$\zeta$: Damping ratio (or damping coefficient) \\
-    *$\sigma$: Decay/growth rate $\mid$ $\omega_d$: Freq. of oscillation \\
-    *$\omega_n \left[\frac{\text{radians}}{\text{seconds}} \right]$: Undamped natural freq. \\
-    *$\omega_d \left[\frac{\text{radians}}{\text{seconds}} \right]$: Damped natural freq. \\
+    *$\zeta = \frac{\sigma}{\omega_n}$: Damping ratio (or damping coefficient) \\
+    *$\sigma = \zeta \omega_n$: Decay/growth rate $\mid$ $\omega_d$: Freq. of oscillation \\
+    *$\omega_n = \sqrt{\sigma^2 + \omega_d^2} \left[\frac{\text{radians}}{\text{seconds}} \right]$: Undamped natural freq. \\
+    *$\omega_d = \omega_n \sqrt{1 - \zeta^2} \left[\frac{\text{radians}}{\text{seconds}} \right]$: Damped natural freq. \\
+    *$|s_{1,2}|^2 = \omega_n^2$: Mag. of poles is $\omega_n$. \\
+    *$\cos^{-1}(\zeta)$: Angle of $s_1$ on complex plane CW from -ve $\text{Re}$ axis. \\
+
+    \customFigure[0.2]{../Images/L10_5.png}
 
     \textcolor{green}{\textbf{Damping Ratio Effect:}} $0 < \zeta_1 < \zeta_2 < 1$, then \\
     \customFigure[0.2]{../Images/L10_3.png}
@@ -237,37 +241,39 @@
     $-1 < \zeta_4 < \zeta_3 < 0$, then $\sigma = \zeta \omega_n <0$, (exp. envelop $\uparrow$) \\
     \customFigure[0.2]{../Images/L10_4.png}
 
-    \textcolor{blue}{\textbf{Class. of 2nd Order Systems:}} $y(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$, then \\
+    \textcolor{blue}{\textbf{Class. of 2nd Order Sys.:}} $y(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$, w/ $|\zeta| < 1$ \\
     \customFigure[0.2]{../Images/L10_1.png}
 
-    \textcolor{blue}{\textbf{Loc. of Poles and Behavior:}} $\sigma = \zeta \omega_n$, $\omega_d = \omega_n \sqrt{1 - \zeta^2}$ \\
-    *$\zeta = \frac{\sigma}{\sqrt{\sigma^2 + \omega_d^2}} \mid \omega_n = \sqrt{\sigma^2 + \omega_d^2}$ \\
+    \textcolor{blue}{\textbf{Loc. of Poles and Behavior:}} 
     \customFigure[0.2]{../Images/L10_2.png}
 
-    \textcolor{red}{\textbf{Control Spec. of 2nd Order Systems:}} \textcolor{blue}{\textbf{Step Response:}} Given a TF $G(s)$, its SR is $y(t)$ resulting from applying the input $u(t) = \mathbf{1}(t)$, i.e. $\mathcal{L}^{-1} \left\{G(s) \frac{1}{s} \right\}$.
+    \textcolor{red}{\textbf{Control Spec. of 2nd Order Sys.:}} \textcolor{blue}{\textbf{Step Response:}} Given a TF $G(s)$, its SR is $y(t)$ resulting from applying the input $u(t) = \mathbf{1}(t)$, i.e. $\mathcal{L}^{-1} \left\{G(s) \frac{1}{s} \right\}$.
 
     \textcolor{blue}{\textbf{Control Spec.}} A control spec. is a criterion specifiying how we would like a CS to behave. 
 
-    \textcolor{blue}{\textbf{Metrics:}} Used to quantify the transient performance of 2nd order systems w/ $0 < \zeta < 1$.
+    % \textcolor{blue}{\textbf{Metrics:}} Used to quantify the transient performance of 2nd order systems w/ $0 < \zeta < 1$.
 
-    \textcolor{green}{\textbf{Rise Time}:} $T_r$ is the time it takes $y(t)$ to go from 10\% to 90\% of its steady-state value.
+    \textcolor{blue}{\textbf{2nd Order Sys. Metrics:}} $G(s) \text{=} \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$ w/ $U(s) \text{=} \frac{1}{s}$ \\
+    *$0 < \zeta < 1$ (i.e. 2 comp. conj. poles w/ $\text{Re(pole)}<0$). 
+    \customFigure[0.2]{../Images/L10_6.png}
 
-    \textcolor{orange}{\textbf{Rise Time:}} 1. Find $t_1 > 0$ s.t. $y(t_1) = 0.1$. \\ 
-    2. Find $t_2 > 0$ s.t. $y(t_2) = 0.9$. \\
-    3. Compute $T_r = t_2 - t_1$. Approx. $T_r \approx \frac{1.8}{\omega_n}$. 
+    \textcolor{green}{\textbf{Rise Time (RT)}:} $T_r$ is the time it takes $y(t)$ to go from 10\% to 90\% of its steady-state value.
 
-    \textcolor{green}{\textbf{Settling Time}:} $T_s$ is the time required to reach and stay within 2\% of the steady-state value.
+    \textcolor{orange}{\textbf{RT:}} 1. Find $t_1 > 0$ s.t. $y(t_1) = 0.1$, $t_2 > 0$ s.t. $y(t_2) = 0.9$. \\
+    3. Compute $T_r = t_2 - t_1$. $\boxed{T_r \approx \frac{1.8}{\omega_n}}$. 
 
-    \textcolor{orange}{\textbf{Settling Time:}} 1. Look at $|y(t) - 1|$ and find when it is first that $|y(t) - 1| \leq 0.02$. Approx.: $T_s \approx \frac{4}{\zeta \omega_n}$.
+    \textcolor{green}{\textbf{Settling Time (ST)}:} $T_s$ is the time required to reach and stay w/in 2\% of the steady-state value.
 
-    \textcolor{green}{\textbf{Peak Time}:} $T_p$ is the time required to reach the maximum (peak) value.
+    \textcolor{orange}{\textbf{ST:}} 1. Find when it's first that $|y(t) - 1| \leq 0.02$. $\boxed{T_s \approx \frac{4}{\zeta \omega_n}}$.
+
+    \textcolor{green}{\textbf{Peak Time}:} $T_p$ is time req'd to reach the max (peak) value.
 
     \textcolor{orange}{\textbf{Peak Time:}} 1. Find the first time when $\overset{\cdot}{y}(t) = 0$. \\
-    *$T_p = \frac{\pi}{\omega_d} = \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}}$.
+    *$\boxed{T_p = \frac{\pi}{\omega_d} = \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}}}$.
 
     \textcolor{green}{\textbf{\% Overshoot}:} $\% \text{OS} = \frac{\text{[peak value]} - \text{[steady-state value]}}{\text{[steady-state value]}} \times 100\%$ \\
     *$\text{\% OS} = \text{OS} \times 100 \%$. \\
-    *$\text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \iff \zeta = \frac{-\ln(\text{OS})}{\sqrt{\pi^2 + (\ln(\text{OS}))^2}}$.
+    *$\boxed{\text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \iff \zeta = \frac{-\ln(\text{OS})}{\sqrt{\pi^2 + (\ln(\text{OS}))^2}}}$.
 
     \textcolor{red}{\textbf{Transient Performance Satisfaction:}} Admissible region for the poles of $G(s)$ s.t. the step response meets all three spec. \\
     \textcolor{blue}{\textbf{Rise Time:}} $T_r \approx \frac{1.8}{\omega_n} \leq T_r^d \overset{\text{approx.}}{\iff} \omega_n \geq \frac{1.8}{T_r^d} \equiv \omega_n^d$ 
