@@ -275,17 +275,24 @@
     *$\text{\% OS} = \text{OS} \times 100 \%$. \\
     *$\boxed{\text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \iff \zeta = \frac{-\ln(\text{OS})}{\sqrt{\pi^2 + (\ln(\text{OS}))^2}}}$.
 
-    \textcolor{red}{\textbf{Transient Performance Satisfaction:}} Admissible region for the poles of $G(s)$ s.t. the step response meets all three spec. \\
-    \textcolor{blue}{\textbf{Rise Time:}} $T_r \approx \frac{1.8}{\omega_n} \leq T_r^d \overset{\text{approx.}}{\iff} \omega_n \geq \frac{1.8}{T_r^d} \equiv \omega_n^d$ 
+    \textcolor{red}{\textbf{Transient Performance Sat.:}} Given performance spec. $T_r \leq T_r^d$, $T_s \leq T_s^d$, $\text{OS} \leq \text{OS}^d$, find loc. of poles of $G(s)$. \\
+    *Admissible region for the poles of $G(s)$ s.t. the step response meets all three spec. is the intersection of the above three regions. \\
+    \textcolor{blue}{\textbf{Rise Time:}} $T_r \approx \frac{1.8}{\omega_n} \leq T_r^d \overset{\text{app.}}{\iff} \omega_n \geq \frac{1.8}{T_r^d} \equiv \omega_n^d$ 
 
     \customFigure[0.1]{../Images/L12_0.png}
 
-    \textcolor{blue}{\textbf{Settling Time:}} $T_s \approx \frac{4}{\zeta \omega_n} = \frac{4}{\sigma} \leq T_s^d \overset{\text{approx.}}{\iff} \sigma \geq \frac{4}{T_s^d} \equiv \sigma^d$ 
+    \textcolor{blue}{\textbf{Settling Time:}} $T_s \approx \frac{4}{\zeta \omega_n} = \frac{4}{\sigma} \leq T_s^d \overset{\text{app.}}{\iff} \sigma \geq \frac{4}{T_s^d} \equiv \sigma^d$ 
     \customFigure[0.1]{../Images/L12_1.png}
 
-    \textcolor{blue}{\textbf{OS:}} $\text{OS} = \text{exp}\left(-\frac{\pi \zeta}{\sqrt{1-\zeta^2}}\right) \leq \text{OS}^d \overset{\text{approx.}}{\iff}$\\ 
-    $\zeta \geq \frac{-\ln(\text{OS}^d)}{\sqrt{\pi^2 + (\ln(\text{OS}^d))^2}} \equiv \zeta^d$ 
+    \textcolor{blue}{\textbf{OS:}} $\text{exp}\left(\frac{-\pi \zeta}{\sqrt{1\text{-}\zeta^2}}\right) \leq \text{OS}^d \overset{\text{app.}}{\iff} \zeta \geq \frac{-\ln(\text{OS}^d)}{\sqrt{\pi^2 + (\ln(\text{OS}^d))^2}} \equiv \zeta^d$ 
     \customFigure[0.1]{../Images/L12_2.png}
+
+    \textcolor{blue}{\textbf{Add. Poles \& Zeros:}} The analysis remains approx. correct under the following assumptions: \\
+    1. Any add. poles of $G(s)$ have much more -ve real part (5-10 times) than the real part of the dom. comp. conjugate poles. 
+    \customFigure[0.2]{../Images/L12_3.png} \\
+    *\textcolor{red}{dominant poles}, \textcolor{blue}{additional poles}.
+
+    2. Real part of zeros are -ve \& very diff. from the real part of the two dom. poles. 
 
 
         }

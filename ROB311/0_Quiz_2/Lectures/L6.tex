@@ -1,0 +1,110 @@
+\subsection{Bayesian Network}
+\begin{definition}
+    Vertices represent random variables and edges represent dependencies between variables.
+\end{definition}
+
+\subsubsection{Junction}
+\begin{definition}
+    A \textbf{junction} consists of three vertices, $X_1$, $X_2$, and $X_3$, connected by two edges, $e_1$ and $e_2$:
+    \begin{itemize}
+        \item Both arrows pointing in one direction
+        \item Both arrows pointing in opposite directions
+        \item One arrow pointing in each direction
+    \end{itemize}
+\end{definition}
+
+\begin{warning}
+    Want to look for causal relationships. 
+    Arrows, what's causing what, what's influencing what.
+\end{warning}
+
+\subsubsection{Causal Chain}
+\begin{definition}
+    A causal chain is a junction of the following form:
+    \begin{itemize}
+        \item $X_1$ and $X_2$ are dependent. $X_2$ is dependent on $X_1$. Vice versa. From a causal perspective, $X_1$ is influencing $X_2$. Subtle difference, just bc $X_1 \rightarrow X_2$.
+        \item $X_2$ and $X_3$ are dependent.
+        \item $X_1$ and $X_3$ are dependent. 
+        \begin{itemize}
+            \item Given $X_2$, $X_1$ and $X_3$ are independent. Why? $X_2$'s door closes when you know $X_2$, so $X_1$ and $X_3$ are independent.
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{warning}
+    $X_1$ is influeincing $X_2$ and $X_2$ is influencing $X_3$.
+\end{warning}
+
+\subsubsection{Common Cause}
+\begin{definition}
+    A common cause is a junction of the form: 
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item $X_1$ and $X_3$ are dependent. 
+        \begin{itemize}
+            \item Given $X_2$, $X_1$ and $X_3$ are independent. Why? $X_2$ whether you smoke or not, $X_1$ whether you have yellow teeth, $X_3$ whether you have lung cancer, if you don't know $X_2$, if they have yellow teeth, then they might smoke, then they might have lung cancer. If you know $X_2$, yellow teeth and lung cancer are independent b/c you already know if they smoke or not, and yellow teeth implies smoke, 
+        \end{itemize}
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Common Effect}
+\begin{definition}
+    A common effect is a junction of the form:
+    
+\end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item $X_1$ and $X_3$ are independent. 
+        \item Given $X_2$ or any of $X_2$'s descendents, $X_1$ and $X_3$ are dependent.
+    \end{itemize}
+\end{notes}
+
+\begin{warning}
+    Just b/c you don't know something about the middle variable, then it can be independent
+\end{warning}
+
+\begin{example}
+    $X_2$ Grass being wet, $X_1$ raining, and $X_3$ sprinkler being on.
+    \begin{itemize}
+        \item If you know the grass is wet, you know that either the sprinkler is on or it's raining.
+        \begin{itemize}
+            \item If it didn't have the sprinkler on, then it must have rained.
+            \item If it didn't rain, then the sprinkler must have been on.
+            \item So this means that $X_1$ and $X_3$ are dependent given $X_2$.
+        \end{itemize}
+        \item If you don't know the grass is wet, then $X_1$ and $X_3$ are independent b/c you don't know if it rained or the sprinkler was on.
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Caveman is deciding whether to go hunt for meat. He must take into account several factors:
+        \begin{itemize}
+            \item Weather
+            \item Possibility of over-exertion
+            \item Possibility encountering lion
+        \end{itemize}
+
+        These factors can result in Cavemen's death. His decision will ultimately depend on the \textbf{chances} of his death.
+        \item \textbf{Binary Variables:}
+        \begin{itemize}
+            \item $W = \{\text{Sun}, \text{Rainy}\}$: Weather
+            \item $H$: Whether the Cavemen goes hunting or not.
+            \item $L$: Whether the Cavemen encounters a lion or not.
+            \item $T$: Whether the Cavement is tired or not.
+            \item $D$: Whether the Cavemen dies or not
+        \end{itemize}
+        \item \textbf{Problem:} Cavemen must decide whether to go hunting or not. 
+        \begin{itemize}
+            \item He must consider the conditional probabilities (i.e. dependence) of each event.
+        \end{itemize}
+    \end{enumerate}
+\end{example}
+
+\begin{warning}
+    Have to be discrete. 
+\end{warning}
+
