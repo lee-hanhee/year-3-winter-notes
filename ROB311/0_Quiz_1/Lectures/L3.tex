@@ -168,8 +168,33 @@
         \end{itemize}
     \end{itemize}
 \end{example}
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Consider a CSP in which $\mathcal{V} = \{A, B, C, D, E\}$, where:
+
+        \[
+        \begin{aligned}
+            \text{dom}(A) &= \{0, 1, 2, 3, 4\} \\
+            \text{dom}(B) &= \{0, 1, 2, 3, 4\} \\
+            \text{dom}(C) &= \{0, 1, 2, 3\} \\
+            \text{dom}(D) &= \{0, 1, 2, 3, 4, 5\} \\
+            \text{dom}(E) &= \{0, 1, 2, 3, 4, 5, 6\} 
+        \end{aligned}
+        \]
+        
+        and $\mathcal{C} = \{C_1, C_2, C_3, C_4\}$, where:
+        
+        \[
+        \begin{aligned}
+            C_1 &: 8 \leq 2a + 2b + 2d + 3e \leq 10 \\
+            C_2 &: 3 \leq a + c \leq 4 \\
+            C_3 &: 2 \leq a + b + 2c \leq 5 \\
+            C_4 &: 1 \leq b \leq 2
+        \end{aligned}
+        \]
+        
+        \item \textbf{Problem:} Solve the following CSP using $k = 4$ consistency. Pre-prune the domains using $k = 4$ consistency. Assign variables in alphabetical order and values in numerical order.
+    \end{enumerate}
+\end{example}
 \newpage
-
-
-
-

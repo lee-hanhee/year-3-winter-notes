@@ -145,6 +145,10 @@
     A search problem may have no solutions, in which case, we define the solution as \texttt{NULL}.
 \end{definition}
 
+\begin{warning}
+    A NULL solution is not the same as $p = \langle \rangle$ (an empty solution w/ $s^{(0)} \in \mathcal{G}$).
+\end{warning}
+
 \subsection{Search Graphs}
 \begin{definition}
     In a search graph (a graph representing a search problem):
@@ -429,7 +433,8 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \newpage
 
 \subsection{Canonical Examples}
-\begin{process} \textbf{How to setup a search problem?}
+\subsubsection{How to setup a search problem?}
+\begin{process} 
     \begin{enumerate}
         \item Givne a search graph, we need to define the following:
         \begin{itemize}
@@ -468,8 +473,8 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{example}
 \newpage
 
-
-\begin{process} \textbf{How to setup a path tree?}
+\subsubsection{How to setup a path tree?}
+\begin{process} 
     \begin{enumerate}
         \item Start at $s^{(0)}$
         \item Choose a path until you reach a goal state.
@@ -484,16 +489,41 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
 \newpage
 
-\begin{process} \textbf{When to use each algorithm?}
+\subsubsection{When to use each algorithm?}
+\begin{process} 
     \begin{enumerate}
+        \item Do we have a heuristic?
+        \begin{itemize}
+            \item \textbf{Yes:} Use informed search algorithms.
+            \item \textbf{No:} Use uninformed search algorithms.
+        \end{itemize}
+        \item  Are path costs non-uniform?
+        \begin{itemize}
+            \item \textbf{Yes:} Eliminate BFS.
+            \item \textbf{No:} Eliminate CFS, $A*$
+        \end{itemize}
+        \item 
+        \item Is the search space finite or infinite? 
+        \begin{itemize}
+            \item \textbf{Finite:} Use any algorithm.
+            \item \textbf{Infinite:} Use BFS, IDDFS, CFS, or A*.
+        \end{itemize}
+        \item Do we need to guarantee finding a solution (completeness)?
+        \begin{itemize}
+            \item \textbf{Yes:} Use BFS, IDDFS, IIA*, CFS (if $\epsilon > 0$).
+            \item \textbf{No:} Use DFS, HFS, WA*
+        \end{itemize}
         \item Find properties needed for the problem and match them to the characteristics of the algorithm.
         \item Choose the algorithm that best matches the properties.
         \begin{itemize}
-            \item \textbf{BFS:} 
-            \item \textbf{DFS:} 
-            \item \textbf{IDDFS:} 
-            \item \textbf{CFS:}
+            \item \textbf{BFS:} Need shortest path in an unweighted graph. 
+            \item \textbf{DFS:} Explore a deep path quickly, and completeness is not needed.
+            \item \textbf{IDDFS:} Want completeness of BFS but with the complexity of DFS.
+            \item \textbf{CFS:} Need the least-cost path in a weighted graph. 
+            \item \textbf{HFS:}
             \item \textbf{A*:} 
+            \item \textbf{IIA*:}
+            \item \textbf{WA*:}
         \end{itemize}
     \end{enumerate}
 \end{process}
@@ -503,16 +533,18 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{example}
 \newpage
 
+\subsubsection{Tracing Search Algorithms}
 \begin{example}
     \customFigure[0.5]{../Images/LR_0.png}{}
 \end{example}
 
 \begin{process} \textbf{BFS}
     \begin{enumerate}
-        \item Start at $s_0$ 
-        \item Expand all neighboring nodes of the current node and add them to the open set (queue).
-        \item Remove the current node from the open set and mark it as visited.
-        \item Repeat steps 2 and 3 until the goal state is reached or the open set is empty.
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (queue).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the least-recently expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
@@ -535,11 +567,11 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
 \begin{process} \textbf{DFS}
     \begin{enumerate}
-        \item Start at $s_0$ (initial state).
-        \item Push the initial node onto the stack.
-        \item Pop a node from the stack and expand it.
-        \item Push all unvisited children of the current node onto the stack.
-        \item Repeat steps 3 and 4 until the goal state is reached or the stack is empty.
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (stack).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the most-recently expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
@@ -552,18 +584,18 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
          & $\{A\}$ \\
         $A$ & $\{B,C,D\}$ \\
         $AD$ & $\{B,C,E\}$ \\
-        $ADE$ & $\{C, B\}$ \\
+        $ADE$ & $\{B, C\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
 \end{example}
-
+\newpage
 
 \begin{process} \textbf{IDDFS}
     \begin{enumerate}
         \item Start with a depth limit of 0.
-        \item Perform Depth-First Search (DFS) up to the current depth limit.
-        \item If the goal state is not reached and there are unexplored nodes, increment the depth limit and repeat step 2.
+        \item Perform DFS up to the current depth limit.
+        \item If the goal state is not reached, increment the depth limit based on given fcn and repeat step 2.
         \item Continue until the goal state is found or all nodes are explored.
     \end{enumerate}
 \end{process}
@@ -591,15 +623,17 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
 \begin{process} \textbf{CFS}
     \begin{enumerate}
-        \item Start at $s_0$ (initial state).
-        \item Initialize the open set (priority queue) with the initial state and its cost.
-        \item Remove the node with the lowest cost from the open set.
-        \item Expand the node and add all unvisited neighbors to the open set with their cumulative costs.
-        \item Repeat steps 3 and 4 until the goal state is reached or the open set is empty.
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (priority queue).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the cheapest expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
 \begin{example} \textbf{CFS}
+
+    \textbf{No Inter-Path Cycle Checking, No Intra-Path Cycle Checking}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
@@ -607,12 +641,35 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \midrule
          & $\{A \mid 0\}$ \\
         $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ \\
-        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3\}$ \\
-        $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
-        $ABCE$ & $\{AC \mid 4, \; AD \mid 6, \; ABCD \mid 6\}$ \\
+        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; ABA \mid 4\}$ \\
+        $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABA \mid 4, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
+        $AC$ & $\{AD \mid 6, \; ABA \mid 4, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
+        $ABA$ & $\{AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6, \; ABAB \mid 6, \; ABAC \mid 8, \; ABAD \mid 10\}$ \\
+        $ABCE$ & $\{AC \mid 4, \; ABA \mid 4, \; AD \mid 6, \; ABCD \mid 6\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
+    \vspace{1em}
+
+    \textbf{Intra-Path Cycle Checking:}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A \mid 0\}$ \\
+        $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ \\
+        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; \cancel{ABA} \quad \text{intra} \}$ \\
+        $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
+        $AC$ & $\{AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
+        $ABCE$ & $\{AC \mid 4, \; AD \mid 6, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \begin{itemize}
+        \item \textbf{Inter-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
+    \end{itemize}
+
 \end{example}
 
 \begin{warning}
@@ -620,14 +677,15 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \item How to perform shortcut? 
     \end{itemize}
 \end{warning}
+\newpage
 
 \begin{process} \textbf{HFS}
     \begin{enumerate}
-        \item Start at $s_0$ (initial state).
-        \item Initialize the open set with the initial state and its heuristic value.
-        \item Remove the node with the lowest heuristic value from the open set.
-        \item Expand the node and add all unvisited neighbors to the open set with their heuristic values.
-        \item Repeat steps 3 and 4 until the goal state is reached or the open set is empty.
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (priority queue).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the lowest heuristic value expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
@@ -644,19 +702,42 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \bottomrule
         \end{tabular}
     \end{center}
+    \begin{itemize}
+        \item \textbf{Inter/Intra-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
+    \end{itemize}
 \end{example}
 
 
 \begin{process} \textbf{A$^*$}
     \begin{enumerate}
-        \item Start at $s_0$ 
-        \item Choose path in open set that gives lowest $\text{esct}(p) = \text{cst}(p) + \text{hur}(p)$.
-        \item Expand and export children onto open set.
-        \item Repeat until goal state is reached.
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (priority queue).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the lowest $\text{esct}(p) = \text{cst}(p) + \text{hur}(p)$ expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
     \end{enumerate}
 \end{process}
 
 \begin{example} \textbf{A$^*$}
+
+    \textbf{No Inter-Path Cycle Checking, No Intra-Path Cycle Checking}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A \mid 3 \}$ \\
+        $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
+        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1, \; ABA \mid 4 + 3 \}$ \\
+        $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0, \; ABA \mid 7 \}$ \\
+        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ABA \mid 7, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0\}$ \\
+        $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABA \mid 7 \; ACD \mid 8, \; ACE \mid 6 \}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \textbf{Intra-Path Cycle Checking:}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
@@ -671,26 +752,68 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \bottomrule
         \end{tabular}
     \end{center}
+    \begin{itemize}
+        \item \textbf{Inter-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
+    \end{itemize}
 \end{example}
+\newpage
+
+\begin{process} \textbf{IIA*}
+    \begin{enumerate}
+        \item Start with a cost limit of 0.
+        \item Perform A* up to the current cost limit.
+        \item If the goal state is not reached, increment the cost limit based on given fcn and repeat step 2.
+        \item Continue until the goal state is found or all nodes are explored.
+    \end{enumerate}
+\end{process}
 
 \begin{example} \textbf{IIA*}
     
+    \textbf{Inter-Path Cycle Checking, Intra-Path Cycle Checking}
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Cost} & \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+        0 & $\langle \rangle$ & $\{A \mid 0 + 3\}$ \\
+        \midrule
+        1 & $\langle \rangle$ & $\{A \mid 3\}$ \\
+        \midrule
+        2 & $\langle \rangle$ & $\{A \mid 3\}$ \\
+        \midrule
+        3 & $\langle \rangle$ & $\{A \mid 3\}$ \\
+        3 & $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
+        \midrule
+        4 & $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1\}$ \\
+        4 & $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0\}$ \\
+        \midrule
+        5 & $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0\}$ \\
+        5 & $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
 
-\begin{example} \textbf{WA*}
-    
-\end{example}
+\begin{process} \textbf{WA*}
+    \begin{enumerate}
+        \item Start at $s_0$ as \textbf{current node}
+        \item Expand all neighboring nodes of the \textbf{current node} and add them to the open set (priority queue).
+        \item Remove the \textbf{current node} from the open set and add it to the path. 
+        \item Choose the lowest $\text{esct}(p) =  w \cdot \text{cst}(p) + (1-w) \cdot \text{hur}(p)$ expanded node from the open set as the \textbf{current node}.
+        \item Repeat steps 2 and 4 until the goal state is reached or the open set is empty.
+    \end{enumerate}
+\end{process}
 \newpage
 
 \begin{process} \textbf{How to Prove Consistent/Admissible Given a Search Graph?}
    
     \textbf{Admissible:}
     \begin{enumerate}
-        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$ or $\text{rwd}(s,a,\text{tr}(s,a))$. If consistent, then it is admissible.
+        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$. If consistent, then it is admissible.
         \item Check $\forall s \in \mathcal{G}$, $\text{hur}(s) = 0$. If not, then it is not admissible.
         \item For each $s \in \mathcal{S}$, calculate $\text{hur}^*(s)$ (i.e. actual cost of optimal soln.) using the search graph.
         \begin{enumerate}
-            \item Start at $s$ and choose path that gives the lowest cost or highest reward to $s \in \mathcal{G}$. 
+            \item Start at $s$ and choose path that gives the lowest cost to $s \in \mathcal{G}$. 
         \end{enumerate}
         \item Check if $\text{hur}(s) \leq \text{hur}^*(s) \; \forall s \in \mathcal{S}$. If not, then it is not admissible.
         \item Repeat $\forall s \in \mathcal{S}$. 
@@ -700,11 +823,11 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
     \textbf{Consistent:}
     \begin{enumerate}
-        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$ or $\text{rwd}(s,a,\text{tr}(s,a))$. 
+        \item Given $\text{hur}(s)$ and search graph with $\text{cst}(s,a,\text{tr}(s,a))$. 
         \item Check $\forall s \in \mathcal{G}$, $\text{hur}(s) = 0$. If not, then it is not consistent.
         \item For each $s \in \mathcal{S}$, calculate $\text{hur}(s) - \text{hur}(\text{tr}(s, a))$.
         \begin{enumerate}
-            \item check if it is $\leq \text{cst}(s,a,\text{tr}(s,a))$ or $\geq \text{rwd}(s,a,\text{tr}(s,a))$. If not, then it is not consistent.
+            \item check if it is $\leq \text{cst}(s,a,\text{tr}(s,a))$. If not, then it is not consistent.
             \item Repeat $\forall a \in \mathcal{A}(s)$
         \end{enumerate}
         \item Repeat $\forall s \in \mathcal{S}$.
@@ -715,6 +838,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \begin{warning}
     Be careful of bidirectional edges bc for consistency you need compute the cost of the heuristic edge in both directions.
 \end{warning}
+\newpage
 
 \begin{example}
     \customFigure[0.5]{../Images/L2_8.png}{Jungle ($s^{(0)}$), Desert, Swamp, Mountain, Plains (Goal)}

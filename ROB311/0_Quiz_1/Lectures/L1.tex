@@ -1,6 +1,5 @@
 \begin{summary}
     \begin{itemize}
-        \item This course will focus on planning
         \item Variables:
         \begin{itemize}
             \item State: $\mathbf{x}(t)$
@@ -21,17 +20,17 @@ In a planning problem, it is assumed that:
     \begin{itemize}
         \item the environment is representable using a discrete set of states, $\mathcal{S}$
         \item for each state, $s \in \mathcal{S}$, each agent, $i$, has a discrete set of actions, $\mathcal{A}_i(s)$, with $\mathcal{A}(s) := \times_i \mathcal{A}_i(s)$ (joint action set)
-        \item a \textbf{move} is any tuple, $(s, a)$, where $s \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
-        \item a \textbf{transition} is any 3-tuple, $(s, a, s')$, where $s, s' \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \item \textbf{Move:} Any tuple, $(s, a)$, where $s \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
+        \item \textbf{Transition:} Any 3-tuple, $(s, a, s')$, where $s, s' \in \mathcal{S}$ and $a \in \mathcal{A}(s)$
         \begin{itemize}
             \item the transition resulting from a move may be deterministic/stochastic
         \end{itemize}
-        \item $\text{rwd}_i(s, a, s')$ is agent $i$'s reward for the transition, $(s, a, s')$
-        \item a \textbf{path} is any sequence of transitions of the form
+        \item \textbf{Reward:} $\text{rwd}_i(s, a, s')$ is agent $i$'s reward for the transition, $(s, a, s')$
+        \item \textbf{Path:} Any sequence of transitions of the form.
         \[
         p = \left\langle (s^{(0)}, a^{(1)}, s^{(1)}), (s^{(1)}, a^{(2)}, s^{(2)}), \ldots \right\rangle
         \]
-        \item each agent wants to realize a path that maximizes its own reward
+        \item \textbf{Objective:} Each agent wants to realize a path that maximizes its own reward
     \end{itemize}
 \end{definition}
 
