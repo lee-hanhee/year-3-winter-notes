@@ -61,6 +61,26 @@
 \newpage
 
 \subsection{Setup of CSP}
+\begin{example}
+    Different ways to formulate the CSP problem. 
+    \begin{itemize}
+        \item How can you formualte the CSP problem in a different way? Can I get a specific example?
+        \begin{itemize}
+            \item The domain could be set to everything, then set the constraints later.
+        \end{itemize}
+        \item What is the constraint graph showing? Grouping the variables
+        \item How do you check consistency in a CSP?
+        \item Why can you use any search algorithm when you formulate this as a search problem? 
+        \item What does a node contain? A node contans a path. 
+        \begin{itemize}
+            \item How does that match the example on slide 10. It does. 
+        \end{itemize}
+        \item Why is formulalting a CSP problem as a search problem a bad idea? B/c you have to search through all possible combinations, but if you find a constraint then you can prune the search space.
+        \begin{itemize}
+            \item A lot easier to see if there is a solution or not. But in a search problem, you see if there's a solution and how to get to it. 
+        \end{itemize}
+    \end{itemize}
+\end{example}
 
 \begin{example}
     \customFigure[0.5]{../Images/L3_0.png}{}
@@ -112,8 +132,8 @@
                 \item For each $v \in \text{dom}(V)$, do the following:
             \end{enumerate}
             \begin{itemize}
-                \item Fix $V$ to $v$.
-                \item For the other $V \in \text{scp}(C)$, check if the constraint is satisfied by trying all combinations (need only one). 
+                \item Fix $V$ to $v$ for $k-1$ variables.
+                \item For the last variable $V$, find a value in $\text{dom}(V)$ that satisfies all constraints.
                 \item \textbf{Key:} If there is one combination that doesn't satisfy the constraint, then the CSP is not $k$-consistent.
             \end{itemize}
         \end{enumerate}
@@ -141,32 +161,19 @@
         \item \textbf{Pruning:} Every constraint is satisfied.
     \end{enumerate}
 \end{process}
+
+\begin{warning}
+    Can think of checking as picking $k-1$ variables, then choosing any value for the $k^\text{th}$ variable that satisfies all constraints. While enforcing is fixing a variable to a value, then checking if there is a combination for the other variables that satisfies all constraints.
+\end{warning}
+
+\begin{warning}
+    Enforcing $k$-consistency is enforcing $k-1,\ldots,1$-consistency.
+\end{warning}
 \newpage
 
 \begin{example}
     \customFigure[0.5]{../Images/L3_6.png}{}    
     \customFigure[0.5]{../Images/L3_7.png}{Pre-pruning. Since only one constraint, it is also pruning.}    
-\end{example}
-
-\begin{example}
-    Different ways to formulate the CSP problem. 
-    \begin{itemize}
-        \item How can you formualte the CSP problem in a different way? Can I get a specific example?
-        \begin{itemize}
-            \item The domain could be set to everything, then set the constraints later.
-        \end{itemize}
-        \item What is the constraint graph showing? Grouping the variables
-        \item How do you check consistency in a CSP?
-        \item Why can you use any search algorithm when you formulate this as a search problem? 
-        \item What does a node contain? A node contans a path. 
-        \begin{itemize}
-            \item How does that match the example on slide 10. It does. 
-        \end{itemize}
-        \item Why is formulalting a CSP problem as a search problem a bad idea? B/c you have to search through all possible combinations, but if you find a constraint then you can prune the search space.
-        \begin{itemize}
-            \item A lot easier to see if there is a solution or not. But in a search problem, you see if there's a solution and how to get to it. 
-        \end{itemize}
-    \end{itemize}
 \end{example}
 \newpage
 
@@ -342,7 +349,7 @@
             \toprule
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
-                $C_1 8 \leq 2a + 2b + 2d + 3e \leq 10$
+                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
             \end{center}} \\
             \midrule
                 $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
@@ -360,7 +367,7 @@
             \midrule
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
-                $C_1 8 \leq 2a + 2b + 2d + 3e \leq 10$
+                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
             \end{center}} \\
             \midrule
                 $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
