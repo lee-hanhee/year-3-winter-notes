@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  3 FEB 2025 00:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  4 FEB 2025 00:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1248,10 +1248,13 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./ROB311_Quiz_1.toc)
-\tf@toc=\write5
-\openout5 = `ROB311_Quiz_1.toc'.
-
+) (./ROB311_Quiz_1.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
  [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
@@ -1278,75 +1281,72 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (./Lectures/L1.tex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
- [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-<../Images/L1_4.png, id=243, 599.23875pt x 317.185pt>
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+\tf@toc=\write5
+\openout5 = `ROB311_Quiz_1.toc'.
+
+ [2] (./Lectures/L1.tex [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+<../Images/L1_4.png, id=371, 599.23875pt x 317.185pt>
 File: ../Images/L1_4.png Graphic file (type png)
 <use ../Images/L1_4.png>
 Package pdftex.def Info: ../Images/L1_4.png  used on input line 44.
 (pdftex.def)             Requested size: 374.33807pt x 198.14816pt.
-<../Images/L1_5.png, id=245, 605.26125pt x 304.13625pt>
+<../Images/L1_5.png, id=373, 605.26125pt x 304.13625pt>
 File: ../Images/L1_5.png Graphic file (type png)
 <use ../Images/L1_5.png>
 Package pdftex.def Info: ../Images/L1_5.png  used on input line 45.
 (pdftex.def)             Requested size: 374.33807pt x 188.10309pt.
- [3 <../Images/L1_4.png> <../Images/L1_5.png>]
-<../Images/L1_0.png, id=254, 534.99875pt x 376.40625pt>
+ [4 <../Images/L1_4.png> <../Images/L1_5.png>]
+<../Images/L1_0.png, id=382, 534.99875pt x 376.40625pt>
 File: ../Images/L1_0.png Graphic file (type png)
 <use ../Images/L1_0.png>
 Package pdftex.def Info: ../Images/L1_0.png  used on input line 51.
 (pdftex.def)             Requested size: 249.55872pt x 175.58421pt.
-<../Images/L1_1.png, id=255, 626.34pt x 212.795pt>
+<../Images/L1_1.png, id=383, 626.34pt x 212.795pt>
 File: ../Images/L1_1.png Graphic file (type png)
 <use ../Images/L1_1.png>
 Package pdftex.def Info: ../Images/L1_1.png  used on input line 62.
 (pdftex.def)             Requested size: 249.55872pt x 84.7853pt.
- [4 <../Images/L1_0.png> <../Images/L1_1.png>]
-<../Images/L1_2.png, id=264, 519.9425pt x 240.9pt>
+ [5 <../Images/L1_0.png> <../Images/L1_1.png>]
+<../Images/L1_2.png, id=392, 519.9425pt x 240.9pt>
 File: ../Images/L1_2.png Graphic file (type png)
 <use ../Images/L1_2.png>
 Package pdftex.def Info: ../Images/L1_2.png  used on input line 75.
 (pdftex.def)             Requested size: 249.55872pt x 115.62332pt.
-<../Images/L1_3.png, id=265, 575.14874pt x 236.885pt>
+<../Images/L1_3.png, id=393, 575.14874pt x 236.885pt>
 File: ../Images/L1_3.png Graphic file (type png)
 <use ../Images/L1_3.png>
 Package pdftex.def Info: ../Images/L1_3.png  used on input line 88.
 (pdftex.def)             Requested size: 199.64392pt x 82.22421pt.
- [5 <../Images/L1_2.png> <../Images/L1_3.png>]
-<../Images/L1_6.png, id=274, 193.72375pt x 173.64874pt>
+ [6 <../Images/L1_2.png> <../Images/L1_3.png>]
+<../Images/L1_6.png, id=402, 193.72375pt x 173.64874pt>
 File: ../Images/L1_6.png Graphic file (type png)
 <use ../Images/L1_6.png>
 Package pdftex.def Info: ../Images/L1_6.png  used on input line 105.
 (pdftex.def)             Requested size: 124.77936pt x 111.85022pt.
-<../Images/L1_7.png, id=275, 215.80624pt x 269.005pt>
+<../Images/L1_7.png, id=403, 215.80624pt x 269.005pt>
 File: ../Images/L1_7.png Graphic file (type png)
 <use ../Images/L1_7.png>
 Package pdftex.def Info: ../Images/L1_7.png  used on input line 114.
 (pdftex.def)             Requested size: 124.77936pt x 155.53865pt.
- [6 <../Images/L1_6.png> <../Images/L1_7.png>]
-<../Images/L1_8.png, id=284, 207.77625pt x 276.03125pt>
+ [7 <../Images/L1_6.png> <../Images/L1_7.png>]
+<../Images/L1_8.png, id=413, 207.77625pt x 276.03125pt>
 File: ../Images/L1_8.png Graphic file (type png)
 <use ../Images/L1_8.png>
 Package pdftex.def Info: ../Images/L1_8.png  used on input line 124.
 (pdftex.def)             Requested size: 124.77936pt x 165.76743pt.
-<../Images/L1_9.png, id=285, 197.73875pt x 171.64125pt>
+<../Images/L1_9.png, id=414, 197.73875pt x 171.64125pt>
 File: ../Images/L1_9.png Graphic file (type png)
 <use ../Images/L1_9.png>
 Package pdftex.def Info: ../Images/L1_9.png  used on input line 138.
 (pdftex.def)             Requested size: 124.77936pt x 108.31264pt.
- [7 <../Images/L1_8.png> <../Images/L1_9.png>]
-<../Images/L1_10.png, id=295, 517.935pt x 279.0425pt>
+ [8 <../Images/L1_8.png> <../Images/L1_9.png>]
+<../Images/L1_10.png, id=423, 517.935pt x 279.0425pt>
 File: ../Images/L1_10.png Graphic file (type png)
 <use ../Images/L1_10.png>
 Package pdftex.def Info: ../Images/L1_10.png  used on input line 148.
 (pdftex.def)             Requested size: 174.69414pt x 94.11955pt.
-) [8 <../Images/L1_10.png>] (./Lectures/L2.tex
+) [9 <../Images/L1_10.png>] (./Lectures/L2.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 13.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1359,296 +1359,173 @@ Overfull \hbox (17.37567pt too wide) in paragraph at lines 3--83
  [] 
  []
 
-[9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+[10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 90--131
  [] 
  []
 
-[10] [11] [12] [13] [14] [15]
-<../Images/L2_0.png, id=427, 444.66125pt x 238.8925pt>
+[11] [12] [13] [14] [15] [16]
+<../Images/L2_0.png, id=555, 444.66125pt x 238.8925pt>
 File: ../Images/L2_0.png Graphic file (type png)
 <use ../Images/L2_0.png>
 Package pdftex.def Info: ../Images/L2_0.png  used on input line 454.
 (pdftex.def)             Requested size: 249.55872pt x 134.07414pt.
-<../Images/L2_1.png, id=428, 422.57875pt x 68.255pt>
+<../Images/L2_1.png, id=556, 422.57875pt x 68.255pt>
 File: ../Images/L2_1.png Graphic file (type png)
 <use ../Images/L2_1.png>
 Package pdftex.def Info: ../Images/L2_1.png  used on input line 455.
 (pdftex.def)             Requested size: 249.55872pt x 40.30966pt.
- [16 <../Images/L2_0.png> <../Images/L2_1.png>]
-<../Images/L2_9.png, id=439, 445.665pt x 263.98625pt>
+ [17 <../Images/L2_0.png> <../Images/L2_1.png>]
+<../Images/L2_9.png, id=567, 445.665pt x 263.98625pt>
 File: ../Images/L2_9.png Graphic file (type png)
 <use ../Images/L2_9.png>
 Package pdftex.def Info: ../Images/L2_9.png  used on input line 460.
 (pdftex.def)             Requested size: 249.55872pt x 147.82323pt.
-<../Images/L2_10.png, id=440, 413.545pt x 277.035pt>
+<../Images/L2_10.png, id=568, 413.545pt x 277.035pt>
 File: ../Images/L2_10.png Graphic file (type png)
 <use ../Images/L2_10.png>
 Package pdftex.def Info: ../Images/L2_10.png  used on input line 461.
 (pdftex.def)             Requested size: 249.55872pt x 167.18185pt.
- [17 <../Images/L2_9.png> <../Images/L2_10.png>]
-<../Images/L2_2.png, id=450, 415.5525pt x 201.75375pt>
+ [18 <../Images/L2_9.png> <../Images/L2_10.png>]
+<../Images/L2_2.png, id=578, 415.5525pt x 201.75375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
 Package pdftex.def Info: ../Images/L2_2.png  used on input line 486.
 (pdftex.def)             Requested size: 249.55872pt x 121.16092pt.
-<../Images/L2_3.png, id=451, 406.51875pt x 208.78pt>
+<../Images/L2_3.png, id=579, 406.51875pt x 208.78pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
 Package pdftex.def Info: ../Images/L2_3.png  used on input line 487.
 (pdftex.def)             Requested size: 249.55872pt x 128.16795pt.
- [18 <../Images/L2_2.png> <../Images/L2_3.png>] [19]
-<../Images/LR_0.png, id=478, 603.25375pt x 246.9225pt>
+ [19 <../Images/L2_2.png> <../Images/L2_3.png>] [20]
+<../Images/LR_0.png, id=606, 603.25375pt x 246.9225pt>
 File: ../Images/LR_0.png Graphic file (type png)
 <use ../Images/LR_0.png>
 Package pdftex.def Info: ../Images/LR_0.png  used on input line 538.
 (pdftex.def)             Requested size: 249.55872pt x 102.14688pt.
- [20 <../Images/LR_0.png>] [21] [22] [23] [24]
-<../Images/L2_8.png, id=562, 446.66875pt x 228.855pt>
+ [21 <../Images/LR_0.png>] [22] [23] [24] [25]
+<../Images/L2_8.png, id=691, 446.66875pt x 228.855pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
 Package pdftex.def Info: ../Images/L2_8.png  used on input line 844.
 (pdftex.def)             Requested size: 249.55872pt x 127.86458pt.
- [25 <../Images/L2_8.png>]
-<../Images/L2_11.png, id=593, 412.54124pt x 278.03876pt>
+ [26 <../Images/L2_8.png>]
+<../Images/L2_11.png, id=721, 412.54124pt x 278.03876pt>
 File: ../Images/L2_11.png Graphic file (type png)
 <use ../Images/L2_11.png>
 Package pdftex.def Info: ../Images/L2_11.png  used on input line 895.
 (pdftex.def)             Requested size: 249.55872pt x 168.19487pt.
-) [26 <../Images/L2_11.png>] (./Lectures/L3.tex [27] [28]
-<../Images/L3_0.png, id=612, 588.1975pt x 390.45876pt>
+) [27 <../Images/L2_11.png>] (./Lectures/L3.tex [28] [29]
+<../Images/L3_0.png, id=740, 588.1975pt x 390.45876pt>
 File: ../Images/L3_0.png Graphic file (type png)
 <use ../Images/L3_0.png>
 Package pdftex.def Info: ../Images/L3_0.png  used on input line 66.
 (pdftex.def)             Requested size: 249.55872pt x 165.65976pt.
-<../Images/L3_1.png, id=613, 544.0325pt x 272.01625pt>
+<../Images/L3_1.png, id=741, 544.0325pt x 272.01625pt>
 File: ../Images/L3_1.png Graphic file (type png)
 <use ../Images/L3_1.png>
 Package pdftex.def Info: ../Images/L3_1.png  used on input line 67.
 (pdftex.def)             Requested size: 249.55872pt x 124.78033pt.
-<../Images/L3_2.png, id=614, 515.9275pt x 405.515pt>
+<../Images/L3_2.png, id=742, 515.9275pt x 405.515pt>
 File: ../Images/L3_2.png Graphic file (type png)
 <use ../Images/L3_2.png>
 Package pdftex.def Info: ../Images/L3_2.png  used on input line 68.
 (pdftex.def)             Requested size: 249.55872pt x 196.14857pt.
- [29 <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L3_2.png>]
-<../Images/L3_3.png, id=626, 488.82625pt x 349.305pt>
+ [30 <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L3_2.png>]
+<../Images/L3_3.png, id=754, 488.82625pt x 349.305pt>
 File: ../Images/L3_3.png Graphic file (type png)
 <use ../Images/L3_3.png>
 Package pdftex.def Info: ../Images/L3_3.png  used on input line 79.
 (pdftex.def)             Requested size: 249.55872pt x 178.32973pt.
-<../Images/L3_4.png, id=627, 621.32124pt x 367.3725pt>
+<../Images/L3_4.png, id=755, 621.32124pt x 367.3725pt>
 File: ../Images/L3_4.png Graphic file (type png)
 <use ../Images/L3_4.png>
 Package pdftex.def Info: ../Images/L3_4.png  used on input line 89.
 (pdftex.def)             Requested size: 249.55872pt x 147.5574pt.
-<../Images/L3_5.png, id=628, 616.3025pt x 300.12125pt>
+<../Images/L3_5.png, id=756, 616.3025pt x 300.12125pt>
 File: ../Images/L3_5.png Graphic file (type png)
 <use ../Images/L3_5.png>
 Package pdftex.def Info: ../Images/L3_5.png  used on input line 90.
 (pdftex.def)             Requested size: 249.55872pt x 121.52554pt.
- [30 <../Images/L3_3.png> <../Images/L3_4.png> <../Images/L3_5.png>]
-<../Images/L3_8.png, id=643, 483.8075pt x 74.2775pt>
+ [31 <../Images/L3_3.png> <../Images/L3_4.png> <../Images/L3_5.png>]
+<../Images/L3_8.png, id=772, 483.8075pt x 74.2775pt>
 File: ../Images/L3_8.png Graphic file (type png)
 <use ../Images/L3_8.png>
 Package pdftex.def Info: ../Images/L3_8.png  used on input line 100.
 (pdftex.def)             Requested size: 249.55872pt x 38.31396pt.
- [31 <../Images/L3_8.png>] [32]
-<../Images/L3_6.png, id=670, 265.99374pt x 245.91875pt>
+ [32 <../Images/L3_8.png>] [33]
+<../Images/L3_6.png, id=798, 265.99374pt x 245.91875pt>
 File: ../Images/L3_6.png Graphic file (type png)
 <use ../Images/L3_6.png>
 Package pdftex.def Info: ../Images/L3_6.png  used on input line 147.
 (pdftex.def)             Requested size: 249.55872pt x 230.72836pt.
-<../Images/L3_7.png, id=671, 221.82875pt x 129.48375pt>
+<../Images/L3_7.png, id=799, 221.82875pt x 129.48375pt>
 File: ../Images/L3_7.png Graphic file (type png)
 <use ../Images/L3_7.png>
 Package pdftex.def Info: ../Images/L3_7.png  used on input line 148.
 (pdftex.def)             Requested size: 249.55872pt x 145.66884pt.
+ [34 <../Images/L3_6.png> <../Images/L3_7.png>] [35]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 205--258
+ [] 
+ []
 
-./Lectures/L3.tex:216: Misplaced \noalign.
-\midrule ->\noalign 
-                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
-l.216             \midrule
-                          
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+[36]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 264--334
+ [] 
+ []
 
-./Lectures/L3.tex:217: Missing } inserted.
-<inserted text> 
-                }
-l.217             $
-                   b=0$ & No \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+[37]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 340--381
+ [] 
+ []
 
-./Lectures/L3.tex:217: Missing } inserted.
-<inserted text> 
-                }
-l.217             $
-                   b=0$ & No \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+[38]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 398--451
+ [] 
+ []
 
-./Lectures/L3.tex:217: Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.217             $
-                   b=0$ & No \\
-I'm guessing that you meant to end an alignment here.
+[39]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 457--527
+ [] 
+ []
 
-./Lectures/L3.tex:217: Undefined control sequence.
-\@BTrule ...\doublerulesep \fi \fi \fi \@BTswitch 
-                                                  
-l.217             $
-                   b=0$ & No \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[40]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 538--573
+ [] 
+ []
 
-./Lectures/L3.tex:217: Misplaced alignment tab character &.
-l.217             $b=0$ &
-                          No \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-./Lectures/L3.tex:218: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.218             $
-                   b=1$ & Yes \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+Overfull \hbox (12.0pt too wide) in paragraph at lines 583--602
+ [] 
+ []
 
-./Lectures/L3.tex:218: Misplaced alignment tab character &.
-l.218             $b=1$ &
-                          Yes \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+) [41] (./Lectures/L4.tex [42] [43]) (./Lectures/L5.tex [44]
+<../Images/L5_0.png, id=869, 274.02374pt x 230.8625pt>
+File: ../Images/L5_0.png Graphic file (type png)
+<use ../Images/L5_0.png>
+Package pdftex.def Info: ../Images/L5_0.png  used on input line 76.
+(pdftex.def)             Requested size: 249.55872pt x 210.25427pt.
+ [45 <../Images/L5_0.png>]) [46] (./ROB311_Quiz_1.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+Package rerunfilecheck Info: File `ROB311_Quiz_1.out' has not changed.
+(rerunfilecheck)             Checksum: CAA0F10B05CAC0C25B0233384363E564;11340.
+ ) 
+Here is how much of TeX's memory you used:
+ 53462 strings out of 474116
+ 1236961 string characters out of 5743682
+ 2147187 words of memory out of 5000000
+ 74519 multiletter control sequences out of 15000+600000
+ 638659 words of font info for 110 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,22n,107p,810b,1487s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ROB311_Quiz_1.pdf (46 pages, 3143183 bytes).
+PDF statistics:
+ 1123 PDF objects out of 1200 (max. 8388607)
+ 954 compressed objects within 10 object streams
+ 407 named destinations out of 1000 (max. 500000)
+ 699 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-./Lectures/L3.tex:219: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.219             $
-                   b=2$ & Yes \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:219: Misplaced alignment tab character &.
-l.219             $b=2$ &
-                          Yes \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:220: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.220             $
-                   b=3$ & No \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:220: Misplaced alignment tab character &.
-l.220             $b=3$ &
-                          No \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:221: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.221             $
-                   b=4$ & No \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:221: Misplaced alignment tab character &.
-l.221             $b=4$ &
-                          No \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:222: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.222             \multicolumn
-                              {2}{p{\linewidth}}{
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:229: Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.229             \end{itemize}}
-                                 \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./Lectures/L3.tex:229: Misplaced \span.
-\sp@n ->\span 
-              \omit \advance \@multicnt \m@ne 
-l.229             \end{itemize}}
-                                 \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./Lectures/L3.tex:229: Misplaced \omit.
-\sp@n ->\span \omit 
-                    \advance \@multicnt \m@ne 
-l.229             \end{itemize}}
-                                 \\
-I expect to see \omit only after tab marks or the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./Lectures/L3.tex:229: Misplaced alignment tab character &.
-\@sharp ...begin {itemize} \item $\text {dom}(A) &
-                                                  = \{0, 1, 2, 3, 4\}$ \item...
-l.229             \end{itemize}}
-                                 \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampe
