@@ -13,19 +13,13 @@
         \item $\epsilon$: Tolerance (i.e. how close we want $\nu$ to be to $\mu$).
         \begin{itemize}
             \item $\epsilon \rightarrow 0$: $\nu = \mu$
-            \item $\epsilon \rightarrow \infty$: $\nu \rightarrow \mu$
         \end{itemize}
     \end{itemize}
 \end{definition}
 
 \begin{warning}
-    We can approximate the true distribution with high probability by taking a large enough sample size, NOT guaranteeing that we can find the true distribution.
-    \begin{itemize}
-        \item Don't need to know where this theorem comes from.
-    \end{itemize}
+    Approximate the true distribution with high probability by taking a large enough sample size (i.e. empirical distribution converges to true distribution).
 \end{warning}
-
-Consider determining the class of a randomly chosen target point. If we ask a K-ary question about the points in $\mathcal{D}$
 
 \subsection{PAC Learning}
 \subsubsection{Error}
@@ -42,36 +36,61 @@ Consider determining the class of a randomly chosen target point. If we ask a K-
     \end{itemize}
 \end{definition}
 
-\subsubsection{Two Conflicting Requirements}
-\begin{definition}
-    \begin{itemize}
-        \item $E_{\text{in}}(h) \stackrel{?}{\approx} E_{\text{out}}$ requires small $|\mathcal{H}|$ (generalization)
-        \item $E_{\text{in}}(h) \approx 0$ requires large $|\mathcal{H}|$ (discrimination)
-    \end{itemize}
-\end{definition}
+\subsubsection{Union Bound Theorem}
+\begin{theorem}
+    \begin{equation*}
+        \mathbb{P} \left[E_1 \lor \cdots \lor E_M \right] \leq \sum_{i=1}^{M} \mathbb{P}[E_i]
+    \end{equation*}
+\end{theorem}
 
-\subsubsection{S}
-\begin{definition}
-    If we endow $\mathcal{F}$ w/ probability distribution, $P : \mathcal{X} \to [0,1]$, then $E_{\text{out}}$ is analogous to $\mu$ and $E_{\text{in}}(h)$ is analogous to $\nu$. If we then assume that $h$ is chosen from a set of hypotheses $\mathcal{H}$, we can derive a (loose) upper-bound on $|E_{\text{out}} - E_{\text{in}}|$:
+\begin{warning}
+    If the events are highly correlated, then the union bound is not tight.
+\end{warning}
 
+\subsubsection{Generalization of Hoeffding's Inequality}
+\begin{definition}
+    Assuming that $h$ is chosen from a set of hypotheses $\mathcal{H}$, derive a (loose) upper-bound on $|E_{\text{out}} - E_{\text{in}}|$:
     \begin{align*}
         \mathbb{P} \left[ \bigvee_{h \in \mathcal{H}} \left( |E_{\text{out}} - E_{\text{in}}(h)| > \varepsilon \right) \right]
         &\leq \sum_{h \in \mathcal{H}} \mathbb{P} \left[ |E_{\text{out}} - E_{\text{in}}(h)| > \varepsilon \right] \\
         &\leq \sum_{h \in \mathcal{H}} 2e^{-2\varepsilon^2 N} \\
         &= 2 |\mathcal{H}| e^{-2\varepsilon^2 N} 
     \end{align*}
+    \begin{itemize}
+        \item Endow $\mathcal{F}$ w/ prob. distribution, $P : \mathcal{X} \to [0,1]$, then 
+        \begin{itemize}
+            \item $E_{\text{out}}$ is analogous to $\mu$ 
+            \item $E_{\text{in}}(h)$ is analogous to $\nu$. 
+        \end{itemize}
+    \end{itemize}
 \end{definition}
 
-\begin{warning}
-    If the events are highly correlated, then the union bound is not tight.
-\end{warning}
-\newpage
+\begin{notes}
+    \begin{itemize}
+        \item $E_{\text{in}}(h) \stackrel{?}{\approx} E_{\text{out}}$ requires small $|\mathcal{H}|$ (generalization)
+        \item $E_{\text{in}}(h) \approx 0$ requires large $|\mathcal{H}|$ (discrimination)
+    \end{itemize}
+\end{notes}
 
 \begin{example}
-    Take $N$ i.i.d. samples (i.e. take out a ball from an urn, record its color, and put it back in).
-    \begin{itemize}
-        \item $\nu \rightarrow \mu$ (empirical distribution $\rightarrow$ true distribution) as $N \rightarrow \infty$
-    \end{itemize}
+    \begin{enumerate}
+        \item \textbf{Given:} An opaque box containing \textcolor{red}{red} and \textcolor{blue}{blue} balls. Take $N$ IID samples.
+        \begin{itemize}
+            \item $\mu$: Probability of drawing a \textcolor{blue} ball (unknown).
+            \item $\nu$: Relative frequency of \textcolor{blue} balls in the sample (known).
+        \end{itemize}
+        \item \textbf{Problem 1:} What is $\nu$ in this case? 8 balls total, 5 are blue. 
+        \item \textbf{Solution 1:} $\nu = \frac{5}{8}$
+        \item \textbf{Problem 2:} How to partition $\mathcal{F}$ into regions where \textcolor{blue}{$f=h$} and \textcolor{red}{$f \neq h$}?
+        \item \textbf{Solution 2:} 
+        \customFigure[0.5]{../Images/L5_8.png}{LS $h$, MS $f$}
+        \item \textbf{Problem 3:} What is the out-sample error?
+        \item \textbf{Solution 3:} In words, the probability of the hypothesis being wrong.
+        \customFigure[0.3]{../Images/L5_9.png}{}
+        \item \textbf{Problem 4:} What is the in-sample error given this sample of 11 balls s.t. $f=h$, $1$ ball s.t. $f \neq h$?
+        \item \textbf{Solution 4:} $E_{\text{in}} = \frac{1}{12}$
+        
+    \end{enumerate}
 \end{example}
 
 

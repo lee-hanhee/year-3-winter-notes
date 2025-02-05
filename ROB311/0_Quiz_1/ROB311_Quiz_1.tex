@@ -26,44 +26,12 @@
 \begin{center}
     \section*{Learning Problems}
 \end{center}
-\begin{definition}
-    Assume that there is some (unknown) relationship, 
-    \begin{equation*}
-        f: \mathcal{X} \rightarrow \mathcal{Y} \text{ s.t. } x \mapsto_f y
-    \end{equation*}
-    \begin{itemize}
-        \item $\mathcal{X}$: Input Space
-        \item $\mathcal{Y}$: Output Space (i.e. information we desire about input)
-    \end{itemize}
-    \vspace{1em}
-
-    Find $h: \mathcal{X} \rightarrow \mathcal{Y}$ (hypothesis) s.t. $h \approx f$, given some data about $f$: 
-    \begin{equation*}
-        \mathcal{D} = \left\{ \left(x^{(i)}, y_i\right), x^{(i)} \in \mathcal{X}, y_i = f\left(x^{(i)}\right) \in \mathcal{Y}, i = 1 \ldots N \right\}
-    \end{equation*}
-
-    \begin{itemize}
-        \item $\text{in}(\mathcal{D}) = \{x \text{ s.t. } (x,y) \in \mathcal{D}\}$
-        \item $\text{out}(\mathcal{D}) = \{y \text{ s.t. } (x,y) \in \mathcal{D}\}$
-    \end{itemize}
-\end{definition}
-
-\subsection{Classification vs. Regression Problems}
-\begin{definition}
-    \begin{itemize}
-        \item \textbf{Classification Problems:} $\mathcal{X} \subseteq \mathbb{R}^M$ and $\mathcal{Y} \subseteq \mathbb{N}$
-        \item \textbf{Regression Problems:} $\mathcal{X} \subseteq \mathbb{R}^M$ and $\mathcal{Y} \subseteq \mathbb{R}$
-    \end{itemize}
-\end{definition}
-
-\subsection{Feature Spaces}
-\begin{definition}
-    It is often easier to learn relationships from high-level features (instead of the raw input). We will need mapping b/w input space and feature space:
-    $$\phi: \mathcal{X} \rightarrow \mathcal{F}$$
-\end{definition}
+\input{Lectures/L4_0.tex}
+\newpage
 
 \section{PAC Learning}
 \input{Lectures/L4.tex}
+\newpage
 
 \section{Decision Trees}
 \input{Lectures/L5.tex}

@@ -1,11 +1,4 @@
-\subsection{Decision Trees}
-\begin{motivation}
-    A simple model used for classification problems.
-    \vspace{1em}
-
-    We want to find the minimum \# of condition vertices (or questions) needed to "sufficiently discriminate" (identify the class of every point in \(\mathcal{D}\)).
-\end{motivation}
-\subsubsection{Structure}
+\subsection{Structure}
 \begin{definition}
     Each vertex in a decision tree is either:
     \begin{enumerate}
@@ -14,14 +7,67 @@
     \end{enumerate}
 \end{definition}
 
-\begin{warning}
+\begin{notes}
+    We want to find the minimum \# of condition vertices (or questions) needed to "sufficiently discriminate" (identify the class of every point in \(\mathcal{D}\)).
     \begin{itemize}
         \item More condition vertices improve discrimination.
         \item Less condition vertices improve generalization.
     \end{itemize}
+\end{notes}
+
+\subsection{Building a Decision Tree}
+\begin{definition}
+    Consider determining the calss of a randomly chosen target point. 
+    \begin{itemize}
+        \item If we ask a $K$-ary question abt. the pts. in $\mathcal{D}$, we can form $K$ subsets, $\mathcal{D}^{(1)},\ldots,\mathcal{D}^{(K)}$, using the answers s.t. 
+        \begin{itemize}
+            \item $|\mathcal{D}^{(k)}| \in \{0,\ldots,|\mathcal{D}|\}$
+            \item $|\mathcal{D}| = \sum_{k=1}^{K} |\mathcal{D}^{(k)}|$
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Special Case}
+\begin{notes}
+    Suppose each pt. belongs to a unique class (i.e. the \# of classes is $|\mathcal{D}|$).
+    \customFigure[0.5]{../Images/L5_10.png}{}
+    \begin{enumerate}
+    \item Before asking the question: \( |\mathcal{D}| \) possible guesses for the target point’s class.
+    \item After asking the question: Either 
+    \begin{itemize}
+        \item \( |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K-1)}| \) or 
+        \item \( |\mathcal{D}^{(K)}| \) 
+    \end{itemize}
+    guesses, depending on the answer for the target point.
+
+    \item Goal: Minimize the \# of guesses needed in the worst-case, which would be 
+    \[
+    \max \{ |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \}.
+    \]
+
+    \item Given the constraints on \( |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \), we can show that $\max \{ |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \}$ is minimized when
+    \[
+    |\mathcal{D}^{(K)}| \in \left\{ \left\lfloor \frac{|\mathcal{D}|}{K} \right\rfloor, \left\lceil \frac{|\mathcal{D}|}{K} \right\rceil \right\}.
+    \]
+
+    Basically, the best question splits \( \mathcal{D} \) into \( K \) sets of (roughly) the same size.
+    \end{enumerate}
+\end{notes}
+
+\begin{warning}
+    Roughly due to floor/ceil.
 \end{warning}
 
-\subsection{Building a Decision Tree: The General Case}
+\begin{theorem}
+    Given a classification data-set, \( \mathcal{D} \), in which the class of each point is unique (i.e., \( |\text{out}(\mathcal{D})| = |\mathcal{D}| \)), the class of a randomly chosen target point can be determined within 
+    \[
+    \lceil \log_K (|\mathcal{D}|) \rceil
+    \]
+    \( K \)-ary questions.
+
+\end{theorem}
+
+\subsubsection{General Case}
 \begin{motivation}
     Suppose points do not necessarily belong to a unique class.
     \vspace{1em}
@@ -149,7 +195,11 @@
         \item \textbf{Problem:} Draw a decision tree using binary conditions of the form, \(x_i \leq k\), where \(i \in \{1, 2\}\) and \(k \in \mathbb{Z}\), that maximizes the information gained at each level.
         \item \textbf{Solution:}
         \begin{enumerate}
-            \item 
+            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
+            \item Entropy after the split:
+            \begin{enumerate}
+                \item 
+            \end{enumerate}
         \end{enumerate}
     \end{enumerate}
 \end{example}
