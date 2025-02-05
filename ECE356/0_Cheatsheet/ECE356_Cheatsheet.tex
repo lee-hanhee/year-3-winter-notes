@@ -295,24 +295,89 @@
     2. Real part of zeros are -ve \& very diff. from the real part of the two dom. poles. 
 
     \textcolor{red}{\textbf{Internal Stablity:}} $\overset{\cdot}{x} = Ax$ is \\
-    1. \textbf{Stable} if $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ is bounded; that is, $\exists M > 0$ s.t. $\|x(t)\| \leq M$ $\forall t \geq 0$. \\
-    2. \textbf{Asymp. Stable} if it is stable \& $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ converges to the origin; that is, $\lim_{t \to \infty} x(t) = 0$. \\
-    3. \textbf{Unstable} if it is not stable; that is, $\exists x(0) \in \mathbb{R}^n$ s.t. $x(t)$ is not bounded. 
+    1. \textbf{Stable} if $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ is bdd; that is, $\exists M > 0$ s.t. $\|x(t)\| \leq M$ $\forall t \geq 0$. \\
+    2. \textbf{Asymp. Stable} if it's stable \& $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ converges to the origin; that is, $\lim_{t \to \infty} x(t) = 0$. \\
+    3. \textbf{Unstable} if it's not stable; that is, $\exists x(0) \in \mathbb{R}^n$ s.t. $x(t)$ is not bdd. 
 
-    \textcolor{blue}{\textbf{Asymptotic Stablity Thm.}} $\overset{\cdot}{x} = Ax$ is asymp. stable iff $\text{eig}(A) \subseteq \mathbb{C}^- \equiv \{s \in \mathbb{C} \mid \text{Re}(s) < 0\}$, i.e. open left half plane (OLHP).
+    \textcolor{blue}{\textbf{Asymptotic Stablity Thm.}} $\overset{\cdot}{x} = Ax$ is A.S. iff $\text{eig}(A) \subseteq \mathbb{C}^- \equiv \{s \in \mathbb{C} \mid \text{Re}(s) < 0\}$, i.e. open left half plane (OLHP).
 
     \textcolor{blue}{\textbf{Instability Thm.}} If $\exists$ an eigenvalue $\lambda$ of $A$ w/ $\text{Re}(\lambda) > 0$, then $\overset{\cdot}{x} = Ax$ is unstable.
 
-    \textcolor{red}{\textbf{BIBO Stability:}} An LTI system w/ 0 ini. cond. is Bounded Input Bounded Output (BIBO) stable if for any bdd input $u(t)$, the output $y(t)$ is also bdd.
+    \textcolor{blue}{\textbf{Fact:}} Zeros of $s^2 + a_1 s + a_0$ are in $\mathbb{C}^-$ iff $a_1, a_0 > 0$.
 
-    \textcolor{blue}{\textbf{BIBO Stable:}} An LTI system w/ 0 ini. cond. is BIBO unstable if it's not BIBO stable; that is, $\exists$ a bdd $u(t)$ s.t. $y(t)$ is not bdd.
+    \textcolor{orange}{\textbf{Internal Stability}} 1. Linearize around $(\bar{x}, \bar{u})$ w/ $\bar{u} = 0$. \\
+    2. Find $A$ and determine $\text{eig}(A) = \lambda$ s.t. $\det(s I - A) = 0$. \\ 
+    3. Check if $\text{eig}(A) \subseteq \mathbb{C}^- \; \mid \; \text{Re}(\text{eig}(A)) > 0$.
 
-    \textcolor{blue}{\textbf{BIBO Stable Thm.}} A system $y(s) = G(s) U(s)$ is BIBO stable iff all poles of $G(s)$ are in $\mathbb{C}^{-}.$
+    \textcolor{red}{\textbf{BIBO Stability:}} An LTI system w/ 0 i.c. is Bounded Input Bounded Output (BIBO) stable if for any bdd input $u(t)$, the output $y(t)$ is also bdd.
 
-    \textcolor{blue}{\textbf{Lemma:}} If $p$ is a pole of $G(s)$, then $p$ is an $\text{eig}(A)$. In other words, $\text{poles}(G(s)) := \{ p \in \mathbb{C} \mid p \text{ is a pole of } G(s) \} \subseteq \text{eig}(A)$. 
+    \textcolor{blue}{\textbf{BIBO Unstable:}} An LTI system w/ 0 i.c. is BIBO unstable if it's not BIBO stable; that is, $\exists$ a bdd $u(t)$ s.t. $y(t)$ is not bdd.
+
+    \textcolor{blue}{\textbf{BIBO Stable Thm.}} A system $y(s) = G(s) U(s)$ is BIBO stable iff poles($G(s)) \subseteq \mathbb{C}^{-}.$
+
+    \textcolor{blue}{\textbf{Lemma:}} If $p$ is a pole of $G(s)$, then $p$ is an $\text{eig}(A)$. I.e. $\text{poles}(G(s)) := \{ p \in \mathbb{C} \mid p \text{ is a pole of } G(s) \} \subseteq \text{eig}(A)$.  \\
+    *\textbf{Pole-0 Cancellation:} $\text{eige}(A)$ need not be a pole of $G(s)$.
 
     \textcolor{blue}{\textbf{Thm.}} If $\text{eig}(A) \subseteq \mathbb{C}^{-}$, then $\forall B, C, D$ the TF $G(s)$ is BIBO stable. That is, internal asymptotic stability $\Rightarrow$ BIBO stability.
+
+    \textcolor{orange}{\textbf{BIBO Stability}} 1. Find $G(s)$ from SS form and determine poles. \\
+    2. Check if $\text{poles}(G(s)) \subseteq \mathbb{C}^{-}$.
     
+    \textcolor{red}{\textbf{Routh-Hurwitz:}} Consider $a(s) = s^n + a_{n-1} s^{n-1} + \cdots + a_0$. \\
+    *$s^n \quad \; \, \, \mid \; 1 \quad a_{n-2} \quad a_{n-4} \quad a_{n-6} \quad \cdots \quad 0$ \\ 
+    *$s^{n-1} \; \mid \; a_{n-1} \quad a_{n-3} \quad a_{n-5} \quad a_{n-7} \quad \cdots \quad 0$ \\
+    *$s^{n-2} \; \mid \; b_1 \quad b_2 \quad b_3 \quad \cdots$ \\
+    *$s^{n-3} \; \mid \; c_1 \quad c_2 \quad \cdots$ \\
+    $\vdots$ \\
+    *$s \; \mid \; * \quad 0$ \\
+    *$1 \; \mid \; * \quad 0$ \\
+    \(
+    \textcolor{blue}{
+    b_1 = -\frac{1}{a_{n-1}} \det 
+    \begin{bmatrix} 
+    1 & a_{n-2} \\ 
+    a_{n-1} & a_{n-3} 
+    \end{bmatrix}
+    }
+    \)
+    \(
+    \textcolor{red}{b_2 = -\frac{1}{a_{n-1}} \det 
+    \begin{bmatrix} 
+    1 & a_{n-4} \\ 
+    a_{n-1} & a_{n-5} 
+    \end{bmatrix}}
+    \)
+    \(
+    \textcolor{green}{b_3 = -\frac{1}{a_{n-1}} \det 
+    \begin{bmatrix} 
+    1 & a_{n-6} \\ 
+    a_{n-1} & a_{n-7} 
+    \end{bmatrix}}
+    \)
+    \(
+    c_1 = -\frac{1}{b_1} \det 
+    \begin{bmatrix} 
+    a_{n-1} & a_{n-3} \\ 
+    b_1 & b_2 
+    \end{bmatrix}
+    \)
+    \(
+    c_2 = -\frac{1}{b_1} \det 
+    \begin{bmatrix} 
+    a_{n-1} & a_{n-5} \\ 
+    b_1 & b_3 
+    \end{bmatrix}
+    \)
+
+    \textcolor{blue}{\textbf{Routh-Hurwitz Stability Criterion:}} The roots of \(a(s)\) are in \(\mathbb{C}^{-}\) iff the 1st col of Routh array has no sign changes. The \# of sign changes is equal to the \# of roots of \(a(s) \in \mathbb{C}^{+} := \{ s \in \mathbb{C} : \operatorname{Re}(s) > 0 \}\).
+    
+    \textcolor{blue}{\textbf{FVT v1:}} Suppose \( Y(s) = \mathcal{L}\{ y(t) \} \) is a proper rational fcn. If $y(\infty) := \lim_{t \to \infty} y(t)$ exists and is finite, then $y(\infty) = \lim_{s \to 0} s Y(s)$
+
+    \textcolor{blue}{\textbf{FVT v2:}} Suppose \(Y(s) = \mathcal{L} \{ y(t) \}\) is a proper rational fcn. Moreover, suppose either: \\
+    1. \(\text{poles}(Y(s)) \subseteq \mathbb{C}^{-}\) \\
+    2. \( Y(s) \) has only one pole at \( s = 0 \) and all other poles are in \( \mathbb{C}^{-} \).
+
+    Then \( y(\infty) := \lim_{t \to \infty} y(t) \) exists and is finite and satisfies $y(\infty) = \lim_{s \to 0} s Y(s).$
     
         }
 \end{paracol}

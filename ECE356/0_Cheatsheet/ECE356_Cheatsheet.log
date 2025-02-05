@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  5 FEB 2025 10:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  5 FEB 2025 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -846,8 +846,23 @@ File: ../Images/L12_3.png Graphic file (type png)
 Package pdftex.def Info: ../Images/L12_3.png  used on input line 292.
 (pdftex.def)             Requested size: 121.41165pt x 38.88249pt.
 
-Overfull \hbox (1.15044pt too wide) in paragraph at lines 302--303
-[][] \OT1/cmr/bx/n/5 Asymp-totic Sta-blity Thm.[] $[] \OT1/cmr/m/n/5 = \OML/cmm/m/it/5 Ax$ \OT1/cmr/m/n/5 is asymp. sta-ble iff $[](\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^R
+Overfull \hbox (11.33453pt too wide) in paragraph at lines 318--320
+[][] \OT1/cmr/bx/n/5 Lemma:[] \OT1/cmr/m/n/5 If $\OML/cmm/m/it/5 p$ \OT1/cmr/m/n/5 is a pole of $\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$, then $\OML/cmm/m/it/5 p$ \OT1/cmr/m/n/5 is an $[](\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 )$. I.e. $[](\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )) :=
+ []
+
+
+Overfull \hbox (16.03806pt too wide) in paragraph at lines 326--371
+[][]$ $[][]$
+ []
+
+
+Overfull \hbox (5.59232pt too wide) in paragraph at lines 326--371
+[][]$ $\OML/cmm/m/it/5 c[] \OT1/cmr/m/n/5 = \OMS/cmsy/m/n/5 ^^@[] [] []$
+ []
+
+
+Overfull \hbox (12.70418pt too wide) in paragraph at lines 374--375
+\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 1\OT1/cmr/m/n/5 ) := [][] \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )$ ex-ists and is fi-nite, then $\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 1\OT1/cmr/m/n/5 ) = [][] \OML/cmm/m/it/5 sY\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ 
  []
 
 [1
@@ -861,15 +876,15 @@ Package rerunfilecheck Info: File `ECE356_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31874 strings out of 474116
- 747914 string characters out of 5743682
- 2019187 words of memory out of 5000000
- 53752 multiletter control sequences out of 15000+600000
+ 31877 strings out of 474116
+ 747983 string characters out of 5743682
+ 2025187 words of memory out of 5000000
+ 53755 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,792b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (4 pages, 1412946 bytes).
+Output written on ECE356_Cheatsheet.pdf (4 pages, 1415825 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
