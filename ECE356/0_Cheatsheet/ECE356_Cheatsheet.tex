@@ -294,7 +294,26 @@
 
     2. Real part of zeros are -ve \& very diff. from the real part of the two dom. poles. 
 
+    \textcolor{red}{\textbf{Internal Stablity:}} $\overset{\cdot}{x} = Ax$ is \\
+    1. \textbf{Stable} if $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ is bounded; that is, $\exists M > 0$ s.t. $\|x(t)\| \leq M$ $\forall t \geq 0$. \\
+    2. \textbf{Asymp. Stable} if it is stable \& $\forall x(0) \in \mathbb{R}^n$, the soln. $x(t)$ converges to the origin; that is, $\lim_{t \to \infty} x(t) = 0$. \\
+    3. \textbf{Unstable} if it is not stable; that is, $\exists x(0) \in \mathbb{R}^n$ s.t. $x(t)$ is not bounded. 
 
+    \textcolor{blue}{\textbf{Asymptotic Stablity Thm.}} $\overset{\cdot}{x} = Ax$ is asymp. stable iff $\text{eig}(A) \subseteq \mathbb{C}^- \equiv \{s \in \mathbb{C} \mid \text{Re}(s) < 0\}$, i.e. open left half plane (OLHP).
+
+    \textcolor{blue}{\textbf{Instability Thm.}} If $\exists$ an eigenvalue $\lambda$ of $A$ w/ $\text{Re}(\lambda) > 0$, then $\overset{\cdot}{x} = Ax$ is unstable.
+
+    \textcolor{red}{\textbf{BIBO Stability:}} An LTI system w/ 0 ini. cond. is Bounded Input Bounded Output (BIBO) stable if for any bdd input $u(t)$, the output $y(t)$ is also bdd.
+
+    \textcolor{blue}{\textbf{BIBO Stable:}} An LTI system w/ 0 ini. cond. is BIBO unstable if it's not BIBO stable; that is, $\exists$ a bdd $u(t)$ s.t. $y(t)$ is not bdd.
+
+    \textcolor{blue}{\textbf{BIBO Stable Thm.}} A system $y(s) = G(s) U(s)$ is BIBO stable iff all poles of $G(s)$ are in $\mathbb{C}^{-}.$
+
+    \textcolor{blue}{\textbf{Lemma:}} If $p$ is a pole of $G(s)$, then $p$ is an $\text{eig}(A)$. In other words, $\text{poles}(G(s)) := \{ p \in \mathbb{C} \mid p \text{ is a pole of } G(s) \} \subseteq \text{eig}(A)$. 
+
+    \textcolor{blue}{\textbf{Thm.}} If $\text{eig}(A) \subseteq \mathbb{C}^{-}$, then $\forall B, C, D$ the TF $G(s)$ is BIBO stable. That is, internal asymptotic stability $\Rightarrow$ BIBO stability.
+    
+    
         }
 \end{paracol}
 
