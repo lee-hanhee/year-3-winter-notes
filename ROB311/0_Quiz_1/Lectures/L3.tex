@@ -61,31 +61,15 @@
 \newpage
 
 \subsection{Setup of CSP}
+\begin{process}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
 \begin{example}
-    Different ways to formulate the CSP problem. 
-    \begin{itemize}
-        \item How can you formualte the CSP problem in a different way? Can I get a specific example?
-        \begin{itemize}
-            \item The domain could be set to everything, then set the constraints later.
-        \end{itemize}
-        \item What is the constraint graph showing? Grouping the variables
-        \item How do you check consistency in a CSP?
-        \item Why can you use any search algorithm when you formulate this as a search problem? 
-        \item What does a node contain? A node contans a path. 
-        \begin{itemize}
-            \item How does that match the example on slide 10. It does. 
-        \end{itemize}
-        \item Why is formulalting a CSP problem as a search problem a bad idea? B/c you have to search through all possible combinations, but if you find a constraint then you can prune the search space.
-        \begin{itemize}
-            \item A lot easier to see if there is a solution or not. But in a search problem, you see if there's a solution and how to get to it. 
-        \end{itemize}
-    \end{itemize}
-\end{example}
-
-\begin{example}
-    \customFigure[0.5]{../Images/L3_0.png}{}
-    \customFigure[0.5]{../Images/L3_1.png}{}
-    \customFigure[0.5]{../Images/L3_2.png}{}
+    \customFigure[0.5]{../Images/L3_0.png}{Information}
+    \customFigure[0.5]{../Images/L3_1.png}{Variables}
+    \customFigure[0.5]{../Images/L3_2.png}{Constraints}
 \end{example}
 \newpage
 
@@ -108,16 +92,6 @@
 \begin{example}
     \customFigure[0.5]{../Images/L3_4.png}{}
     \customFigure[0.5]{../Images/L3_5.png}{}
-\end{example}
-
-\begin{process} \textbf{How to determine a solution to a CSP?}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{process}
-
-\begin{example}
-    \customFigure[0.5]{../Images/L3_8.png}{}
 \end{example}
 \newpage
 
@@ -169,9 +143,18 @@
 \begin{warning}
     Enforcing $k$-consistency is enforcing $k-1,\ldots,1$-consistency.
 \end{warning}
+
+\begin{process} \textbf{How to determine a solution to a CSP?}
+    \begin{enumerate}
+        \item After pre-pruning the domains. 
+        \item Assign variables in alphabetical order and values in numerical order. Prune the pre-pruned domains.
+        \item If you can assign all variables, then you have a solution.
+        \item Repeat the process until you find all solutions. 
+    \end{enumerate}
+\end{process}
 \newpage
 
-\begin{example}
+\begin{example} \textbf{Pre-Pruning Domains}
     \customFigure[0.5]{../Images/L3_6.png}{}    
     \customFigure[0.5]{../Images/L3_7.png}{Pre-pruning. Since only one constraint, it is also pruning.}    
 \end{example}
