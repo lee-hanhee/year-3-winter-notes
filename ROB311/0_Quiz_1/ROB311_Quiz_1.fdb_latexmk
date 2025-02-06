@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738868858.55287 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1738868867.41196 0
+["pdflatex"] 1738872289.26061 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1738872299.60894 0
   "../Images/L1_0.png" 1736973573.92376 72335 afba6478e14fdfff963b9c2bb0bdd4b0 ""
   "../Images/L1_1.png" 1736973573.92436 54800 e2953d841aa189dfde1cfae341b41add ""
   "../Images/L1_10.png" 1736973573.92489 51114 ff549d09c6d245914ae12be0ae36fc0e ""
@@ -399,14 +399,14 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "Lectures/L1.tex" 1738552147.00529 5154 ddbbca93c75bb21d37a2905c72e3ba0c ""
   "Lectures/L2.tex" 1738815098.06392 37580 6d145b0447f28a9bc9c89ef5c97fe5ae ""
-  "Lectures/L3.tex" 1738680415.1665 26328 580f8bc5b15ea8b3c60dbfae7f13f872 ""
+  "Lectures/L3.tex" 1738872277.3146 34972 d26eba2c664544cc4aae124ae76d703c ""
   "Lectures/L4.tex" 1738774008.14424 4124 8d42994459395590bc3b64d5a17d0cd0 ""
   "Lectures/L4_0.tex" 1738770292.99774 1530 f362d1e1a0f69704a796ddee1cd351ad ""
   "Lectures/L5.tex" 1738868849.40165 20295 d250774e52a49119aadfada6d97f11a6 ""
-  "ROB311_Quiz_1.aux" 1738868866.81534 13859 f2688c44a06b59e766ab09bb14109ca1 "pdflatex"
-  "ROB311_Quiz_1.out" 1738868866.81992 11521 3c09c3da6a3da891eedee9def4a14c22 "pdflatex"
+  "ROB311_Quiz_1.aux" 1738872298.96296 13859 c38809ac04240465ec6fe745ea2e4179 "pdflatex"
+  "ROB311_Quiz_1.out" 1738872298.96702 11521 3c09c3da6a3da891eedee9def4a14c22 "pdflatex"
   "ROB311_Quiz_1.tex" 1738812689.17008 585 09f42a09e6a29d533db7c484b68ea699 ""
-  "ROB311_Quiz_1.toc" 1738868866.82066 6312 8286d66a294ff5b8af0f1e594f3e7cda "pdflatex"
+  "ROB311_Quiz_1.toc" 1738872298.96772 6312 ef1c3770c72b154a3957a40ed4ee5383 "pdflatex"
   "style.sty" 1738868647.99674 8167 448115770a353a002f64fc803ef60e2e ""
   (generated)
   "ROB311_Quiz_1.aux"

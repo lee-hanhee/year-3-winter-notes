@@ -207,7 +207,7 @@
 \end{example}
 \newpage
 
-\begin{example} \textbf{4-Consistency}
+\begin{example} \textbf{4-Consistency Pre-Pruning}
     \begin{center}
         \begin{tabular}{ll}
             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
@@ -266,7 +266,7 @@
 \end{example}
 \newpage
 
-\begin{example}
+\begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
     \begin{center}
         \begin{tabular}{ll}
             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
@@ -342,7 +342,7 @@
 \end{example}
 \newpage
 
-\begin{example}
+\begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
     \begin{center}
         \begin{tabular}{ll}
             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
@@ -356,24 +356,6 @@
                 $b=1$, $b=2$ & Yes, Yes \\
                 $d=0$, $d=1$, $d=2$, $d=3$, $d=4$, $d=5$ & Yes, Yes, Yes, No, No, No \\
                 $e=0$, $e=1$, $e=2$, $e=3$, $e=4$, $e=5$, $e=6$ & Yes, Yes, No, No, No, No \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}\} $
-                \item $\text{dom}(E) = \{0, 1, \cancel{2}, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
-            \end{center}} \\
-            \midrule
-                $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
-                $b=1$, $b=2$ & Yes, Yes \\
-                $d=0$, $d=1$, $d=2$ & Yes, Yes, Yes\\
-                $e=0$, $e=1$ & Yes, Yes \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
@@ -399,6 +381,201 @@
     \end{center}
 \end{example}
 \newpage
+
+\begin{example} \textbf{4-Consistency Pre-Pruning}
+    \begin{center}
+        \begin{tabular}{lll}
+            \textbf{Queue} & \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+            \toprule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_4: 1 \leq b \leq 2$
+            \end{center}} \\
+            $\{C_2, C_3, C_1\}$    & $b = 0$, $b=1$, $b=2$, $b=3$, $b=4$ & No, Yes, Yes, No, No \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, 2, 3\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+                \item $\{C_2, C_3, C_1\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_2: 3 \leq a + c \leq 4$
+            \end{center}} \\
+                $\{C_3, C_1\}$ & $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
+                - & $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, Yes \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, 2, 3\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+                \item $\{C_3, C_1\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_3: 2 \leq a + b + 2c \leq 5$
+            \end{center}} \\
+                $\{C_1\}$ & $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
+                - & $b=1$, $b=2$ & Yes, Yes \\
+                - & $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, No \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+                \item $\{C_1, C_2\}$
+            \end{itemize}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example} \textbf{4-Consistency Continued:}
+    \begin{center}
+        \begin{tabular}{lll}
+            \textbf{Queue} & \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+            \toprule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
+            \end{center}} \\
+            $\{C_2\}$ & $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
+            - & $b=1$, $b=2$ & Yes, Yes \\
+            - & $d=0$, $d=1$, $d=2$, $d=3$, $d=4$, $d=5$ & Yes, Yes, Yes, Yes, Yes, No \\
+            - & $e=0$, $e=1$, $e=2$, $e=3$, $e=4$, $e=5$, $e=6$ & Yes, Yes, Yes, No, No, No, No \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_2\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_2: 3 \leq a + c \leq 4$
+            \end{center}} \\
+            $\{\}$ & $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes, Yes \\
+            - & $c=0$, $c=1$, $c=2$ & Yes, Yes, Yes \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_3, C_1\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_3: 2 \leq a + b + 2c \leq 5$
+            \end{center}} \\
+            $\{C_1\}$ & $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes \\
+            - & $b=1$, $b=2$ & Yes, Yes \\
+            - & $c=0$, $c=1$, $c=2$ & Yes, Yes, No \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_1, C_2\}$
+            \end{itemize}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example} \textbf{4-Consistency Continued:}
+    \begin{center}
+        \begin{tabular}{lll}
+            \textbf{Queue} & \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+            \toprule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
+            \end{center}} \\
+            $\{C_2\}$ & $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes \\
+            - & $b=1$, $b=2$ & Yes, Yes \\
+            - & $d=0$, $d=1$, $d=2$, $d=3$, $d=4$ & Yes, Yes, Yes, Yes, No \\
+            - & $e=0$, $e=1$, $e=2$ & Yes, Yes, Yes \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, \cancel{4}, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_2\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_2: 3 \leq a + c \leq 4$
+            \end{center}} \\
+            $\{\}$ & $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes \\
+            - & $c=0$, $c=1$ & Yes, Yes \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
+                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+                \item $\text{dom}(D) = \{0, 1, 2, 3, \cancel{4}, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_3,C_1\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_3: 2 \leq a + b + 2c \leq 5$
+            \end{center}} \\
+            $\{C_1\}$ & $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
+            - & $b=1$, $b=2$ & Yes, Yes \\
+            - & $c=0$, $c=1$ & Yes, Yes \\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$, $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $, $\text{dom}(D) = \{0, 1, 2, 3, \cancel{4}, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{C_1\}$
+            \end{itemize}} \\
+            \midrule
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{center}
+                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
+            \end{center}} \\
+            $\{\}$ & $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
+            - & $b=1$, $b=2$ & Yes, Yes \\
+            - & $d=0$, $d=1$, $d=2$, $d=3$ & Yes, Yes, Yes, No\\
+            - & $e=0$, $e=1$, $e=2$ & Yes, Yes, No\\
+            \multicolumn{3}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$, $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $, $\text{dom}(D) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}\} $
+                \item $\text{dom}(E) = \{0, 1, \cancel{2}, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+                \item $\{\}$
+            \end{itemize}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
 
 \begin{example} \textbf{3-Consistency}
     \begin{center}
