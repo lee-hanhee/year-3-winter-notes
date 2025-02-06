@@ -570,7 +570,71 @@
                 \item $\text{dom}(E) = \{0, 1, \cancel{2}, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
                 \item $\{\}$
             \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example} \textbf{4-Consistency Post-Pre-Pruning:}
+    \[
+        \begin{aligned}
+            C_1 &: 8 \leq 2a + 2b + 2d + 3e \leq 10 \\
+            C_2 &: 3 \leq a + c \leq 4 \\
+            C_3 &: 2 \leq a + b + 2c \leq 5 \\
+            C_4 &: 1 \leq b \leq 2
+        \end{aligned}
+    \]
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Solution} & \textbf{Updated Necessary Domains After Assignment} \\
+            \toprule   
+            $A=2$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\ 
+            $A=2,B=1$ & $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\           
+            $A=2,B=1,C=1$ & $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=2,B=1,C=1,D=0$ & $\text{dom}(E) = \{\cancel{0},1\}$ \\
+            $A=2,B=1,C=1,D=0,E=1$ & \textbf{Solution Found} \\
             \midrule
+            $A=2$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\ 
+            $A=2,B=1$ & $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\           
+            $A=2,B=1,C=1$ & $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=2,B=1,C=1,D=1$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=2,B=1,C=1,D=1,E=0$ & \textbf{Solution Found} \\
+            \midrule
+            $A=2$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\ 
+            $A=2,B=1$ & $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\           
+            $A=2,B=1,C=1$ & $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=2,B=1,C=1,D=2$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=2,B=1,C=1,D=2,E=0$ & \textbf{Solution Found} \\
+            \midrule 
+            $A=2$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{\cancel{0},1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\ 
+            $A=2,B=2$ & $\text{dom}(C) = \{\cancel{0},\cancel{1}\}$, $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\           
+            - & \textbf{No Solution Found} \\
+            \midrule 
+            $A=3$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{0,1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=3,B=1$ & $\text{dom}(C) = \{0,\cancel{1}\}$, $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0$ & $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0,D=0$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0,D=0,E=0$ & \textbf{Solution Found} \\
+            \midrule 
+            $A=3$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{0,1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=3,B=1$ & $\text{dom}(C) = \{0,\cancel{1}\}$, $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0$ & $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0,D=1$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=1,C=0,D=1,E=0$ & \textbf{Solution Found} \\
+            \midrule 
+            $A=3$ & $\text{dom}(B) = \{1,2\}$, $\text{dom}(C) = \{0,1\}$, $\text{dom}(D) = \{0,1,2\}$, $\text{dom}(E) = \{0,1\}$ \\
+            $A=3,B=2$ & $\text{dom}(C) = \{0,\cancel{1}\}$, $\text{dom}(D) = \{0,\cancel{1},\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=2,C=0$ & $\text{dom}(D) = \{0,\cancel{1},\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=2,C=0,D=0$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=3,B=2,C=0,D=0,E=0$ & \textbf{Solution Found} \\
+            \midrule 
+            $A=4$ & $\text{dom}(B) = \{1,\cancel{2}\}$, $\text{dom}(C) = \{0,\cancel{1}\}$, $\text{dom}(D) = \{0,1,\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=4,B=1$ & $\text{dom}(C) = \{0,\cancel{1}\}$, $\text{dom}(D) = \{0,\cancel{1},\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=4,B=1,C=0$ & $\text{dom}(D) = \{0,\cancel{1},\cancel{2}\}$, $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=4,B=1,C=0,D=0$ & $\text{dom}(E) = \{0,\cancel{1}\}$ \\
+            $A=4,B=1,C=0,D=0,E=0$ & \textbf{Solution Found} \\
+            \bottomrule
         \end{tabular}
     \end{center}
 \end{example}

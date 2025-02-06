@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  6 FEB 2025 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  6 FEB 2025 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1494,65 +1494,65 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 506--575
  [] 
  []
 
-[43]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 582--635
- [] 
- []
-
-[44]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 641--711
+[43] [44]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 646--699
  [] 
  []
 
 [45]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 722--757
+Overfull \hbox (12.0pt too wide) in paragraph at lines 705--775
+ [] 
+ []
+
+[46]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 786--821
  [] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 767--786
+Overfull \hbox (12.0pt too wide) in paragraph at lines 831--850
  [] 
  []
 
-) [46] (./Lectures/L4_0.tex) [47] (./Lectures/L4.tex [48]
-<../Images/L5_8.png, id=890, 597.23125pt x 197.73875pt>
+) [47] (./Lectures/L4_0.tex) [48] (./Lectures/L4.tex [49]
+<../Images/L5_8.png, id=896, 597.23125pt x 197.73875pt>
 File: ../Images/L5_8.png Graphic file (type png)
 <use ../Images/L5_8.png>
 Package pdftex.def Info: ../Images/L5_8.png  used on input line 86.
 (pdftex.def)             Requested size: 249.55872pt x 82.62729pt.
-<../Images/L5_9.png, id=891, 198.7425pt x 196.735pt>
+<../Images/L5_9.png, id=897, 198.7425pt x 196.735pt>
 File: ../Images/L5_9.png Graphic file (type png)
 <use ../Images/L5_9.png>
 Package pdftex.def Info: ../Images/L5_9.png  used on input line 89.
 (pdftex.def)             Requested size: 149.73676pt x 148.2293pt.
-) [49 <../Images/L5_8.png> <../Images/L5_9.png>] (./Lectures/L5.tex
-<../Images/L5_10.png, id=911, 372.39125pt x 323.2075pt>
+) [50 <../Images/L5_8.png> <../Images/L5_9.png>] (./Lectures/L5.tex
+<../Images/L5_10.png, id=916, 372.39125pt x 323.2075pt>
 File: ../Images/L5_10.png Graphic file (type png)
 <use ../Images/L5_10.png>
 Package pdftex.def Info: ../Images/L5_10.png  used on input line 33.
 (pdftex.def)             Requested size: 249.55872pt x 216.60214pt.
- [50 <../Images/L5_10.png>] [51]
-<../Images/L5_0.png, id=928, 274.02374pt x 230.8625pt>
+ [51 <../Images/L5_10.png>] [52]
+<../Images/L5_0.png, id=934, 274.02374pt x 230.8625pt>
 File: ../Images/L5_0.png Graphic file (type png)
 <use ../Images/L5_0.png>
 Package pdftex.def Info: ../Images/L5_0.png  used on input line 122.
 (pdftex.def)             Requested size: 249.55872pt x 210.25427pt.
- [52 <../Images/L5_0.png>] [53]
+ [53 <../Images/L5_0.png>] [54]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 205--257
  [] 
  []
 
-[54]
+[55]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 274--324
  [] 
  []
 
-[55]
+[56]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 341--357
  [] 
  []
 
-) [56] (./ROB311_Quiz_1.aux)
+) [57] (./ROB311_Quiz_1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1561,18 +1561,18 @@ Package rerunfilecheck Info: File `ROB311_Quiz_1.out' has not changed.
 (rerunfilecheck)             Checksum: 3C09C3DA6A3DA891EEDEE9DEF4A14C22;11521.
  ) 
 Here is how much of TeX's memory you used:
- 53635 strings out of 474116
- 1240657 string characters out of 5743682
+ 53638 strings out of 474116
+ 1240699 string characters out of 5743682
  2147187 words of memory out of 5000000
- 74648 multiletter control sequences out of 15000+600000
+ 74649 multiletter control sequences out of 15000+600000
  638659 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,22n,107p,810b,1596s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ROB311_Quiz_1.pdf (56 pages, 3317886 bytes).
+Output written on ROB311_Quiz_1.pdf (57 pages, 3319617 bytes).
 PDF statistics:
- 1216 PDF objects out of 1440 (max. 8388607)
- 1030 compressed objects within 11 object streams
- 448 named destinations out of 1000 (max. 500000)
+ 1221 PDF objects out of 1440 (max. 8388607)
+ 1034 compressed objects within 11 object streams
+ 450 named destinations out of 1000 (max. 500000)
  722 words of extra memory for PDF output out of 10000 (max. 10000000)
 
