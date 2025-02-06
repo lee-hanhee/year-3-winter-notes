@@ -121,6 +121,7 @@
 \begin{example}
     \customFigure[0.5]{../Images/L5_0.png}{}    
 \end{example}
+\newpage
 
 \begin{example} \textbf{2-Ary Question}
     \begin{enumerate}
@@ -135,9 +136,9 @@
             \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
             \item Entropy after the split: 
             \begin{enumerate}
-                \item $H(X_{\text{left}}) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$ 
-                \item $H(X_{\text{right}}) = \frac{2}{5} \log_2 \left(\frac{5}{2}\right) + \frac{3}{5} \log_2 \left(\frac{5}{3}\right)$.
-                \item Weighted Avg. Entropy: $H(X|Y) = \frac{5}{10} H(X_{\text{left}}) + \frac{5}{10} H(X_{\text{right}})$
+                \item $H(X \mid x_1 \leq 3) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$ 
+                \item $H(X \mid x_1 > 3) = \frac{2}{5} \log_2 \left(\frac{5}{2}\right) + \frac{3}{5} \log_2 \left(\frac{5}{3}\right)$.
+                \item Weighted Avg. Entropy: $H(X|Y) = \frac{5}{10} H(X \mid x_1 \leq 3) + \frac{5}{10} H(X \mid x_1 > 3)$
             \end{enumerate}
             \item $IG(X|Y) = H(X) - H(X|Y)$
         \end{enumerate}
@@ -157,9 +158,9 @@
             \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
             \item Entropy after the split: 
             \begin{enumerate}
-                \item $H(X_{\text{top}}) = \frac{3}{3} \log_2 \left(\frac{3}{3}\right)$ 
-                \item $H(X_{\text{bottom}}) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)+ \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$.
-                \item Weighted Avg. Entropy: $H(X|Y) = \frac{3}{10} H(X_{\text{top}}) + \frac{7}{10} H(X_{\text{bottom}})$
+                \item $H(X \mid x_2 > 3) = \frac{3}{3} \log_2 \left(\frac{3}{3}\right)$ 
+                \item $H(X \mid x_2 \leq 3) = \frac{3}{5} \log_2 \left(\frac{5}{3}\right) + \frac{2}{5} \log_2 \left(\frac{5}{2}\right)+ \frac{2}{5} \log_2 \left(\frac{5}{2}\right)$.
+                \item Weighted Avg. Entropy: $H(X|Y) = \frac{3}{10} H(X \mid x_2 > 3) + \frac{7}{10} H(X \mid x_2 \leq 3)$
             \end{enumerate}
             \item $IG(X|Y) = H(X) - H(X|Y)$
         \end{enumerate}
@@ -179,28 +180,215 @@
             \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
             \item Entropy after the split:
             \begin{enumerate}
-                \item $H(X_1) = \frac{3}{3} \log_2\left(\frac{3}{3}\right)$
-                \item $H(X_2) = \frac{2}{2} \log_2\left(\frac{2}{2}\right)$
-                \item $H(X_3) = \frac{2}{5} \log_2\left(\frac{5}{2}\right) + \frac{3}{5} \log_2\left(\frac{5}{3}\right)$
-                \item $H(X|Y) = \frac{3}{10} H(X_1) + \frac{2}{10} H(X_2) + \frac{5}{10} H(X_3)$
+                \item $H(X \mid x_1 \leq 3 \text{ and } x_2 \leq 3) = \frac{3}{3} \log_2\left(\frac{3}{3}\right)$
+                \item $H(X \mid x_1 \leq 3 \text{ and } x_2 > 3) = \frac{2}{2} \log_2\left(\frac{2}{2}\right)$
+                \item $H(X \mid x_1 > 3) = \frac{2}{5} \log_2\left(\frac{5}{2}\right) + \frac{3}{5} \log_2\left(\frac{5}{3}\right)$
+                \item $H(X|Y) = \frac{3}{10} H(X \mid x_1 \leq 3 \text{ and } x_2 \leq 3) + \frac{2}{10} H(X \mid x_1 \leq 3 \text{ and } x_2 > 3) + \frac{5}{10} H(X \mid x_1 > 3)$
             \end{enumerate}
             \item $IG(X|Y) = H(X) - H(X|Y)$
         \end{enumerate}
     \end{enumerate}
 \end{example}
+\newpage
 
 \begin{example} \textbf{Decision Tree}
     \begin{enumerate}
         \item \textbf{Given:} $X= \{0,1,2\}$
         \item \textbf{Problem:} Draw a decision tree using binary conditions of the form, \(x_i \leq k\), where \(i \in \{1, 2\}\) and \(k \in \mathbb{Z}\), that maximizes the information gained at each level.
-        \item \textbf{Solution:}
+        \item \textbf{Solution (Level 1):}
         \begin{enumerate}
-            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right)$
-            \item Entropy after the split:
-            \begin{enumerate}
-                \item 
-            \end{enumerate}
+            \item Entropy before the split: $H(X) = \frac{3}{10} \log_2\left(\frac{10}{3}\right) + \frac{2}{10} \log_2\left(\frac{10}{2}\right) + \frac{5}{10} \log_2\left(\frac{10}{5}\right) = 1.485 [\text{bits}]$
+            \item Entropy after the split and information gain (everything in base 2 since 2-ary).
         \end{enumerate}
     \end{enumerate}
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Split} & \textbf{Entropy} \\
+            \toprule
+            \(x_1 \leq 1\) & $H(X | Y) = \frac{3}{10} \left[\frac{2}{3} \log \left(\frac{3}{2}\right) + \frac{1}{3} \log \left(\frac{3}{1}\right) \right] + \frac{7}{10} \left[\frac{1}{7} \log \left(\frac{7}{1}\right) + \frac{2}{7} \log \left(\frac{7}{2}\right) + \frac{4}{7} \log \left(\frac{7}{4}\right) \right] = 1.241 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.241 = 0.244 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            $x_1 \leq 2,3$ & $H(X | Y) = \frac{5}{10} \left[\frac{3}{5} \log \left(\frac{5}{3}\right) + \frac{2}{5} \log \left(\frac{5}{2}\right) \right] + \frac{5}{10} \left[\frac{2}{5} \log \left(\frac{5}{2}\right) + \frac{3}{5} \log \left(\frac{5}{3}\right) \right] = 0.971 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\boxed{IG(X|Y) = 1.485 - 0.971 = 0.514 [\text{bits}]}$
+            \end{itemize}} \\
+            \midrule
+            $x_1 \leq 4,5$ & $H(X | Y) = \frac{8}{10} \left[\frac{3}{8} \log \left(\frac{8}{3}\right) + \frac{2}{8} \log \left(\frac{8}{2}\right) + \frac{3}{8} \log \left(\frac{8}{3}\right) \right] + \frac{2}{10} \left[\frac{2}{2} \log \left(\frac{2}{2}\right) \right] = 1.249 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.249 = 0.236 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            $x_1 \leq 6$ & $H(X | Y) = \frac{10}{10} \left[\frac{3}{10} \log \left(\frac{10}{3}\right) + \frac{2}{10} \log \left(\frac{10}{2}\right) + \frac{5}{10} \log \left(\frac{10}{5}\right) \right] = 1.485 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.485 = 0 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule 
+            $x_2 \leq 1$ & $H(X | Y) = \frac{4}{10} \left[\frac{2}{4} \log \left(\frac{4}{2}\right) + \frac{1}{4} \log \left(\frac{4}{1}\right) + \frac{1}{4} \log \left(\frac{4}{1}\right) \right] + \frac{6}{10} \left[2 \cdot \frac{1}{6} \log \left(\frac{6}{1}\right) + \frac{4}{6} \log \left(\frac{6}{4}\right) \right] = 1.351 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.351 = 0.134 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule 
+            $x_2 \leq 2,3$ & $H(X | Y) = \frac{7}{10} \left[\frac{3}{7} \log \left(\frac{7}{3}\right) + \frac{2}{7} \log \left(\frac{7}{2}\right) + \frac{2}{7} \log \left(\frac{7}{2}\right) \right] + \frac{3}{10} \left[\frac{3}{3} \log \left(\frac{3}{3}\right) \right] =1.090 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.090 = 0.395 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            $x_2 \leq 4$ & $H(X | Y) = \frac{9}{10} \left[\frac{3}{9} \log \left(\frac{9}{3}\right) + \frac{2}{9} \log \left(\frac{9}{2}\right) + \frac{4}{9} \log \left(\frac{9}{4}\right) \right] + \frac{1}{10} \left[\frac{1}{1} \log \left(\frac{1}{1}\right) \right] = 1.377 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.377 = 0.108 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            $x_2 \leq 5$ & $H(X | Y) = \frac{10}{10} \left[\frac{3}{10} \log \left(\frac{10}{3}\right) + \frac{2}{10} \log \left(\frac{10}{2}\right) + \frac{5}{10} \log \left(\frac{10}{5}\right) \right] = 1.485 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 1.485 - 1.485 = 0 [\text{bits}]$
+            \end{itemize}} \\ 
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example} \textbf{Decision Tree Continued:}
+    \begin{enumerate}
+        \item[4.] \textbf{Solution (Level 2):} $x_1 \leq 2,3$ has the highest information gain. For clarity, choose \(x_1 \leq 3\) as the question. 
+        \begin{enumerate}
+            \item Entropy before the split (treat as 2 indep. problems) 
+            \begin{enumerate}
+                \item $H(X_{L}) = \frac{3}{5} \log\left(\frac{5}{3}\right) + \frac{2}{5} \log\left(\frac{5}{2}\right) = 0.971$
+                \item $H(X_{R}) = \frac{2}{5} \log\left(\frac{5}{2}\right) + \frac{3}{5} \log\left(\frac{5}{3}\right) = 0.971$
+            \end{enumerate}
+            \item Entropy after the split and information gain (everything in base 2 since 2-ary).
+        \end{enumerate}
+    \end{enumerate}
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Split} & \textbf{Entropy} \\
+            \toprule
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \textbf{Left Split}
+            \end{center}} \\
+            \toprule
+            \(x_1 \leq 1\) & $H(X_{L} | Y) = \frac{3}{5} \left[\frac{2}{3} \log \left(\frac{3}{2}\right) + \frac{1}{3} \log \left(\frac{3}{1}\right) \right] + \frac{2}{5} \left[\frac{1}{2} \log \left(\frac{1}{2}\right) + \frac{1}{2} \log \left(\frac{1}{2}\right) \right] = 0.151 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 0.971 - 0.151 = 0.820 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            \(x_2 \leq 1\) & $H(X_{L} | Y) = \frac{2}{5} \left[\frac{2}{2} \log \left(\frac{2}{2}\right) \right] + \frac{3}{5} \left[\frac{1}{3} \log \left(\frac{3}{1}\right) + \frac{2}{3} \log \left(\frac{3}{2}\right) \right] = 0.551 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 0.971 - 0.551 = 0.420 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            \(x_2 \leq 2,3\) & $H(X_{L} | Y) = \frac{3}{5} \left[\frac{3}{3} \log \left(\frac{3}{3}\right) \right] + \frac{2}{5} \left[\frac{2}{2} \log \left(\frac{2}{2}\right) \right] = 0 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\boxed{IG(X_{L}|Y) = 0.971 - 0 = 0.971 [\text{bits}]}$
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \textbf{Right Split}
+            \end{center}} \\
+            \toprule
+            $x_1 \leq 4,5$ & $H(X_{R} | Y) = \frac{3}{5} \left[\frac{2}{3} \log \left(\frac{3}{2}\right) + \frac{1}{3} \log \left(\frac{3}{1}\right) \right] + \frac{2}{5} \left[\frac{2}{2} \log \left(\frac{2}{2}\right) \right] = 0.551 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\boxed{IG(X_{L}|Y) = 0.971 - 0.551 = 0.420 [\text{bits}]}$
+            \end{itemize}} \\
+            \midrule
+            $x_2 \leq 1$ & $H(X_{R} | Y) = \frac{2}{5} \left[\frac{1}{2} \log \left(\frac{2}{1}\right) + \frac{1}{2} \log \left(\frac{2}{1}\right) \right] + \frac{3}{5} \left[\frac{2}{3} \log \left(\frac{3}{2}\right) + \frac{1}{3} \log \left(\frac{3}{1}\right) \right] = 0.951 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X_{L}|Y) = 0.971 - 0.951 = 0.020 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            $x_2 \leq 2,3$ & $H(X_{R} | Y) = \frac{4}{5} \left[\frac{2}{4} \log \left(\frac{4}{2}\right) + \frac{2}{4} \log \left(\frac{4}{2}\right) \right] + \frac{1}{5} \left[\frac{1}{1} \log \left(\frac{1}{1}\right) \right] = 0.8 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X_{L}|Y) = 0.971 - 0.8 = 0.171 [\text{bits}]$
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example} \textbf{Decision Tree Continued:}
+    \begin{enumerate}
+        \item[5.] \textbf{Solution (Level 3):} $x_2 \leq 2,3$ and $x_1 \leq 4,5$ has the highest information gain. For clarity, choose \(x_2 \leq 3\) as the question for the left split and choose \(x_1 \leq 5\) as the question for the right split.
+        \begin{enumerate}
+            \item Since 3 are pure splits already, therefore, look at right-left side only.
+            \item Entropy before the split for the right-left side
+            \begin{enumerate}
+                \item $H(X_{RL}) = \frac{2}{3} \log\left(\frac{3}{2}\right) + \frac{1}{3} \log\left(\frac{3}{1}\right) = 0.918 [\text{bits}]$
+            \end{enumerate}
+            \item Entropy after the split and information gain (everything in base 2 since 2-ary).
+        \end{enumerate}
+    \end{enumerate}
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Split} & \textbf{Entropy} \\
+            \toprule
+            \(x_2 \leq 1\) & $H(X_{RL} | Y) = \frac{1}{3} \left[\frac{1}{1} \log \left(\frac{1}{1}\right) \right] + \frac{2}{3} \left[\frac{1}{2} \log \left(\frac{2}{1}\right) + \frac{1}{2} \log \left(\frac{2}{1}\right) \right] = 0.667 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $IG(X|Y) = 0.971 - 0.667 = 0.304 [\text{bits}]$
+            \end{itemize}} \\
+            \midrule
+            \(x_2 \leq 2,3\) & $H(X_{RL} | Y) = \frac{1}{3} \left[\frac{1}{1} \log \left(\frac{1}{1}\right) \right] + \frac{2}{3} \left[\frac{2}{2} \log \left(\frac{2}{2}\right) \right] = 0 [\text{bits}]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\boxed{IG(X|Y) = 0.971 - 0 = 0.971 [\text{bits}]}$
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \begin{enumerate}
+        \item[6.] Now all regions in our graph contain a pure set (one class). Note this took more questions than needed, but IG is a heuristic so its not perfect.
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tikzpicture}[
+            level distance=1.5cm,
+            edge from parent/.style={draw,thick},
+            every node/.style={draw, rounded corners, minimum width=1.5cm, align=center},
+            level 1/.style={sibling distance=6cm}, % Separate left and right subtrees
+            level 2/.style={sibling distance=3cm}  % Keep children spaced properly
+          ]
+          
+          % Root node
+          \node { $x_1 \leq 3$ }
+            % Left subtree
+            child { node { $x_2 \leq 3$ }
+              child { node[draw=red] { 0 } }
+              child { node[draw=blue] { 2 } }
+            }
+            % Right subtree, shifted manually
+            child { node { $x_1 \leq 5$ }
+              child { node { $x_2 \leq 3$ }
+                child { node[draw=green] { 1 } }
+                child { node[draw=blue] { 2 } }
+              }
+              child { node[draw=blue] { 2 } }
+            };
+          
+        \end{tikzpicture}
+    \end{center}
+
+
 \end{example}
 

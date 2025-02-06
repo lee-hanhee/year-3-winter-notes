@@ -38,32 +38,32 @@
 \contentsline {subsubsection}{\numberline {2.8.2}How to setup a path tree?}{19}{subsubsection.2.8.2}%
 \contentsline {subsubsection}{\numberline {2.8.3}When to use each algorithm?}{20}{subsubsection.2.8.3}%
 \contentsline {subsubsection}{\numberline {2.8.4}Tracing Search Algorithms}{21}{subsubsection.2.8.4}%
-\contentsline {section}{\numberline {3}Constraint Satisfaction Problems}{28}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Setup of CSP}{28}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Assignment}{28}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Consistent}{28}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Complete Assignment}{28}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Partial Assignment}{28}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}k-Consistent}{28}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Edge/Arc Consistent}{28}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Constraint Satisfaction Algorithms}{29}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Main}{29}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Satisfy}{29}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Enforce: Enforcing k-Consistency}{29}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}EnforceVar: Enforcing k-Consistency}{29}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Setup of CSP}{30}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Classification vs. Regression Problems}{43}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Feature Spaces}{43}{subsection.3.7}%
-\contentsline {section}{\numberline {4}PAC Learning}{44}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Probably Approximately Correct (PAC) Estimations}{44}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Hoeffding's Inequality}{44}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}PAC Learning}{44}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Error}{44}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Union Bound Theorem}{44}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Generalization of Hoeffding's Inequality}{44}{subsubsection.4.2.3}%
-\contentsline {section}{\numberline {5}Decision Trees}{46}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Structure}{46}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Building a Decision Tree}{46}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Special Case}{46}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}General Case}{47}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Entropy, Conditional Entropy, and Information Gain}{47}{subsubsection.5.2.3}%
+\contentsline {section}{\numberline {3}Constraint Satisfaction Problems}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Setup of CSP}{29}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Assignment}{29}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Consistent}{29}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Complete Assignment}{29}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Partial Assignment}{29}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}k-Consistent}{29}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Edge/Arc Consistent}{29}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Constraint Satisfaction Algorithms}{30}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Main}{30}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Satisfy}{30}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Enforce: Enforcing k-Consistency}{30}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}EnforceVar: Enforcing k-Consistency}{30}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Setup of CSP}{31}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Classification vs. Regression Problems}{44}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Feature Spaces}{44}{subsection.3.7}%
+\contentsline {section}{\numberline {4}PAC Learning}{45}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Probably Approximately Correct (PAC) Estimations}{45}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Hoeffding's Inequality}{45}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}PAC Learning}{45}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Error}{45}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Union Bound Theorem}{45}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Generalization of Hoeffding's Inequality}{45}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {5}Decision Trees}{47}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Structure}{47}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Building a Decision Tree}{47}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Special Case}{47}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}General Case}{48}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Entropy, Conditional Entropy, and Information Gain}{48}{subsubsection.5.2.3}%

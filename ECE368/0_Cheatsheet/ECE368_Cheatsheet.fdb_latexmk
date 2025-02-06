@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1738199906.59475 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1738199908.88753 0
+["pdflatex"] 1738816100.53301 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" "ECE368_Cheatsheet.pdf" "ECE368_Cheatsheet" 1738816102.80293 0
   "../Images/L10_0.png" 1738198684.94384 55015 fe5a136b51b11e2f65c8fcb1c4941b52 ""
   "../Images/TB_1.png" 1737987433.99669 73503 63ebae41b5d6d8f741856b7e528fd85c ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1738199906.18133 16389 0ac3a2fb56d258726019568415fc545b ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE368/0_Cheatsheet/ECE368_Cheatsheet.tex" 1738816099.66035 16518 afa0da0b5cb4961b1f69076aad5b8551 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -188,9 +188,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE368_Cheatsheet.aux" 1738199908.67095 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
-  "ECE368_Cheatsheet.out" 1738199908.09324 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE368_Cheatsheet.tex" 1738199906.18133 16389 0ac3a2fb56d258726019568415fc545b ""
+  "ECE368_Cheatsheet.aux" 1738816102.58067 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "ECE368_Cheatsheet.out" 1738816101.99041 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE368_Cheatsheet.tex" 1738816099.66035 16518 afa0da0b5cb4961b1f69076aad5b8551 ""
   (generated)
   "ECE368_Cheatsheet.aux"
   "ECE368_Cheatsheet.log"

@@ -537,6 +537,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \begin{example}
     \customFigure[0.5]{../Images/LR_0.png}{}
 \end{example}
+\newpage
 
 \begin{process} \textbf{BFS}
     \begin{enumerate}
@@ -555,15 +556,39 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
          & $\{A\}$ \\
-        $A$ & $\{B, C, D\}$ \\
-        $AB$ & $\{C, D, E\}$ \\
-        $ABC$ & $\{D, E\}$ \\
-        $ABCD$ & $\{E\}$ \\
-        $ABCDE$ & $\{\}$ \\
+        $A$ & $\{AB, AC, AD\}$ \\
+        $AB$ & $\{AC, AD, ABA, ABC\}$ \\
+        $AC$ & $\{AD, ABA, ABC, ACD, ACE\}$ \\
+        $AD$ & $\{ABA, ABC, ACD, ACE, ADA, ADE\}$ \\
+        $ABA$ & $\{ABC, ACD, ACE, ADA, ADE, ABAB, ABAC, ABAD\}$ \\
+        $ABC$ & $\{ACD, ACE, ADA, ADE, ABAB, ABAC, ABAD, ABCD, ABCE\}$ \\
+        $ACD$ & $\{ACE, ADA, ADE, ABAB, ABAC, ABAD, ABCD, ABCE, ACDA, ACDE\}$ \\
+        $ACE$ & $\{ADA, ADE, ABAB, ABAC, ABAD, ABCD, ABCE, ACDA, ACDE\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \textbf{Intra:}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A\}$ \\
+        $A$ & $\{AB, AC, AD\}$ \\
+        $AB$ & $\{AC, AD, ABC\}$ \\
+        $AC$ & $\{AD, ABC, ACD, ACE\}$ \\
+        $AD$ & $\{ABC, ACD, ACE, ADE\}$ \\
+        $ABC$ & $\{ACD, ACE, ADE, ABCD, ABCE\}$ \\
+        $ACD$ & $\{ACE, ADE, ABCD, ABCE, ACDE\}$ \\
+        $ACE$ & $\{ADE, ABCD, ABCE, ACDE\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
 \end{example}
+
+
 
 \begin{process} \textbf{DFS}
     \begin{enumerate}
@@ -582,12 +607,30 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
          & $\{A\}$ \\
-        $A$ & $\{B,C,D\}$ \\
-        $AD$ & $\{B,C,E\}$ \\
-        $ADE$ & $\{B, C\}$ \\
+        $A$ & $\{AB,AC,AD\}$ \\
+        $AD$ & $\{AB,AC,ADA,ADE\}$ \\
+        $ADE$ & $\{AB, AC,ADA,ADE\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
+    \vspace{1em}
+
+    \textbf{Intra:}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} \\
+        \midrule
+         & $\{A\}$ \\
+        $A$ & $\{AB,AC,AD\}$ \\
+        $AD$ & $\{AB,AC,ADE\}$ \\
+        $ADE$ & $\{AB, AC,ADE\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \textbf{Inter:}
 \end{example}
 \newpage
 
@@ -609,13 +652,18 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         0 & & $\{A\}$ \\
         0 & A & $\{\}$ \\
         \midrule
-        1 & $A$ & $\{B, C, D\}$ \\
-        1 & $AB$ & $\{C, D\}$ \\
-        1 & $AC$ & $\{D\}$ \\
-        1 & $AD$ & $\{\}$ \\
+        1 & $A$ & $\{AB, AC, AD\}$ \\
+        1 & $AD$ & $\{AB, AC\}$ \\
+        1 & $AC$ & $\{AB\}$ \\
+        1 & $AB$ & $\{\}$ \\
         \midrule
-        2 & $AD$ & $\{E\}$ \\
-        2 & $ADE$ & $\{\}$ \\
+        2 & $AB$ & $\{ABA, ABC\}$ \\
+        2 & $ABC$ & $\{ABA\}$ \\
+        2 & $ABA$ & $\{\}$ \\
+        \midrule
+        3 & $ABA$ & $\{ABAB, ABAC, ABAD\}$ \\
+        3 & $ABAB$ & $\{ABAC, ABAD, ABABC\}$ \\
+        
         \bottomrule
         \end{tabular}
     \end{center}
