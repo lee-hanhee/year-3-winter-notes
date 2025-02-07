@@ -577,16 +577,36 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \midrule
          & $\{A\}$ \\
         $A$ & $\{AB, AC, AD\}$ \\
-        $AB$ & $\{AC, AD, ABC\}$ \\
+        $AB$ & $\{AC, AD, ABC, \cancel{ABA}\}$ \\
         $AC$ & $\{AD, ABC, ACD, ACE\}$ \\
-        $AD$ & $\{ABC, ACD, ACE, ADE\}$ \\
+        $AD$ & $\{ABC, ACD, ACE, ADE, \cancel{ADA}\}$ \\
         $ABC$ & $\{ACD, ACE, ADE, ABCD, ABCE\}$ \\
-        $ACD$ & $\{ACE, ADE, ABCD, ABCE, ACDE\}$ \\
+        $ACD$ & $\{ACE, ADE, ABCD, ABCE, ACDE, \cancel{ACBA}\}$ \\
         $ACE$ & $\{ADE, ABCD, ABCE, ACDE\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
+    \vspace{1em}
+
+    \textbf{Inter:}
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} & \textbf{Closed Set} \\
+        \midrule
+        - & $\{A\}$ & - \\
+        $A$ & $\{AB, AC, AD\}$ & $\{A\}$ \\
+        $AB$ & $\{AC, AD, ABC, \cancel{ABA}\}$ & $\{A, B\}$ \\
+        $AC$ & $\{AD, ABC, ACD, ACE\}$ & $\{A, B, C\}$ \\
+        $AD$ & $\{ABC, ACD, ACE, ADE, \cancel{ADA}\}$ & $\{A, B, C, D\}$ \\
+        $ABC$ & $\{ACD, ACE, ADE, ABCE, \cancel{ABCD}\}$ & $\{A, B, C, D\}$ \\
+        $ACD$ & $\{ACE, ADE, ABCE, ACDE, \cancel{ACDA}\}$ & $\{A, B, C, D\}$ \\
+        $ACE$ & $\{ADE, ABCE, ACDE\}$ & $\{A, B, C, D, E\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
+\newpage
 
 
 
@@ -609,7 +629,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
          & $\{A\}$ \\
         $A$ & $\{AB,AC,AD\}$ \\
         $AD$ & $\{AB,AC,ADA,ADE\}$ \\
-        $ADE$ & $\{AB, AC,ADA,ADE\}$ \\
+        $ADE$ & $\{AB, AC,ADA\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -617,20 +637,32 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
     \textbf{Intra:}
     \begin{center}
-        \begin{tabular}{ll}
+        \begin{tabular}{lll}
         \toprule
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
-         & $\{A\}$ \\
+        - & $\{A\}$ \\
         $A$ & $\{AB,AC,AD\}$ \\
-        $AD$ & $\{AB,AC,ADE\}$ \\
-        $ADE$ & $\{AB, AC,ADE\}$ \\
+        $AD$ & $\{AB,AC,ADE, \cancel{ADA}\}$ \\
+        $ADE$ & $\{AB, AC\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
     \vspace{1em}
 
     \textbf{Inter:}
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} & \textbf{Closed Set} \\
+        \midrule
+        - & $\{A\}$ & - \\
+        $A$ & $\{AB,AC,AD\}$ & $\{A\}$ \\
+        $AD$ & $\{AB,AC,ADE, \cancel{ADA}\}$ & $\{A, D\}$ \\
+        $ADE$ & $\{AB, AC\}$ & $\{A, D, E\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
 \newpage
 
@@ -662,12 +694,18 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         2 & $ABA$ & $\{\}$ \\
         \midrule
         3 & $ABA$ & $\{ABAB, ABAC, ABAD\}$ \\
-        3 & $ABAB$ & $\{ABAC, ABAD, ABABC\}$ \\
-        
+        3 & $ABAB$ & $\{ABAC, ABAD\}$ \\
+        3 & $ABAC$ & $\{ABAD\}$ \\
+        3 & $ABAD$ & $\{\}$ \\
+        \midrule
+        4 & $ABAD$ & $\{ABADA, ABADE\}$ \\
+        4 & $ABADA$ & $\{ABADE\}$ \\
+        4 & $ABADE$ & $\{\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
 \end{example}
+\newpage
 
 \begin{process} \textbf{CFS}
     \begin{enumerate}
@@ -680,51 +718,56 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{process}
 
 \begin{example} \textbf{CFS}
-
-    \textbf{No Inter-Path Cycle Checking, No Intra-Path Cycle Checking}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
-         & $\{A \mid 0\}$ \\
+        - & $\{A \mid 0\}$ \\
         $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ \\
         $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; ABA \mid 4\}$ \\
         $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABA \mid 4, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
         $AC$ & $\{AD \mid 6, \; ABA \mid 4, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
         $ABA$ & $\{AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6, \; ABAB \mid 6, \; ABAC \mid 8, \; ABAD \mid 10\}$ \\
-        $ABCE$ & $\{AC \mid 4, \; ABA \mid 4, \; AD \mid 6, \; ABCD \mid 6\}$ \\
+        $ABCE$ & $\{AD \mid 6, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6, \; ABAB \mid 6, \; ABAC \mid 8, \; ABAD \mid 10\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
     \vspace{1em}
 
-    \textbf{Intra-Path Cycle Checking:}
+    \textbf{Intra:}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
-         & $\{A \mid 0\}$ \\
+        - & $\{A \mid 0\}$ \\
         $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ \\
-        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; \cancel{ABA} \quad \text{intra} \}$ \\
+        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; \cancel{ABA} \}$ \\
         $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6\}$ \\
         $AC$ & $\{AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
-        $ABCE$ & $\{AC \mid 4, \; AD \mid 6, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
+        $ABCE$ & $\{AD \mid 6, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
-    \begin{itemize}
-        \item \textbf{Inter-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
-    \end{itemize}
+    \vspace{1em}
 
+    \textbf{Inter:}
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} & \textbf{Closed Set} \\
+        \midrule
+        - & $\{A \mid 0\}$ & - \\
+        $A$ & $\{AB \mid 2, \; AC \mid 4, \; AD \mid 6\}$ & $\{A\}$ \\
+        $AB$ & $\{AC \mid 4, \; AD \mid 6, \; ABC \mid 3, \; \cancel{ABA} \} $ & $\{A, B\}$ \\
+        $ABC$ & $\{AC \mid 4, \; AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6\} $ & $\{A, B, C\}$ \\
+        $AC$ & $\{AD \mid 6, \; ABCE \mid 5, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ & $\{A, B, C\}$ \\
+        $ABCE$ & $\{AD \mid 6, \; ABCD \mid 6, \; ACD \mid 7, \; ACE \mid 6\}$ & $\{A, B, C, E\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
-
-\begin{warning}
-    \begin{itemize}
-        \item How to perform shortcut? 
-    \end{itemize}
-\end{warning}
 \newpage
 
 \begin{process} \textbf{HFS}
@@ -750,10 +793,8 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \bottomrule
         \end{tabular}
     \end{center}
-    \begin{itemize}
-        \item \textbf{Inter/Intra-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
-    \end{itemize}
 \end{example}
+\newpage
 
 
 \begin{process} \textbf{A$^*$}
@@ -767,42 +808,54 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{process}
 
 \begin{example} \textbf{A$^*$}
-
-    \textbf{No Inter-Path Cycle Checking, No Intra-Path Cycle Checking}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
-         & $\{A \mid 3 \}$ \\
+        - & $\{A \mid 3 \}$ \\
         $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
-        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1, \; ABA \mid 4 + 3 \}$ \\
-        $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0, \; ABA \mid 7 \}$ \\
-        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ABA \mid 7, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0\}$ \\
-        $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABA \mid 7 \; ACD \mid 8, \; ACE \mid 6 \}$ \\
+        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid (2 + 1) + 1, \; ABA \mid (2 + 2) + 3 \}$ \\
+        $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABA \mid 7, \; ABCD \mid (2 + 1 + 3) + 1, \; ABCE \mid (2 + 1 + 2) + 0, \}$ \\
+        $AC$ & $\{AD \mid 7, \; ABA \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid (4 + 3) + 1, \; ACE \mid (4 + 2) + 0\}$ \\
+        $ABCE$ & $\{AD \mid 7, \; ABA \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6 \}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
     \vspace{1em}
 
-    \textbf{Intra-Path Cycle Checking:}
+    \textbf{Intra:}
     \begin{center}
         \begin{tabular}{ll}
         \toprule
         \textbf{Path} & \textbf{Open Set} \\
         \midrule
-         & $\{A \mid 3 \}$ \\
+        - & $\{A \mid 3 \}$ \\
         $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
-        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1, \; \cancel{ABA} \quad \text{intra} \}$ \\
-        $ABC$ & $\{AC \mid 5, AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0 \}$ \\
-        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0 \}$ \\
+        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid (2 + 1) + 1, \; \cancel{ABA} \}$ \\
+        $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid (2 + 1 + 3) + 1, \; ABCE \mid (2 + 1 + 2) + 0, \}$ \\
+        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid (4 + 3) + 1, \; ACE \mid (4 + 2) + 0\}$ \\
         $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6 \}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
-    \begin{itemize}
-        \item \textbf{Inter-Path Cycle Checking:} Doesn't affect the algorithm in this instance.
-    \end{itemize}
+    \vspace{1em}
+
+    \textbf{Inter:}
+    \begin{center}
+        \begin{tabular}{lll}
+        \toprule
+        \textbf{Path} & \textbf{Open Set} & \textbf{Closed Set} \\
+        \midrule
+        - & $\{A \mid 3 \}$ & - \\
+        $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ & $\{A\}$ \\
+        $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid (2 + 1) + 1, \; \cancel{ABA} \}$ & $\{A, B\}$ \\
+        $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid (2 + 1 + 3) + 1, \; ABCE \mid (2 + 1 + 2) + 0, \}$ & $\{A, B, C\}$ \\
+        $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid (4 + 3) + 1, \; ACE \mid (4 + 2) + 0\}$ & $\{A, B, C\}$ \\
+        $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6 \}$ & $\{A, B, C, E\}$ \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
 \end{example}
 \newpage
 
@@ -816,27 +869,26 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \end{process}
 
 \begin{example} \textbf{IIA*}
-    
-    \textbf{Inter-Path Cycle Checking, Intra-Path Cycle Checking}
     \begin{center}
         \begin{tabular}{lll}
         \toprule
         \textbf{Cost} & \textbf{Path} & \textbf{Open Set} \\
         \midrule
-        0 & $\langle \rangle$ & $\{A \mid 0 + 3\}$ \\
+        0 & $\langle \rangle$ & $\{\}$ \\
         \midrule
-        1 & $\langle \rangle$ & $\{A \mid 3\}$ \\
+        1 & $\langle \rangle$ & $\{\}$ \\
         \midrule
-        2 & $\langle \rangle$ & $\{A \mid 3\}$ \\
+        2 & $\langle \rangle$ & $\{\}$ \\
         \midrule
         3 & $\langle \rangle$ & $\{A \mid 3\}$ \\
-        3 & $A$ & $\{AB \mid 2 + 2, \; AC \mid 4 + 1, \; AD \mid 6 + 1\}$ \\
+        3 & $A$ & $\{\}$ \\
         \midrule
-        4 & $AB$ & $\{AC \mid 5, \; AD \mid 7, \; ABC \mid 3 + 1\}$ \\
-        4 & $ABC$ & $\{AC \mid 5, \; AD \mid 7, \; ABCD \mid 6 + 1, \; ABCE \mid 5 + 0\}$ \\
+        4 & $A$ & $\{AB \mid 2 + 2\}$ \\
+        4 & $AB$ & $\{ABC \mid 3 + 1\}$ \\
+        4 & $ABC$ & $\{\}$ \\
         \midrule
-        5 & $AC$ & $\{AD \mid 7, \; ABCD \mid 7, \; ABCE \mid 5, \; ACD \mid 7 + 1, \; ACE \mid 6 + 0\}$ \\
-        5 & $ABCE$ & $\{AD \mid 7, \; ABCD \mid 7, \; ACD \mid 8, \; ACE \mid 6\}$ \\
+        5 & $ABC$ & $\{ABCE \mid 5 + 0\}$ \\
+        5 & $ABCE$ & $\{\}$ \\
         \bottomrule
         \end{tabular}
     \end{center}
