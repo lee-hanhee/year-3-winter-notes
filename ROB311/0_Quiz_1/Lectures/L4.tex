@@ -1,6 +1,13 @@
 \subsection{Probably Approximately Correct (PAC) Estimations}
+\begin{motivation}
+    More than one fcn may be consistent w/ the data, how to find the best one?
+\end{motivation}
 
 \subsubsection{Hoeffding's Inequality}
+\begin{motivation}
+    Bound $|\mu - \nu|$ w.r.t. $N$.
+\end{motivation}
+
 \begin{definition}
     For any $\epsilon > 0$,
     \begin{equation}
@@ -9,16 +16,19 @@
     \begin{itemize}
         \item $\mu$: Probabillity of an event.
         \item $\nu$: Relative frequency in a sample size $N$.
-        \item $\mu \overset{?}{\approx} \nu $: $\mu$ is probably approximately equal to $\nu$. As $N \rightarrow \infty$: $\nu \rightarrow \mu$
         \item $\epsilon$: Tolerance (i.e. how close we want $\nu$ to be to $\mu$).
         \begin{itemize}
             \item $\epsilon \rightarrow 0$: $\nu = \mu$
         \end{itemize}
+        \item $\mu \overset{?}{\approx} \nu $: $\mu$ is probably approximately equal to $\nu$. As $N \rightarrow \infty$: $\nu \rightarrow \mu$
     \end{itemize}
 \end{definition}
 
 \begin{warning}
-    Approximate the true distribution with high probability by taking a large enough sample size (i.e. empirical distribution converges to true distribution).
+    Approx. the true dist. w/ high prob. by taking a large enough $N$ (i.e. empirical dist. converges to true dist.).
+    \begin{itemize}
+        \item i.e. Probability of a sig. deviation shrinks exp. w/ $N$.
+    \end{itemize}
 \end{warning}
 
 \subsection{PAC Learning}
@@ -38,14 +48,22 @@
 
 \subsubsection{Union Bound Theorem}
 \begin{theorem}
+    The prob. of at least one of the events $E_1, \ldots, E_M$ occurring is bounded by the sum of the prob. of each event occurring:
     \begin{equation*}
         \mathbb{P} \left[E_1 \lor \cdots \lor E_M \right] \leq \sum_{i=1}^{M} \mathbb{P}[E_i]
     \end{equation*}
 \end{theorem}
 
-\begin{warning}
-    If the events are highly correlated, then the union bound is not tight.
-\end{warning}
+\begin{notes}
+    \begin{itemize}
+        \item If the events are mutually exclusive, then the union bound is tight (i.e. equality holds).
+        \item If the events are highly correlated, then the union bound is loose (i.e. inequality holds)
+        \begin{itemize}
+            \item Some events may be more likely to occur together.
+        \end{itemize}
+    \end{itemize}
+\end{notes}
+\newpage
 
 \subsubsection{Generalization of Hoeffding's Inequality}
 \begin{definition}
@@ -57,10 +75,10 @@
         &= 2 |\mathcal{H}| e^{-2\varepsilon^2 N} 
     \end{align*}
     \begin{itemize}
-        \item Endow $\mathcal{F}$ w/ prob. distribution, $P : \mathcal{X} \to [0,1]$, then 
+        \item Endow $\mathcal{F}$ (i.e. fcn space) w/ prob. distribution, $P : \mathcal{X} \to [0,1]$, then 
         \begin{itemize}
-            \item $E_{\text{out}}$ is analogous to $\mu$ 
-            \item $E_{\text{in}}(h)$ is analogous to $\nu$. 
+            \item $E_{\text{out}}$ (i.e. true error of a hyp. over entire dist. of data) is analogous to $\mu$ 
+            \item $E_{\text{in}}(h)$ (i.e. empirical error of hyp. on a finite sample) is analogous to $\nu$. 
         \end{itemize}
     \end{itemize}
 \end{definition}
@@ -68,16 +86,23 @@
 \begin{notes}
     \begin{itemize}
         \item $E_{\text{in}}(h) \stackrel{?}{\approx} E_{\text{out}}$ requires small $|\mathcal{H}|$ (generalization)
+        \begin{itemize}
+            \item Look at inequality, small $|\mathcal{H}|$ $\rightarrow$ small $E_{\text{out}} - E_{\text{in}}$ (i.e. prevents overfitting but leads to underfitting)
+        \end{itemize}
         \item $E_{\text{in}}(h) \approx 0$ requires large $|\mathcal{H}|$ (discrimination)
+        \begin{itemize}
+            \item Need large $|\mathcal{H}|$ to capture the true dist. (i.e. prevents underfitting but leads to overfitting)
+        \end{itemize}
     \end{itemize}
 \end{notes}
+\newpage
 
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:} An opaque box containing \textcolor{red}{red} and \textcolor{blue}{blue} balls. Take $N$ IID samples.
         \begin{itemize}
-            \item $\mu$: Probability of drawing a \textcolor{blue} ball (unknown).
-            \item $\nu$: Relative frequency of \textcolor{blue} balls in the sample (known).
+            \item $\mu$: Probability of drawing a \textcolor{blue}{blue} balls (unknown).
+            \item $\nu$: Relative frequency of \textcolor{blue}{blue} balls in the sample (known).
         \end{itemize}
         \item \textbf{Problem 1:} What is $\nu$ in this case? 8 balls total, 5 are blue. 
         \item \textbf{Solution 1:} $\nu = \frac{5}{8}$

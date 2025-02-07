@@ -17,7 +17,7 @@
 
 \subsection{Building a Decision Tree}
 \begin{definition}
-    Consider determining the calss of a randomly chosen target point. 
+    Consider determining the class of a randomly chosen target point. 
     \begin{itemize}
         \item If we ask a $K$-ary question abt. the pts. in $\mathcal{D}$, we can form $K$ subsets, $\mathcal{D}^{(1)},\ldots,\mathcal{D}^{(K)}$, using the answers s.t. 
         \begin{itemize}
@@ -26,8 +26,9 @@
         \end{itemize}
     \end{itemize}
 \end{definition}
+\newpage
 
-\subsubsection{Special Case}
+\subsection{Special Case}
 \begin{notes}
     Suppose each pt. belongs to a unique class (i.e. the \# of classes is $|\mathcal{D}|$).
     \customFigure[0.5]{../Images/L5_10.png}{}
@@ -39,11 +40,18 @@
         \item \( |\mathcal{D}^{(K)}| \) 
     \end{itemize}
     guesses, depending on the answer for the target point.
+    \begin{itemize}
+        \item i.e. $|\mathcal{D}^{(K)}|$ if the target point belongs to class $K$ (Yes)
+        \item i.e. $|\mathcal{D}^{(1)}|, \ldots, |\mathcal{D}^{(K-1)}|$ if the target point belongs to class $1, \ldots, K-1$ (No)
+    \end{itemize}
 
     \item Goal: Minimize the \# of guesses needed in the worst-case, which would be 
     \[
     \max \{ |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \}.
     \]
+    \begin{itemize}
+        \item i.e. Target point falls into the largest subset after a question is asked.
+    \end{itemize}
 
     \item Given the constraints on \( |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \), we can show that $\max \{ |\mathcal{D}^{(1)}|, \dots, |\mathcal{D}^{(K)}| \}$ is minimized when
     \[
@@ -58,6 +66,7 @@
     Roughly due to floor/ceil.
 \end{warning}
 
+\subsubsection{\# of K-ary Questions Needed}
 \begin{theorem}
     Given a classification data-set, \( \mathcal{D} \), in which the class of each point is unique (i.e., \( |\text{out}(\mathcal{D})| = |\mathcal{D}| \)), the class of a randomly chosen target point can be determined within 
     \[
@@ -66,20 +75,38 @@
     \( K \)-ary questions.
 
 \end{theorem}
+\newpage
 
-\subsubsection{General Case}
+\subsection{General Case}
 \begin{motivation}
     Suppose points do not necessarily belong to a unique class.
-    \vspace{1em}
-
-    In the context of decision trees:
     \begin{itemize}
         \item \(X\) is the class of a randomly chosen target point.
         \item \(Y\) is the answer to a \(K\)-ary question for \(X\).
     \end{itemize}
-
-    Maximize \(IG(X|Y)\) (i.e. choose the question to maximize the information gained).
 \end{motivation}
+
+\subsubsection{Expected \# of Questions}
+\begin{definition}
+    Using the theorem above, since for each class, \( c \), we can partition \( \mathcal{D} \) into \( \lceil 1 / p_c \rceil \) subsets, with a subset containing all class \( c \) points
+    \begin{itemize}
+        \item \( p_c \): Proportion of class \( c \) points.
+    \end{itemize}
+    \vspace{1em}
+
+    If the target point’s class is \( c \), we can confirm it w/in \( \lceil \log_K (\lceil 1 / p_c \rceil) \rceil \) \( K \)-ary questions. 
+    \vspace{1em}
+
+    Thus, the expected \# of Qs needed is
+    
+    \[
+    \sum_c p_c \lceil \log_2 (\lceil 1 / p_c \rceil) \rceil.
+    \]
+\end{definition}
+
+\begin{notes}
+    i.e. Reduces to special cases with each subset containing a unique class.
+\end{notes}
 
 \subsubsection{Entropy, Conditional Entropy, and Information Gain}
 \begin{definition}
@@ -97,13 +124,10 @@
     \begin{equation*}
         IG(X|Y) = H(X) - H(X|Y).
     \end{equation*}
-\end{definition}
-
-\begin{warning}
     \begin{itemize}
-        \item There are $\infty$ many potential questions, but there are only finite many ways to split the dataset. 
+        \item Maximize \(IG(X|Y)\) (i.e. choose the question to maximize the information gained).
     \end{itemize}
-\end{warning}
+\end{definition}
 \newpage
 
 \begin{process}
@@ -119,6 +143,22 @@
 \end{process}
 
 \begin{example}
+    Consider a classification problem where \( \mathcal{X} = \{0, \dots, 9\}^2 \), \( \mathcal{Y} = \{0,1,2\} \) and suppose we are given
+    \[
+    \mathcal{D} =
+    \left\{
+    \left( \begin{bmatrix} 1 \\ 1 \end{bmatrix}, 0 \right),
+    \left( \begin{bmatrix} 1 \\ 2 \end{bmatrix}, 0 \right),
+    \left( \begin{bmatrix} 2 \\ 1 \end{bmatrix}, 0 \right),
+    \left( \begin{bmatrix} 4 \\ 1 \end{bmatrix}, 1 \right),
+    \left( \begin{bmatrix} 4 \\ 2 \end{bmatrix}, 1 \right),
+    \left( \begin{bmatrix} 6 \\ 1 \end{bmatrix}, 2 \right),
+    \left( \begin{bmatrix} 1 \\ 5 \end{bmatrix}, 2 \right),
+    \left( \begin{bmatrix} 4 \\ 4 \end{bmatrix}, 2 \right),
+    \left( \begin{bmatrix} 6 \\ 2 \end{bmatrix}, 2 \right),
+    \left( \begin{bmatrix} 2 \\ 4 \end{bmatrix}, 2 \right)
+    \right\}.
+    \]
     \customFigure[0.5]{../Images/L5_0.png}{}    
 \end{example}
 \newpage
