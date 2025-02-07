@@ -329,8 +329,8 @@
     *$s^{n-2} \; \mid \; b_1 \quad b_2 \quad b_3 \quad \cdots$ \\
     *$s^{n-3} \; \mid \; c_1 \quad c_2 \quad \cdots$ \\
     $\vdots$ \\
-    *$s \; \mid \; * \quad 0$ \\
-    *$1 \; \mid \; * \quad 0$ \\
+    *$s \quad \quad \; \mid \; * \quad 0$ \\
+    *$1 \quad \quad \; \mid \; * \quad 0$ \\
     \(
     \textcolor{blue}{
     b_1 = -\frac{1}{a_{n-1}} \det 
@@ -369,7 +369,8 @@
     \end{bmatrix}
     \)
 
-    \textcolor{blue}{\textbf{Routh-Hurwitz Stability Criterion:}} The roots of \(a(s)\) are in \(\mathbb{C}^{-}\) iff the 1st col of Routh array has no sign changes. The \# of sign changes is equal to the \# of roots of \(a(s) \in \mathbb{C}^{+} := \{ s \in \mathbb{C} : \operatorname{Re}(s) > 0 \}\).
+    \textcolor{blue}{\textbf{Routh-Hurwitz Stability Criterion:}} The roots of \(a(s)\) are in \(\mathbb{C}^{-}\) iff the 1st col of Routh array has no sign changes. The \# of sign changes is equal to the \# of roots of \(a(s) \in \mathbb{C}^{+} := \{ s \in \mathbb{C} : \operatorname{Re}(s) > 0 \}\). \\
+    *If 1st element of a row is 0, Rooth array cannot be completed.
     
     \textcolor{blue}{\textbf{FVT v1:}} Suppose \( Y(s) = \mathcal{L}\{ y(t) \} \) is a proper rational fcn. If $y(\infty) := \lim_{t \to \infty} y(t)$ exists and is finite, then $y(\infty) = \lim_{s \to 0} s Y(s)$
 
@@ -379,6 +380,9 @@
 
     Then \( y(\infty) := \lim_{t \to \infty} y(t) \) exists and is finite and satisfies $y(\infty) = \lim_{s \to 0} s Y(s).$
     
+    \textcolor{orange}{\textbf{FVT}} 1. Does $y(\infty)$ exist? Check if pole at $s=0$, then compute Rooth Array to see if poles are in $\mathbb{C}^{-}$. \\
+    2. Compute $\lim_{s \to 0} s Y(s)$ if it exists.
+
         }
 \end{paracol}
 
