@@ -246,9 +246,83 @@
     \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
     2. Use table to find $Q(x)$ for $x \geq 0$. 
 
-    \textcolor{red}{\textbf{Gaussian Random Vectors:}} 
+    \textcolor{red}{\textbf{Random Vector:}} $\underline{X} = [X_1,\ldots,X_n]^T$ 
 
-    \textcolor{red}{\textbf{Linear \& Quadratic Discriminant Analysis:}}
+    \textcolor{blue}{\textbf{Mean Vector:}} $\underline{m}_{\underline{X}} = E[\underline{X}] = [\mu_1, \ldots, \mu_n]^T$ \\
+
+    \textcolor{blue}{\textbf{Corr. Mat.:}} $R_{\underline{X}} =
+    \begin{bmatrix}
+    E[X_1^2] & E[X_1 X_2] & \cdots & E[X_1 X_n] \\
+    E[X_2 X_1] & E[X_2^2] & \cdots & E[X_2 X_n] \\
+    \vdots & \vdots & \ddots & \vdots \\
+    E[X_n X_1] & E[X_n X_2] & \cdots & E[X_n^2]
+    \end{bmatrix}$ \\
+    *$R$ is real, symmetric, and PSD ($\forall \underline{a}, \underline{a}^T R \underline{a} \geq 0$).
+
+    \textcolor{blue}{\textbf{Covar. Mat.:}} $K_{\underline{X}} =
+    \begin{bmatrix}
+    \operatorname{Var}[X_1] & \cdots & \operatorname{Cov}[X_1, X_n] \\
+    \operatorname{Cov}[X_2, X_1] & \cdots & \operatorname{Cov}[X_2, X_n] \\
+    \vdots & \ddots & \vdots \\
+    \operatorname{Cov}[X_n, X_1] & \cdots & \operatorname{Var}[X_n]
+    \end{bmatrix}$ \\
+    *$K_{\underline{X}} = R_{\underline{X}} - \underline{m}_{\underline{X}} = R_{\underline{X}} - \underline{m} \underline{m}^T$ \\
+    *Diagonal $K_{\underline{X}} \iff X_1, \ldots, X_n$ are (mutually) uncorrelated.
+
+    \textcolor{red}{\textbf{Lin. Trans.}} $\underline{Y} = A \underline{X}$ (A rotates and stretches $\underline{X}$)
+
+    \textcolor{darkgreen}{\textbf{Mean:}} $E[\underline{Y}] = A \underline{m}_{\underline{X}}$
+
+    \textcolor{darkgreen}{\textbf{Covar. Mat.:}} $K_{\underline{Y}} = A K_{\underline{X}} A^T$
+
+    \textcolor{darkgreen}{\textbf{Diag. Covar. Mat.:}} For any $\underline{X}$, if $\underline{Y} = P^T \underline{X}$, then \\
+    $K_{\underline{Y}} = P^T K_{\underline{X}} P = \Lambda$ (i.e. $\underline{Y}$ is uncorrelated) \\
+    *$K_{\underline{X}} = P \Lambda P^T$
+
+    \textcolor{orange}{\textbf{Find $K_{\underline{Y}}$}} 1. Find eigenvalues, norm. eigenvectors of $K_{\underline{X}}$. \\
+    2. Set $\underline{Y} = P^T \underline{X}$, $K_{\underline{Y}} = \Lambda$.
+
+    \textcolor{darkgreen}{\textbf{PDF of L.T.}} If $\underline{Y} = A \underline{X}$ w/ $A$ not singular, then \\
+    $f_{\underline{Y}} (\underline{y}) = \frac{f_{\underline{X}} (\underline{x})}{|\det A|} \Big|_{\underline{x} = A^{-1} \underline{y}}$
+
+    \textcolor{orange}{\textbf{Find $f_{\underline{Y}} (\underline{y})$}} 1. Given $f_{\underline{X}} (\underline{x})$, define transformation $A$ \\
+    2. Determine $|\det A|$, $A^{-1}$, then $f_{\underline{Y}} (\underline{y})$.
+
+    \textcolor{red}{\textbf{Gaussian RVs:}} \textcolor{blue}{\textbf{Analytic Tractability:}} PDF of jointly Gaussian $X_1, \ldots, X_n$ is Guassian vector. \\
+    *$f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} |\det \Sigma|^{1/2}} e^{-\frac{1}{2} (\underline{x} - \underline{\mu})^T \Sigma^{-1} (\underline{x} - \underline{\mu})}$ \\ 
+    *$\underline{\mu} = \underline{m}_{\underline{X}}$, $\Sigma = K_{\underline{X}}$ (if $\Sigma$ is not singular)
+
+    \textcolor{blue}{\textbf{Properties of Guassian Vector:}} $\underline{X} \sim \mathcal{N} (\underline{\mu}, \Sigma)$ \\
+    1. PDF is completely determined by $\underline{\mu}$, $\Sigma$. \\
+    2. $\underline{X}$ uncorrelated $\implies$ $\underline{X}$ independent. \\
+    3. Any L.T. $\underline{Y} = A \underline{X} + \underline{b}$ is Gaussian vector w/ $\underline{\mu}_{\underline{Y}} = A \underline{\mu}_{\underline{X}}$, $\Sigma_{\underline{Y}} = A \Sigma_{\underline{X}} A^T$. \\
+    4. Any subset of $\{X_i\}$ are jointly Gaussian. \\
+    5. Any cond. PDF of a subset of $\{X_i\}$ given the other elements is Gaussian. \\
+
+    \textcolor{blue}{\textbf{Diag. of Guassian Covar.}} Eigen decomp. of $\Sigma_{\underline{X}}$: $\{\lambda_i\}, \{e_i\}$ \\
+    $A = [\underline{e}_1, \ldots, \underline{e}_n]^T$, then $\underline{Y} = A \underline{X}$ has $\Sigma_{\underline{Y}} = \Lambda$. \\
+    *$\underline{Y}$: Vector of indep. Gaussian RVs.
+
+    \textcolor{blue}{\textbf{Guassian Discriminant Analysis:}} Obs: $\underline{X} = \underline{x} = (x_1,\ldots,x_D)$ \\
+    Hyp: $\underline{x}$ is gen. by $\mathcal{N} (\underline{\mu}_c, \Sigma_c), c \in C$ \\
+    Dec: Which "Guassian bump" generated $\underline{x}$? \\
+    Prior: $P[C = c] = \pi_c$  (Gaussian Mixture Model) \\
+
+    \textcolor{darkgreen}{\textbf{MAP Rule:}} $\hat{c} = \arg \max_c P_C[c | \underline{X} = \underline{x}]$ \\
+    $\hat{c} = \arg \max_c f_{\underline{X} \mid C} (\underline{x} \mid c) \pi_c$ \\
+
+    \textcolor{darkgreen}{\textbf{LGD:}} $\Sigma_c = \Sigma \; \forall c$, find $c$ w/ best $\underline{\mu}_c$ \\
+    $\hat{c} = \arg \max_c \underline{\beta}_c^T \underline{x} + \gamma_c$ \\
+    *$\underline{\beta}_c^T = \underline{\mu}_c^T \Sigma^{-1} \underline{x} \; \mid \; \gamma_c = \log \pi_c - \frac{1}{2} \underline{\mu}_c^T \Sigma^{-1} \underline{\mu}_c$ \\
+    *Bin. hyp. dec. boundary: $\underline{\beta}_0^T \underline{x} + \gamma_0 = \underline{\beta}_1^T \underline{x} + \gamma_1$ (lin. in space of $\underline{x}$) 
+
+    \textcolor{darkgreen}{\textbf{QGD:}} $\Sigma_c$ are diff., find $c$ w/ best $\underline{\mu}_c$, $\Sigma_c$ \\
+    *Bin. hyp. dec. boundary: Quadratic in space of $\underline{x}$
+
+    \textcolor{orange}{\textbf{How to find $\underline{\pi}_c, \underline{\mu}_c, \Sigma_c$:}} Given $n$ points gen. by GMM, then $n_c$ points $\{\underline{x}_1^c, \ldots, \underline{x}_{n_c}^c\}$ come from $\mathcal{N} (\underline{\mu}_c, \Sigma_c)$ \\
+    $\hat{\pi}_c = \frac{n_c}{n}$, $\hat{\mu}_c = \frac{1}{n_c} \sum_{i=1}^{n} \underline{x}_i^c$, \\
+    $\Sigma_c = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_i^c - \hat{\mu}_c)(x_i^c - \hat{\mu}_c)^T$
+
 
 
     }
