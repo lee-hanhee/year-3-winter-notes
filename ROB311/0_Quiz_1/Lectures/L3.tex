@@ -154,30 +154,30 @@ procedure ENFORCEVAR($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
 % \end{example}
 \newpage
 
-\begin{process} \textbf{How to check $k$-Consistency?} 
-    \begin{enumerate}
-        \item Given $\mathcal{V}$ w/ $\text{dom}(V) = \{v_1,\ldots,v_{|\text{dom}(V)|}\} \; \forall V \in \mathcal{V}$ and $\mathcal{C}$ w/ $\text{scp}(C) = \{V_1,\ldots,V_{|\text{scp}(C)|}\} \; \forall C \in \mathcal{C}$.
-        \item Remove all constraints that have $k+1$ or more variables.
-        \item For each $C \in \mathcal{C}$, do the following:
-        \begin{enumerate}
-            \item For each $V \in \text{scp}(C)$, do the following:
-            \begin{enumerate}
-                \item For each $v \in \text{dom}(V)$, do the following:
-            \end{enumerate}
-            \begin{itemize}
-                \item Fix $V$ to $v$ for $k-1$ variables.
-                \item For the last variable $V$, find a value in $\text{dom}(V)$ that satisfies all constraints.
-                \item \textbf{Key:} If there is one combination that doesn't satisfy the constraint, then the CSP is not $k$-consistent.
-            \end{itemize}
-        \end{enumerate}
-        \item If all constraints are satisfied, then the CSP is $k$-consistent.
-    \end{enumerate}
-\end{process}
+% \begin{process} \textbf{How to check $k$-Consistency?} 
+%     \begin{enumerate}
+%         \item Given $\mathcal{V}$ w/ $\text{dom}(V) = \{v_1,\ldots,v_{|\text{dom}(V)|}\} \; \forall V \in \mathcal{V}$ and $\mathcal{C}$ w/ $\text{scp}(C) = \{V_1,\ldots,V_{|\text{scp}(C)|}\} \; \forall C \in \mathcal{C}$.
+%         \item Remove all constraints that have $k+1$ or more variables.
+%         \item For each $C \in \mathcal{C}$, do the following:
+%         \begin{enumerate}
+%             \item For each $V \in \text{scp}(C)$, do the following:
+%             \begin{enumerate}
+%                 \item For each $v \in \text{dom}(V)$, do the following:
+%             \end{enumerate}
+%             \begin{itemize}
+%                 \item Fix $V$ to $v$ for $k-1$ variables.
+%                 \item For the last variable $V$, find a value in $\text{dom}(V)$ that satisfies all constraints.
+%                 \item \textbf{Key:} If there is one combination that doesn't satisfy the constraint, then the CSP is not $k$-consistent.
+%             \end{itemize}
+%         \end{enumerate}
+%         \item If all constraints are satisfied, then the CSP is $k$-consistent.
+%     \end{enumerate}
+% \end{process}
 
 \begin{process} \textbf{How to Enforce $k$-Consistency?} 
     \begin{enumerate}
         \item Given $\mathcal{V}$ w/ $\text{dom}(V) = \{v_1,\ldots,v_{|\text{dom}(V)|}\} \; \forall V \in \mathcal{V}$ and $\mathcal{C}$ w/ $\text{scp}(C) = \{V_1,\ldots,V_{|\text{scp}(C)|}\} \; \forall C \in \mathcal{C}$.
-        \item Remove all constraints that have $k+1$ or more variables.
+        \item Remove all constraints that have $k+1$ or more variables and add the rest to a queue.
         \item \textbf{Pre-pruning:} For each remaining $C \in \mathcal{C}$, do the following:
         \begin{enumerate}
             \item For each $V \in \text{scp}(C)$, do the following:
@@ -187,11 +187,10 @@ procedure ENFORCEVAR($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
             \begin{itemize}
                 \item Fix $V$ to $v$.
                 \item For the other $V \in \text{scp}(C)$, check if the constraint is satisfied by trying all combinations (need only one). 
-                \item \textbf{Key:} If the constraint is not satisfied, then remove the value from $\text{dom}(V)$.
+                \item \textbf{Key:} If the constraint is not satisfied, then remove the value from $\text{dom}(V)$. Add any affected constraints back to the queue.
             \end{itemize}
         \end{enumerate}
-        \item If you had to remove any values from $\text{dom}(V)$, then check with the other constraints.
-        \item \textbf{Pruning:} Every constraint is satisfied.
+        \item Repeat until the queue is empty.
     \end{enumerate}
 \end{process}
 
@@ -206,9 +205,17 @@ procedure ENFORCEVAR($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
 \begin{process} \textbf{How to determine a solution to a CSP?}
     \begin{enumerate}
         \item After pre-pruning the domains. 
-        \item Assign variables in alphabetical order and values in numerical order. Prune the pre-pruned domains.
-        \item If you can assign all variables, then you have a solution.
+        \item Assign variables in alphabetical order and values in numerical order. 
+        \item Prune the pre-pruned domains.
+        \item If you can assign all variables, then you have a solution. If you have domain wipeout, backtrack.
         \item Repeat the process until you find all solutions. 
+    \end{enumerate}
+\end{process}
+
+\begin{process} \textbf{Checking $k$-Consistency}
+    \begin{enumerate}
+        \item Enforce $k$-consistency. 
+        \item If you have to pre-prune, then not $k$-consistent.
     \end{enumerate}
 \end{process}
 \newpage
@@ -249,180 +256,180 @@ procedure ENFORCEVAR($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
 \end{example}
 \newpage
 
-\begin{example} \textbf{4-Consistency Pre-Pruning}
-    \begin{center}
-        \begin{tabular}{ll}
-            \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
-            \toprule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_4: 1 \leq b \leq 2$
-            \end{center}} \\
-            \midrule
-                $b = 0$, $b=1$, $b=2$, $b=3$, $b=4$ & No, Yes, Yes, No, No \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, 2, 3\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_2: 3 \leq a + c \leq 4$
-            \end{center}} \\
-            \midrule
-                $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
-                $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, Yes \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, 2, 3\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_3: 2 \leq a + b + 2c \leq 5$
-            \end{center}} \\
-            \midrule
-                $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
-                $b=1$, $b=2$ & Yes, Yes \\
-                $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, No \\
+% \begin{example} \textbf{4-Consistency Pre-Pruning}
+%     \begin{center}
+%         \begin{tabular}{ll}
+%             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+%             \toprule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_4: 1 \leq b \leq 2$
+%             \end{center}} \\
+%             \midrule
+%                 $b = 0$, $b=1$, $b=2$, $b=3$, $b=4$ & No, Yes, Yes, No, No \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, 2, 3\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_2: 3 \leq a + c \leq 4$
+%             \end{center}} \\
+%             \midrule
+%                 $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
+%                 $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, Yes \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, 2, 3\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_3: 2 \leq a + b + 2c \leq 5$
+%             \end{center}} \\
+%             \midrule
+%                 $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes, Yes \\
+%                 $b=1$, $b=2$ & Yes, Yes \\
+%                 $c=0$, $c=1$, $c=2$, $c=3$ & Yes, Yes, Yes, No \\
 
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-        \end{tabular}
-    \end{center}
-\end{example}
-\newpage
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{0, 1, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%         \end{tabular}
+%     \end{center}
+% \end{example}
+% \newpage
 
-\begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
-    \begin{center}
-        \begin{tabular}{ll}
-            \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
-            \toprule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_2: 3 \leq a + c \leq 4$
-            \end{center}} \\
-            \midrule
-                $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes, Yes \\
-                $c=0$, $c=1$, $c=2$ & Yes, Yes, Yes \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_3: 2 \leq a + b + 2c \leq 5$
-            \end{center}} \\
-            \midrule
-                $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes \\
-                $b=1$, $b=2$ & Yes, Yes \\
-                $c=0$, $c=1$, $c=2$ & Yes, Yes, No \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_2: 3 \leq a + c \leq 4$
-            \end{center}} \\
-            \midrule
-                $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes \\
-                $c=0$, $c=1$ & Yes, Yes \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \midrule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_3: 2 \leq a + b + 2c \leq 5$
-            \end{center}} \\
-            \midrule
-                $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
-                $b=1$, $b=2$ & Yes, Yes \\
-                $c=0$, $c=1$ & Yes, Yes \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
-                \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
-            \end{itemize}} \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{example}
-\newpage
+% \begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
+%     \begin{center}
+%         \begin{tabular}{ll}
+%             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+%             \toprule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_2: 3 \leq a + c \leq 4$
+%             \end{center}} \\
+%             \midrule
+%                 $a=0$, $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes, Yes \\
+%                 $c=0$, $c=1$, $c=2$ & Yes, Yes, Yes \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, 2, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_3: 2 \leq a + b + 2c \leq 5$
+%             \end{center}} \\
+%             \midrule
+%                 $a=1$, $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes, Yes \\
+%                 $b=1$, $b=2$ & Yes, Yes \\
+%                 $c=0$, $c=1$, $c=2$ & Yes, Yes, No \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{\cancel{0}, 1, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_2: 3 \leq a + c \leq 4$
+%             \end{center}} \\
+%             \midrule
+%                 $a=1$, $a=2$, $a=3$, $a=4$ & No, Yes, Yes, Yes \\
+%                 $c=0$, $c=1$ & Yes, Yes \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \midrule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_3: 2 \leq a + b + 2c \leq 5$
+%             \end{center}} \\
+%             \midrule
+%                 $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
+%                 $b=1$, $b=2$ & Yes, Yes \\
+%                 $c=0$, $c=1$ & Yes, Yes \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, 3, 4, 5\} $
+%                 \item $\text{dom}(E) = \{0, 1, 2, 3, 4, 5, 6\} $
+%             \end{itemize}} \\
+%             \bottomrule
+%         \end{tabular}
+%     \end{center}
+% \end{example}
+% \newpage
 
-\begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
-    \begin{center}
-        \begin{tabular}{ll}
-            \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
-            \toprule
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{center}
-                $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
-            \end{center}} \\
-            \midrule
-                $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
-                $b=1$, $b=2$ & Yes, Yes \\
-                $d=0$, $d=1$, $d=2$, $d=3$, $d=4$, $d=5$ & Yes, Yes, Yes, No, No, No \\
-                $e=0$, $e=1$, $e=2$, $e=3$, $e=4$, $e=5$, $e=6$ & Yes, Yes, No, No, No, No \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
-                \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
-                \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
-                \item $\text{dom}(D) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}\} $
-                \item $\text{dom}(E) = \{0, 1, \cancel{2}, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
-            \end{itemize}} \\
-            \bottomrule
-        \end{tabular}
-        \vspace{1em}
+% \begin{example} \textbf{4-Consistency Pre-Pruning Continued:}
+%     \begin{center}
+%         \begin{tabular}{ll}
+%             \textbf{Fixed Value} & \textbf{Satisfactory Combination?} \\
+%             \toprule
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{center}
+%                 $C_1: 8 \leq 2a + 2b + 2d + 3e \leq 10$
+%             \end{center}} \\
+%             \midrule
+%                 $a=2$, $a=3$, $a=4$ & Yes, Yes, Yes \\
+%                 $b=1$, $b=2$ & Yes, Yes \\
+%                 $d=0$, $d=1$, $d=2$, $d=3$, $d=4$, $d=5$ & Yes, Yes, Yes, No, No, No \\
+%                 $e=0$, $e=1$, $e=2$, $e=3$, $e=4$, $e=5$, $e=6$ & Yes, Yes, No, No, No, No \\
+%             \multicolumn{2}{p{\linewidth}}{
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{\cancel{0}, \cancel{1}, 2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{\cancel{0}, 1, 2, \cancel{3}, \cancel{4}\} $
+%                 \item $\text{dom}(C) = \{0, 1, \cancel{2}, \cancel{3}\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2, \cancel{3}, \cancel{4}, \cancel{5}\} $
+%                 \item $\text{dom}(E) = \{0, 1, \cancel{2}, \cancel{3}, \cancel{4}, \cancel{5}, \cancel{6}\} $
+%             \end{itemize}} \\
+%             \bottomrule
+%         \end{tabular}
+%         \vspace{1em}
 
-        \begin{enumerate}
-            \item[4. ] \textbf{Conclusion:} This is the final pruned domain, which means if I fix a variable to a value, then I can find a satisfactory combination for the rest of the variables in this pruned domain.
-            \begin{itemize}
-                \item $\text{dom}(A) = \{2, 3, 4\}$
-                \item $\text{dom}(B) = \{1, 2\} $
-                \item $\text{dom}(C) = \{0, 1\} $
-                \item $\text{dom}(D) = \{0, 1, 2\} $
-                \item $\text{dom}(E) = \{0, 1\} $
-            \end{itemize}
-        \end{enumerate}
-    \end{center}
-\end{example}
-\newpage
+%         \begin{enumerate}
+%             \item[4. ] \textbf{Conclusion:} This is the final pruned domain, which means if I fix a variable to a value, then I can find a satisfactory combination for the rest of the variables in this pruned domain.
+%             \begin{itemize}
+%                 \item $\text{dom}(A) = \{2, 3, 4\}$
+%                 \item $\text{dom}(B) = \{1, 2\} $
+%                 \item $\text{dom}(C) = \{0, 1\} $
+%                 \item $\text{dom}(D) = \{0, 1, 2\} $
+%                 \item $\text{dom}(E) = \{0, 1\} $
+%             \end{itemize}
+%         \end{enumerate}
+%     \end{center}
+% \end{example}
+% \newpage
 
 \begin{example} \textbf{4-Consistency Pre-Pruning}
     \begin{center}
