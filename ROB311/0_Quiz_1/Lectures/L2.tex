@@ -549,9 +549,99 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     \end{enumerate}
 \end{process}
 
-\begin{example}
-    
-\end{example}
+\subsubsection{Heuristic Availability}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{No Heuristic:} 
+        \begin{itemize}
+            \item \textbf{BFS}, \textbf{DFS}, \textbf{IDDFS}, \textbf{CFS}.
+        \end{itemize}
+        \item \textbf{Yes, Heuristic Provided:}
+        \begin{itemize}
+            \item \textbf{HFS}, \textbf{A$^*$}, \textbf{IIA$^*$}, \textbf{WA$^*$}.
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Halting}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{Guaranteed Halting (Under Finite Branching or Positive Costs):} 
+        \begin{itemize}
+            \item \textbf{BFS}, \textbf{IDDFS}, \textbf{CFS} ($\epsilon > 0$), \textbf{A$^*$} ($\epsilon > 0$, admissible), \textbf{IIA$^*$}.
+        \end{itemize}
+        \item \textbf{No Guaranteed Halting (May Loop in Some Cases):}
+        \begin{itemize}
+            \item \textbf{DFS}, \textbf{HFS}.
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Completeness}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{Complete Under Certain Conditions:}
+        \begin{itemize}
+            \item \textbf{BFS} (finite depth), \textbf{IDDFS}, \textbf{CFS} ($\epsilon > 0$), \textbf{A$^*$} (admissible heuristic), \textbf{IIA$^*$}.
+        \end{itemize}
+        \item \textbf{Not Guaranteed Complete:}
+        \begin{itemize}
+            \item \textbf{DFS} (can miss solutions in infinite-depth spaces), \textbf{HFS} (can get stuck if heuristic is misleading).
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Optimality}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{Optimal (Under Specific Assumptions):}
+        \begin{itemize}
+            \item \textbf{BFS} (optimal in shallowest depth for uniform costs).
+            \item \textbf{CFS} (optimal if all edges have strictly positive cost).
+            \item \textbf{A$^*$}, \textbf{IIA$^*$} (optimal if the heuristic is admissible and edge costs are $>0$).
+        \end{itemize}
+        \item \textbf{Not Guaranteed Optimal:}
+        \begin{itemize}
+            \item \textbf{DFS}, \textbf{HFS}, \textbf{WA$^*$} (unless $w=0.5$ with an admissible heuristic, but even then it may require careful tuning).
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Complexity}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{Memory-Intensive But Faster to Find Solutions:}
+        \begin{itemize}
+            \item \textbf{BFS}, \textbf{CFS}, \textbf{A$^*$} (exponential growth in open list).
+        \end{itemize}
+        \item \textbf{More Memory-Efficient:}
+        \begin{itemize}
+            \item \textbf{DFS} (linear in depth), \textbf{IDDFS}, \textbf{IIA$^*$}.
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Summary of Algorithm Selection}
+\begin{process}
+    \begin{enumerate}[label=\arabic*., leftmargin=*, align=left]
+        \item \textbf{No Heuristic, Must Halt, Complete, and Possibly Optimal (Uniform Cost):} 
+        \begin{itemize}
+            \item \textbf{BFS} (optimal in shallowest depth), \textbf{IDDFS} (similar but uses less space).
+        \end{itemize}
+        \item \textbf{No Heuristic, Low-Cost Path, Strictly Positive Edge Costs:} 
+        \begin{itemize}
+            \item \textbf{CFS} (cheapest-first).
+        \end{itemize}
+        \item \textbf{Heuristic Available, Need Completeness \& Optimality, Positive Edge Costs:}
+        \begin{itemize}
+            \item \textbf{A$^*$} (admissible heuristic), \textbf{IIA$^*$} (iterative improvement).
+        \end{itemize}
+        \item \textbf{Heuristic Available, Faster Non-Optimal Solution:}
+        \begin{itemize}
+            \item \textbf{HFS}, \textbf{WA$^*$} (anytime approach with varying weight).
+        \end{itemize}
+    \end{enumerate}
+\end{process}
 \newpage
 
 \subsubsection{Tracing Search Algorithms}
