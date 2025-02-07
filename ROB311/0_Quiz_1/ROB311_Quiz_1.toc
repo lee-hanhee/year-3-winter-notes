@@ -29,8 +29,8 @@
 \contentsline {subsubsection}{\numberline {2.7.1}Estimated Cost}{15}{subsubsection.2.7.1}%
 \contentsline {subsubsection}{\numberline {2.7.2}Admissible}{15}{subsubsection.2.7.2}%
 \contentsline {subsubsection}{\numberline {2.7.3}Consistent}{15}{subsubsection.2.7.3}%
-\contentsline {subsubsection}{\numberline {2.7.4}Domination}{15}{subsubsection.2.7.4}%
-\contentsline {subsubsection}{\numberline {2.7.5}Designing Heuristics via Problem Relaxation}{15}{subsubsection.2.7.5}%
+\contentsline {subsubsection}{\numberline {2.7.4}Domination}{16}{subsubsection.2.7.4}%
+\contentsline {subsubsection}{\numberline {2.7.5}Designing Heuristics via Problem Relaxation}{16}{subsubsection.2.7.5}%
 \contentsline {subsubsection}{\numberline {2.7.6}Combining Heuristics}{16}{subsubsection.2.7.6}%
 \contentsline {subsubsection}{\numberline {2.7.7}Anytime Search Algorithms}{16}{subsubsection.2.7.7}%
 \contentsline {subsection}{\numberline {2.8}Canonical Examples}{17}{subsection.2.8}%

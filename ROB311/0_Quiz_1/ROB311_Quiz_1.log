@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  7 FEB 2025 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  7 FEB 2025 12:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1355,7 +1355,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 1
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (17.37567pt too wide) in paragraph at lines 3--83
+Overfull \hbox (26.9384pt too wide) in paragraph at lines 3--83
  [] 
  []
 
@@ -1368,52 +1368,52 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 90--131
 <../Images/L2_0.png, id=565, 444.66125pt x 238.8925pt>
 File: ../Images/L2_0.png Graphic file (type png)
 <use ../Images/L2_0.png>
-Package pdftex.def Info: ../Images/L2_0.png  used on input line 454.
+Package pdftex.def Info: ../Images/L2_0.png  used on input line 475.
 (pdftex.def)             Requested size: 249.55872pt x 134.07414pt.
 <../Images/L2_1.png, id=566, 422.57875pt x 68.255pt>
 File: ../Images/L2_1.png Graphic file (type png)
 <use ../Images/L2_1.png>
-Package pdftex.def Info: ../Images/L2_1.png  used on input line 455.
+Package pdftex.def Info: ../Images/L2_1.png  used on input line 476.
 (pdftex.def)             Requested size: 249.55872pt x 40.30966pt.
  [17 <../Images/L2_0.png> <../Images/L2_1.png>]
 <../Images/L2_9.png, id=577, 445.665pt x 263.98625pt>
 File: ../Images/L2_9.png Graphic file (type png)
 <use ../Images/L2_9.png>
-Package pdftex.def Info: ../Images/L2_9.png  used on input line 460.
+Package pdftex.def Info: ../Images/L2_9.png  used on input line 481.
 (pdftex.def)             Requested size: 249.55872pt x 147.82323pt.
 <../Images/L2_10.png, id=578, 413.545pt x 277.035pt>
 File: ../Images/L2_10.png Graphic file (type png)
 <use ../Images/L2_10.png>
-Package pdftex.def Info: ../Images/L2_10.png  used on input line 461.
+Package pdftex.def Info: ../Images/L2_10.png  used on input line 482.
 (pdftex.def)             Requested size: 249.55872pt x 167.18185pt.
  [18 <../Images/L2_9.png> <../Images/L2_10.png>]
 <../Images/L2_2.png, id=589, 415.5525pt x 201.75375pt>
 File: ../Images/L2_2.png Graphic file (type png)
 <use ../Images/L2_2.png>
-Package pdftex.def Info: ../Images/L2_2.png  used on input line 486.
+Package pdftex.def Info: ../Images/L2_2.png  used on input line 507.
 (pdftex.def)             Requested size: 249.55872pt x 121.16092pt.
 <../Images/L2_3.png, id=590, 406.51875pt x 208.78pt>
 File: ../Images/L2_3.png Graphic file (type png)
 <use ../Images/L2_3.png>
-Package pdftex.def Info: ../Images/L2_3.png  used on input line 487.
+Package pdftex.def Info: ../Images/L2_3.png  used on input line 508.
 (pdftex.def)             Requested size: 249.55872pt x 128.16795pt.
  [19 <../Images/L2_2.png> <../Images/L2_3.png>] [20]
 <../Images/LR_0.png, id=616, 603.25375pt x 246.9225pt>
 File: ../Images/LR_0.png Graphic file (type png)
 <use ../Images/LR_0.png>
-Package pdftex.def Info: ../Images/LR_0.png  used on input line 538.
+Package pdftex.def Info: ../Images/LR_0.png  used on input line 559.
 (pdftex.def)             Requested size: 249.55872pt x 102.14688pt.
  [21 <../Images/LR_0.png>] [22] [23] [24] [25] [26] [27] [28] [29]
 <../Images/L2_8.png, id=718, 446.66875pt x 228.855pt>
 File: ../Images/L2_8.png Graphic file (type png)
 <use ../Images/L2_8.png>
-Package pdftex.def Info: ../Images/L2_8.png  used on input line 944.
+Package pdftex.def Info: ../Images/L2_8.png  used on input line 965.
 (pdftex.def)             Requested size: 249.55872pt x 127.86458pt.
  [30 <../Images/L2_8.png>]
 <../Images/L2_11.png, id=747, 412.54124pt x 278.03876pt>
 File: ../Images/L2_11.png Graphic file (type png)
 <use ../Images/L2_11.png>
-Package pdftex.def Info: ../Images/L2_11.png  used on input line 995.
+Package pdftex.def Info: ../Images/L2_11.png  used on input line 1016.
 (pdftex.def)             Requested size: 249.55872pt x 168.19487pt.
 ) [31 <../Images/L2_11.png>] (./Lectures/L3.tex [32] [33]
 <../Images/L3_0.png, id=815, 588.1975pt x 390.45876pt>
@@ -1534,15 +1534,15 @@ Package rerunfilecheck Info: File `ROB311_Quiz_1.out' has not changed.
 (rerunfilecheck)             Checksum: 8159EEB2E0D6B42827831836814E6D12;11943.
  ) 
 Here is how much of TeX's memory you used:
- 53651 strings out of 474116
- 1240649 string characters out of 5743682
+ 53655 strings out of 474116
+ 1240717 string characters out of 5743682
  2335187 words of memory out of 5000000
- 74624 multiletter control sequences out of 15000+600000
+ 74628 multiletter control sequences out of 15000+600000
  638659 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,22n,107p,810b,1596s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ROB311_Quiz_1.pdf (57 pages, 3064250 bytes).
+Output written on ROB311_Quiz_1.pdf (57 pages, 3065081 bytes).
 PDF statistics:
  1265 PDF objects out of 1440 (max. 8388607)
  1084 compressed objects within 11 object streams

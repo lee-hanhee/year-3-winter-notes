@@ -1,6 +1,6 @@
 \begin{summary}
     \begin{center}
-        \begin{tabular}{lcccccc}
+        \begin{tabular}{llccccc}
         \toprule
         \textbf{Alg.} & Halting & Sound & Complete & Optimal & Time & Space \\
         \midrule
@@ -25,7 +25,7 @@
             \textbf{Uninformed Search Algorithms}
         \end{center}} \\
         \midrule
-        \textbf{BFS} & $d<\infty$, non-\texttt{NULL} & always & always & constant cst & $b^{l^{*}}$ & $b^{l^{*} + 1}$ \\
+        \textbf{BFS} & $d<\infty \mid$ non-\texttt{NULL} soln. & always & always & constant cst & $b^{l^{*}}$ & $b^{l^{*} + 1}$ \\
         \multicolumn{7}{p{\linewidth}}{
         \begin{itemize}
             \item Explores the least-recently expanded open node first.
@@ -43,7 +43,7 @@
             \item Same as DFS but with iterative deepening.
         \end{itemize}} \\
         \midrule
-        \textbf{CFS} & $d<\infty$, non-\texttt{NULL} & yes & $\epsilon >0$ & $\epsilon >0$ & $b^{c^{*} / \epsilon}$ & $b^{c^{*}/\epsilon + 1}$ \\
+        \textbf{CFS} & $d<\infty \mid$ non-\texttt{NULL} soln. & yes & $\epsilon >0$ & $\epsilon >0$ & $b^{c^{*} / \epsilon}$ & $b^{c^{*}/\epsilon + 1}$ \\
         \multicolumn{7}{p{\linewidth}}{
         \begin{itemize}
             \item Explores the cheapest open node first.
@@ -167,7 +167,7 @@
     \begin{itemize}
         \item In such a tree, each node represents the path from the root to itself.
         \begin{itemize}
-            \item The node may also include other info (such as the path's origiin, cost, etc).
+            \item The node may also include other info (such as the path's origin, cost, etc).
         \end{itemize}
     \end{itemize}
 \end{definition}
@@ -339,11 +339,19 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
         \item $\text{hur}: S \to \mathbb{R}_+$: Estimate of the extra cost needed to get to a goal from $\text{dst}(p)$
         \begin{itemize}
             \item $\text{hur}(s)$ estimates the cost to get to $\mathcal{G}$ from $s$ and $\text{hur}(p)$ means $\text{hur}(\text{dst}(p))$.
+            \item $\text{hur}^*(s)$: The true cost to get to $\mathcal{G}$ from $s$.
         \end{itemize}
     \end{itemize}
 \end{definition}
 
 \subsubsection{Admissible}
+\begin{motivation}
+    We want to find a heuristic that under estimates (i.e. make paths look better than they are) the costs, rather than over estimate (i.e. make paths look worse than they are).
+    \begin{itemize}
+        \item Least useful heuristic: $\text{hur}(s) = 0$ for all $s \in \mathcal{S}$ or any other constant.
+        \item Most useful heuristic: $\text{hur}(s) = \text{hur}^*(s)$ for all $s \in \mathcal{S}$.
+    \end{itemize}
+\end{motivation}
 \begin{definition}
     A heuristic, $\text{hur}(\cdot)$, is said to be \textbf{admissible} if
 
@@ -359,6 +367,10 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
     for all $s \in \mathcal{G}$.
 \end{definition}
+
+\begin{warning}
+    Never over-estimates the overall cost, but may still estimate the cost of individual transition. 
+\end{warning}
 
 \subsubsection{Consistent}
 \begin{definition}
@@ -379,9 +391,14 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     for all $s \in \mathcal{G}$.
 \end{definition}
 
+\begin{warning}
+    Never over-estimates the cost of individual transitions (and hence the overall cost).
+\end{warning}
+
 \begin{theorem}
     If a heuristic, $\text{hur}(\cdot)$, is consistent, then it is also admissible.
 \end{theorem}
+\newpage
 
 \subsubsection{Domination}
 \begin{definition}
@@ -403,6 +420,10 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
     \end{itemize}
 \end{definition}
 
+\begin{notes}
+    Want the heuristic that dominates but is also admissible.
+\end{notes}
+
 \subsubsection{Designing Heuristics via Problem Relaxation}
 \begin{definition}
     Let $\text{hur}^*_{\text{ori}}$ be the perfect heuristic for a search problem, and $\text{cst}^*_{\text{rel}}$ be the optimal cost for a relaxed version of the problem. Then
@@ -413,7 +434,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 
 \subsubsection{Combining Heuristics}
 \begin{definition}
-    If $\{ \text{hur}_k(\cdot) \}_k$ are admissible (resp. consistent), then $\max_k \{\text{hur}_k\} (\cdot)$ is also admissible (resp. consistent).
+    If $\{ \text{hur}_k(\cdot) \}_k$ are admissible (or consistent), then $\max_k \{\text{hur}_k\} (\cdot)$ is also admissible (or consistent).
 \end{definition}
 
 \begin{definition}
@@ -436,7 +457,7 @@ SEARCH($\mathcal{O}$, $\mathcal{C}$)
 \subsubsection{How to setup a search problem?}
 \begin{process} 
     \begin{enumerate}
-        \item Givne a search graph, we need to define the following:
+        \item Given a search graph, we need to define the following:
         \begin{itemize}
             \item $\mathcal{S}$: set of vertices
             \item $\mathcal{G}$: goal states (subset of $\mathcal{S}$)

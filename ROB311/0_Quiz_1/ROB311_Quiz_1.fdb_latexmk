@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738945976.86289 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1738946000.27841 0
+["pdflatex"] 1738950677.70126 "/Users/hanheelee/Desktop/MI_Y3_Winter/ROB311/0_Quiz_1/ROB311_Quiz_1.tex" "ROB311_Quiz_1.pdf" "ROB311_Quiz_1" 1738950687.01135 0
   "../Images/L1_0.png" 1736973573.92376 72335 afba6478e14fdfff963b9c2bb0bdd4b0 ""
   "../Images/L1_1.png" 1736973573.92436 54800 e2953d841aa189dfde1cfae341b41add ""
   "../Images/L1_10.png" 1736973573.92489 51114 ff549d09c6d245914ae12be0ae36fc0e ""
@@ -395,15 +395,15 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "Lectures/L1.tex" 1738552147.00529 5154 ddbbca93c75bb21d37a2905c72e3ba0c ""
-  "Lectures/L2.tex" 1738898290.50426 39611 5aff12756081a9cdc1b2284c4cf7a17d ""
+  "Lectures/L2.tex" 1738950672.37606 40522 106c52440a92aab7b389cbd108390d31 ""
   "Lectures/L3.tex" 1738945952.36397 43062 6ed2a7bcede228ae5166c14bd07bff75 ""
   "Lectures/L4.tex" 1738940525.84127 5332 ab9e7b5473c1a20b374f5dc12851ab6b ""
   "Lectures/L4_0.tex" 1738938600.17173 1518 8d122e03d2f06b62957fdbbcf439ab80 ""
   "Lectures/L5.tex" 1738944259.15008 22106 5bed80d08046c880052b6ee3ea13771c ""
-  "ROB311_Quiz_1.aux" 1738945999.08806 13641 b4a1f3f83d205c7a0424d27d0761acfe "pdflatex"
-  "ROB311_Quiz_1.out" 1738945999.10498 11943 8159eeb2e0d6b42827831836814e6d12 "pdflatex"
+  "ROB311_Quiz_1.aux" 1738950686.32491 13641 bf9afea2c64be0fdcc5c5ecaf0650074 "pdflatex"
+  "ROB311_Quiz_1.out" 1738950686.33057 11943 8159eeb2e0d6b42827831836814e6d12 "pdflatex"
   "ROB311_Quiz_1.tex" 1738812689.17008 585 09f42a09e6a29d533db7c484b68ea699 ""
-  "ROB311_Quiz_1.toc" 1738945999.10692 6430 7c388449d5e6f94a82188d090dbab6b0 "pdflatex"
+  "ROB311_Quiz_1.toc" 1738950686.33133 6430 55efd35a5e3e04a8e29b8788712d2af5 "pdflatex"
   "style.sty" 1738868647.99674 8167 448115770a353a002f64fc803ef60e2e ""
   (generated)
   "ROB311_Quiz_1.aux"
