@@ -41,19 +41,18 @@
 \contentsline {section}{\numberline {3}Constraint Satisfaction Problems}{32}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Setup of CSP}{32}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Assignment}{32}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Consistent}{32}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Complete Assignment}{32}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Partial Assignment}{32}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}k-Consistent}{32}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Edge/Arc Consistent}{32}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Constraint Satisfaction Algorithms}{33}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Main}{33}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Satisfy}{33}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Enforce: Enforcing k-Consistency}{33}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}EnforceVar: Enforcing k-Consistency}{33}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Setup of CSP}{34}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Classification vs. Regression Problems}{49}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Feature Spaces}{49}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.3}Formulating a CSP as a Search Problem}{32}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Consistent}{32}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Complete Assignment}{32}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Partial Assignment}{32}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}k-Consistent}{32}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Constraint Satisfaction Algorithm}{33}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Satisfy}{33}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Enforce: Enforcing k-Consistency}{33}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}EnforceVar: Enforcing k-Consistency}{33}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Canonical Problems}{34}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Classification vs. Regression Problems}{49}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Feature Spaces}{49}{subsection.3.8}%
 \contentsline {section}{\numberline {4}PAC Learning}{50}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Probably Approximately Correct (PAC) Estimations}{50}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Hoeffding's Inequality}{50}{subsubsection.4.1.1}%

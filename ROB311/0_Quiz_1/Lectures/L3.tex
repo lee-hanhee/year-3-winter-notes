@@ -12,6 +12,18 @@
     An \textbf{assignment} is a set of pairs, \(\{(V, v)\}_{V \in \tilde{\mathcal{V}}}\), where \(v \in \text{dom}(V)\), and \(\tilde{\mathcal{V}} \subseteq \mathcal{V}\). It is \textbf{complete} if \(\tilde{\mathcal{V}} = \mathcal{V}\), and \textbf{partial} otherwise.
 \end{definition}
 
+\subsection{Formulating a CSP as a Search Problem}
+\begin{motivation}
+    We don't formulate a CSP as a search problem because the path tree of all possible ways to build a complete assignment is too large. The number of paths in the three is 
+    \begin{equation*}
+        \mathcal{O} \left(|\mathcal{V}|! \times b^d \right)
+    \end{equation*}
+    \begin{itemize}
+        \item $b= \max_{V \in \mathcal{V}} |\text{dom}(V)|$
+        \item $d = |\mathcal{V}|$
+    \end{itemize}
+\end{motivation}
+
 \subsection{Consistent}
 \subsubsection{Complete Assignment}
 \begin{definition}
@@ -32,38 +44,85 @@
     A CSP is \textbf{\(k\)-consistent} if for any consistent assignment of \(k - 1\) variables, \(\{(V, v)\}_{V \in \tilde{\mathcal{V}}}\), and any \(k^\text{th}\) variable, \(V'\), there is a value, \(v' \in \text{dom}(V')\), so the assignment, \(\{(V, v)\}_{V \in \tilde{\mathcal{V}}} \cup \{(V', v')\}\) is consistent.
 \end{definition}
 
-\subsubsection{Edge/Arc Consistent}
-\begin{definition}
-    2-consistent.
-\end{definition}
+\begin{notes}
+    \begin{itemize}
+        \item Edge/Arc Consistent: \(k = 2\)
+    \end{itemize}
+\end{notes}
 \newpage
 
-\subsection{Constraint Satisfaction Algorithms}
-\subsubsection{Main}
+\subsection{Constraint Satisfaction Algorithm}
 \begin{algo}
-
+\begin{lstlisting}
+$A \leftarrow \{\}$  (*\hfill $\triangleright$ initialize an empty assignment*)
+for $V \in \mathcal{V}$ do $\mathcal{D}(V) \leftarrow \text{COPY}(\text{dom}(V))$
+SATISFY($\mathcal{V}, \mathcal{C}, \mathcal{D}, A$)
+\end{lstlisting}
 \end{algo}
 
 \subsubsection{Satisfy}
 \begin{algo}
-
+\begin{lstlisting}
+procedure SATISFY($\mathcal{V}, \mathcal{C}, \mathcal{D}, A$):
+    if COMPLETE($A, \mathcal{V}$) then
+        return $A$  (*\hfill $\triangleright$ a solution was found*)
+    $V \leftarrow \text{REMOVE}(\mathcal{V}, A)$
+    for $v \in \mathcal{D}(V)$ do  (*\hfill $\triangleright$ try each value in $V$'s current domain*)
+        $\mathcal{D}' \leftarrow \text{COPY}(\mathcal{D})$  (*\hfill $\triangleright$ cache the current domains for backtracking*)
+        $A \leftarrow A \cup \{(V, v)\}$
+        $\mathcal{D}(V) \leftarrow \{v\}$
+        $\mathcal{D}, \text{success} \leftarrow \text{ENFORCE}(\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k)$
+        if success then  (*\hfill $\triangleright$ enforce k consistency*)
+            $A \leftarrow \text{SATISFY}(\mathcal{V}, \mathcal{C}, \mathcal{D}, A)$  (*\hfill $\triangleright$ recursively continue if possible*)
+            if $A \neq \text{NULL}$ then
+                return $A$
+        $\mathcal{D} \leftarrow \mathcal{D}'$  (*\hfill $\triangleright$ backtrack if not possible*)
+        $A \leftarrow A \setminus \{(V, v)\}$
+    return NULL  (*\hfill $\triangleright$ No solution found in this branch*)
+\end{lstlisting}
 \end{algo}
 
 \subsubsection{Enforce: Enforcing k-Consistency}
-\begin{algo}
-
+\begin{algo} Pre-pruning: Enforce without assigning any variables. 
+\begin{lstlisting}
+procedure ENFORCE($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
+    $Q \leftarrow \{C \in \mathcal{C} \text{ s.t. } V \in \text{scp}(C)\}$ (*\hfill $\triangleright$ initialize affected constraints*)
+    while $Q \neq \emptyset$ do
+        $C \leftarrow \text{REMOVE}(Q)$
+        for $V' \in \text{scp}(C)$ do (*\hfill $\triangleright$ enforce consistency on each variable w.r.t. each affected constraint*)
+            success $\leftarrow \text{ENFORCEVAR}(k, V', \mathcal{V}, \mathcal{C}, \mathcal{D})$
+            if not success then
+                return False  (*\hfill $\triangleright$ consistency could not be enforced*)
+            $Q \leftarrow Q \cup \{C' \in \mathcal{C} \mid V' \in \text{scp}(C')\}$
+    return True  (*\hfill $\triangleright$ consistency was enforced*)
+\end{lstlisting}
 \end{algo}
 
 \subsubsection{EnforceVar: Enforcing k-Consistency}
 \begin{algo}
-
+\begin{lstlisting}
+procedure ENFORCEVAR($\mathcal{V}, \mathcal{C}, \mathcal{D}, V, k$):
+    for $v \in \mathcal{D}(V)$ do
+        for $C \in \mathcal{C}$ do
+            if $V \in \text{scp}(C)$ and $|\text{scp}(C)| \leq k$ then
+                flag $\leftarrow$ False
+                for $A \in \mathcal{X} \times \mathcal{D}(V')$ do
+                    if $A \cup \{(V, v)\} \in \mathcal{C}$ then
+                        flag $\leftarrow$ True
+                        break
+                if not flag then
+                    $\mathcal{D}(V) \leftarrow \mathcal{D}(V) \setminus \{v\}$
+                if $\mathcal{D}(V) = \emptyset$ then
+                    return False  (*\hfill $\triangleright$ no valid domain values remain for $V$*)
+    return True
+\end{lstlisting}
 \end{algo}
 \newpage
 
-\subsection{Setup of CSP}
-\begin{process}
+\subsection{Canonical Problems}
+\begin{process} \textbf{Setup of CSP:}
     \begin{enumerate}
-        \item 
+        \item Determine variables to track, domain of each variable, and constraints.
     \end{enumerate}
 \end{process}
 \begin{example}
@@ -83,16 +142,16 @@
     \customFigure[0.5]{../Images/L3_3.png}{}
 \end{example}
 
-\begin{process} \textbf{How to build a path tree?}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{process}
+% \begin{process} \textbf{How to build a path tree?}
+%     \begin{enumerate}
+%         \item 
+%     \end{enumerate}
+% \end{process}
 
-\begin{example}
-    \customFigure[0.5]{../Images/L3_4.png}{}
-    \customFigure[0.5]{../Images/L3_5.png}{}
-\end{example}
+% \begin{example}
+%     \customFigure[0.5]{../Images/L3_4.png}{}
+%     \customFigure[0.5]{../Images/L3_5.png}{}
+% \end{example}
 \newpage
 
 \begin{process} \textbf{How to check $k$-Consistency?} 
