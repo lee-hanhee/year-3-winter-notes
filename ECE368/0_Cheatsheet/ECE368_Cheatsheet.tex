@@ -303,13 +303,15 @@
     $A = [\underline{e}_1, \ldots, \underline{e}_n]^T$, then $\underline{Y} = A \underline{X}$ has $\Sigma_{\underline{Y}} = \Lambda$. \\
     *$\underline{Y}$: Vector of indep. Gaussian RVs.
 
+    \textcolor{orange}{\textbf{How to go from $Y$ to $X$?}} 1. Given, $\underline{X} \sim \mathcal{N}(\underline{\mu}, \Sigma)$, then find $\Sigma = P \Lambda P^T$. \\
+    2. $\underline{V} \sim \mathcal{N} (\underline{0}, I)$ 3. $\underline{W} = \sqrt{\Lambda} \underline{V}$ 4. $\underline{Y} = P \underline{W}$ 4. $\underline{X} = \underline{Y} + \underline{\mu}$
+
     \textcolor{blue}{\textbf{Guassian Discriminant Analysis:}} Obs: $\underline{X} = \underline{x} = (x_1,\ldots,x_D)$ \\
     Hyp: $\underline{x}$ is gen. by $\mathcal{N} (\underline{\mu}_c, \Sigma_c), c \in C$ \\
     Dec: Which "Guassian bump" generated $\underline{x}$? \\
     Prior: $P[C = c] = \pi_c$  (Gaussian Mixture Model) \\
 
-    \textcolor{darkgreen}{\textbf{MAP Rule:}} $\hat{c} = \arg \max_c P_C[c | \underline{X} = \underline{x}]$ \\
-    $\hat{c} = \arg \max_c f_{\underline{X} \mid C} (\underline{x} \mid c) \pi_c$ \\
+    \textcolor{darkgreen}{\textbf{MAP Rule:}} $\hat{c} = \arg \max_c P_C[c | \underline{X} = \underline{x}] = \arg \max_c f_{\underline{X} \mid C} (\underline{x} \mid c) \pi_c$ \\
 
     \textcolor{darkgreen}{\textbf{LGD:}} $\Sigma_c = \Sigma \; \forall c$, find $c$ w/ best $\underline{\mu}_c$ \\
     $\hat{c} = \arg \max_c \underline{\beta}_c^T \underline{x} + \gamma_c$ \\
