@@ -1,35 +1,31 @@
-\subsection{Bayesian Network}
 \begin{definition}
     Vertices represent random variables and edges represent dependencies between variables.
 \end{definition}
 
-\subsubsection{Junction}
+\subsection{Junction}
 \begin{definition}
-    A \textbf{junction} consists of three vertices, $X_1$, $X_2$, and $X_3$, connected by two edges, $e_1$ and $e_2$:
+    A \textbf{junction} $\mathcal{J}$ consists of three vertices, $X_1$, $X_2$, and $X_3$, connected by two edges, $e_1$ and $e_2$:
+    \customFigure[0.5]{../Images/L6_2.png}{}
     \begin{itemize}
-        \item Both arrows pointing in one direction
-        \item Both arrows pointing in opposite directions
-        \item One arrow pointing in each direction
+        \item $X_1$ and $X_2$ are not independent, $X_2$ and $X_3$ are not independent, but when is $X_1$ and $X_3$ independent?
     \end{itemize}
 \end{definition}
-
-\begin{warning}
-    Want to look for causal relationships. 
-    Arrows, what's causing what, what's influencing what.
-\end{warning}
 
 \subsubsection{Causal Chain}
 \begin{definition}
-    A causal chain is a junction of the following form:
+    A causal chain is a junction $\mathcal{J}$ s.t. 
+    \customFigure[0.5]{../Images/L6_3.png}{}
     \begin{itemize}
-        \item $X_1$ and $X_2$ are dependent. $X_2$ is dependent on $X_1$. Vice versa. From a causal perspective, $X_1$ is influencing $X_2$. Subtle difference, just bc $X_1 \rightarrow X_2$.
-        \item $X_2$ and $X_3$ are dependent.
-        \item $X_1$ and $X_3$ are dependent. 
-        \begin{itemize}
-            \item Given $X_2$, $X_1$ and $X_3$ are independent. Why? $X_2$'s door closes when you know $X_2$, so $X_1$ and $X_3$ are independent.
-        \end{itemize}
+        \item $X_1$ and $X_3$ are not independent (unconditionally), but are independent given $X_2$.
     \end{itemize}
 \end{definition}
+
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Analogy:}  Given $X_2$, $X_1$ and $X_3$ are independent. Why? $X_2$'s door closes when you know $X_2$, so $X_1$ and $X_3$ are independent.
+        \item \textbf{Distinction b/w Causal and Dependence:} $X_1$ and $X_2$ are dependent. However, from a causal perspective, $X_1$ is influencing $X_2$ (i.e. $X_1 \rightarrow X_2$).
+    \end{itemize}
+\end{notes}
 
 \begin{warning}
     $X_1$ is influeincing $X_2$ and $X_2$ is influencing $X_3$.
@@ -37,47 +33,76 @@
 
 \subsubsection{Common Cause}
 \begin{definition}
-    A common cause is a junction of the form: 
+    A common cause is a junction $\mathcal{J}$ s.t.
+    \customFigure[0.5]{../Images/L6_4.png}{}
+    \begin{itemize}
+        \item $X_1$ and $X_3$ are not independent (unconditionally), but are independent given $X_2$.
+    \end{itemize}
 \end{definition}
 
 \begin{notes}
     \begin{itemize}
-        \item $X_1$ and $X_3$ are dependent. 
+        \item \textbf{Analogy:} Given $X_2$, $X_1$ and $X_3$ are independent. Why? Consider the following example:
         \begin{itemize}
-            \item Given $X_2$, $X_1$ and $X_3$ are independent. Why? $X_2$ whether you smoke or not, $X_1$ whether you have yellow teeth, $X_3$ whether you have lung cancer, if you don't know $X_2$, if they have yellow teeth, then they might smoke, then they might have lung cancer. If you know $X_2$, yellow teeth and lung cancer are independent b/c you already know if they smoke or not, and yellow teeth implies smoke, 
+            \item Let $X_2$ represent whether a person smokes or not, $X_1$ represent whether they have yellow teeth, $X_3$ represent whether they have lung cancer.
         \end{itemize}
+        \item Without knowing $X_2$, observing $X_1$ provides information about $X_3$ because yellow teeth are associated with smoking, which in turn increases the likelihood of lung cancer. 
+        \item If $X_2$ is known, then knowing whether a person has yellow teeth provides no additional information about whether they have lung cancer beyond what is already known from smoking status. 
     \end{itemize}
 \end{notes}
+
 
 \subsubsection{Common Effect}
 \begin{definition}
-    A common effect is a junction of the form:
-    
+    A common effect is a junction $\mathcal{J}$ s.t.
+    \customFigure[0.5]{../Images/L6_5.png}{}
+    \begin{itemize}
+        \item $X_1$ and $X_3$ are independent (unconditionally), but are not independent given $X_2$ or any of $X_2$'s descendents.
+    \end{itemize}
 \end{definition}
 
 \begin{notes}
     \begin{itemize}
-        \item $X_1$ and $X_3$ are independent. 
-        \item Given $X_2$ or any of $X_2$'s descendents, $X_1$ and $X_3$ are dependent.
+        \item \textbf{Analogy:} Consider the following example:
+        \begin{itemize}
+            \item Let $X_2$ represent whether the grass is wet, $X_1$ represent whether it rained, $X_3$ represent whether the sprinkler was on.
+        \end{itemize}
+        \item Without knowing whether the grass is wet ($X_2$), the occurrence of rain ($X_1$) and the sprinkler being on ($X_3$) are independent events. The rain may occur regardless of the sprinkler, and vice versa.
+        \item However, once we observe that the grass is wet ($X_2$), the two events become dependent:
+        \begin{itemize}
+            \item If we learn that the sprinkler was not on, then the wet grass must have been caused by rain.
+            \item If we learn that it did not rain, then the wet grass must have been caused by the sprinkler.
+        \end{itemize}
     \end{itemize}
 \end{notes}
+\newpage
 
-\begin{warning}
-    Just b/c you don't know something about the middle variable, then it can be independent
-\end{warning}
+\subsection{Dependence Separation}
+\subsubsection{Blocked}
+\begin{definition}
+    $\mathcal{J} = (\{X_1, X_2, X_3\}, \{e_1, e_2\})$ is \textbf{blocked} given $\mathcal{K} \subseteq \mathcal{V}$ if $X_1$ and $X_3$ are independent given $\mathcal{K}$.
+\end{definition}
 
-\begin{example}
-    $X_2$ Grass being wet, $X_1$ raining, and $X_3$ sprinkler being on.
-    \begin{itemize}
-        \item If you know the grass is wet, you know that either the sprinkler is on or it's raining.
-        \begin{itemize}
-            \item If it didn't have the sprinkler on, then it must have rained.
-            \item If it didn't rain, then the sprinkler must have been on.
-            \item So this means that $X_1$ and $X_3$ are dependent given $X_2$.
-        \end{itemize}
-        \item If you don't know the grass is wet, then $X_1$ and $X_3$ are independent b/c you don't know if it rained or the sprinkler was on.
-    \end{itemize}
-\end{example}
+\subsubsection{Blocked Undirected Path}
+\begin{definition}
+    An undirected path,
+    \[
+    p = \langle (X_1, e_1, X_2), \dots, (X_{|p|-1}, e_{|p|-1,|p|}, X_{|p|}) \rangle,
+    \]
+    is \textbf{blocked} given $\mathcal{K} \subseteq \mathcal{V}$ if any of its junctions,
+
+    \[
+    \mathcal{J}^{(n)} = \{(X_{n-1}, X_n, X_{n+1}), (e_{n-1}, e_n)\},
+    \]
+
+    is blocked given $\mathcal{K}$.
+\end{definition}
+
+\subsubsection{Independence}
+\begin{theorem}
+    Any two variables, $X_1$ and $X_2$, in a Bayesian network, $\mathcal{B} = (\mathcal{V}, \mathcal{E})$, are independent given $\mathcal{K} \subseteq \mathcal{V}$ if every undirected path is blocked.
+\end{theorem}
+\newpage
 
 \begin{example}
     \begin{enumerate}
