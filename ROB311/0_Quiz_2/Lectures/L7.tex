@@ -5,17 +5,47 @@
     \operatorname{pr}(\mathbf{Q} \mid \mathbf{E}) := \operatorname{pr}(Q_1, \dots, Q_{|\mathbf{Q}|} \mid E_1, \dots, E_{|\mathbf{E}|}) = \frac{\sum_{\mathcal{V} \setminus (\mathbf{Q} \cup \mathbf{E})} p(X_1, \dots, X_{|\mathcal{V}|})}
     {\sum_{\mathcal{V} \setminus \mathbf{E}} p(X_1, \dots, X_{|\mathcal{V}|})}
     \]
+    \[
+    \operatorname{pr}(\mathbf{Q} \mid \mathbf{E}) \propto 
+    \sum_{\mathcal{V} \setminus (\mathbf{Q} \cup \mathbf{E})} 
+    \left( p(X_1) \prod_{i \neq 1} p(X_i \mid \operatorname{pts}(X_i)) \right)
+    \]
+
 
     \begin{itemize}
-        \item $\mathbf{Q} = \{Q_1, \dots, Q_{|\mathbf{Q}|}\}$
-        \item $\mathbf{E} = \{E_1, \dots, E_{|\mathbf{E}|}\} \subseteq \mathcal{V}$
+        \item $\mathbf{Q} = \{Q_1, \dots, Q_{|\mathbf{Q}|}\}$: Query variables
+        \item $\mathbf{E} = \{E_1, \dots, E_{|\mathbf{E}|}\} \subseteq \mathcal{V}$: Evidence variables
         \item $\mathbf{Q} \cap \mathbf{E} = \emptyset$.
     \end{itemize}
 \end{definition}
 
 \subsection{Method 1: Bayesian Network Inference}
 
-\subsubsection{Choosing an Elimination Ordering}
+\subsubsection{Markov Blanket}
+\begin{definition} 
+    The \textbf{Markov blanket} of a variable $X$, denoted $\operatorname{mbk}(X)$, consists of the following variables:
+    \begin{itemize}
+        \item $X$'s children
+        \item $X$'s parents
+        \item The other parents of $X$'s children, excluding $X$ itself.
+    \end{itemize}
+    which is when a variable, $X$, is "eliminated", the resulting factor's scope is the Markov blanket of $X$.
+\end{definition}
+
+\subsubsection{Graphical Interpretation}
+\begin{definition}
+    Pictorially, eliminating $X$ is equivalent to replacing all hyper-edges that include $X$ with their union minus $X$, and then removing $X$.
+\end{definition}
+
+\subsubsection{Elimination Ordering}
+\begin{definition}
+    The order that the variables are eliminated.
+\end{definition}
+
+\subsubsection{Elimination Width}
+\begin{definition}
+    The \textbf{elimination width} of a sequence of hyper-graphs is the \# of variables in the hyper-edge within the sequence with the most variables.
+\end{definition}
 
 \subsubsection{Heuristics for Elimination Ordering}
 \begin{definition}
@@ -94,6 +124,18 @@
 \end{warning}
 \newpage
 
+\subsubsection{Path Blocked?}
+\begin{process}
+    \begin{itemize}
+        \item Know when a path is blocked. More than one path b/w 2 varaibles, then all paths need to be blocked. 
+    \end{itemize}
+\end{process}
+
+\begin{example}
+    
+\end{example}
+
+\subsubsection{Independence}
 \begin{process}
     \begin{enumerate}
         \item 
@@ -113,18 +155,21 @@
 \end{example}
 \newpage
 
-\subsubsection{Inference via Sampling}
-\begin{definition}
-    
-\end{definition}
-
+\subsubsection{Hypergraph}
 \begin{process}
     \begin{enumerate}
         \item 
     \end{enumerate}
 \end{process}
 
-\begin{example} \textbf{Bayesian Inference}
+\subsubsection{Bayesian Inference}
+\begin{process}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example} 
     \begin{enumerate}
         \item \textbf{Given:}
         \customFigure[0.5]{../Images/L6_9.png}{}
@@ -133,13 +178,14 @@
 \end{example}
 \newpage
 
+\subsubsection{Inference via Sampling}
 \begin{process}
     \begin{enumerate}
         \item 
     \end{enumerate}
 \end{process}
 
-\begin{example} \textbf{Inference via Sampling}
+\begin{example}
     \begin{enumerate}
         \item \textbf{Given:}
         \item \textbf{Problem:}
