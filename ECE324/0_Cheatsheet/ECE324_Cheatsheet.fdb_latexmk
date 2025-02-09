@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738854006.15508 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1738854023.08763 0
+["pdflatex"] 1739138609.05437 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1739138625.89351 0
   "../Images/L2_0.png" 1736973573.75507 307535 eb44cf12ca87434390661c755265c22e ""
   "../Images/L2_10.png" 1737856402.95288 326893 ff5f18575ba0b3f7a3feaf1053abc387 ""
   "../Images/L2_11.png" 1737856506.29493 755333 d7915f9b9e6539a5e32b462c425046cc ""
@@ -414,11 +414,11 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/pst-xkey.sty" 1655411236 1694 74b0201cd6a70abed294b6332f129c41 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
-  "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1719752029.93807 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
-  "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719751986 8221423 2c2f6a8d1093cb5ce4c00448e0a0c0bb ""
+  "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1738854022.59133 25048 b716a7dbdd456d230bec222a1843bd1c "pdflatex"
-  "ECE324_Cheatsheet.out" 1738854022.59493 20032 0e79d467e5781e2df013a4ecd787fcd2 "pdflatex"
+  "ECE324_Cheatsheet.aux" 1739138625.38669 25048 b716a7dbdd456d230bec222a1843bd1c "pdflatex"
+  "ECE324_Cheatsheet.out" 1739138625.39031 20032 0e79d467e5781e2df013a4ecd787fcd2 "pdflatex"
   "ECE324_Cheatsheet.tex" 1738854003.39052 3618 5af3488720e40575124838c527e3af45 ""
   "Lectures/L2.tex" 1737856586.20584 10348 7a5f75095d00d417758c7210f14836fa ""
   "Lectures/L3.tex" 1737861256.99164 9047 c447f267348f4a318db1b71a34a21c10 ""
