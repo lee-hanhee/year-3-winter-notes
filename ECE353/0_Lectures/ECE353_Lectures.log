@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.30)  14 JAN 2025 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  10 FEB 2025 09:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1335,14 +1335,14 @@ Package rerunfilecheck Info: File `ECE353_Lectures.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  51573 strings out of 474116
- 1201904 string characters out of 5743682
+ 1201904 string characters out of 5743683
  2014187 words of memory out of 5000000
  72899 multiletter control sequences out of 15000+600000
  620255 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,816b,1769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on ECE353_Lectures.pdf (17 pages, 1661897 bytes).
+Output written on ECE353_Lectures.pdf (17 pages, 1662013 bytes).
 PDF statistics:
  542 PDF objects out of 1000 (max. 8388607)
  464 compressed objects within 5 object streams
