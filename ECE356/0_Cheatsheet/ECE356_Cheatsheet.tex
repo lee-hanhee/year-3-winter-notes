@@ -383,7 +383,39 @@
     \textcolor{orange}{\textbf{FVT}} 1. Does $y(\infty)$ exist? Check if pole at $s=0$, then compute Rooth Array to see if poles are in $\mathbb{C}^{-}$. \\
     2. Compute $\lim_{s \to 0} s Y(s)$ if it exists.
 
-    
+    \begin{center}
+        MIDTERM CUTOFF
+    \end{center}
+
+    \textcolor{red}{\textbf{Standard Feedback Control Loop}}
+    \customFigure[0.2]{../Images/L16_0.png}
+    *$R(s)$: Ref., $E(s) = R(s) - y(s)$: Err., $C(s)$: Controller, $U(s)$: Control input, $D(s)$: Dist., $G(s)$: Plant, $y(s)$: Plant output. \\
+    *\textbf{Assume:} $R(s)$ and $D(s)$ are strictly proper rational fcns w/ a fixed set of poles but arbitrary zeros \& gain. \\
+    *$\mathcal{R}, \mathcal{D}$: Classes of ref. and dist. satisfying the above assumption.
+
+    \textcolor{blue}{\textbf{Basic Control Prob.:}} Design $C(s)$ s.t. 3 spec. are met: \\
+    1. \textbf{Stability:} $\forall$ bdd $r(t),d(t)$, we have $u(t),e(t)$ bdd. \\
+    2. \textbf{Asymptotic Tracking:} When $d(t) = 0 \; \forall t \geq 0$, then $\forall r(t) \in \mathcal{R}$, $\lim_{t \to \infty} e(t) = \lim_{t \rightarrow \infty} r(t) - y(t) = 0$. \\
+    3. \textbf{Disturbance Rejection:} When $r(t) = 0 \; \forall t \geq 0$, then $\forall d(t) \in \mathcal{D}$, $\lim_{t \to \infty} y(t) = 0$.
+
+    \textcolor{orange}{\textbf{Open-Loop Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = \gamma y_r \mathbf{1}(t)$ w/ $\gamma \in \mathbb{R}$ (const. scaling factor) \\
+    3. Apply FVT to find $\gamma$ s.t. $\lim_{t \to \infty} y(t) = y_r$.
+    4. Determine $\lim_{t \rightarrow \infty} e(t) = \lim_{t \rightarrow \infty} y_r - y(t)$
+
+    \textcolor{green}{\textbf{Limitations:}} 1. Req. perfect knowledge of plant paramters. \\
+    2. Not robust against parameter var./(unknown) dist. \\
+    3. Does not allow us to speed up convergence. 
+
+    \textcolor{orange}{\textbf{Feedback Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = K e(t) = K (y_r - y(t))$ w/ $K>0$ (const. gain). \\ 
+    3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
+    4. Apply FVT to find $K$ s.t. $\lim_{t \to \infty} y(t) = y_r$. \\
+    5. Determine $\lim_{t \rightarrow \infty} e(t) = \lim_{t \rightarrow \infty} y_r - y(t)$
+ 
+    \textcolor{orange}{\textbf{Integral Control:}}
+
+
 
         }
 \end{paracol}

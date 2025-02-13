@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739478773.52597 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1739478777.81819 0
+["pdflatex"] 1739480395.86584 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1739480399.60194 0
   "../Images/L10_0.png" 1738010925.35637 37084 707c1419dc617e409e6c88babeca8842 ""
   "../Images/L10_1.png" 1738018036.91222 213217 248454eeed78a60578a701016e437892 ""
   "../Images/L10_2.png" 1738010977.92437 103705 4d636a92ee7505449236c247cdd1712c ""
@@ -11,6 +11,7 @@
   "../Images/L12_1.png" 1738019523.26635 51904 bcbd9a29ce8098b268413615912f8f02 ""
   "../Images/L12_2.png" 1738019535.74581 61564 803b3eb3beacb93ad40ed735e59acea9 ""
   "../Images/L12_3.png" 1738462765.04934 34215 27dfe3aa2181c4442bfe9967e10472e0 ""
+  "../Images/L16_0.png" 1739478807.61427 90990 2d057177bbb2875851a55ef69fe64bc0 ""
   "../Images/L3_0.png" 1736973573.87699 98616 c327c5fce6e0c787cd3ae52cf1b6de31 ""
   "../Images/L3_1.png" 1736973573.87793 49267 efc77f06cb2f65c5c2287d796f02ff15 ""
   "../Images/L4_0.png" 1736973573.87866 36558 fff45aa54c665f2978ab16ab066848c4 ""
@@ -20,7 +21,7 @@
   "../Images/L9_1.png" 1737667807.77088 49263 4047ef821ea47b6136a0013aa1f2a035 ""
   "../Images/L9_2.png" 1737667823.62356 58141 77e98fa79e79188e409358c77914be04 ""
   "../Images/L9_3.png" 1737668478.57478 178576 40304837cfef8c3162a7fb927e149520 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1739478773.06644 26268 a99e524d587ddf930e6593c655643778 ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1739480395.45375 28466 0eb39f8a0af9cfbc158b300fe224d1b3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -205,9 +206,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE356_Cheatsheet.aux" 1739478777.53671 162 59504cb8f8bee0a3f0488d753cb23a1e "pdflatex"
-  "ECE356_Cheatsheet.out" 1739478775.33395 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE356_Cheatsheet.tex" 1739478773.06644 26268 a99e524d587ddf930e6593c655643778 ""
+  "ECE356_Cheatsheet.aux" 1739480399.34978 162 f0fda7573680236e99560fa2ea99f7ba "pdflatex"
+  "ECE356_Cheatsheet.out" 1739480397.37152 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE356_Cheatsheet.tex" 1739480395.45375 28466 0eb39f8a0af9cfbc158b300fe224d1b3 ""
   (generated)
   "ECE356_Cheatsheet.aux"
   "ECE356_Cheatsheet.log"
