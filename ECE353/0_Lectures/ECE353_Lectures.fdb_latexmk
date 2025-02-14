@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739197849.86812 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" "ECE353_Lectures.pdf" "ECE353_Lectures" 1739197857.89742 0
+["pdflatex"] 1739496916.09179 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE353/0_Lectures/ECE353_Lectures.tex" "ECE353_Lectures.pdf" "ECE353_Lectures" 1739496923.99391 0
   "../Images/L1_0.png" 1736973573.83297 57044 882bd67830ee81e6b3be851ea7ab3d55 ""
   "../Images/L1_1.png" 1736973573.83811 500950 510ce7ac05dd4598ad41b9d29cf34030 ""
   "../Images/L1_2.png" 1736973573.84002 203113 15cadabe0516577bc98caf42c5486125 ""
@@ -353,10 +353,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE353_Lectures.aux" 1739197857.43866 8218 29644c7c22ec737d1ad4f84dc6937f3d "pdflatex"
-  "ECE353_Lectures.out" 1739197857.44163 8306 4f3c01e8199b1f87570b03e95b9d63f3 "pdflatex"
+  "ECE353_Lectures.aux" 1739496923.57289 8218 29644c7c22ec737d1ad4f84dc6937f3d "pdflatex"
+  "ECE353_Lectures.out" 1739496923.57573 8306 4f3c01e8199b1f87570b03e95b9d63f3 "pdflatex"
   "ECE353_Lectures.tex" 1736973573.81875 792 61008ee707fb4803c458657ce0130841 ""
-  "ECE353_Lectures.toc" 1739197857.44236 4199 6ccb0fa56a2e92f7f5dd496cccc2e080 "pdflatex"
+  "ECE353_Lectures.toc" 1739496923.57635 4199 6ccb0fa56a2e92f7f5dd496cccc2e080 "pdflatex"
   "Lectures/L0.tex" 1736973573.81968 3431 fcfe676275f57413e2423ffab4c504e7 ""
   "Lectures/L1.tex" 1736973573.82039 8572 0f8605b1d30d0c67543d4dc7c6c58284 ""
   "Lectures/L2.tex" 1736973573.82095 7693 7941b22ec8fd612b7fbbbebab189a9ff ""
