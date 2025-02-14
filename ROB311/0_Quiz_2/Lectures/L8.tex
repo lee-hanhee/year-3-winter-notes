@@ -205,7 +205,8 @@
                 \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return given $S_{\tau} = s$.
             \end{itemize}} \\
             \midrule 
-            Value function & $v_{\pi}(s, \tau) = \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi}(s', \tau+1) \right)$ \\
+            Value function & $v_{\pi}(s, \tau) := \mathbb{E}_{\pi}[G_{\tau} \mid S_{\tau} = s]$ \\
+            & $\quad \quad \quad \; \; \; = \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi}(s', \tau+1) \right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $v(s, T) = 0$ for all $s$.
@@ -214,9 +215,18 @@
             Optimal value function & $v^*(s, \tau) = \max_a \sum_{s'} p(s' \mid a, s) \left( r(s, a, s') + \gamma v^*(s', \tau+1) \right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Taking the optimal $\pi(\cdot \mid s)$ (i.e., $\pi^*$)
+                \item Taking the optimal $\pi(\cdot \mid s)$ (i.e., $\pi^*$) gives the recurrence above.
                 \item $v^*(s, T) = 0$ for all $s$.
             \end{itemize}} \\
+            \midrule 
+            Expected Return & $\mathbb{E}_\pi [U_{T_{\max}}] = \sum_s \mathbb{E}_\pi [G_0 \mid S_0 = s] p_0(s)$ \\
+            & $\quad \quad \; \; \; = \sum_s v_\pi(s, 0) p_0(s)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $G_0 = U_{T_{\max}}$
+            \end{itemize}} \\
+            \midrule 
+            Optimal Expected Return & \\
             \bottomrule            
         \end{tabular}
     \end{center}
