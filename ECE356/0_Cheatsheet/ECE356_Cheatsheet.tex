@@ -412,8 +412,22 @@
     3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
     4. Apply FVT to find $K$ s.t. $\lim_{t \to \infty} y(t) = y_r$. \\
     5. Determine $\lim_{t \rightarrow \infty} e(t) = \lim_{t \rightarrow \infty} y_r - y(t)$
- 
-    \textcolor{orange}{\textbf{Integral Control:}}
+
+    \textcolor{green}{\textbf{Advantages:}} 1. Doesn't req. perfect knowledge of plant param. \\
+    2. Robust against param. var./dist. by $\uparrow K$. \\
+    3. Allows us to speed up the rate of convergence by $\uparrow$ $K$.
+
+    \textcolor{green}{\textbf{Disadvantages:}} 1. Feedback can introduce instability. \\
+    2. High-gain amplifies noise. \\
+    3. Asymptotic tracking doesn't occur. 
+
+    \textcolor{orange}{\textbf{Integral Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = \mathcal{L}^{-1} \{C(s)E(s)\} = K e(t) + K T_I \int_0^t e(\tau) d\tau$ (prop. int. (PI) controller) w/ $K, T_I > 0$ (const. gains). \\
+    *$C(s) = K \left(1 + \frac{T_I}{s}\right)$ \\
+    3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
+    4. Apply FVT to find $\lim_{t \to \infty} y(t) = y_r$ as desired. 
+
+    \textcolor{red}{\textbf{BIBO Stability of Closed-Loop System}} 
 
 
 
