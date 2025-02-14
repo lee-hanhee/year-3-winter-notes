@@ -220,13 +220,13 @@
             \end{itemize}} \\
             \midrule 
             Expected Return & $\mathbb{E}_\pi [U_{T_{\max}}] = \sum_s \mathbb{E}_\pi [G_0 \mid S_0 = s] p_0(s)$ \\
-            & $\quad \quad \; \; \; = \sum_s v_\pi(s, 0) p_0(s)$ \\
+            & $\quad \quad \quad \quad \; \; = \sum_s v_\pi(s, 0) p_0(s)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $G_0 = U_{T_{\max}}$
             \end{itemize}} \\
             \midrule 
-            Optimal Expected Return & \\
+            Optimal Expected Return & $\max_\pi \mathbb{E}[U_{T_{\max}}] = \sum_s v^* (s,0)p_0(s)$ \\
             \bottomrule            
         \end{tabular}
     \end{center}
