@@ -427,7 +427,30 @@
     3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
     4. Apply FVT to find $\lim_{t \to \infty} y(t) = y_r$ as desired. 
 
-    \textcolor{red}{\textbf{BIBO Stability of Closed-Loop System}} 
+    \textcolor{red}{\textbf{BIBO Stability of Closed-Loop System:}} \textcolor{blue}{\textbf{Gang of 4 TF:}} \\
+    $\begin{bmatrix}
+        E(s) \\
+        U(s)
+    \end{bmatrix} =
+    \begin{bmatrix}
+        \frac{1}{1+C(s)G(s)} & \frac{-G(s)}{1+C(s)G(s)} \\
+        \frac{C(s)}{1+C(s)G(s)} & \frac{-C(s)G(s)}{1+C(s)G(s)}
+    \end{bmatrix} 
+    \begin{bmatrix}
+        R(s) \\
+        D(s)
+    \end{bmatrix}
+    $ 
+
+    \textcolor{blue}{\textbf{BIBO Stable of CLS:}} The std. feedback control loop (CLS) is BIBO stable if all the Gang of 4 TFs are BIBO stable.
+
+    \textcolor{blue}{\textbf{Thm:}} The CLS is BIBO stable iff 1. Poles of $\frac{1}{1 + C(s)G(s)} \in \mathbb{C}^{-}$ \\
+    2. $C(s)G(s)$ has no pole-zero cancel. in $\bar{\mathbb{C}}^{+} \text{=} \{ s \in \mathbb{C} : \text{Re}(s) \geq 0 \}$. 
+
+    \textcolor{green}{\textbf{Practical Considerations:}} \\
+    1. Don't cancel an unstable 0 of $G(s)$ w/ an unstable pole in $C(s)$. \\
+    2. Don't cancel an unstable pole of $G(s)$ w/ an unstable 0 in $C(s)$. \\
+
 
 
 
