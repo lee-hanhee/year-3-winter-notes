@@ -1,0 +1,230 @@
+\subsection{Markov Chains (MCs)}
+
+\subsubsection{Setup}
+\begin{summary}
+    In a \textbf{Markov Chain}, we assume that:
+    \begin{itemize}
+        \item there are no agents
+        \item state transitions occur automatically
+        \item $S_t$ is the state \textit{after} transition $t$
+        \item the state transition process is stochastic and memoryless:
+        \[
+        S_t \perp S_0, \dots, S_{t-2} \mid S_{t-1}
+        \]
+        \begin{itemize}
+            \item $S_t$ is independent of all previous states given $S_{t-1}$
+        \end{itemize}
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
+            \midrule
+            transition distribution & $p(s'|s) := \mathbb{P}[S_{t+1} = s' | S_t = s]$ \\
+            \midrule 
+            Prob. that state of the env. after $T$ transitions is $s$ & $p_T(s) := \mathbb{P}[S_T = s]$ \\
+            & $\quad \quad \; \; \; \;= \sum_{s'} p_{T-1}(s') p(s|s')$ \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsubsection{Bayesian Network}
+\begin{definition}
+    $S_0,S_1,S_2,\ldots$ form a \textbf{Bayesian Network}:
+    \customFigure[0.5]{../Images/L8_0.png}{}
+\end{definition}
+\newpage
+
+\subsection{Markov Reward Processes (MRPs)}
+\subsubsection{Setup}
+\begin{summary}
+    In a \textbf{Markov Reward Process}, we assume that:
+    \begin{itemize}
+        \item there is one agent
+        \item state transitions occur automatically (i.e. agent has no control over actions)
+        \item $S_t$ is the state \textit{after} transition $t$
+        \item the state transition process is stochastic and memoryless:
+        \[
+        S_t \perp S_0, \dots, S_{t-2} \mid S_{t-1}
+        \]
+        \begin{itemize}
+            \item $S_t$ is independent of all previous states given $S_{t-1}$
+        \end{itemize}
+        \item $R_t$ is the reward for transition $t$, i.e., $(S_{t-1}, \varnothing, S_t)$
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            Initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
+            \midrule
+            Transition distribution & $p(s'|s) := \mathbb{P}[S_{t+1} = s' | S_t = s]$ \\
+            \midrule
+            Reward function & $r(s, s') := \text{reward for transition } (s, \varnothing, s')$ \\
+            \midrule
+            Discount factor & $\gamma \in [0,1]$ \\
+            \midrule
+            Return after $T$ transitions & $U_T = \sum_{t=1}^{T} \gamma^{t-1} R_t$ \\
+            & $\quad \; \;= U_{T-1} + \gamma^{T-1} R_T$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item The (possibly discounted) sum of the rewards after $T$ transitions
+            \end{itemize}} \\
+            \midrule
+            Expected return after $T$ transitions & $\mathbb{E}[U_T] = \mathbb{E}[U_{T-1}] + \gamma^{T-1} \mathbb{E} [R_t]$ \\
+            &  $\quad \quad \; \; \; = \mathbb{E}[U_{T-1}] + \gamma^{T-1} \sum_{s,s'} p_{T-1}(s) p(s'|s) r(s, s')$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $p_{T-1}(s) p(s'|s)$: Prob. $s \to s'$
+                \item $r(s, s')$: rwd $s \to s'$
+                \item $\mathbb{E}[U_0] := 0$.
+            \end{itemize}} \\
+            \midrule
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsubsection{Bayesian Network}
+\begin{definition}
+    $S_0,R_1,S_1,R_2,S_2,\ldots$ form a \textbf{Bayesian Network}:
+    \customFigure[0.5]{../Images/L8_1.png}{}
+\end{definition}
+\newpage
+
+\subsection{Markov Decision Processes (MDPs)}
+\subsubsection{Setup}
+\begin{summary}
+    In a \textbf{Markov Decision Process (MDP)}, we assume that:
+    \begin{itemize}
+        \item there is one agent
+        \item state transitions occur manually (after each action)
+        \item $S_t$ is the state \textit{after} transition $t$
+        \item $A_t$ is the action inducing transition $t$
+        \item the state transition process is stochastic and memoryless:
+        \[
+        S_t \perp S_0, A_1, \dots, S_{t-2}, A_{t-1} \mid S_{t-1}, A_t
+        \]
+        \begin{itemize}
+            \item $S_t$ is independent of all previous states and actions given $S_{t-1}$ and $A_t$
+        \end{itemize}
+        \item $R_t$ is the reward for transition $t$, i.e., $(S_{t-1}, A_t, S_t)$
+    \end{itemize}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
+            \midrule
+            transition distribution & $p(s'|s, a) := \mathbb{P}[S_t = s' | A_t = a, S_{t-1} = s]$ \\
+            \midrule
+            reward function & $r(s, a, s') := \text{reward for transition } (s, a, s')$ \\
+            \midrule
+            a time-invariant policy for choosing actions & $\pi(a|s) := \mathbb{P}[A_t = a | S_t = s]$ \\
+            \midrule
+            Maximum number of transitions & $T_{\max}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item A Markov Decision Process can be either:
+                \begin{itemize}
+                    \item \textbf{Finite}: $T_{\max}$ is finite
+                    \item \textbf{Infinite}: $T_{\max}$ is infinite
+                    \begin{itemize}
+                        \item For infinite MDPs, we must have $\gamma < 1$.
+                    \end{itemize}
+                \end{itemize}
+            \end{itemize}} \\
+            \midrule
+            Prob. that state of the env. after $T$ transitions is $s$ & $p_T(s) = \sum_{a,s'} p_{T-1}(s) \pi(a|s') p(s|s',a)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $p_{T-1}(s)$: Prob. $s'$ at $T$-$1$
+                \item $pi(a|s')$: Action $a$ from $s'$
+                \item $p(s|s',a)$: Prob. $s$ given $s',a$
+            \end{itemize}} \\
+            \midrule
+            Expected return after $T$ transitions & $\mathbb{E}_{\pi}[U_T] \text{=} \mathbb{E}_{\pi}[U_{T-1}] + \gamma^{T-1} \mathbb{E}_{\pi}[R_t]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\mathbb{E}_\pi [R_t] = \sum_{s,a,s'} p_{T-1}(s) \pi(a \mid s) p(s' \mid s, a) r(s, a, s')$ 
+                \item $\mathbb{E}_\pi [U_0] = 0$.
+            \end{itemize}} \\
+            \midrule
+            Future return after $\tau$ transitions & $G_\tau = \sum_{t = \tau + 1}^T \gamma^{t - (\tau + 1)} R_t$ \\
+            & $\quad \; \;= R_{\tau + 1} + \gamma G_{\tau + 1}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Starting at $\tau + 1$ for the future return. 
+            \end{itemize}} \\
+            \midrule
+            Expected future return after $\tau$ transitions given $S_\tau \text{=} s$ & $\mathbb{E}_{\pi}[G_{\tau} \mid S_{\tau} \text{=} s] \text{=} \mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} \text{=} s] + \gamma \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} \text{=} s]$ \\
+            & $\text{=} \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} \text{=} s'] \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$.
+                \item $\mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')$
+                \begin{itemize}
+                    \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+                    \item $r(s, a, s')$: Reward of getting to $s'$ from $s$ w/ action $a$
+                \end{itemize}
+                \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$
+                \begin{itemize}
+                    \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+                    \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$: Expected future return at $\tau + 1$ from $s'$ at $\tau + 1$.
+                    \item $\sum_{a, s'}$: Sum over all possible future states and current actions to get expected future return at $\tau + 1$ from $s$ at $\tau$.
+                \end{itemize}
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            Optimal policy & $\pi^*(\cdot \mid s) = \arg\max_{\pi(\cdot \mid s)} \mathbb{E}_{\pi} [G_{\tau} \mid S_{\tau} = s]$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return given $S_{\tau} = s$.
+            \end{itemize}} \\
+            \midrule 
+            Value function & $v_{\pi}(s, \tau) = \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi}(s', \tau+1) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $v(s, T) = 0$ for all $s$.
+            \end{itemize}} \\
+            \midrule
+            Optimal value function & $v^*(s, \tau) = \max_a \sum_{s'} p(s' \mid a, s) \left( r(s, a, s') + \gamma v^*(s', \tau+1) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Taking the optimal $\pi(\cdot \mid s)$ (i.e., $\pi^*$)
+                \item $v^*(s, T) = 0$ for all $s$.
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsubsection{Bayesian Network}
+\begin{definition}
+    $S_0,A_1,R_1,S_1,A_2,R_2,S_2,\ldots$ form a \textbf{Bayesian Network}:
+    \customFigure[0.5]{../Images/L8_2.png}{}
+\end{definition}
+
