@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  13 FEB 2025 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  16 FEB 2025 18:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -746,138 +746,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--130
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--167
+Underfull \hbox (badness 10000) in paragraph at lines 164--169
 
  []
 
 
-Overfull \hbox (6.67386pt too wide) in paragraph at lines 181--187
+Overfull \hbox (6.67386pt too wide) in paragraph at lines 183--189
 [][] \OT1/cmr/bx/n/5 In-verse:[] \OT1/cmr/m/n/5 1. For $\OML/cmm/m/it/5 A \OMS/cmsy/m/n/5 2 \U/msb/m/n/5 R[]$\OT1/cmr/m/n/5 , find $[[](\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 )][][](\OMS/cmsy/m/n/5 ^^@\OT1/cmr/m/n/5 1)[][](\OML/cmm/m/it/5 A[]\OT1/cmr/m/n/5 )$. 
  []
 
 <../Images/L8_0.png, id=12, 997.7275pt x 328.22626pt>
 File: ../Images/L8_0.png Graphic file (type png)
 <use ../Images/L8_0.png>
-Package pdftex.def Info: ../Images/L8_0.png  used on input line 199.
+Package pdftex.def Info: ../Images/L8_0.png  used on input line 201.
 (pdftex.def)             Requested size: 151.76689pt x 49.92296pt.
 <../Images/L9_0.png, id=13, 741.77126pt x 65.24374pt>
 File: ../Images/L9_0.png Graphic file (type png)
 <use ../Images/L9_0.png>
-Package pdftex.def Info: ../Images/L9_0.png  used on input line 201.
+Package pdftex.def Info: ../Images/L9_0.png  used on input line 203.
 (pdftex.def)             Requested size: 151.76689pt x 13.34816pt.
 <../Images/L9_1.png, id=14, 755.82375pt x 88.33pt>
 File: ../Images/L9_1.png Graphic file (type png)
 <use ../Images/L9_1.png>
-Package pdftex.def Info: ../Images/L9_1.png  used on input line 202.
+Package pdftex.def Info: ../Images/L9_1.png  used on input line 204.
 (pdftex.def)             Requested size: 151.76689pt x 17.73576pt.
 <../Images/L9_2.png, id=15, 756.8275pt x 91.34125pt>
 File: ../Images/L9_2.png Graphic file (type png)
 <use ../Images/L9_2.png>
-Package pdftex.def Info: ../Images/L9_2.png  used on input line 203.
+Package pdftex.def Info: ../Images/L9_2.png  used on input line 205.
 (pdftex.def)             Requested size: 151.76689pt x 18.3167pt.
 <../Images/L9_3.png, id=16, 1031.855pt x 291.0875pt>
 File: ../Images/L9_3.png Graphic file (type png)
 <use ../Images/L9_3.png>
-Package pdftex.def Info: ../Images/L9_3.png  used on input line 210.
+Package pdftex.def Info: ../Images/L9_3.png  used on input line 212.
 (pdftex.def)             Requested size: 182.12212pt x 51.37634pt.
 <../Images/L10_0.png, id=17, 309.155pt x 149.55875pt>
 File: ../Images/L10_0.png Graphic file (type png)
 <use ../Images/L10_0.png>
-Package pdftex.def Info: ../Images/L10_0.png  used on input line 222.
+Package pdftex.def Info: ../Images/L10_0.png  used on input line 226.
 (pdftex.def)             Requested size: 60.71045pt x 29.36807pt.
 
-Overfull \hbox (0.1275pt too wide) in paragraph at lines 218--222
+Overfull \hbox (0.1275pt too wide) in paragraph at lines 222--226
 \OT1/cmr/m/n/5 1. $\OML/cmm/m/it/5 a > \OT1/cmr/m/n/5 0  =[]\OMS/cmsy/m/n/5 )  [][] \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )[]0 \OMS/cmsy/m/n/5 j$ \OT1/cmr/m/n/5 2. $\OML/cmm/m/it/5 a < \OT1/cmr/m/n/5 0  =[]\OMS/cmsy/m/n/5 )  [][] \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )[]\OMS/cmsy/m/n/5 1$\OT1/cmr/m/n/5 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--235
+Underfull \hbox (badness 10000) in paragraph at lines 229--239
 
  []
 
 <../Images/L10_5.png, id=18, 477.785pt x 224.84pt>
 File: ../Images/L10_5.png Graphic file (type png)
 <use ../Images/L10_5.png>
-Package pdftex.def Info: ../Images/L10_5.png  used on input line 237.
+Package pdftex.def Info: ../Images/L10_5.png  used on input line 241.
 (pdftex.def)             Requested size: 121.41165pt x 57.13274pt.
 <../Images/L10_3.png, id=19, 1110.1475pt x 250.9375pt>
 File: ../Images/L10_3.png Graphic file (type png)
 <use ../Images/L10_3.png>
-Package pdftex.def Info: ../Images/L10_3.png  used on input line 240.
+Package pdftex.def Info: ../Images/L10_3.png  used on input line 244.
 (pdftex.def)             Requested size: 121.41165pt x 27.44238pt.
 <../Images/L10_4.png, id=20, 937.5025pt x 221.82875pt>
 File: ../Images/L10_4.png Graphic file (type png)
 <use ../Images/L10_4.png>
-Package pdftex.def Info: ../Images/L10_4.png  used on input line 243.
+Package pdftex.def Info: ../Images/L10_4.png  used on input line 247.
 (pdftex.def)             Requested size: 121.41165pt x 28.72704pt.
 <../Images/L10_1.png, id=21, 1025.8325pt x 301.125pt>
 File: ../Images/L10_1.png Graphic file (type png)
 <use ../Images/L10_1.png>
-Package pdftex.def Info: ../Images/L10_1.png  used on input line 246.
+Package pdftex.def Info: ../Images/L10_1.png  used on input line 250.
 (pdftex.def)             Requested size: 121.41165pt x 35.63719pt.
 <../Images/L10_2.png, id=22, 474.77374pt x 246.9225pt>
 File: ../Images/L10_2.png Graphic file (type png)
 <use ../Images/L10_2.png>
-Package pdftex.def Info: ../Images/L10_2.png  used on input line 249.
+Package pdftex.def Info: ../Images/L10_2.png  used on input line 253.
 (pdftex.def)             Requested size: 121.41165pt x 63.14336pt.
 <../Images/L10_6.png, id=23, 763.85374pt x 481.8pt>
 File: ../Images/L10_6.png Graphic file (type png)
 <use ../Images/L10_6.png>
-Package pdftex.def Info: ../Images/L10_6.png  used on input line 259.
+Package pdftex.def Info: ../Images/L10_6.png  used on input line 263.
 (pdftex.def)             Requested size: 121.41165pt x 76.57495pt.
 <../Images/L12_0.png, id=24, 255.95625pt x 174.6525pt>
 File: ../Images/L12_0.png Graphic file (type png)
 <use ../Images/L12_0.png>
-Package pdftex.def Info: ../Images/L12_0.png  used on input line 283.
+Package pdftex.def Info: ../Images/L12_0.png  used on input line 289.
 (pdftex.def)             Requested size: 60.71045pt x 41.42442pt.
 <../Images/L12_1.png, id=25, 274.02374pt x 176.66pt>
 File: ../Images/L12_1.png Graphic file (type png)
 <use ../Images/L12_1.png>
-Package pdftex.def Info: ../Images/L12_1.png  used on input line 286.
+Package pdftex.def Info: ../Images/L12_1.png  used on input line 292.
 (pdftex.def)             Requested size: 60.71045pt x 39.13757pt.
 <../Images/L12_2.png, id=26, 271.0125pt x 183.68625pt>
 File: ../Images/L12_2.png Graphic file (type png)
 <use ../Images/L12_2.png>
-Package pdftex.def Info: ../Images/L12_2.png  used on input line 289.
+Package pdftex.def Info: ../Images/L12_2.png  used on input line 295.
 (pdftex.def)             Requested size: 60.71045pt x 41.14543pt.
 <../Images/L12_3.png, id=27, 460.72125pt x 147.55125pt>
 File: ../Images/L12_3.png Graphic file (type png)
 <use ../Images/L12_3.png>
-Package pdftex.def Info: ../Images/L12_3.png  used on input line 292.
+Package pdftex.def Info: ../Images/L12_3.png  used on input line 298.
 (pdftex.def)             Requested size: 121.41165pt x 38.88249pt.
 
-Overfull \hbox (11.33453pt too wide) in paragraph at lines 318--320
+Overfull \hbox (11.33453pt too wide) in paragraph at lines 324--326
 [][] \OT1/cmr/bx/n/5 Lemma:[] \OT1/cmr/m/n/5 If $\OML/cmm/m/it/5 p$ \OT1/cmr/m/n/5 is a pole of $\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$, then $\OML/cmm/m/it/5 p$ \OT1/cmr/m/n/5 is an $[](\OML/cmm/m/it/5 A\OT1/cmr/m/n/5 )$. I.e. $[](\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )) :=
  []
 
 
-Overfull \hbox (16.03806pt too wide) in paragraph at lines 326--371
+Overfull \hbox (16.03806pt too wide) in paragraph at lines 332--377
 [][]$ $[][]$
  []
 
 
-Overfull \hbox (5.59232pt too wide) in paragraph at lines 326--371
+Overfull \hbox (5.59232pt too wide) in paragraph at lines 332--377
 [][]$ $\OML/cmm/m/it/5 c[] \OT1/cmr/m/n/5 = \OMS/cmsy/m/n/5 ^^@[] [] []$
  []
 
 
-Overfull \hbox (12.70418pt too wide) in paragraph at lines 375--376
+Overfull \hbox (12.70418pt too wide) in paragraph at lines 381--382
 \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 1\OT1/cmr/m/n/5 ) := [][] \OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )$ ex-ists and is fi-nite, then $\OML/cmm/m/it/5 y\OT1/cmr/m/n/5 (\OMS/cmsy/m/n/5 1\OT1/cmr/m/n/5 ) = [][] \OML/cmm/m/it/5 sY\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ 
  []
 
 <../Images/L16_0.png, id=28, 864.22874pt x 169.63374pt>
 File: ../Images/L16_0.png Graphic file (type png)
 <use ../Images/L16_0.png>
-Package pdftex.def Info: ../Images/L16_0.png  used on input line 392.
+Package pdftex.def Info: ../Images/L16_0.png  used on input line 401.
 (pdftex.def)             Requested size: 121.41165pt x 23.8288pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--453
+Underfull \hbox (badness 10000) in paragraph at lines 459--462
 
  []
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png>] [2 <../Images/L8_0.png> <../Images/L9_0.png> <../Images/L9_1.png> <../Images/L9_2.png> <../Images/L9_3.png> <../Images/L10_0.png>] [3 <../Images/L10_5.png> <../Images/L10_3.png> <../Images/L10_4.png> <../Images/L10_1.png> <../Images/L10_2.png> <../Images/L10_6.png> <../Images/L12_0.png>] [4 <../Images/L12_1.png> <../Images/L12_2.png> <../Images/L12_3.png> <../Images/L16_0.png>] [5] (./ECE356_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png> <../Images/L8_0.png> <../Images/L9_0.png> <../Images/L9_1.png> <../Images/L9_2.png> <../Images/L9_3.png> <../Images/L10_0.png> <../Images/L10_5.png> <../Images/L10_3.png> <../Images/L10_4.png> <../Images/L10_1.png> <../Images/L10_2.png> <../Images/L10_6.png>] [2 <../Images/L12_0.png> <../Images/L12_1.png> <../Images/L12_2.png> <../Images/L12_3.png> <../Images/L16_0.png>] (./ECE356_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -886,18 +886,18 @@ Package rerunfilecheck Info: File `ECE356_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31887 strings out of 474116
- 748226 string characters out of 5743683
- 2035187 words of memory out of 5000000
- 53764 multiletter control sequences out of 15000+600000
+ 31928 strings out of 474116
+ 749152 string characters out of 5743683
+ 2084187 words of memory out of 5000000
+ 53808 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,93p,792b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,93p,792b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (5 pages, 1487383 bytes).
+Output written on ECE356_Cheatsheet.pdf (2 pages, 1484334 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
