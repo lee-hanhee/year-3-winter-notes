@@ -198,17 +198,6 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$: Base case.
-                \item $\mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')$
-                \begin{itemize}
-                    \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
-                    \item $r(s, a, s')$: Reward of getting to $s'$ from $s$ w/ action $a$
-                \end{itemize}
-                \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$
-                \begin{itemize}
-                    \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
-                    \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$: Expected future return at $\tau + 1$ from $s'$ at $\tau + 1$.
-                    \item $\sum_{a, s'}$: Sum over all possible future states and current actions to get expected future return at $\tau + 1$ from $s$ at $\tau$.
-                \end{itemize}
             \end{itemize}} \\
             \bottomrule            
         \end{tabular}
@@ -287,14 +276,25 @@
     \customFigure[0.5]{../Images/L8_2.png}{}
 \end{definition}
 
-\subsubsection{Intuition on Formula}
+\subsubsection{Intuition on Formulae}
 \begin{notes}
     \begin{equation*}
         \mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')
     \end{equation*}
+    \begin{itemize}
+        \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+        \item $r(s, a, s')$: Reward of getting to $s'$ from $s$ w/ action $a$
+    \end{itemize}
+    \vspace{1em}
+
     \begin{equation*}
         \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']
     \end{equation*}
+    \begin{itemize}
+        \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+        \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$: Expected future return at $\tau + 1$ from $s'$ at $\tau + 1$.
+        \item $\sum_{a, s'}$: Sum over all possible future states and current actions to get expected future return at $\tau + 1$ from $s$ at $\tau$.
+    \end{itemize}
 \end{notes}
 \newpage
 
@@ -339,6 +339,8 @@
             \end{itemize}
             \item Same states have the same connections (i.e. all can use them just to hard to draw)
         \end{itemize}
+        \item \textbf{Problem:} Find the optimal policy for $\gamma=1$ and $T_{\max} = 5$.
+        \item 
     \end{enumerate}
 \end{example}
 
