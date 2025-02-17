@@ -175,7 +175,7 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $p_{T-1}(s)$: Prob. $s'$ at $T$-$1$
-                \item $pi(a|s')$: Action $a$ from $s'$
+                \item $\pi(a|s')$: Action $a$ from $s'$
                 \item $p(s|s',a)$: Prob. $s$ given $s',a$
             \end{itemize}} \\
             \midrule
@@ -183,7 +183,7 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $\mathbb{E}_\pi [R_t] = \sum_{s,a,s'} p_{T-1}(s) \pi(a \mid s) p(s' \mid s, a) r(s, a, s')$ 
-                \item $\mathbb{E}_\pi [U_0] = 0$.
+                \item $\mathbb{E}_\pi [U_0] = 0$: Base case.
             \end{itemize}} \\
             \midrule
             Future return after $\tau$ transitions & $G_\tau = \sum_{t = \tau + 1}^T \gamma^{t - (\tau + 1)} R_t$ \\
@@ -197,7 +197,7 @@
             & $\text{=} \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} \text{=} s'] \right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$.
+                \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$: Base case.
                 \item $\mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')$
                 \begin{itemize}
                     \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
@@ -222,34 +222,59 @@
             \toprule
             \textbf{Name} & \textbf{Function:} \\
             \midrule
-            Optimal policy & $\pi^*(\cdot \mid s) = \arg\max_{\pi(\cdot \mid s)} \mathbb{E}_{\pi} [G_{\tau} \mid S_{\tau} = s]$ \\
+            Value function & $v_{\pi}(s, T) := \mathbb{E}_{\pi}[G_{T_{\max} - T} \mid S_{T_{\max} - T} = s]$ \\
+            & $\quad \quad \quad \; \; \; = \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi}(s', T-1) \right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return given $S_{\tau} = s$.
-            \end{itemize}} \\
-            \midrule 
-            Value function & $v_{\pi}(s, \tau) := \mathbb{E}_{\pi}[G_{\tau} \mid S_{\tau} = s]$ \\
-            & $\quad \quad \quad \; \; \; = \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi}(s', \tau+1) \right)$ \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item $v(s, T) = 0$ for all $s$.
+                \item Value of state $s$ under the policy $\pi$ with $T$ transitions remaining.
+                \begin{itemize}
+                    \item i.e. How good the state is at time $T$ (e.g. If $v(s,T) = 5$, then the expected future return at $T$ is $5$).
+                \end{itemize}
+                \item $v(s, 0) = 0$ for all $s$: Base case
             \end{itemize}} \\
             \midrule
-            Optimal value function & $v^*(s, \tau) = \max_a \sum_{s'} p(s' \mid a, s) \left( r(s, a, s') + \gamma v^*(s', \tau+1) \right)$ \\
+            Optimal action & $a^*(s,T) = \arg\max_{a \in \mathcal{A}(s)} \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') + \gamma v_{\pi^*}(s', T-1) \right)$ \\
+            & $\quad \quad \quad \quad = \arg \max_{a \in \mathcal{A}(s)} q^* (s,a,T)$ \\
+            \midrule
+            Optimal policy & $\pi^*(a \mid s,T) = \arg\max_{\pi(a \mid s,T)} \mathbb{E}_{\pi} [G_{\tau} \mid S_{\tau} = s] = \begin{cases}
+                1 & \text{if } a = a^*(s,T) \\
+                0 & \text{otherwise}
+            \end{cases}$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Taking the optimal $\pi(\cdot \mid s)$ (i.e., $\pi^*$) gives the recurrence above.
-                \item $v^*(s, T) = 0$ for all $s$.
+                \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return after $\tau$ transitions given $S_{\tau} = s$.
+                \item \textbf{Note:} Policy always depends on transitions remaining so may omit. 
             \end{itemize}} \\
             \midrule 
-            Expected Return & $\mathbb{E}_\pi [U_{T_{\max}}] = \sum_s \mathbb{E}_\pi [G_0 \mid S_0 = s] p_0(s)$ \\
+            Optimal value function & $v^*(s, T) = \max_a \sum_{s'} p(s' \mid a, s) \left( r(s, a, s') + \gamma v^*(s', \tau+1) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Assume we use an optimal policy $\pi^*$.
+                \item $v^*(s, 0) = 0$ for all $s$: Base case.
+            \end{itemize}} \\
+            \midrule 
+            Q function (quality) & $q_{\pi}(s,a,T) := \mathbb{E}_{\pi}[G_{T_{\max} - T} \mid S_{T_{\max} - T} = s, A_{T_{\max} - (T-1)} = a]$ \\
+            & $\quad \quad \quad \quad \quad = \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') + \gamma \sum_{a'} \pi(a' \mid s') q_\pi (s',a',T-1) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Quality of move $(s,a)$ under policy $\pi$ with $T$ transitions remaining.
+                \item $q_\pi (s,a,0) = 0$ for all $s,a$: Base case.
+            \end{itemize}} \\
+            \midrule 
+            Optimal Q function & $q^*(s,a,T) = \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') + \gamma \max_{a'} q^*(s',a',T-1) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $q^*(s,a,0) = 0$ for all $s,a$: Base case.
+            \end{itemize}} \\
+            \midrule
+            IDK Expected Return & $\mathbb{E}_\pi [U_{T_{\max}}] = \sum_s \mathbb{E}_\pi [G_0 \mid S_0 = s] p_0(s)$ \\
             & $\quad \quad \quad \quad \; \; = \sum_s v_\pi(s, 0) p_0(s)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item $G_0 = U_{T_{\max}}$
             \end{itemize}} \\
             \midrule 
-            Optimal Expected Return & $\max_\pi \mathbb{E}[U_{T_{\max}}] = \sum_s v^* (s,0)p_0(s)$ \\
+            IDK Optimal Expected Return & $\max_\pi \mathbb{E}[U_{T_{\max}}] = \sum_s v^* (s,0)p_0(s)$ \\
             \bottomrule            
         \end{tabular}
     \end{center}
@@ -290,6 +315,18 @@
     \begin{enumerate}
         \item \textbf{Given:}
         \customFigure[0.5]{../Images/L8_6.png}{}
+        \begin{itemize}
+            \item Solid straight line: Outcome of action $a$ from state $s$.
+            \item Dotted straight line: Choice of action (policy) from state $s$.
+            \begin{itemize}
+                \item If policy known, then reduced to MRP.
+            \end{itemize}
+            \item Squiggly line: Reward for action $a$ from state $s$ to state $s'$.
+            \item Assume uniform probability. 
+            \begin{itemize}
+                \item Since $\sum p= 1$, therefore count \# of arrows going out of $s$ and divide by $1$ to get $p$.
+            \end{itemize}
+        \end{itemize}
     \end{enumerate}
 \end{example}
 
