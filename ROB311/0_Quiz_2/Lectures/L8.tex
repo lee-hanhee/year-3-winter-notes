@@ -12,8 +12,6 @@
 \end{definition}
 
 \subsection{Markov Chains (MCs)}
-
-\subsubsection{Setup}
 \begin{summary}
     In a \textbf{Markov Chain}, we assume that:
     \begin{itemize}
@@ -41,6 +39,14 @@
             \midrule 
             Prob. that state of the env. after $T$ transitions is $s$ & $p_T(s) := \mathbb{P}[S_T = s]$ \\
             & $\quad \quad \; \; \; \;= \sum_{s'} p_{T-1}(s') p(s|s')$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $p_{T-1}(s')$: Prob. $s'$ at $T$-$1$ (given) 
+                \begin{itemize}
+                    \item $p_0(s)$: Base case
+                \end{itemize}
+                \item $p(s|s')$: Prob. $s$ given $s'$ (from graph)
+            \end{itemize}} \\
             \bottomrule            
         \end{tabular}
     \end{center}
@@ -54,7 +60,6 @@
 \newpage
 
 \subsection{Markov Reward Processes (MRPs)}
-\subsubsection{Setup}
 \begin{summary}
     In a \textbf{Markov Reward Process}, we assume that:
     \begin{itemize}
@@ -89,7 +94,12 @@
             & $\quad \; \;= U_{T-1} + \gamma^{T-1} R_T$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item The (possibly discounted) sum of the rewards after $T$ transitions
+                \item i.e. The (possibly discounted) sum of the rewards after $T$ transitions.
+                \item \textbf{Why?}
+                \begin{itemize}
+                    \item Future rewards are less valuable than immediate rewards.
+                    \item Won't converge if sum goes to $\infty$ if $\gamma = 1$.
+                \end{itemize}
             \end{itemize}} \\
             \midrule
             Expected return after $T$ transitions & $\mathbb{E}[U_T] = \mathbb{E}[U_{T-1}] + \gamma^{T-1} \mathbb{E} [R_t]$ \\
@@ -98,7 +108,7 @@
             \begin{itemize}
                 \item $p_{T-1}(s) p(s'|s)$: Prob. $s \to s'$
                 \item $r(s, s')$: rwd $s \to s'$
-                \item $\mathbb{E}[U_0] := 0$.
+                \item $\mathbb{E}[U_0] := 0$: Base case
             \end{itemize}} \\
             \midrule
             \bottomrule            
@@ -259,6 +269,27 @@
         \item \textbf{Given:} Caveman needs to predict the weather, $W$, which is either sunny or rainy. Suppose the weather tomorrow depends on the weather today:
         \customFigure[0.5]{../Images/L8_4.png}{}
         \item \textbf{Problem:} Caveman wants to predict the weather on a given day.
+    \end{enumerate}
+\end{example}
+
+\subsubsection{Markov Reward Processes}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Caveman needs to predict the weather, $W$, which is either sunny or rainy. Suppose the weather tomorrow depends on the weather today:
+        \customFigure[0.5]{../Images/L8_5.png}{}
+        \begin{itemize}
+            \item Depending on the transition, caveman may feel happier/sadder. This is quantified w/ the rewards.
+        \end{itemize}
+        \item \textbf{Problem:} Caveman wants to predict the weather on a given day that maximizes his happiness.
+    \end{enumerate}
+\end{example}
+\newpage
+
+\subsubsection{Markov Decision Processes}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:}
+        \customFigure[0.5]{../Images/L8_6.png}{}
     \end{enumerate}
 \end{example}
 
