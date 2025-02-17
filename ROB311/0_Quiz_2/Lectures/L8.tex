@@ -1,3 +1,16 @@
+\subsubsection{Random Process}
+\begin{definition}
+    Time-varying random variables $S_0, S_1, S_2, \ldots$.
+\end{definition}
+
+\subsubsection{Markov Process}
+\begin{definition}
+    Random process + depends on previous time step only (memoryless)
+    \begin{itemize}
+        \item w.l.o.g. states can contain history of previous states.
+    \end{itemize}
+\end{definition}
+
 \subsection{Markov Chains (MCs)}
 
 \subsubsection{Setup}
@@ -237,4 +250,15 @@
     $S_0,A_1,R_1,S_1,A_2,R_2,S_2,\ldots$ form a \textbf{Bayesian Network}:
     \customFigure[0.5]{../Images/L8_2.png}{}
 \end{definition}
+\newpage
+
+\subsection{Canonical Examples}
+\subsubsection{Markov Chains}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Caveman needs to predict the weather, $W$, which is either sunny or rainy. Suppose the weather tomorrow depends on the weather today:
+        \customFigure[0.5]{../Images/L8_4.png}{}
+        \item \textbf{Problem:} Caveman wants to predict the weather on a given day.
+    \end{enumerate}
+\end{example}
 
