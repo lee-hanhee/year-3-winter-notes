@@ -231,7 +231,7 @@
             \end{cases}$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return after $\tau$ transitions given $S_{\tau} = s$.
+                \item Choose $\pi(\cdot \mid s)$ to maximize the expected future return after $T$ transitions given $S_{\tau} = s$.
                 \item \textbf{Note:} Policy always depends on transitions remaining so may omit. 
             \end{itemize}} \\
             \midrule 
@@ -340,7 +340,273 @@
             \item Same states have the same connections (i.e. all can use them just to hard to draw)
         \end{itemize}
         \item \textbf{Problem:} Find the optimal policy for $\gamma=1$ and $T_{\max} = 5$.
-        \item 
+        \item \textbf{Soln:}
     \end{enumerate}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ & $s$ & $a$ & $q^* (s,a,T) = \sum_{s'} p(s' \mid s,a) \left(r(s,a,s') + \gamma \max_{a'} q^* (s',a',T-1)\right)$ \\
+            \toprule
+            $0$ & - & - & $0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,0) = \text{NA}$ 
+            \end{itemize}} \\
+            \toprule
+            $1$ & seed & wait & $q^*(\text{seed},\text{wait},1)= \underbrace{0.5(-2 + 0)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$ga}} = -1$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{seed},1) = \text{wait}$
+            \end{itemize}} \\
+            \midrule
+            $1$ & ga & wait & $q^*(\text{ga},\text{wait},1) = \underbrace{0.25(-2 + 0)}_{\text{$s'=$ga}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$rea}} + \underbrace{0.25(0 + 0)}_{\text{$s'=$roa}} = -0.5$ \\
+            $1$ & ga & eat & $q^*(\text{ga},\text{eat},1) = \underbrace{0.1(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.9(6 + 0)}_{\text{$s'=$seed}} = 5.4$ \\
+            $1$ & ga & hunt & $q^*(\text{ga},\text{hunt},1) = \underbrace{0.5(24 + 0)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} = 12$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{ga},1) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $1$ & rea & eat & $q^*(\text{rea},\text{eat},1) = \underbrace{1(12 + 0)}_{\text{$s'=$seed}} = 12$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{rea},1) = \text{eat}$
+            \end{itemize}} \\
+            \midrule 
+            $1$ & roa & eat & $q^*(\text{roa},\text{eat},1) = \underbrace{0.25(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.75(2 + 0)}_{\text{$s'=$seed}} = 1.5$ \\
+            $1$ & roa & hunt & $q^*(\text{roa},\text{hunt},1) = \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.5(18 + 0)}_{\text{$s'=$seed}} = 9$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{roa},1) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule 
+            $1$ & dead & - & $q^*(\text{dead},-,1) = \underbrace{1(0 + 0)}_{\text{$s'=$end}} = 0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,1) = -$ 
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Optimal Policy w/ 1 Transition Remaining: $\pi^*(a \mid s,1) = \begin{cases}
+                    1 & \text{if } a = a^*(s,1) \\
+                    0 & \text{otherwise}
+                \end{cases}$
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ & $s$ & $a$ & $q^* (s,a,T) = \sum_{s'} p(s' \mid s,a) \left(r(s,a,s') + \gamma \max_{a'} q^* (s',a',T-1)\right)$ \\
+            \toprule
+            $2$ & seed & wait & $q^*(\text{seed},\text{wait},2) = \underbrace{0.5(-2 - 1)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 12)}_{\text{$s'=$ga}} = 4.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{seed},2) = \text{wait}$
+            \end{itemize}} \\
+            \midrule
+            $2$ & ga & wait & $q^*(\text{ga},\text{wait},2) = \underbrace{0.25(-2 + 12)}_{\text{$s'=$ga}} + \underbrace{0.5(0 + 12)}_{\text{$s'=$rea}} + \underbrace{0.25(0 + 9)}_{\text{$s'=$roa}} = 10.75$ \\
+            $2$ & ga & eat & $q^*(\text{ga},\text{eat},2) = \underbrace{0.1(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.9(6 - 1)}_{\text{$s'=$seed}} = 4.5$ \\
+            $2$ & ga & hunt & $q^*(\text{ga},\text{hunt},2) = \underbrace{0.5(24 - 1)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} = 11.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{ga},2) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $2$ & rea & eat & $q^*(\text{rea},\text{eat},2) = \underbrace{1(12 - 1)}_{\text{$s'=$seed}} = 11$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{rea},2) = \text{eat}$
+            \end{itemize}} \\
+            \midrule
+            $2$ & roa & eat & $q^*(\text{roa},\text{eat},2) = \underbrace{0.25(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.75(2 - 1)}_{\text{$s'=$seed}} = 0.5$ \\
+            $2$ & roa & hunt & $q^*(\text{roa},\text{hunt},2) = \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.5(18 - 1)}_{\text{$s'=$seed}} = 8.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{roa},2) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $2$ & dead & - & $q^*(\text{dead},-,2) = \underbrace{1(0 + 0)}_{\text{$s'=$end}} = 0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,2) = -$
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Optimal Policy w/ 2 Transitions Remaining: $\pi^*(a \mid s,2) = \begin{cases}
+                    1 & \text{if } a = a^*(s,2) \\
+                    0 & \text{otherwise}
+                \end{cases}$
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ & $s$ & $a$ & $q^* (s,a,T) = \sum_{s'} p(s' \mid s,a) \left(r(s,a,s') + \gamma \max_{a'} q^* (s',a',T-1)\right)$ \\
+            \toprule
+            $3$ & seed & wait & $q^*(\text{seed},\text{wait},3) = \underbrace{0.5(-2 + 4.5)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 11.5)}_{\text{$s'=$ga}} = 7$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{seed},3) = \text{wait}$
+            \end{itemize}} \\
+            \midrule
+            $3$ & ga & wait & $q^*(\text{ga},\text{wait},3) = \underbrace{0.25(-2 + 11.5)}_{\text{$s'=$ga}} + \underbrace{0.5(0 + 11)}_{\text{$s'=$rea}} + \underbrace{0.25(0 + 8.5)}_{\text{$s'=$roa}} = 10$ \\
+            $3$ & ga & eat & $q^*(\text{ga},\text{eat},3) = \underbrace{0.1(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.9(6 + 4.5)}_{\text{$s'=$seed}} = 9.45$ \\
+            $3$ & ga & hunt & $q^*(\text{ga},\text{hunt},3) = \underbrace{0.5(24 + 4.5)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} = 14.25$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{ga},3) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $3$ & rea & eat & $q^*(\text{rea},\text{eat},3) = \underbrace{1(12 + 4.5)}_{\text{$s'=$seed}} = 16.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{rea},3) = \text{eat}$
+            \end{itemize}} \\
+            \midrule
+            $3$ & roa & eat & $q^*(\text{roa},\text{eat},3) = \underbrace{0.25(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.75(2 + 4.5)}_{\text{$s'=$seed}} = 4.875$ \\
+            $3$ & roa & hunt & $q^*(\text{roa},\text{hunt},3) = \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.5(18 + 4.5)}_{\text{$s'=$seed}} = 11.25$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{roa},3) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $3$ & dead & - & $q^*(\text{dead},-,3) = \underbrace{1(0 + 0)}_{\text{$s'=$end}} = 0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,3) = -$
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Optimal Policy w/ 3 Transitions Remaining: $\pi^*(a \mid s,3) = \begin{cases}
+                    1 & \text{if } a = a^*(s,3) \\
+                    0 & \text{otherwise}
+                \end{cases}$
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ & $s$ & $a$ & $q^* (s,a,T) = \sum_{s'} p(s' \mid s,a) \left(r(s,a,s') + \gamma \max_{a'} q^* (s',a',T-1)\right)$ \\
+            \toprule
+            $4$ & seed & wait & $q^*(\text{seed},\text{wait},4) = \underbrace{0.5(-2 + 7)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 14.25)}_{\text{$s'=$ga}} = 9.625$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{seed},4) = \text{wait}$
+            \end{itemize}} \\
+            \midrule
+            $4$ & ga & wait & $q^*(\text{ga},\text{wait},4) = \underbrace{0.25(-2 + 14.25)}_{\text{$s'=$ga}} + \underbrace{0.5(0 + 16.5)}_{\text{$s'=$rea}} + \underbrace{0.25(0 + 11.25)}_{\text{$s'=$roa}} = 14.125$ \\
+            $4$ & ga & eat & $q^*(\text{ga},\text{eat},4) = \underbrace{0.1(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.9(6 + 7)}_{\text{$s'=$seed}} = 11.7$ \\
+            $4$ & ga & hunt & $q^*(\text{ga},\text{hunt},4) = \underbrace{0.5(24 + 7)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} = 15.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{ga},4) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $4$ & rea & eat & $q^*(\text{rea},\text{eat},4) = \underbrace{1(12 + 7)}_{\text{$s'=$seed}} = 19$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{rea},4) = \text{eat}$
+            \end{itemize}} \\
+            \midrule
+            $4$ & roa & eat & $q^*(\text{roa},\text{eat},4) = \underbrace{0.25(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.75(2 + 7)}_{\text{$s'=$seed}} = 6.75$ \\
+            $4$ & roa & hunt & $q^*(\text{roa},\text{hunt},4) = \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.5(18 + 7)}_{\text{$s'=$seed}} = 12.5$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{roa},4) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $4$ & dead & - & $q^*(\text{dead},-,4) = \underbrace{1(0 + 0)}_{\text{$s'=$end}} = 0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,4) = -$
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Optimal Policy w/ 4 Transitions Remaining: $\pi^*(a \mid s,4) = \begin{cases}
+                    1 & \text{if } a = a^*(s,4) \\
+                    0 & \text{otherwise}
+                \end{cases}$
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ & $s$ & $a$ & $q^* (s,a,T) = \sum_{s'} p(s' \mid s,a) \left(r(s,a,s') + \gamma \max_{a'} q^* (s',a',T-1)\right)$ \\
+            \toprule
+            $5$ & seed & wait & $q^*(\text{seed},\text{wait},5) = \underbrace{0.5(-2 + 9.625)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 15.5)}_{\text{$s'=$ga}} = 11.5625$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{seed},5) = \text{wait}$
+            \end{itemize}} \\
+            \midrule
+            $5$ & ga & wait & $q^*(\text{ga},\text{wait},5) = \underbrace{0.25(-2 + 15.5)}_{\text{$s'=$ga}} + \underbrace{0.5(0 + 19)}_{\text{$s'=$rea}} + \underbrace{0.25(0 + 12.5)}_{\text{$s'=$roa}} = 16$ \\
+            $5$ & ga & eat & $q^*(\text{ga},\text{eat},5) = \underbrace{0.1(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.9(6 + 9.625)}_{\text{$s'=$seed}} = 14.0625$ \\
+            $5$ & ga & hunt & $q^*(\text{ga},\text{hunt},5) = \underbrace{0.5(24 + 9.625)}_{\text{$s'=$seed}} + \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} = 16.8125$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{ga},5) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $5$ & rea & eat & $q^*(\text{rea},\text{eat},5) = \underbrace{1(12 + 9.625)}_{\text{$s'=$seed}} = 21.625$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{rea},5) = \text{eat}$
+            \end{itemize}} \\
+            \midrule
+            $5$ & roa & eat & $q^*(\text{roa},\text{eat},5) = \underbrace{0.25(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.75(2 + 9.625)}_{\text{$s'=$seed}} = 8.71875$ \\
+            $5$ & roa & hunt & $q^*(\text{roa},\text{hunt},5) = \underbrace{0.5(0 + 0)}_{\text{$s'=$dead}} + \underbrace{0.5(18 + 9.625)}_{\text{$s'=$seed}} = 13.8125$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(\text{roa},5) = \text{hunt}$
+            \end{itemize}} \\
+            \midrule
+            $5$ & dead & - & $q^*(\text{dead},-,5) = \underbrace{1(0 + 0)}_{\text{$s'=$end}} = 0$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Best Action: $a^*(s,5) = -$
+            \end{itemize}} \\
+            \toprule
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Optimal Policy w/ 5 Transitions Remaining: $\pi^*(a \mid s,5) = \begin{cases}
+                    1 & \text{if } a = a^*(s,5) \\
+                    0 & \text{otherwise}
+                \end{cases}$
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
 \end{example}
 
