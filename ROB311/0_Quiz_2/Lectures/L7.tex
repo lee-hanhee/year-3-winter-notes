@@ -123,21 +123,24 @@
 \end{warning}
 \newpage
 
-\subsubsection{Path Blocked?}
+\subsubsection{Undirected Path Blocked?}
 \begin{process}
-    \begin{itemize}
-        \item Know when a path is blocked. More than one path b/w 2 varaibles, then all paths need to be blocked. 
-    \end{itemize}
+    \begin{enumerate}
+        \item \textbf{Given:} Undirected path $p$ and $\mathcal{K}$
+        \item Check if any of the junctions on the undirected path are blocked given $\mathcal{K}$.
+        \begin{itemize}
+            \item i.e. Check if $X_1$ and $X_3$ of the junction are independent given $\mathcal{K}$.
+        \end{itemize}
+    \end{enumerate}
 \end{process}
-
-\begin{example}
-    
-\end{example}
 
 \subsubsection{Independence}
 \begin{process}
     \begin{enumerate}
-        \item 
+        \item Given a Bayesian network w/ 2 variables to find independence.
+        \item Find all undirected paths between the 2 variables in the Bayesian network.
+        \item Identify a set of variables, $\mathcal{K}$, that blocks all undirected paths.
+        \item If all undirected paths are blocked, then the 2 variables are independent given $\mathcal{K}$.
     \end{enumerate}
 \end{process}
 
