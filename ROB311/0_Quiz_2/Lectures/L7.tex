@@ -153,7 +153,67 @@
             \item independent if $\mathcal{K}=$
             \item not necessarily independent for $\mathcal{K}=$
         \end{itemize}
+        \item \textbf{Soln:}
+        \begin{enumerate}
+            \item \textbf{Undirected Paths:}
+            \begin{itemize}
+                \item $A \to G \to H \to B \to E$
+                \item $A \to G \to D \to B \to E$
+                \item $A \to C \to F \to B \to E$
+                \item $A \to C \to D \to B \to E$
+            \end{itemize}
+        \end{enumerate}
     \end{enumerate}
+\end{example}
+\newpage
+
+\begin{example}
+    \textbf{Independent:}
+    \begin{center}
+        \begin{tabular}{c}
+            \toprule
+            $\mathcal{K}$ \\
+            \midrule
+            $\{G,C\}$ \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $A \iff G \iff H \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,G,H),(e_1,e_2)\}$ is blocked given $G$ since $A,H$ independent given $G$ (causal chain)
+                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,G,D),(e_1,e_2)\}$ is blocked given $G$ since $A,D$ independent given $G$ (causal chain)
+                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,F),(e_1,e_2)\}$ is blocked given $C$ since $A,F$ independent given $C$ (causal chain) 
+                    \item $A \iff C \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,D),(e_1,e_2)\}$ is blocked given $C$ since $A,D$ independent given $C$ (causal chain) 
+                \end{itemize}} \\
+            \midrule
+            $\{D,F\}$ \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $A \iff G \iff H \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is blocked NOT given $H$ since $G,B$ independent NOT given $H$ (common effect)
+                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is blocked given $D$ since $G,B$ independent given $D$ (causal chain)
+                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,F,B),(e_1,e_2)\}$ is blocked given $F$ since $C,B$ independent given $F$ (causal chain)
+                    \item $A \iff C \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,D,B),(e_1,e_2)\}$ is blocked given $D$ since $C,B$ independent given $D$ (causal chain)
+                \end{itemize}} \\
+            \toprule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \textbf{Not Necessarily Independent:}
+    \begin{center}
+        \begin{tabular}{c}
+            \toprule
+            $\mathcal{K}$ \\
+            \midrule
+            $\{H,D,F\}$ \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $A \iff G \iff H \iff B \iff E$ is unblocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is unblocked given $H$ since $G,B$ not independent given $H$ (common effect)
+                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is blocked given $D$ (causal chain) since $G,B$ independent given $D$ (causal chain)
+                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,F,B),(e_1,e_2)\}$ is blocked given $F$ since $C,B$ independent given $F$ (causal chain)
+                    \item $A \iff C \iff D \iff B \iff E$  is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,D,B),(e_1,e_2)\}$ is blocked given $D$ since $C,B$ independent given $D$ (causal chain)
+                \end{itemize}} \\
+            \midrule
+            \toprule
+        \end{tabular}
+    \end{center}
 \end{example}
 \newpage
 
