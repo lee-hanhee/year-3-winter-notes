@@ -33,9 +33,9 @@
 \end{definition}
 
 \subsubsection{Graphical Interpretation}
-\begin{definition}
+\begin{notes}
     Pictorially, eliminating $X$ is equivalent to replacing all hyper-edges that include $X$ with their union minus $X$, and then removing $X$.
-\end{definition}
+\end{notes}
 
 \subsubsection{Elimination Ordering}
 \begin{definition}
@@ -304,8 +304,43 @@
 \end{example}
 \newpage
 
+\begin{example}
+    \begin{center}
+        \begin{tabular}{l}
+            \toprule
+            \textbf{Summation} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\text{Numerator}: \underbrace{p(h) \sum_L p(L \mid h) \underbrace{\sum_W p(W) \underbrace{\sum_T p(T \mid W,h) p(D \mid T,L)}_{g_1(W,D,L)}}_{g_2(D,L)}}_{g_3(D)}$
+            \end{center}} \\
+            \toprule 
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\text{Numerator}: \underbrace{p(h) \sum_W p(W) \underbrace{\sum_T p(T \mid W,h) \underbrace{\sum_L p(L \mid h) p(D \mid T,L)}_{g_1(D,T)}}_{g_2(D,W)}}_{g_3(D)}$
+            \end{center}} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\text{Numerator}: \underbrace{p(h) \sum_W p(W) \underbrace{\sum_L p(L \mid h) \underbrace{\sum_T p(T \mid W,h) p(D \mid T,L)}_{g_1(W,D,L)}}_{g_2(W,D)}}_{g_3(D)}$
+            \end{center}} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\text{Numerator}: \underbrace{p(h) \sum_T p(T \mid W,h) \underbrace{\sum_W p(W) \underbrace{\sum_L p(L \mid h) p(D \mid T,L)}_{g_1(D,T)}}_{g_2(D,T)}}_{g_3(D)}$
+            \end{center}} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\ldots$
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{example}
+
 \subsubsection{Hypergraph}
-\begin{process}
+\begin{process} Process of eliminating a variable. 
     \begin{enumerate}
         \item 
     \end{enumerate}
