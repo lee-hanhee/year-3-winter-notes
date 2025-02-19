@@ -358,8 +358,9 @@
     
     \textcolor{blue}{\textbf{MAP/LMS Estimator for $\underline{X}$ Given $\underline{Y}$:}} \\
     $\hat{x}_{\text{MAP/LMS}} \text{=} \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X}} A^T (A \Sigma_{\underline{X}} A^T \text{+} \Sigma_{\underline{Z}})^{-1} (\underline{y} - A \underline{\mu}_{\underline{X}} - \underline{b})$ \\
-    $\hat{x}_{\text{MAP/LMS}} \text{=} \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1} \left(A^T \Sigma_{\underline{Z}}^{-1} (\underline{y} - \underline{b}) + \Sigma_{\underline{X}}^{-1} \underline{\mu}_{\underline{X}} \right)$ \\
-    *$\Sigma_{\underline{X} \mid \underline{y}} = \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1}$
+    $\hat{x}_{\text{MAP/LMS}} \text{=} \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1} \left(A^T \Sigma_{\underline{Z}}^{-1} (\underline{y} - \underline{b}) + \Sigma_{\underline{X}}^{-1} \underline{\mu}_{\underline{X}} \right)$ 
+
+    \textcolor{darkgreen}{\textbf{Covar. Mat of $\underline{X}$ Given $\underline{Y}=\underline{y}$:}} $\Sigma_{\underline{X} \mid \underline{y}} = \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1}$
 
 
 
