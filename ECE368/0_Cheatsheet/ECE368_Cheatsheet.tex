@@ -325,6 +325,34 @@
     $\hat{\pi}_c = \frac{n_c}{n}$, $\hat{\mu}_c = \frac{1}{n_c} \sum_{i=1}^{n} \underline{x}_i^c$, \\
     $\Sigma_c = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_i^c - \hat{\mu}_c)(x_i^c - \hat{\mu}_c)^T$
 
+    \textcolor{red}{\textbf{Guassian Estimation}} \textcolor{blue}{\textbf{ML Estimator for $\theta$:}} \\ 
+    Given $\underline{X} = \{X_1,\ldots,X_n\}$, $X_i = \theta + Z_i$, $Z_i \sim \mathcal{N}(0, \sigma^2)$ \\
+    $\hat{\theta}_{\text{ML}} = \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}$ (weighted avg. of $\underline{x}$) \\
+    *$\frac{1}{\sigma_i^2}$: Precision of $X_i$ \\
+    *Larger $\sigma_i^2 \implies$ less weight on $X_i$ (less reliable measurement) \\
+    *If $\sigma_i^2 = \sigma^2 \; \forall i$, then $\hat{\theta}_{\text{ML}} = \frac{1}{n} \sum_{i=1}^n x_i$ (sample mean) 
+
+    \textcolor{blue}{\textbf{MAP Estimator for $\theta$:}} Prior $\Theta \sim \mathcal{N} (x_0, \sigma_0^2)$, indep. $\underline{Z}$ \\
+    $\hat{\theta}_{\text{MAP}} = \frac{\sum_{i=0}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}} = \frac{\frac{1}{\sigma_0^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} x_0 + \frac{\sum_{i=1}^n \frac{1}{\sigma_i^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} \hat{\theta}_{\text{ML}}$ \\
+    *Gaussian prior $f_\Theta$ is equivalent to a prior meas. $x_0$ w/ $\sigma_0^2$.
+    *As $n \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$. As $\sigma_0^2 \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$ \\
+    * 
+
+    \textcolor{blue}{\textbf{MAP Estimator for $\underline{X}$ Given $\underline{Y}$:}} $\underline{W} = (\underline{X},\underline{Y}) \sim \mathcal{N} (\underline{\mu}, \Sigma)$ \\
+    $\hat{\underline{x}}_{\text{MAP}}(\underline{y}) = \hat{\underline{x}}_{\text{LMS}}(\underline{y}) = \underline{\mu}_{\underline{X} \mid \underline{Y}}= \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X}, \underline{Y}} \Sigma_{\underline{Y},\underline{Y}}^{-1} (\underline{y} - \underline{\mu}_Y)$ \\
+    *$\hat{\underline{x}}_{\text{MAP/LMS}}$: Linear fcn of $\underline{y}$ 
+
+    \textcolor{blue}{\textbf{LMMSE Estimator for $\underline{X}$ Given $\underline{Y}$:}} For non-Guassian $\underline{X}$, $\underline{Y}$, \\
+    $\hat{\underline{x}}_{\text{LMMSE}}(\underline{y}) = \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X}, \underline{Y}} \Sigma_{\underline{Y},\underline{Y}}^{-1} (\underline{y} - \underline{\mu}_Y)$ 
+
+    \textcolor{red}{\textbf{Linear Guassian System:}} $\underline{Y} = A \underline{X} + \underline{b} + underline{Z}$ \\
+    *$A\underline{X} + \underline{b}$: channel distortion, $\underline{Z}$: Noise 
+    
+    \textcolor{blue}{\textbf{MAP/LMS Estimator for $\underline{X}$ Given $\underline{Y}$:}} \\
+    $\hat{x}_{\text{MAP/LMS}} \text{=} \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X}} A^T (A \Sigma_{\underline{X}} A^T \text{+} \Sigma_{\underline{Z}})^{-1} (\underline{y} - A \underline{\mu}_{\underline{X}} - \underline{b})$ \\
+    $\hat{x}_{\text{MAP/LMS}} \text{=} \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1} \left(A^T \Sigma_{\underline{Z}}^{-1} (\underline{y} - \underline{b}) + \Sigma_{\underline{X}}^{-1} \underline{\mu}_{\underline{X}} \right)$ \\
+    *$\Sigma_{\underline{X} \mid \underline{y}} = \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1}$
+
 
 
     }
