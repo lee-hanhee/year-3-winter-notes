@@ -217,17 +217,16 @@
 \end{example}
 \newpage
 
-\subsubsection{Hypergraph}
-\begin{process}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{process}
-
 \subsubsection{Bayesian Inference}
 \begin{process}
     \begin{enumerate}
-        \item 
+        \item Given Bayesian network w/ variables and their conditional probabilities.
+        \item Find the probability of the query variable given the evidence variable, $p(\mathbf{Q} \mid \mathbf{E})$.
+        \item Use $p(\mathbf{Q} \mid \mathbf{E}) = \frac{\sum_{\mathcal{V} \setminus (\mathbf{Q} \cup \mathbf{E})} p(X_1, \dots, X_{|\mathcal{V}|})}{\sum_{\mathcal{V} \setminus \mathbf{E}} p(X_1, \dots, X_{|\mathcal{V}|})}$.
+        \item Determine $p(X_1) \prod_{i \neq 1} p(X_i \mid \operatorname{pts}(X_i))$ using the Bayesian network. 
+        \item Write out the summation of the numerator in an order using heuristics to determine elimination ordering. 
+        \item Start with inner summation and work outwards.
+        \item Calculate the probability of the query variable(s) given the evidence variable(s).
     \end{enumerate}
 \end{process}
 
@@ -235,10 +234,82 @@
     \begin{enumerate}
         \item \textbf{Given:}
         \customFigure[0.5]{../Images/L6_9.png}{}
-        \item \textbf{Problem:}
+        \begin{center}
+            \begin{tabular}{ll}
+                \toprule
+                \textbf{Variables} & \textbf{Values} \\
+                \midrule
+                $W$ & $P(\text{Sunny}) = 0.5 \mid P(\text{Rainy}) = 0.5$ \\
+                \midrule
+                $H$ & $P(h) = 0.5 \mid P(\lnot h) = 0.5$ \\
+                \midrule
+                $T$ & $P(t \mid \text{Sunny}, h) = 1 \mid P(t \mid \text{Sunny}, \lnot h) = 0.5 \mid P(t \mid \text{Rainy}, h) = 0.25 \mid P(t \mid \text{Rainy}, \lnot h) = 0$ \\
+                & $P(\lnot t \mid \text{Sunny}, h) = 0 \mid P(\lnot t \mid \text{Sunny}, \lnot h) = 0.5 \mid P(\lnot t \mid \text{Rainy}, h) = 0.75 \mid P(\lnot t \mid \text{Rainy}, \lnot h) = 1$ \\
+                \midrule
+                $L$ & $P(l \mid h) = 1 \mid P(l \mid \lnot h) = 0.75$ \\
+                & $P(\lnot l \mid h) = 0 \mid P(\lnot l \mid \lnot h) = 0.25$ \\
+                \midrule
+                $D$ & $P(d \mid t,l) = 0.75 \mid P(d \mid t,\lnot l) = 1 \mid P(d \mid \lnot t,l) = 0 \mid P(d \mid \lnot t,\lnot l) = 0$ \\
+                & $P(\lnot d \mid t,l) = 0.25 \mid P(\lnot d \mid t,\lnot l) = 0 \mid P(\lnot d \mid \lnot t,l) = 1 \mid P(\lnot d \mid \lnot t,\lnot l) = 1$ \\
+                \bottomrule
+            \end{tabular}
+        \end{center}
+        \item \textbf{Problem:} $p(d \mid h)$? 
+        \item \textbf{Soln:}
+        \begin{enumerate}
+            \item $p(d \mid h) = \frac{p(d,h)}{p(h)} = \frac{\sum_{W,T,L} p(W,h,T,L,d)}{\sum_{W,T,L,D} p(W,h,T,L,d)}$ by definition of query and evidence equations.
+            \item $p(W,h,T,L,D) = p(h) p(W) p(L \mid h) p(t \mid W,h) p(D \mid T,L)$ by Bayesian network and $p(X_1, \dots, X_{|\mathcal{V}|}) = p(X_1) \prod_{i \neq 1} p(X_i \mid \operatorname{pts}(X_i))$.
+        \end{enumerate}
+        \begin{center}
+            \begin{tabular}{l}
+                \toprule
+                \textbf{Summation} \\
+                \toprule
+                \multicolumn{1}{p{\linewidth}}{
+                \begin{center}
+                    $\text{Numerator}: \underbrace{p(h) \sum_L p(L \mid h) \underbrace{\sum_T p(D \mid T,L) \underbrace{\sum_W p(W) p(T \mid W,h)}_{g_1(T)}}_{g_2(L,D)}}_{g_3(D)}$
+                \end{center}} \\
+                \toprule
+                \multicolumn{1}{p{\linewidth}}{
+                \begin{center}
+                    $g_1(T) = p(\text{Sunny}) p(T \mid \text{Sunny},h) + p(\text{Rainy}) p(T \mid \text{Rainy},h)$
+                \end{center}} \\
+                $g_1(t) = p(\text{Sunny}) p(t \mid \text{Sunny},h) + p(\text{Rainy}) p(t \mid \text{Rainy},h) = 0.5 \cdot 1 + 0.5 \cdot 0.25 = 0.625$ \\
+                $g_1(\lnot t) =  p(\text{Sunny}) p(\lnot t \mid \text{Sunny},h) + p(\text{Rainy}) p(\not t \mid \text{Rainy},h) = 0.5 \cdot 0 + 0.5 \cdot 0.75 = 0.375$ \\
+                \midrule
+                \multicolumn{1}{p{\linewidth}}{
+                \begin{center}
+                    $g_2(L,D) = p(D \mid t,L) g_1(t) + p(D \mid \lnot t, L) g_1(\lnot t)$ 
+                \end{center}} \\
+                $g_2(l,d) = p(d \mid t,l) g_1(t) + p(d \mid \lnot t, l) g_1(\lnot t) = 0.75 \cdot 0.625 + 0 \cdot 0.375 = 0.46875$ \\
+                $g_2(l,\lnot d) = p(\lnot d \mid t,l) g_1(t) + p(\lnot d \mid \lnot t, l) g_1(\lnot t) = 0.25 \cdot 0.625 + 1 \cdot 0.375 = 0.53125$ \\
+                $g_2(\lnot l,d) = p(d \mid t,\lnot l) g_1(t) + p(d \mid \lnot t, \lnot l) g_1(\lnot t) = 1 \cdot 0.625 + 0 \cdot 0.375 = 0.625$ \\
+                $g_2(\lnot l,\lnot d) = p(\lnot d \mid t,\lnot l) g_1(t) + p(\lnot d \mid \lnot t, \lnot l) g_1(\lnot t) = 0 \cdot 0.625 + 1 \cdot 0.375 = 0.375$ \\
+                \midrule
+                \multicolumn{1}{p{\linewidth}}{
+                \begin{center}
+                    $g_3(D) = p(h) p(l \mid h) g_2(l,D) + p(h) p(\lnot l \mid h) g_2(\lnot l, D)$ 
+                \end{center}} \\
+                $g_3(d) = p(h) p(l \mid h) g_2(l,d) + p(h) p(\lnot l \mid h) g_2(\lnot l,d) = (0.5)(1)(0.46875) + (0.5)(0)(0.625) = 0.234375$ \\
+                $g_3(\lnot d) = p(h) p(l \mid h) g_2(l,\lnot d) + p(h) p(\lnot l \mid h) g_2(\lnot l,\lnot d) = (0.5)(1)(0.53125) + (0.5)(0)(0.375) = 0.265625$ \\
+                \bottomrule
+            \end{tabular}
+        \end{center}
+        \vspace{1em}
+
+        \begin{equation*}
+            p(d \mid h) = \frac{g_3(d)}{g_3(d) + g_3(\lnot d)} = \frac{0.234375}{0.234375 + 0.265625} = \frac{0.234375}{0.5} = 0.46875
+        \end{equation*}
     \end{enumerate}
 \end{example}
 \newpage
+
+\subsubsection{Hypergraph}
+\begin{process}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
 
 \subsubsection{Inference via Sampling}
 \begin{process}
