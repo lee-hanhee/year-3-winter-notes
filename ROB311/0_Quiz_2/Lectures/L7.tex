@@ -338,24 +338,35 @@
         \end{tabular}
     \end{center}
 \end{example}
+\newpage
 
 \subsubsection{Hypergraph}
 \begin{process} Process of eliminating a variable. 
     \begin{enumerate}
-        \item 
+        \item HOW TO DO THIS?
     \end{enumerate}
 \end{process}
+
+\begin{example}
+    \customFigure[0.5]{../Images/L6_11.png}{}
+\end{example}
+\newpage
 
 \subsubsection{Inference via Sampling}
 \begin{process}
     \begin{enumerate}
-        \item 
+        \item Given samples 
+        \item Calculate number of samples w/ the query and evidence variables.
+        \item Calculate number of samples w/ the evidence variables.
+        \item Approximate the probability of the query variable given the evidence variable by dividing the \# of samples w/ the query and evidence variables by the \# of samples w/ the evidence variables.
     \end{enumerate}
 \end{process}
 
 \begin{example}
     \begin{enumerate}
-        \item \textbf{Given:}
-        \item \textbf{Problem:}
+        \item \textbf{Given:} Samples 
+        \customFigure[0.5]{../Images/L6_12.png}{}
+        \item \textbf{Problem:} Find the probability of $p(d \mid h)$.
+        \item \textbf{Soln:} $p(d \mid h) \approx \frac{\# \text{ of samples w/ } d \text{ and } h}{\# \text{ of samples w/ } h} = \frac{3}{5} = 0.6$.
     \end{enumerate}
 \end{example}
