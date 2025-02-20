@@ -1,0 +1,156 @@
+\section{Software Engineering}
+
+\subsection{Code Readability Matters}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Overview:} Maintainable code enables collaboration and future work.
+        \customFigure[0.5]{../Images/L7_1.png}{}
+        \customFigure[0.5]{../Images/L7_4.png}{}
+        \item \textbf{Naming:} Clear names enhance code understanding 
+        \begin{itemize}
+            \item \textbf{Functions:} verb\_do
+            \item \textbf{Variables:} two\_three\_words
+            \item \textbf{Classes:} CapitalizedWords
+        \end{itemize}
+        \customFigure[0.5]{../Images/L7_2.png}{}
+    \end{itemize}
+\end{notes}
+
+\subsection{Style Guides}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Overview:} Ensure consistent code formatting. 
+        \item \textbf{Why?} Provide a standardized set of rules for formatting code, prompting uniformity, and reducing cognitive load when reading code. 
+        \item \textbf{Examples:} PEP8, Google Style Guide, etc.
+    \end{itemize}
+    \customFigure[0.5]{../Images/L7_3.png}{}
+    \customFigure[0.5]{../Images/L7_5.png}{}
+\end{notes}
+\newpage
+
+\section{Coding Mantras / Ideas}
+\subsection{Zen of Python}
+\begin{definition}
+    \customFigure[0.5]{../Images/L7_0.png}{}
+\end{definition}
+
+\subsection{KISS: Keep It Simple and Straightforward}
+\begin{notes}
+    Advocate for solutions that are easy to understand and maintain, reduce unnecessary complexity.
+    \customFigure[0.5]{../Images/L7_6.png}{}
+\end{notes}
+
+\subsection{YAGNI: You Aren't Gonna Need It}
+\begin{notes}
+    AKA premature optimization is the root of all evil. 
+    \customFigure[0.5]{../Images/L7_7.png}{}
+    \customFigure[0.5]{../Images/L7_8.png}{}
+\end{notes}
+
+\subsection{Principle of DRY and WET and DAMP}
+\begin{notes}
+    Don't Repeat Yourself; Write Everything Twice.
+    \customFigure[0.5]{../Images/L7_9.png}{}
+    \vspace{1em}
+
+    Don't Abstract Methods Prematurely.
+    \customFigure[0.5]{../Images/L7_10.png}{}
+\end{notes}
+\newpage
+
+\section{Into The Weeds (Technical Details)}
+\subsection{Python Data Containers Overview}
+\begin{definition}
+    Choosing the right container for the task:
+    \begin{itemize}
+        \item \textbf{list:} Ordered, mutable sequence; versatile for collections of items.
+        \item \textbf{tuple:} Ordered, immutable sequence; suitable for fixed collections and data integrity.
+        \item \textbf{set:} Unordered collection of unique elements; efficient for membership testing and removing duplicates.
+        \item \textbf{dict:} Key-value mappings; ideal for efficient data lookup and representing structured information.
+    \end{itemize}
+    \vspace{1em}
+    
+    \textbf{Data Structures:}
+    \begin{itemize}
+        \item \textbf{collections.NamedTuple}
+        \item \textbf{dataclasses.Dataclass}
+    \end{itemize}
+    \vspace{1em}
+
+    \textbf{Tensors}
+    \begin{itemize}
+        \item \textbf{numpy.ndarray}
+        \item \textbf{torch.Tensor}
+        \item \textbf{jax.Array}
+    \end{itemize}
+\end{definition}
+
+\subsection{List Comprehensions}
+\begin{notes}
+    Provide concise list creation.
+    \customFigure[0.5]{../Images/L7_11.png}{}
+\end{notes}
+
+\subsection{Leveraging Set Data Structures: Set}
+\begin{notes}
+    Efficiently handle unique elements and set logic.
+    \customFigure[0.5]{../Images/L7_12.png}{}
+\end{notes}
+
+\subsection{Dictionaries for Key-Value Pairs}
+\begin{notes}
+    Enable efficient data lookup by keys.
+    \customFigure[0.5]{../Images/L7_13.png}{}
+\end{notes}
+
+\subsection{Itertools for Efficient Iteration}
+\begin{notes}
+    Provides tools for very common iteration patterns.
+    \begin{itemize}
+        \item e.g. permutations, chunked, chain, zip, filter, product, combinations, etc.
+    \end{itemize}
+    \customFigure[0.5]{../Images/L7_14.png}{}
+    \customFigure[0.5]{../Images/L7_15.png}{}
+\end{notes}
+
+\subsection{Functools for Functional Tools}
+\begin{notes}
+    Need to manipulate a function and get a new function. 
+    \begin{itemize}
+        \item Caching with \texttt{functools.lru\_cache}: Cache optimizes performance by storing results (i.e. return a previous result when the input of a function has already been observed)
+    \end{itemize}
+    \customFigure[0.5]{../Images/L7_16.png}{}
+    \customFigure[0.5]{../Images/L7_17.png}{}
+\end{notes}
+
+\subsection{Abstract Base Classes (ABCs)}
+\begin{notes}
+    ABCs enforce interfaces for robust design.
+    \customFigure[0.5]{../Images/L7_18.png}{}
+\end{notes}
+
+\subsection{Dataclasses for Data Storage}
+\begin{notes}
+    Data classes simplify data-centric class creation.
+    \customFigure[0.5]{../Images/L7_19.png}{}
+\end{notes}
+
+\subsection{Python Typing Provides Hints}
+\begin{notes}
+    Type hints enhance code clarity, communicate intent and detect errors.
+    \customFigure[0.5]{../Images/L7_20.png}{} 
+\end{notes}
+
+\subsection{Tensor Typing: jaxtyping}
+\begin{notes}
+    Communicate expected tensor shapes and data types. 
+    \customFigure[0.5]{../Images/L7_21.png}{}
+\end{notes}
+
+\subsection{pytest: Helps you write better programs}
+\begin{notes}
+    Simplifies testing for reliable code.
+    \customFigure[0.5]{../Images/L7_22.png}{}
+\end{notes}
+
+

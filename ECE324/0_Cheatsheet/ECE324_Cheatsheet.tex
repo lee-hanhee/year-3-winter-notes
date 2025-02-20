@@ -1,12 +1,11 @@
 \documentclass{article}
 \usepackage{style}
-\title{ECE324 Cheatsheet}
+\title{ECE324 Lectures}
 \author{Hanhee Lee}
 \lhead{ECE324}
 \rhead{Hanhee Lee}
 
 \begin{document}
-
 \section{Problem 1: Description of the Problem, Subscribe a ML/NN Based Solution}
 \begin{process}
 
@@ -60,106 +59,43 @@
 \end{example}
 \newpage
 
-\begin{center}
-    \section*{L2: A tour of learning algorithms, representations, and neural networks}
-\end{center}
-\input{Lectures/L2.tex}
-\newpage
-
-\begin{center}
-    \section*{L3: Multilayer Perceptrons (MLPs)}
-\end{center}
-\input{Lectures/L3.tex}
-\newpage
-
-\begin{center}
-    \section*{L4: Neural Network Engineering}
-\end{center}
-\input{Lectures/L4.tex}
-\newpage
-
-\begin{center}
-    \section*{L5 Optimizing Hyperparameters}
-\end{center}
-\input{Lectures/L5.tex}
-\newpage
-
-\begin{center}
-    \section*{L6: Representation Learning and Variational Autoencoders}
-\end{center}
-\input{Lectures/L6.tex}
-\newpage
-
-% \subsection{Recap}
-% \begin{summary}
-%     \begin{itemize}
-%         \item What is a MLP? Vector-in vector-out optimizable, learnable transformation of data.
-%         \item What is an inductive bias and why might they be useful? Set of assumptions that the learner puts on a model for a task, makes an algorithm learn one pattern over another.
-%         \begin{itemize}
-%             \item Let certain patterns be learnable (restricting the hypothesis space).
-%             \item Last layer in the GLM: Restricting output values to 0 and 1. 
-%         \end{itemize}
-%         \item What is the difference between hyperparameters and parameters? Hyperparameters are set before training (usually discrete), parameters are learned during training (continuous to learn).
-%         \item How do we optimize all parameters in a model? Back propagation.
-%     \end{itemize}
-% \end{summary}
-
-\begin{center}
-    \section*{L7: Software Developemnt, Python Programming}
-\end{center}
-\input{Lectures/L7.tex}
-\newpage
-
-\begin{center}
-    \section*{L8: Code to Paper}
-\end{center}
-\input{Lectures/L8.tex}
-\newpage
-
-No order and unique elements
-\begin{itemize}
-    \item No order: Permutation invariance 
-    \item Algorithm: Deep sets (MLP)
-\end{itemize}
-
-MLPs seperate between linear and non-linear, pooling
-
-Symmetry in the data. 
-
-MLPs are equivariant symmetry operations
-
-Geometric DL Blueprint
-
-What's special about image data? Rotation, translation, scaling. 
-
+\section{Algorithms}
 \begin{summary}
-    \begin{itemize}
-        \item Invariance: Enforce symmetry
-        \item Equivariance: 
-    \end{itemize}
+    \begin{center}
+        \begin{tabular}{llll}
+            \toprule
+            \textbf{Algorithm} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Equations} \\
+            \toprule
+            RNN & $x_t,h_{t-1}$ & $y_{t},h_{t}$ & $h_t = \text{tanh}(\text{Linear} (h_{t-1}) + \text{Linear}(x_t))$ \\ 
+            & & & $y_t = \text{MLP}(h_t)$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item $x_t$: Input, $h_t$: Hidden state, $y_t$: Output
+            \end{itemize}} \\
+            \midrule
+            GRU & $x_t,h_{t-1}$ & $y_t,h_t$ & $z_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $r_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $\tilde{h}(t) = \text{tanh}(\text{Linear}(x_t) + \text{Linear}(r_t \odot h_{t-1}))$ \\
+            & & & $h_t = (1-z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item $z_t$: Update gate, $r_t$: Reset gate
+                \item $h_t$: Hidden state
+            \end{itemize}} \\
+            \midrule
+            LSTM & $x_t,h_{t-1}$ & $h_t,c_t$ & $f_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $i_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $o_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $\tilde{c}_t = \text{tanh}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
+            & & & $c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t$ \\
+            & & & $h_t = o_t \odot \text{tanh}(c_t)$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item $f_t$: Forget gate, $i_t$: Input/Update gate, $o_t$: Output gate
+                \item $h_t$: Hidden state, $c_t$: Cell state
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
 \end{summary}
-
-
-\begin{center}
-    \section*{L10: Convolutional Neural Networks}
-\end{center}
-
-\begin{summary}
-    \begin{itemize}
-        \item Deep Set: MLP $\rightarrow$ Pool $\rightarrow$ MLP.
-    \end{itemize}
-\end{summary}
-
-\begin{example}
-    \textbf{Given:}
-    \textbf{Soln.}
-    \begin{enumerate}
-        \item Define the function w/ 3 arguments.
-        \item Set size: Colllection of data. 
-    \end{enumerate}
-
-\end{example}
-
-
-
 \end{document}
