@@ -1,0 +1,75 @@
+\subsection{Symmetries in Data}
+\begin{summary}
+    Transformations that preserve data characteristics. 
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Transformation Type} & \textbf{Description} \\
+            \toprule
+            Invariance ($f(g(x))=f(x)$) & Invariant to a trans. if output is unchanged when the input does that trans.\\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. $f=\text{label}$, $g=\text{translation, scale, rotation}$. Regardless of transformation, label remains the same.
+                \item Useful for classification tasks where transformations should not change the label.
+            \end{itemize}} \\
+            \midrule
+            Equivariance ($f(g(x)) = g(f(x))$) & Equivariant to a trans. if output changes in the same way as input. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. $f=\text{position}$, $g=\text{translation}$. If $f$ is applied first and then $g$, the output changes in the same way as applying $g$ first and then $f$.
+                \item Useful in tasks where spatial relationships need to be preserved, such as object localization.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Data Type} & \textbf{Symmetry} \\
+            \toprule
+            Tabular Data & Row permutation invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Ordering of rows does not affect the output.
+            \end{itemize}} \\
+            \midrule
+            Sets & Element permutation invariance \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Elements have no inherent order, so the output should not change if elements are swapped.
+            \end{itemize}} \\
+            \midrule
+            Images & Translation, rotation, and scaling invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Image recognition should not be affected by the translation, rotation, or scaling of the image.
+            \end{itemize}} \\
+            \midrule
+            Time-series & Time shift invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Patterns should be the same regardless of when they occur.
+            \end{itemize}} \\
+            \midrule
+            Graphs & Node permutation invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Nodes can be rearranged without changing the graph's structure since the edges remain the same.
+            \end{itemize}} \\
+            \midrule
+            Text & Sentence structure and paraphrasing invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Rewording a sentence or changing its structure should not change its meaning.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Learning on Tabular Data}
+
+\subsection{Learning on Sets}
