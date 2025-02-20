@@ -71,5 +71,38 @@
 \newpage
 
 \subsection{Learning on Tabular Data}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Problem:} DL struggles with tabular data because it lacks the spatial and sequential structures found in images and time-series, making it difficult for NNs to extract meaningful patterns. 
+        \item \textbf{Soln:} XGBoost (tree-ensemble method):
+        \begin{itemize}
+            \item Automatic feature selection.
+            \item Mixed data types.
+            \item Robust to outliers.
+            \item Capture nonlinear relationships.
+            \item Computationally efficient and fast.
+            \item Easy to set up.
+        \end{itemize}
+    \end{itemize}
+\end{notes} 
 
 \subsection{Learning on Sets}
+\begin{summary}
+    Unordered collections of distinct/unique elements 
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concepts} & \textbf{Description} \\
+            \toprule
+            Data Sets & Each data point is i.i.d. R.V. with no inherent order. \\
+            \midrule
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Points are indep. 
+                \item Summing over loss fn is invariant to ordering of elements.
+                \item Unbiased estimate of the loss via stochastic subsampling.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}

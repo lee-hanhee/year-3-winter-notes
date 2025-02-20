@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  20 FEB 2025 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  20 FEB 2025 17:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1316,7 +1316,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 28--69
  [] 
  []
 
-[6] [7]) [8] (./ECE324_Cheatsheet.aux)
+[6] [7]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 93--107
+ [] 
+ []
+
+) [8] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1325,15 +1330,15 @@ Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: CDB359B3ADFC1347316419C4A0C1512F;4481.
  ) 
 Here is how much of TeX's memory you used:
- 52298 strings out of 474116
- 1220064 string characters out of 5743683
+ 52303 strings out of 474116
+ 1220164 string characters out of 5743683
  1954187 words of memory out of 5000000
- 73753 multiletter control sequences out of 15000+600000
+ 73758 multiletter control sequences out of 15000+600000
  598161 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,107p,950b,1162s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Cheatsheet.pdf (8 pages, 161768 bytes).
+Output written on ECE324_Cheatsheet.pdf (8 pages, 163876 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  213 compressed objects within 3 object streams
