@@ -4,7 +4,7 @@
             \toprule
             \textbf{Concept} & \textbf{Description} \\
             \toprule
-            \textbf{Convolution Operation} & Equivariant Linear Layer that applies a sliding, weighted sum across input \\
+            \textbf{2D Convolution Operation} & Equivariant Linear Layer that applies a sliding, weighted sum across input \\
             & $F(x)_{i,j} = \sum_a^{K_h} \sum_b^{K_w} w_{a,b} x_{i+a,j+b}$ \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
@@ -74,7 +74,20 @@
     \begin{center}
         \begin{tabular}{ll}
             \toprule
-            \textbf{Concept} & \textbf{Description} \\
+            \textbf{1D Convolution Operation} & Leveraging spatial feature extraction for \textbf{sequential data} \\
+            & $F(x_i) = \sum_a^{K} w_{a} x_{i+a}$ \\
+            & $(x \star w)(i) = \sum_a^{K} k_a x_{i+a}$ \\
+            \midrule
+            Causal Convolutions + Causal Padding & Prevents future data influencing in convolutions \\ 
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Causal Convolutions: Only use past data in convolutions.
+                    \item Causal Padding: Pad input with zeros to left of the sequence to prevent future data influencing output.
+                    \item e.g. WaveNet: Dilated Causal Convolutions
+                    \begin{itemize}
+                        \item Captures long-range dependencies.
+                    \end{itemize}
+                \end{itemize}} \\
             \toprule
             \textbf{Learning Optimal Filters} & Learn the kernel weights automatically from data. \\
             \toprule

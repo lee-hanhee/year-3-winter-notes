@@ -51,6 +51,17 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item Patterns should be the same regardless of when they occur.
+                \item \textbf{Properties:}
+                \begin{itemize}
+                    \item Causal: Future data should not affect past data.
+                    \item Non-Stationarity: Data distribution changes over time.
+                    \item Trend and Seasonality: Data has a trend and seasonal patterns.
+                \end{itemize}
+                \item \textbf{Evaluation performance:} Highly context dependent
+                \begin{itemize}
+                    \item Fixed future test set: Fixed time horizon.
+                    \item Rolling test set: Sliding window.
+                \end{itemize}
             \end{itemize}} \\
             \midrule
             Graphs & Node permutation invariance \\

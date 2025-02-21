@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  21 FEB 2025 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  21 FEB 2025 16:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1312,12 +1312,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 5--24
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 28--69
+Overfull \hbox (12.0pt too wide) in paragraph at lines 28--80
  [] 
  []
 
 [6] [7]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 93--138
+Overfull \hbox (12.0pt too wide) in paragraph at lines 104--149
  [] 
  []
 
@@ -1327,31 +1327,41 @@ Overfull \hbox (20.91006pt too wide) in paragraph at lines 3--69
  []
 
 [9]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 75--89
+Overfull \hbox (12.0pt too wide) in paragraph at lines 75--102
  [] 
  []
 
-) [10] (./Lectures/L11.tex) (./Lectures/L12.tex) [11] (./ECE324_Cheatsheet.aux)
+) [10] (./Lectures/L11.tex
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3--19
+ [] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 25--48
+ [] 
+ []
+
+) (./Lectures/L12.tex) [11] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: 76E9F8D4ED0A7A2B0D62249CE5F68322;4661.
+(rerunfilecheck)             Checksum: CAA4427DC9D9D00BF671048CC1550910;4890.
  ) 
 Here is how much of TeX's memory you used:
- 52334 strings out of 474116
- 1220644 string characters out of 5743683
+ 52339 strings out of 474116
+ 1220727 string characters out of 5743683
  1954187 words of memory out of 5000000
- 73773 multiletter control sequences out of 15000+600000
+ 73777 multiletter control sequences out of 15000+600000
  598161 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,107p,950b,1162s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Cheatsheet.pdf (11 pages, 183722 bytes).
+Output written on ECE324_Cheatsheet.pdf (11 pages, 189259 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,50 @@
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \toprule
+            Gating Mechanisms: Controlling Information Flow & Enabling selective filtering and modulation of activations \\
+            & $\text{out} = \text{sigmoid}(\text{Linear})(z) \odot x$ or $\text{tanh}(\text{Linear})(z) \odot x$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{sigmoid}(\text{Linear})(z)$: Acts as a filter, determining how much information should be retained or forgotten.
+                \begin{itemize}
+                    \item $0$: Forget, $1$: Retain
+                \end{itemize}
+                \item $\text{tanh}(\text{Linear})(z)$: Scales values between -1 and 1, maintaining zero-centered activations and helping control the magnitude of updates.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Approximations for Sequence Data}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Approximations} & \textbf{Equation} \\
+            \toprule
+            \textbf{Markov Property (Conditional Independence)}: & $P(X_t \mid X_{t-1},X_{t-2},\ldots,X_1) = P(X_t \mid X_{t-1})$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Simplifies the joint distribution of a sequence to a product of conditional probabilities.
+            \end{itemize}} \\
+            \midrule
+            \textbf{Weak Stationary (Mean)}: & $E[X_t] = \mu \; \forall t$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item The mean of the sequence is constant over time.
+            \end{itemize}} \\
+            \midrule
+            \textbf{Weak Stationary (Covariance)}: & $\text{Cov}(X_t,X_{t+\tau}) = \gamma(\tau) \; \forall t$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item The covariance between two points in the sequence is constant over time.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+ 
