@@ -14,6 +14,29 @@
                 \end{itemize}
                 \item $\text{tanh}(\text{Linear})(z)$: Scales values between -1 and 1, maintaining zero-centered activations and helping control the magnitude of updates.
             \end{itemize}} \\
+            \midrule 
+            Gating: Feature-wise Modulation & Feature-wise input Linear Modulation relies heavily on gating \\ 
+            & $\text{FiLM}(x,z) = \gamma(z) \odot x + \beta(z) \quad \gamma, \beta = \text{MLPs}(z)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{Applications:} Style transfer, context conditioning, out-of domain adaptation. 
+            \end{itemize}} \\
+            \midrule
+            Unrolled in Time & Visualizing the iterative processing of sequential input. \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Notice that when optimizing a RNN, we are backpropagating through time.
+            \end{itemize}} \\
+            \midrule 
+            Vanishing/Exploding Gradients & Challenges in RNN training due to gradient flow \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Since we only have a single learnable, parametrized operation that we apply iteratively across time, gradients can either vanish or explode.
+                \begin{itemize}
+                    \item e.g. $w*w*w \ldots w$ can either vanish or explode.
+                \end{itemize}
+                \item \textbf{Solutions:} Gradient clipping, gating mechanisms, LSTM/GRU cells, normalization. 
+            \end{itemize}} \\
             \bottomrule
         \end{tabular}
     \end{center}

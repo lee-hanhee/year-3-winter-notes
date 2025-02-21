@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1740173008.46906 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740173012.50548 0
+["pdflatex"] 1740173365.04931 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740173369.41899 0
   "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1740168387.88512 3681 ab00a0f028368d81283975dbb6760e02 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -324,11 +324,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1740173012.10276 3521 bde2a62ecc4738082a46d585546b4bdc "pdflatex"
-  "ECE324_Cheatsheet.out" 1740173012.10455 4890 caa4427dc9d9d00bf671048cc1550910 "pdflatex"
+  "ECE324_Cheatsheet.aux" 1740173368.88774 3521 bde2a62ecc4738082a46d585546b4bdc "pdflatex"
+  "ECE324_Cheatsheet.out" 1740173368.88936 4890 caa4427dc9d9d00bf671048cc1550910 "pdflatex"
   "ECE324_Cheatsheet.tex" 1740168387.88512 3681 ab00a0f028368d81283975dbb6760e02 ""
   "Lectures/L10.tex" 1740172556.01426 5326 eb70b9aa52ecb49c26b0bee44ce92731 ""
-  "Lectures/L11.tex" 1740173007.85924 2244 545e5cc118975ec27b18a613db82a8bb ""
+  "Lectures/L11.tex" 1740173362.77373 3639 3775c99d6b61ada5f98fad7a4b948ffc ""
   "Lectures/L12.tex" 1740169830.45387 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Lectures/L8.tex" 1740088728.52475 14153 25e5dffe014b0a2f99860f6866f76d08 ""
   "Lectures/L9.tex" 1740172719.54092 7059 80e04483eb099c7543c5489bbfa2bfb2 ""
