@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1740092882.22033 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740092886.17319 0
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1740089801.80297 3543 654ff1d6d6a44e0505c4a8b8f40bf20d ""
+["pdflatex"] 1740168313.16845 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740168316.94664 0
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1740168308.79289 3604 fab84bc9d22d755b1e12943861ce44ec ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -45,6 +45,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb" 1254269338 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb" 1254269338 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb" 1254269338 31443 ba2241b179aa231f73e052863720cb42 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb" 1254269338 30789 be3ebdf20b6442cc4aaf81a81e17daf4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb" 1255129361 119235 f35b44530a1d90eb90fe15d9cba67ea0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb" 1255129361 121145 68312a933e2c689ed40ec0aba373e279 ""
@@ -323,9 +324,10 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1740092885.80545 3070 58bea2d62c6771b9cf9b291b05d149b6 "pdflatex"
-  "ECE324_Cheatsheet.out" 1740092885.80715 4481 cdb359b3adfc1347316419c4a0c1512f "pdflatex"
-  "ECE324_Cheatsheet.tex" 1740089801.80297 3543 654ff1d6d6a44e0505c4a8b8f40bf20d ""
+  "ECE324_Cheatsheet.aux" 1740168316.58502 3273 351db41a961c022fcc8f3985dc098f7b "pdflatex"
+  "ECE324_Cheatsheet.out" 1740168316.58657 4578 1bc6ca3c06014b8da0a478d82897d8e9 "pdflatex"
+  "ECE324_Cheatsheet.tex" 1740168308.79289 3604 fab84bc9d22d755b1e12943861ce44ec ""
+  "Lectures/L10.tex" 1740168122.60811 4498 d00cf06f4fe0be92c1d13cb051c8d11a ""
   "Lectures/L8.tex" 1740088728.52475 14153 25e5dffe014b0a2f99860f6866f76d08 ""
   "Lectures/L9.tex" 1740092881.03967 6438 3b20a5d6f9d843fcf70a51aaa82d4ca7 ""
   "style.sty" 1740027664.98402 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
