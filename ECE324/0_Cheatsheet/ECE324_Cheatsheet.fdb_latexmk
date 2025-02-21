@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1740168328.69998 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740168335.78233 0
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1740168323.44126 3632 8aac922772b289005ea174787664da12 ""
+["pdflatex"] 1740168397.90534 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" "ECE324_Cheatsheet.pdf" "ECE324_Cheatsheet" 1740168402.74549 0
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE324/0_Cheatsheet/ECE324_Cheatsheet.tex" 1740168387.88512 3681 ab00a0f028368d81283975dbb6760e02 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -324,11 +324,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE324_Cheatsheet.aux" 1740168334.98613 3276 670d0d59824a8bb8e2e1aa129e942269 "pdflatex"
-  "ECE324_Cheatsheet.out" 1740168334.98807 4601 640ef0de159a1b36d808f65a4279c0fa "pdflatex"
-  "ECE324_Cheatsheet.tex" 1740168323.44126 3632 8aac922772b289005ea174787664da12 ""
+  "ECE324_Cheatsheet.aux" 1740168402.30156 3379 d9ab765bf2657c97b2bcb9e4d514f605 "pdflatex"
+  "ECE324_Cheatsheet.out" 1740168402.30335 4661 76e9f8d4ed0a7a2b0d62249ce5f68322 "pdflatex"
+  "ECE324_Cheatsheet.tex" 1740168387.88512 3681 ab00a0f028368d81283975dbb6760e02 ""
   "Lectures/L10.tex" 1740168122.60811 4498 d00cf06f4fe0be92c1d13cb051c8d11a ""
   "Lectures/L11.tex" 1740168326.28857 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Lectures/L12.tex" 1740168392.37084 0 d41d8cd98f00b204e9800998ecf8427e ""
   "Lectures/L8.tex" 1740088728.52475 14153 25e5dffe014b0a2f99860f6866f76d08 ""
   "Lectures/L9.tex" 1740092881.03967 6438 3b20a5d6f9d843fcf70a51aaa82d4ca7 ""
   "style.sty" 1740027664.98402 8166 e40cba66fcf97f52c4c0baf1070ffb56 ""
