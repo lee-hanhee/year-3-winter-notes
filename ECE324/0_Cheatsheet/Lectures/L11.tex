@@ -28,6 +28,8 @@
                 \item Notice that when optimizing a RNN, we are backpropagating through time.
             \end{itemize}} \\
             \midrule 
+            \textbf{Challenges} & \\ 
+            \toprule
             Vanishing/Exploding Gradients & Challenges in RNN training due to gradient flow \\ 
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
@@ -36,6 +38,13 @@
                     \item e.g. $w*w*w \ldots w$ can either vanish or explode.
                 \end{itemize}
                 \item \textbf{Solutions:} Gradient clipping, gating mechanisms, LSTM/GRU cells, normalization. 
+            \end{itemize}} \\
+            \midrule 
+            Long-Term Dependencies & RNNs struggle to retain information over extended sequences \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item RNNs tend to favour recent information. 
+                \item For long-range information to propagate, it needs to survive multiple iterations.
             \end{itemize}} \\
             \bottomrule
         \end{tabular}
