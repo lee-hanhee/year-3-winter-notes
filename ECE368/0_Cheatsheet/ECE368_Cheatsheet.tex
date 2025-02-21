@@ -326,7 +326,7 @@
     $\Sigma_c = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_i^c - \hat{\mu}_c)(x_i^c - \hat{\mu}_c)^T$
 
     \textcolor{red}{\textbf{Guassian Estimation}} \textcolor{blue}{\textbf{ML Estimator for $\theta$:}} \\ 
-    $\underline{X} \text{=} \{X_1,\ldots,X_n\}$, $X_i \text{=} \theta + Z_i$, $Z_i \sim \mathcal{N}(0, \sigma^2)$ (indep not iid) \\
+    $\underline{X} \text{=} \{X_1,\ldots,X_n\}$, $X_i \text{=} \theta + Z_i$, $Z_i \sim \mathcal{N}(0, \sigma_i^2)$ (indep not iid) \\
     $\hat{\theta}_{\text{ML}} = \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}$ (weighted avg. of $\underline{x}$) \\
     *$\frac{1}{\sigma_i^2}$: Precision of $X_i$ (i.e. weight) \\
     *Larger $\sigma_i^2 \implies$ less weight on $X_i$ (less reliable measurement) \\
