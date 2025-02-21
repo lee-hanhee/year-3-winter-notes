@@ -102,6 +102,37 @@
                 \item Summing over loss fn is invariant to ordering of elements.
                 \item Unbiased estimate of the loss via stochastic subsampling.
             \end{itemize}} \\
+            \midrule
+            Permutation Invariance & Output should not change if elements are permuted. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item L9 Slide 23,26: NNs.
+                \item Deep Sets: NNs that are permutation invariant to the input set.
+            \end{itemize}} \\
+            \midrule
+            Pooling & Core operation for sets to summarie info across elements. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. sum, mean, var/std, max, min, count, distribution statistics
+            \end{itemize}} \\
+            \midrule
+            Inductive Biases & Prior knowledge that can bias the learning process. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Examples:}
+                    \begin{itemize}
+                        \item Max pooling ignores all values except the maximum, which may lose important information.
+                        \item Mean pooling blurs distinctions between large and small values, leading to loss of contrast.
+                        \item Sum pooling can be sensitive to the number of elements, making it less robust to input size variations.
+                    \end{itemize}
+                    \item \textbf{Soln:} Principal Aggregation
+                    \begin{itemize}
+                        \item Take many different types of aggregations and concatenate them.
+                    \end{itemize}
+                \end{itemize}} \\
+            \midrule
+            Learning On Sets & DeepSets (learning/element) $\sum_{i}^{\text{Set}} f(e_i)$ \\
+            & Self-Attention (pairwise interaction) $\sum_{i,j}^{\text{Set}} f(e_i, e_j)$ \\
             \bottomrule
         \end{tabular}
     \end{center}
