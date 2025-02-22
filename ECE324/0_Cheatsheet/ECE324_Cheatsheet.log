@@ -1575,4 +1575,86 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 560--591
  []
 
 ) [25 <../Images/L4_24.png> <../Images/L4_27.png>] (./Lectures/L5.tex
-<../Images/L5_2.png, 
+<../Images/L5_2.png, id=308, 398.48875pt x 368.37625pt>
+File: ../Images/L5_2.png Graphic file (type png)
+<use ../Images/L5_2.png>
+Package pdftex.def Info: ../Images/L5_2.png  used on input line 16.
+(pdftex.def)             Requested size: 249.55872pt x 230.70111pt.
+<../Images/L5_0.png, id=309, 714.67pt x 299.1175pt>
+File: ../Images/L5_0.png Graphic file (type png)
+<use ../Images/L5_0.png>
+Package pdftex.def Info: ../Images/L5_0.png  used on input line 32.
+(pdftex.def)             Requested size: 249.55872pt x 104.45079pt.
+ [26 <../Images/L5_2.png>] [27 <../Images/L5_0.png>]
+<../Images/L5_3.png, id=325, 649.42625pt x 307.1475pt>
+File: ../Images/L5_3.png Graphic file (type png)
+<use ../Images/L5_3.png>
+Package pdftex.def Info: ../Images/L5_3.png  used on input line 48.
+(pdftex.def)             Requested size: 149.73676pt x 70.81584pt.
+<../Images/L5_4.png, id=326, 653.44125pt x 314.17375pt>
+File: ../Images/L5_4.png Graphic file (type png)
+<use ../Images/L5_4.png>
+Package pdftex.def Info: ../Images/L5_4.png  used on input line 55.
+(pdftex.def)             Requested size: 149.73676pt x 71.98997pt.
+<../Images/L5_5.png, id=327, 645.41125pt x 312.16624pt>
+File: ../Images/L5_5.png Graphic file (type png)
+<use ../Images/L5_5.png>
+Package pdftex.def Info: ../Images/L5_5.png  used on input line 62.
+(pdftex.def)             Requested size: 149.73676pt x 72.4207pt.
+<../Images/L5_6.png, id=328, 681.54625pt x 326.21875pt>
+File: ../Images/L5_6.png Graphic file (type png)
+<use ../Images/L5_6.png>
+Package pdftex.def Info: ../Images/L5_6.png  used on input line 69.
+(pdftex.def)             Requested size: 149.73676pt x 71.66878pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 39--72
+ [] 
+ []
+
+[28 <../Images/L5_3.png> <../Images/L5_4.png> <../Images/L5_5.png> <../Images/L5_6.png>]) [29] (./Lectures/L6.tex
+<../Images/L6_0.png, id=357, 413.545pt x 342.27875pt>
+File: ../Images/L6_0.png Graphic file (type png)
+<use ../Images/L6_0.png>
+Package pdftex.def Info: ../Images/L6_0.png  used on input line 28.
+(pdftex.def)             Requested size: 249.55872pt x 206.55438pt.
+<../Images/L6_1.png, id=358, 833.1125pt x 227.85126pt>
+File: ../Images/L6_1.png Graphic file (type png)
+<use ../Images/L6_1.png>
+Package pdftex.def Info: ../Images/L6_1.png  used on input line 30.
+(pdftex.def)             Requested size: 249.55872pt x 68.25159pt.
+ [30 <../Images/L6_0.png> <../Images/L6_1.png>]
+<../Images/L6_2.png, id=373, 276.03125pt x 216.81pt>
+File: ../Images/L6_2.png Graphic file (type png)
+<use ../Images/L6_2.png>
+Package pdftex.def Info: ../Images/L6_2.png  used on input line 87.
+(pdftex.def)             Requested size: 249.55872pt x 196.02702pt.
+ [31]
+<../Images/L6_3.png, id=385, 239.89626pt x 246.9225pt>
+File: ../Images/L6_3.png Graphic file (type png)
+<use ../Images/L6_3.png>
+Package pdftex.def Info: ../Images/L6_3.png  used on input line 107.
+(pdftex.def)             Requested size: 249.55872pt x 256.87244pt.
+ [32 <../Images/L6_2.png> <../Images/L6_3.png>]
+<../Images/L6_11.png, id=398, 398.48875pt x 152.57pt>
+File: ../Images/L6_11.png Graphic file (type png)
+<use ../Images/L6_11.png>
+Package pdftex.def Info: ../Images/L6_11.png  used on input line 144.
+(pdftex.def)             Requested size: 249.55872pt x 95.54924pt.
+ [33 <../Images/L6_11.png>]
+<../Images/L6_4.png, id=413, 629.35126pt x 214.8025pt>
+File: ../Images/L6_4.png Graphic file (type png)
+<use ../Images/L6_4.png>
+Package pdftex.def Info: ../Images/L6_4.png  used on input line 182.
+(pdftex.def)             Requested size: 249.55872pt x 85.17545pt.
+ [34 <../Images/L6_4.png>]
+<../Images/L6_9.png, id=421, 367.3725pt x 208.78pt>
+File: ../Images/L6_9.png Graphic file (type png)
+<use ../Images/L6_9.png>
+Package pdftex.def Info: ../Images/L6_9.png  used on input line 207.
+(pdftex.def)             Requested size: 249.55872pt x 141.82832pt.
+<../Images/L6_10.png, id=422, 899.36pt x 295.1025pt>
+File: ../Images/L6_10.png Graphic file (type png)
+<use ../Images/L6_10.png>
+Package pdftex.def Info: ../Images/L6_10.png  used on input line 217.
+(pdftex.def)             Requested size: 249.55872pt x 81.88515pt.
+<../Images/L6_12
