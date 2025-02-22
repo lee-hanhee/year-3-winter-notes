@@ -1,0 +1,150 @@
+\begin{summary}
+    \begin{itemize}
+        \item What stategies can help a NN converge when training?
+        \item What hyperparameters does a NN architecture have?
+        \item How can we optimize parameters without gradients? 
+        \item DL requires a lot of data, what can we do when data is scarce?
+    \end{itemize}
+\end{summary}
+
+\section{Blackbox Optimization}
+\begin{motivation}
+    Also known as derivative free optimization, as the derivative is unknown, so you have to use derivative-free or heuristic methods. 
+    \begin{equation*}
+        x^* = \arg\min_{x \in X} f(x)
+    \end{equation*}
+    \customFigure[0.5]{../Images/L5_2.png}{}
+\end{motivation}
+
+\subsection{Parameters \& Hyperparameters}
+\begin{definition}
+    Distinction b/w model setting elements and tuning knobs.
+    \begin{itemize}
+        \item \textbf{Parameters:} Learnable parameters $(W,b)$
+        \begin{itemize}
+            \item Opt: Gradient Descent
+        \end{itemize}
+        \item \textbf{Hyperparameters:} Non-differentiable parameters (i.e. discrete)
+        \begin{itemize}
+            \item E.g. Number of layers, hidden dim, activation, normalization, dropout, ...
+            \item Opt: Heuristics
+        \end{itemize}
+        \customFigure[0.5]{../Images/L5_0.png}{}
+    \end{itemize}
+\end{definition}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{l}
+        \toprule
+        \textbf{Types} \\
+        \midrule
+        \textbf{Grid Search} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Exhaustive evaluation across a predefined set of values.
+            \customFigure[0.3]{../Images/L5_3.png}{}
+        \end{itemize}} \\
+        \midrule
+        \textbf{Coordinate Descent} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Optimize each hyperparameter one at a time. 
+            \customFigure[0.3]{../Images/L5_4.png}{}
+        \end{itemize}} \\
+        \midrule
+        \textbf{Grad-Student Descent} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Manual and ad-hoc, i.e. "follow your heart"
+            \customFigure[0.3]{../Images/L5_5.png}{}
+        \end{itemize}} \\
+        \midrule
+        \textbf{Random Search} \\
+        \multicolumn{1}{p{\linewidth}}{
+        \begin{itemize}
+            \item Sampling hyperparameter configurations from defined distributions.
+            \customFigure[0.3]{../Images/L5_6.png}{}
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\section{Bayesian Optimization}
+\begin{definition}
+    A principled sequential approach for efficient global optimization
+    \vspace{1em}
+
+    \textbf{Ingredients:}
+    \begin{itemize}
+        \item \textbf{Function, $f(x)$}: The numerical values we want to optimize.
+        \item \textbf{Space to optimize, $X$}: Parameters or decisions or degrees of freedom to explore.
+        \item \textbf{Bayesian model, $g(x)$}: Provides prediction ($\mu$) and uncertainty ($\sigma$).
+        \item \textbf{Acquisition function, $A(\mu, \sigma)$}: A strategy to trade off exploration \& exploitation.
+    \end{itemize}
+\end{definition}
+
+\subsection{Surrogate Model}
+\begin{notes}
+    Let's approximate the expensive function $f(x)$ with a cheaper function $g(x)$ to model prediction ($\mu$) and uncertainty ($\sigma$).
+    \begin{itemize}
+        \item Kernel models
+        \item Gaussian processes (GP)
+        \item Gradient boosted trees
+        \item Neural networks
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Acquisition Function}
+\begin{notes}
+    Let's mix exploitation and exploration; sometimes, it pays off to explore areas where we have little information.
+    \begin{itemize}
+        \item Acquisition functions encapsulate the heuristic of what to sample next, how useful is unobserved data?
+        \item E.g. Expected Improvement (EI), Probability of Improvement (PI), Upper Confidence Bound (UCB), ...
+        \item $\mu$: exploitation 
+        \item $\sigma$: exploration 
+    \end{itemize}
+\end{notes}
+
+\subsection{BayesOpt Loop}
+\begin{definition}
+    Iterative process of modelling and sampling. 
+    \begin{enumerate}
+        \item Set a termination criteria (budget, iterations, maxima)
+        \item Evaluate $f(x)$ on initial set of points (random)
+        \item \textbf{Loop:} while criteria is not met:
+        \begin{enumerate}
+            \item Update surrogate model on all data
+            \item Optimize acquisition function to find a maxima ($x_{\text{new}}$)
+            \item Evaluate $f(x_{\text{new}}$)
+        \end{enumerate}
+    \end{enumerate}
+\end{definition}
+
+\begin{warning}
+    \begin{itemize}
+        \item Define your hyperparameter space (bounds, datatypes, etc.)
+        \item Simplify it. 
+        \item Use a platform to launch monitor and launch models. 
+        \item \textbf{Libraries:} Optuna, Ray, BoTorch, Ax...
+    \end{itemize}
+\end{warning}
+
+\begin{example}
+    \begin{itemize}
+        \item 2 random points
+        \item Criteria: 10 evaluations.
+        \item Normalize $f(x)$ to a smaller range b/c gradients are sensitive to scale.
+        \item Repeat for 10 iterations:
+        \begin{itemize}
+            \item Pick points that maximizes acquistion function.
+            \item Update surrogate model w/ the new point and its evaluation, i.e. $f(x_i)$ to get more certainty and better predictions.
+        \end{itemize}
+    \end{itemize}
+    \vspace{1em}
+
+    Look at L5.
+\end{example}
+

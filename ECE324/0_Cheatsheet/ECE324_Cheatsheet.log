@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  21 FEB 2025 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  22 FEB 2025 01:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1247,47 +1247,270 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 84.
+] (./Lectures/L4.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 84.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 84.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 84.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 84.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 84.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 84.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+(Font)              <5> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (12.0pt too wide) in paragraph at lines 84--118
+) [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<../Images/L4_0.png, id=147, 689.57625pt x 369.38pt>
+File: ../Images/L4_0.png Graphic file (type png)
+<use ../Images/L4_0.png>
+Package pdftex.def Info: ../Images/L4_0.png  used on input line 45.
+(pdftex.def)             Requested size: 249.55872pt x 133.68123pt.
+<../Images/L4_1.png, id=149, 543.02875pt x 372.39125pt>
+File: ../Images/L4_1.png Graphic file (type png)
+<use ../Images/L4_1.png>
+Package pdftex.def Info: ../Images/L4_1.png  used on input line 53.
+(pdftex.def)             Requested size: 249.55872pt x 171.13727pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 23--56
  [] 
  []
 
-(./Lectures/L8.tex
+[3 <../Images/L4_0.png> <../Images/L4_1.png>]
+<../Images/L4_2.png, id=158, 796.9775pt x 228.855pt>
+File: ../Images/L4_2.png Graphic file (type png)
+<use ../Images/L4_2.png>
+Package pdftex.def Info: ../Images/L4_2.png  used on input line 76.
+(pdftex.def)             Requested size: 249.55872pt x 71.66017pt.
+<../Images/L4_3.png, id=159, 603.25375pt x 343.2825pt>
+File: ../Images/L4_3.png Graphic file (type png)
+<use ../Images/L4_3.png>
+Package pdftex.def Info: ../Images/L4_3.png  used on input line 90.
+(pdftex.def)             Requested size: 249.55872pt x 142.0091pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 62--93
+ [] 
+ []
+
+[4 <../Images/L4_2.png> <../Images/L4_3.png>]
+<../Images/L4_4.png, id=168, 728.7225pt x 128.48pt>
+File: ../Images/L4_4.png Graphic file (type png)
+<use ../Images/L4_4.png>
+Package pdftex.def Info: ../Images/L4_4.png  used on input line 114.
+(pdftex.def)             Requested size: 249.55872pt x 43.99825pt.
+<../Images/L4_5.png, id=169, 374.39874pt x 364.36125pt>
+File: ../Images/L4_5.png Graphic file (type png)
+<use ../Images/L4_5.png>
+Package pdftex.def Info: ../Images/L4_5.png  used on input line 121.
+(pdftex.def)             Requested size: 249.55872pt x 242.86983pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 99--124
+ [] 
+ []
+
+[5 <../Images/L4_4.png> <../Images/L4_5.png>]
+<../Images/L4_6.png, id=178, 594.22pt x 281.05pt>
+File: ../Images/L4_6.png Graphic file (type png)
+<use ../Images/L4_6.png>
+Package pdftex.def Info: ../Images/L4_6.png  used on input line 166.
+(pdftex.def)             Requested size: 199.64392pt x 94.42786pt.
+<../Images/L4_7.png, id=179, 434.62375pt x 351.3125pt>
+File: ../Images/L4_7.png Graphic file (type png)
+<use ../Images/L4_7.png>
+Package pdftex.def Info: ../Images/L4_7.png  used on input line 173.
+(pdftex.def)             Requested size: 199.64392pt x 161.3752pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 131--176
+ [] 
+ []
+
+[6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <../Images/L4_6.png> <../Images/L4_7.png>]
+<../Images/L4_8.png, id=190, 440.64626pt x 344.28625pt>
+File: ../Images/L4_8.png Graphic file (type png)
+<use ../Images/L4_8.png>
+Package pdftex.def Info: ../Images/L4_8.png  used on input line 196.
+(pdftex.def)             Requested size: 249.55872pt x 194.98438pt.
+<../Images/L4_9.png, id=191, 549.05125pt x 278.03876pt>
+File: ../Images/L4_9.png Graphic file (type png)
+<use ../Images/L4_9.png>
+Package pdftex.def Info: ../Images/L4_9.png  used on input line 209.
+(pdftex.def)             Requested size: 249.55872pt x 126.37631pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 182--212
+ [] 
+ []
+
+[7 <../Images/L4_8.png> <../Images/L4_9.png>]
+<../Images/L4_10.png, id=202, 697.60625pt x 403.5075pt>
+File: ../Images/L4_10.png Graphic file (type png)
+<use ../Images/L4_10.png>
+Package pdftex.def Info: ../Images/L4_10.png  used on input line 239.
+(pdftex.def)             Requested size: 249.55872pt x 144.34518pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 218--253
+ [] 
+ []
+
+[8 <../Images/L4_10.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 284.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<../Images/L4_11.png, id=209, 395.4775pt x 304.13625pt>
+File: ../Images/L4_11.png Graphic file (type png)
+<use ../Images/L4_11.png>
+Package pdftex.def Info: ../Images/L4_11.png  used on input line 295.
+(pdftex.def)             Requested size: 149.73676pt x 115.15067pt.
+<../Images/L4_12.png, id=210, 460.72125pt x 314.17375pt>
+File: ../Images/L4_12.png Graphic file (type png)
+<use ../Images/L4_12.png>
+Package pdftex.def Info: ../Images/L4_12.png  used on input line 295.
+(pdftex.def)             Requested size: 149.73676pt x 102.10526pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 260--298
+ [] 
+ []
+
+[9 <../Images/L4_11.png> <../Images/L4_12.png>]
+<../Images/L4_13.png, id=221, 538.01pt x 238.8925pt>
+File: ../Images/L4_13.png Graphic file (type png)
+<use ../Images/L4_13.png>
+Package pdftex.def Info: ../Images/L4_13.png  used on input line 324.
+(pdftex.def)             Requested size: 249.55872pt x 110.81047pt.
+<../Images/L4_14.png, id=222, 627.34375pt x 352.31625pt>
+File: ../Images/L4_14.png Graphic file (type png)
+<use ../Images/L4_14.png>
+Package pdftex.def Info: ../Images/L4_14.png  used on input line 336.
+(pdftex.def)             Requested size: 249.55872pt x 140.15524pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 304--351
+ [] 
+ []
+
+[10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/L4_13.png> <../Images/L4_14.png>]
+<../Images/L4_15.png, id=233, 504.88625pt x 307.1475pt>
+File: ../Images/L4_15.png Graphic file (type png)
+<use ../Images/L4_15.png>
+Package pdftex.def Info: ../Images/L4_15.png  used on input line 366.
+(pdftex.def)             Requested size: 249.55872pt x 151.82054pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 357--369
+ [] 
+ []
+
+[11 <../Images/L4_15.png>]
+<../Images/L4_16.png, id=240, 448.67625pt x 141.52875pt>
+File: ../Images/L4_16.png Graphic file (type png)
+<use ../Images/L4_16.png>
+Package pdftex.def Info: ../Images/L4_16.png  used on input line 390.
+(pdftex.def)             Requested size: 149.73676pt x 47.23155pt.
+<../Images/L4_17.png, id=241, 570.13pt x 319.1925pt>
+File: ../Images/L4_17.png Graphic file (type png)
+<use ../Images/L4_17.png>
+Package pdftex.def Info: ../Images/L4_17.png  used on input line 397.
+(pdftex.def)             Requested size: 149.73676pt x 83.83067pt.
+<../Images/L4_18.png, id=242, 598.235pt x 331.2375pt>
+File: ../Images/L4_18.png Graphic file (type png)
+<use ../Images/L4_18.png>
+Package pdftex.def Info: ../Images/L4_18.png  used on input line 404.
+(pdftex.def)             Requested size: 149.73676pt x 82.9052pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 376--407
+ [] 
+ []
+
+[12 <../Images/L4_16.png> <../Images/L4_17.png> <../Images/L4_18.png>]
+<../Images/L4_19.png, id=253, 757.83125pt x 334.24875pt>
+File: ../Images/L4_19.png Graphic file (type png)
+<use ../Images/L4_19.png>
+Package pdftex.def Info: ../Images/L4_19.png  used on input line 422.
+(pdftex.def)             Requested size: 149.73676pt x 66.04272pt.
+<../Images/L4_20.png, id=254, 353.32pt x 294.09875pt>
+File: ../Images/L4_20.png Graphic file (type png)
+<use ../Images/L4_20.png>
+Package pdftex.def Info: ../Images/L4_20.png  used on input line 458.
+(pdftex.def)             Requested size: 149.73676pt x 124.63803pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 413--461
+ [] 
+ []
+
+[13 <../Images/L4_19.png> <../Images/L4_20.png>]
+<../Images/L4_21.png, id=264, 525.965pt x 351.3125pt>
+File: ../Images/L4_21.png Graphic file (type png)
+<use ../Images/L4_21.png>
+Package pdftex.def Info: ../Images/L4_21.png  used on input line 477.
+(pdftex.def)             Requested size: 249.55872pt x 166.6929pt.
+<../Images/L4_22.png, id=265, 738.76pt x 334.24875pt>
+File: ../Images/L4_22.png Graphic file (type png)
+<use ../Images/L4_22.png>
+Package pdftex.def Info: ../Images/L4_22.png  used on input line 484.
+(pdftex.def)             Requested size: 249.55872pt x 112.90863pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 467--515
+ [] 
+ []
+
+[14 <../Images/L4_21.png> <../Images/L4_22.png>]
+<../Images/L4_23.png, id=274, 532.99126pt x 370.38374pt>
+File: ../Images/L4_23.png Graphic file (type png)
+<use ../Images/L4_23.png>
+Package pdftex.def Info: ../Images/L4_23.png  used on input line 531.
+(pdftex.def)             Requested size: 249.55872pt x 173.41914pt.
+<../Images/L4_26.png, id=275, 690.58pt x 246.9225pt>
+File: ../Images/L4_26.png Graphic file (type png)
+<use ../Images/L4_26.png>
+Package pdftex.def Info: ../Images/L4_26.png  used on input line 551.
+(pdftex.def)             Requested size: 249.55872pt x 89.23111pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 522--554
+ [] 
+ []
+
+[15 <../Images/L4_23.png> <../Images/L4_26.png>]
+<../Images/L4_24.png, id=284, 778.91pt x 314.17375pt>
+File: ../Images/L4_24.png Graphic file (type png)
+<use ../Images/L4_24.png>
+Package pdftex.def Info: ../Images/L4_24.png  used on input line 569.
+(pdftex.def)             Requested size: 249.55872pt x 100.65749pt.
+<../Images/L4_27.png, id=285, 558.085pt x 383.4325pt>
+File: ../Images/L4_27.png Graphic file (type png)
+<use ../Images/L4_27.png>
+Package pdftex.def Info: ../Images/L4_27.png  used on input line 588.
+(pdftex.def)             Requested size: 149.73676pt x 102.87288pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 560--591
+ [] 
+ []
+
+)
+Overfull \hbox (12.0pt too wide) in paragraph at lines 81--115
+ [] 
+ []
+
+[16 <../Images/L4_24.png> <../Images/L4_27.png>] (./Lectures/L8.tex
 Overfull \hbox (12.0pt too wide) in paragraph at lines 4--23
  [] 
  []
 
-[2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [3]
+[17] [18]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 108.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1296,12 +1519,12 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 41--111
  [] 
  []
 
-[4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+[19{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 117--173
  [] 
  []
 
-[5]
+[20]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 180--253
  [] 
  []
@@ -1316,22 +1539,22 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 28--80
  [] 
  []
 
-[6] [7]
+[21] [22]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 104--149
  [] 
  []
 
-) [8{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] (./Lectures/L10.tex
+) [23] (./Lectures/L10.tex
 Overfull \hbox (20.91006pt too wide) in paragraph at lines 3--69
  [] 
  []
 
-[9]
+[24]
 Overfull \hbox (12.0pt too wide) in paragraph at lines 75--102
  [] 
  []
 
-) [10] (./Lectures/L11.tex
+) [25] (./Lectures/L11.tex
 Overfull \hbox (17.95174pt too wide) in paragraph at lines 3--51
  [] 
  []
@@ -1341,27 +1564,27 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 57--80
  [] 
  []
 
-) (./Lectures/L12.tex) [11] (./ECE324_Cheatsheet.aux)
+) (./Lectures/L12.tex) [26] (./ECE324_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `ECE324_Cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: CAA4427DC9D9D00BF671048CC1550910;4890.
+(rerunfilecheck)             Checksum: AE6E3BDE6849ADE8434B63A23BD61736;5680.
  ) 
 Here is how much of TeX's memory you used:
- 52339 strings out of 474116
- 1220727 string characters out of 5743683
+ 52666 strings out of 474116
+ 1227754 string characters out of 5743683
  1954187 words of memory out of 5000000
- 73777 multiletter control sequences out of 15000+600000
- 598161 words of font info for 71 fonts, out of 8000000 for 9000
+ 74049 multiletter control sequences out of 15000+600000
+ 598480 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,107p,950b,1162s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on ECE324_Cheatsheet.pdf (11 pages, 190828 bytes).
+ 99i,20n,107p,950b,1185s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on ECE324_Cheatsheet.pdf (26 pages, 8621157 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 388 words of extra memory for PDF output out of 10000 (max. 10000000)
 
