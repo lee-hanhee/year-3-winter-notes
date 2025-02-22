@@ -70,6 +70,31 @@
             \toprule
             \textbf{Algorithm} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Equations} \\
             \toprule
+            PCA & $x$ & $x'$ & $x \underset{\text{Encode}}{\mapsto} z \underset{\text{Decode}}{\mapsto} x'$ \\
+            & & & $\text{Encoder}(x) = Wx$, $\text{Decoder}(z) = W^{-1}z$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Linear transformation for dimension reduction 
+            \end{itemize}} \\
+            \midrule
+            AE & $x$ & $x'$ & $x \underset{\text{Encode}}{\mapsto} z \underset{\text{Decode}}{\mapsto} x'$ \\
+            & & & $f_{\text{enc}}(x), \; \text{Encoder}(x) = \text{Neural network}$, $f_{\text{dec}}(z), \; \text{Decoder}(z) = \text{Neural network}$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Bottleneck (latent space) forces network to learn compressed representation
+                \item Encoder maps input to lower dimension, decoder reconstructs input
+            \end{itemize}} \\
+            \midrule
+            VAE & $x$ & $x'$ & $x \underset{\text{Encode}}{\mapsto} z \underset{\text{Decode}}{\mapsto} x'$ \\
+            & & & $f_{\text{enc}, \phi}(\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \boldsymbol{\mu}(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})$, $f_{\text{dec}}(\mathbf{z})$\\ 
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\boldsymbol{\mu}(\mathbf{x})$: Mean of the distribution, $\sigma^2(\mathbf{x})$: Variance of the distribution (independent)
+                \item Learn smooth latent spaces by modelling probability distributions.
+                \item Encoder maps input to a distribution, decoder samples from it.
+                \item \textbf{Key:} Works on any data.
+            \end{itemize}} \\
+            \midrule
             RNN & $x_t,h_{t-1}$ & $y_{t},h_{t}$ & $h_t = \text{tanh}(\text{Linear} (h_{t-1}) + \text{Linear}(x_t))$ \\ 
             & & & $y_t = \text{MLP}(h_t)$ \\
             \multicolumn{4}{p{\linewidth}}{
@@ -111,15 +136,15 @@
 \newpage
 
 \section{Intro to ML}
-\input{Lectures/L2.tex}
+% \input{Lectures/L2.tex}
 \newpage
 
 \section{Neural Network Engineering}
-\input{Lectures/L4.tex}
+% \input{Lectures/L4.tex}
 \newpage
 
 \section{Hyperparameter Optimization}
-\input{Lectures/L5.tex}
+% \input{Lectures/L5.tex}
 \newpage
 
 \section{Representations and VAE}
