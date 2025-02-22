@@ -141,14 +141,14 @@
             \toprule
             \textbf{Tricks} & \textbf{Description} \\
             \toprule
-            List Comprehensions & Concise list creation. \\
+            \href{https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions}{List Comprehensions} & Concise list creation. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_11.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            Leveraging Set Data Structures: Set & Efficiently handle unique elements and set logic. \\
+            \href{https://docs.python.org/3/tutorial/datastructures.html#sets}{Leveraging Set Data Structures: Set} & Efficiently handle unique elements and set logic. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_12.png}{}
@@ -166,17 +166,18 @@
             \toprule
             \textbf{Tricks} & \textbf{Description} \\
             \toprule
-            Dictionaries for Key-Value Pairs & Efficient data lookup by keys. \\
+            \href{https://docs.python.org/3/tutorial/datastructures.html#dictionaries}{Dictionaries for Key-Value Pairs} & Efficient data lookup by keys. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_13.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            Itertools & Efficient iteration patterns. \\
+            \href{https://docs.python.org/3/library/itertools.html}{Itertools} & Efficient iteration patterns. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
                 \item e.g. permutations, chunked, chain, zip, filter, product, combinations, etc.
+                \item \href{https://more-itertools.readthedocs.io/en/stable/api.html}{More Itertools}
             \end{itemize}
             \begin{center}
                 \customFigure[0.5]{../Images/L7_14.png}{}
@@ -196,10 +197,10 @@
             \toprule
             \textbf{Tricks} & \textbf{Description} \\
             \toprule
-            Functools for Functional Tools & Manipulate functions to get new functions. \\
+            \href{https://docs.python.org/3/library/functools.html}{Functools for Functional Tools} & Manipulate functions to get new functions. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Caching with \texttt{functools.lru\_cache}: Cache optimizes performance by storing results (i.e. return a previous result when the input of a function has already been observed)
+                \item \href{https://docs.python.org/3/library/functools.html}{Caching with \texttt{functools.lru\_cache}:} Cache optimizes performance by storing results (i.e. return a previous result when the input of a function has already been observed)
             \end{itemize}
             \begin{center}
                 \customFigure[0.4]{../Images/L7_16.png}{}
@@ -208,14 +209,14 @@
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            Abstract Base Classes (ABCs) & Enforce interfaces for robust design. \\
+            \href{https://docs.python.org/3/library/abc.html}{Abstract Base Classes (ABCs)} & Enforce interfaces for robust design. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.4]{../Images/L7_18.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            Dataclasses for Data Storage & Simplify data-centric class creation. \\
+            \href{https://docs.python.org/3/library/dataclasses.html}{Dataclasses for Data Storage} & Simplify data-centric class creation. \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{center}
                     \customFigure[0.4]{../Images/L7_19.png}{}
@@ -233,26 +234,33 @@
             \toprule
             \textbf{Tricks} & \textbf{Description} \\
             \toprule
-            Type Hints & Enhance code clarity, communicate intent, and detect errors. \\
+            \href{https://docs.python.org/3/library/typing.html}{Type Hints} & Enhance code clarity, communicate intent, and detect errors. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_20.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            Tensor Typing: jaxtyping & Communicate expected tensor shapes and data types. \\
+            \href{https://github.com/patrick-kidger/jaxtyping}{Tensor Typing: jaxtyping} & Communicate expected tensor shapes and data types. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_21.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
-            pytest: Helps you write better programs & Simplifies testing for reliable code. \\
+            \href{https://docs.pytest.org/en/stable/}{pytest:} Helps you write better programs & Simplifies testing for reliable code. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L7_22.png}{}
                 \vspace{-4em}
             \end{center}} \\
+            \midrule
+            Other tools & \href{https://docs.python.org/3/tutorial/inputoutput.html}{f-string style formatting}, data validation and serialization (pydantic, json) \\
+            & prefer encapsulation over inheritance, prefer modules over frameworks \\ 
+            & context managers \\
+            & Decorators (\@decorator\_name) \\
+            & \href{https://docs.python.org/3/library/asyncio.html}{Asynchronous programming (async / wait)} \\
+            & \href{https://docs.python.org/3/library/logging.html}{Logging} \\
             \bottomrule
         \end{tabular}
     \end{center}
