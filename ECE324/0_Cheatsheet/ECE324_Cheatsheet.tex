@@ -74,7 +74,7 @@
             & & & $\text{Encoder}(x) = Wx$, $\text{Decoder}(z) = W^{-1}z$ \\
             \multicolumn{4}{p{\linewidth}}{
             \begin{itemize}
-                \item Linear transformation for dimension reduction 
+                \item \textbf{Overview:} Linear transformation for dimension reduction 
             \end{itemize}} \\
             \midrule
             AE & $x$ & $x'$ & $x \underset{\text{Encode}}{\mapsto} z \underset{\text{Decode}}{\mapsto} x'$ \\
@@ -89,9 +89,13 @@
             & & & $f_{\text{enc}, \phi}(\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \boldsymbol{\mu}(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})$, $f_{\text{dec}}(\mathbf{z})$\\ 
             \multicolumn{4}{p{\linewidth}}{
             \begin{itemize}
+                \item \textbf{Overview:} A probabilistic approach by learning smooth latent spaces by modelling probability distributions.
                 \item $\boldsymbol{\mu}(\mathbf{x})$: Mean of the distribution, $\sigma^2(\mathbf{x})$: Variance of the distribution (independent)
-                \item Learn smooth latent spaces by modelling probability distributions.
                 \item Encoder maps input to a distribution, decoder samples from it.
+                \begin{itemize}
+                    \item Encoder estimates parameters for a distribution in the latent space
+                    \item Decoder samples from the distribution to generate an output sample
+                \end{itemize}
                 \item \textbf{Key:} Works on any data.
             \end{itemize}} \\
             \midrule

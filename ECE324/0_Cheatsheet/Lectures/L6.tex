@@ -74,6 +74,7 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L6_3.png}{}
+                \vspace{-4em}
             \end{center}} \\
             \bottomrule
         \end{tabular}
@@ -81,96 +82,86 @@
 \end{summary}
 \newpage
 
-\subsubsection{Reparameterization Trick}
-\begin{motivation}
-    \begin{enumerate}
-        \item In this model, the encoder estimates parameters for a distribution in the latent space, from which the decoder samples to generate an output sample.
-
-        \[
-        f_{\text{enc}, \phi}(\mathbf{z} \mid \mathbf{x}) = \mathcal{N}(\mathbf{z} \mid \boldsymbol{\mu}(\mathbf{x}), \sigma^2(\mathbf{x}) \mathbf{I})
-        \]        
-        \customFigure[0.5]{../Images/L6_11.png}{}
-        \item What might be a problem with this setup? Sampling is not differentiable.
-    \end{enumerate}
-\end{motivation}
-\begin{definition}
-    Reparameterization makes sampling differentiable for VAE training.
-    \begin{itemize}
-        \item \textbf{Sample (Non-differentiable):}
-        \[
-        \mathbf{z} \sim \mathcal{N}(\mu, \sigma^2 \mathbf{I})
-        \]
-        
-        \item \textbf{Reparametrize (Differentiable):}
-        \[
-        \epsilon \sim \mathcal{N}(0, \mathbf{I}) \quad \text{Sample constant noise}
-        \]
-        \[
-        \mathbf{z} = \mu + \sigma \odot \epsilon \quad \text{Compute } \mathbf{z} \text{ as a deterministic function}
-        \]
-    \end{itemize}
-\end{definition}
-
-\subsection{VAE's Loss Function: Reconstruction and KL Divergence}
-\begin{definition}
-    Balances reconstruction and latent space regularization.
-    \begin{equation}
-        L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))
-    \end{equation}
-    \begin{align*}
-        KL(P \| Q) &= KL\left(\mathcal{N}(\mu_1, \sigma_1^2) \| \mathcal{N}(\mu_2, \sigma_2^2)\right) \\
-        &= \frac{1}{2} \left[ \log\left(\frac{\sigma_2^2}{\sigma_1^2}\right) 
-        + \frac{\sigma_1^2 + (\mu_1 - \mu_2)^2}{\sigma_2^2} - 1 \right]
-    \end{align*}
-\end{definition}
-
-\subsection{VAE are generative models}
-\begin{definition}
-    VAE's latent space is continuous and allows sampling new data
-    \customFigure[0.5]{../Images/L6_4.png}{}
-\end{definition}
+\subsection{Variational Autoencoders}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \toprule
+            \textbf{Reparameterization Trick} & Makes sampling differentiable for VAE training. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{Motivation:} Sampling is not differentiable with the following image: 
+                \begin{center}
+                    \customFigure[0.25]{../Images/L6_11.png}{}
+                    \vspace{-3em}
+                \end{center}
+                \item \textbf{Steps:}
+                \begin{enumerate}
+                    \item Sample (non-differentiable): $\mathbf{z} \sim \mathcal{N}(\mu, \sigma^2 \mathbf{I})$
+                    \item Reparametrize (differentiable):
+                    \begin{enumerate}
+                        \item Sample constant noise: $\epsilon \sim \mathcal{N}(0, \mathbf{I})$
+                        \item Compute $\mathbf{z}$ as a deterministic function: $\mathbf{z} = \mu + \sigma \odot \epsilon$
+                    \end{enumerate}
+                \end{enumerate}
+            \end{itemize}} \\
+            \midrule
+            \textbf{Loss Fn: Reconstruction and KL Divergence} & Balances reconstruction and latent space regularization. \\
+            &  $L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item For Gaussian Distribution: $KL(P \| Q) = KL\left(\mathcal{N}(\mu_1, \sigma_1^2) \| \mathcal{N}(\mu_2, \sigma_2^2)\right) = \frac{1}{2} \left[ \log\left(\frac{\sigma_2^2}{\sigma_1^2}\right) + \frac{\sigma_1^2 + (\mu_1 - \mu_2)^2}{\sigma_2^2} - 1 \right]$ 
+            \end{itemize}} \\
+            \midrule 
+            \textbf{Generative Models} & VAE's latent space is cont. and allows sampling new data. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L6_4.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
 \newpage
 
-\section{Representation Learning}
-
-\subsection{Cosine Distance: A Metric for High Dimensions}
-\begin{definition}
-    Likely better suitan than Euclidean distance in high dimensions.
-    \[
-    d_{\text{cos}}(\mathbf{u}, \mathbf{v}) = 1 - \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|}
-    \]
-
-    \[
-    d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \sqrt{\sum_{i=1}^n (u_i - v_i)^2}
-    \]
-\end{definition}
-
-\begin{warning}
-    May be appear in A1.
-\end{warning}
-
-\subsection{Manifold Hypothesis: Data in Low Dimensions}
-\begin{notes}
-    Real-world data resides on lower-dimensionality manifolds.
-    \customFigure[0.5]{../Images/L6_9.png}{1D String (Manifold) in 2D Space}
-    \begin{itemize}
-        \item What is the dimensionality of Fashion-MNIST? Higher bounded is 784 because it is a 28x28 image, but the lower bound is ill-definied (many answers)
-        \item If it was a colour image, then it would be $3 \times 28 \times 28 = 2352$.
-    \end{itemize}
-\end{notes}
-
-\subsection{Hierarchical Organization in NN Depth}
-\begin{notes}
-    Learning low to high level abstractions across different layers.
-    \customFigure[0.5]{../Images/L6_10.png}{}
-\end{notes}
-
-\subsection{Contrastive Learning}
-\begin{notes}
-    Embed similar data close together. 
-    \begin{itemize}
-        \item \textbf{Positive Pairs:} Similar data points
-        \item \textbf{Negative Pairs:} Dissimilar data points
-    \end{itemize}
-    \customFigure[0.5]{../Images/L6_12.png}{}
-\end{notes}
+\subsection{Representation Learning}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \toprule
+            Euclidean distance & A metric for low dimensions: $d_{\text{euclidean}}(\mathbf{u}, \mathbf{v}) = \sqrt{\sum_{i=1}^n (u_i - v_i)^2}$ \\
+            \midrule
+            Cosine Distance & A metric for high dimensions: $d_{\text{cos}}(\mathbf{u}, \mathbf{v}) = 1 - \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Geometry of high-dim spaces are non-intuitive.
+            \end{itemize}} \\
+            \midrule 
+            Manifold Hypothesis: Data in Low-Dim & Real-world data resides on lower-dimensionality manifolds. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L6_9.png}{1D String (Manifold) Embedded in 2D}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Hierarchical Organization in NN Depth & Learning low to high level abstractions across different layers. \\
+            \midrule
+            Contrastive Learning & Embed similar data close together. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{Positive Pairs:} Similar data points
+                \item \textbf{Negative Pairs:} Dissimilar data points
+                \begin{center}
+                    \customFigure[0.5]{../Images/L6_12.png}{}
+                    \vspace{-4em}
+                \end{center}
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
