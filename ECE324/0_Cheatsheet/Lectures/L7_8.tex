@@ -4,84 +4,111 @@
         \begin{tabular}{ll}
             \toprule
             \textbf{Concept} & \textbf{Description} \\
-            \midrule
-            Code Readability & Maintainable code enables collaboration and future work. \\
+            \toprule
+            Code Readability & Maintable code enables collaboration and future work. \\
             \multicolumn{2}{p{\linewidth}}{
-                \centering
-                \begin{minipage}{0.48\linewidth}
-                    \centering
-                    \customFigure[1.0]{../Images/L7_4.png}{Image 1 Description}
-                \end{minipage}
-                \hfill
-                \begin{minipage}{0.48\linewidth}
-                    \centering
-                    \customFigure[1.0]{../Images/L7_1.png}{Image 2 Description}
-                \end{minipage} 
+            \begin{center}
+                \customFigure[0.4]{../Images/L7_1.png}{}
+                \vspace{-4em}
+                \customFigure[0.4]{../Images/L7_4.png}{}
+                \vspace{-3em}
+            \end{center}
+            \begin{itemize}
+                \item \textbf{Naming:} Clear names enhance code understanding.
+                \begin{itemize}
+                    \item \textbf{Functions:} verb\_do
+                    \item \textbf{Variables:} two\_three\_words
+                    \item \textbf{Classes:} CapitalizedWords
+                \end{itemize}
+            \end{itemize}
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_2.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Style Guides & Ensure consistent code formatting. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{Overview:} Provide a standardized set of rules for formatting code, prompting uniformity, and reducing cognitive load when reading code. 
+                \item \textbf{PEP8:} Offering rec on code layout, naming conventions, and overall code structure for clarity. \href{https://peps.python.org/pep-0008/}{(PEP8)}
+                \item \textbf{Google Style Guide:} Provides stricter, more specific guidelines, larger projects \href{https://google.github.io/styleguide/pyguide.html}{(Guide)}
+            \end{itemize}
+            \begin{center}
+                \customFigure[0.4]{../Images/L7_3.png}{}
+                \vspace{-4em}
+                \customFigure[0.4]{../Images/L7_5.png}{}
+                \vspace{-4em}
+            \end{center}
             } \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
-\subsection{Code Readability Matters}
-\begin{notes}
-    \begin{itemize}
-        \item \textbf{Overview:} Maintainable code enables collaboration and future work.
-        \customFigure[0.5]{../Images/L7_1.png}{}
-        \customFigure[0.5]{../Images/L7_4.png}{}
-        \item \textbf{Naming:} Clear names enhance code understanding 
-        \begin{itemize}
-            \item \textbf{Functions:} verb\_do
-            \item \textbf{Variables:} two\_three\_words
-            \item \textbf{Classes:} CapitalizedWords
-        \end{itemize}
-        \customFigure[0.5]{../Images/L7_2.png}{}
-    \end{itemize}
-\end{notes}
-
-\subsection{Style Guides}
-\begin{notes}
-    \begin{itemize}
-        \item \textbf{Overview:} Ensure consistent code formatting. 
-        \item \textbf{Why?} Provide a standardized set of rules for formatting code, prompting uniformity, and reducing cognitive load when reading code. 
-        \item \textbf{Examples:} PEP8, Google Style Guide, etc.
-    \end{itemize}
-    \customFigure[0.5]{../Images/L7_3.png}{}
-    \customFigure[0.5]{../Images/L7_5.png}{}
-\end{notes}
 \newpage
 
-\section{Coding Mantras / Ideas}
-\subsection{Zen of Python}
-\begin{definition}
-    \customFigure[0.5]{../Images/L7_0.png}{}
-\end{definition}
-
-\subsection{KISS: Keep It Simple and Straightforward}
-\begin{notes}
-    Advocate for solutions that are easy to understand and maintain, reduce unnecessary complexity.
-    \customFigure[0.5]{../Images/L7_6.png}{}
-\end{notes}
-
-\subsection{YAGNI: You Aren't Gonna Need It}
-\begin{notes}
-    AKA premature optimization is the root of all evil. 
-    \customFigure[0.5]{../Images/L7_7.png}{}
-    \customFigure[0.5]{../Images/L7_8.png}{}
-\end{notes}
-
-\subsection{Principle of DRY and WET and DAMP}
-\begin{notes}
-    Don't Repeat Yourself; Write Everything Twice.
-    \customFigure[0.5]{../Images/L7_9.png}{}
-    \vspace{1em}
-
-    Don't Abstract Methods Prematurely.
-    \customFigure[0.5]{../Images/L7_10.png}{}
-\end{notes}
+\subsection{Coding Mantras / Ideas}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Mantra} & \textbf{Description} \\
+            \toprule
+            Zen of Python (PEP20) & Guiding principles for Python design. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_0.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            KISS: Keep It Simple and Straightforward & Easy to understand and maintain, reduce unnecessary complexity. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.75]{../Images/L7_6.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
 \newpage
 
-\section{Into The Weeds (Technical Details)}
-\subsection{Python Data Containers Overview}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Mantra} & \textbf{Description} \\
+            \toprule
+            YAGNI: You Aren't Gonna Need It & Avoid premature optimization, focus on current requirements. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_7.png}{}
+                \vspace{-4em}
+                \customFigure[0.5]{../Images/L7_8.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            DRY: Don't Repeat Yourself & Avoid code duplication, promote code reusability. \\
+            WET: Write Everything Twice & Avoid premature abstraction, write code twice before abstracting. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.6]{../Images/L7_9.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            DAMP & Don't Abstract Methods Prematurely. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.6]{../Images/L7_10.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Technical Python Details}
+\subsubsection{Python Data Containers Overview}
 \begin{definition}
     Choosing the right container for the task:
     \begin{itemize}
@@ -107,73 +134,130 @@
     \end{itemize}
 \end{definition}
 
-\subsection{List Comprehensions}
-\begin{notes}
-    Provide concise list creation.
-    \customFigure[0.5]{../Images/L7_11.png}{}
-\end{notes}
+\subsubsection{Python Tricks}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Tricks} & \textbf{Description} \\
+            \toprule
+            List Comprehensions & Concise list creation. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_11.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Leveraging Set Data Structures: Set & Efficiently handle unique elements and set logic. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_12.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
-\subsection{Leveraging Set Data Structures: Set}
-\begin{notes}
-    Efficiently handle unique elements and set logic.
-    \customFigure[0.5]{../Images/L7_12.png}{}
-\end{notes}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Tricks} & \textbf{Description} \\
+            \toprule
+            Dictionaries for Key-Value Pairs & Efficient data lookup by keys. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_13.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Itertools & Efficient iteration patterns. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. permutations, chunked, chain, zip, filter, product, combinations, etc.
+            \end{itemize}
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_14.png}{}
+                \vspace{-4em}
+                \customFigure[0.5]{../Images/L7_15.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
-\subsection{Dictionaries for Key-Value Pairs}
-\begin{notes}
-    Enable efficient data lookup by keys.
-    \customFigure[0.5]{../Images/L7_13.png}{}
-\end{notes}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Tricks} & \textbf{Description} \\
+            \toprule
+            Functools for Functional Tools & Manipulate functions to get new functions. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Caching with \texttt{functools.lru\_cache}: Cache optimizes performance by storing results (i.e. return a previous result when the input of a function has already been observed)
+            \end{itemize}
+            \begin{center}
+                \customFigure[0.4]{../Images/L7_16.png}{}
+                \vspace{-4em}
+                \customFigure[0.4]{../Images/L7_17.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Abstract Base Classes (ABCs) & Enforce interfaces for robust design. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.4]{../Images/L7_18.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Dataclasses for Data Storage & Simplify data-centric class creation. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.4]{../Images/L7_19.png}{}
+                    \vspace{-4em}
+                \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
-\subsection{Itertools for Efficient Iteration}
-\begin{notes}
-    Provides tools for very common iteration patterns.
-    \begin{itemize}
-        \item e.g. permutations, chunked, chain, zip, filter, product, combinations, etc.
-    \end{itemize}
-    \customFigure[0.5]{../Images/L7_14.png}{}
-    \customFigure[0.5]{../Images/L7_15.png}{}
-\end{notes}
-
-\subsection{Functools for Functional Tools}
-\begin{notes}
-    Need to manipulate a function and get a new function. 
-    \begin{itemize}
-        \item Caching with \texttt{functools.lru\_cache}: Cache optimizes performance by storing results (i.e. return a previous result when the input of a function has already been observed)
-    \end{itemize}
-    \customFigure[0.5]{../Images/L7_16.png}{}
-    \customFigure[0.5]{../Images/L7_17.png}{}
-\end{notes}
-
-\subsection{Abstract Base Classes (ABCs)}
-\begin{notes}
-    ABCs enforce interfaces for robust design.
-    \customFigure[0.5]{../Images/L7_18.png}{}
-\end{notes}
-
-\subsection{Dataclasses for Data Storage}
-\begin{notes}
-    Data classes simplify data-centric class creation.
-    \customFigure[0.5]{../Images/L7_19.png}{}
-\end{notes}
-
-\subsection{Python Typing Provides Hints}
-\begin{notes}
-    Type hints enhance code clarity, communicate intent and detect errors.
-    \customFigure[0.5]{../Images/L7_20.png}{} 
-\end{notes}
-
-\subsection{Tensor Typing: jaxtyping}
-\begin{notes}
-    Communicate expected tensor shapes and data types. 
-    \customFigure[0.5]{../Images/L7_21.png}{}
-\end{notes}
-
-\subsection{pytest: Helps you write better programs}
-\begin{notes}
-    Simplifies testing for reliable code.
-    \customFigure[0.5]{../Images/L7_22.png}{}
-\end{notes}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Tricks} & \textbf{Description} \\
+            \toprule
+            Type Hints & Enhance code clarity, communicate intent, and detect errors. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_20.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Tensor Typing: jaxtyping & Communicate expected tensor shapes and data types. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_21.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            pytest: Helps you write better programs & Simplifies testing for reliable code. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{center}
+                \customFigure[0.5]{../Images/L7_22.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
 \subsection{Ideas}
 \begin{summary}
