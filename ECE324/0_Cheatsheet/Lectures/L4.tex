@@ -124,37 +124,97 @@
 \end{summary}
 \newpage
 
-\subsection{Evaluation}
+\subsection{Evaluation Metrics Quantify Performance}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Metrics} & \textbf{Description} \\
+        \midrule
+        \textbf{Regression Metrics} & $R^2$, MAE, Pearson $r$, RMSE, MSE \\ 
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item 
+        \end{itemize}} \\
+        \midrule
+        \textbf{Ranking Metrics} & Kendall Tau, Spearman \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item 
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Metrics} & \textbf{Description} \\
+        \midrule
+        \textbf{Classification Metrics} & Accuracy, Recall, Precision, F1-Score, AUROC, AUPRC, AP, mAP  \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{Accuracy:} $\frac{\text{Correct Predictions}}{\text{Total Predictions}}$
+            \begin{itemize}
+                \item \textbf{When to Use?} (1) classes are balanced and (2) false +/false - have similar importance.
+            \end{itemize}
+            \item \textbf{Precision:} $\frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}$
+            \begin{itemize}
+                \item \textbf{When to Use?} (1) false + are costly (e.g. nuclear war, since saying there is a nuclear war when there's not is bad) and (2) you want to minimize false +.
+            \end{itemize}
+            \item \textbf{Recall:} $\frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}$
+            \begin{itemize}
+                \item \textbf{When to Use?} (1) false - are costly (e.g. cancer detection, since missing cancer when there's cancer is bad) and (2) you want to minimize false -.
+            \end{itemize}
+            \item \textbf{F1-Score:} $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
+            \begin{itemize}
+                \item \textbf{When to Use?} (1) you want to balance precision and recall.
+            \end{itemize}
+            \item \textbf{AUROC:} Area under the ROC curve. 
+            \begin{itemize}
+                \item \textbf{How?} Assesses model performance across all classification thresholds by plotting true + rate against false + rate.
+                \item \textbf{When to Use?} (1) classes are imbalanced and (2) false +/false - have similar importance.
+                \item \textbf{Char.} Monotonic, ranking-based, $1.0$ is perfect, $0.5$ is random.
+                \customFigure[0.3]{../Images/L4_8.png}{}
+            \end{itemize}
+            \item \textbf{AUPRC:} Area under the Precision-Recall curve.
+            \begin{itemize}
+                \item \textbf{How?} Assesses model performance across all classification thresholds by plotting precision against recall.
+                \item \textbf{When to Use?} (1) classes are imbalanced as it focuses on trade-offs between precision and recall.
+            \end{itemize}
+            \item \textbf{Average Precision (AP):} $\sum_n \text{Precision}(n) \times \text{Recall}(n)$ 
+            \begin{itemize}
+                \item \textbf{What?} Measures how well a model ranks positive examples above negative examples.
+                \item \textbf{When to Use?} (1) summarize precision-recall curve, making it suitable for ranking tasks.
+                \item \textbf{Char.} Binary
+            \end{itemize}
+            \item \textbf{Mean Average Precision (mAP):} $\frac{1}{N} \sum_{n=1}^{N} \text{AP}(n)$ 
+            \begin{itemize}
+                \item \textbf{Whart?} Computes the average AP across multiple classes.
+                \item \textbf{When to Use?} (1) multi-class or object detection tasks to compute the average AP across classes.
+                \item \textbf{Char.} Multiclass
+            \end{itemize}
+        \end{itemize}} \\
+        \midrule
+        \textbf{Multitask Metrics} & Mean of metrics, holistic metric \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item 
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
 \begin{summary}
     \begin{center}
         \begin{tabular}{l}
         \toprule
-        \textbf{Tips} \\
-        \midrule
-        \textbf{Evaluation Metrics Quantify Performance} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Choose appropriate metrics to assess model capabilities. 
-            \item Regression
-            \begin{itemize}
-                \item \( R^2 \) and MAE, maybe Pearson \( r \)
-            \end{itemize}
-            \item Ranking
-            \begin{itemize}
-                \item Kendall Tau
-            \end{itemize}
-            \item Classification
-            \begin{itemize}
-                \item AUROC or AUPRC or AP
-                \item A ``hard'' metrics (Accuracy, F1-Score, Recall)
-            \end{itemize}
-            \item Multitask (many tasks)
-            \begin{itemize}
-                \item Mean of metrics
-                \item Holistic metric
-                \item What is the most important thing?
-            \end{itemize}
-        \end{itemize}} \\
+        \textbf{Concepts} \\
         \midrule
         \textbf{Adjusting Decision Thresholds} \\
         \multicolumn{1}{p{\linewidth}}{
@@ -181,18 +241,6 @@
         \begin{tabular}{l}
         \toprule
         \textbf{Tips} \\
-        \midrule
-        \textbf{AUROC: Area Under The Precision Recall-Curve} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Monotonic
-            \item Ranking based
-            \item \(1.0\) is perfect
-            \item \(0.5\) is random
-            \item AUPRC: Precision-Recall
-            \item AP: Average Precision
-            \customFigure[0.5]{../Images/L4_8.png}{}
-        \end{itemize}} \\
         \midrule
         \textbf{Regression Correlation Metrics} \\
         \multicolumn{1}{p{\linewidth}}{

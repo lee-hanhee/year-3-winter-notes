@@ -31,16 +31,9 @@
             \toprule
             \textbf{Concept} & \textbf{Description} \\
             \toprule
-            \textbf{Loss Function} & Minimize reconstruction error. \\
-            & $L_{AE} = \left\| \mathbf{x} - f_{\text{dec}}(f_{\text{enc}}(\mathbf{x})) \right\|^2 = \left\| \mathbf{x} - \hat{\mathbf{x}} \right\|^2$ \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item If our data is binary, what loss function should you use? Binary cross entropy.
-            \end{itemize}} \\
-            \midrule 
             \textbf{Different Types of AEs} & \\
             \midrule
-            Sparse Autoencoders (SAEs): Feature Selection & Encourage latent representations with only few active neurons. \\
+            Sparse Autoencoders (SAEs): Feature Selection & Encourage latent representations w/ only few active neurons. \\
             & $\Omega(\theta) = \lambda \sum_i \left| \theta_i \right| \rightarrow L_{AE} + \Omega(z, \theta)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
@@ -52,28 +45,17 @@
             & $L_{DAE} = \left\| \mathbf{x} - f_{\text{dec}}(f_{\text{enc}}(\tilde{\mathbf{x}})) \right\|^2$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
-                \customFigure[0.5]{../Images/L6_2.png}{}
+                \customFigure[0.2]{../Images/L6_2.png}{}
             \end{center}} \\
             \midrule
             Anomaly Detection with AEs & Detect outliers by analyzing high reconstruction errors. \\
             & $A(\mathbf{x}) = \left\| \mathbf{x} - \hat{\mathbf{x}} \right\|^2$ s.t. $A(\mathbf{x}) > \text{Threshold}$ \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Concept} & \textbf{Description} \\
             \toprule
             \textbf{Latent Space of AEs} & Latent space of an autoencoder may not be continuous \\ 
-            & Acts like hashmaps: Mapping data to a discrete index and back. \\
+            & Hashmaps: Mapping data to a discrete index and back. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
-                \customFigure[0.5]{../Images/L6_3.png}{}
+                \customFigure[0.3]{../Images/L6_3.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \bottomrule
@@ -106,13 +88,6 @@
                         \item Compute $\mathbf{z}$ as a deterministic function: $\mathbf{z} = \mu + \sigma \odot \epsilon$
                     \end{enumerate}
                 \end{enumerate}
-            \end{itemize}} \\
-            \midrule
-            \textbf{Loss Fn: Reconstruction and KL Divergence} & Balances reconstruction and latent space regularization. \\
-            &  $L_{\text{VAE}} = L_{\text{AE}} (x, \hat{x}) + \text{KL} (q_\phi (\mathbf{z} \mid \mathbf{x}) \parallel p(\mathbf{z}))$ \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item For Gaussian Distribution: $KL(P \| Q) = KL\left(\mathcal{N}(\mu_1, \sigma_1^2) \| \mathcal{N}(\mu_2, \sigma_2^2)\right) = \frac{1}{2} \left[ \log\left(\frac{\sigma_2^2}{\sigma_1^2}\right) + \frac{\sigma_1^2 + (\mu_1 - \mu_2)^2}{\sigma_2^2} - 1 \right]$ 
             \end{itemize}} \\
             \midrule 
             \textbf{Generative Models} & VAE's latent space is cont. and allows sampling new data. \\
