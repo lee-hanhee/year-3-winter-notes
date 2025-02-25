@@ -200,11 +200,13 @@
                 \item \textbf{When to Use?} Binary classification problems.
             \end{itemize}} \\
             \midrule
-            \textbf{Categorical Cross Entropy} & $- \frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} y_{ij} \log(\hat{y}_{ij})$ \\
+            \textbf{Sum of Binary Cross Entropy} & $\frac{1}{n} \sum^{\text{labels}} \sum_n y_n \log(\hat{y}_n) + (1 - y_n) \log(1 - \hat{y}_n)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item \textbf{When to Use?} Multi-class classification problems.
+                \item \textbf{When to Use?} Multi-label classification problems.
             \end{itemize}} \\
+            \midrule
+            \textbf{Cross Entropy} & $\sum_i^{\text{classes}} y_i \log(\hat{y}_i)$ \\
             \midrule
             \textbf{AE: Reconstruction Error} & Minimize reconstruction error. \\
             & $L_{AE} = \left\| \mathbf{x} - f_{\text{dec}}(f_{\text{enc}}(\mathbf{x})) \right\|^2 = \left\| \mathbf{x} - \hat{\mathbf{x}} \right\|^2$ \\

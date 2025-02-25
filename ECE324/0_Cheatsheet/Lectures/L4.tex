@@ -215,10 +215,6 @@
         \end{itemize}} \\
         \midrule
         \textbf{Multitask Metrics} & Mean of metrics, holistic metric \\
-        \multicolumn{2}{p{\linewidth}}{
-        \begin{itemize}
-            \item 
-        \end{itemize}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -373,6 +369,16 @@
         \begin{tabular}{ll}
         \toprule
         \textbf{Tools} & \textbf{Description} \\
+        \midrule
+        \textbf{Masking} & Omit data when missing or NA by multiplying loss function by a binary valued mask. \\
+            & $- \frac{1}{\sum \text{mask}} \sum_n \text{mask}_n \cdot (y_n - \hat{y}_n)^2$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Good for NaN, $-\infty$, high value outliers.
+                    \customFigure[0.3]{../Images/L3_5.png}{}
+                    \vspace{-1em}
+                \end{itemize}
+            } \\
         \midrule
         \textbf{Focal Loss} & Focuses on hard examples by down-weighting the contribution of easy examples to the loss. \\
         & $FL(p_t, \gamma) = -(1 - p_t)^\gamma \log(p_t)$ \; Adds factors to cross-entropy loss fn \\
