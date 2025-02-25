@@ -16,6 +16,47 @@
 \end{notes}
 \newpage
 
+\subsection{Geometric Intuition}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            Decision surfaces & Different ways of cutting up space to make predictions. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L2_5.png}{}
+                \vspace{-4em}
+            \end{center}}\\
+            \midrule
+            Linear Transformation & Transform data from one vector space to another: $W \cdot x$ \\
+            \multicolumn{2}{p{\linewidth}}{\begin{itemize}
+                \item $W$: Linear transformation, $x$: Vector
+            \end{itemize}}\\
+            \midrule
+            SVD of Linear Transformation & Factorizing matrices into geometrical transformations: $W = U \Sigma V^T$ \\
+            \multicolumn{2}{p{\linewidth}}{\begin{itemize}
+                \item $U,V$: Rotation or reflection, $\Sigma$: Scaling
+            \end{itemize}}\\ 
+            \midrule
+            Affine Transformation & Transform data from one vector space to another: $W \cdot x + b$ \\
+            \multicolumn{2}{p{\linewidth}}{\begin{itemize}
+                \item $W$: Linear transformation, $x$: Vector, $b$: Bias vector
+                \item Translate (b), Rotate (W-SVD), Reflect (W-SVD), Scale (W-SVD)
+                \item Project up or down (dimensionality of $W \mathbf{x}$)
+            \end{itemize}}\\
+            \midrule
+            Neural nets & Learn to warp space to make better predictions. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L2_6.png}{}
+                \customFigure[0.5]{../Images/L2_7.png}{}
+                \vspace{-4em}
+            \end{center}}\\
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
 \subsection{Data}
 \begin{summary}
     \begin{center}
@@ -356,6 +397,9 @@
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item \textbf{Heuristic:} Use ReLU, GeLU. Don't spend too mcuh time on it. 
+            \item \textbf{ReLU:} $f(x)= \max(0,x)$ Rectified linear unit, which has a geometric effect of "gating" the input.
+                \customFigure[0.2]{../Images/L2_8.png}{}
+                \vspace{-1em}
             \item \textbf{Tension:} smoothness/compute/complexity.
         \end{itemize}} \\
         \bottomrule

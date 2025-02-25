@@ -1,3 +1,58 @@
+\subsection{Encoder-Decoder view}
+\begin{definition}
+    \begin{equation}
+        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $z$: Embeddings, latent vectors, learned representations.
+        \item \textbf{Latent Space:} Space of $z$.
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Supervised Learning}
+\begin{example} 
+    \begin{equation}
+        x \overset{\text{Model}}{\mapsto} y
+    \end{equation}
+    \begin{itemize}
+        \item $\mathrm{Model}(x) = \mathrm{Decoder}\bigl(\mathrm{Encoder}(x)\bigr)$
+        \item $\mathrm{Decoder}(z) = \mathrm{Pred}(z)$
+    \end{itemize}
+    
+\end{example}
+
+\subsubsection{Unsupervised Learning (PCA)}
+\begin{example} 
+    \begin{enumerate}
+        \item \textbf{Linear Transformation:} Encode and decode with PCA.
+        \begin{equation}
+            x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+        \end{equation}
+        \begin{itemize}
+            \item $\text{Encoder}(x) = W \cdot x$
+            \item $\text{Decoder}(z) = W^{-1} \cdot z$
+        \end{itemize}
+        \vspace{1em}
+    
+        \begin{itemize}
+            \item \textcolor{teal}{\textbf{E?}} $x$
+            \item \textcolor{purple}{\textbf{P?}} Reconstruction loss
+            \item \textcolor{yellow}{\textbf{T?}} Reduce dimension
+            \item \textcolor{orange}{\textbf{M?}} W
+            \item \textcolor{red}{\textbf{learn?}} Eigendecompositions
+        \end{itemize}
+        \item \textbf{Neural Nets:} Replacing linear trans. in PCA w/ neural nets.
+        \begin{equation}
+            x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+        \end{equation}
+        \begin{itemize}
+            \item $\text{Encoder}(x) = \text{Neural Network}$
+            \item $\text{Decoder}(z) = \text{Neural Network}$
+        \end{itemize}
+    \end{enumerate}
+\end{example}
+\newpage
+
 \subsection{Latent Space}
 \begin{notes}
     \begin{itemize}
@@ -26,12 +81,14 @@
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L6_0.png}{}
+                \vspace{-4em}
             \end{center}} \\
             \midrule 
             Interpretability & Non-negative factorization (tensor decomp.) are $\uparrow$ interpretable. \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{center}
                 \customFigure[0.5]{../Images/L6_1.png}{}
+                \vspace{-4em}
             \end{center}} \\
             \bottomrule
         \end{tabular}

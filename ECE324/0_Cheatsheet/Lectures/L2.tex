@@ -1,9 +1,9 @@
-\section{Learning representations of data}
-\subsection{AI/MI/ML/DL}
+\subsection{Learning representations of data}
+\subsubsection{AI/MI/ML/DL}
 \begin{definition}
     \customFigure[0.5]{../Images/L2_0.png}{} 
 \end{definition}
-\subsection{Learning algorithms}
+\subsubsection{Learning algorithms}
 \begin{definition}
     \textquotedblleft A \colorbox{orange}{\textbf{computer program M}} is said to \colorbox{red}{\textbf{learn}} from \colorbox{cyan}{\textbf{experience E}} with respect to some class of \colorbox{yellow}{\textbf{tasks T}} and \colorbox{violet}{\textbf{performance measure P}}, if its performance at \colorbox{yellow}{\textbf{tasks in T}}, as measured by \colorbox{violet}{\textbf{P}}, improves with \colorbox{cyan}{\textbf{experience E}}\textquotedblright
     \vspace{1em}
@@ -17,15 +17,14 @@
     \end{itemize}
 \end{definition}
 
-\subsection{Representing data as tensors}
+\subsubsection{Representing data as tensors}
 \begin{definition}
     GLMs and Neural Nets work with tensor data.
 \end{definition}
 \newpage
 
-\subsection{Linear models}
-\subsubsection{Linear Regression}
-\begin{definition} 
+\subsubsection{Linear models}
+\begin{definition} \textbf{Linear Regression}
     \begin{equation}
         W \cdot x = y
     \end{equation}
@@ -38,8 +37,7 @@
     \end{itemize}
 \end{definition}
 
-\subsubsection{Generalized Linear Models}
-\begin{definition} 
+\begin{definition} \textbf{Generalized Linear Models:}
     Linear transformations warped to a prediction target.
     \begin{equation}
         \text{Link}(W \cdot x) = y
@@ -76,34 +74,7 @@
 \end{notes}
 \newpage
 
-\subsection{Representations}
-\begin{definition}
-    \textbf{Representation} is a way of encoding data.
-    \begin{equation}
-        x \overset{\text{Representation}}{\mapsto} z
-    \end{equation}
-    \begin{itemize}
-        \item $z$: Feature vectors, embeddings, latent codes, intermediate activations, etc.
-    \end{itemize}
-\end{definition}
-
-\begin{notes}
-    \begin{itemize}
-        \item Learning representations of our data, optimized to a task.
-    \end{itemize}
-    \customFigure[0.5]{../Images/L2_9.png}{}
-\end{notes}
-\newpage
-
-\section{Neural networks}
-\begin{definition}
-    Learnable \textbf{(optimizable)} transformations of data.
-    \begin{equation}
-        x \overset{\text{Model}}{\mapsto} y
-    \end{equation}
-\end{definition}
-
-\subsection{2-layer MLP}
+\subsubsection{2-layer MLP}
 \begin{definition} By stacking linear transforms with activation functions.
     \begin{equation}
         \text{Link}(W_2 \cdot \text{relu}(W_1 \cdot x)) = y
@@ -139,133 +110,23 @@
             \end{itemize} 
     \end{enumerate}
 \end{example}
-\newpage
 
-\subsection{Geometric intuition}
-\subsubsection{Decision surfaces}
-\begin{notes} 
-    Different ways of cutting up space to make predictions.
-    \customFigure[0.5]{../Images/L2_5.png}{}
-\end{notes}
-
-\subsubsection{Linear Transformation}
-\begin{notes} 
-    Transform data from one vector space to another
-    \begin{equation}
-        W \cdot x 
-    \end{equation}
-    \begin{itemize}
-        \item $W$: Linear transformation
-        \item $x$: Vector
-    \end{itemize}
-\end{notes}
-
-\subsubsection{SVD of Linear Transformation}
-\begin{notes}  
-    Factorizing matrices into geometrical transformations.
-    \begin{equation}
-        W = U \Sigma V^T
-    \end{equation}
-    \begin{itemize}
-        \item $U,V$: Rotation or reflection
-        \item $\Sigma$: Scaling
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Affine Transformation}
-\begin{notes} Transform data from one vector space to another.
-    \begin{equation}
-        W \cdot x + b
-    \end{equation}
-    \begin{itemize}
-        \item $W$: Linear transformation
-        \item $x$: Vector
-        \item $b$: Bias vector
-    \end{itemize}
-    \vspace{1em}
-
-    \begin{itemize}
-        \item Translate (b)
-        \item Rotate (W-SVD)
-        \item Reflect (W-SVD)
-        \item Scale (W-SVD)
-        \item Project up or down (dimensionality of $W \mathbf{x}$)
-    \end{itemize}
-\end{notes}
-
-\subsubsection{ReLU}
-\begin{notes} Rectified linear unit, which has a geometric effect of "gating", some info passes, some doesn't.
-    \begin{equation*}
-        f(x) = \max(0,x)
-    \end{equation*}
-    \begin{equation*}
-        f'(x) = \begin{cases}
-            1 & \text{if } x > 0 \\
-            0 & \text{if } x \leq 0
-        \end{cases}
-    \end{equation*}
-    \customFigure[0.5]{../Images/L2_8.png}{}
-\end{notes}
-
-\subsubsection{Neural nets}
-\begin{notes} Learn to warp space to make better predictions.
-    \customFigure[0.5]{../Images/L2_6.png}{}
-    \customFigure[0.5]{../Images/L2_7.png}{}
-\end{notes}
-\newpage
-
-\subsection{Encoder-Decoder view}
+\subsection{Representations}
 \begin{definition}
+    \textbf{Representation} is a way of encoding data.
     \begin{equation}
-        x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
+        x \overset{\text{Representation}}{\mapsto} z
     \end{equation}
     \begin{itemize}
-        \item $z$: Embeddings, latent vectors, learned representations.
-        \item \textbf{Latent Space:} Space of $z$.
+        \item $z$: Feature vectors, embeddings, latent codes, intermediate activations, etc.
     \end{itemize}
 \end{definition}
 
-\subsubsection{Supervised Learning}
-\begin{example} 
-    \begin{equation}
-        x \overset{\text{Model}}{\mapsto} y
-    \end{equation}
+\begin{notes}
     \begin{itemize}
-        \item $\mathrm{Model}(x) = \mathrm{Decoder}\bigl(\mathrm{Encoder}(x)\bigr)$
-        \item $\mathrm{Decoder}(z) = \mathrm{Pred}(z)$
+        \item Learning representations of our data, optimized to a task.
     \end{itemize}
-    
-\end{example}
-
-\subsubsection{Unsupervised Learning (PCA)}
-\begin{example} 
-    \begin{enumerate}
-        \item \textbf{Linear Transformation}
-        \begin{equation}
-            x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
-        \end{equation}
-        \begin{itemize}
-            \item $\text{Encoder}(x) = W \cdot x$
-            \item $\text{Decoder}(z) = W^{-1} \cdot z$
-        \end{itemize}
-        \vspace{1em}
-    
-        \begin{itemize}
-            \item \textcolor{teal}{\textbf{E?}} $x$
-            \item \textcolor{purple}{\textbf{P?}} Reconstruction loss
-            \item \textcolor{yellow}{\textbf{T?}} Reduce dimension
-            \item \textcolor{orange}{\textbf{M?}} W
-            \item \textcolor{red}{\textbf{learn?}} Eigendecompositions
-        \end{itemize}
-        \item \textbf{Neural Nets}
-        \begin{equation}
-            x \overset{\text{Encoder}}{\mapsto} z \overset{\text{Decoder}}{\mapsto} y
-        \end{equation}
-        \begin{itemize}
-            \item $\text{Encoder}(x) = \text{Neural Network}$
-            \item $\text{Decoder}(z) = \text{Neural Network}$
-        \end{itemize}
-    \end{enumerate}
-\end{example}
+    \customFigure[0.5]{../Images/L2_9.png}{}
+\end{notes}
 
 

@@ -50,10 +50,10 @@
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \customFigure[0.5]{../Images/L3_13.png}{}
+                    \vspace{-1em}
                     \item $g \leftarrow \nabla_{\hat{y}} C = \nabla_{\hat{y}} L(\hat{y}, y)$: Compute gradient on output layer.
                     \item $g \leftarrow \nabla_{h^{(k)}} C = g \odot \text{act}'(h^{(k)})$: Convert gradient on layer output into a gradient on the pre-nonlinearity activation.
-                    \item $\nabla_{b^{(k)}} C = g$: Compute gradient on biases.
-                    \item $\nabla_{W^{(k)}} C = g z^{(k-1)\top}$: Compute gradient on weights.
+                    \item $\nabla_{b^{(k)}} C = g$: Compute gradient on biases, $\nabla_{W^{(k)}} C = g z^{(k-1)\top}$: Compute gradient on weights.
                     \item $g \gets \nabla_{z^{(k-1)}} C = W^{(k)\top} g$: Propagate gradients w.r.t. the next lower-level activations.
                 \end{itemize}
             } \\
@@ -84,7 +84,7 @@
                     \item \textbf{Likelihood:} The probability density of observing the actual output values given the inputs and our model parameters (weights, bias, and the variance of the noise).
                     \item \textbf{MLE:} Minimizing negative Log-Likelihood leads to the Mean Squared Error.
                     \item \textbf{Activation Function:} $\text{Act} = x$: Identity function.
-                    \customFigure[0.4]{../Images/L3_4.png}{}
+                    \customFigure[0.2]{../Images/L3_4.png}{}
                 \end{itemize}
             } \\
             \bottomrule
