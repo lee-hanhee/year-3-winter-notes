@@ -145,6 +145,7 @@
             \item \textbf{How?} Assesses model perf. across all class. thresholds by plotting true + rate against false + rate.
             \item \textbf{Char.} Monotonic, ranking-based, $1.0$ is perfect, $0.5$ is random.
             \customFigure[0.3]{../Images/L4_8.png}{}
+            \vspace{-1em}
         \end{itemize}} \\
         \midrule 
         AUPRC & Area under the Precision-Recall curve. \\
@@ -161,12 +162,6 @@
                 \item \textbf{When to Use?} (1) summarize precision-recall curve, making it suitable for ranking tasks.
             \end{itemize}} \\
         \midrule
-        Mean Average Precision (mAP) & $\frac{1}{N} \sum_{n=1}^{N} \text{AP}(n)$ \\
-        \multicolumn{2}{p{\linewidth}}{
-        \begin{itemize}
-                \item \textbf{When to Use?} (1) multi-class or object detection tasks to compute the average AP across classes.
-        \end{itemize}} \\
-        \midrule
         \end{tabular}
     \end{center}
 \end{summary}
@@ -178,6 +173,12 @@
         \toprule
         \textbf{Metrics} & \textbf{Description} \\
         \midrule
+        Mean Average Precision (mAP) & $\frac{1}{N} \sum_{n=1}^{N} \text{AP}(n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+                \item \textbf{When to Use?} (1) multi-class or object detection tasks to compute the average AP across classes.
+        \end{itemize}} \\
+        \midrule
         Intersection over Union (IoU) & $\frac{\text{Area of Overlap}}{\text{Area of Union}}$ \\
         \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
@@ -185,15 +186,32 @@
             \end{itemize}} \\
         \toprule
         \textbf{Regression Metrics} & $R^2$, MAE, Pearson $r$, RMSE, MSE, MAPE \\ 
+        \midrule 
+        $R^2$ and Pearson's $r$ & Quantify linear associations. \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item 
+            \item \( R^2 \): Can be infinitely worse in some cases, context-dependent.
+            \begin{itemize}
+                \item \( R^2 = 0 \): Represents the mean of the data.
+                \item \( R^2 = 1 \): Indicates a perfect fit.
+            \end{itemize}
+            \customFigure[0.3]{../Images/L4_9.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Ranking Metrics} & Kendall Tau, Spearman \\
+        \textbf{Ranking Correlation Metrics} & Kendall Tau, Spearman measure monotonic relationships \\
+        \midrule 
+        Spearman & Similar to Pearson correlation but applied to ranks. \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item 
+            \item Magnitude does not matter.
+            \item Applicable for regression or classification tasks.
+        \end{itemize}} \\
+        \midrule
+        Kendall & Pair-based approach, determines if the order is correct or not. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item Magnitude does not matter.
+            \item Applicable for regression or classification tasks.
         \end{itemize}} \\
         \midrule
         \textbf{Multitask Metrics} & Mean of metrics, holistic metric \\
@@ -226,70 +244,31 @@
             \customFigure[0.4]{../Images/L4_7.png}{}
             \vspace{-4em}
         \end{center}} \\
-        \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{l}
-        \toprule
-        \textbf{Tips} \\
         \midrule
-        \textbf{Regression Correlation Metrics} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item $R^2$ and Pearson's $r$ quantify linear associations. 
-            \begin{itemize}
-                \item Pearson $r$ (linear correlation)
-            \end{itemize}
-            \item \( R^2 = 0 \): Represents the mean of the data.
-            \item \( R^2 = 1 \): Indicates a perfect fit.
-            \item \( R^2 \): Can be infinitely worse in some cases, context-dependent.
-            \customFigure[0.5]{../Images/L4_9.png}{}
-        \end{itemize}} \\
-        \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{l}
-        \toprule
-        \textbf{Tips} \\
-        \midrule
-        \textbf{Rank Correlation Metrics: Spearman and Kendall Tau} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Spearman and Kendall measure monotonic relationships.
-            \begin{itemize}
-                \item Magnitude does not matter.
-                \item Spearman: Similar to Pearson correlation but applied to ranks.
-                \item Kendall: Pair-based approach, determines if the order is correct or not.
-                \item Applicable for regression or classification tasks.
-            \end{itemize}
-        \end{itemize}} \\
-        \midrule
-        \textbf{Quantifying Metric Uncertainty} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Confidence intervals provide a range of plausible values.
+        \textbf{Quantifying Metric Uncertainty} & Confidence intervals provide a range of plausible values. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_10.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Concepts} & \textbf{Description} \\
         \midrule
-        \textbf{Bootstrapping for Robust Estimation} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Bootstrapping for Robust Estimation} & Resampling with replacement estimates metric variability. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Resampling with replacement estimates metric variability.
-            \begin{itemize}
-                \item \textbf{Resample:} Create many datasets by randomly picking data points with replacement from your original data.
-                \item \textbf{Calculate:} Compute your metric of interest on each of these resampled datasets.
-                \item \textbf{Estimate:} Use the distribution of these calculated metrics to estimate the uncertainty (e.g., confidence interval) of your original metric.
-            \end{itemize}
+            \item \textbf{Resample:} Create many datasets by randomly picking data points with replacement from your original data.
+            \item \textbf{Calculate:} Compute your metric of interest on each of these resampled datasets.
+            \item \textbf{Estimate:} Use the distribution of these calculated metrics to estimate the uncertainty (e.g., confidence interval) of your original metric.
         \end{itemize}} \\
         \bottomrule
         \end{tabular}
@@ -302,16 +281,23 @@
     \begin{center}
         \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} & \textbf{Description} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Gradient Descent} & Use Adam and finetune learning rate. \\
+        \textbf{Gradient Descent} & Update weights and biases \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{Heuristic:} Use Adam and finetune learning rate.
+            \item \textbf{Momentum:} Accelerate convergence by using prior update info. 
+        \end{itemize}} \\
         \midrule
-        \textbf{Batch Size} & The number of samples per gradient update affects learning. \\
+        \textbf{Batch Size} & \# of samples per gradient update affects learning. \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item \textbf{Trade-Off:} Smaller batch size $\rightarrow$ gradient variability, larger batch size $\rightarrow$ computationally efficient.
-            \item \textbf{Heuristic:} Often, the ideal batch size will be the largest batch size supported by the available hardware.
-            \item The batch size governs the training speed and shouldn't be used to directly tune the validation set performance. 
+            \begin{itemize}
+                \item Batch size governs the training speed and shouldn't be used to directly tune the validation set performance. 
+            \end{itemize}
+            \item \textbf{Heuristic:} Ideal batch size will be the largest batch size supported by the available hardware.
         \end{itemize}} \\
         \midrule
         \textbf{Learning Rate} & Try a range of values. \\
@@ -319,15 +305,15 @@
         \begin{itemize}
             \item \textbf{Trade-Off:} High learning rate $\rightarrow$ faster training, possibility of not stabilizing (offshoot the minima), low learning rate $\rightarrow$ slow.  
             \item \textbf{Heuristics:} Typically in the $1e^{-1}$ to $1e^{-6}$ range, use \texttt{log10} scale, use low for fine-tuning, $1e^{-5} - 1e^{-6}$
-            \item Dataset/model/batch dependent
+            \item \textbf{Note:} Dataset/model/batch dependent
         \end{itemize}} \\
         \midrule
-        \textbf{Learning Rate Decay} & Dynamically adjust the learning rate during training to reduce osc. \\ 
+        \textbf{Learning Rate Decay} & Dynamically adjust the learning rate during training to reduce oscillations \\ 
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item Learning rate decay helps fine-tune the model in later stages of training, preventing overshooting the optimal parameters.
             \customFigure[0.3]{../Images/L4_11.png}{}
-            \item Plateu: Learning rate decays only after hitting a plateau for a certain number of epochs.
+            \item \textbf{Plateau:} Learning rate decays only after hitting a plateau for a certain number of epochs.
             \customFigure[0.3]{../Images/L4_12.png}{}
         \end{itemize}} \\
         \bottomrule
@@ -338,50 +324,36 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Gradient Clipping} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Prevents exploding gradients.
-            \item Limit the magnitude of gradients during training.
-            \[
-            g \leftarrow 
+        \textbf{Gradient Clipping} &  Prevents exploding gradients by limiting mag. of grad. during training. \\
+        &  $g \leftarrow 
             \begin{cases} 
             \lambda \frac{g}{\|g\|} & \text{if } \|g\| > \lambda \\
             g & \text{otherwise}
-            \end{cases}
-            \]
-            \begin{itemize}
-                \item Typical values: 5 or 1.
-            \end{itemize}
-            \customFigure[0.5]{../Images/L4_13.png}{}
+            \end{cases}$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item Typical values: 5 or 1.
+            \customFigure[0.3]{../Images/L4_13.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Early Stopping} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Early Stopping} & Prevents overfitting by monitoring val. perform. \& stop training when it detior.\\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Monitor validation performance and stop training when it deteriorates.
-            \begin{itemize}
-                \item Stop after negligible improvements.
-                \item Save model and restore.
-                \item Patience (how much to wait before stopping).
-            \end{itemize}
-            \customFigure[0.5]{../Images/L4_14.png}{}
+            \item Stop after negligible improvements.
+            \item Save model and restore.
+            \item Patience (how much to wait before stopping).
+            \customFigure[0.3]{../Images/L4_14.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Loss Function Weighting} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Loss Function Weighting} & Assign different weights to different classes during loss calculation. \\
+        & $L_w(y, \hat{y}) = \frac{1}{\sum w_n} \sum_{n} w_n L(y_n, \hat{y}_n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Assign different weights to different classes during loss calculation.
-            \[
-            L_w(y, \hat{y}) = \frac{1}{\sum w_n} \sum_{n} w_n L(y_n, \hat{y}_n)
-            \]
-            \begin{itemize}
-                \item Weights can be inverse class frequency.
-            \end{itemize}
+            \item Weights can be inverse class frequency.
         \end{itemize}} \\
         \bottomrule
         \end{tabular}
@@ -391,16 +363,17 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Focal Loss} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Focuses on hard examples by down-weighting the contribution of easy examples to the loss.
+        \textbf{Focal Loss} & Focuses on hard examples by down-weighting the contribution of easy examples to the loss. \\
+        & $FL(p_t, \gamma) = -(1 - p_t)^\gamma \log(p_t)$ \; Adds factors to cross-entropy loss fn \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_15.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -446,46 +419,33 @@
         \toprule
         \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Dropout: Randomly Setting Activations Elements to Zero} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Dropout} & Randomly setting activations elements to zero \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item Reduce overfitting, create an ensemble of subnetworks implicitly.
             \customFigure[0.3]{../Images/L4_19.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Ensemble Methods Combine Multiple Models} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Ensemble} & Combine multiple models to $\uparrow$ predictive performance \\
+        & by aggregating predictions from diverse models. \\
+        & $\hat{y} = \frac{1}{n} \sum_n^{\text{models}} f_n(x)$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Improve predictive performance by aggregating predictions from diverse models.
-            \begin{equation*}
-                \hat{y} = \frac{1}{n} \sum_n^{\text{models}} f_n(x)
-            \end{equation*}
             \item Always will give an equal or better model w.r.t. predictive performance.
         \end{itemize}} \\
         \midrule
-        \textbf{Random Initialization Ensembles} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Random Init. Ensembles} & Diverse initial states improves ensemble diversity. \\
+        & $\hat{y} = \frac{1}{n} \sum_n^{\text{models}} f_n(x;\theta_n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Diverse initial states improves ensemble diversity.
-            \begin{itemize}
-                \item Same model, different random seeds.
-            \end{itemize}
-            \begin{equation*}
-                \hat{y} = \frac{1}{n} \sum_n^{\text{models}} f_n(x;\theta_n)
-            \end{equation*}
+            \item Same model, different random seeds.
         \end{itemize}} \\
         \midrule
-        \textbf{Hyperparameter Ensembles} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Hyperparameter Ensembles} & Hyperparameter explorations give you more diverse ensembles. \\
+        & $\hat{y} = \frac{1}{n} \sum_{n}^{\text{models}} f_n(x; \theta_n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Hyperparameter explorations give you more diverse ensembles.
-            \[
-            f_n \sim \text{comes from top-k models from a hyperparameter optimization, same model class}
-            \]
-            
-            \[
-            \hat{y} = \frac{1}{n} \sum_{n}^{\text{models}} f_n(x; \theta_n)
-            \]
+            \item $f_n \sim \text{comes from top-k models from a hyperparameter optimization, same model class}$
             \customFigure[0.3]{../Images/L4_20.png}{}
         \end{itemize}} \\
         \bottomrule
@@ -496,51 +456,39 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Tips} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Uncertainty Quantification: Variability in Prediction} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Uncertainty Quantification} & Variability in prediction by representing range of likely outcomes \\
+        & rather than relying solely on a single point prediction. \\ 
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Uncertainty can represent the range of likely outcomes rather than relying solely on a single point prediction.
             \item Uncertainty $~\text{std}(f_1\ldots f_n)$
             \customFigure[0.5]{../Images/L4_21.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Not All Uncertainty is the Same} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Some models offer more reliable uncertainty estimates.
+        \textbf{Not All Uncertainty is the Same} & Some models offer more reliable uncertainty estimates. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_22.png}{}
+            \vspace{-4em}
+        \end{center}} \\
+        \midrule
+        \textbf{L1 Regularization} & Encourages sparsity by adding sum of $|\text{weights}|$ to the loss fn:  \\
+        & $L(\theta) + \lambda \sum_i |\theta_i|$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item Encouraging sparse weights
+            \item Feature selection
         \end{itemize}} \\
         \midrule
-        \textbf{L1 Regularization Encourages Sparsity} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{L2 Regularization} & Penalizes large weights by adding sum of $\text{weights}^2$ to the loss fn:  \\
+        & $L(\theta) + \lambda \sum_i \theta_i^2$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Add the sum of absolute values of weights to the loss function:
-            \begin{itemize}
-                \item Encouraging sparse weights
-                \item Feature selection
-                \item Loss function with L1 penalty:
-            \end{itemize}
-            \[
-            L(\theta) + \lambda \sum_i |\theta_i|
-            \]
-        \end{itemize}} \\
-        \midrule
-        \textbf{L2 Regularization Penalizes Large Weights} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Add the sum of squared values of weights to the loss function:
-            \begin{itemize}
-                \item Weight decay
-                \item Preventing overfitting
-                \item Loss function with L2 penalty:
-            \end{itemize}
-            \[
-            L(\theta) + \lambda \sum_i \theta_i^2
-            \]
+            \item Weight decay
+            \item Preventing overfitting
         \end{itemize}} \\
         \bottomrule
         \end{tabular}
@@ -586,14 +534,16 @@
         \toprule
         \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Ablation Studies Evaluate Systematically One Axis} & Assess impact by controlled single-parameter changes. \\
+        \textbf{Ablation Studies} & Evaluate systematically one axis. \\
+        & Assess impact by controlled single-parameter changes. \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{center}
             \customFigure[0.5]{../Images/L4_24.png}{}
             \vspace{-4em}
         \end{center}} \\
         \midrule
-        \textbf{Context Matters: No Free Lunch Theorem} & Best tricks depend on the specific task and dataset. \\
+        \textbf{Context Matters:} & No Free Lunch Theorem \\
+        & Best tricks depend on the specific task and dataset. \\
         \midrule
         \textbf{Storytelling Matters} & How you report number and values will change how ppl. think about it.  \\
         % \midrule
