@@ -1,120 +1,104 @@
-\section{Math Symbols}
-\begin{definition}
-    \begin{itemize}
-        \item \(x, y, b, h, z\) - Vectors (input, outputs, bias, hidden, latent)
-        \item \(\hat{y}\) - Predictions
-        \item \(\theta\) - Parameters (collections of tensors)
-        \item \(f, f_i, f_j, C\) - Functions
-        \item \(x_i\) - Scalar, \(i\)-indexed coordinate of \(x\)
-        \item \(X, W\) - Matrices
-        \item \(\frac{\partial f}{\partial x_i}\) - Partial derivative of \(f\) with respect to \(x_i\)
-        \item \(\nabla f\) - Gradient of \(f\)
-    \end{itemize}     
-\end{definition}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concepts} & \textbf{Description} \\
+            \toprule
+            \textbf{Math symbols} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \(x, y, b, h, z\) - Vectors (input, outputs, bias, hidden, latent)
+                \item \(\hat{y}\) - Predictions
+                \item \(\theta\) - Parameters (collections of tensors)
+                \item \(f, f_i, f_j, C\) - Functions
+                \item \(x_i\) - Scalar, \(i\)-indexed coordinate of \(x\)
+                \item \(X, W\) - Matrices
+                \item \(\frac{\partial f}{\partial x_i}\) - Partial derivative of \(f\) with respect to \(x_i\)
+                \item \(\nabla f\) - Gradient of \(f\)
+            \end{itemize}} \\
+            \midrule
+            \textbf{Hyperparameter choices} & \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.5]{../Images/L3_12.png}{}
+                    \vspace{-4em}
+                \end{center}} \\
+            \midrule
+            \textbf{Finding the best parameters} & Minimize the error b/w predictions and actual values. \\
+            & $ C(\theta) = \sqrt{\frac{1}{N} \sum_n (y_n - f(x_n; \theta))^2} = \text{RMSE}(y, f(x; \theta))$ \\ 
+            \midrule
+            \textbf{Gradient Descent: Rolling Down Hill} & Update rule to iteratively adjust parameters to reduce loss. \\
+            & $\theta_n = \theta_{n-1} - \alpha \nabla C(\theta_{n-1})$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Notes:} Multiple minima, gradient info (sign (\textcolor{green}{+}, \textcolor{red}{-}), magnitude), initialization matters, learning rate $\alpha$. 
+                    \customFigure[0.3]{../Images/L3_3.png}{}
+                \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
-\section{MLP Architecture}
-\begin{definition}
-    Feed-Forward NN (FFNN), Fully-Connected NN (FCNN)
-    \begin{itemize}
-        \item Vector-in, vector-out optimizable parametrized transformation. 
-    \end{itemize}
-\end{definition}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concepts} & \textbf{Description} \\
+            \midrule
+            \textbf{Backprop: Forward and Backward Passes} & Calculating predictions, tracking operations, and computing gradients. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \includegraphics[width=0.5\linewidth]{../Images/L3_13.png}
+                    \item $g \leftarrow \nabla_{\hat{y}} C = \nabla_{\hat{y}} L(\hat{y}, y)$: Compute gradient on output layer.
+                    \item $g \leftarrow \nabla_{h^{(k)}} C = g \odot \text{act}'(h^{(k)})$: Convert gradient on layer output into a gradient on the pre-nonlinearity activation.
+                    \item $\nabla_{b^{(k)}} C = g$: Compute gradient on biases.
+                    \item $\nabla_{W^{(k)}} C = g z^{(k-1)\top}$: Compute gradient on weights.
+                    \item $g \gets \nabla_{z^{(k-1)}} C = W^{(k)\top} g$: Propagate gradients w.r.t. the next lower-level activations.
+                \end{itemize}
+            } \\
+            \midrule
+            \textbf{Inductive Bias (Learning Bias)} & Set of assumptions that the learner applies to a model for a task, \\
+            & guiding the learning process towards specific patterns. \\ 
+            \midrule
+            \textbf{MLE} & Choosing parameters that maximize the likelihood (probability) \\
+            & of observing the given data. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Notes:} Minimizing negative log-likelihood results in loss functions.
+                \end{itemize}
+            } \\
+            \midrule
+            \textbf{Useful Trick in DL} & Transforming smoothly Gaussian-like data into Non-Gaussian data \\
+            & using Linear Transforms + Activations. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Differentiable tools:} relu, sum, mean, var, softplus, sigmoid, softmax, masking.
+                    \item \textbf{Non-differentiable:} argmax, top-k, binarize.
+                \end{itemize}
+            } \\
+            \midrule
+            \textbf{Regression - Gaussian Distribution} & Likelihood estimation for regression models. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Likelihood:} The probability density of observing the actual output values given the inputs and model parameters.
+                    \item \textbf{MLE:} Minimizing negative log-likelihood leads to the Mean Squared Error.
+                    \item \textbf{Activation Function:} $\text{Act} = x$: Identity function.
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
 
-\subsection{Layers}
-\begin{definition}
-    \begin{equation*}
-        f_{\text{layer}}(x) = \text{act}(W \cdot x + b)
-    \end{equation*}
-    \begin{equation*}
-        \text{MLP}_2(x) = F_2(F_1(x)) = F_2(z_1)
-    \end{equation*}
-    \begin{equation*}
-        \text{MLP}_n(x) = f_n(f_{n-1}(\dots f_1(x)))
-    \end{equation*}
-
-    \begin{itemize}
-        \item Parameters: $f(x; \theta), \theta = \{W_1, \dots, W_n\} = \{w_1, \dots, w_N\}$
-        \item Hyperparameters: 
-        \begin{itemize}
-            \item $n$: NN depth.
-            \item hidden\_dim: NN width.
-        \end{itemize}
-    \end{itemize}
-\end{definition}
-
-\subsubsection{Hyperparameter Choices for a Single MLP}
-\begin{notes}
-    \customFigure[0.5]{../Images/L3_12.png}{}
-\end{notes}
-
-\subsection{Activation functions}
-\begin{definition}
-    Hyperparameter that 
-    \begin{itemize}
-        \item Introduces non-linearity.
-        \item Tension: smoothness/compute/complexity.
-    \end{itemize}
-\end{definition}
-
-\begin{warning}
-    Choose ReLU or GeLU.
-\end{warning}
-
-\subsection{Outputs}
-\begin{definition}
-    Finding the "best" parameters by minimizing the error b/w predictions and actual values. 
-    \begin{equation*}
-        C(\theta) = \sqrt{\frac{1}{N} \sum_n (y_n - f(x_n; \theta))^2} = \text{RMSE}(y, f(x; \theta))
-    \end{equation*}
-\end{definition}
-
-\subsubsection{Inductive Bias (Learning Bias)}
-\begin{definition}
-    Set of assumptions that the learner puts on a model for a task, makes an algorithm learn one pattern over another.
-\end{definition}
-
-\subsubsection{Maximum Likelihood Estimation (MLE)}
-\begin{definition}
-    Choose the parameters that maximize the likelihood (probability) of observing the data we actually have.
-\end{definition}
-
-\begin{warning}
-    Minimizing negative log-likelihood leads us to loss functions.
-\end{warning}
-
-\subsubsection{Useful Trick in DL}
-\begin{notes}
-    Transform smoothly Gaussian-like data to Non-Gaussian data via Linear Transforms + Activations
-
-    \begin{itemize}
-        \item \textbf{Differentiable tools:}
-        \begin{itemize}
-            \item relu (e.g., max, min)
-            \item sum, mean, var
-            \item softplus
-            \item sigmoid
-            \item softmax
-            \item masking
-        \end{itemize}
-    
-        \item \textbf{Non differentiable:}
-        \begin{itemize}
-            \item argmax
-            \item top-k
-            \item binarize
-        \end{itemize}
-    \end{itemize}
-    \customFigure[0.5]{../Images/L3_4.png}{}
-\end{notes}
-
-\begin{example}
-    \begin{itemize}
-        \item \textbf{Why should the transformation be differentiable?} 
-        \begin{itemize}
-            \item Smooth
-        \end{itemize}
-    \end{itemize}    
-\end{example}
+% \begin{example}
+%     \begin{itemize}
+%         \item \textbf{Why should the transformation be differentiable?} 
+%         \begin{itemize}
+%             \item Smooth
+%         \end{itemize}
+%     \end{itemize}    
+% \end{example}
 
 \subsubsection{Regression - Gaussian Distribution}
 \begin{notes}
@@ -201,40 +185,3 @@
     \]
     \customFigure[0.75]{../Images/L3_11.png}{}
 \end{example}
-
-
-
-\section{Learning}
-\subsection{Optimization}
-\subsubsection{Gradient Descent: "Rolling Downhill"}
-\begin{definition}
-    Iteratively adjusting parameters to reduce the loss. 
-    \begin{equation*}
-        \theta_n = \theta_{n-1} - \alpha \nabla C(\theta_{n-1})
-    \end{equation*}
-    \customFigure[0.5]{../Images/L3_3.png}{}
-    \begin{itemize}
-        \item Multiple minima
-        \item Gradient information:
-        \begin{itemize}
-            \item Sign (\textcolor{green}{+}, \textcolor{red}{-})
-            \item Magnitude
-        \end{itemize}
-        \item Same idea for each parameter
-        \item Initialization matters! (use default)
-        \item \(\alpha\): Learning rate (how fast we get there) 
-    \end{itemize}
-\end{definition}
-
-\subsection{Backpropagation: Forward and Backward Passes}
-\begin{definition}
-    Calculating predictions, keeping track operations and then gradients.
-    \customFigure[0.5]{../Images/L3_13.png}{}
-    \begin{itemize}
-        \item $g \leftarrow \nabla_{\hat{y}} C = \nabla_{\hat{y}} L(\hat{y}, y)$: Compute gradient on output layer.
-        \item $g \leftarrow \nabla_{h^{(k)}} C = g \odot \text{act}'(h^{(k)})$: Convert gradient on layer output into a gradient on the pre-nonlinearity activation.
-        \item $\nabla_{b^{(k)}} C = g$: Compute gradient on biases.
-        \item $\nabla_{W^{(k)}} C = g z^{(k-1)\top}$: Compute gradient on weights.
-        \item $g \gets \nabla_{z^{(k-1)}} C = W^{(k)\top} g$: Propagate gradients w.r.t. the next lower-level activations.
-    \end{itemize}
-\end{definition}
