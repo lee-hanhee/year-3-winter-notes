@@ -19,35 +19,30 @@
 \subsection{Data}
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Techniques} & \textbf{Description} \\
         \midrule
-        \textbf{Data Exploration} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Data Exploration} & Initial data inspection informs modeling choices. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Initial data inspection informs modeling choices.
-            \begin{itemize}
-                \item Think in terms of "x" and "y".
-                \item Visualizations (histograms, scatter plots)
-                \item Summary statistics
-                \item Identifying data imbalances
-            \end{itemize}
+            \item Think in terms of "x" and "y".
+            \item Summary statistics
+            \item Identifying data imbalances
             \item \textbf{Libraries:} Pandas, Matplotlib, Seaborn
         \end{itemize}} \\
         \midrule
-        \textbf{Data Splitting} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Proper data partitioning prevents overly optimistic performance estimates.
+        \textbf{Data Splitting} & Proper data partitioning prevents overly optimistic performance estimates. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_0.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \midrule
-        \textbf{Cross-Validation} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Cross-Validation} & Assess model performance across multiple data partitions. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item Provides more reliable performance estimates. 
-            \item Assess model performance across multiple data partitions.
             \customFigure[0.5]{../Images/L4_1.png}{}
         \end{itemize}} \\
         \bottomrule
@@ -58,33 +53,24 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Techniques} & \textbf{Description} \\
         \midrule
-        \textbf{Stratified Splitting} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Stratified Splitting} & Ensure each data split reflects the original class distribution. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
             \item Maintains class proportions. 
-            \item Ensure each data split reflects the original class distribution.
             \begin{itemize}
                 \item Stratification will balance one classification label.  
-                \item Iterative stratification algorithm balances multiple binary labels in datasets.
             \end{itemize}
             \customFigure[0.5]{../Images/L4_2.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Adversarial Splits} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Adversarial Splits} & Evaluate model perf. under challenging, out-of-distribution scenarios for robustness. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Robustness. 
-            \item Evaluate model performance under challenging, out-of-distribution scenarios. 
-            \item Leave out: 
-            \begin{itemize}
-                \item Clusters
-                \item Labels
-                \item Temporal Data
-            \end{itemize}
+            \item Leave out: Clusters, Labels, Temporal Data
             \customFigure[0.5]{../Images/L4_3.png}{}
         \end{itemize}} \\
         \bottomrule
@@ -95,29 +81,25 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Techniques} & \textbf{Description} \\
         \midrule
-        \textbf{Data Augmentation} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Data Augmentation} & Create new training ex. by applying trans. to existing data for $\uparrow$ data variability. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Increases data variability. 
-            \item Create new training examples by applying transformations to existing data.
-            \begin{itemize}
-                \item Transformations should be relevant to the data.
-                \item Increase data size.
-                \item Bake in "biases"/"priors" into your model.
-            \end{itemize}
+            \item Transformations should be relevant to the data.
+            \item Increase data size.
+            \item Bake in "biases"/"priors" into your model.
             \customFigure[0.5]{../Images/L4_4.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Image Augmentation} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Apply transformations like rotations, flips, and crops to images.
+        \textbf{Image Augmentation} & Apply transformations like rotations, flips, and crops to images. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_5.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -131,18 +113,60 @@
         \toprule
         \textbf{Metrics} & \textbf{Description} \\
         \midrule
-        \textbf{Regression Metrics} & $R^2$, MAE, Pearson $r$, RMSE, MSE \\ 
+        \textbf{Classification Metrics} &  \\
+        \midrule 
+        Accuracy & $\frac{\text{Correct Predictions}}{\text{Total Predictions}}$ \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item 
+            \item \textbf{When to Use?} (1) classes are balanced and (2) false +/false - have similar importance.
         \end{itemize}} \\
         \midrule
-        \textbf{Ranking Metrics} & Kendall Tau, Spearman \\
+        Precision & $\frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}$ \\
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item 
+            \item \textbf{When to Use?} (1) false + are costly (e.g. nuclear war, since saying there is a nuclear war when there's not is bad) and (2) you want to minimize false +.
         \end{itemize}} \\
-        \bottomrule
+        \midrule 
+        Recall & $\frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} (1) false - are costly (e.g. cancer detection, since missing cancer when there's cancer is bad) and (2) you want to minimize false -.
+        \end{itemize}} \\
+        \midrule 
+        F1-Score & $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} (1) you want to balance precision and recall.
+        \end{itemize}} \\
+        \midrule 
+        AUROC & Area under the ROC curve. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{How?} Assesses model perf. across all class. thresholds by plotting true + rate against false + rate.
+            \item \textbf{Char.} Monotonic, ranking-based, $1.0$ is perfect, $0.5$ is random.
+            \customFigure[0.3]{../Images/L4_8.png}{}
+        \end{itemize}} \\
+        \midrule 
+        AUPRC & Area under the Precision-Recall curve. \\
+        \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{How?} Assesses model performance across all classification thresholds by plotting precision against recall.
+                \item \textbf{When to Use?} (1) classes are imbalanced as it focuses on trade-offs between precision and recall.
+        \end{itemize}} \\
+        \midrule
+        Average Precision (AP) & $\sum_n \text{Precision}(n) \times \text{Recall}(n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{What?} Measures how well a model ranks positive examples above negative examples.
+                \item \textbf{When to Use?} (1) summarize precision-recall curve, making it suitable for ranking tasks.
+            \end{itemize}} \\
+        \midrule
+        Mean Average Precision (mAP) & $\frac{1}{N} \sum_{n=1}^{N} \text{AP}(n)$ \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+                \item \textbf{When to Use?} (1) multi-class or object detection tasks to compute the average AP across classes.
+        \end{itemize}} \\
+        \midrule
         \end{tabular}
     \end{center}
 \end{summary}
@@ -154,49 +178,22 @@
         \toprule
         \textbf{Metrics} & \textbf{Description} \\
         \midrule
-        \textbf{Classification Metrics} & Accuracy, Recall, Precision, F1-Score, AUROC, AUPRC, AP, mAP  \\
+        Intersection over Union (IoU) & $\frac{\text{Area of Overlap}}{\text{Area of Union}}$ \\
+        \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{When to Use?} (1) object detection tasks to evaluate the overlap between predicted and ground truth bounding boxes.
+            \end{itemize}} \\
+        \toprule
+        \textbf{Regression Metrics} & $R^2$, MAE, Pearson $r$, RMSE, MSE, MAPE \\ 
         \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item \textbf{Accuracy:} $\frac{\text{Correct Predictions}}{\text{Total Predictions}}$
-            \begin{itemize}
-                \item \textbf{When to Use?} (1) classes are balanced and (2) false +/false - have similar importance.
-            \end{itemize}
-            \item \textbf{Precision:} $\frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}$
-            \begin{itemize}
-                \item \textbf{When to Use?} (1) false + are costly (e.g. nuclear war, since saying there is a nuclear war when there's not is bad) and (2) you want to minimize false +.
-            \end{itemize}
-            \item \textbf{Recall:} $\frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}$
-            \begin{itemize}
-                \item \textbf{When to Use?} (1) false - are costly (e.g. cancer detection, since missing cancer when there's cancer is bad) and (2) you want to minimize false -.
-            \end{itemize}
-            \item \textbf{F1-Score:} $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
-            \begin{itemize}
-                \item \textbf{When to Use?} (1) you want to balance precision and recall.
-            \end{itemize}
-            \item \textbf{AUROC:} Area under the ROC curve. 
-            \begin{itemize}
-                \item \textbf{How?} Assesses model performance across all classification thresholds by plotting true + rate against false + rate.
-                \item \textbf{When to Use?} (1) classes are imbalanced and (2) false +/false - have similar importance.
-                \item \textbf{Char.} Monotonic, ranking-based, $1.0$ is perfect, $0.5$ is random.
-                \customFigure[0.3]{../Images/L4_8.png}{}
-            \end{itemize}
-            \item \textbf{AUPRC:} Area under the Precision-Recall curve.
-            \begin{itemize}
-                \item \textbf{How?} Assesses model performance across all classification thresholds by plotting precision against recall.
-                \item \textbf{When to Use?} (1) classes are imbalanced as it focuses on trade-offs between precision and recall.
-            \end{itemize}
-            \item \textbf{Average Precision (AP):} $\sum_n \text{Precision}(n) \times \text{Recall}(n)$ 
-            \begin{itemize}
-                \item \textbf{What?} Measures how well a model ranks positive examples above negative examples.
-                \item \textbf{When to Use?} (1) summarize precision-recall curve, making it suitable for ranking tasks.
-                \item \textbf{Char.} Binary
-            \end{itemize}
-            \item \textbf{Mean Average Precision (mAP):} $\frac{1}{N} \sum_{n=1}^{N} \text{AP}(n)$ 
-            \begin{itemize}
-                \item \textbf{Whart?} Computes the average AP across multiple classes.
-                \item \textbf{When to Use?} (1) multi-class or object detection tasks to compute the average AP across classes.
-                \item \textbf{Char.} Multiclass
-            \end{itemize}
+            \item 
+        \end{itemize}} \\
+        \midrule
+        \textbf{Ranking Metrics} & Kendall Tau, Spearman \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item 
         \end{itemize}} \\
         \midrule
         \textbf{Multitask Metrics} & Mean of metrics, holistic metric \\
@@ -212,24 +209,23 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Concepts} \\
+        \textbf{Concepts} & \textbf{Description} \\
         \midrule
-        \textbf{Adjusting Decision Thresholds} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Adjusting Decision Thresholds} & Modifying the threshold impacts precision and recall. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Modifying the threshold impacts precision and recall. 
             \item How to interpret your probabiltiies is a modelling decision.
             \customFigure[0.4]{../Images/L4_6.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Calibrating Predicted Probabilities} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Predicted probabilities may not reflect true likelihood.
+        \textbf{Calibrating Predicted Probabilities} & Predicted probabilities may not reflect true likelihood. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.4]{../Images/L4_7.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -304,37 +300,31 @@
 \subsection{Optimization / Training}
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Techniques} \\
+        \textbf{Techniques} & \textbf{Description} \\
         \midrule
-        \textbf{Gradient Descent} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Gradient Descent} & Use Adam and finetune learning rate. \\
+        \midrule
+        \textbf{Batch Size} & The number of samples per gradient update affects learning. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Use Adam and finetune learning rate.
+            \item \textbf{Trade-Off:} Smaller batch size $\rightarrow$ gradient variability, larger batch size $\rightarrow$ computationally efficient.
+            \item \textbf{Heuristic:} Often, the ideal batch size will be the largest batch size supported by the available hardware.
+            \item The batch size governs the training speed and shouldn't be used to directly tune the validation set performance. 
         \end{itemize}} \\
         \midrule
-        \textbf{Batch Size} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Learning Rate} & Try a range of values. \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item The number of samples per gradient update affects learning.
-            \item The batch size governs the training speed and shouldn't be used to directly tune the validation set performance. Often, the ideal batch size will be the largest batch size supported by the available hardware.
-        \end{itemize}} \\
-        \midrule
-        \textbf{Learning Rate} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Try a range of values. 
-            \item \textbf{Tension:} High learning rate means faster training, possibility of not stabilizing (offshoot the minima), low learning rate is slow.  
+            \item \textbf{Trade-Off:} High learning rate $\rightarrow$ faster training, possibility of not stabilizing (offshoot the minima), low learning rate $\rightarrow$ slow.  
+            \item \textbf{Heuristics:} Typically in the $1e^{-1}$ to $1e^{-6}$ range, use \texttt{log10} scale, use low for fine-tuning, $1e^{-5} - 1e^{-6}$
             \item Dataset/model/batch dependent
-            \item Typically in the $1e^{-1}$ to $1e^{-6}$ range, use \texttt{log10} scale, use low for fine-tuning, $1e^{-5} - 1e^{-6}$
         \end{itemize}} \\
         \midrule
-        \textbf{Learning Rate Decay} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Learning Rate Decay} & Dynamically adjust the learning rate during training to reduce osc. \\ 
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Reduces oscillations
-            \item Dynamically adjust the learning rate during training. 
             \item Learning rate decay helps fine-tune the model in later stages of training, preventing overshooting the optimal parameters.
             \customFigure[0.3]{../Images/L4_11.png}{}
             \item Plateu: Learning rate decays only after hitting a plateau for a certain number of epochs.
@@ -420,35 +410,30 @@
 \subsection{Regularization \& Modelling}
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Tips} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Normalization Standardizes Feature Distributions} \\
-        \multicolumn{1}{p{\linewidth}}{
+        \textbf{Normalization Standardizes Feature Distributions} & Scale input features to be $\mathcal{N}(0,1)$ \\
+        \multicolumn{2}{p{\linewidth}}{
         \begin{itemize}
-            \item Scale input features to have zero mean and unit variance.
-            \begin{itemize}
-                \item Stability
-                \item Speed
-                \item Prevents large scale features from dominating.
-            \end{itemize}
+            \item Stability, Speed, Prevents large scale features from dominating.
             \customFigure[0.3]{../Images/L4_16.png}{}
         \end{itemize}} \\
         \midrule
-        \textbf{Batch and Layer Normalization} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Normalize the activations across batch or features.
+        \textbf{Batch and Layer Normalization} & Normalize the activations across batch or features. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.3]{../Images/L4_17.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \midrule
-        \textbf{Residual Connections Facilitate Deeper Networks} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Add the input of a layer to its output.
+        \textbf{Residual Connections Facilitate Deeper Networks} & Add the input of a layer to its output. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.3]{../Images/L4_18.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -457,9 +442,9 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Tips} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
         \textbf{Dropout: Randomly Setting Activations Elements to Zero} \\
         \multicolumn{1}{p{\linewidth}}{
@@ -566,36 +551,29 @@
 \subsection{Experiments}
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Tips} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Logging Metrics During Training} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Track relevant metrics to monitor progress and diagnose issues.
+        \textbf{Logging Metrics During Training} & Track relevant metrics to monitor progress and diagnose issues. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_23.png}{}
+            \vspace{-4em}
+        \end{center}} \\
+        \midrule
+        \textbf{Setting Up Baselines (Ref. Point)} & Establish a simple models to compare against. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item GLM model, Random forest, XGBoost, NGBoost (if you want uncertainty), SKlearn-like models
         \end{itemize}} \\
         \midrule
-        \textbf{Setting Up Baselines Provides a Reference Point} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Establish a simple models to compare against.
-            \begin{itemize}
-                \item GLM model
-                \item Random forest 
-                \item XGBoost
-                \item NGBoost (if you want uncertainty)
-                \item SKlearn-like models
-            \end{itemize}
-        \end{itemize}} \\
-        \midrule
-        \textbf{Seed Setting} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Set random seeds for reproducibility of results.
+        \textbf{Seed Setting} & Set random seeds for reproducibility of results. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_26.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -604,35 +582,27 @@
 
 \begin{summary}
     \begin{center}
-        \begin{tabular}{l}
+        \begin{tabular}{ll}
         \toprule
-        \textbf{Tips} \\
+        \textbf{Tools} & \textbf{Description} \\
         \midrule
-        \textbf{Ablation Studies Evaluate Systematically One Axis} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Assess impact by controlled single-parameter changes.
+        \textbf{Ablation Studies Evaluate Systematically One Axis} & Assess impact by controlled single-parameter changes. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
             \customFigure[0.5]{../Images/L4_24.png}{}
-        \end{itemize}} \\
+            \vspace{-4em}
+        \end{center}} \\
         \midrule
-        \textbf{Context Matters: No Free Lunch Theorem} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Best tricks depend on the specific task and dataset. 
-        \end{itemize}} \\
+        \textbf{Context Matters: No Free Lunch Theorem} & Best tricks depend on the specific task and dataset. \\
         \midrule
-        \textbf{How You Tell The Story Matters} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item How you report number and values will change how you and others think about it. 
-        \end{itemize}} \\
-        \midrule
-        \textbf{MLP Hyperparameter Space} \\
-        \multicolumn{1}{p{\linewidth}}{
-        \begin{itemize}
-            \item Better to simplify modelling choices
-            \customFigure[0.3]{../Images/L4_27.png}{}
-        \end{itemize}} \\
+        \textbf{Storytelling Matters} & How you report number and values will change how ppl. think about it.  \\
+        % \midrule
+        % \textbf{MLP Hyperparameter Space} \\
+        % \multicolumn{1}{p{\linewidth}}{
+        % \begin{itemize}
+        %     \item Better to simplify modelling choices
+        %     \customFigure[0.3]{../Images/L4_27.png}{}
+        % \end{itemize}} \\
         \bottomrule
         \end{tabular}
     \end{center}

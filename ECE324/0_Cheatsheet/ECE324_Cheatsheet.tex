@@ -59,6 +59,119 @@
 \end{example}
 \newpage
 
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Model} & \textbf{Description} \\
+        \midrule
+        \textbf{Linear Regression} & Predicts a continuous target variable based on weighted input features. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When the relationship between input and output is approximately linear and interpretability is important.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Logistic Regression} & Predicts the probability of a binary outcome using a sigmoid function. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When you need a simple and interpretable classifier for binary classification tasks.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Decision Trees} & Recursively splits data based on feature thresholds to make predictions. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When interpretability and handling non-linear relationships are required, even with small datasets.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Random Forest} & Ensemble of decision trees that averages multiple predictions. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When you need a robust, high-accuracy model that mitigates overfitting and can handle missing data.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Gradient Boosting} & Ensemble method that sequentially improves weak learners to min. errors. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When optimizing for high accuracy in structured/tabular data with feature importance interpretation.
+        \end{itemize}} \\
+        \midrule
+        \textbf{SVM} & Finds the optimal hyperplane to separate classes using kernel methods. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When working with small-to-medium datasets with complex decision boundaries and high dimensionality.
+        \end{itemize}} \\
+        \midrule
+        \textbf{K-Nearest Neighbors} & A non-parametric model that classifies based on the majority class of the KNN. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When working with small datasets where decision boundaries are unclear and computational cost is not a concern.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Naïve Bayes} & A probabilistic classifier that assumes feature independence using Bayes’ Theorem. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When dealing with text classification (e.g., spam detection) or highly independent features.
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Model} & \textbf{Description} \\
+        \midrule
+        \textbf{MLP} & Fully-connected layers \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When handling large, complex datasets, particularly in pattern recognition and function approximation.
+        \end{itemize}} \\
+        \midrule
+        \textbf{CNN} & A deep learning model specialized in detecting spatial features in image data. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When working with computer vision tasks such as image classification and object detection.
+        \end{itemize}} \\
+        \midrule
+        \textbf{RNN} & A deep learning model designed for sequential data with recurrent connections. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When processing time-series, speech, or natural language data where past information matters.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Transformer Models} & Advanced neural networks designed for parallelized sequence processing in NLP. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When working with NLP tasks such as text generation, sentiment analysis, and translation.
+        \end{itemize}} \\
+        \midrule
+        \textbf{K-Means Clustering} & An unsupervised algorithm that partitions data into k clusters. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When segmenting data into groups without predefined labels, such as customer segmentation.
+        \end{itemize}} \\
+        \midrule
+        \textbf{PCA} & A dimensionality reduction technique that projects data onto principal components. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When reducing dimensionality for visualization or improving model efficiency in high-dimensional data.
+        \end{itemize}} \\
+        \midrule
+        \textbf{Autoencoders} & A neural network that compresses and reconstructs data to learn latent representations. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{itemize}
+            \item \textbf{When to Use?} When performing anomaly detection or dimensionality reduction in unsupervised learning tasks.
+        \end{itemize}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+
 \section{ML Concepts}
 \subsection{Bias-Variance Tradeoff}
 \begin{definition}
