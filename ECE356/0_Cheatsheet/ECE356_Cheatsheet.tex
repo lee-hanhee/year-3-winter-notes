@@ -459,8 +459,82 @@
 
     \textcolor{green}{\textbf{Practical Considerations:}} \\
     1. Don't cancel an unstable 0 of $G(s)$ w/ an unstable pole in $C(s)$. \\
-    2. Don't cancel an unstable pole of $G(s)$ w/ an unstable 0 in $C(s)$. \\
+    2. Don't cancel an unstable pole of $G(s)$ w/ an unstable 0 in $C(s)$. 
 
+    \textcolor{red}{\textbf{Asymp. Tracking of Poly.}} Suppose $d(t) = 0$ \& want to track a \underline{poly. ref. signal} of the form:  
+    $r(t) = (c_0 + c_1 t + \dots + c_{k-1} t^{k-1}) 1(t),$  
+    that is:  
+    $R(s) = \frac{N_R(s)}{s^k},$ with $N_R(0) \neq 0$ and $\deg(N_R(s)) \leq k-1.$  \\
+    *\textbf{GOAL:} Design $C(s)$ to achieve zero steady-state tracking error, i.e., $\lim_{t \to \infty} e(t) = 0.$ 
+
+    \textbf{Proposition}
+
+    Suppose $C(s)$ is designed so that:
+
+    1. $\frac{1}{1 + C(s) G(s)}$ is BIBO stable;
+    2. $C(s) G(s) = \frac{C'(s) G'(s)}{s^k}$ with $C'(0) G'(0) \neq 0$.
+
+    Then $\frac{1}{s^k + C'(s) G'(s)}$ is BIBO stable.
+
+
+    Altogether, we see that if $C(s)$ is designed such that:
+
+    1. $C(s)$ satisfies our stability specifications; \\
+    2. $C(s) G(s)$ has $k$ poles at $s = 0$,
+
+    then we achieve our asymptotic tracking specification of a polynomial with degree $k-1$.
+
+    \textbf{Theorem}
+
+    Suppose $C(s)$ satisfies:
+
+    1. \textbf{(CLS is BIBO stable)} $\text{poles} \left( \frac{1}{1 + C(s) G(s)} \right) \subset \mathbb{C}^{-}$; \\
+    2. $C(s) G(s)$ has no pole-zero cancellations in $\mathbb{C}^{+} := \{ s \in \mathbb{C} : \text{Re}(s) \geq 0 \}$ and $d(t) = 0$ for all $t \geq 0$.
+
+    For any polynomial reference signal:
+    \[ r(t) = \sum_{i=0}^{k-1} c_i t^i 1(t) \]
+
+    the following hold:
+
+    a. If $C(s) G(s)$ has $k$ or more poles at $s = 0$, then $\lim\limits_{t \to \infty} e(t) = 0$.
+
+    b. If $C(s) G(s)$ has exactly $k-1$ poles at $s = 0$, then:
+    \[ \lim\limits_{t \to \infty} e(t) = \begin{cases} \frac{N_R(0)}{1 + C'(0) G'(0)}, & \text{if } k = 1 \\ \frac{N_R(0)}{C'(0) G'(0)}, & \text{if } k \geq 2 \end{cases} \]
+
+    c. Otherwise, $C(s) G(s)$ has $k-2$ or fewer poles at $s = 0$ and $\lim\limits_{t \to \infty} |e(t)| = \infty$.
+
+    \textbf{Definition}
+
+    The transfer function $C(s) G(s)$ is of type $k$ if it has $k$ poles at $s = 0$.
+
+    \textbf{Theorem (Internal Model Principle)}
+
+    Suppose $R(s)$ and $D(s)$ are strictly proper rational functions with poles in $\mathbb{C}^{+} = \{ s \in \mathbb{C} : \text{Re}(s) \geq 0 \}$. A controller solves the Basic Control Problem if and only if:
+
+    1) $C(s)$ makes the CLS BIBO stable; \\
+    2) $C(s) G(s)$ has the poles of $R(s)$ with at least the same multiplicities; \\
+    3) $C(s)$ has the poles of $D(s)$ with at least the same multiplicities.
+
+    \textbf{Corollary}
+
+    If $G(s)$ has zeros that are also poles of $R(s)$ or $D(s)$, then the Basic Control Problem is unsolvable.
+
+    \textbf{Important:} The IMP states that if $G(s)$ does not contain the poles of $R(s)$ and $D(s)$, then $C(s)$ must contain these poles. Since these poles enable $C(s)$ to reproduce $r(t)$ and $d(t)$, we say $C(s)$ must contain an \underline{internal model} of $r(t)$ and $d(t)$.
+
+    \textbf{Proposition}
+
+    Suppose $G(s)$ is BIBO stable. Let $Y(s) = G(s) U(s)$, where $Y(s) = \mathcal{L}\{ y(t) \}$ and $U(s) = \mathcal{L}\{ u(t) \}$.
+
+    If $\lim\limits_{t \to \infty} u(t) = 0$, then $\lim\limits_{t \to \infty} y(t) = 0$.
+
+    \textbf{General Controller Design Procedure}
+    
+    Given $R(s) = \mathcal{L}\{ r(t) \}$ and $D(s) = \mathcal{L}\{ d(t) \}$: \\
+    1. \textbf{Feasibility:} Verify no zero of $G(s)$ is an unstable pole of $R(s)$ or $D(s)$. \\
+    2. \textbf{Internal Model:} Let $p_1, \dots, p_k$ denote the unstable poles of $R(s)$ or $D(s)$ not in $G(s)$, accounting for multiplicities. Construct:
+    \[ C(s) = C'(s) \cdot \frac{1}{(s - p_1) \dots (s - p_k)} \] \\
+    3. \textbf{Stability:} Design $C'(s)$ so that the CLS is BIBO stable. \\
+    4. \textbf{Performance:} Tune controller parameters to achieve the desired performance specifications.
 
 
 
