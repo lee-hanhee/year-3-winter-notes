@@ -164,7 +164,9 @@
 
     \textcolor{blue}{\textbf{Conditional Exp.}} $E[X|Y] = \int_{-\infty}^{\infty} x f_{X|Y} (x|y) \, dx$
 
-    \textcolor{red}{\textbf{Binary Hyp. Testing:}} $H_0$: Null Hyp., $H_1$: Alt. Hyp. \\
+    \switchcolumn
+
+    \textcolor{red}{\textbf{Binary Hyp. Testing:}} $H_0$: Null Hyp., $H_1$: Alt. Hyp. 
 
     \textcolor{blue}{\textbf{TI Err. (False Rejection):}} Reject $H_0$ when $H_0$ is true. \\
     *$\alpha(R) = P[\underline{X} \in R \mid H_0]$ 
@@ -245,6 +247,8 @@
 
     \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
     2. Use table to find $Q(x)$ for $x \geq 0$. 
+
+    \switchcolumn
 
     \textcolor{red}{\textbf{Random Vector:}} $\underline{X} = (X_1,\ldots,X_n) \text{=} \begin{bmatrix} X_1 \\ \vdots \\ X_n \end{bmatrix} \text{=} \begin{bmatrix} X_1 & \cdots & X_n \end{bmatrix}^T$
 
@@ -327,7 +331,8 @@
     \textcolor{darkgreen}{\textbf{Bin. Hyp. Decision Boundary}} $\underline{\beta}_0^T \underline{x} + \gamma_0 = \underline{\beta}_1^T \underline{x} + \gamma_1$ \\
     *Linear in space of $\underline{x}$
 
-    \textcolor{blue}{\textbf{QGD:}} Given $\Sigma_c$ are diff., find $c$ w/ best $\underline{\mu}_c$, $\Sigma_c$ 
+    \textcolor{blue}{\textbf{QGD:}} Given $\Sigma_c$ are diff., find $c$ w/ best $\underline{\mu}_c$, $\Sigma_c$ \\
+    $\hat{c} = \arg \max_c -\frac{1}{2} \log |\Sigma_c| - \frac{1}{2} (\underline{x} - \underline{\mu}_c)^T \Sigma_c^{-1} (\underline{x} - \underline{\mu}_c) + \log \pi_c$ \
 
     \textcolor{darkgreen}{\textbf{Bin. Hyp. Decision Boundary}} Quadratic in space of $\underline{x}$
 
