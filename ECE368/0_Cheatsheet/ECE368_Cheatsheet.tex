@@ -246,18 +246,18 @@
     \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
     2. Use table to find $Q(x)$ for $x \geq 0$. 
 
-    \textcolor{red}{\textbf{Random Vector:}} $\underline{X} = [X_1,\ldots,X_n]^T$ 
+    \textcolor{red}{\textbf{Random Vector:}} $\underline{X} = (X_1,\ldots,X_n) \text{=} \begin{bmatrix} X_1 \\ \vdots \\ X_n \end{bmatrix} \text{=} \begin{bmatrix} X_1 & \cdots & X_n \end{bmatrix}^T$
 
     \textcolor{blue}{\textbf{Mean Vector:}} $\underline{m}_{\underline{X}} = E[\underline{X}] = [\mu_1, \ldots, \mu_n]^T$ \\
 
     \textcolor{blue}{\textbf{Corr. Mat.:}} $R_{\underline{X}} =
     \begin{bmatrix}
-    E[X_1^2] & E[X_1 X_2] & \cdots & E[X_1 X_n] \\
-    E[X_2 X_1] & E[X_2^2] & \cdots & E[X_2 X_n] \\
-    \vdots & \vdots & \ddots & \vdots \\
-    E[X_n X_1] & E[X_n X_2] & \cdots & E[X_n^2]
+    E[X_1^2]  & \cdots & E[X_1 X_n] \\
+    E[X_2 X_1] & \cdots & E[X_2 X_n] \\
+    \vdots & \ddots & \vdots \\
+    E[X_n X_1] & \cdots & E[X_n^2]
     \end{bmatrix}$ \\
-    *$R$ is real, symmetric, and PSD ($\forall \underline{a}, \underline{a}^T R \underline{a} \geq 0$).
+    *Real, symmetric ($R=R^T$), and PSD ($\forall \underline{a}, \underline{a}^T R \underline{a} \geq 0$).
 
     \textcolor{blue}{\textbf{Covar. Mat.:}} $K_{\underline{X}} =
     \begin{bmatrix}
@@ -266,7 +266,7 @@
     \vdots & \ddots & \vdots \\
     \operatorname{Cov}[X_n, X_1] & \cdots & \operatorname{Var}[X_n]
     \end{bmatrix}$ \\
-    *$K_{\underline{X}} = R_{\underline{X}} - \underline{m}_{\underline{X}} = R_{\underline{X}} - \underline{m} \underline{m}^T$ \\
+    *$K_{\underline{X}} = R_{\underline{X} - \underline{m}_{\underline{X}}} = R_{\underline{X}} - \underline{m} \underline{m}^T$ \\
     *Diagonal $K_{\underline{X}} \iff X_1, \ldots, X_n$ are (mutually) uncorrelated.
 
     \textcolor{red}{\textbf{Lin. Trans.}} $\underline{Y} = A \underline{X}$ (A rotates and stretches $\underline{X}$)
@@ -275,76 +275,68 @@
 
     \textcolor{darkgreen}{\textbf{Covar. Mat.:}} $K_{\underline{Y}} = A K_{\underline{X}} A^T$
 
-    \textcolor{darkgreen}{\textbf{Diag. Covar. Mat.:}} For any $\underline{X}$, if $\underline{Y} = P^T \underline{X}$, then \\
-    $K_{\underline{Y}} = P^T K_{\underline{X}} P = \Lambda$ (i.e. $\underline{Y}$ is uncorrelated) \\
-    *$K_{\underline{X}} = P \Lambda P^T \; \mid \; P = [\underline{e}_1, \ldots, \underline{e}_n]$ of $K_{\underline{X}}$ \\
+    \textcolor{blue}{\textbf{Diagonalization of Covar. Mat. (Uncorrelated):}} \\
+    $\forall \underline{X}$, set $P = [\underline{e}_1, \ldots, \underline{e}_n]$ of $K_{\underline{X}}$, if $\underline{Y} = P^T \underline{X}$, then \\
+    $K_{\underline{Y}} = P^T K_{\underline{X}} P = \Lambda$ \\
+    *$\underline{Y}$: Uncorrelated RVs, $K_{\underline{X}} = P \Lambda P^T$
 
-    \textcolor{orange}{\textbf{Find $K_{\underline{Y}}$}} 1. Find eigenvalues, norm. eigenvectors of $K_{\underline{X}}$. \\
-    2. Set $\underline{Y} = P^T \underline{X}$, $K_{\underline{Y}} = \Lambda$.
+    \textcolor{orange}{\textbf{Find an Uncorrelated $K_{\underline{Y}}$}} \\
+    1. Find eigenvalues, normalized eigenvectors of $K_{\underline{X}}$. \\
+    2. Set $K_{\underline{Y}} = \Lambda$, where $\underline{Y} = P^T \underline{X}$
 
-    \textcolor{darkgreen}{\textbf{PDF of L.T.}} If $\underline{Y} = A \underline{X}$ w/ $A$ not singular, then \\
+    \textcolor{blue}{\textbf{PDF of L.T.}} If $\underline{Y} = A \underline{X}$ w/ $A$ not singular, then \\
     $f_{\underline{Y}} (\underline{y}) = \frac{f_{\underline{X}} (\underline{x})}{|\det A|} \Big|_{\underline{x} = A^{-1} \underline{y}}$
 
-    \textcolor{orange}{\textbf{Find $f_{\underline{Y}} (\underline{y})$}} 1. Given $f_{\underline{X}} (\underline{x})$, define transformation $A$ \\
+    \textcolor{orange}{\textbf{Find $f_{\underline{Y}} (\underline{y})$}} 1. Given $f_{\underline{X}} (\underline{x})$ and RV relations, define $A$ \\
     2. Determine $|\det A|$, $A^{-1}$, then $f_{\underline{Y}} (\underline{y})$.
 
-    \textcolor{red}{\textbf{Gaussian RVs:}} \textcolor{blue}{\textbf{Analytic Tractability:}} PDF of jointly Gaussian $X_1, \ldots, X_n$ is Guassian vector. \\
-    *$f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} |\det \Sigma|^{1/2}} e^{-\frac{1}{2} (\underline{x} - \underline{\mu})^T \Sigma^{-1} (\underline{x} - \underline{\mu})}$ \\ 
-    *$\underline{\mu} = \underline{m}_{\underline{X}}$, $\Sigma = K_{\underline{X}}$ (if $\Sigma$ is not singular)
-    *Independent: $f_{\underline{X}} (\underline{x}) = \prod_{i=1}^n f_{X_i} (x_i) = \frac{1}{(2\pi)^{n/2} \prod_{i=1}^n \sigma_i} e^{-\frac{1}{2} \sum_{i=1}^n \left( \frac{x_i - \mu_i}{\sigma_i} \right)^2}$
-    *$\text{Indep. Gaus.} \overset{\text{Indep.}}{\implies} \text{Jointly Guas.} \overset{\text{L.T}}{\implies} \text{Jointly Guas.}$ W6 L1 \\
-    *Conditional PDF of Gaus. RVs is Gaussian. W6 1 \\
-    *IID: $f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} \sigma^n} e^{-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2}$
+    \textcolor{red}{\textbf{Gaussian RVs:}} $\underline{X} \sim \mathcal{N} (\underline{\mu}, \Sigma)$ \\ 
+    PDF of jointly Gaus. $X_1, \ldots, X_n$ $\equiv$ Guas. vector: \\
+    $f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} |\det \Sigma|^{1/2}} e^{-\frac{1}{2} (\underline{x} - \underline{\mu})^T \Sigma^{-1} (\underline{x} - \underline{\mu})}$ \\ 
+    *$\underline{\mu} = \underline{m}_{\underline{X}}$, $\Sigma = K_{\underline{X}}$ ($\Sigma$ not singular) \\
+    *Indep.: $f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} \prod_{i=1}^n \sigma_i} e^{-\frac{1}{2} \sum_{i=1}^n \left( \frac{x_i - \mu_i}{\sigma_i} \right)^2}$ \\
+    *IID: $f_{\underline{X}} (\underline{x}) = \frac{1}{(2\pi)^{n/2} \sigma^n} e^{-\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2}$ 
 
-    \textcolor{blue}{\textbf{Properties of Guassian Vector:}} $\underline{X} \sim \mathcal{N} (\underline{\mu}, \Sigma)$ \\
+    \textcolor{blue}{\textbf{Properties of Guassian Vector:}} \\
     1. PDF is completely determined by $\underline{\mu}$, $\Sigma$. \\
     2. $\underline{X}$ uncorrelated $\iff$ $\underline{X}$ independent. \\
-    3. Any L.T. $\underline{Y} = A \underline{X} + \underline{b}$ is Gaussian vector w/ $\underline{\mu}_{\underline{Y}} = A \underline{\mu}_{\underline{X}}$, $\Sigma_{\underline{Y}} = A \Sigma_{\underline{X}} A^T$. \\
-    4. Any subset of $\{X_i\}$ are jointly Gaussian. \\
-    5. Any cond. PDF of a subset of $\{X_i\}$ given the other elements is Gaussian. \\
+    3. Any L.T. $\underline{Y} = A \underline{X}$ is Gaus. vector w/ $\underline{\mu}_{\underline{Y}} \text{=} A \underline{\mu}_{\underline{X}}$, $\Sigma_{\underline{Y}} \text{=} A \Sigma_{\underline{X}} A^T$. \\
+    4. Any subset of $\{X_i\}$ are jointly Gaus. \\
+    5. Any cond. PDF of a subset of $\{X_i\}$ given the other elements is Gaus. 
 
-    \textcolor{blue}{\textbf{Diag. of Guassian Covar.}} Eigen decomp. of $\Sigma_{\underline{X}}$: $\{\lambda_i\}, \{e_i\}$ \\
-    $A = [\underline{e}_1, \ldots, \underline{e}_n]^T$, then $\underline{Y} = A \underline{X}$ has $\Sigma_{\underline{Y}} = \Lambda$. \\
-    *$\underline{Y}$: Vector of indep. Gaussian RVs.
+    \textcolor{blue}{\textbf{Diagonalization of Guassian Covar. (Indep.)}} \\ 
+    $\forall \underline{X}$, set $P = [\underline{e}_1, \ldots, \underline{e}_n]$ of $\Sigma_{\underline{X}}$, if $\underline{Y} = P^T \underline{X}$, then \\
+    $\Sigma_{\underline{Y}} = P^T \Sigma_{\underline{X}} P = \Lambda$ \\
+    *$\underline{Y}$: Indep. Gaussian RVs, $\Sigma_{\underline{X}} = P \Lambda P^T$
 
-    \textcolor{orange}{\textbf{How to go from $Y$ to $X$?}} 1. Given, $\underline{X} \sim \mathcal{N}(\underline{\mu}, \Sigma)$, then find $\Sigma = P \Lambda P^T$. \\
+    \textcolor{orange}{\textbf{How to go from $Y$ to $X$?}} 1. Given, $\underline{X} \sim \mathcal{N}(\underline{\mu}, \Sigma)$ \\
     2. $\underline{V} \sim \mathcal{N} (\underline{0}, I)$ 3. $\underline{W} = \sqrt{\Lambda} \underline{V}$ 4. $\underline{Y} = P \underline{W}$ 4. $\underline{X} = \underline{Y} + \underline{\mu}$
 
-    \textcolor{blue}{\textbf{Guassian Discriminant Analysis:}} Obs: $\underline{X} = \underline{x} = (x_1,\ldots,x_D)$ \\
-    Hyp: $\underline{x}$ is gen. by $\mathcal{N} (\underline{\mu}_c, \Sigma_c), c \in C$ \\
+    \textcolor{red}{\textbf{Guassian Discriminant Analysis:}} \\
+    Obs: $\underline{X} = \underline{x} = (x_1,\ldots,x_D)$ \\
+    Hyp: $\underline{x}$ is generated by $\mathcal{N} (\underline{\mu}_c, \Sigma_c), c \in C$ \\
     Dec: Which "Guassian bump" generated $\underline{x}$? \\
-    Prior: $P[C = c] = \pi_c$  (Gaussian Mixture Model) \\
+    Prior: $P[C = c] = \pi_c$  (Gaussian Mixture Model) 
 
-    \textcolor{darkgreen}{\textbf{MAP Rule:}} $\hat{c} = \arg \max_c P_C[c | \underline{X} = \underline{x}] = \arg \max_c f_{\underline{X} \mid C} (\underline{x} \mid c) \pi_c$ \\
+    \textcolor{blue}{\textbf{MAP:}} $\hat{c} = \arg \max_c P_C[c | \underline{X} = \underline{x}] = \arg \max_c f_{\underline{X} \mid C} (\underline{x} \mid c) \pi_c$ 
 
-    \textcolor{darkgreen}{\textbf{LGD:}} $\Sigma_c = \Sigma \; \forall c$, find $c$ w/ best $\underline{\mu}_c$ \\
+    \textcolor{blue}{\textbf{LGD:}} Given $\Sigma_c = \Sigma \; \forall c$, find $c$ w/ best $\underline{\mu}_c$ \\
     $\hat{c} = \arg \max_c \underline{\beta}_c^T \underline{x} + \gamma_c$ \\
-    *$\underline{\beta}_c^T = \underline{\mu}_c^T \Sigma^{-1} \underline{x} \; \mid \; \gamma_c = \log \pi_c - \frac{1}{2} \underline{\mu}_c^T \Sigma^{-1} \underline{\mu}_c$ \\
-    *Bin. hyp. dec. boundary: $\underline{\beta}_0^T \underline{x} + \gamma_0 = \underline{\beta}_1^T \underline{x} + \gamma_1$ (lin. in space of $\underline{x}$) 
+    *$\underline{\beta}_c^T = \underline{\mu}_c^T \Sigma^{-1} \; \mid \; \gamma_c = \log \pi_c - \frac{1}{2} \underline{\mu}_c^T \Sigma^{-1} \underline{\mu}_c$ \\
 
-    \textcolor{darkgreen}{\textbf{QGD:}} $\Sigma_c$ are diff., find $c$ w/ best $\underline{\mu}_c$, $\Sigma_c$ \\
-    *Bin. hyp. dec. boundary: Quadratic in space of $\underline{x}$
+    \textcolor{darkgreen}{\textbf{Bin. Hyp. Decision Boundary}} $\underline{\beta}_0^T \underline{x} + \gamma_0 = \underline{\beta}_1^T \underline{x} + \gamma_1$ \\
+    *Linear in space of $\underline{x}$
+
+    \textcolor{blue}{\textbf{QGD:}} Given $\Sigma_c$ are diff., find $c$ w/ best $\underline{\mu}_c$, $\Sigma_c$ 
+
+    \textcolor{darkgreen}{\textbf{Bin. Hyp. Decision Boundary}} Quadratic in space of $\underline{x}$
 
     \textcolor{orange}{\textbf{How to find $\underline{\pi}_c, \underline{\mu}_c, \Sigma_c$:}} Given $n$ points gen. by GMM, then $n_c$ points $\{\underline{x}_1^c, \ldots, \underline{x}_{n_c}^c\}$ come from $\mathcal{N} (\underline{\mu}_c, \Sigma_c)$ \\
-    $\hat{\pi}_c = \frac{n_c}{n}$, $\hat{\mu}_c = \frac{1}{n_c} \sum_{i=1}^{n} \underline{x}_i^c$, \\
-    $\Sigma_c = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_i^c - \hat{\mu}_c)(x_i^c - \hat{\mu}_c)^T$
+    $\hat{\pi}_c = \frac{n_c}{n}$ (categorical RV) \\
+    $\hat{\mu}_c = \frac{1}{n_c} \sum_{i=1}^{n} \underline{x}_i^c$, (sample mean)\\
+    $\Sigma_c = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_i^c - \hat{\mu}_c)(x_i^c - \hat{\mu}_c)^T$ (biased sampled var.)
 
-    \textcolor{red}{\textbf{Guassian Estimation:}} \textcolor{blue}{\textbf{ML Estimator for $\theta$ w/ Indep. Guas:}}  \\
-    Given $\underline{X} \text{=} \{X_1,\ldots,X_n\}$: $\hat{\theta}_{\text{ML}} \text{=} \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}$ (weighted avg. $\underline{x}$) \\
-    *$X_i \text{=} \theta + Z_i$: Measurement \\ 
-    *$Z_i \sim \mathcal{N}(0, \sigma_i^2)$: Noise (indep. not iid) \\
-    *$\frac{1}{\sigma_i^2}$: Precision of $X_i$ (i.e. weight) \\
-    *Larger $\sigma_i^2 \implies$ less weight on $X_i$ (less reliable measurement) \\
-    *\textbf{SC:} If $\sigma_i^2 = \sigma^2 \; \forall i$ (iid), then $\hat{\theta}_{\text{ML}} = \frac{1}{n} \sum_{i=1}^n x_i$.
-
-    \textcolor{blue}{\textbf{MAP Estimator for $\theta$ w/ Indep. Gaus., Gaus. Prior:}} \\
-    Given $\underline{X} \text{=} \{X_1,\ldots,X_n\}$, prior $\Theta \sim \mathcal{N} (x_0, \sigma_0^2)$ \\
-    $\hat{\theta}_{\text{MAP}} = \frac{\sum_{i=0}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}} = \frac{\frac{1}{\sigma_0^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} x_0 + \frac{\sum_{i=1}^n \frac{1}{\sigma_i^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} \hat{\theta}_{\text{ML}}$ \\
-    *$X_i \text{=} \theta + Z_i$: Measurement \\ 
-    *$Z_i \sim \mathcal{N}(0, \sigma_i^2)$: Noise (indep. not iid) \\
-    *$f_\Theta$: Gaussian prior $\equiv$ prior meas. $x_0$ w/ $\sigma_0^2$. \\
-    *\textbf{SC:} As $n \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$. As $\sigma_0^2 \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$ 
-
+    \textcolor{red}{\textbf{Guassian Estimation:}} \\
     \textcolor{blue}{\textbf{MAP Estimator for $\underline{X}$ Given $\underline{Y}$ When $\underline{W} \text{=} (\underline{X},\underline{Y}) \sim \mathcal{N} (\underline{\mu}, \Sigma)$}} \\
     Given $\underline{X} = \{X_1,\ldots,X_n\}$, $\underline{Y} = \{Y_1,\ldots,Y_m\}$ \\ 
     $\hat{\underline{x}}_{\text{MAP}}(\underline{y}) = \hat{\underline{x}}_{\text{LMS}}(\underline{y}) = \underline{\mu}_{\underline{X} \mid \underline{Y}}= \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X} \underline{Y}} \Sigma_{\underline{Y} \underline{Y}}^{-1} (\underline{y} - \underline{\mu}_Y)$ \\
@@ -358,8 +350,22 @@
     *$\underline{\mu}_{\underline{X} \mid \underline{Y}} = \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X} \underline{Y}} \Sigma_{\underline{Y} \underline{Y}}^{-1} (\underline{y} - \underline{\mu}_Y)$ \\
     *$\Sigma_{\underline{X} \mid \underline{Y}} = \Sigma_{\underline{X}} - \Sigma_{\underline{X} \underline{Y}} \Sigma_{\underline{Y} \underline{Y}}^{-1} \Sigma_{\underline{Y} \underline{X}}$ \\ 
     *\textbf{Reducing Uncertainty:} 2nd term is PSD, so given $\underline{Y} = \underline{y}$, always reducing uncertainty in $\underline{X}$.
+    
+    \textcolor{darkgreen}{\textbf{ML Estimator for $\theta$ w/ Indep. Guas:}}  \\
+    Given $\underline{X} \text{=} \{X_1,\ldots,X_n\}$: $\hat{\theta}_{\text{ML}} \text{=} \frac{\sum_{i=1}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}$ (weighted avg. $\underline{x}$) \\
+    *$X_i \text{=} \theta + Z_i$: Measurement $\mid$ $Z_i \sim \mathcal{N}(0, \sigma_i^2)$: Noise (indep.) \\
+    *$\frac{1}{\sigma_i^2}$: Precision of $X_i$ (i.e. weight) \\
+    *Larger $\sigma_i^2 \implies$ less weight on $X_i$ (less reliable measurement) \\
+    *\textbf{SC:} If $\sigma_i^2 = \sigma^2 \; \forall i$ (iid), then $\hat{\theta}_{\text{ML}} = \frac{1}{n} \sum_{i=1}^n x_i$.
 
-    \textcolor{blue}{\textbf{LMMSE Estimator for $\underline{X}$ Given $\underline{Y}$ w/ non-Guas. $\underline{X}$, $\underline{Y}:$}} \\
+    \textcolor{darkgreen}{\textbf{MAP Estimator for $\theta$ w/ Indep. Gaus., Gaus. Prior:}} \\
+    Given $\underline{X} \text{=} \{X_1,\ldots,X_n\}$, prior $\Theta \sim \mathcal{N} (x_0, \sigma_0^2)$ \\
+    $\hat{\theta}_{\text{MAP}} = \frac{\sum_{i=0}^n \frac{x_i}{\sigma_i^2}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}} = \frac{\frac{1}{\sigma_0^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} x_0 + \frac{\sum_{i=1}^n \frac{1}{\sigma_i^2}}{\frac{1}{\sigma_0^2} + \sum_{i=1}^n \frac{1}{\sigma_i^2}} \hat{\theta}_{\text{ML}}$ \\
+    *$X_i \text{=} \theta + Z_i$: Measurement $\mid$ $Z_i \sim \mathcal{N}(0, \sigma_i^2)$: Noise (indep.) \\
+    *$f_\Theta$: Gaussian prior $\equiv$ prior meas. $x_0$ w/ $\sigma_0^2$. \\
+    *\textbf{SC:} As $n \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$. As $\sigma_0^2 \rightarrow \infty$, $\hat{\theta}_{\text{MAP}} \rightarrow \hat{\theta}_{\text{ML}}$ 
+
+    \textcolor{darkgreen}{\textbf{LMMSE Estimator for $\underline{X}$ Given $\underline{Y}$ w/ non-Guas. $\underline{X}$, $\underline{Y}:$}} \\
     $\hat{\underline{x}}_{\text{LMMSE}}(\underline{y}) = \underline{\mu}_{\underline{X}} + \Sigma_{\underline{X} \underline{Y}} \Sigma_{\underline{Y} \underline{Y}}^{-1} (\underline{y} - \underline{\mu}_Y)$  
 
     \textcolor{red}{\textbf{Linear Guassian System:}} Given $\underline{Y} = A \underline{X} + \underline{b} + \underline{Z}$ \\
