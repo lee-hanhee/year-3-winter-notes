@@ -498,7 +498,7 @@
 
         c. If $C(s)$ has $k\text{-}2$ or fewer poles at $s = 0$, then $\lim_{t \to \infty} |e(t)| \text{=} \infty.$
 
-    \textcolor{red}{\textbf{Generalization Thm (Internal Model Principle):}} Suppose $R(s)$ and $D(s)$ are strictly proper rational fns w/ poles in $\overline{\mathbb{C}^{+}}$. $C(s)$ solves the Basic Control Problem iff:
+    \textcolor{red}{\textbf{General Thm (Internal Model Principle):}} Suppose $R(s)$ and $D(s)$ are strictly proper rational fns w/ poles in $\overline{\mathbb{C}^{+}}$. $C(s)$ solves the Basic Control Problem iff:
 
     1) $C(s)$ makes the CLS BIBO stable; \\
     2) $C(s) G(s)$ has the poles$(R(s))$ w/ at least same multiplicities; \\
@@ -508,7 +508,8 @@
 
     \textcolor{blue}{\textbf{Internal Model:}} The IMP states if $G(s)$ does not contain the poles of $R(s)$ and $D(s)$, then $C(s)$ must contain these poles. Since these poles enable $C(s)$ to reproduce $r(t)$ and $d(t)$, we say $C(s)$ must contain an \underline{internal model} of $r(t)$ and $d(t)$.
 
-    \textcolor{blue}{\textbf{Proposition:}} Suppose $G(s)$ is BIBO stable. Let $Y(s) = G(s) U(s)$, where $Y(s) = \mathcal{L}\{ y(t) \}$ and $U(s) = \mathcal{L}\{ u(t) \}$. If $\lim\limits_{t \to \infty} u(t) = 0$, then $\lim\limits_{t \to \infty} y(t) = 0$.
+    \textcolor{blue}{\textbf{Proposition:}} Suppose $G(s)$ is BIBO stable. Let $Y(s) = G(s) U(s)$, where $Y(s) = \mathcal{L}\{ y(t) \}$ and $U(s) = \mathcal{L}\{ u(t) \}$. If $\lim\limits_{t \to \infty} u(t) = 0$, then $\lim\limits_{t \to \infty} y(t) = 0$. \\
+    *Decaying input $\implies$ decaying output so don't worry in IMP.
 
     \textcolor{blue}{\textbf{General Controller Design Procedure:}} Given $R(s) = \mathcal{L}\{ r(t) \}$ and $D(s) = \mathcal{L}\{ d(t) \}$: \\
     1. \textbf{Feasibility:} Verify no zero of $G(s)$ is an unstable pole of $R(s)$ or $D(s)$. \\

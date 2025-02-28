@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  27 FEB 2025 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  27 FEB 2025 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -876,7 +876,7 @@ Overfull \hbox (3.44208pt too wide) in paragraph at lines 483--484
  []
 
 
-Overfull \hbox (2.31229pt too wide) in paragraph at lines 511--512
+Overfull \hbox (2.31229pt too wide) in paragraph at lines 511--513
 [][] \OT1/cmr/bx/n/5 Propo-si-tion:[] \OT1/cmr/m/n/5 Sup-pose $\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ is BIBO sta-ble. Let $\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 U\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$,
  []
 
@@ -899,7 +899,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,792b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (2 pages, 1488866 bytes).
+Output written on ECE356_Cheatsheet.pdf (2 pages, 1488958 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
