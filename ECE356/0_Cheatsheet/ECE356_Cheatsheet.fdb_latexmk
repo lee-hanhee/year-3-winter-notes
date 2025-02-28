@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1740550351.33056 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1740550356.29085 0
+["pdflatex"] 1740712209.94893 "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" "ECE356_Cheatsheet.pdf" "ECE356_Cheatsheet" 1740712216.39515 0
   "../Images/L10_0.png" 1738010925 37084 707c1419dc617e409e6c88babeca8842 ""
   "../Images/L10_1.png" 1738018036 213217 248454eeed78a60578a701016e437892 ""
   "../Images/L10_2.png" 1738010977 103705 4d636a92ee7505449236c247cdd1712c ""
@@ -21,7 +21,7 @@
   "../Images/L9_1.png" 1737667807 49263 4047ef821ea47b6136a0013aa1f2a035 ""
   "../Images/L9_2.png" 1737667823 58141 77e98fa79e79188e409358c77914be04 ""
   "../Images/L9_3.png" 1737668478 178576 40304837cfef8c3162a7fb927e149520 ""
-  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1740550351.24447 34189 dd08652d7ecad6e84d2bfbfff5dc983b ""
+  "/Users/hanheelee/Desktop/MI_Y3_Winter/ECE356/0_Cheatsheet/ECE356_Cheatsheet.tex" 1740712205.46195 34584 8dfb9a1482a4cd84df2daaa014f2bdbd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -206,9 +206,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739067315.7189 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739067010 8221435 a1e3d89194b507b879d58628e21da9df ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ECE356_Cheatsheet.aux" 1740550355.95247 162 fa61bf9ecf9314f94d51aa32222a725c "pdflatex"
-  "ECE356_Cheatsheet.out" 1740550353.38273 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ECE356_Cheatsheet.tex" 1740550351.24447 34189 dd08652d7ecad6e84d2bfbfff5dc983b ""
+  "ECE356_Cheatsheet.aux" 1740712215.89673 162 87159b23cce7c2b923b11c85495bbd6d "pdflatex"
+  "ECE356_Cheatsheet.out" 1740712212.56293 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ECE356_Cheatsheet.tex" 1740712205.46195 34584 8dfb9a1482a4cd84df2daaa014f2bdbd ""
   (generated)
   "ECE356_Cheatsheet.aux"
   "ECE356_Cheatsheet.log"

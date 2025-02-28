@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  26 FEB 2025 01:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.8)  27 FEB 2025 22:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -871,18 +871,18 @@ File: ../Images/L16_0.png Graphic file (type png)
 Package pdftex.def Info: ../Images/L16_0.png  used on input line 402.
 (pdftex.def)             Requested size: 121.41165pt x 23.8288pt.
 
-Overfull \hbox (5.38715pt too wide) in paragraph at lines 464--469
-[]$ \OT1/cmr/m/n/5 of the form: $\OML/cmm/m/it/5 r\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 ) = (\OML/cmm/m/it/5 c[] \OT1/cmr/m/n/5 + \OML/cmm/m/it/5 c[]t \OT1/cmr/m/n/5 + [] + \OML/cmm/m/it/5 c[]t[]\OT1/cmr/m/n/5 )1(\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 ;$
+Overfull \hbox (3.44208pt too wide) in paragraph at lines 483--484
+[]\OT1/cmr/m/n/5 c. If $\OML/cmm/m/it/5 C\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ has $\OML/cmm/m/it/5 k[]\OT1/cmr/m/n/5 2$ or fewer poles at $\OML/cmm/m/it/5 s \OT1/cmr/m/n/5 = 0$, then $[] \OMS/cmsy/m/n/5 j\OML/cmm/m/it/5 e\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 t\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 j[]1$\OT1/cmr/m/n/5 . 
  []
 
 
-Overfull \hbox (1.1862pt too wide) in paragraph at lines 526--527
-[]\OT1/cmr/m/n/5 Suppose $\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ is BIBO sta-ble. Let $\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 U\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$, where $\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 ) =
+Overfull \hbox (2.31229pt too wide) in paragraph at lines 511--512
+[][] \OT1/cmr/bx/n/5 Propo-si-tion:[] \OT1/cmr/m/n/5 Sup-pose $\OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$ is BIBO sta-ble. Let $\OML/cmm/m/it/5 Y\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 ) = \OML/cmm/m/it/5 G\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 U\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 s\OT1/cmr/m/n/5 )$,
  []
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png> <../Images/L8_0.png> <../Images/L9_0.png> <../Images/L9_1.png> <../Images/L9_2.png> <../Images/L9_3.png> <../Images/L10_0.png> <../Images/L10_5.png> <../Images/L10_3.png> <../Images/L10_4.png> <../Images/L10_1.png> <../Images/L10_2.png> <../Images/L10_6.png>] [2 <../Images/L12_0.png> <../Images/L12_1.png> <../Images/L12_2.png> <../Images/L12_3.png> <../Images/L16_0.png>] [3] (./ECE356_Cheatsheet.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Images/L3_0.png> <../Images/L3_1.png> <../Images/L4_0.png> <../Images/L4_1.png> <../Images/L8_0.png> <../Images/L9_0.png> <../Images/L9_1.png> <../Images/L9_2.png> <../Images/L9_3.png> <../Images/L10_0.png> <../Images/L10_5.png> <../Images/L10_3.png> <../Images/L10_4.png> <../Images/L10_1.png> <../Images/L10_2.png> <../Images/L10_6.png>] [2 <../Images/L12_0.png> <../Images/L12_1.png> <../Images/L12_2.png> <../Images/L12_3.png> <../Images/L16_0.png>] (./ECE356_Cheatsheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -891,18 +891,18 @@ Package rerunfilecheck Info: File `ECE356_Cheatsheet.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31931 strings out of 474116
- 749220 string characters out of 5743683
- 2091187 words of memory out of 5000000
+ 31930 strings out of 474116
+ 749214 string characters out of 5743683
+ 2092187 words of memory out of 5000000
  53810 multiletter control sequences out of 15000+600000
  559023 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,93p,792b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,93p,792b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb>
-Output written on ECE356_Cheatsheet.pdf (3 pages, 1490127 bytes).
+Output written on ECE356_Cheatsheet.pdf (2 pages, 1488866 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
