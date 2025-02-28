@@ -30,19 +30,24 @@
 
 \begin{paracol}{3}
     {\tiny
-    \textcolor{red}{\textbf{Intro:}} \textcolor{blue}{\textbf{Random Experiment:}} An outcome for each run.  
+    \textcolor{red}{\textbf{Notation:}} $P_{X \mid Y} (x \mid y) = P[X=x \mid Y=y]$ \\
+    *Subscript indicates the RV, and the value indicates the realization.  
+
+    \textcolor{red}{\textbf{Intro:}} \\
+    \textcolor{blue}{\textbf{Random Experiment:}} An outcome for each run.  
 
     \textcolor{blue}{\textbf{Sample Space $\Omega$:}} Set of all possible outcomes.
 
-    \textcolor{blue}{\textbf{Event:}} Subsets of $\Omega$.
+    \textcolor{blue}{\textbf{Event:}} Measurable subsets of $\Omega$.
 
     \textcolor{blue}{\textbf{Prob. of Event A:}} $P(A) = \frac{\text{Number of outcomes in A}}{\text{Number of outcomes in } \Omega}$
 
-    \textcolor{blue}{\textbf{Axioms:}} $P(A) \geq 0 \; \forall A \in \Omega$, $P(\Omega) = 1$, \\
-    If $A \cap B = \emptyset$, then $P(A \cup B) = P(A) + P(B) \; \forall A, B \in \Omega$
+    \textcolor{blue}{\textbf{Axioms:}} (1) $P(A) \geq 0 \; \forall A \in \Omega$, (2) $P(\Omega) = 1$, \\
+    (3) If $A \cap B = \emptyset$, then $P(A \cup B) = P(A) + P(B) \; \forall A, B \in \Omega$
 
-    \textcolor{blue}{\textbf{Cond. Prob.}} $P(A|B) = \frac{P(A \cap B)}{P(B)} \\
-    *P(A \cap B) = P(A|B) P(B) = P(B|A) P(A)$
+    \textcolor{blue}{\textbf{Cond. Prob.}} $P(A|B) = \frac{P(A \cap B)}{P(B)}$ \\
+    *Prob. measured on new sample space $B$. \\ 
+    *$P(A \cap B) = P(A|B) P(B) = P(B|A) P(A)$
 
     \textcolor{darkgreen}{\textbf{Independence:}} $P(A|B) = P(A) \Leftrightarrow P(A \cap B) = P(A) P(B)$
 
@@ -51,50 +56,51 @@
     \textcolor{blue}{\textbf{Bayes' Rule:}} $P(H_k|A) \text{=} \frac{P(H_k \cap A)}{P(A)} \text{=} \frac{P(A|H_k) P(H_k)}{\sum_{i=1}^n P(A|H_i) P(H_i)}$ \\
     *Posteriori: $P(H_k|A)$, Likelihood: $P(A|H_k)$, Prior: $P(H_k)$ 
 
-    \textcolor{red}{\textbf{1 RV:}} \textcolor{blue}{\textbf{CDF:}} $F_X(x) = P[X \leq x]$ 
+    \textcolor{red}{\textbf{1 RV:}} \\
+    \textcolor{blue}{\textbf{Cumulative Distribution Fn (CDF):}} $F_X(x) = P[X \leq x]$ 
 
-    \textcolor{blue}{\textbf{PMF:}} $P_X(x_j) = P[X = x_j] \; j=1,2,\ldots$
+    \textcolor{blue}{\textbf{Prob. Mass Fn (PMF):}} $P_X(x_j) = P[X = x_j] \; j=1,2,\ldots$
 
-    \textcolor{blue}{\textbf{PDF:}} $f_X(x) = \frac{d}{dx} F_X(x)$ \\
-    *$P[a \leq X \leq b] = \int_a^b f_X(x) \, dx$ IS THIS CORRECT?
+    \textcolor{blue}{\textbf{Prob. Density Fn (PDF):}} $f_X(x) = \frac{d}{dx} F_X(x)$ \\
+    *$P[a \leq X \leq b] = \int_a^b f_X(x) \, dx$ 
 
-    \textcolor{blue}{\textbf{Cond. PMF:}} $P_X(x|A) = P[X = x|A] = \frac{P[X = x, A]}{P[A]}$ IS THIS CORRECT?
-
-    \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X}(x|A) = \frac{f_{X,A}(x, a)}{f_A(a)}$ IS THIS CORRECT?
-
-    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] \text{=} \int_{-\infty}^{\infty} h(x) f_X(x) dx \mid \sum_{k=-\infty}^{\infty} h(k) P_X(x_i \text{=} k)$ \\
+    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] \text{=} \int_{-\infty}^{\infty} h(x) f_X(x) dx$ \\
+    $E[h(X)]= \sum_{k=-\infty}^{\infty} h(k) P_X(x_i \text{=} k)$ 
 
     \textcolor{darkgreen}{\textbf{Variance:}} $\sigma_X^2 = \text{Var}[X] = E[(X - E[X])^2] = E[X^2] - E[X]^2$
 
     \textcolor{darkgreen}{\textbf{Cond. Exp.:}} $E[X|A] = \int_{-\infty}^{\infty} x f_X(x|A) \, dx$ 
 
-    \textcolor{red}{\textbf{2 RVs:}}  \textcolor{blue}{\textbf{Joint PMF:}} $P_{X,Y}(x, y) = P[X = x, Y = y]$
+    \textcolor{red}{\textbf{2 RVs:}}  \\
+    \textcolor{blue}{\textbf{Joint PMF:}} $P_{X,Y}(x, y) = P[X = x, Y = y]$
 
     \textcolor{blue}{\textbf{Joint PDF:}} $f_{X,Y}(x, y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x, y)$ \\
     *$P[(X, Y) \in A] = \int \int_{(x, y) \in A} f_{X,Y}(x, y) \, dx \, dy$
 
     \textcolor{blue}{\textbf{Exp.:}} $E[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f_{X,Y}(x, y) \, dx \, dy$
 
-    \textcolor{darkgreen}{\textbf{Correlation (Corr.):}} $E[XY]$
+    \textcolor{darkgreen}{\textbf{Correlation:}} $E[XY]$
 
     \textcolor{darkgreen}{\textbf{Covar.:}} $\text{Cov}[X, Y] \text{=} E[(X - \mu_X)(Y - \mu_Y)] \text{=} E[XY] - E[X] E[Y]$
 
-    \textcolor{darkgreen}{\textbf{Corr. Coeff.:}} $\rho_{X,Y} \text{=} E\left[ \left( \frac{X - \mu_X}{\sigma_X} \right) \left( \frac{Y - \mu_Y}{\sigma_Y} \right) \right] = \frac{\text{Cov}[X, Y]}{\sigma_X \sigma_Y}$
+    \textcolor{darkgreen}{\textbf{Corr. Coeff.:}} $\rho_{X,Y} \text{=} E\left[ \left( \frac{X - \mu_X}{\sigma_X} \right) \left( \frac{Y - \mu_Y}{\sigma_Y} \right) \right] = \frac{\text{Cov}[X, Y]}{\sigma_X \sigma_Y}$ \\
+    *$-1 \leq \rho_{X,Y} \leq 1$
 
-    \textcolor{blue}{\textbf{Marginal PMF:}} $P_X(x) = \sum_{j=1}^\infty P_{X,Y}(x, y_j)$
+    \textcolor{blue}{\textbf{Marginal PMF:}} $P_X(x) = \sum_{j=1}^\infty P_{X,Y}(x, y_j) \mid P_Y(y)$
 
-    \textcolor{blue}{\textbf{Marginal PDF:}} $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy$
+    \textcolor{blue}{\textbf{Marginal PDF:}} $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy \mid f_Y(y)$
 
-    \textcolor{blue}{\textbf{Cond. PMF:}} $P_{X|Y}(x|Y) = P[X = x|Y = y] = \frac{P_{X,Y}(x, y)}{P_Y(y)}$
+    \textcolor{blue}{\textbf{Cond. PMF:}} $P_{X|Y}(x|y) = \frac{P_{X,Y}(x, y)}{P_Y(y)} \mid P_{Y|X}(y|x)$
 
-    \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X|Y}(x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)}$
+    \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X|Y}(x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \mid f_{Y|X}(y|x)$
 
     \textcolor{blue}{\textbf{Bayes' Rule}} \\ 
     $f_{Y|X}(y|x) \text{=} \frac{f_{X,Y} (x,y)}{f_X (x)} \text{=} \frac{f_{X|Y} (x|y) f_Y (y)}{\int_{-\infty}^{\infty} f_{X|Y} (x|y') f_Y (y') \, dy'}$ \\
     *$P_{Y|X}(y|x) = \frac{P_{X,Y}(x, y)}{P_X(x)} = \frac{P_{X|Y}(x|y) P_Y(y)}{\sum_{j=1}^\infty P_{X|Y}(x|y_j) P_Y(y_j)}$
 
     \textcolor{blue}{\textbf{Ind.:}} $f_{X|Y}(x|y) = f_X(x) \; \forall y \Leftrightarrow f_{X,Y}(x, y) = f_X(x) f_Y(y) $ 
-    *If independent, then uncorrelated.
+    
+    \textcolor{darkgreen}{\textbf{Thm:}} If independent, then uncorrelated unless Guassian.
 
     \textcolor{blue}{\textbf{Uncorrelated:}} $\text{Cov}[X, Y] = 0 \Leftrightarrow \rho_{X,Y} = 0$
 
@@ -119,7 +125,9 @@
 
     \textcolor{blue}{\textbf{Weak Law of Large \#s:}} $\lim_{n \to \infty} P[|M_n - \mu| < \epsilon] = 1 \; \forall \epsilon > 0$.
 
-    \textcolor{red}{\textbf{ML Estimation:}} Choose parameter $\theta$ that is most likely to generate the obs. $x_1, x_2, \ldots, x_n$. \\
+    \switchcolumn
+
+    \textcolor{red}{\textbf{ML Estimation:}} Choose $\theta$ that is most likely to generate the obs. $x_1, x_2, \ldots, x_n$. \\
     *Disc: $\hat{\Theta} = \arg \max_\theta P_{\underline{X}} (\underline{x} | \theta) \overset{\text{log}}{\rightarrow} \hat{\theta} = \arg \max_\theta \sum_{i=1}^n \log P_X(x_i | \theta)$ \\
     *Cont: $\hat{\Theta} = \arg \max_\theta f_{\underline{X}} (\underline{x} | \theta) \overset{\text{log}}{\rightarrow} \hat{\theta} = \arg \max_\theta \sum_{i=1}^n \log f_X(x_i | \theta)$
 
@@ -164,21 +172,21 @@
 
     \textcolor{blue}{\textbf{Conditional Exp.}} $E[X|Y] = \int_{-\infty}^{\infty} x f_{X|Y} (x|y) \, dx$
 
-    \switchcolumn
-
     \textcolor{red}{\textbf{Binary Hyp. Testing:}} $H_0$: Null Hyp., $H_1$: Alt. Hyp. 
 
-    \textcolor{blue}{\textbf{TI Err. (False Rejection):}} Reject $H_0$ when $H_0$ is true. \\
-    *$\alpha(R) = P[\underline{X} \in R \mid H_0]$ 
-
-    \textcolor{blue}{\textbf{TII Err. (False Accept.):}} Accept $H_0$ when $H_1$ is true. \\
-    *$\beta(R) = P[\underline{X} \in R^c \mid H_1]$ \\
+    \textcolor{blue}{$\Omega_{\underline{X}}:$} Set of all possible obs. $\underline{x}$.
 
     \customFigure[0.11]{../Images/TB_1.png}
+    
+    \textcolor{darkgreen}{\textbf{TI Err. (False Rejection):}} Reject $H_0$ when $H_0$ is true. \\
+    *$\alpha(R) = P[\underline{X} \in R \mid H_0]$ (false alarm)
 
-    \textcolor{blue}{\textbf{Likelihood Ratio Test:}} For each value of $\underline{x}$, \\
-    *$L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x}|H_1)}{P_{\underline{X}} (\underline{x}|H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} 1 \text{ or } \xi$ \\
-    *\textbf{MLT:} $1$, \textbf{LRT:} $\xi$
+    \textcolor{darkgreen}{\textbf{TII Err. (False Accept.):}} Accept $H_0$ when $H_1$ is true. \\
+    *$\beta(R) = P[\underline{X} \in R^c \mid H_1]$ (missed detection)
+
+
+    \textcolor{blue}{\textbf{Likelihood Ratio Test:}} $\forall \underline{x} \; L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x}|H_1)}{P_{\underline{X}} (\underline{x}|H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} 1 \text{ or } \xi$ \\
+    *\textbf{Max. Likelihood Test:} $1$, \textbf{Likelihood Ratio Test:} $\xi$
 
     \textcolor{blue}{\textbf{Neyman-Pearson Lemma:}} Given a false rejection prob. ($\alpha$), the LRT offers the smallest possible false accept. prob. ($\beta$), and vice versa. \\
     *LRT produces ($\alpha,\beta$) pairs that lie on the efficient frontier.
@@ -192,8 +200,8 @@
     % \textcolor{darkgreen}{\textbf{Sig. Testing:}} Given $X_1, \ldots, X_n$, find a rejection reg. so a level of T1 err. is achieved: $P[\text{Reject } H_0 \mid H_0] = \alpha$. \\
     % *$\alpha$: Significance level, $1 - \alpha$: Confidence level.
 
-    \textcolor{blue}{\textbf{Bayesian Hyp. Testing:}} \textcolor{darkgreen}{\textbf{MAP Rule:}} \\ 
-    $L(\underline{x}) = \frac{p_{\underline{X}} (\underline{x} | H_1)}{p_{\underline{X}} (\underline{x} | H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} \frac{P[H_0]}{P[H_1]}$ 
+    \textcolor{blue}{\textbf{Bayesian Hyp. Testing:}} \\
+    \textcolor{darkgreen}{\textbf{MAP Rule:}} $L(\underline{x}) = \frac{p_{\underline{X}} (\underline{x} | H_1)}{p_{\underline{X}} (\underline{x} | H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} \frac{P[H_0]}{P[H_1]}$ 
     
     % Selects hyp. w/ higher a posteriori prob, reject $H_0$ if: \\
     % $p(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} p(H_0 \mid \underline{x}) \; \mid \; f(H_1 \mid \underline{x}) \overset{H_1}{\underset{H_0}{\gtrless}} f(H_0 \mid \underline{x})$ \\
@@ -202,8 +210,10 @@
     % $p(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} p(\underline{x} \mid H_0)\pi_0 \; \mid \; f(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} f(\underline{x} \mid H_0)\,\pi_0$ \\
     % *$p(H_j \mid \underline{x}) \text{=} \frac{p_{\underline{X}} (\underline{x} \mid H_j) P [H_j]}{p_{\underline{X}} (\underline{x} \mid H_0) P[H_0] + p_{\underline{X}} (\underline{x} \mid H_1) P[H_1]}$: A posteriori 
 
-    \textcolor{darkgreen}{\textbf{Min. Cost Bayes' Dec. Rule:}} $C_{ij}$ is cost of choosing $H_j$ when $H_i$ is true. Given obs. $\underline{X} = \underline{x}$, the exp. cost of choosing \\ 
-    $H_j$ is $A_j (\underline{x}) = \sum_{i=0}^1 C_{ij} \, P[H_i | \underline{X} = \underline{x}]$. \\
+    \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
+    2. Use table to find $Q(x)$ for $x \geq 0$. 
+
+    \textcolor{darkgreen}{\textbf{Min. Cost Bayes' Dec. Rule:}} $C_{ij}$ is cost of choosing $H_j$ when $H_i$ is true. Given obs. $\underline{X} = \underline{x}$, the expected cost of choosing $H_j$ is $A_j (\underline{x}) = \sum_{i=0}^1 C_{ij} \, P[H_i | \underline{X} = \underline{x}]$. 
     
     % $\text{Min. Cost Detection} = \sum_{i=0}^1 \sum_{j=0}^1 C_{ij} \, P[\text{decide } j \mid H_i] \, \pi_i$ \\
     % *$j=0$: Accept $H_0$, $j=1$: Reject $H_0$
@@ -212,7 +222,7 @@
     $L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x} \mid H_1)}{P_{\underline{X}} (\underline{x} \mid H_0)}\overset{H_1}{\underset{H_0}{\gtrless}} \frac{(C_{01} - C_{00}) P[H_0]}{(C_{10} - C_{11})P[H_1]}$. \\
     *$C_{01}$: False accept. cost, $C_{10}$: False reject. cost.
 
-    \textcolor{blue}{\textbf{Naive Bayes Assumption:}} Assume $X_1 \ldots, X_n$ (features) are ind., then $p_{\underline{X} \mid \Theta} (\underline{x} \mid \theta) \Pi_{i=1}^n p_X (x_i \mid \theta)$.
+    \textcolor{blue}{\textbf{Naive Bayes Assumption:}} Assume $X_1 \ldots, X_n$ (features) are ind., then $p_{\underline{X} \mid \Theta} (\underline{x} \mid \theta) = \Pi_{i=1}^n p_{X_i \mid \Theta} (x_i \mid \theta)$.
 
     \textbf{Notation:} $P_{\underline{X} | \Theta} (\underline{x} | \theta)$, only put RVs in subscript, not values. $P_{\underline{X}} (\underline{x} | H_i)$, didn't put $H$ in subscript b/c it's not a RV.
 
@@ -244,9 +254,6 @@
     $ p(x \mid \lambda t) = \frac{e^{-\lambda t} (\lambda t)^x}{x!}$ \\
     *$x \geq 0, x = 0, 1, 2, \dots $ \\
     *$ E[X] = \mu = \lambda t \; \mid \; Var(X) = \sigma^2 = \lambda t $
-
-    \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
-    2. Use table to find $Q(x)$ for $x \geq 0$. 
 
     \switchcolumn
 
