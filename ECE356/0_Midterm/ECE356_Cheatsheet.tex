@@ -329,6 +329,7 @@
 
     \textcolor{orange}{\textbf{BIBO Stability}} 1. Find $G(s)$ from SS form and determine poles. \\
     2. Check if $\text{poles}(G(s)) \subseteq \mathbb{C}^{-}$.
+    1. Check if $\text{eig}(A) \subseteq \mathbb{C}^{-}$ since internal asymptotic stability $\Rightarrow$ BIBO stability.
     
     \textcolor{red}{\textbf{Routh-Hurwitz:}} Consider $a(s) = s^n + a_{n-1} s^{n-1} + \cdots + a_0$. \\
     *$s^n \quad \; \, \, \mid \; 1 \quad a_{n-2} \quad a_{n-4} \quad a_{n-6} \quad \cdots \quad 0$ \\ 
