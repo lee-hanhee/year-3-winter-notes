@@ -1,0 +1,157 @@
+\documentclass[5pt]{extarticle} % Note the extarticle document class
+\usepackage[margin=0.05in]{geometry} % Set 0.3-inch margins
+\usepackage{multicol}              % For multi-column support
+\usepackage{lipsum}                % Dummy text generator (optional)
+\usepackage{amssymb} % math symbols
+\setlength{\parskip}{0ex}
+\setlength\parindent{0pt} % no indent
+%% optional packages -- documentation at ctan.org
+\usepackage{graphicx}  % image handline
+\usepackage{amsmath}   % enhanced equation environments
+\usepackage{tikz}      % block diagrams
+\usetikzlibrary{positioning}  % allow relative positioning of tikz elements
+\usepackage{pgfplots}  % package for plots, based on tikz
+\usepackage{hyperref}
+\usepackage{paracol}             % Import paracol package
+\usepackage{float}
+
+\newcommand{\customFigure}[3][]{%
+    \vspace{-1.5em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}
+    \end{figure}
+    \vspace{-1.5em}
+}
+
+\begin{document}
+\begin{paracol}{3}
+    {\tiny
+    
+    \textcolor{red}{\textbf{Standard Feedback Control Loop}}
+    \customFigure[0.2]{../Images/L16_0.png}
+    *$R(s)$: Ref., $E(s) = R(s) - y(s)$: Err., $C(s)$: Controller, $U(s)$: Control input, $D(s)$: Dist., $G(s)$: Plant, $y(s)$: Plant output. \\
+    *\textbf{Assume:} $R(s)$ and $D(s)$ are strictly proper rational fcns w/ a fixed set of poles but arbitrary zeros \& gain. \\
+    *$\mathcal{R}, \mathcal{D}$: Classes of ref. and dist. satisfying the above assumption.
+
+    \textcolor{blue}{\textbf{Basic Control Prob.:}} Design $C(s)$ s.t. 3 spec. are met: \\
+    1. \textbf{Stability:} $\forall$ bdd $r(t),d(t)$, we have $u(t),e(t)$ bdd. \\
+    2. \textbf{Asymptotic Tracking:} When $d(t) = 0 \; \forall t \geq 0$, then $\forall r(t) \in \mathcal{R}$, $\lim_{t \to \infty} e(t) = \lim_{t \rightarrow \infty} r(t) - y(t) = 0$. \\
+    3. \textbf{Disturbance Rejection:} When $r(t) = 0 \; \forall t \geq 0$, then $\forall d(t) \in \mathcal{D}$, $\lim_{t \to \infty} y(t) = 0$.
+
+    \textcolor{orange}{\textbf{Open-Loop Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = \gamma y_r \mathbf{1}(t)$ w/ $\gamma \in \mathbb{R}$ (const. scaling factor) \\
+    3. Apply FVT to find $\gamma$ s.t. $\lim_{t \to \infty} y(t) = y_r$.
+    4. Determine $\lim_{t \rightarrow \infty} e(t) = \lim_{t \rightarrow \infty} y_r - y(t)$
+
+    \textcolor{green}{\textbf{Limitations:}} 1. Req. perfect knowledge of plant paramters. \\
+    2. Not robust against parameter var./(unknown) dist. \\
+    3. Does not allow us to speed up convergence. 
+
+    \textcolor{orange}{\textbf{Feedback Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = K e(t) = K (y_r - y(t))$ w/ $K>0$ (const. gain). \\ 
+    3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
+    4. Apply FVT to find $K$ s.t. $\lim_{t \to \infty} y(t) = y_r$. \\
+    5. Determine $\lim_{t \rightarrow \infty} e(t) = \lim_{t \rightarrow \infty} y_r - y(t)$
+
+    \textcolor{green}{\textbf{Advantages:}} 1. Doesn't req. perfect knowledge of plant param. \\
+    2. Robust against param. var./dist. by $\uparrow K$. \\
+    3. Allows us to speed up the rate of convergence by $\uparrow$ $K$.
+
+    \textcolor{green}{\textbf{Disadvantages:}} 1. Feedback can introduce instability. \\
+    2. High-gain amplifies noise. \\
+    3. Asymptotic tracking doesn't occur. 
+
+    \textcolor{orange}{\textbf{Integral Control:}} 1. Design $u(t)$ s.t. $y(t)$ tracks ref. $y_r \in \mathbb{R}$, i.e. $\lim_{t \rightarrow \infty} y(t) = y_r$. \\
+    2. Set $u(t) = \mathcal{L}^{-1} \{C(s)E(s)\} = K e(t) + K T_I \int_0^t e(\tau) d\tau$ (prop. int. (PI) controller) w/ $K, T_I > 0$ (const. gains). \\
+    *$C(s) = K \left(1 + \frac{T_I}{s}\right)$ \\
+    3. Use block mani. to find $y(s)$ in terms of input and $G(s)$. \\
+    4. Apply FVT to find $\lim_{t \to \infty} y(t) = y_r$ as desired. 
+
+    \textcolor{red}{\textbf{BIBO Stability of Closed-Loop System:}} \textcolor{blue}{\textbf{Gang of 4 TF:}} \\
+    $\begin{bmatrix}
+        E(s) \\
+        U(s)
+    \end{bmatrix} =
+    \begin{bmatrix}
+        \frac{1}{1+C(s)G(s)} & \frac{-G(s)}{1+C(s)G(s)} \\
+        \frac{C(s)}{1+C(s)G(s)} & \frac{-C(s)G(s)}{1+C(s)G(s)}
+    \end{bmatrix} 
+    \begin{bmatrix}
+        R(s) \\
+        D(s)
+    \end{bmatrix}
+    $ 
+
+    \textcolor{blue}{\textbf{BIBO Stable of CLS:}} The std. feedback control loop (CLS) is BIBO stable if all the Gang of 4 TFs are BIBO stable.
+
+    \textcolor{blue}{\textbf{CLS is BIBO Stable THM:}} The CLS is BIBO stable iff \\ 
+    1. Poles of $\frac{1}{1 + C(s)G(s)} \subseteq \mathbb{C}^{-}$ \\
+    2. $C(s)G(s)$ has no pole-zero cancel. in $\bar{\mathbb{C}}^{+} \text{=} \{ s \in \mathbb{C} : \text{Re}(s) \geq 0 \}$. 
+
+    \textcolor{green}{\textbf{Practical Considerations:}} \\
+    1. Don't cancel an unstable 0 of $G(s)$ w/ an unstable pole in $C(s)$. \\
+    2. Don't cancel an unstable pole of $G(s)$ w/ an unstable 0 in $C(s)$. 
+
+    \textcolor{red}{\textbf{Asymp. Tracking of Poly.}} Suppose $d(t) = 0$ \& want to track a \underline{poly. ref. signal} of the form:  
+    $r(t) = \sum_{i=0}^{k-1} c_i t^i 1(t)$, that is: $R(s) = \frac{N_R(s)}{s^k},$ w/ $N_R(0) \neq 0$ and $\deg(N_R(s)) \leq k-1.$  \\
+    *\textbf{GOAL:} Design $C(s)$ to achieve $\lim_{t \to \infty} e(t) = 0.$ 
+
+    \textcolor{blue}{\textbf{Prop:}} Suppose $C(s)$ is designed so that:
+
+    1. $\frac{1}{1 + C(s) G(s)}$ is BIBO stable \\
+    2. $C(s) G(s) = \frac{C'(s) G'(s)}{s^k}$ with $C'(0) G'(0) \neq 0$.
+
+    Then $\frac{1}{s^k + C'(s) G'(s)}$ is BIBO stable.
+
+    \textcolor{blue}{\textbf{Asymp. Tracking of Poly. Thm}} Suppose $C(s)$ satisfies CLS is BIBO stable THM and $d(t) = 0 \; \forall t \geq 0$. For any poly. ref. signal $r(t) = \sum_{i=0}^{k-1} c_i t^i 1(t)$, the following hold:
+
+    a. If $C(s) G(s)$ has $k$ or more poles at $s = 0$, then $\lim\limits_{t \to \infty} e(t) = 0$.
+
+    b. If $C(s) G(s)$ has $k-1$ poles at $s = 0$, then:
+    \[ \lim\limits_{t \to \infty} e(t) = \begin{cases} \frac{N_R(0)}{1 + C'(0) G'(0)}, & \text{if } k = 1 \\ \frac{N_R(0)}{C'(0) G'(0)}, & \text{if } k \geq 2 \end{cases} \]
+
+    c. If $C(s) G(s)$ has $k\text{-}2$ or fewer poles at $s = 0$, then $\lim\limits_{t \to \infty} |e(t)| \text{=} \infty$.
+
+    \textcolor{blue}{\textbf{Type $k$:}} The TF $C(s) G(s)$ is of type $k$ if it has $k$ poles at $s = 0$.
+
+    \textcolor{red}{\textbf{Dist. Rejection:}} Suppose $r(t) = 0 \; \forall t \geq 0$ and $d(t)$ is a poly. dist. signal of the form:
+    $d(t) = \sum_{i=0}^{k-1} c_i t^i 1(t)$,
+    that is:
+    $D(s) = \frac{N_D(s)}{s^k},$ with $N_D(0) \neq 0$ and $\deg(N_D(s)) \leq k-1.$ \\
+    *\textbf{GOAL:} Design $C(s)$ to achieve $\lim_{t \to \infty} e(t) = 0.$
+
+    \textcolor{blue}{\textbf{Dist. Rejection Thm:}} Suppose $C(s)$ satisfies CLS is BIBO stable THM and $r(t) = 0 \; \forall t \geq 0$. For any poly. dist. signal $d(t) = \sum_{i=0}^{k-1} c_i t^i 1(t)$, the following hold:
+
+        a. If $C(s)$ has $k$ or more poles at $s = 0$, then $\lim_{t \to \infty} e(t) = 0.$
+
+        b. If $C(s)$ has $k-1$ poles at $s = 0$, then $\lim_{t \to \infty} e(t) \neq 0 \text{ exists}.$ 
+
+        c. If $C(s)$ has $k\text{-}2$ or fewer poles at $s = 0$, then $\lim_{t \to \infty} |e(t)| \text{=} \infty.$
+
+    \textcolor{red}{\textbf{General Thm (Internal Model Principle):}} Suppose $R(s)$ and $D(s)$ are strictly proper rational fns w/ poles in $\overline{\mathbb{C}^{+}}$. $C(s)$ solves the Basic Control Problem iff:
+
+    1) $C(s)$ makes the CLS BIBO stable; \\
+    2) $C(s) G(s)$ has the poles$(R(s))$ w/ at least same multiplicities; \\
+    3) $C(s)$ has the poles$(D(s))$ w/ at least same multiplicities.
+
+    \textcolor{blue}{\textbf{Corollary:}} If $G(s)$ has zeros that are also poles of $R(s)$ or $D(s)$, then the Basic Control Problem is unsolvable.
+
+    \textcolor{blue}{\textbf{Internal Model:}} The IMP states if $G(s)$ does not contain the poles of $R(s)$ and $D(s)$, then $C(s)$ must contain these poles. Since these poles enable $C(s)$ to reproduce $r(t)$ and $d(t)$, we say $C(s)$ must contain an \underline{internal model} of $r(t)$ and $d(t)$.
+
+    \textcolor{blue}{\textbf{Proposition:}} Suppose $G(s)$ is BIBO stable. Let $Y(s) = G(s) U(s)$, where $Y(s) = \mathcal{L}\{ y(t) \}$ and $U(s) = \mathcal{L}\{ u(t) \}$. If $\lim\limits_{t \to \infty} u(t) = 0$, then $\lim\limits_{t \to \infty} y(t) = 0$. \\
+    *Decaying input $\implies$ decaying output so don't worry in IMP.
+
+    \textcolor{blue}{\textbf{General Controller Design Procedure:}} Given $R(s) = \mathcal{L}\{ r(t) \}$ and $D(s) = \mathcal{L}\{ d(t) \}$: \\
+    1. \textbf{Feasibility:} Verify no zero of $G(s)$ is an unstable pole of $R(s)$ or $D(s)$. \\
+    2. \textbf{Internal Model:} Let $p_1, \dots, p_k$ denote the unstable poles of $R(s)$ or $D(s)$ not in $G(s)$, accounting for multiplicities. Construct:
+    \[ C(s) = C'(s) \cdot \frac{1}{(s - p_1) \dots (s - p_k)} \] \\
+    3. \textbf{Stability:} Design $C'(s)$ so that the CLS is BIBO stable. \\
+    4. \textbf{Performance:} Tune controller parameters to achieve the desired performance specifications.
+
+
+
+        }
+\end{paracol}
+
+\end{document}
