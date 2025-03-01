@@ -139,10 +139,19 @@
     \begin{enumerate}
         \item Given a Bayesian network w/ 2 variables to find independence.
         \item Find all undirected paths between the 2 variables in the Bayesian network.
-        \item Identify a set of variables, $\mathcal{K}$, that blocks all undirected paths.
+        \item Identify a set of variables, $\mathcal{K}$, that block at least one junction in all undirected paths.
+        \begin{itemize}
+            \item Test a junction by seeing junction given relationships. 
+        \end{itemize}
         \item If all undirected paths are blocked, then the 2 variables are independent given $\mathcal{K}$.
     \end{enumerate}
 \end{process}
+
+\begin{warning}
+    \begin{itemize}
+        \item Be careful of common effect, in which it is blocked by default. 
+    \end{itemize}
+\end{warning}
 
 \begin{example}
     \begin{enumerate}
@@ -220,7 +229,83 @@
 \begin{example}
     Determine all subsets of $\{B,C,D,F,G,H\}$ for which $A$ and $E$ are independent. 
     \customFigure[0.25]{../Images/LR_1.png}{}
+    \begin{enumerate}
+        \item \textbf{Undirected Paths:}
+        \begin{itemize}
+            \item $A \to G \to H \to B \to E$
+            \item $A \to G \to D \to B \to E$
+            \item $A \to C \to F \to B \to E$
+            \item $A \to C \to D \to B \to E$
+        \end{itemize}
+    \end{enumerate}
+    \begin{center}
+        \begin{tabular}{c}
+            \toprule
+            $\mathcal{K}$ \\
+            \midrule
+            $\{B\}$ (Any subset that contains $B$ will be independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(H,B,E),(e_1,e_2)\}$ is b since $H,E$ indep. given $B$ (causal chain)
+                    \item $AGDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is b since $D,E$ indep. given $B$ (causal chain)
+                    \item $ACFBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(F,B,E),(e_1,e_2)\}$ is b since $F,E$ indep. given $B$ (causal chain) 
+                    \item $ACDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is b since $D,E$ indep. given $B$ (causal chain) 
+                \end{itemize}} \\
+            \midrule
+            $\{C\}$ (Not independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                \end{itemize}} \\
+            \midrule
+            $\{D\}$ (Not indepedent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                \end{itemize}} \\
+            \midrule
+            $\{F\}$ (Not independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                \end{itemize}} \\
+            \midrule
+            $\{G\}$ (Not independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                \end{itemize}} \\
+            \midrule
+            $\{H\}$ (Not independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                \end{itemize}} \\
+            \toprule
+        \end{tabular}
+    \end{center}
+\end{example}
+\newpage
 
+\begin{example}
+    \begin{center}
+        \begin{tabular}{c}
+            \toprule
+            $\mathcal{K}$ \\
+            \midrule
+            $\{C,D\}$ (Any subset that contains $C$ and $D$ except $H$ will be independent) \\
+            \multicolumn{1}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is b since $G,B$ indep. not given $H$ (causal effect)
+                    \item $AGDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is b since $G,B$ indep. given $D$ (causal chain)
+                    \item $ACFBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,F),(e_1,e_2)\}$ is b since $A,F$ indep. given $C$ (causal chain)
+                    \item $ACDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,D),(e_1,e_2)\}$ is b since $A,D$ indep. given $C$ (causal chain)
+                \end{itemize}} \\
+            \midrule
+            $\ldots$ \\
+            \toprule
+        \end{tabular}
+    \end{center}
 \end{example}
 \newpage
 
@@ -347,15 +432,83 @@
 \end{example}
 \newpage
 
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:}
+        \customFigure[0.5]{../Images/L7_1.png}{}
+        \item \textbf{Problem:} Compute $\Pr(s = 1 \mid t = 1)$ if $\Pr(G = 1) = 0.3$, $\Pr(E = 1) = 0.4$, and the conditional probability tables for $S, Y,$ and $T$ are given below.
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item $p(s=1 \mid t=1) = \frac{p(s=1,t=1)}{p(t=1)} = \frac{\sum_{E,G,Y} p(E,G,Y,s=1,t=1)}{\sum_S p(t=1,S)}$ 
+            \item $p(E,G,Y,s=1,t=1) = p(G) p(E) p(s=1 \mid G, E) p(t=1 \mid s = 1) p(Y \mid s = 1)$
+            \begin{itemize}
+                \item Conditional probability and individual probabilities come from Bayesian network, and set $t,s=1$ due to the query and evidence variables.
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tabular}{l}
+            \toprule
+            \textbf{Summation} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $\text{Numerator}: \underbrace{p(t=1 \mid s=1) \sum_E p(E) \underbrace{\sum_G p(G) p(s=1 \mid G,E) \underbrace{\sum_Y p(Y \mid s=1)}_{g_1}}_{g_2}}_{g_3}$
+            \end{center}} \\
+            \toprule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $g_1 = p(Y=1 \mid S=1) + p(Y=0 \mid S=1) = 0.9 + 0.1 = 1$
+            \end{center}} \\
+            \midrule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $g_2(E) = (p(g=1) p(s=1 \mid g=1, E) + p(g=0) p(s=1 \mid g=0, E)) g_1$
+            \end{center}} \\
+            $g_2(e=1) = 0.3(0.7) + 0.7(0.4) = 0.49$ \\
+            $g_2(e=0) = 0.3(0.5) + 0.7(0.1) = 0.22$ \\
+            \midrule
+            \multicolumn{1}{p{\linewidth}}{
+            \begin{center}
+                $g_3 = 0.8 p(e=1) g_2(e=1) + 0.8 p(e=0) g_2(e=0) = 0.8(0.4)(0.49) + 0.8(0.6)(0.22) = 0.1568 + 0.1056 = 0.2624$
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+
+    \begin{equation*}
+        p(s=1 \mid t=1) = \frac{g_3}{\sum_S p(t=1,S)}
+    \end{equation*}
+\end{example}
+\newpage
+
 \subsubsection{Hypergraph}
 \begin{process} Process of eliminating a variable. 
     \begin{enumerate}
-        \item HOW TO DO THIS?
+        \item Create a Hyper-graph by creating a node for each variable. 
+        \item Create hyper-edges (factors) by circling the nodes that are probabilities in the joint distribution (i.e. numerator)
+        \item Select a variable $v$ that we are summing over. 
+        \begin{enumerate}
+            \item Circle all the variables that have $v$ in their hyperedge into one big hyperedge (i.e. union of hyper-edges).
+            \item Eliminate $v$ by removing the node. 
+            \item Calculate the factor by determining the domain of each variable and summing their domains. 
+        \end{enumerate}
+        \item Reset the problem and repeat for all other $v$. 
+        \item Select the smallest factor to eliminate first.
+        \item Repeat until all variables are eliminated to determine the best ordering of elimination. 
+        \begin{itemize}
+            \item The first eliminated variable will be the inner sum. 
+        \end{itemize}
     \end{enumerate}
 \end{process}
 
 \begin{example}
     \customFigure[0.5]{../Images/L6_11.png}{}
+    \begin{itemize}
+        \item Since these are all binary variables, we are selecting the factor with the least number of variables to eliminate first.
+    \end{itemize}
+    \customFigure[0.5]{../Images/L7_0.png}{}
 \end{example}
 \newpage
 

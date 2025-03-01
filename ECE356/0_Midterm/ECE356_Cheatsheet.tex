@@ -139,8 +139,8 @@
     \switchcolumn
 
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
-    $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
-    $= \lim_{w \to \infty} \frac{1}{2\pi} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
+    $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi j} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
+    $= \lim_{w \to \infty} \frac{1}{2\pi j} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
     
     \textbf{Zero:} $z \in \mathbb{C}$ is a zero of $F(s)$ if $F(z) = 0$.  
 
@@ -314,7 +314,8 @@
 
     \textcolor{orange}{\textbf{Internal Stability}} 1. Linearize around $(\bar{x}, \bar{u})$ w/ $\bar{u} = 0$. \\
     2. Find $A$ and determine $\text{eig}(A) = \lambda$ s.t. $\det(s I - A) = 0$. \\ 
-    3. Check if $\text{eig}(A) \subseteq \mathbb{C}^- \; \mid \; \text{Re}(\text{eig}(A)) > 0$.
+    3. Check if $\text{eig}(A) \subseteq \mathbb{C}^-$ for asymptotic stability \\ 
+    4. Check if $\text{Re}(\text{eig}(A)) > 0$ for instability.
 
     \textcolor{red}{\textbf{BIBO Stability:}} An LTI system w/ 0 i.c. is Bounded Input Bounded Output (BIBO) stable if for any bdd input $u(t)$, the output $y(t)$ is also bdd.
 
