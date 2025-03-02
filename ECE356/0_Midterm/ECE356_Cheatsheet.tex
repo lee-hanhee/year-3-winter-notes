@@ -41,16 +41,21 @@
     \textcolor{blue}{\textbf{Single-input-single-output (SISO)}} CS is SISO if $u(t), y(t) \in \mathbb{R}$.
 
     \textcolor{blue}{\textbf{LTI}} CS in SS form is LTI if $ \dot{x} = Ax + Bu, \; y = Cx + Du$ \\
-    $A \in \mathbb{R}^{n \times n}, \; B \in \mathbb{R}^{n \times m}, \; C \in \mathbb{R}^{p \times n}, \; D \in \mathbb{R}^{p \times m}$ \\ 
-    where $ x(t) \in \mathbb{R}^n, \; u(t) \in \mathbb{R}^m, \; y(t) \in \mathbb{R}^p. $
+    *$A \in \mathbb{R}^{n \times n}, \; B \in \mathbb{R}^{n \times m}, \; C \in \mathbb{R}^{p \times n}, \; D \in \mathbb{R}^{p \times m}$ \\ 
+    *SISO: $p=1, \; m=1$ \\
+    *$ x(t) \in \mathbb{R}^n, \; u(t) \in \mathbb{R}^m, \; y(t) \in \mathbb{R}^p. $
 
     \textcolor{blue}{\textbf{Input-Output (IO)}} LTI CS is in IO form if \\
     $ \frac{d^n y}{dt^n} + a_{n-1} \frac{d^{n-1} y}{dt^{n-1}} + \cdot + a_1 \frac{dy}{dt} + a_0 y = b_m \frac{d^m u}{dt^m} + \cdot + b_1 \frac{du}{dt} + b_0 u $ \\
-    where $ m \leq n$ (causality)
+    *$ m \leq n$ (causality)
 
     \textcolor{orange}{\textbf{IO to SS Model}} 1.  Define $x$ s.t. highest order derivative in $\overset{\cdot}{x}$ \\
-    2. Write $\overset{\cdot}{x} = Ax + Bu = f(x,u)$ by isolating for components of $\overset{\cdot}{x}$\\ 
-    3. Write $y = Cx + Du = h(x,u)$ by setting measurement output $y$ to component of $x$ 
+    2.1 If LTI, then \\
+    *Write $\overset{\cdot}{x} = Ax + Bu = f(x,u)$ by isolating for components of $\overset{\cdot}{x}$\\ 
+    *Write $y = Cx + Du = h(x,u)$ by setting measurement output $y$ to component of $x$ \\
+    2.2 If not LTI, then \\
+    *Write $\overset{\cdot}{x} = f(x,u)$ by isolating for components of $\overset{\cdot}{x}$ \\
+    *Write $y = h(x,u)$ by setting measurement output $y$ to component of $x$
 
     \textcolor{red}{\textbf{Equilibria}} $y_d$ (steady state) b/c if $y(0) = y_d$ at $t=0$, then $y(t) = y_d \; \forall t \geq 0$.
 
@@ -160,6 +165,7 @@
     \textcolor{orange}{\textbf{Inv. LT Residue:}} 1. Find poles of $F(s)$ and their residues. \\
     2. Use Cauchy's Residue THM to find inverse LT. \\
     *Note: Complex Conjugate (CC) poles $\rightarrow$ CC residues (use Euler).
+    *$\cos(x) = \frac{e^{jx} + e^{-jx}}{2}$, $\sin(x) = \frac{e^{jx} - e^{-jx}}{2j}$
 
     \textcolor{red}{\textbf{Transfer Function:}} Consider a CS in IO form. Assume zero initial conds. $y(0) = \cdots = \frac{d^{(n-1)}y}{dt^{(n-1)}}(0) = 0$ and \\ 
     $u(0) = \cdots = \frac{d^{(m-1)} u}{dt^{(m-1)}}(0) = 0$. Then the TF from $u$ to $y$ is \\
@@ -324,7 +330,7 @@
     \textcolor{blue}{\textbf{BIBO Stable Thm.}} A system $y(s) = G(s) U(s)$ is BIBO stable iff poles($G(s)) \subseteq \mathbb{C}^{-}.$
 
     \textcolor{blue}{\textbf{Lemma:}} If $p$ is a pole of $G(s)$, then $p$ is an $\text{eig}(A)$. I.e. $\text{poles}(G(s)) := \{ p \in \mathbb{C} \mid p \text{ is a pole of } G(s) \} \subseteq \text{eig}(A)$.  \\
-    *\textbf{Pole-0 Cancellation:} $\text{eige}(A)$ need not be a pole of $G(s)$.
+    *\textbf{Pole-0 Cancellation:} $\text{eig}(A)$ need not be a pole of $G(s)$.
 
     \textcolor{blue}{\textbf{Thm.}} If $\text{eig}(A) \subseteq \mathbb{C}^{-}$, then $\forall B, C, D$ the TF $G(s)$ is BIBO stable. That is, internal asymptotic stability $\Rightarrow$ BIBO stability.
 
