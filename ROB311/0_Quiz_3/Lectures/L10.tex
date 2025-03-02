@@ -1,0 +1,45 @@
+\begin{summary}
+    In a \textbf{POMDPs}, we assume that: 
+    \begin{itemize}
+        \item environment modelled using state space, $\mathcal{S}$
+        \item single agent
+        \item $S_t$ = state after transition $t$
+        \item $A_t$ = action inducing transition $t$
+        \item stochastic state transitions with memoryless property:
+        \[
+        S_T \perp S_0, A_1, \dots, A_{T-1}, S_{T-2} \mid S_{T-1}, A_T
+        \]
+        \item $R_t$ = reward for transition $t$, i.e., $(S_{T-1}, A_T, S_T)$
+        \item $O_t$ = observation of $S_t$
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            Initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
+            \midrule
+            Transition distribution & $p(s'|s,a) := \mathbb{P}[S_t = s' | A_t = a, S_{t-1} = s]$ \\
+            \midrule
+            Reward function & $r(s,a,s') :=$ reward for transition $(s, a, s')$ \\
+            \midrule
+            Policy for choosing actions & $\pi_t(a | o_0, \dots, o_t) := \mathbb{P}[A_t = a | O_0 = o_0, \dots, O_t = o_t]$ \\
+            \midrule
+            Measurement model & $m(o | s) := \mathbb{P}[O_t = o | S_t = s]$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Bayesian Network}
+\begin{notes}
+    $S_0, O_0, A_1, R_1, S_1, O_1, A_2, R_2, S_2, O_2, \dots$ form a Bayesian network:
+    \customFigure[0.5]{../Images/L10_0.png}{}
+\end{notes}
+
+\begin{example}
+    
+\end{example}
