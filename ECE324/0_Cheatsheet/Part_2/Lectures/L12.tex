@@ -61,6 +61,7 @@
         \customFigure[0.5]{../Images/L12_10.png}{}
     \end{itemize}
 \end{notes}
+\newpage
 
 \subsubsection{Representing Graphs Numerically, Mathematically, Programmatically}
 \begin{notes} Represent the connectivity of the graph.
@@ -73,17 +74,146 @@
             \customFigure[0.5]{../Images/L12_12.png}{}
         \end{itemize}
         \item Mathematically: Structured tensors $G = (X,E,A,U)$
-        \begin{itemize}
-            \item $X$: Node features
-            \item $E$: Edge features
-            \item $A$: Adjacency matrix
-            \item $U$: Global features
-        \end{itemize}
         \item Programmatically: Graph data structure
         \customFigure[0.5]{../Images/L12_13.png}{}
     \end{itemize}
 \end{notes}
+\newpage
 
-\subsection{How to Solve Graph Problems w/ GNNs}
+\subsection{GNN}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            \textbf{Prediction Methods} & \\
+            Node to node & Take nodes and pass in our favorite classifer \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_15.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            Edge to node & Passing info from one attribute to another requires a pooling op. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_16.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            Node to edges & Passing info from one attribute to another requires a pooling op. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_18.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            \textbf{Pooling from Edges to Nodes} & Route info b/w diff. parts and aggregate them. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_17.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            \textbf{Prediction Pipeline} & $\textbf{Graph} \rightarrow \text{Transform} \rightarrow \text{Predict on attribute of interest}$ \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_19.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            \textbf{Message passing} & Pool information, aggregate it, transform it, and update it \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_20.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            Propogation pattern of message passing & After a few layers we get increasingly more complex patterns of info. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_21.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            \textbf{Conditioning Info} & Many ways of adding context to a specific part of a graph \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_23.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
 \subsection{Graph Topics}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            Learning subgraph representations & Learning a function that works on portions of a graph \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_25.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Batching in graphs & Very context dependent, no general solution \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_26.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            Heterogeneous graphs & Different types of nodes and edges \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_27.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Interpretability & Many ways to extract information from graphs \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_28.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            Attention & Transformers can be viewed as a GNN on a fully connected graph \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.5]{../Images/L12_29.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Examples}
+
+\subsubsection{Message passing / GraphNets on a small graph}
+\begin{example}
+    \customFigure[0.5]{../Images/L12_24.png}{}
+\end{example}

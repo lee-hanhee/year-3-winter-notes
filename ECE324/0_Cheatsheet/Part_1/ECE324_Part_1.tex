@@ -319,6 +319,36 @@
                 \item $f$: Graph independent layer.
                 \customFigure[0.5]{../Images/L12_14.png}{}
             \end{itemize}} \\
+            \midrule 
+            Graph Convolution & $U_n, V_n, E_n$ & $U_{n+1}, V_{n+1}, E_{n+1}$ & $\rho_{V_n \rightarrow V_n}, f_{U_n}, f_{V_n}, f_{E_n}$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item Add step where we pool info from neighboring nodes. 
+                \customFigure[0.5]{../Images/L12_22.png}{}
+                \vspace{-2em}
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{llll}
+            \toprule
+            \textbf{Algorithm} & \textbf{Inputs} & \textbf{Outputs} & \textbf{Equations} \\
+            \toprule
+            Graph Convolution & $X, A$ & $X'$ & $GCN(X, A) = \text{act}\left(D^{-1/2} (A + I) D^{-1/2} X W \right) = \text{act}(\tilde{A} X W)$ \\
+            \multicolumn{4}{p{\linewidth}}{
+            \begin{itemize}
+                \item \( D \) is the degree matrix
+                \item \( A \) is the adjacency matrix
+                \item \( X \) is the node matrix/tensor
+                \item \( W \) is the learnable weights
+                \item \textit{Act} is the activation function
+                \item What is the aggregation fn? Sum from the matrix multiplication.
+            \end{itemize}} \\
             \bottomrule
         \end{tabular}
     \end{center}
