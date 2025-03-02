@@ -1,0 +1,89 @@
+\subsection{Graphs as General Structured Data}
+\begin{definition}
+    \begin{itemize}
+        \item Nodes (Vertices): Attributes 
+        \begin{itemize}
+            \item e.g. Node identity, \# of neighbors, etc.
+            \customFigure[0.25]{../Images/L12_0.png}{}
+        \end{itemize}
+        \item Edges (Link): Attributes and Directions
+        \begin{itemize}
+            \item e.g. edge identity, edge weight, etc.
+            \customFigure[0.25]{../Images/L12_1.png}{}
+        \end{itemize}
+        \item Global (master node): Attributes
+        \begin{itemize}
+            \item e.g. \# of nodes, longest path, etc.
+            \customFigure[0.25]{../Images/L12_2.png}{}
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsubsection{What Info Can Store in a Graph?}
+\begin{notes} Add vector (embeddings) to each of the graph components.
+    \begin{itemize}
+        \item Nodes (Vertices): Embeddings
+        \item Edges (Link): Attributes and Embeddings
+        \begin{itemize}
+            \item Undirected and directed edges
+        \end{itemize}
+        \item Global (master node): Embeddings
+    \end{itemize}
+    \customFigure[0.25]{../Images/L12_3.png}{}
+\end{notes}
+\newpage
+
+\subsection{Examples of Graphs}
+\begin{example}
+    \begin{enumerate}
+        \item Maps
+        \item Code, algorithms, mathematical formulas, neural networks 
+        \item Images: Pixels connected to their neighboring pixels ("Locality" inductive bias)
+        \customFigure[0.5]{../Images/L12_4.png}{}
+        \item Test: Chain of words or characters ("Sequential" inductive bias)
+        \customFigure[0.5]{../Images/L12_5.png}{}
+        \item Molecules: Atoms are nodes, covalent bonds are edges
+        \customFigure[0.5]{../Images/L12_6.png}{}
+        \item Social Networks: People can be nodes, and their interactions are edges. 
+        \customFigure[0.5]{../Images/L12_7.png}{}
+    \end{enumerate}
+\end{example}
+\newpage
+
+\subsection{Graph Problems}
+\begin{notes}
+    \begin{itemize}
+        \item Global tasks:
+        \customFigure[0.5]{../Images/L12_8.png}{}
+        \item Node tasks:
+        \customFigure[0.5]{../Images/L12_9.png}{}
+        \item Edge tasks:
+        \customFigure[0.5]{../Images/L12_10.png}{}
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Representing Graphs Numerically, Mathematically, Programmatically}
+\begin{notes} Represent the connectivity of the graph.
+    \begin{itemize}
+        \item Numerically 
+        \begin{itemize}
+            \item Adjacency Matrix: $A \in \mathbb{R}^{N \times N}$
+            \customFigure[0.5]{../Images/L12_11.png}{}
+            \item Adjacency List: $A \in \mathbb{R}^{N \times E}$
+            \customFigure[0.5]{../Images/L12_12.png}{}
+        \end{itemize}
+        \item Mathematically: Structured tensors $G = (X,E,A,U)$
+        \begin{itemize}
+            \item $X$: Node features
+            \item $E$: Edge features
+            \item $A$: Adjacency matrix
+            \item $U$: Global features
+        \end{itemize}
+        \item Programmatically: Graph data structure
+        \customFigure[0.5]{../Images/L12_13.png}{}
+    \end{itemize}
+\end{notes}
+
+\subsection{How to Solve Graph Problems w/ GNNs}
+
+\subsection{Graph Topics}

@@ -1,0 +1,82 @@
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \toprule
+            Gating Mechanisms: Controlling Information Flow & Enabling selective filtering and modulation of activations \\
+            & $\text{out} = \text{sigmoid}(\text{Linear})(z) \odot x$ or $\text{tanh}(\text{Linear})(z) \odot x$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $\text{sigmoid}(\text{Linear})(z)$: Acts as a filter, determining how much information should be retained or forgotten.
+                \begin{itemize}
+                    \item $0$: Forget, $1$: Retain
+                \end{itemize}
+                \item $\text{tanh}(\text{Linear})(z)$: Scales values between -1 and 1, maintaining zero-centered activations and helping control the magnitude of updates.
+            \end{itemize}} \\
+            \midrule 
+            Gating: Feature-wise Modulation & Feature-wise input Linear Modulation relies heavily on gating \\ 
+            & $\text{FiLM}(x,z) = \gamma(z) \odot x + \beta(z) \quad \gamma, \beta = \text{MLPs}(z)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{Applications:} Style transfer, context conditioning, out-of domain adaptation. 
+            \end{itemize}} \\
+            \midrule
+            Unrolled in Time & Visualizing the iterative processing of sequential input. \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Notice that when optimizing a RNN, we are backpropagating through time.
+            \end{itemize}} \\
+            \midrule 
+            \textbf{Challenges} & \\ 
+            \toprule
+            Vanishing/Exploding Gradients & Challenges in RNN training due to gradient flow \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Since we only have a single learnable, parametrized operation that we apply iteratively across time, gradients can either vanish or explode.
+                \begin{itemize}
+                    \item e.g. $w*w*w \ldots w$ can either vanish or explode.
+                \end{itemize}
+                \item \textbf{Solutions:} Gradient clipping, gating mechanisms, LSTM/GRU cells, normalization. 
+            \end{itemize}} \\
+            \midrule 
+            Long-Term Dependencies & RNNs struggle to retain information over extended sequences \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item RNNs tend to favour recent information. 
+                \item For long-range information to propagate, it needs to survive multiple iterations.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Approximations for Sequence Data}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Approximations} & \textbf{Equation} \\
+            \toprule
+            \textbf{Markov Property (Conditional Independence)}: & $P(X_t \mid X_{t-1},X_{t-2},\ldots,X_1) = P(X_t \mid X_{t-1})$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Simplifies the joint distribution of a sequence to a product of conditional probabilities.
+            \end{itemize}} \\
+            \midrule
+            \textbf{Weak Stationary (Mean)}: & $E[X_t] = \mu \; \forall t$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item The mean of the sequence is constant over time.
+            \end{itemize}} \\
+            \midrule
+            \textbf{Weak Stationary (Covariance)}: & $\text{Cov}(X_t,X_{t+\tau}) = \gamma(\tau) \; \forall t$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item The covariance between two points in the sequence is constant over time.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+ 

@@ -1,0 +1,104 @@
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \toprule
+            \textbf{2D Convolution Operation} & Equivariant Linear Layer that applies a sliding, weighted sum across input \\
+            & $F(x)_{i,j} = \sum_a^{K_h} \sum_b^{K_w} w_{a,b} x_{i+a,j+b}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $F(x)_{i,j}$: Output at position $(i,j)$, $w_{a,b}$: Weights
+                    \item $x_{i+a,j+b}$: Input at position $(i+a,j+b)$, $K_h,K_w$: Height and Width of Kernel
+                \end{itemize}} \\
+                & $F(x)_{i,j} = \sum_a^{K_h} \sum_b^{K_w} \sum_{\text{out}}^F w_{\text{in},a,b,\text{out}} x_{i+a,j+b,c} \quad \text{in} \in [\text{Input}]$ \\
+                \multicolumn{2}{p{\linewidth}}{
+                    \begin{itemize}
+                        \item $F$: Number of filters, $c$: Number of channels
+                        \item $w_{\text{in},a,b,\text{out}}$: Weights for input channel $in$ and output filter $out$
+                        \item $x_{i+a,j+b,c}$: Input at position $(i+a,j+b)$ in channel $c$
+                    \end{itemize}} \\
+            \midrule
+            Receptive Field & Defines the region of input visible to a neuron \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Determined by kernel size, stride, and network depth.
+                    \item Larger receptive fields capture more context.
+                \end{itemize}} \\
+            \midrule
+            Padding (Managing Boundary Effects) & Adds extra values around the inpjut to control output size \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Valid Padding: No padding, output smaller than input.
+                    \item Same Padding: Output size same as input.
+                    \item Full Padding: Output size larger than input.
+                    \item Zero Padding: Add zeros around input.
+                \end{itemize}} \\
+            \midrule 
+            Stride and Downsampling & Larger strides result in greater downsampling of the input. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Larger strides increase downsampling.
+                    \item \textbf{Pros:} Reduces computational cost.
+                    \item \textbf{Cons:} Can lead to info loss.
+                \end{itemize}} \\
+            \midrule
+            Dilated convolutions & Increase receptive field without increasing parameters \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Dilation rate: Spacing b/w kernel elements. 
+                    \item \textbf{Pros:}
+                    \begin{itemize}
+                        \item Increases receptive field. Without increasing parameters.
+                        \item Useful for capturing long-range dependencies.
+                    \end{itemize}
+                \end{itemize}} \\
+            \toprule
+            \textbf{Pooling} & Reduce spatial dimensions while preserving key features \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Pros:}
+                    \begin{itemize}
+                        \item Provides translation invariance.
+                        \item Summarizes features in a local region.
+                        \item Less sensitive to feature location. 
+                    \end{itemize}
+                \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{1D Convolution Operation} & Leveraging spatial feature extraction for \textbf{sequential data} \\
+            & $F(x_i) = \sum_a^{K} w_{a} x_{i+a}$ \\
+            & $(x \star w)(i) = \sum_a^{K} k_a x_{i+a}$ \\
+            \midrule
+            Causal Convolutions + Causal Padding & Prevents future data influencing in convolutions \\ 
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Causal Convolutions: Only use past data in convolutions.
+                    \item Causal Padding: Pad input with zeros to left of the sequence to prevent future data influencing output.
+                    \item e.g. WaveNet: Dilated Causal Convolutions
+                    \begin{itemize}
+                        \item Captures long-range dependencies.
+                    \end{itemize}
+                \end{itemize}} \\
+            \toprule
+            \textbf{Learning Optimal Filters} & Learn the kernel weights automatically from data. \\
+            \toprule
+            \textbf{Convolution as Cross-Correlation} & Convolution is a cross-correlation with flipped kernel. \\
+            & $(f \star g)_{i,j} = \sum_a^{K_h} \sum_b^{K_w} f_{i+a,j+b} g_{a,b}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item $f_{i,j}$: Pixel at $(i,j)$, $g_{a,b}$: Kernel at $(a,b)$
+                \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+

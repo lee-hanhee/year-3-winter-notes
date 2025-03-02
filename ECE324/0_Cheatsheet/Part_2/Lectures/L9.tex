@@ -1,0 +1,150 @@
+\subsection{Symmetries in Data}
+\begin{summary}
+    Transformations that preserve data characteristics. 
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Transformation Type} & \textbf{Description} \\
+            \toprule
+            Invariance ($f(g(x))=f(x)$) & Invariant to a trans. if output is unchanged when the input does that trans.\\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. $f=\text{label}$, $g=\text{translation, scale, rotation}$. Regardless of transformation, label remains the same.
+                \item Useful for classification tasks where transformations should not change the label.
+            \end{itemize}} \\
+            \midrule
+            Equivariance ($f(g(x)) = g(f(x))$) & Equivariant to a trans. if output changes in the same way as input. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. $f=\text{position}$, $g=\text{translation}$. If $f$ is applied first and then $g$, the output changes in the same way as applying $g$ first and then $f$.
+                \item Useful in tasks where spatial relationships need to be preserved, such as object localization.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Data Type} & \textbf{Symmetry} \\
+            \toprule
+            Tabular Data & Row permutation invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Ordering of rows does not affect the output.
+            \end{itemize}} \\
+            \midrule
+            Sets & Element permutation invariance \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Elements have no inherent order, so the output should not change if elements are swapped.
+            \end{itemize}} \\
+            \midrule
+            Images & Translation, rotation, and scaling invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Image recognition should not be affected by the translation, rotation, or scaling of the image.
+            \end{itemize}} \\
+            \midrule
+            Time-series & Time shift invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Patterns should be the same regardless of when they occur.
+                \item \textbf{Properties:}
+                \begin{itemize}
+                    \item Causal: Future data should not affect past data.
+                    \item Non-Stationarity: Data distribution changes over time.
+                    \item Trend and Seasonality: Data has a trend and seasonal patterns.
+                \end{itemize}
+                \item \textbf{Evaluation performance:} Highly context dependent
+                \begin{itemize}
+                    \item Fixed future test set: Fixed time horizon.
+                    \item Rolling test set: Sliding window.
+                \end{itemize}
+            \end{itemize}} \\
+            \midrule
+            Graphs & Node permutation invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Nodes can be rearranged without changing the graph's structure since the edges remain the same.
+            \end{itemize}} \\
+            \midrule
+            Text & Sentence structure and paraphrasing invariance \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Rewording a sentence or changing its structure should not change its meaning.
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Learning on Tabular Data}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Problem:} DL struggles with tabular data because it lacks the spatial and sequential structures found in images and time-series, making it difficult for NNs to extract meaningful patterns. 
+        \item \textbf{Soln:} XGBoost (tree-ensemble method):
+        \begin{itemize}
+            \item Automatic feature selection.
+            \item Mixed data types.
+            \item Robust to outliers.
+            \item Capture nonlinear relationships.
+            \item Computationally efficient and fast.
+            \item Easy to set up.
+        \end{itemize}
+    \end{itemize}
+\end{notes} 
+
+\subsection{Learning on Sets}
+\begin{summary}
+    Unordered collections of distinct/unique elements 
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concepts} & \textbf{Description} \\
+            \toprule
+            Data Sets & Each data point is i.i.d. R.V. with no inherent order. \\
+            \midrule
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Points are indep. 
+                \item Summing over loss fn is invariant to ordering of elements.
+                \item Unbiased estimate of the loss via stochastic subsampling.
+            \end{itemize}} \\
+            \midrule
+            Permutation Invariance & Output should not change if elements are permuted. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item L9 Slide 23,26: NNs.
+                \item Deep Sets: NNs that are permutation invariant to the input set.
+            \end{itemize}} \\
+            \midrule
+            Pooling & Core operation for sets to summarie info across elements. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item e.g. sum, mean, var/std, max, min, count, distribution statistics
+            \end{itemize}} \\
+            \midrule
+            Inductive Biases & Prior knowledge that can bias the learning process. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Examples:}
+                    \begin{itemize}
+                        \item Max pooling ignores all values except the maximum, which may lose important information.
+                        \item Mean pooling blurs distinctions between large and small values, leading to loss of contrast.
+                        \item Sum pooling can be sensitive to the number of elements, making it less robust to input size variations.
+                    \end{itemize}
+                    \item \textbf{Soln:} Principal Aggregation
+                    \begin{itemize}
+                        \item Take many different types of aggregations and concatenate them.
+                    \end{itemize}
+                \end{itemize}} \\
+            \midrule
+            Learning On Sets & DeepSets (learning/element) $\sum_{i}^{\text{Set}} f(e_i)$ \\
+            & Self-Attention (pairwise interaction) $\sum_{i,j}^{\text{Set}} f(e_i, e_j)$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}

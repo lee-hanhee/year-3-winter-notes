@@ -1,0 +1,147 @@
+\subsection{Parameters \& Hyperparameters}
+\begin{definition}
+    Distinction b/w model setting elements and tuning knobs.
+    \begin{itemize}
+        \item \textbf{Parameters (Train Set):} Learnable parameters $(W,b)$
+        \begin{itemize}
+            \item \textbf{Optimal Choice:} Gradient Descent
+        \end{itemize}
+        \item \textbf{Hyperparameters (Dev/Val Set):} Non-differentiable parameters (i.e. discrete)
+        \begin{itemize}
+            \item \textbf{Optimal Choice:} Heuristics
+            \item E.g. Number of layers, hidden dim, activation, normalization, dropout, ...
+        \end{itemize}
+        \customFigure[0.5]{../Images/L5_0.png}{}
+    \end{itemize}
+\end{definition}
+\newpage
+
+\subsection{Blackbox Optimization (Derivative Free Optimization)}
+\begin{motivation}
+    Since the derivative is unknown, you have to use derivative-free or heuristic methods. 
+    \begin{equation*}
+        x^* = \arg\min_{x \in X} f(x)
+    \end{equation*}
+    \begin{itemize}
+        \item $X$: Space to optimize.
+        \item $f(x)$: Fn to minimize or maximize.
+    \end{itemize}
+\end{motivation}
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+        \toprule
+        \textbf{Types} & \textbf{Description} \\
+        \midrule
+        \textbf{Grid Search} & Exhaustive evaluation across a predefined set of values. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
+            \customFigure[0.3]{../Images/L5_3.png}{}    
+            \vspace{-4em}        
+        \end{center}} \\
+        \midrule
+        \textbf{Coordinate Descent} & Optimize each hyperparameter one at a time. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
+            \customFigure[0.3]{../Images/L5_4.png}{}
+            \vspace{-4em}
+        \end{center}} \\
+        \midrule
+        \textbf{Grad-Student Descent} & Manual and ad-hoc, i.e. "follow your heart" \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
+            \customFigure[0.3]{../Images/L5_5.png}{}
+            \vspace{-4em}
+        \end{center}} \\
+        \midrule
+        \textbf{Random Search} & Sampling hyperparameter configurations from defined distributions. \\
+        \multicolumn{2}{p{\linewidth}}{
+        \begin{center}
+            \customFigure[0.3]{../Images/L5_6.png}{}
+            \vspace{-4em}
+        \end{center}} \\
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Bayesian Optimization}
+\begin{definition}
+    A principled sequential approach for efficient global optimization
+    \begin{itemize}
+        \item \textbf{Function, $f(x)$}: The numerical values we want to optimize.
+        \item \textbf{Space to optimize, $X$}: Parameters or decisions or degrees of freedom to explore.
+        \item \textbf{Bayesian model, $g(x)$}: Provides prediction ($\mu$) and uncertainty ($\sigma$).
+        \item \textbf{Acquisition function, $A(\mu, \sigma)$}: A strategy to trade off exploration \& exploitation.
+    \end{itemize}
+\end{definition}
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concepts} & \textbf{Description} \\
+            \midrule
+            Surrogate Model $g(x)$ & Approximate the expensive function $f(x)$ with a cheaper function $g(x)$. \\
+            & Modelling prediction $\mu$ and uncertainty $\sigma$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{e.g.} Kernel models, Gaussian processes, gradient boosted trees, neural networks
+                \end{itemize}
+            } \\
+            \midrule
+            Acquisition Function $A(\mu,\sigma)$ & Mix exploitation and exploration. \\
+            & Sometimes, it pays off to explore areas where we have little information. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Overview:} Encapsulate the heuristic of what to sample next, how useful is unobserved data?
+                    \item $\mu$: exploitation, $\sigma$: exploration 
+                    \item \textbf{E.g.} Expected Improvement (EI), Probability of Improvement (PI), Upper Confidence Bound (UCB), ...
+                \end{itemize}
+            } \\  
+            \midrule 
+            BayesOpt Loop & Iterative process of modelling and sampling. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{enumerate}
+                    \item Set a termination criteria (budget, iterations, maxima)
+                    \item Evaluate $f(x)$ on initial set of points (random)
+                    \item \textbf{Loop:} while criteria is not met:
+                    \begin{enumerate}
+                        \item Update surrogate model on all data
+                        \item Optimize acquisition function to find a maxima ($x_{\text{new}}$)
+                        \item Evaluate $f(x_{\text{new}}$)
+                    \end{enumerate}
+                \end{enumerate}
+            } \\
+            \midrule 
+            Practical Considerations & \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Hyperparameter Space:} Define bounds, datatypes, etc.
+                    \item \textbf{Simplify:} Reduce the space to make it easier to optimize.
+                    \item \textbf{Platform:} Use a platform to launch, monitor, and launch models.
+                    \item \textbf{Libraries:} Optuna, Ray, BoTorch, Ax, ...
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\begin{example}
+    \begin{itemize}
+        \item 2 random points
+        \item Criteria: 10 evaluations.
+        \item Normalize $f(x)$ to a smaller range b/c gradients are sensitive to scale.
+        \item Repeat for 10 iterations:
+        \begin{itemize}
+            \item Pick points that maximizes acquistion function.
+            \item Update surrogate model w/ the new point and its evaluation, i.e. $f(x_i)$ to get more certainty and better predictions.
+        \end{itemize}
+    \end{itemize}
+    \vspace{1em}
+
+    Look at L5.
+\end{example}
+
