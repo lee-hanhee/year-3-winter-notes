@@ -4,20 +4,170 @@
 
 \subsection{Estimating Q-Star Empirically}
 \begin{summary}
-    
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            $\gamma$ & \textbf{Equation} \\
+            \midrule
+            0 & $q^*(s,a) = \lim_{K \to \infty} \bar{R}_K$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item $\bar{R}_K = \frac{1}{K} \sum_{k=1}^{K} r_k$: empirical average reward. 
+                \item $r_k$: reward obtained in the $k^\text{th}$ simulation.
+                \item $K$: \# of times action $a$ taken in state $s$ (\# of simulations)
+            \end{itemize}
+            } \\
+            \midrule
+            0 & $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( r(s,a,s') - q^*(s,a) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item $N(s,a)$: \# of times action $a$ taken in state $s$.
+            \end{itemize}
+            } \\
+            \midrule 
+            $\neq 0$ & $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( \left[ r(s,a,s') + \gamma \max_{a'} q^*(s', a') \right] - q^*(s,a) \right)$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item Using old $q^*$ values to estimate. 
+            \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
 \end{summary}
 
 \subsubsection{Running Average Update Rule}
 \begin{definition}
-    
+    \begin{equation*}
+        \bar{x} \gets \bar{x} + \alpha (x_{\text{new}} - \bar{x}).
+    \end{equation*}
+    \begin{itemize}
+        \item $\alpha$: learning rate
+    \end{itemize}
 \end{definition}
-
-\subsection{Quality Fn Update Rule}
+\newpage
 
 \subsection{Q-Learning Algorithm}
+\begin{algo}
+\begin{lstlisting}
+procedure Q_LEARNING():
+    for each episode do
+        set initial state $s \leftarrow s_0$
+        while $s \notin \mathcal{T}$ do # $\mathcal{T}$: terminal states
+            randomly choose an action in $\mathcal{A}(s)$
+            get next state, $s'$, and reward $r$
+            update $N(s, a)$ and $q^*(s, a)$ as follows:
+
+            $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
+            
+            $N(s, a) \leftarrow N(s, a) + 1$
+            
+            $s \leftarrow s'$
+        end while
+    end for
+\end{lstlisting}
+\begin{itemize}
+    \item \textbf{Note:} Possible infinite while loop if $\mathcal{T}$ is not reached.
+\end{itemize}
+\end{algo}
+
+\subsection{Modified Q-Learning Algorithm}
+\begin{algo}
+\begin{lstlisting}
+procedure Q_LEARNING():
+    for each episode do
+        $l \leftarrow 0$
+        set initial state $s \leftarrow s_0$
+        while $s \notin \mathcal{T}$ and $l < l_{\max}$ do
+            randomly choose an action in $\mathcal{A}(s)$
+            get next state, $s'$, and reward $r$
+            update $N(s, a)$ and $q^*(s, a)$ as follows:
+
+            $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
+            
+            $N(s, a) \leftarrow N(s, a) + 1$
+            
+            $l \leftarrow l + 1$
+            $s \leftarrow s'$
+        end while
+    end for
+\end{lstlisting}        
+\end{algo}
+
+\begin{notes}
+    Choice of $\gamma$ and $l_{\max}$ are coupled:
+    \begin{itemize}
+        \item $\gamma \approx 1$ requires large $l_{\max}$
+        \item $\gamma \approx 0$ requires small $l_{\max}$
+    \end{itemize}
+\end{notes}
+\newpage
+
 
 \subsection{Training vs. Testing}
+\begin{notes}
+    Episodes are classified as either:
+    \begin{itemize}
+        \item training (sim): reward accumulated during episode does not count
+        \item testing (test): reward accumulated during episode counts
+    \end{itemize}
+\end{notes}
 
-\subsubsection{K sims, 1 test}
+\subsubsection{$K$ Sims, 1 Test}
+\begin{notes}
+    \begin{enumerate}
+        \item select actions randomly during $K$ simulations
+        \item extract optimal policy, $\pi^*$
+        \item use $\pi^*$ during test
+    \end{enumerate}    
+\end{notes}
 
-\subsubsection{K tests}
+\subsubsection{$K$ Tests}
+\begin{notes}
+    \begin{itemize}
+        \item maximize average reward over $K$ tests
+        \item must balance between exploration and exploitation
+        \item Common ways to balance exploration and exploitation: $\varepsilon$-greedy strategy, UCB algorithm
+    \end{itemize}
+    \vspace{1em}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Strategy} & \textbf{Description} \\
+            \midrule
+            $\varepsilon$-greedy & choose optimal action with probability $\varepsilon(k)$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item In episode $k$, choose the optimal action with probability $\varepsilon(k)$, where:
+                \begin{itemize}
+                    \item $\varepsilon(0) \approx 0$
+                    \item $\varepsilon(k)$ is increasing
+                    \item $\varepsilon(k) \to 1$ as $k \to \infty$
+                \end{itemize}
+                \item Common choice for $\varepsilon(k)$ is $1 - \frac{1}{k}$.
+            \end{itemize}
+            } \\
+            \midrule
+            UCB algorithm & choose action that maximizes $\text{UCB}(\cdot)$ \\
+            & $\text{UCB}(s,a) =
+            \begin{cases} 
+            q^*(s,a) + C \sqrt{\frac{\log k}{N(s,a)}}, & \text{if } N(s,a) > 0 \\
+            \infty, & \text{otherwise}
+            \end{cases}$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+                \begin{itemize}
+                    \item In episode $k$, choose the action that maximizes $\text{UCB}(\cdot)$.
+                    \item $C$: exploration parameter
+                    \item $N(s,a)$: \# of times $a$ taken from $s$. 
+                \end{itemize}
+            } \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{notes}

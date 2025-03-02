@@ -22,23 +22,61 @@
             Initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
             \midrule
             Transition distribution & $p(s'|s,a) := \mathbb{P}[S_t = s' | A_t = a, S_{t-1} = s]$ \\
-            \midrule
             Reward function & $r(s,a,s') :=$ reward for transition $(s, a, s')$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item Since actual state is unknown, so are legal actions. 
+                \item Can fix by assuming $\mathcal{A}(s) = \mathcal{A}(s') := \mathcal{A}\; \forall s, s'$:
+                \begin{itemize}
+                    \item if $a \notin \mathcal{A}(s)$, then $p(s' | s, a) = 0$ for all $s' \neq s$
+                    \item if $a \notin \mathcal{A}(s)$, then $r(s, a, s') = 0$ for all $s'$
+                \end{itemize}                
+            \end{itemize}
+            } \\
             \midrule
             Policy for choosing actions & $\pi_t(a | o_0, \dots, o_t) := \mathbb{P}[A_t = a | O_0 = o_0, \dots, O_t = o_t]$ \\
             \midrule
             Measurement model & $m(o | s) := \mathbb{P}[O_t = o | S_t = s]$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item Observe that policy is now time-dependent.
+                \item \textbf{Special Case:} If we assume the agent cannot use past observations, $A_t \perp O_0, \dots, O_{t-1} \mid O_t,$ policy becomes time-independent,
+                \[
+                \pi_t(a | o_0, \dots, o_t) = \pi_0(a | o_t).
+                \]
+                \begin{itemize}
+                    \item Only need to specify $\pi_0$.
+                \end{itemize}
+            \end{itemize}
+            } \\
+            \midrule 
+            Belief after $t$ observations &  $b_t(s_t | a_{1:t}, o_{0:t}) = \mathbb{P}[S_t = s_t | A_t = a_t, O_{0:t} = o_{0:t}]$ \\
+            & $b_t(s_t | a_{1:t}, o_{0:t}) = m(o_t | s_t) \sum_{s_{t-1}} p(s_t | s_{t-1}, a_t) b_{t-1}(s_{t-1} | a_{1:t-1}, o_{1:t-1})$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item $b_t$: Probability distribution
+                \item $b_0(s_0) = \mathbb{P}[S_0 = s_0]$: Initial belief distribution
+                \item Only holds for $t \geq 1$.
+                \item For $t = 0$ (assuming uniform prior): $b_0(s_0 | o_0) = \frac{m(o_0 | s_0)}{\sum_s m(o_0 | s)}.$
+            \end{itemize}
+            } \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
-\newpage
 
 \subsection{Bayesian Network}
 \begin{notes}
     $S_0, O_0, A_1, R_1, S_1, O_1, A_2, R_2, S_2, O_2, \dots$ form a Bayesian network:
     \customFigure[0.5]{../Images/L10_0.png}{}
+    \begin{itemize}
+        \item Assuming $A_t \perp O_0, \dots, O_{t-1} \mid O_t$. WHERE DOES THIS COME INTO PLAY. 
+    \end{itemize}
 \end{notes}
+\newpage
 
 \begin{example}
     
