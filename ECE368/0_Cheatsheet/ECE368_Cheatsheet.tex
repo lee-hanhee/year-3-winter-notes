@@ -168,8 +168,6 @@
     \textcolor{darkgreen}{\textbf{TII Err. (False Accept.):}} Accept $H_0$ when $H_1$ is true. \\
     *$\beta(R) = P[\underline{X} \in R^c \mid H_1]$ (missed detection)
 
-    \switchcolumn
-
     \textcolor{blue}{\textbf{Likelihood Ratio Test:}} $\forall \underline{x} \; L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x}|H_1)}{P_{\underline{X}} (\underline{x}|H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} 1 \text{ or } \xi$ \\
     *\textbf{Max. Likelihood Test:} $1$, \textbf{Likelihood Ratio Test:} $\xi$
 
@@ -299,8 +297,6 @@
     1. Find eigenvalues, normalized eigenvectors of $K_{\underline{X}}$. \\
     2. Set $K_{\underline{Y}} = \Lambda$, where $\underline{Y} = P^T \underline{X}$
 
-    \switchcolumn
-
     \textcolor{blue}{\textbf{PDF of L.T.}} If $\underline{Y} = A \underline{X}$ w/ $A$ not singular, then \\
     $f_{\underline{Y}} (\underline{y}) = \frac{f_{\underline{X}} (\underline{x})}{|\det A|} \Big|_{\underline{x} = A^{-1} \underline{y}}$
 
@@ -415,7 +411,50 @@
 
     \textcolor{darkgreen}{\textbf{Covar. Mat of $\underline{X}$ Given $\underline{Y}=\underline{y}$:}} $\Sigma_{\underline{X} \mid \underline{y}} = \left(\Sigma_{\underline{X}}^{-1} + A^T \Sigma_{\underline{Z}}^{-1} A \right)^{-1}$
 
+    \textcolor{red}{\textbf{Linear Regression:}} Estimate unknown target fn $Y=g(\underline{X})$ w/ \\ 
+    $\hat{y} = h(\underline{x}) = \underline{w}^T \underline{x} + Z$ \\
+    *$\underline{x}  = \{x_1, \ldots, x_D\}$: Input features \\
+    *$\underline{w} = \{w_1, \ldots, w_D\}$: Weights (parameter) \\
+    *$Z\sim \mathcal{N}(0, \sigma^2)$: Noise (i.i.d.) \\
+    *$Y$: Target/observed output 
 
+    \textcolor{blue}{\textbf{ML Estimator:}} Given iid obs. $\{(\underline{x}_1, y_1), \ldots, (\underline{x}_n, y_n)\}$, estimate $\underline{w}$ \\
+    $\hat{\underline{w}}_{\text{ML}} = (X X^T)^{-1} X^T \underline{y}$ \\
+    *Assume $X^T X$ has full rank (i.e. invertible) since $n \gg D$ \\
+    *$n$: \# of obs., $D$: \# of features. \\ 
+    *$X = \begin{bmatrix}  \underline{x}_1^T \\ \vdots \\ \underline{x}_n^T \end{bmatrix} \in \mathbb{R}^{n \times D}$ \\
+    *$\underline{y} = \begin{bmatrix} y_1 & \cdots & y_n \end{bmatrix}^T$ \\
+    *$X^\dagger = (X^T X)^{-1} X^T$: Pseudo-inverse of $X$ (minimizes $||X \underline{w} - \underline{y}||_2^2 \iff$ maximizes the likelihood of training data) \\
+
+    \textcolor{green}{\textbf{Non-Linear Trans:}} $\hat{y} = \underline{w}^T \underline{\phi}(\underline{x}) + Z$ \\
+    *$\underline{\phi}(\underline{x})$: Non-linear transformation of $\underline{x}$ \\
+    -E.g. of $1$ dim $x$: $\underline{\phi}(x) = \begin{bmatrix} 1 \\ x \\ x^2 \\ \vdots \\ x^M \end{bmatrix}$: Polynomial regression \\ 
+    $M$: Degree of polynomial, $D=1+M$: \# of features. \\
+    Given iid obs. $\{(\underline{x}_1, y_1), \ldots, (\underline{x}_n, y_n)\}$, estimate $\underline{w}$ \\
+    $\hat{\underline{w}}_{\text{ML}} = (X X^T)^{-1} X^T \underline{y}$ \\
+    *$X = \begin{bmatrix}  \underline{\phi}(\underline{x}_1)^T \\ \vdots \\ \underline{\phi}(\underline{x}_n)^T \end{bmatrix} \in \mathbb{R}^{n \times D}$
+    
+    \textcolor{green}{\textbf{Underfitting vs. Overfitting:}} \\
+    *Underfitting: Model too simple, high bias, low variance. \\
+    -Results in high train/test error. \\
+    *Overfitting: Model too complex, low bias, high variance. \\
+    -Results in low train error, high test error. 
+
+    \textcolor{blue}{\textbf{MAP Estimator (Bayesian Linear Regression):}} Assume prior $w_i\sim \mathcal{N}(0, \tau^2)$ (i.i.d.) and 
+     $\hat{y} = \underline{w}^T \underline{x} + Z$, then \\
+    $\hat{\underline{w}}_{\text{MAP}} = (X X^T + \lambda I)^{-1} X^T \underline{y}$ \\
+    *$\lambda = \frac{\sigma^2}{\tau^2}$: Regularization parameter \\
+    *$X$: Can be linear or non-linear transformation of $\underline{x}$
+
+    \textcolor{green}{\textbf{Notes:}} \\
+    1. Useful when training data set size is small i.e. $n \ll D$. \\
+    2. Regularization: Prevents overfitting by penalizing large weights. \\
+    *$\tau = \infty \implies \lambda = 0$: No regularization so $\hat{\underline{w}}_{\text{MAP}} = \hat{\underline{w}}_{\text{ML}}$ \\
+    *$\tau = 0 \implies \lambda = \infty$: Infinite regularization so $\hat{\underline{w}}_{\text{MAP}} = \underline{0}$
+    *$\tau \downarrow \implies \lambda \uparrow$: More regularization, simpler model. \\
+    *$\tau \uparrow \implies \lambda \downarrow$: Less regularization, more complex model.
+
+    
 
     }
 \end{paracol}
