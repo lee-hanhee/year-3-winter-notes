@@ -149,7 +149,29 @@
     3. \textbf{Stability:} Design $C'(s)$ so that the CLS is BIBO stable. \\
     4. \textbf{Performance:} Tune controller parameters to achieve the desired performance specifications.
 
+    \textcolor{red}{\textbf{Argument Principle}} Let $\mathcal{D}$ be a simple (no self-intersections) closed (no endpoints) path in $\mathcal{C}$ oriented CCW. 
+    Suppose $F(s)$ has no poles or zeros on $\mathcal{D}$ \& isolated poles inside $\mathcal{D}$. Let $\gamma(\theta)$ be a parametrization of $\mathcal{D}$, i.e. $\mathcal{D} = \{ \gamma(\theta) : \theta \in \mathbb{R}\}$ 
+    and $\mathcal{F} = \{F(\gamma(\theta)) : \theta \in \mathbb{R}\}$. Then $\mathcal{F}$ encircles the origin $n_e = n_z - n_p$ times CCW. \\
+    *$n_z$: \# of zeros of $F(s)$ inside $\mathcal{D}$ \\
+    *$n_p$: \# of poles of $F(s)$ inside $\mathcal{D}$ \\
 
+    \textcolor{blue}{\textbf{Notes:}} \\
+    1. A -ve CCW encirlement is the same as a +ve CW encirlement. \\    
+    2. If $\mathcal{D}$ is oriented CW, the Argument Principle still holds by replacing $CCW \rightarrow CW$ everywhere.
+
+    \textcolor{blue}{\textbf{Nyquist Contour:}} The path $\mathcal{D}$ above w/ $R \rightarrow \infty$. 
+
+    \textcolor{blue}{\textbf{Application to Feedback Loops:}} To stabilize the CLS, it suffices to consider the FB loop where we require: \\
+    -\textbf{Zeros of} \( 1 + C(s) G(s) \subseteq \mathbb{C}^- \) \textcolor{red}{\text{(focus on this)}} \\
+    -\( C(s)G(s) \) has no unstable pole-zero cancellations. \\
+    
+    See if $\exists$ zeros in \( \mathbb{C}^+ \). So consider the contour: \\
+    $\mathcal{D} = \mathcal{D}_1 \cup \mathcal{D}_2 = \{ j\omega : \omega \in [-R, R] \} \cup \{ R e^{j\theta} : \theta \in [-\frac{\pi}{2}, \frac{\pi}{2}] \}$ \\
+    *If \( R \to \infty \), then more and more of \( \mathbb{C}^+ \) is contained inside \( \mathcal{D} \). \\
+    *By the \textbf{Argument Principle}, if we: \\
+    -Count the number of encirclements of \( 1 + C(s)G(s) \) (\( n_e \)). \\
+    -Know the number of unstable poles of \( 1 + C(s)G(s) \) (\( n_p \)). \\
+    *Then, we can compute the number of zeros in \( \mathbb{C}^+ \).
 
         }
 \end{paracol}
