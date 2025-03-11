@@ -505,10 +505,13 @@
     \textcolor{blue}{\textbf{Multiclass Logistic Regression:}} $Y \in \{1,2,\ldots,C\}$, then use softmax fn $P_Y(k \mid \underline{x}, \underline{w}_1, \ldots, \underline{w}_C) = \frac{e^{\underline{w}_k^T \underline{x}}}{\sum_{c=1}^C e^{\underline{w}_c^T \underline{x}}}$ \\
     *$W=[\underline{w}_1, \ldots, \underline{w}_C] \in \mathbb{R}^{D \times C}$: Weights matrix 
 
-    \textcolor{green}{\textbf{ML Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then $\hat{W}_{\text{ML}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W)$ \\
+    \textcolor{green}{\textbf{ML Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then $\hat{W}_{\text{ML}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W)$ 
 
     \textcolor{green}{\textbf{MAP Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then \\
-    $\hat{W}_{\text{MAP}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W) + \sum_{c=1}^C \lambda_c ||\underline{w}_c||^2$ \\
+    $\hat{W}_{\text{MAP}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W) + \sum_{c=1}^C \lambda_c ||\underline{w}_c||^2$ 
+
+    \textcolor{red}{\textbf{Markov Chain:}} A sequence of discrete-valued RVs $X_0,X_1,\ldots$ is a DT
+
 
     }
 \end{paracol}
