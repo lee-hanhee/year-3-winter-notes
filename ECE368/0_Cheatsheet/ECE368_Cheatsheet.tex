@@ -475,6 +475,40 @@
     *$\mu_{Y' \mid \mathcal{D}} = \underline{x}'^T \mu_{\underline{w} \mid \underline{Y}}$ \\
     *$\sigma^2_{Y' \mid \mathcal{D}} = \underline{x}'^T \Sigma_{\underline{w} \mid \underline{Y}} \underline{x}' + \sigma^2$
 
+    \textcolor{red}{\textbf{Linear Classification (Hyp. Test):}} 
+
+    \textcolor{blue}{\textbf{Binary Logistic Regression:}} Estimate $\underline{w}$ s.t. it is a soft decision \\
+    $P_{Y \mid \underline{X}}(1 \mid \underline{x}) = \frac{P_{\underline{X} \mid Y}(\underline{x} \mid 1) P_Y(1)}{P_{\underline{X} \mid Y} (\underline{x} \mid 0) P_Y(0) + P_{\underline{X} \mid Y} (\underline{x} \mid 1) P_Y(1)}$ \\
+    $P_{Y \mid \underline{X}}(1 \mid \underline{x}) = \frac{1}{1 + e^{-\alpha}} = \sigma(\alpha)$ \\
+    *$P_{Y \mid \underline{X}}(0 \mid \underline{X}) = 1 - \sigma(\alpha) = \frac{1}{1 + e^{\alpha}} = \sigma(-\alpha)$ \\
+    *$\alpha = \log \frac{P_{\underline{X} \mid Y} (\underline{x} \mid 1) P_Y(1)}{P_{\underline{X} \mid Y} (\underline{x} \mid 0) P_Y(0)} = \underline{w}^T \underline{x}$ \\
+    -$\alpha \rightarrow \infty \implies$ more likely to be in class 1 \\
+    -$\alpha \rightarrow -\infty \implies$ more likely to be in class 0. \\
+    -$\alpha = 0 \implies$ equally likely to be in class 0 or 1.
+
+    \textcolor{green}{\textbf{Non-Linear Trans.}} Use $\sigma(\underline{w}^T \underline{\phi}(\underline{x}))$ 
+
+    \textcolor{green}{\textbf{ML Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then $\hat{\underline{w}}_{\text{ML}} = \arg \min_{\underline{w}} - \sum_{i=1}^n \log P_{Y \mid \underline{X}}(y_i \mid \underline{x}_i, \underline{w})$
+
+    \textcolor{black}{\textbf{Cross Entropy}} b/w actual $y_i$ and $P_{Y \mid \underline{X}} (\cdot \mid \underline{x}_i, \underline{w})$ is \\
+    $P_{Y \mid \underline{X}}(y_i \mid \underline{x}_i, \underline{w}) = \sum_{i=1}^n - \left(y_i \log P(1 \mid \underline{x}_i, \underline{w}) + (1 - y_i) \log P(0 \mid \underline{x}_i, \underline{w})\right)$ \\ 
+    *Note: Measures the distance between 2 distributions. \\
+    *Dropped the subscripts.
+
+    \textcolor{black}{\textbf{Gradient Descent:}} No closed-form soln. so use GD.
+
+    \textcolor{green}{\textbf{MAP Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then \\
+    $\hat{\underline{w}}_{\text{MAP}} = \arg \min_{\underline{w}} - \sum_{i=1}^n \log P_{Y \mid \underline{X}}(y_i \mid \underline{x}_i, \underline{w}) + \lambda ||\underline{w}||^2$ \\
+    *$\underline{w} \sim \mathcal{N}(\underline{\mu}, \Sigma)$: Prior on $\underline{w}$ \\
+    *Necessary: B/c same boundary $\underline{w}^T \underline{x} = 0$ for any scaling of $\underline{w}$.
+
+    \textcolor{blue}{\textbf{Multiclass Logistic Regression:}} $Y \in \{1,2,\ldots,C\}$, then use softmax fn $P_Y(k \mid \underline{x}, \underline{w}_1, \ldots, \underline{w}_C) = \frac{e^{\underline{w}_k^T \underline{x}}}{\sum_{c=1}^C e^{\underline{w}_c^T \underline{x}}}$ \\
+    *$W=[\underline{w}_1, \ldots, \underline{w}_C] \in \mathbb{R}^{D \times C}$: Weights matrix 
+
+    \textcolor{green}{\textbf{ML Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then $\hat{W}_{\text{ML}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W)$ \\
+
+    \textcolor{green}{\textbf{MAP Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then \\
+    $\hat{W}_{\text{MAP}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W) + \sum_{c=1}^C \lambda_c ||\underline{w}_c||^2$ \\
 
     }
 \end{paracol}
