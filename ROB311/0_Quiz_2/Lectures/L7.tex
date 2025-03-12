@@ -346,6 +346,13 @@
         \end{tabular}
     \end{center}
 \end{example}
+
+\begin{example}
+    Any set with 
+    \begin{equation*}
+        B \lor [(G \lor (D \land (\lnot H))) \land (C \lor F)]
+    \end{equation*}
+\end{example}
 \newpage
 
 \subsubsection{Bayesian Inference}
@@ -505,19 +512,22 @@
             \begin{center}
                 $g_2(E) = (p(g=1) p(s=1 \mid g=1, E) + p(g=0) p(s=1 \mid g=0, E)) g_1$
             \end{center}} \\
-            $g_2(e=1) = 0.3(0.7) + 0.7(0.4) = 0.49$ \\
-            $g_2(e=0) = 0.3(0.5) + 0.7(0.1) = 0.22$ \\
+            $g_2(e=1,s=1) = 0.3(0.7) + 0.7(0.4) = 0.49$ \\
+            $g_2(e=0,s=1) = 0.3(0.5) + 0.7(0.1) = 0.22$ \\
+            $g_2(e=1,s=0) = 0.3(0.3) + 0.7(0.6) = 0.51$ \\
+            $g_2(e=0,s=0) = 0.3(0.5) + 0.7(0.9) = 0.78$ \\
             \midrule
             \multicolumn{1}{p{\linewidth}}{
-            \begin{center}
-                $g_3 = 0.8 p(e=1) g_2(e=1) + 0.8 p(e=0) g_2(e=0) = 0.8(0.4)(0.49) + 0.8(0.6)(0.22) = 0.1568 + 0.1056 = 0.2624$
-            \end{center}} \\
+            \begin{itemize}
+                \item $g_3(t=1 \mid s=1) = 0.9 p(e=1) g_2(e=1) + 0.9 p(e=0) g_2(e=0) = 0.9(0.4)(0.49) + 0.9(0.6)(0.22) = 0.2952$ 
+                \item $g_3(t=1 \mid s=0) = 0.2 p(e=1) g_2(e=1) + 0.2 p(e=0) g_2(e=0) = 0.2(0.4)(0.51) + 0.2(0.6)(0.78) = 0.1344$
+            \end{itemize}} \\
             \bottomrule
         \end{tabular}
     \end{center}
 
     \begin{equation*}
-        p(s=1 \mid t=1) = \frac{g_3}{\sum_S p(t=1,S)}
+        p(s=1 \mid t=1) = \frac{g_3}{\sum_S p(t=1,S)} = \frac{0.2952}{0.2952 + 0.1344} = \frac{0.2952}{0.4296} = 0.6875
     \end{equation*}
 \end{example}
 \newpage
