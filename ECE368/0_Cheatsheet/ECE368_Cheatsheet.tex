@@ -510,7 +510,78 @@
     \textcolor{green}{\textbf{MAP Estimator:}} Given $\mathcal{D} = \{(\underline{x}_i, y_i)\}, i=1,\ldots,n$, then \\
     $\hat{W}_{\text{MAP}} = \arg \min_W - \sum_{i=1}^n \log P(y_i \mid \underline{x}_i, W) + \sum_{c=1}^C \lambda_c ||\underline{w}_c||^2$ 
 
-    \textcolor{red}{\textbf{Markov Chain:}} A sequence of discrete-valued RVs $X_0,X_1,\ldots$ is a DT
+    \textcolor{red}{\textbf{Markov:}} 
+
+    \textcolor{blue}{\textbf{Notation:}} \\
+    *$P[X_n \text{=} x_n,\ldots,X_0\text{=} x_0] = P(x_n,\ldots,x_0)$ \\
+    *Index the possible values of $X_n$ w/ integers $0,1,2,\ldots$ 
+    
+    \textcolor{blue}{\textbf{Markov Chain (Memoryless/Markovian Property):}}
+    A sequence of discrete-valued RVs $X_0,X_1,\ldots$ is a (discrete-time) Markov chain if \\ 
+    $P[\underbrace{X_{k+1} = x_{k+1}}_{\text{Future}} \mid \underbrace{X_k = x_k}_{\text{Present}}, \underbrace{X_{k-1} = x_{k-1},\ldots,X_0=x_0}_{\text{Past}}] = $ \\
+    $P[X_{k+1} = x_{k+1} \mid X_k = x_k] \; \forall k, x_1,\ldots,x_{k+1}$ \\
+    *\textbf{Markovian:} $P(x_n,\ldots,x_0) \text{=} P(x_n \mid x_{n-1}) \cdots P(x_1 \mid x_0) P(x_0)$ \\
+    *\textbf{Equiv. Form:} $k+1 \rightarrow n_{k+1}$, $k \rightarrow n_k$ and so on \\
+    for any $n_{k+1} > n_k > \cdots > n_0$ (i.e. farther in future/past) 
+
+    \textcolor{blue}{\textbf{State Distribution:}} State distribution of the MC at time $n$ is $P_j(n) \equiv P[X_n = j], j=0,1,\ldots \; \mid \; \underline{P}(n) \equiv [P_0(n), P_1(n), \ldots]$ \\
+    *Subscript: Value of $X_n$, Argument: Time step \\
+    *Row vector NOT col vector.
+
+    \textcolor{blue}{\textbf{Transition Probabilities:}} \\ 
+    $P_{ij} (n,n+1) \equiv P[X_{n+1} = j \mid X_n = i] \; \forall i,j,n$ 
+
+    \textcolor{green}{\textbf{Homogeneous MC:}} $P_{ij}(n,n+1) = P_{ij} \; \forall i,j,n$ \\
+    *Time invariant, $P_{ij}$ does not depend on $n$
+
+    \textcolor{blue}{\textbf{Transition Probability Matrix:}} $P = \begin{bmatrix}
+        P_{00} & P_{01} & \cdots \\
+        P_{10} & P_{11} & \cdots \\
+        \vdots & \vdots & \ddots
+    \end{bmatrix}$ 
+
+    \textcolor{green}{\textbf{Notes:}} (1) \textbf{Stochastic Matrix:} (1) All entries of $P$ are non-negative and (2) each row sums to $1$: $\sum_{j} P_{ij} = 1 \; \forall i$ \\
+    (2) State Dist. at time $n+1$: $\underline{P}(n) = \underline{P}(n-1) P$ \\
+    *$\underline{P}(n) = \underline{P}(0) P^n$ in terms of initial distribution $\underline{P}(0)$\\
+    (3) State Dist. at time $n+m$: $\underline{P}(n+m) = \underline{P}(m) P^n \; \forall n,m$
+
+    \textcolor{blue}{\textbf{n-step Transition Probabilities:}} Stochastic matrix $P^n$ s.t. 
+    $P_{ij}^{(n)} \equiv P[X_{k+n} = j \mid X_k = i]$ for $n \geq 0$ are the entries of $P^n$ 
+
+    \textcolor{blue}{\textbf{Limiting Distribution}} A MC has a limiting distribution $\underline{q}$ if for any initial distribution $\underline{P}(0)$ \\
+    $\underline{P}(\infty) \equiv \lim_{n \rightarrow \infty} \underline{P}(n) = \underline{q}$ or \\ 
+    $\underline{P}(0)P^{\infty} \equiv \underline{P}(0) \lim_{n \rightarrow \infty} P^n = \underline{q}$ \\
+
+    \textcolor{green}{\textbf{Theorem:}} A MC has a limiting distribution $\underline{q}$ iff \\ 
+    $q_i = \lim_{n \rightarrow \infty} P_{ij}^{(n)} \; \forall i,j$\\
+    *i.e. every row of $P^\infty$ equals $\underline{q}$ (row vector)
+
+    \textcolor{blue}{\textbf{Steady State (Stationary) Distribution}} $\underline{\pi}$ is a steady state distribution of a MC if $\underline{\pi} = \underline{\pi} P$ \\
+    *$1 = \sum_{j} \pi_j$
+
+    \textcolor{green}{\textbf{Theorem:}} If a limiting dist. exists $\underline{q} = \underline{P}(\infty)$, then it is also a steady state dist. 
+
+    \textcolor{blue}{\textbf{Ergodic:}} For a finite-state, irreducible, and aperiodic MC, then \\
+    (1) Limiting dist. $\underline{q} = \lim_{n \rightarrow \infty} \underline{P}(n)$ exists and \\ 
+    $q_j = \lim_{n \rightarrow \infty} P_{ij}^{(n)} \; \forall i,j$ \\
+    (2) Steady state dist. $\underline{\pi}$ is unique. \\ 
+    (3) $\underline{\pi} = \underline{q}$
+
+    \textcolor{blue}{\textbf{How Fast Does $\underline{P}(n)$ Converge to $\underline{\pi}$?}} (1) $\underline{\pi}^T = \underline{\pi}^T P^T$ \\
+    *$\underline{\pi}^T$ is an eigenvector of $P^T$ w/ eigenvalue $1$ \\
+    (2) Suppose $P^T$ has eigenvectors $U \equiv [\underline{\pi}^T, \underline{u}_2, \ldots, \underline{u}_D]$ \\ 
+    and eigenvalues $\Lambda \equiv \text{diag}[1, \lambda_2, \ldots, \lambda_D]$, then \\
+    $P^T U = U \Lambda \implies P^T = U \Lambda U^{-1}$ so $n$ times \\
+    $P^n = (P^T)^n = (U \Lambda U^{-1})^n = U \Lambda^n U^{-1}$ \\
+    Therefore, $\Lambda^n = \text{diag}[1, \lambda_2^n, \ldots, \lambda_D^n]$ \\
+    (3) For ergodic MC, $P^n \rightarrow [\underline{\pi}, \ldots, \underline{\pi}]^T$ (i.e. rank 1) \\
+    Therefore, \# of non-zero eigenvalues is $1$, so the rest of the eigenvalues must be $|\lambda_i| < 1 \; \forall i \geq 2$ s.t. $\Lambda^n = \text{diag}[1,0,\ldots,0]$
+
+    \textcolor{green}{\textbf{Rate of Convergence:}} Depends on the 2nd largest eigenvalue of $P^T$ i.e. $(\lambda_2)^n$ is the rate of convergence.
+
+
+    
+
 
 
     }
