@@ -19,6 +19,38 @@
     \end{itemize}
 \end{definition}
 
+\begin{warning}
+    \begin{itemize}
+        \item Denominator: Normalization constant (assuming $\mathbf{E}$ is fixed)
+        \item Therefore, only need to compute numerator (w/o specifying $\mathbf{Q}$), which we can then normalize w.r.t. $\mathbf{Q}$
+    \end{itemize}
+\end{warning}
+
+\subsubsection{Joint Distribution in a Bayesian Network}
+\begin{derivation}
+    For any joint distribution, the following factorization holds:
+    \begin{equation*}
+        p(X_1,\ldots,X_{|p|})  = p(X_1) \prod_{i \neq 1} p(X_i \mid X_1,\ldots, X_{i-1})
+    \end{equation*}
+
+    \textbf{Bayesian Network Conditions:} If 
+    \begin{itemize}
+        \item at least 1 variable will be an orphan (i.e. no parents)
+        \item no variable is both ancestor and descendant of another. 
+    \end{itemize}
+    \vspace{1em}
+
+    then this allows us to order $X_1,\ldots,X_{|\mathcal{V}|}$,  so that if $X_j$ is a descendent of $X_i$, then for any $j > i$, 
+    \begin{equation*}
+        \text{pts}(X_i) \subseteq \{X_1,\ldots,X_{i-1}\} \text{ and } X_1,\ldots,X_{i-1} \notin \text{des}(X_i)
+    \end{equation*}
+
+    Therefore, using the consequence of dependence separation, then 
+    \begin{equation*}
+        p(X_1,\ldots,X_{|\mathcal{V}|}) = p(X_1) \prod_{i \neq 1} p(X_i \mid \text{pts}(X_i))
+    \end{equation*}
+\end{derivation}
+
 \subsection{Method 1: Bayesian Network Inference}
 
 \subsubsection{Markov Blanket}
@@ -40,6 +72,9 @@
 \subsubsection{Elimination Ordering}
 \begin{definition}
     The order that the variables are eliminated.
+    \begin{itemize}
+        \item This creates a sequence of hyper-graphs that depend on the elimination ordering.
+    \end{itemize}
 \end{definition}
 
 \subsubsection{Elimination Width}
@@ -63,6 +98,10 @@
         \]
     \end{enumerate}
 \end{definition}
+
+\begin{warning}
+    Choosing the variable with the smallest domain for its Markov blanket is the most effective heuristic.
+\end{warning}
 \newpage
 
 \subsection{Method 2: Inference via Sampling}

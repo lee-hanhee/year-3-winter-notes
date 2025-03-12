@@ -27,10 +27,6 @@
     \end{itemize}
 \end{notes}
 
-\begin{warning}
-    $X_1$ is influeincing $X_2$ and $X_2$ is influencing $X_3$.
-\end{warning}
-
 \subsubsection{Common Cause}
 \begin{definition}
     A common cause is a junction $\mathcal{J}$ s.t.
@@ -89,12 +85,12 @@
     \[
     p = \langle (X_1, e_1, X_2), \dots, (X_{|p|-1}, e_{|p|-1,|p|}, X_{|p|}) \rangle,
     \]
+    \customFigure[0.5]{../Images/L6_13.png}{}
     is \textbf{blocked} given $\mathcal{K} \subseteq \mathcal{V}$ if any of its junctions,
 
     \[
     \mathcal{J}^{(n)} = \{(X_{n-1}, X_n, X_{n+1}), (e_{n-1}, e_n)\},
     \]
-
     is blocked given $\mathcal{K}$.
 \end{definition}
 
@@ -118,7 +114,7 @@
         \item $\mathcal{J} = \{\text{pt}(X),X, \text{ch}(X)), (e,e')\}$ shows that $\text{pt}(X)$ and $\text{ch}(X)$ are independent given $X$ (causal chain).
         \item Given $Z_4$'s parent, apply junction rules to determine that $Z_4$ is independent of its non-descendants.
         \item $\mathcal{J} = \{X, \text{ch}(X), Z_4, (e',e_4)\}$ shows that $X$ and $Z_4$ are independent given $\text{ch}(X)$ (causal chain).
-        \item CHECK THIS OVER AGAIN WITH CHANDRA
+        \item CHECK THIS OVER AGAIN WITH THE PROFESSOR.
     \end{itemize}
 \end{notes}
 \newpage
