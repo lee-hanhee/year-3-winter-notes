@@ -153,25 +153,47 @@
     Suppose $F(s)$ has no poles or zeros on $\mathcal{D}$ \& isolated poles inside $\mathcal{D}$. Let $\gamma(\theta)$ be a parametrization of $\mathcal{D}$, i.e. $\mathcal{D} = \{ \gamma(\theta) : \theta \in \mathbb{R}\}$ 
     and $\mathcal{F} = \{F(\gamma(\theta)) : \theta \in \mathbb{R}\}$. Then $\mathcal{F}$ encircles the origin $n_e = n_z - n_p$ times CCW. \\
     *$n_z$: \# of zeros of $F(s)$ inside $\mathcal{D}$ \\
-    *$n_p$: \# of poles of $F(s)$ inside $\mathcal{D}$ \\
+    *$n_p$: \# of poles of $F(s)$ inside $\mathcal{D}$ 
 
     \textcolor{blue}{\textbf{Notes:}} \\
     1. A -ve CCW encirlement is the same as a +ve CW encirlement. \\    
     2. If $\mathcal{D}$ is oriented CW, the Argument Principle still holds by replacing $CCW \rightarrow CW$ everywhere.
 
-    \textcolor{blue}{\textbf{Nyquist Contour:}} The path $\mathcal{D}$ above w/ $R \rightarrow \infty$. 
-
     \textcolor{blue}{\textbf{Application to Feedback Loops:}} To stabilize the CLS, it suffices to consider the FB loop where we require: \\
     -\textbf{Zeros of} \( 1 + C(s) G(s) \subseteq \mathbb{C}^- \) \textcolor{red}{\text{(focus on this)}} \\
-    -\( C(s)G(s) \) has no unstable pole-zero cancellations. \\
+    -\( C(s)G(s) \) has no unstable pole-zero cancellations. 
     
     See if $\exists$ zeros in \( \mathbb{C}^+ \). So consider the contour: \\
     $\mathcal{D} = \mathcal{D}_1 \cup \mathcal{D}_2 = \{ j\omega : \omega \in [-R, R] \} \cup \{ R e^{j\theta} : \theta \in [-\frac{\pi}{2}, \frac{\pi}{2}] \}$ \\
-    *If \( R \to \infty \), then more and more of \( \mathbb{C}^+ \) is contained inside \( \mathcal{D} \). \\
+    *If \( R \to \infty \), then more of \( \mathbb{C}^+ \) is contained inside \( \mathcal{D} \). \\
     *By the \textbf{Argument Principle}, if we: \\
     -Count the number of encirclements of \( 1 + C(s)G(s) \) (\( n_e \)). \\
     -Know the number of unstable poles of \( 1 + C(s)G(s) \) (\( n_p \)). \\
     *Then, we can compute the number of zeros in \( \mathbb{C}^+ \).
+
+    \textcolor{blue}{\textbf{Nyquist Contour:}} The path $\mathcal{D}$ above w/ $R \rightarrow \infty$. \\
+    \customFigure[0.1]{../Images/L22.png}
+
+    \textcolor{red}{\textbf{Nyquist Stablity Criterion:}} Suppose $L(s) = C(s) G(s)$ is a strictly proper rational fn and has no poles on the Im axis. Also let $K \in \mathbb{R}$. Then the TF $\frac{1}{1 + K L(s)}$ is BIBO stable iff \\
+    (1) $\mathcal{L} = \{ L(j \omega): \omega \in \mathbb{R}\}$ does not pass through the pt. $\frac{-1}{k}$ \\
+    (2) $\mathcal{L}$ encircles $\frac{-1}{k}$ a total of $n_p$ times CCW. \\
+    *$n_p$ is the \# of poles of $L(s)$ in $\mathbb{C}^+$. 
+    \customFigure[0.2]{../Images/L23_0.png}
+
+    \textcolor{blue}{\textbf{Obs. of Nyquist Plot:}} $L(s) \text{=} \frac{b_m s^m + \cdots + b_0}{s^n + \cdots + a_1 s + a_0}$ w/ $m < n$. \\
+    (1) When $\omega = 0$, $L(j \omega) = \frac{b_0}{a_0} \in \mathbb{R}$ is always on the Re-axis. \\
+    (2) As $\omega \rightarrow \infty$, $L(j \omega) \rightarrow 0$ and $\angle L(j \omega) = \begin{cases}
+        -\frac{\pi}{2} (n-m) & \text{if } b_m > 0\\
+        \pi - \frac{\pi}{2} (n-m) & \text{if } b_m < 0
+    \end{cases}$ \\
+    (3) Since $\overline{L(j \omega)} = L(\overline{j \omega}) = L(-j \omega)$, $\mathcal{L}$ is symmetric w.r.t the Re-axis. \\
+    (4) $\mathcal{L}$ intersects: \\
+    *Re-axis when $\angle L(j \omega) \in \{0, \pi\} \mod 2\pi$ \\
+    *Im-axis when $\angle L(j \omega) \in \{\pm \frac{\pi}{2}\} \mod 2\pi$ 
+
+    \textcolor{blue}{\textbf{Nyquist Stability Criterion w/ Imaginary Poles:}} Suppose $L(s)$ satisfies all the requirements of the Nyquist Stability Criterion except it has poles on the imaginary axis. Then the conclusion of the Nyquist Stability Criterion hold true provided we use the indented Nyquist Contour. \\
+    \customFigure[0.1]{../Images/L23_1.png} \\
+    *Radius of each semi-circle around each pole on the Im-axis is $\epsilon > 0$ and we consider the case when $\epsilon \rightarrow 0^+$. 
 
         }
 \end{paracol}
