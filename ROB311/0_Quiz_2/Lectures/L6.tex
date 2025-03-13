@@ -350,9 +350,24 @@
             \item Since 9 variables, each with 2 values, the size of the domain of the joint distribution is $2^9 = 512$.
         \end{enumerate}
         \item \textbf{Problem 6:} Suppose each variable is binary. What is the min \# of values that actually need to be stored to represent the joint distribution entirely based on the Bayesian network? Use the fact that probability distributions are normalized.
-        \item \textbf{Solution 6:}
+        \item \textbf{Solution 6:} 1+1+1+2+8+2+2+4+4 = 25 values need to be stored.
         \begin{enumerate}
-            \item 
+            \item $P(A)$, $P(B)$, $P(C)$ has 1 value each 
+            \begin{itemize}
+                \item Since $P(\#)$ can represent 2 values, i.e. $P(0) = 1-P(1)$, so only need to store 1 value.
+            \end{itemize}
+            \item $P(D \mid A)$, $P(F \mid C)$, $P(G \mid D)$ has 2 values each
+            \begin{itemize}
+                \item Same idea, can take the complement of the other value for 4 values.
+            \end{itemize}
+            \item $P(H \mid G,E)$, $P(I \mid E,H)$ has 4 values each
+            \begin{itemize}
+                \item Same idea, can take the complement of the other value for 8 values.
+            \end{itemize}
+            \item $P(E \mid D,B,F)$ has 8 values 
+            \begin{itemize}
+                \item Same idea, can take the complement of the other value for 16 values.
+            \end{itemize}
         \end{enumerate}
     \end{enumerate}
 \end{example}
