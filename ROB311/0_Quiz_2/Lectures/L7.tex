@@ -162,200 +162,7 @@
 \end{warning}
 \newpage
 
-\subsubsection{Undirected Path Blocked?}
-\begin{process}
-    \begin{enumerate}
-        \item \textbf{Given:} Undirected path $p$ and $\mathcal{K}$
-        \item Check if any of the junctions on the undirected path are blocked given $\mathcal{K}$.
-        \begin{itemize}
-            \item i.e. Check if $X_1$ and $X_3$ of the junction are independent given $\mathcal{K}$.
-        \end{itemize}
-    \end{enumerate}
-\end{process}
-
-\subsubsection{Independence}
-\begin{process}
-    \begin{enumerate}
-        \item Given a Bayesian network w/ 2 variables to find independence.
-        \item Find all undirected paths between the 2 variables in the Bayesian network.
-        \item Identify a set of variables, $\mathcal{K}$, that block at least one junction in all undirected paths.
-        \begin{itemize}
-            \item Test a junction by seeing junction given relationships. 
-        \end{itemize}
-        \item If all undirected paths are blocked, then the 2 variables are independent given $\mathcal{K}$.
-    \end{enumerate}
-\end{process}
-
-\begin{warning}
-    \begin{itemize}
-        \item Be careful of common effect, in which it is blocked by default. 
-    \end{itemize}
-\end{warning}
-
-\begin{example}
-    \begin{enumerate}
-        \item \textbf{Given:} Bayesian network.
-        \customFigure[0.25]{../Images/L6_7.png}{}
-        \item \textbf{Problem:} $A$ and $E$ are 
-        \begin{itemize}
-            \item independent if $\mathcal{K}=$
-            \item not necessarily independent for $\mathcal{K}=$
-        \end{itemize}
-        \item \textbf{Soln:}
-        \begin{enumerate}
-            \item \textbf{Undirected Paths:}
-            \begin{itemize}
-                \item $A \to G \to H \to B \to E$
-                \item $A \to G \to D \to B \to E$
-                \item $A \to C \to F \to B \to E$
-                \item $A \to C \to D \to B \to E$
-            \end{itemize}
-        \end{enumerate}
-    \end{enumerate}
-\end{example}
-\newpage
-
-\begin{example}
-    \textbf{Independent:}
-    \begin{center}
-        \begin{tabular}{c}
-            \toprule
-            $\mathcal{K}$ \\
-            \midrule
-            $\{G,C\}$ \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $A \iff G \iff H \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,G,H),(e_1,e_2)\}$ is blocked given $G$ since $A,H$ independent given $G$ (causal chain)
-                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,G,D),(e_1,e_2)\}$ is blocked given $G$ since $A,D$ independent given $G$ (causal chain)
-                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,F),(e_1,e_2)\}$ is blocked given $C$ since $A,F$ independent given $C$ (causal chain) 
-                    \item $A \iff C \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,D),(e_1,e_2)\}$ is blocked given $C$ since $A,D$ independent given $C$ (causal chain) 
-                \end{itemize}} \\
-            \midrule
-            $\{D,F\}$ \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $A \iff G \iff H \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is blocked NOT given $H$ since $G,B$ independent NOT given $H$ (common effect)
-                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is blocked given $D$ since $G,B$ independent given $D$ (causal chain)
-                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,F,B),(e_1,e_2)\}$ is blocked given $F$ since $C,B$ independent given $F$ (causal chain)
-                    \item $A \iff C \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,D,B),(e_1,e_2)\}$ is blocked given $D$ since $C,B$ independent given $D$ (causal chain)
-                \end{itemize}} \\
-            \toprule
-        \end{tabular}
-    \end{center}
-    \vspace{1em}
-
-    \textbf{Not Necessarily Independent:}
-    \begin{center}
-        \begin{tabular}{c}
-            \toprule
-            $\mathcal{K}$ \\
-            \midrule
-            $\{H,D,F\}$ \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $A \iff G \iff H \iff B \iff E$ is unblocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is unblocked given $H$ since $G,B$ not independent given $H$ (common effect)
-                    \item $A \iff G \iff D \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is blocked given $D$ (causal chain) since $G,B$ independent given $D$ (causal chain)
-                    \item $A \iff C \iff F \iff B \iff E$ is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,F,B),(e_1,e_2)\}$ is blocked given $F$ since $C,B$ independent given $F$ (causal chain)
-                    \item $A \iff C \iff D \iff B \iff E$  is blocked given $\mathcal{K}$ since $\mathcal{J} = \{(C,D,B),(e_1,e_2)\}$ is blocked given $D$ since $C,B$ independent given $D$ (causal chain)
-                \end{itemize}} \\
-            \midrule
-            \toprule
-        \end{tabular}
-    \end{center}
-\end{example}
-\newpage
-
-\begin{example}
-    Determine all subsets of $\{B,C,D,F,G,H\}$ for which $A$ and $E$ are independent. 
-    \customFigure[0.25]{../Images/LR_1.png}{}
-    \begin{enumerate}
-        \item \textbf{Undirected Paths:}
-        \begin{itemize}
-            \item $A \to G \to H \to B \to E$
-            \item $A \to G \to D \to B \to E$
-            \item $A \to C \to F \to B \to E$
-            \item $A \to C \to D \to B \to E$
-        \end{itemize}
-    \end{enumerate}
-    \begin{center}
-        \begin{tabular}{c}
-            \toprule
-            $\mathcal{K}$ \\
-            \midrule
-            $\{B\}$ (Any subset that contains $B$ will be independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(H,B,E),(e_1,e_2)\}$ is b since $H,E$ indep. given $B$ (causal chain)
-                    \item $AGDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is b since $D,E$ indep. given $B$ (causal chain)
-                    \item $ACFBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(F,B,E),(e_1,e_2)\}$ is b since $F,E$ indep. given $B$ (causal chain) 
-                    \item $ACDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is b since $D,E$ indep. given $B$ (causal chain) 
-                \end{itemize}} \\
-            \midrule
-            $\{C\}$ (Not independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
-                \end{itemize}} \\
-            \midrule
-            $\{D\}$ (Not indepedent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
-                \end{itemize}} \\
-            \midrule
-            $\{F\}$ (Not independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
-                \end{itemize}} \\
-            \midrule
-            $\{G\}$ (Not independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
-                \end{itemize}} \\
-            \midrule
-            $\{H\}$ (Not independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
-                \end{itemize}} \\
-            \toprule
-        \end{tabular}
-    \end{center}
-\end{example}
-\newpage
-
-\begin{example}
-    \begin{center}
-        \begin{tabular}{c}
-            \toprule
-            $\mathcal{K}$ \\
-            \midrule
-            $\{C,D\}$ (Any subset that contains $C$ and $D$ except $H$ will be independent) \\
-            \multicolumn{1}{p{\linewidth}}{
-                \begin{itemize}
-                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is b since $G,B$ indep. not given $H$ (causal effect)
-                    \item $AGDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is b since $G,B$ indep. given $D$ (causal chain)
-                    \item $ACFBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,F),(e_1,e_2)\}$ is b since $A,F$ indep. given $C$ (causal chain)
-                    \item $ACDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,D),(e_1,e_2)\}$ is b since $A,D$ indep. given $C$ (causal chain)
-                \end{itemize}} \\
-            \midrule
-            $\ldots$ \\
-            \toprule
-        \end{tabular}
-    \end{center}
-\end{example}
-
-\begin{example}
-    Any set with 
-    \begin{equation*}
-        B \lor [(G \lor (D \land (\lnot H))) \land (C \lor F)]
-    \end{equation*}
-\end{example}
-\newpage
-
-\subsubsection{Bayesian Inference}
+\subsubsection{Bayesian Inference via Variable Elimination}
 \begin{process}
     \begin{enumerate}
         \item Given Bayesian network w/ variables and their conditional probabilities.
@@ -532,18 +339,108 @@
 \end{example}
 \newpage
 
+\begin{example} 
+    \begin{enumerate}
+        \item \textbf{Given:} Consider the following Bayesian network, where $A,B,C,D$ are binary R.V. over $\{0,1\}$
+        \customFigure[0.5]{../Images/FE23_3.png}{}
+        \customFigure[0.5]{../Images/FE23_2.png}{}
+        \item \textbf{Problem:} Find $P(A=0 \mid C=0)$ and $P(D=1 \mid C=0)$.
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item Derivation of \( P(D=1 \mid C=0) \): 
+            \begin{align*}
+                P(D=1 \mid C=0) &= \frac{P(D=1,C=0)}{P(C=0)} \quad \text{by definition}\\
+                &= \frac{P(D=1,C=0)}{\sum_d P(D=d,C=0)} \quad \text{marginalize over $D$}\\
+                &= \frac{\sum_{A,B} P(A,B,C=0,D=1)}{\sum_d \sum_{A,B} P(A,B,C=0,D=d)} \quad \text{equation in problem setup} 
+            \end{align*}
+            \begin{itemize}
+                \item Summing over the variables that are not in the query and evidence variables.
+            \end{itemize}
+            
+            \item Summation Term: 
+            \begin{align*}
+                \sum_{A,B} & P(A) P(B \mid A) P(C=0 \mid A) P(D=d \mid B,C=0) \quad \text{Bayesian network} \\
+                \sum_A & P(A) P(C=0 \mid A) \sum_B P(B \mid A) P(D=d \mid B,C=0) \quad \text{(1st ordering)} \\
+                \sum_B & P(D=d \mid B,C=0) \sum_A P(A) P(B \mid A) P(C=0 \mid A) \quad \text{(2nd ordering)}
+            \end{align*}
+            
+            \item Choose: 
+            \[
+            \underbrace{\sum_B P(D=d \mid B,C=0) \underbrace{\sum_A P(A) P(B \mid A) P(C=0 \mid A)}_{g_1(B)}}_{g_2(d)}
+            \]
+            
+            \item \( g_1(B) \):
+            \begin{align*}
+                g_1(B) &= P(A=0)P(B \mid A=0) P(C=0 \mid A=0) + P(A=1)P(B \mid A=1) P(C=0 \mid A=1) \\
+                &= \begin{cases}
+                    0.9(0.6)(0.8) + 0.1(0.5)(0.6) \quad \text{if } B=0 \\
+                    0.9(0.4)(0.8) + 0.1(0.5)(0.6) \quad \text{if } B=1
+                \end{cases} \\
+                &= \begin{cases}
+                    0.462 \quad \text{if } B=0 \\
+                    0.318 \quad \text{if } B=1
+                \end{cases} 
+            \end{align*}
+            
+            \item \( g_2(d) \): 
+            \begin{align*}
+                g_2(d) &= P(D=d \mid B=0, C=0) g_1(B=0) + P(D=d \mid B=1, C=0)g_1(B=1) \\
+                &= \begin{cases}
+                    0.5(0.462) + 0.5(0.318) \quad \text{if } d=0 \\
+                    0.5(0.462) + 0.5(0.318) \quad \text{if } d=1
+                \end{cases} \\
+                &= \begin{cases}
+                    0.39 \quad \text{if } d=0 \\
+                    0.39 \quad \text{if } d=1
+                \end{cases} 
+            \end{align*}
+            
+            \item \( P(D=1 \mid C=0) = \frac{g_2(1)}{g_2(0) + g_2(1)} = \frac{0.39}{0.39 + 0.39} = 0.5 \)
+        \end{enumerate}   
+        \item \textbf{Solution 2:}
+        \begin{enumerate}
+            \item Derivation of \( P(A=0 \mid C=0) \):
+            \begin{align*}
+                P(A=0 \mid C=0) &= \frac{P(A=0,C=0)}{P(C=0)} \\
+                &= \frac{P(A=0,C=0)}{\sum_a P(A=a,C=0)} \\
+                &= \frac{\sum_{B,D} P(A=0,B,C=0,D)}{\sum_a \sum_{B,D} P(A=a,B,C=0,D)}
+            \end{align*}
+            \item Summation Term:
+            \begin{align*}
+                \sum_{B,D} & P(A=a) P(B \mid A=a) P(C=0 \mid A=a) P(D \mid B,C=0) \quad \text{Bayesian network} \\
+                P(C=0 \mid A=a) \sum_B & P(B \mid A=a) P(A=a \mid B,C=0) \sum_D P(D \mid B,C=0) \quad \text{(1st ordering)} \\
+                P(C=0 \mid A=a) \sum_D & P(D \mid B,C=0) \sum_B P(B \mid A=a) P(A=a \mid B,C=0) \quad \text{(2nd ordering)}
+            \end{align*}
+            \item Choose:
+            \[
+            P(C=0 \mid A=a) \underbrace{\sum_B P(B \mid A=a) P(A=a \mid B,C=0) \underbrace{\sum_D P(D \mid B,C=0)}_{g_1(B)}}_{g_2(A)}
+            \]
+            \item Same as before.
+        \end{enumerate}     
+    \end{enumerate}
+\end{example}
+
+\begin{warning}
+    \begin{itemize}
+        \item Write the complement probability to make life easier.
+        \item To determine the conditional probability summation of a variable, look at its parents (inward arrows)
+        \item Inner sum must have all probabilities with that variable in it that you are summing over. 
+    \end{itemize}
+\end{warning}
+\newpage
+
 \subsubsection{Hypergraph}
 \begin{process} Process of eliminating a variable. 
     \begin{enumerate}
         \item Create a Hyper-graph by creating a node for each variable. 
-        \item Create hyper-edges (factors) by circling the nodes that are probabilities in the joint distribution (i.e. numerator)
+        \item Create hyper-edges (factors) by circling the nodes based on of its parents (i.e. arrows pointing into a variable). If no parents, circle itself.
         \item Select a variable $v$ that we are summing over. 
         \begin{enumerate}
             \item Circle all the variables that have $v$ in their hyperedge into one big hyperedge (i.e. union of hyper-edges).
             \item Eliminate $v$ by removing the node. 
-            \item Calculate the factor by determining the domain of each variable and summing their domains. 
+            \item Calculate the factor by multiplying the support of the variables in the union of hyperedges.
         \end{enumerate}
-        \item Reset the problem and repeat for all other $v$. 
+        \item Repeat the process for all other $v$. 
         \item Select the smallest factor to eliminate first.
         \item Repeat until all variables are eliminated to determine the best ordering of elimination. 
         \begin{itemize}
@@ -551,13 +448,62 @@
         \end{itemize}
     \end{enumerate}
 \end{process}
+\newpage
 
 \begin{example}
     \customFigure[0.5]{../Images/L6_11.png}{}
     \begin{itemize}
         \item Since these are all binary variables, we are selecting the factor with the least number of variables to eliminate first.
     \end{itemize}
-    \customFigure[0.5]{../Images/L7_0.png}{}
+    \customFigure[0.75]{../Images/L7_0.png}{}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Bayesian network 
+        \customFigure[0.5]{../Images/FE23_4.png}{}
+        with cardinality of the support of each variable (i.e. number of values each variable can take on) as follows:
+        \begin{itemize}
+            \item $A$: $2^4$
+            \item $B$: $2^2$
+            \item $C$: $2^{12}$
+            \item $D$: $2^2$
+            \item $E$: $2^3$ 
+            \item $F$: $2^6$
+        \end{itemize}
+        Suppose elimination ordering is chosen so that the next variable eliminated is the one that results in the smallest factor (breaking ties alphabetically).
+        \item \textbf{Problem 1:} How many variables must be eliminated to compute $P(A,F \mid C)$?
+        \item \textbf{Solution 1:}
+        \begin{enumerate}
+            \item Since $A$, $F$ are query, and $C$ is evidence, we must eliminate $B$, $D$, and $E$, so 3 variables must be eliminated.
+        \end{enumerate}
+        \item \textbf{Problem 2:} What is the first variable to be eliminated to compute $P(F \mid A)$? 
+        \item \textbf{Solution 2:}
+        \begin{enumerate}
+            \item Try eliminating all variables that aren't query or evidence and count \# of variables in union of hyperedges.
+            \customFigure[0.5]{../Images/FE23_5.png}{}
+            \begin{enumerate}
+                \item Eliminate $B$: Hyperunion is ACDF $\rightarrow$ $2^4 \cdot 2^{12} \cdot 2^2 \cdot 2^6 = 2^{24}$
+                \item Eliminate $C$: Hyperunion is ABDEF $\rightarrow$ $2^4 \cdot 2^2 \cdot 2^2 \cdot 2^3 \cdot 2^6 = 2^{17}$
+                \item Eliminate $D$: Hyperunion is BCF $\rightarrow$ $2^2 \cdot 2^{12} \cdot 2^6 = 2^{20}$
+                \item Eliminate $E$: Hyperunion is AC $\rightarrow$ $\boxed{2^4 \cdot 2^{12} = 2^{16}}$
+            \end{enumerate}
+            \item Choose $E$ as the first variable to be eliminated because it has the lowest support in its hyperunion.
+        \end{enumerate}
+        \item \textbf{Problem 3:} What is the second variable to be eliminated to compute $P(F \mid A)$?
+        \item \textbf{Solution 3:}
+        \begin{enumerate}
+            \item Try eliminating all variable except $F,A,E$.
+            \customFigure[0.5]{../Images/FE23_6.png}{}
+            \begin{enumerate}
+                \item Eliminate $B$: Hyperunion is ACDF $\rightarrow$ $2^4 \cdot 2^{12} \cdot 2^2 \cdot 2^6 = 2^{24}$
+                \item Eliminate $C$: Hyperunion is ABDF $\rightarrow$ $\boxed{2^4 \cdot 2^2 \cdot 2^2 \cdot 2^6 = 2^{14}}$
+                \item Eliminate $D$: Hyperunion is BCF $\rightarrow$ $2^2 \cdot 2^{12} \cdot 2^6 = 2^{20}$
+            \end{enumerate}
+            \item Choose $C$ as the second variable to be eliminated because it has the lowest support in its hyperunion.
+        \end{enumerate}
+    \end{enumerate}
 \end{example}
 \newpage
 
