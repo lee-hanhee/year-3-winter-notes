@@ -583,3 +583,40 @@
         \item \textbf{Soln:} $p(d \mid h) \approx \frac{\# \text{ of samples w/ } d \text{ and } h}{\# \text{ of samples w/ } h} = \frac{3}{5} = 0.6$.
     \end{enumerate}
 \end{example}
+\newpage
+
+\subsubsection{Probability Review}
+\begin{example}
+    \begin{enumerate}
+        \item[(a)] [1 pts] Assume \( A, B, C \) are random variables where \( A \perp B \), \( B \perp C \), and \( C \perp A \). Which of the following expressions are equivalent to \( P(A, B) \)?
+        
+        \begin{itemize}
+            \item[ ] \( \boxed{\sum_c P(A, B, C = c)} \): Marginalizing over $C$
+            \item[ ] \( \sum_c P(A|C = c) P(B|C = c) \)
+            \item[ ] \(\boxed{\sum_c P(A) P(B|A) P(C = c | A, B)} \): Writing out in terms of $\sum_c P(A, B, C = c)$
+            \item[ ] \( \boxed{P(A) P(B)} \): $A$ and $B$ are independent.
+            \item[ ] None of the above
+        \end{itemize}
+
+        \item[(b)] [1 pts] Let \( A, B, C \) be random variables with \( A \not\perp B \). Is it possible for \( A \perp B | C \)? 
+        
+        \begin{itemize}
+            \item[ ] $\boxed{\text{Yes}}$: Not being indepedent doesn't imply conditional independence.
+            \item[ ] $\text{No}$
+        \end{itemize}
+
+        \item[(c)] [1 pts] Let \( \mathcal{V} \) denote the set of variables in a Bayesian network. Suppose \( X \in \mathcal{V} \), and let \texttt{pts}(\( X \)), \texttt{chl}(\( X \)), \texttt{ans}(\( X \)), and \texttt{des}(\( X \)) represent the parents, children, ancestors, and descendants of \( X \). Provide a general independence rule of the form: 
+        \[
+        X \perp \mathcal{V} \setminus \text{des}(X) \; \mid \; \texttt{pts}(X)
+        \]
+        You may use the set operations, \( \cap, \cup \) and/or \( \setminus \) if necessary.
+
+        \item[(d)] [1 pts] Assume \( A, B, C, \) and \( D \) are binary random variables, and \( E \) is a trinary random variable over \( \{1,2,3\} \). What is \( \sum_{A,B} P(A|B, E = 1) \)?
+
+        \begin{itemize}
+            \item[ ] $P(A=0 \mid B=0, E=1) + P(A=1 \mid B=0, E=1) = 1$ 
+            \item[ ] $P(A=0 \mid B=1, E=1) + P(A=1 \mid B=1, E=1) = 1$
+            \item[] Therefore, $2$.
+        \end{itemize}
+    \end{enumerate}
+\end{example}
