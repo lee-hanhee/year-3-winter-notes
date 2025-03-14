@@ -626,13 +626,13 @@
     \end{enumerate}
 
     \begin{center}
-        \begin{tabular}{ccccccc}
+        \begin{tabular}{cccccccc}
             \toprule
-            $s$ & $a$ & $q^*(s,a,0)$ & $q^*(s,a,1)$ & $q^*(s,a,2)$ & $q^*(s,a,3)$ & $a^*(s,2)$ \\
+            $s$ & $a$ & $q^*(s,a,0)$ & $q^*(s,a,1)$ & $q^*(s,a,2)$ & $q^*(s,a,3)$ & $a^*(s,2)$ & $\pi^*(a \mid s,2)$ \\
             \midrule
-            empty & hunt & 0 & 2 & 2& 2 & seed \\
-            empty & seed & 0 & 0 & 1& 2.1 & \\
-            \multicolumn{7}{p{\linewidth}}{
+            empty & hunt & 0 & 2 & 2& 2 & seed & 0\\
+            empty & seed & 0 & 0 & 1& 2.1 & & 1\\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{empty}, \text{hunt}, 1) = 0.5(4 + 0) + 0.5(0 + 0) = 2$
                 \item $q^*(\text{empty}, \text{seed}, 1) = 1(0 + 0) = 0$
@@ -642,9 +642,9 @@
                 \item $q^*(\text{empty}, \text{seed}, 3) = \underbrace{1(0 + 1\cdot 2.1)}_{\text{$s'=$ga}} = 2.1$
             \end{itemize}} \\
             \midrule
-            ga & grab & 0 & 1& 1 & 1 & clock \\
-            ga & clock & 0 & 0& 2.1 & 2.1 & \\
-            \multicolumn{7}{p{\linewidth}}{
+            ga & grab & 0 & 1& 1 & 1 & clock & 0\\
+            ga & clock & 0 & 0& 2.1 & 2.1 & & 1\\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{ga}, \text{grab}, 1) = 1(1 + 0) = 1$
                 \item $q^*(\text{ga}, \text{clock}, 1) = 0.7(0 + 0) + 0.3(0 + 0) = 0$
@@ -654,32 +654,32 @@
                 \item $q^*(\text{ga}, \text{clock}, 3) = \underbrace{0.7(0 + 3)}_{\text{$s'=$ra}} + \underbrace{0.3(0 + 0)}_{\text{$s'=$roa}} = 2.1$
             \end{itemize}} \\
             \midrule
-            dead & - & 0 & 0 & 0 & 0 & - \\
-            \multicolumn{7}{p{\linewidth}}{
+            dead & - & 0 & 0 & 0 & 0 & - & 1\\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{dead}, -, 1) = 1(0 + 0) = 0$
                 \item $q^*(\text{dead}, -, 2) = 1(0 + 0) = 0$
                 \item $q^*(\text{dead}, -, 3) = 1(0 + 0) = 0$
             \end{itemize}} \\
             \midrule
-            full & - & 0 & 0 & 0 & 0 & - \\
-            \multicolumn{7}{p{\linewidth}}{
+            full & - & 0 & 0 & 0 & 0 & - & 1\\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{full}, -, 1) = 1(0 + 0) = 0$
                 \item $q^*(\text{full}, -, 2) = 1(0 + 0) = 0$
                 \item $q^*(\text{full}, -, 3) = 1(0 + 0) = 0$
             \end{itemize}} \\
             \midrule 
-            ra & grab & 0 & 3 & 3 & 3 & grab \\
-            \multicolumn{7}{p{\linewidth}}{
+            ra & grab & 0 & 3 & 3 & 3 & grab & 1 \\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{ra}, \text{grab}, 1) = 1(3 + 0) = 3$
                 \item $q^*(\text{ra}, \text{grab}, 2) = 1(3 + 0) = 3$
                 \item $q^*(\text{ra}, \text{grab}, 3) = \underbrace{1(3 + 0)}_{\text{$s'=$full}} = 3$
             \end{itemize}} \\
             \midrule 
-            roa & grab & 0 & 0 & 0 & 0 & grab \\
-            \multicolumn{7}{p{\linewidth}}{
+            roa & grab & 0 & 0 & 0 & 0 & grab & 1 \\
+            \multicolumn{8}{p{\linewidth}}{
             \begin{itemize}
                 \item $q^*(\text{roa}, \text{grab}, 1) = 1(0 + 0) = 0$
                 \item $q^*(\text{roa}, \text{grab}, 2) = 1(0 + 0) = 0$
