@@ -326,11 +326,13 @@
             \item ADGHEFC is b since $\mathcal{J} = \{(G,H,E),(e_1,e_2)\}$ is b since $G,E$ indep. NOT given $H$ (common effect)
             \item ADGHIEFC is b since $\mathcal{J} = \{(H,I,E),(e_1,e_2)\}$ is b since $H,E$ indep. NOT given $I$ (common effect)
         \end{enumerate}
+        \vspace{1em}
         \item \textbf{Problem 2:} Is it gauranteed that $B \perp C \mid I$?
         \item \textbf{Solution 2:} False b/c BEFC is ub. 
         \begin{enumerate}
             \item BEFC is ub since $\mathcal{J} = \{(B,E,F),(e_1,e_2)\}$ is ub since $B,F$ NOT indep. given $E$'s descendent, $I$ (common effect)
         \end{enumerate}
+        \vspace{1em}
         \item \textbf{Problem 3:} Is it gauranteed that $D \perp I \mid \{E,G\}$?
         \item \textbf{Solution 3:} True b/c all undirected paths are blocked.
         \begin{enumerate}
@@ -339,16 +341,23 @@
             \item DGHI is b since $\mathcal{J} = \{(D,G,H),(e_1,e_2)\}$ is b since $D,H$ indep. given $G$ (causal chain)
             \item DGHEI is b since $\mathcal{J} = \{(D,G,H),(e_1,e_2)\}$ is b since $D,H$ indep. given $G$ (causal chain)
         \end{enumerate}
+        \vspace{1em}
         \item \textbf{Problem 4:} Is it gauranteed that $C \perp H \mid G$?
         \item \textbf{Solution 4:} False b/c CFEH is ub.
         \begin{enumerate}
             \item CFEH is ub since $\mathcal{J} = \{(C,F,E),(e_1,e_2)\}$ is ub since $C,E$ NOT indep. given $G$ (causal chain)
         \end{enumerate}
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    \begin{enumerate}
         \item \textbf{Problem 5:} Suppose each variable is binary. What is the size of the domain of the joint distribution b/w the variables?
         \item \textbf{Solution 5:}
         \begin{enumerate}
             \item Since 9 variables, each with 2 values, the size of the domain of the joint distribution is $2^9 = 512$.
         \end{enumerate}
+        \vspace{1em}
         \item \textbf{Problem 6:} Suppose each variable is binary. What is the min \# of values that actually need to be stored to represent the joint distribution entirely based on the Bayesian network? Use the fact that probability distributions are normalized.
         \item \textbf{Solution 6:} 1+1+1+2+8+2+2+4+4 = 25 values need to be stored.
         \begin{enumerate}
