@@ -132,35 +132,35 @@
 \newpage
 
 \subsection{Canonical Problems:}
-\begin{example}
-    \begin{enumerate}
-        \item \textbf{Given:} Caveman is deciding whether to go hunt for meat. He must take into account several factors:
-        \begin{itemize}
-            \item Weather
-            \item Possibility of over-exertion
-            \item Possibility encountering lion
-        \end{itemize}
+% \begin{example}
+%     \begin{enumerate}
+%         \item \textbf{Given:} Caveman is deciding whether to go hunt for meat. He must take into account several factors:
+%         \begin{itemize}
+%             \item Weather
+%             \item Possibility of over-exertion
+%             \item Possibility encountering lion
+%         \end{itemize}
 
-        These factors can result in Cavemen's death. His decision will ultimately depend on the \textbf{chances} of his death.
-        \item \textbf{Binary Variables:}
-        \begin{itemize}
-            \item $W = \{\text{Sun}, \text{Rainy}\}$: Weather
-            \item $H$: Whether the Cavemen goes hunting or not.
-            \item $L$: Whether the Cavemen encounters a lion or not.
-            \item $T$: Whether the Cavement is tired or not.
-            \item $D$: Whether the Cavemen dies or not
-        \end{itemize}
-        \item \textbf{Problem:} Cavemen must decide whether to go hunting or not. 
-        \begin{itemize}
-            \item He must consider the conditional probabilities (i.e. dependence) of each event.
-        \end{itemize}
-    \end{enumerate}
-\end{example}
+%         These factors can result in Cavemen's death. His decision will ultimately depend on the \textbf{chances} of his death.
+%         \item \textbf{Binary Variables:}
+%         \begin{itemize}
+%             \item $W = \{\text{Sun}, \text{Rainy}\}$: Weather
+%             \item $H$: Whether the Cavemen goes hunting or not.
+%             \item $L$: Whether the Cavemen encounters a lion or not.
+%             \item $T$: Whether the Cavement is tired or not.
+%             \item $D$: Whether the Cavemen dies or not
+%         \end{itemize}
+%         \item \textbf{Problem:} Cavemen must decide whether to go hunting or not. 
+%         \begin{itemize}
+%             \item He must consider the conditional probabilities (i.e. dependence) of each event.
+%         \end{itemize}
+%     \end{enumerate}
+% \end{example}
 
-\begin{warning}
-    Have to be discrete. 
-\end{warning}
-\newpage
+% \begin{warning}
+%     Have to be discrete. 
+% \end{warning}
+% \newpage
 
 \subsubsection{Bayesian Inference via Variable Elimination}
 \begin{process}
@@ -174,6 +174,16 @@
         \item Calculate the probability of the query variable(s) given the evidence variable(s).
     \end{enumerate}
 \end{process}
+
+\begin{warning}
+    \begin{itemize}
+        \item Write the complement probability to make life easier. (HIGHLY RECOMMENDED)
+        \item To determine the conditional probability summation of a variable, look at its parents (inward arrows)
+        \item Inner sum must have all probabilities with that variable in it that you are summing over. 
+        \item TO determine $g_?$, look at which variable you aren't summing over and also aren't query/evidence variables, then it will be a fn of the remaining variables.
+    \end{itemize}
+\end{warning}
+\newpage
 
 \begin{example} 
     \begin{enumerate}
@@ -292,50 +302,106 @@
         \item \textbf{Problem:} Compute $\Pr(s = 1 \mid t = 1)$ if $\Pr(G = 1) = 0.3$, $\Pr(E = 1) = 0.4$, and the conditional probability tables for $S, Y,$ and $T$ are given below.
         \item \textbf{Solution:}
         \begin{enumerate}
-            \item $p(s=1 \mid t=1) = \frac{p(s=1,t=1)}{p(t=1)} = \frac{\sum_{E,G,Y} p(E,G,Y,s=1,t=1)}{\sum_S p(t=1,S)}$ 
-            \item $p(E,G,Y,s=1,t=1) = p(G) p(E) p(s=1 \mid G, E) p(t=1 \mid s = 1) p(Y \mid s = 1)$
+            \item Derivation of $p(s=1 \mid t=1)$: 
+            \begin{align*}
+                p(s=1 \mid t=1) &= \frac{p(s=1,t=1)}{p(t=1)} \\
+                &= \frac{P(s=1,t=1)}{\sum_S P(S,t=1)} \\
+                &= \frac{\sum_{E,G,Y} P(E,G,Y,s=1,t=1)}{\sum_S \sum_{E,G,Y} P(E,G,Y,S,t=1)}
+            \end{align*}
+            \item Summation Term: 
+            \begin{align*}
+                & \sum_{E,G,Y} p(E) p(G) p(S \mid G,E) p(Y \mid S) p(t=1 \mid S) \\
+                & \underbrace{p(t=1 \mid S) \sum_E p(E) \underbrace{\sum_G p(G) p(S \mid G,E) \underbrace{\sum_Y p(Y \mid S)}_{g_1(S)}}_{g_2(E,S)}}_{g_3(S)} \quad \text{one possible ordering}
+            \end{align*}
             \begin{itemize}
                 \item Conditional probability and individual probabilities come from Bayesian network, and set $t,s=1$ due to the query and evidence variables.
             \end{itemize}
+            \item Choose: 
+            \[
+            \underbrace{p(t=1 \mid S) \sum_E p(E) \underbrace{\sum_G p(G) p(S \mid G,E) \underbrace{\sum_Y p(Y \mid S)}_{g_1(S)}}_{g_2(E,S)}}_{g_3(S)}
+            \]
+            \item $g_1(S)$: 
+            \begin{align*}
+                g_1(S) &= p(Y=1 \mid S) + p(Y=0 \mid S) \\
+                &= \begin{cases}
+                    0.1 + 0.9 = 1 \quad \text{if } S=0 \\
+                    0.8 + 0.2 = 1 \quad \text{if } S=1 \\
+                \end{cases} 
+            \end{align*}
+            \item $g_2(E,S)$: 
+            \begin{align*}
+                g_2(E,S) &= p(G=1) p(S \mid G=1,E) g_1(S) + p(G=0) p(S \mid G=0,E) g_1(S) \\
+                g_2(E,S) &= p(G=1) p(S \mid G=1,E) + p(G=0) p(S \mid G=0,E) \\
+                &= \begin{cases}
+                    0.3(0.5) + 0.7(0.9) \quad \text{if } E=0, S=0 \\
+                    0.3(0.5) + 0.7(0.1) \quad \text{if } E=0, S=1 \\
+                    0.3(0.3) + 0.7(0.6) \quad \text{if } E=1, S=0 \\
+                    0.3(0.7) + 0.7(0.4) \quad \text{if } E=1, S=1 \\
+                \end{cases} \\
+                &= \begin{cases}
+                    0.78 \quad \text{if } E=0, S=0 \\
+                    0.22 \quad \text{if } E=0, S=1 \\
+                    0.51 \quad \text{if } E=1, S=0 \\
+                    0.49 \quad \text{if } E=1, S=1 \\
+                \end{cases}
+            \end{align*}
+            \item $g_3(S)$: 
+            \begin{align*}
+                g_3(S) &= p(t=1 \mid S) p(E=1) g_2(E=1,S) + p(t=1 \mid S) p(E=0) g_2(E=0,S) \\
+                &= \begin{cases}
+                    0.2(0.4)(0.51) + 0.2(0.6)(0.78) \quad \text{if } S=0 \\
+                    0.2(0.4)(0.49) + 0.2(0.6)(0.22) \quad \text{if } S=1 \\
+                \end{cases} \\
+                &= \begin{cases}
+                    0.1344 \quad \text{if } S=0 \\
+                    0.2952 \quad \text{if } S=1 \\
+                \end{cases} 
+            \end{align*}
+            \item $p(s=1 \mid t=1)$: 
+            \begin{align*}
+                p(s=1 \mid t=1) &= \frac{g_3(1)}{g_3(0) + g_3(1)} \\
+                &= \frac{0.2952}{0.2952 + 0.1344} \\
+                &= 0.6875
+            \end{align*}
         \end{enumerate}
     \end{enumerate}
 
-    \begin{center}
-        \begin{tabular}{l}
-            \toprule
-            \textbf{Summation} \\
-            \toprule
-            \multicolumn{1}{p{\linewidth}}{
-            \begin{center}
-                $\text{Numerator}: \underbrace{p(t=1 \mid s=1) \sum_E p(E) \underbrace{\sum_G p(G) p(s=1 \mid G,E) \underbrace{\sum_Y p(Y \mid s=1)}_{g_1}}_{g_2}}_{g_3}$
-            \end{center}} \\
-            \toprule
-            \multicolumn{1}{p{\linewidth}}{
-            \begin{center}
-                $g_1 = p(Y=1 \mid S=1) + p(Y=0 \mid S=1) = 0.9 + 0.1 = 1$
-            \end{center}} \\
-            \midrule
-            \multicolumn{1}{p{\linewidth}}{
-            \begin{center}
-                $g_2(E) = (p(g=1) p(s=1 \mid g=1, E) + p(g=0) p(s=1 \mid g=0, E)) g_1$
-            \end{center}} \\
-            $g_2(e=1,s=1) = 0.3(0.7) + 0.7(0.4) = 0.49$ \\
-            $g_2(e=0,s=1) = 0.3(0.5) + 0.7(0.1) = 0.22$ \\
-            $g_2(e=1,s=0) = 0.3(0.3) + 0.7(0.6) = 0.51$ \\
-            $g_2(e=0,s=0) = 0.3(0.5) + 0.7(0.9) = 0.78$ \\
-            \midrule
-            \multicolumn{1}{p{\linewidth}}{
-            \begin{itemize}
-                \item $g_3(t=1 \mid s=1) = 0.9 p(e=1) g_2(e=1) + 0.9 p(e=0) g_2(e=0) = 0.9(0.4)(0.49) + 0.9(0.6)(0.22) = 0.2952$ 
-                \item $g_3(t=1 \mid s=0) = 0.2 p(e=1) g_2(e=1) + 0.2 p(e=0) g_2(e=0) = 0.2(0.4)(0.51) + 0.2(0.6)(0.78) = 0.1344$
-            \end{itemize}} \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
+    % \begin{center}
+    %     \begin{tabular}{l}
+    %         \toprule
+    %         \textbf{Summation} \\
+    %         \toprule
+    %         \multicolumn{1}{p{\linewidth}}{
+    %         \begin{center}
+    %             $\text{Numerator}: \underbrace{p(t=1 \mid s=1) \sum_E p(E) \underbrace{\sum_G p(G) p(s=1 \mid G,E) \underbrace{\sum_Y p(Y \mid s=1)}_{g_1}}_{g_2}}_{g_3}$
+    %         \end{center}} \\
+    %         \toprule
+    %         \multicolumn{1}{p{\linewidth}}{
+    %         \begin{center}
+    %             $g_1 = p(Y=1 \mid S=1) + p(Y=0 \mid S=1) = 0.9 + 0.1 = 1$
+    %         \end{center}} \\
+    %         \midrule
+    %         \multicolumn{1}{p{\linewidth}}{
+    %         \begin{center}
+    %             $g_2(E) = (p(g=1) p(s=1 \mid g=1, E) + p(g=0) p(s=1 \mid g=0, E)) g_1$
+    %         \end{center}} \\
+    %         $g_2(e=1,s=1) = 0.3(0.7) + 0.7(0.4) = 0.49$ \\
+    %         $g_2(e=0,s=1) = 0.3(0.5) + 0.7(0.1) = 0.22$ \\
+    %         $g_2(e=1,s=0) = 0.3(0.3) + 0.7(0.6) = 0.51$ \\
+    %         $g_2(e=0,s=0) = 0.3(0.5) + 0.7(0.9) = 0.78$ \\
+    %         \midrule
+    %         \multicolumn{1}{p{\linewidth}}{
+    %         \begin{itemize}
+    %             \item $g_3(t=1 \mid s=1) = 0.9 p(e=1) g_2(e=1) + 0.9 p(e=0) g_2(e=0) = 0.9(0.4)(0.49) + 0.9(0.6)(0.22) = 0.2952$ 
+    %             \item $g_3(t=1 \mid s=0) = 0.2 p(e=1) g_2(e=1) + 0.2 p(e=0) g_2(e=0) = 0.2(0.4)(0.51) + 0.2(0.6)(0.78) = 0.1344$
+    %         \end{itemize}} \\
+    %         \bottomrule
+    %     \end{tabular}
+    % \end{center}
 
-    \begin{equation*}
-        p(s=1 \mid t=1) = \frac{g_3}{\sum_S p(t=1,S)} = \frac{0.2952}{0.2952 + 0.1344} = \frac{0.2952}{0.4296} = 0.6875
-    \end{equation*}
+    % \begin{equation*}
+    %     p(s=1 \mid t=1) = \frac{g_3}{\sum_S p(t=1,S)} = \frac{0.2952}{0.2952 + 0.1344} = \frac{0.2952}{0.4296} = 0.6875
+    % \end{equation*}
 \end{example}
 \newpage
 
@@ -419,14 +485,6 @@
         \end{enumerate}     
     \end{enumerate}
 \end{example}
-
-\begin{warning}
-    \begin{itemize}
-        \item Write the complement probability to make life easier.
-        \item To determine the conditional probability summation of a variable, look at its parents (inward arrows)
-        \item Inner sum must have all probabilities with that variable in it that you are summing over. 
-    \end{itemize}
-\end{warning}
 \newpage
 
 \subsubsection{Hypergraph}
