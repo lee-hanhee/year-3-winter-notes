@@ -149,6 +149,7 @@
         \item Be careful of common effect, in which it is blocked by default. 
         \item Be careful of decesdents of a common effect (i.e. outward arrows from a common effect) as given it may not be blocked.
         \item Cyclic paths are not blocked by default.
+        \item If $\mathcal{K}$ includes variables that cause all undirected paths to be blocked, then variables are independent. BUT be careful of common effect, in which it is blocked by default so YOU DONT INCLUDE IT IN $\mathcal{K}$.
     \end{itemize}
 \end{warning}
 
@@ -254,31 +255,31 @@
             $\{C\}$ (Not independent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is ub since $D,E$ NOT indep. given $\mathcal{K}$ (causal chain)
                 \end{itemize}} \\
             \midrule
             $\{D\}$ (Not indepedent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\mathcal{J} = \{(F,B,E),(e_1,e_2)\}$ is ub since $F,E$ NOT indep. given $\mathcal{K}$ (causal chain)
                 \end{itemize}} \\
             \midrule
             $\{F\}$ (Not independent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                    \item $AGDBE$ is ub given $\mathcal{K}$ since $\mathcal{J} = \{(D,B,E),(e_1,e_2)\}$ is ub since $D,E$ NOT indep. given $\mathcal{K}$ (causal chain)
                 \end{itemize}} \\
             \midrule
             $\{G\}$ (Not independent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\mathcal{J} = \{(F,B,E),(e_1,e_2)\}$ is ub since $F,E$ NOT indep. given $\mathcal{K}$ (causal chain)
                 \end{itemize}} \\
             \midrule
             $\{H\}$ (Not independent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\forall \mathcal{J}$ on $p$, all are ub.
+                    \item $ACFBE$ is ub given $\mathcal{K}$ since $\mathcal{J} = \{(F,B,E),(e_1,e_2)\}$ is ub since $F,E$ NOT indep. given $\mathcal{K}$ (common effect)
                 \end{itemize}} \\
             \toprule
         \end{tabular}
@@ -295,7 +296,7 @@
             $\{C,D\}$ (Any subset that contains $C$ and $D$ except $H$ will be independent) \\
             \multicolumn{1}{p{\linewidth}}{
                 \begin{itemize}
-                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is b since $G,B$ indep. not given $H$ (causal effect)
+                    \item $AGHBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,H,B),(e_1,e_2)\}$ is b since $G,B$ indep. not given $H$ (common effect)
                     \item $AGDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(G,D,B),(e_1,e_2)\}$ is b since $G,B$ indep. given $D$ (causal chain)
                     \item $ACFBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,F),(e_1,e_2)\}$ is b since $A,F$ indep. given $C$ (causal chain)
                     \item $ACDBE$ is b given $\mathcal{K}$ since $\mathcal{J} = \{(A,C,D),(e_1,e_2)\}$ is b since $A,D$ indep. given $C$ (causal chain)
@@ -305,13 +306,6 @@
             \toprule
         \end{tabular}
     \end{center}
-\end{example}
-
-\begin{example}
-    Any set with 
-    \begin{equation*}
-        B \lor [(G \lor (D \land (\lnot H))) \land (C \lor F)]
-    \end{equation*}
 \end{example}
 \newpage
 
