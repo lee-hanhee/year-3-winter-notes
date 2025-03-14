@@ -320,6 +320,39 @@
 \newpage
 
 \subsubsection{Markov Decision Processes}
+\begin{process}
+    \begin{enumerate}
+        \item Set up the base case for $q^*(s,a,0) = 0$ for all $s,a$.
+        \item Set up the second base case $q^*(s,a,1) = \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') \right)$ for all $s,a$.
+        \item Set up the recursive case $q^*(s,a,T) = \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') + \gamma \max_{a'} q^*(s',a',T-1) \right)$ for all $s,a,T$.
+        \item Select the best action for a given state and last time step by selecting the maximum $q^*(s,a,T)$ for a particular $s$.
+        \item Write $1$ if the action is the best action and $0$ otherwise.
+    \end{enumerate}
+\end{process}
+
+\begin{warning}
+    \begin{itemize}
+        \item $q^*(s,a,T) = \sum_{s'} p(s' \mid s, a) \left( r(s, a, s') + \gamma \max_{a'} q^*(s',a',T-1) \right)$
+        \begin{itemize}
+            \item $q^*(s,a,0) = 0$ for all $s,a$: Base case.
+        \end{itemize}
+        \item $a^*(s,T) = \arg \max_{a \in \mathcal{A}(s)} q^* (s,a,T)$
+        \item $\pi^*(a \mid s,T) = \begin{cases}
+                1 & \text{if } a = a^*(s,T) \\
+                0 & \text{otherwise}
+            \end{cases}$ \\
+    \end{itemize}
+\end{warning}
+
+\begin{warning}
+    \begin{itemize}
+        \item Be careful with the problems. Verify the answers. Go up to at least 2 steps since that tests everything.
+        \item Be able to go through the formula quickly. 
+        \item 1st question on the quiz.
+    \end{itemize}
+\end{warning}
+\newpage
+
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:}
@@ -341,14 +374,6 @@
         \item \textbf{Soln:}
     \end{enumerate}
 \end{example}
-
-\begin{warning}
-    \begin{itemize}
-        \item Be careful with the problems. Verify the answers. Go up to at least 2 steps since that tests everything.
-        \item Be able to go through the formula quickly. 
-        \item 1st question on the quiz.
-    \end{itemize}
-\end{warning}
 \newpage
 
 \begin{example}
