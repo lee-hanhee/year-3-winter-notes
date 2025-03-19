@@ -141,8 +141,6 @@
     *Trig. id. may be useful. \\
     2. Use prop. of LT and common LT to find $F(s)$  
 
-    \switchcolumn
-
     \textcolor{red}{\textbf{Inverse Laplace Transform}} Given $F(s)$, its inverse LT is  
     $f(t) = \mathcal{L}^{-1} \{ F(s) \} := \frac{1}{2\pi j} \int_{c-j\infty}^{c+j\infty} F(s) e^{st} ds$ \\ 
     $= \lim_{w \to \infty} \frac{1}{2\pi j} \int_{c-jw}^{c+jw} F(s) e^{st} ds$, $c \in \mathbb{C}$ is selected s.t. the line $L := \{s \in \mathbb{C} : s = c + j\omega, \omega \in \mathbb{R}\}$ is inside the ROC of $F(s)$.  
@@ -222,8 +220,6 @@
     \textcolor{red}{\textbf{Time Response of Elementary Terms:}} $\mathbf{1}(t) \leftarrow \text{pole @ 0}$ \\
     $t^n \mathbf{1}(t) \leftarrow \text{pole @ $0$ w/ mult. $n$} \; \mid \; e^{at} \mathbf{1}(t) \leftarrow \text{pole @ } a$ \\
     $\sin(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega \; \mid \; \cos(\omega t + \phi) \mathbf{1}(t) \leftarrow \text{pole @ } \pm j \omega$ 
-
-    \switchcolumn
 
     \textcolor{blue}{\textbf{Real Pole:}} $y(s) \text{=} \frac{1}{s+a}$, real pole at $s = -a$, then $y(t) \text{=} e^{-at} \mathbf{1}(t)$ \\
     1. $a>0 \implies \lim_{t \rightarrow \infty} y(t) \text{=} 0 \mid$ 2. $a<0 \implies \lim_{t \rightarrow \infty} y(t) \text{=} \infty$. \\
@@ -398,8 +394,6 @@
     
     \textcolor{orange}{\textbf{FVT}} 1. Does $y(\infty)$ exist? Check if pole at $s=0$, then compute Rooth Array to see if poles are in $\mathbb{C}^{-}$. \\
     2. Compute $\lim_{s \to 0} s Y(s)$ if it exists.
-    
-    \switchcolumn 
 
         }
 \end{paracol}
