@@ -579,6 +579,29 @@
 
     \textcolor{green}{\textbf{Rate of Convergence:}} Depends on the 2nd largest eigenvalue of $P^T$ i.e. $(\lambda_2)^n$ is the rate of convergence.
 
+    \textcolor{red}{\textbf{Bayesian Network:}} Network of RVs $X_1,\ldots,X_n$ w/ directed edges \\ 
+    *\textbf{Not State-Transition Diagram:} 1 RV w/ different values w/ different probabilities to each value. \\
+    *\textbf{Fully Connected Graph:} No special dependency structure, so doesn't give additional info as we can write joint dist. from defn. (true for any graph). \\
+    *\textbf{Non-Fully Connected Graph (Absence of Links):} Conveys useful info about the dependency structure. \\
+    *\textbf{Purpose:} Clarify the dependencies among a set of RVs to simplify the calculation of joint probabilities. 
+
+    \textcolor{blue}{\textbf{Factorization of Joint Dist.}} Suppose the dependencies among RVs can be represented by a DAG, then \\
+    $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid \text{pa}\{X_i\})$ 
+
+    \textcolor{blue}{\textbf{Topological Ordering:}} Often index the RVs s.t. each child has an index greater than those of the parents. 
+
+    \textcolor{green}{\textbf{Fact:}} Every DAG has at least one topological ordering. 
+
+    \textcolor{blue}{\textbf{Conditional Independence:}} $A \perp B \mid C$ if \\
+    (1) $P(a,b \mid c) = P(a \mid c) P(b \mid c) \; \forall a,b,c$ (i.e. A and B are indep. given C) \\
+    (2) $P(a \mid b,c) = P(a \mid c) \; \forall a,b,c$ (i.e. B gives no add. info about A given C)
+
+    \textcolor{green}{\textbf{Common Cause (Tail to Tail):}} 
+
+    \textcolor{green}{\textbf{Causal Chain (Head to Tail or Tail to Head):}} 
+
+    \textcolor{green}{\textbf{Common Effect (Head to Head):}}
+
 
     
 
