@@ -32,6 +32,13 @@
         \end{itemize}
     \end{itemize}
 \end{summary}
+
+\begin{warning}
+    \begin{itemize}
+        \item Maximizer is trying to maximize the reward of agent 1
+        \item Minimizer is trying to minimize the reward of agent 1 (i.e. maximize the reward of agent 2)
+    \end{itemize}
+\end{warning}
 \newpage
 
 \subsection{$\alpha$/$\beta$ Pruning}
@@ -92,7 +99,7 @@
 \subsubsection{$\alpha$ Cuts}
 \begin{example}
     \begin{itemize}
-        \item Explored 14, 12 and now $\beta_{\text{parent}(s)} = \beta_s = 5$, so this will be compared for $\alpha_s$ until $\alpha_s > \beta_s$.
+        \item Explored 14, 12 and now $\beta_{\text{parent}(s)} = \beta_s = 5$, so this will be compared for $\alpha_s$ until $\alpha_s > \beta_s$ b/c then $s$ unreachable under perfect play.
         \item Iterate: 
         \begin{itemize}
             \item $\alpha_s = -\infty < \alpha_s' = 2 \rightarrow \alpha_s = 2$, but $\alpha_s = 2 < \beta_s = 5$ 
@@ -106,7 +113,7 @@
 \subsubsection{$\beta$ Cuts}
 \begin{example}
     \begin{itemize}
-        \item Explored $4$,$6$, and now $\alpha_{\text{parent}(s)} = \alpha_s = 7$, so this will be compared for $\beta_s$ until $\beta_s < \alpha_s$.
+        \item Explored $4$,$6$, and now $\alpha_{\text{parent}(s)} = \alpha_s = 7$, so this will be compared for $\beta_s$ until $\beta_s < \alpha_s$ b/c then $s$ unreachable under perfect play.
         \item Iterate:
         \begin{itemize}
             \item $\beta_s = +\infty > \beta_s' = 9 \rightarrow \beta_s = 9$, but $\beta_s = 9 > \alpha_s = 7$
