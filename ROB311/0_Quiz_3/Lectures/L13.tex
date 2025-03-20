@@ -37,35 +37,108 @@
 \end{definition}
 
 \subsubsection{Simplified Case:}
-\begin{definition}
-    
-\end{definition}
+\begin{example}
+    \begin{itemize}
+        \item \textbf{Given:} Assume the environment is stateless, but rewards are random.
+        
+        \customFigure[0.5]{../Images/L11_1.png}{}
+        \vspace{-1em}
+        \customFigure[0.5]{../Images/L11_2.png}{}
+        \begin{itemize}
+            \item $\mu(a)$: expected reward for action $a$ (unknown to the agent):
+            \item $0 \leq \mu(a) \leq 1 \text{ for all } a.$
+        \end{itemize}
+        
+        \item \textbf{Best-case expected return:} (with $\gamma = 1$ under $\pi^*$) from transition $t$ is:
+        
+        \[
+        u^*(t) := (T - t) \max_{a'} \mu(a')
+        \]
+        
+        where in this case:
+        
+        \[
+        \pi^*(a; t) = 0 \quad \text{if } a \not\in \arg\max_{a'} \mu(a').
+        \]
+        
+        \item \textbf{Estimation of $\mu(\cdot)$.} Since the agent does not have a model, it must estimate $\mu(\cdot)$.
+        \vspace{1em}
+        
+        The agent can take an action $a$ and:
+        
+        \begin{enumerate}
+            \item \textbf{Update} $n(\cdot)$ and $\hat{\mu}(\cdot)$:
+        
+            \[
+            n(a) \leftarrow n(a) + 1
+            \]
+            
+            \[
+            \hat{\mu}(a) \leftarrow \left(1 - \frac{1}{n(a)}\right) \hat{\mu}(a) + \frac{1}{n(a)} r'
+            \]
+            
+            \item \textbf{Compute} $\hat{\pi}$:
+            
+            \[
+            \hat{\pi}(a; t) = 0 \text{ for all } a \not\in \arg\max_{a'} \hat{\mu}(a').
+            \]
+        \end{enumerate}
+        \item  \textbf{Alternate Policies} We want to compare the expected return under various policies. The expected return from transition $t$ under a policy $\rho$ is:
+        
+        \[
+        u^{\rho}(t) := \mathbb{E}^{\pi}[G_t] = \sum_{a'} \rho(a'; t) \left(\mu(a') + u^{\rho}(t+1)\right).
+        \]
+    \end{itemize}
+\end{example}
+\newpage
 
 \subsection{Alternate Policies}
 \begin{summary}
+    To ensure the agent's expected return is maximized, the agent must strike still strike a balance exploration and exploitation. 
+    \vspace{1em}
+
+    In the following cases, the expected return from transition $t$ is 
+    \begin{equation*}
+        u^{\text{avg}} (t) \equiv \frac{T-t}{|\mathcal{A}|} \sum_{a} \mu(a)
+    \end{equation*}
+
+    We want to choose $\rho$ so that $u^\rho > u^{\text{avg}}$. 
+
     \begin{center}
         \begin{tabular}{ll}
             \toprule
             \textbf{Policy} & \textbf{Function:} \\
             \midrule
-            State transition given state-action pair defined by $\text{tr}: \mathcal{T} \to \mathcal{S}$ & $\text{tr}(s,a) = \text{state transition from $s$ under $a$}$ \\ 
+            Exploitation only & Choose a random action, same for all transitions \\
             \midrule
-            Reward to each agent, $i$ defined by $r_i$: $\mathcal{Q} \times \mathcal{S} \rightarrow \mathbb{R}_+$ & $r_i(s,a,\text{tr}(s,a)) = \text{rwd to agent $i$ for $(s,a,tr(s,a))$}$ \\
+            Exploration only & Choose a random action, different for each transition \\ 
             \midrule
-            State evolution of environment after $N$ transitions & $p = \langle (s_0,a^{(1)},s_{1}),\ldots,(s_{N-1},a^{(N)},s_{N})\rangle$ \\ 
+            Softmax & Apply a soft-max over $\hat{u}$ \\
+            & $\rho(a;t) = \left[\sum_{a'} \text{exp}\left(\frac{\hat{\mu}(a')}{\tau}\right)\right]^{-1} \text{exp}\left(\frac{\hat{\mu}(a)}{\tau}\right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item Given sequence of actions: $p.a = \langle a^{(1)},\ldots,a^{(n)}\rangle$
-                \item $s_N = \tau (s_{n-1},a^{(n)})$
+                \item Choose a temperature value decrease with $t$. 
+                \item $\tau(t) \in [0,\infty), \tau \rightarrow 0$
             \end{itemize}} \\
             \midrule
-            reward to agent $i$ & $r_i(p) = \sum_{n=1}^N r_i (s_{n-1},a^{(n)}, s_n)$ \\
-            \midrule
+            $\epsilon$-greedy & Use $\hat{\pi}$ w/ prob. $1-\epsilon$, otherwaise take a random action \\
+            & $\rho(a;t) = \epsilon \frac{1}{|\mathcal{A}|} + (1-\epsilon) \hat{\pi}(a;t)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item 
+                \item Choose an exploration rate decrease w/ $t$. 
+                \item $\epsilon(t) \in [0,1], \epsilon \rightarrow 0$
+            \end{itemize}} \\
+            \midrule
+            Upper confidence bound & Choose the action with the highest $\text{ucb}(\cdot)$\\ 
+            & $\rho(a;t) = 0$ if $a \notin \arg \max_{a'} \text{ucb}(a';t)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Compute $\text{ucb}(\cdot)$ for each action. 
+                \item $\text{ucb}(a;t) = \hat{\mu}(a) + \sqrt{\frac{\ln t}{n(a)}}$
             \end{itemize}} \\
             \bottomrule            
         \end{tabular}
     \end{center}
+
+    \customFigure[0.5]{../Images/L11_0.png}{}
 \end{summary}
