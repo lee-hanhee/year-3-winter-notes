@@ -1,0 +1,67 @@
+\begin{summary}
+    In a \textbf{Multi-Agent problem}, we assume that:
+    \begin{itemize}
+        \item Set of states for environment is $\mathcal{S}$
+        \item $P$ agents within environment. 
+        \item For each state $s \in \mathcal{S}$: 
+        \begin{itemize}
+            \item possible actions for agent $i$ is $\mathcal{A}_i(s)$
+            \item set of action profiles is $\mathcal{A}(s) = \prod_{i=1}^P \mathcal{A}_i(s)$
+        \end{itemize}
+        \item possible state-action pairs are $\mathcal{T} = \{(s,a) \text{ s.t. } s \in \mathcal{S}, a \in \mathcal{A}(s)\}$
+        \item environment in some origin state, $s_0$ 
+        \item environment destroyed after $N$ transitions 
+        \item agent $j$ wants to find policy $\pi_j (a_j \mid s)$ so that $\mathbb{E}[r_j(p)]$ is maximized
+        \item agents act independently given the environmen
+    \end{itemize}
+
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            State transition given state-action pair defined by $\text{tr}: \mathcal{T} \to \mathcal{S}$ & $\text{tr}(s,a) = \text{state transition from $s$ under $a$}$ \\ 
+            \midrule
+            Reward to each agent, $i$ defined by $r_i$: $\mathcal{Q} \times \mathcal{S} \rightarrow \mathbb{R}_+$ & $r_i(s,a,\text{tr}(s,a)) = \text{rwd to agent $i$ for $(s,a,tr(s,a))$}$ \\
+            \midrule
+            State evolution of environment after $N$ transitions & $p = \langle (s_0,a^{(1)},s_{1}),\ldots,(s_{N-1},a^{(N)},s_{N})\rangle$ \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Given sequence of actions: $p.a = \langle a^{(1)},\ldots,a^{(n)}\rangle$
+                \item $s_N = \tau (s_{n-1},a^{(n)})$
+            \end{itemize}} \\
+            \midrule
+            reward to agent $i$ & $r_i(p) = \sum_{n=1}^N r_i (s_{n-1},a^{(n)}, s_n)$ \\
+            \midrule
+            expected-reward (value) of playing $a$ from $s$ for agent $j$ & $p(s'|s) := \mathbb{P}[S_{t+1} = s' | S_t = s]$ \\
+            \midrule 
+            Prob. that state of the env. after $T$ transitions is $s$ & $p_T(s) := \mathbb{P}[S_T = s]$ \\
+            & $\quad \quad \; \; \; \;= \sum_{s'} p_{T-1}(s') p(s|s')$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item $p_{T-1}(s')$: Prob. $s'$ at $T$-$1$ (given) 
+                \begin{itemize}
+                    \item $p_0(s)$: Base case
+                \end{itemize}
+                \item $p(s|s')$: Prob. $s$ given $s'$ (from graph)
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Action Equilibria}
+
+\subsubsection{Finding Action Equilibria}
+
+\subsection{Strategy Equilibria}
+
+\subsubsection{Finding Strategy Equilibria}
+
+\subsubsection{Existence of Stategy Equilibria}
+
+\subsubsection{Convergence of Stategy Equilibria}
+
+\subsection{Examples}
+\subsubsection{Optimal Action Profiles}
+
