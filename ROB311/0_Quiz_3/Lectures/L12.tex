@@ -2,19 +2,35 @@
 \begin{summary}
     In a \textbf{zero-sum turn-based games}, we assume that 
     \begin{itemize}
-        \item there are two agents, called the \textcolor{red}{\textbf{maximizer}} and \textcolor{blue}{\textbf{minimizer}}
-        \item the environment is always in one of a discrete set of states, $\mathcal{S}$
-        \item a subset of the states, $\mathcal{T} \subseteq \mathcal{S}$, are terminal states
-        \item there is only one decision maker for each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$
-        \item for each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$, the decision-maker has a discrete set of actions, $\mathcal{A}(s)$
-        \item At time-step $t$, the decision-maker will: 
+        \item \textbf{Agents and Environment:} 
+        \begin{itemize}
+            \item there are two agents, called the \textcolor{red}{\textbf{maximizer}} and \textcolor{blue}{\textbf{minimizer}}
+            \item the environment is always in one of a discrete set of states, $\mathcal{S}$
+            \item a subset of the states, $\mathcal{T} \subseteq \mathcal{S}$, are terminal states
+            \item there is only one decision maker for each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$
+            \item For each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$, the decision-maker has a discrete set of actions, $\mathcal{A}(s)$
+        \end{itemize}
+        \item \textbf{Decision Process:} At time-step $t$, the decision-maker will: 
         \begin{itemize}
             \item \textbf{Observe:} Observe the state $s_t$ 
             \item \textbf{Select:} Select an action $a_t \in \mathcal{A}(s_t)$
             \item \textbf{Move:} Make the move $(s_t,a_t)$
         \end{itemize}
+        \item \textbf{State Transitions:} 
+        \begin{itemize}
+            \item Environment transitions to a deterministic state, $s_{t+1}$, based on a stationary fn, 
+            \begin{equation*}
+                s_{t+1} = \text{tr}(s_t,a_t)
+            \end{equation*}
+            \item Once a terminal state is reached (if $s_{t+1} \in \mathcal{T}$), the maximizer obtains a reward for the final transition based on a reward fn, $r(\cdot,\cdot,\cdot)$:
+            \begin{equation*}
+                r(s_t,a_t,s_{t+1}) = \text{maximizer's reward for reaching state $s_{t+1}$}
+            \end{equation*}
+            \begin{equation*}
+                - r(s_t,a_t,s_{t+1}) = \text{minimizer's reward for reaching state $s_{t+1}$}
+            \end{equation*}
+        \end{itemize}
     \end{itemize}
-
 \end{summary}
 
 \subsection{$\alpha$/$\beta$ Pruning}
@@ -26,15 +42,30 @@
 \end{definition}
 
 \subsubsection{$\alpha$ Cuts}
+\begin{notes}
+    \customFigure[0.5]{../Images/L12_4.png}{}
+\end{notes}
 
 \subsubsection{$\beta$ Cuts}
+\begin{notes}
+    \customFigure[0.5]{../Images/L12_5.png}{}
+\end{notes}
 
 \subsection{Examples}
+\begin{example}
+    \customFigure[0.5]{../Images/L12_0.png}{}
+    \customFigure[0.5]{../Images/L12_1.png}{}
+    \customFigure[0.5]{../Images/L12_2.png}{}
+    \customFigure[0.5]{../Images/L12_3.png}{}
+\end{example}
 
 \subsubsection{Zero-Sum Turn-Based Games}
 \begin{example}
     \begin{itemize}
-        \item \textbf{Given:} Cavemen is injured 
+        \item \textbf{Given:} Cavemen is injured from his hunt. He has extra food, but needs medicine.
+        \begin{itemize}
+            \item He meets another caveman who is willing to trade. 
+        \end{itemize} 
         \item \textbf{Game Tree:}
         \begin{itemize}
             \item States:
