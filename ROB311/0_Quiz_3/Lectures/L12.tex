@@ -1,0 +1,53 @@
+\subsection{Zero-Sum Turn-Based Games}
+\begin{summary}
+    In a \textbf{zero-sum turn-based games}, we assume that 
+    \begin{itemize}
+        \item there are two agents, called the \textcolor{red}{\textbf{maximizer}} and \textcolor{blue}{\textbf{minimizer}}
+        \item the environment is always in one of a discrete set of states, $\mathcal{S}$
+        \item a subset of the states, $\mathcal{T} \subseteq \mathcal{S}$, are terminal states
+        \item there is only one decision maker for each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$
+        \item for each non-terminal state, $s \in \mathcal{S} \setminus \mathcal{T}$, the decision-maker has a discrete set of actions, $\mathcal{A}(s)$
+        \item At time-step $t$, the decision-maker will: 
+        \begin{itemize}
+            \item \textbf{Observe:} Observe the state $s_t$ 
+            \item \textbf{Select:} Select an action $a_t \in \mathcal{A}(s_t)$
+            \item \textbf{Move:} Make the move $(s_t,a_t)$
+        \end{itemize}
+    \end{itemize}
+
+\end{summary}
+
+\subsection{$\alpha$/$\beta$ Pruning}
+\begin{definition}
+    \begin{itemize}
+        \item \textcolor{red}{$\alpha$}: Maximum value at $s$ thus far (initially $-\infty$)
+        \item \textcolor{blue}{$\beta$}: Minimum value at $s$ thus far (initially $+\infty$)
+    \end{itemize}
+\end{definition}
+
+\subsubsection{$\alpha$ Cuts}
+
+\subsubsection{$\beta$ Cuts}
+
+\subsection{Examples}
+
+\subsubsection{Zero-Sum Turn-Based Games}
+\begin{example}
+    \begin{itemize}
+        \item \textbf{Given:} Cavemen is injured 
+        \item \textbf{Game Tree:}
+        \begin{itemize}
+            \item States:
+            \begin{itemize}
+                \item Red triangle:
+                \item Blue triangle: 
+                \item White circles with \#s
+            \end{itemize}
+            \item Actions: Square boxes are actions
+        \end{itemize}
+    \end{itemize}
+\end{example}
+
+\begin{warning}
+    In every given non-terminal state, only one agent can make the decision. 
+\end{warning}

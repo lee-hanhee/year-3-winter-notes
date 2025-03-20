@@ -1,0 +1,71 @@
+\subsection{Estimating the Optimal Quality Function}
+\begin{motivation}
+    The agent need not know the model of the environment. However, it must actually make moves, even when learning. 
+    \vspace{1em}
+
+    If the agent doesn't have a model, it must estimate $q^*$, $\mathcal{A}^*$, and $\pi^*$. 
+\end{motivation}
+
+\begin{definition}
+    When the environment is in state $s$, the agent can take an action $a$ and: 
+    \begin{itemize}
+        \item \textbf{Update $\hat{q}$:} $\hat{q}(s,a; t) \leftarrow (1-\alpha) \hat{q}(s,a;t) + \alpha \left( r' + \gamma \max_{a'} \hat{q}(s',a';t+1) \right)$
+        \begin{itemize}
+            \item $0 \leq \alpha \leq 1$: learning rate
+        \end{itemize}
+        \item \textbf{Compute $\hat{\mathcal{A}}$:} $\hat{\mathcal{A}}(s;t) = \arg\max_{a'\in \mathcal{A}(s)} \hat{q}(s,a';t)$
+        \item \textbf{Compute $\hat{\pi}$:} $\hat{\pi}(a' \mid s;t) = 0 \; \forall a' \notin \hat{\mathcal{A}}(s;t)$
+    \end{itemize}
+\end{definition}
+
+\subsection{Exploration versus Exploitation}
+\begin{motivation}
+    To ensure $\hat{q}$ converges to $q^*$ and the agent's expected return is maximized, the agent must balance exploration and exploitation.    
+\end{motivation}
+
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Exploitation:} Choose the most promising actions based on current knowledge. 
+        \begin{itemize}
+            \item Use optimal policy: $\hat{\pi}(\cdot,\cdot;t)$
+        \end{itemize}
+        \item \textbf{Exploration:} Choose the least tried actions to improve current knowledge.
+        \begin{itemize}
+            \item Choose actions randomly 
+        \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Simplified Case:}
+\begin{definition}
+    
+\end{definition}
+
+\subsection{Alternate Policies}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Policy} & \textbf{Function:} \\
+            \midrule
+            State transition given state-action pair defined by $\text{tr}: \mathcal{T} \to \mathcal{S}$ & $\text{tr}(s,a) = \text{state transition from $s$ under $a$}$ \\ 
+            \midrule
+            Reward to each agent, $i$ defined by $r_i$: $\mathcal{Q} \times \mathcal{S} \rightarrow \mathbb{R}_+$ & $r_i(s,a,\text{tr}(s,a)) = \text{rwd to agent $i$ for $(s,a,tr(s,a))$}$ \\
+            \midrule
+            State evolution of environment after $N$ transitions & $p = \langle (s_0,a^{(1)},s_{1}),\ldots,(s_{N-1},a^{(N)},s_{N})\rangle$ \\ 
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item Given sequence of actions: $p.a = \langle a^{(1)},\ldots,a^{(n)}\rangle$
+                \item $s_N = \tau (s_{n-1},a^{(n)})$
+            \end{itemize}} \\
+            \midrule
+            reward to agent $i$ & $r_i(p) = \sum_{n=1}^N r_i (s_{n-1},a^{(n)}, s_n)$ \\
+            \midrule
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
