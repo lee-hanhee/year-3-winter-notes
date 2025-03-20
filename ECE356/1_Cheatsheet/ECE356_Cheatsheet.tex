@@ -542,7 +542,9 @@
 
     \textcolor{red}{\textbf{Nyquist Stablity Criterion:}} Suppose $L(s) = C(s) G(s)$ is a strictly proper rational fn and has no poles on the Im axis. Also let $K \in \mathbb{R}$. Then the TF $\frac{1}{1 + K L(s)}$ is BIBO stable iff \\
     (1) $\mathcal{L} = \{ L(j \omega): \omega \in \mathbb{R}\}$ does not pass through the pt. $\frac{-1}{k}$ \\
-    (2) $\mathcal{L}$ encircles $\frac{-1}{k}$ a total of $n_p$ times CCW. \\
+    (2) $\mathcal{L}$ encircles $\frac{-1}{k}$ a total of $n_p$ times CCW $ = P_{OLS} - P_{CLS}$ \\
+    *$P_{OLS}$: \# of open-loop poles of $L(s)$ in $\mathbb{C}^+$ \\ 
+    *$P_{CLS}$: \# of closed-loop poles of $L(s)$ in $\mathbb{C}^+$ \\ 
     *$n_p$ is the \# of poles of $L(s)$ in $\mathbb{C}^+$. 
     \customFigure[0.2]{../Images/L23_0.png}
 
@@ -559,22 +561,27 @@
     *Re-axis when $\angle L(j \omega) \in \{0, \pi\} \mod 2\pi$ \\
     *Im-axis when $\angle L(j \omega) \in \{\pm \frac{\pi}{2}\} \mod 2\pi$ 
 
-    \textcolor{blue}{\textbf{Nyquist Stability Criterion w/ Imaginary Poles:}} Suppose $L(s)$ satisfies all the requirements of the Nyquist Stability Criterion except it has poles on the imaginary axis. Then the conclusion of the Nyquist Stability Criterion hold true provided we use the indented Nyquist Contour. \\
+    \textcolor{blue}{\textbf{Nyquist Stability Criterion w/ Imaginary Poles:}} Suppose $L(s)$ satisfies all the requirements of the Nyquist Stability Criterion except it has poles on the Im axis. Then the conclusion of the Nyquist Stability Criterion hold true provided we use the \textbf{indented Nyquist Contour}. \\
     \customFigure[0.1]{../Images/L23_1.png} \\
     *X: poles of $L(s)$ on the Im-axis. \\
-    *Radius of each semi-circle around each pole on the Im-axis is $\epsilon > 0$ and we consider the case when $\epsilon \rightarrow 0^+$. 
+    *Radius of each semi-circle around each pole on the Im-axis is $\epsilon > 0$ and consider the case when $\epsilon \rightarrow 0^+$. 
 
     \textcolor{red}{\textbf{Gain and Phase Margin:}} 
 
     \textcolor{blue}{\textbf{Frequency Response:}} Given the TF $G(s)$, its frequency response is $G(j \omega)$ where $\omega \in \mathbb{R}$. 
 
-    \textcolor{blue}{\textbf{Proposition:}} 
+    \textcolor{blue}{\textbf{Proposition:}} Suppose the TF $G(s)$ is BIBO stable. If $u(t) = A \sin(\omega t + \phi) \mathbf{1}(t)$, then the steady-state output is \\ 
+    $y_{ss}(t) \equiv |G(j \omega)| A \sin(\omega t + \phi + \angle G(j \omega)) \mathbf{1}(t)$ that is, $\lim_{t \rightarrow \infty} y(t) - y_{ss}(t) = 0$.
 
-    \textcolor{blue}{\textbf{Gain Margin (GM):}} 
+    \textcolor{blue}{\textbf{Robustness Margins:}} 
+    \customFigure[0.25]{../Images/L25_5.png} 
+    *$L(s)$: Strictly proper rational fn, has no poles in $\mathbb{C}^+$
 
-    \textcolor{blue}{\textbf{Phase Margin (PM):}}
+    \textcolor{green}{\textbf{Gain Margin (GM):}} $GM \equiv A_{\max} = \frac{1}{|L_0(j \omega_{pc})|}$
 
-    \textcolor{green}{\textbf{Crossover Frequency:}} 
+    \textcolor{green}{\textbf{Phase Margin (PM):}} $PM \equiv \phi_{\max} = \angle L_0(j \omega_{gc}) - (-\pi) = \angle L_0(j \omega_{gc}) + \pi$
+
+    *\textbf{Crossover Frequency:} $\omega_{gc} \in [0,\infty)$: Soln to $|L(j \omega_{gc})| = 1$.
     
         }
 \end{paracol}
