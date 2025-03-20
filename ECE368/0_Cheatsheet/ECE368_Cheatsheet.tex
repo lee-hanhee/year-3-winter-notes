@@ -613,17 +613,18 @@
 
     \textcolor{blue}{\textbf{Factorization of Joint Dist.}} 2 \textbf{non-neighbouring} nodes (RVs) are conditionally indep. given the set of nodes that separate them: \\
     $P(x_i, x_j \mid C) = P(x_i \mid C) P(x_j \mid C) \; \forall i,j$ \\
-    *i.e. $x_i$ and $x_j$ should not appear in the same factor. 
+    *\textbf{i.e.} $x_i$ and $x_j$ should not appear in the same factor. 
 
     \textcolor{blue}{\textbf{Clique:}} A set of nodes s.t. there is link b/w any pair of them
 
     \textcolor{green}{\textbf{Maximal Clique:}} A clique s.t. we cannot add another node and maintain a clique. 
 
     \textcolor{blue}{\textbf{Hammersley-Clifford Theorem:}} Let $\underline{x}_C$ denote the values of RVs in set $C$. Any strictly postiive dist. $P(\underline{x})$ that satisfies a Markov random field can be factorized as \\
-    $P(\underline{x}) = \frac{1}{Z} \prod_{c \in \mathcal{C}} \psi_c(\underline{x}_c)$ \\
-    *$Z= \sum_{\underline{x}} \prod_C \Psi_C (\underline{x}_C)$: Normalization constant \\
-    *$\Pi_c$: Product of all maximal cliques \\
-    *$\Psi_c$: Potential function over the clique $c$ (not necessarily a prob.) 
+    $P(\underline{x}) = \frac{1}{Z} \prod_{C} \psi_C(\underline{x}_C) = \frac{1}{Z} e^{-\sum_C E(\underline{x}_C)}$ \\
+    *$Z= \sum_{\underline{x}} \prod_C \psi_C (\underline{x}_C)$: Normalization constant \\
+    *$\Pi_C$: Product of all maximal cliques \\
+    *$\psi_C(\underline{x}_C) = e^{-E(\underline{x}_C)}$: Potential function over the clique $C$ (not necessarily a prob.) \\
+    *$E(\underline{x}_C)$: Energy function over the clique $C$ 
 
     \textcolor{blue}{\textbf{Conversion from Bayesian Net to Markov Random Field}} Always possible, but some dependency structure will be lost \\
     (1) For each clique $c$, define a potential function $\psi_c$ \\
