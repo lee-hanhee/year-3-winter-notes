@@ -80,6 +80,9 @@
         \end{itemize} 
         \customFigure[0.5]{../Images/L12_1.png}{States}
         \vspace{-1.5em}
+        \customFigure[0.5]{../Images/L12_2.png}{Actions}
+        \vspace{-1.5em}
+        \customFigure[0.5]{../Images/L12_3.png}{Decision Process}
         \customFigure[0.5]{../Images/L12_0.png}{Game Tree}
         \begin{itemize}
             \item States
@@ -90,9 +93,13 @@
             \end{itemize}
             \item Actions: Square boxes are actions
         \end{itemize}
-        \customFigure[0.5]{../Images/L12_2.png}{Actions}
-        \vspace{-1.5em}
-        \customFigure[0.5]{../Images/L12_3.png}{Decision Process}
+        \item \textbf{Solution:} Backtracking through the game tree, we can find the optimal path for the maximizer and minimizer.
+        \begin{itemize}
+            \item \textbf{Maximizer Turn:} LL: Accept to get reward of 8, L: Accept to get reward of 16, R: Accept to get reward of 2, RR: Accept to get reward of 4
+            \item \textbf{Minimizer Turn:} LL: 1 medicine to make maximizer get reward of 8, R: 1 medicine to make maximizer get reward of 2
+            \item \textbf{Maximizer Turn:} 1 food to make maximizer get reward of 8 b/c going right will make maximizer get reward of 2
+            \item \textbf{Optimal Path:} Therefore, the optimal path will be LLL b/c the maximizer will get a reward of 8, while the minimizer will reduce the reward from 16 to 8.
+        \end{itemize}
     \end{itemize}
 \end{example}
 
