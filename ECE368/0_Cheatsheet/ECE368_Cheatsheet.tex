@@ -596,11 +596,14 @@
     (1) $P(a,b \mid c) = P(a \mid c) P(b \mid c) \; \forall a,b,c$ (i.e. A and B are indep. given C) \\
     (2) $P(a \mid b,c) = P(a \mid c) \; \forall a,b,c$ (i.e. B gives no add. info about A given C)
 
-    \textcolor{green}{\textbf{Common Cause (Tail to Tail):}} 
+    \textcolor{green}{\textbf{Common Cause (Tail to Tail):}} $A \perp B \mid C$, o.w. $A \not\perp B$ 
 
-    \textcolor{green}{\textbf{Causal Chain (Head to Tail or Tail to Head):}} 
+    \textcolor{green}{\textbf{Causal Chain (Head to Tail or Tail to Head):}} $A \perp B \mid C$, o.w. $A \not\perp B$
 
-    \textcolor{green}{\textbf{Common Effect (Head to Head):}}
+    \textcolor{green}{\textbf{Common Effect (Head to Head):}} $A \perp B$, o.w. $A \not\perp B \mid C \text{ or its descendants}$ \\
+    *\textbf{Explaining Away:} If $A \rightarrow B \leftarrow C$, then if you observe $B$, then the other cause $A$ is less likely to be the cause for the effect $B$.
+
+    \textcolor{blue}{\textbf{Directed Separation (D-seperation):}}
 
 
     
