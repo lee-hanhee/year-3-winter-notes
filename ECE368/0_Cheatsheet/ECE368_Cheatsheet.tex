@@ -605,17 +605,30 @@
 
     \textcolor{blue}{\textbf{Directed Separation (D-seperation):}} 
 
-    \textcolor{blue}{\textbf{Markov Boundary (Blanket):}} Represent RVs as an undirected graph s.t. conditional independence $\mathcal{A} \perp \mathcal{B} \mid \mathcal{C}$ hold iff all paths b/w $\mathcal{A}$ and $\mathcal{B}$ so through $\mathcal{C}$. \\
-    *Markov blanket of $X_i = \text{set of neighbours of } X_i$ \\
-    *No longer a way to order the RVs
+    \textcolor{blue}{\textbf{Markov Boundary (Blanket):}}
 
-    \textcolor{red}{\textbf{Markov Random Field:}}
+    \textcolor{red}{\textbf{Markov Random Field:}} Represent RVs as an undirected graph s.t. conditional independence $\mathcal{A} \perp \mathcal{B} \mid \mathcal{C}$ hold iff all paths b/w $\mathcal{A}$ and $\mathcal{B}$ so through $\mathcal{C}$. \\
+    *\textbf{Markov blanket of $X_i:$} $= \text{set of neighbours of } X_i$ \\
+    *\textbf{No Order:} No longer a way to order the RVs.
 
-    \textcolor{blue}{\textbf{Clique:}}
+    \textcolor{blue}{\textbf{Factorization of Joint Dist.}} 2 \textbf{non-neighbouring} nodes (RVs) are conditionally indep. given the set of nodes that separate them: \\
+    $P(x_i, x_j \mid C) = P(x_i \mid C) P(x_j \mid C) \; \forall i,j$ \\
+    *i.e. $x_i$ and $x_j$ should not appear in the same factor. 
 
-    \textcolor{green}{\textbf{Maximal Clique:}}
+    \textcolor{blue}{\textbf{Clique:}} A set of nodes s.t. there is link b/w any pair of them
 
-    \textcolor{blue}{\textbf{Hammersley-Clifford Theorem:}} 
+    \textcolor{green}{\textbf{Maximal Clique:}} A clique s.t. we cannot add another node and maintain a clique. 
+
+    \textcolor{blue}{\textbf{Hammersley-Clifford Theorem:}} Let $\underline{x}_C$ denote the values of RVs in set $C$. Any strictly postiive dist. $P(\underline{x})$ that satisfies a Markov random field can be factorized as \\
+    $P(\underline{x}) = \frac{1}{Z} \prod_{c \in \mathcal{C}} \psi_c(\underline{x}_c)$ \\
+    *$Z= \sum_{\underline{x}} \prod_C \Psi_C (\underline{x}_C)$: Normalization constant \\
+    *$\Pi_c$: Product of all maximal cliques \\
+    *$\Psi_c$: Potential function over the clique $c$ (not necessarily a prob.) 
+
+    \textcolor{blue}{\textbf{Conversion from Bayesian Net to Markov Random Field}} Always possible, but some dependency structure will be lost \\
+    (1) For each clique $c$, define a potential function $\psi_c$ \\
+    (2) For each pair of nodes $i,j$ that are not connected by an edge, add a clique $c$ that contains $i,j$ and define $\psi_c$ \\
+    (3) For each node $i$, add a clique $c$ that contains $i$ and its parents and define $\psi_c$
 
 
     
