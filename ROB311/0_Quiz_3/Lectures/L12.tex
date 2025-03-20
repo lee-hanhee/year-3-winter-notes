@@ -97,7 +97,7 @@
         \begin{itemize}
             \item $\alpha_s = -\infty < \alpha_s' = 2 \rightarrow \alpha_s = 2$, but $\alpha_s = 2 < \beta_s = 5$ 
             \item $\alpha_s = 2 < \alpha_s' = 4 \rightarrow \alpha_s = 4$, but $\alpha_s = 4 < \beta_s = 5$
-            \item $\alpha_s = 4 < \alpha_s' = 9 \rightarrow \alpha_s = 9$, and $\alpha_s = 9 > \beta_s = 5$, therefore, prune all the other branches that haven't been explored yet. 
+            \item $\alpha_s = 4 < \alpha_s' = 9 \rightarrow \alpha_s = 9$, and $\alpha_s = 9 > \beta_s = 5$, therefore, prune all the other branches that haven't been explored yet in the children of $s$ paths
         \end{itemize}
     \end{itemize}
     \customFigure[0.5]{../Images/L12_4.png}{}
@@ -105,5 +105,14 @@
 
 \subsubsection{$\beta$ Cuts}
 \begin{example}
+    \begin{itemize}
+        \item Explored $4$,$6$, and now $\alpha_{\text{parent}(s)} = \alpha_s = 7$, so this will be compared for $\beta_s$ until $\beta_s < \alpha_s$.
+        \item Iterate:
+        \begin{itemize}
+            \item $\beta_s = +\infty > \beta_s' = 9 \rightarrow \beta_s = 9$, but $\beta_s = 9 > \alpha_s = 7$
+            \item $\beta_s = 9 > \beta_s' = 8 \rightarrow \beta_s = 5$, but $\beta_s = 8 > \alpha_s = 7$
+            \item $\beta_s = 8 > \beta_s' = 3 \rightarrow \beta_s = 3$, and $\beta_s = 3 < \alpha_s = 7$, therefore, prune all the other branches that haven't been explored yet in the children of $s$ paths
+        \end{itemize}
+    \end{itemize}
     \customFigure[0.5]{../Images/L12_5.png}{}
 \end{example}
