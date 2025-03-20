@@ -35,6 +35,9 @@
 \newpage
 
 \subsection{$\alpha$/$\beta$ Pruning}
+\begin{motivation}
+    Don't explore the entire game tree by pruning branches that are unreachable under perfect play.
+\end{motivation}
 \begin{definition}
     For each state $s$: 
     \begin{itemize}
@@ -44,17 +47,24 @@
 \end{definition}
 
 \subsubsection{$\alpha$ Cuts}
-\begin{notes} If the \textcolor{red}{\textbf{maximizer}} is the turn-taker at $s$, then \textcolor{red}{$\alpha_s$} increases to the maximum value of $s$'s successors as they are explored, and \textcolor{blue}{$\beta_s$} $=$ \textcolor{blue}{$\beta_{\text{parent}(s)}$}.
-    \customFigure[0.5]{../Images/L12_4.png}{}
-\end{notes}
+\begin{definition}
+    If the \textcolor{red}{\textbf{maximizer}} is the turn-taker at $s$, then \textcolor{red}{$\alpha_s$} increases to the maximum value of $s$'s successors as they are explored, and \textcolor{blue}{$\beta_s$} $=$ \textcolor{blue}{$\beta_{\text{parent}(s)}$}.
+    \begin{itemize}
+        \item If \textcolor{red}{$\alpha_s$} increases beyond \textcolor{blue}{$\beta_s$}, then $s$ unreachable under perfect play.
+    \end{itemize}
+\end{definition}
 
 \subsubsection{$\beta$ Cuts}
-\begin{notes} If the \textcolor{blue}{\textbf{minimizer}} is the turn-taker at $s$, then \textcolor{blue}{$\beta_s$} decreases to the minimum value of $s$'s successors as they are explored, and \textcolor{red}{$\alpha_s$} $=$ \textcolor{red}{$\alpha_{\text{parent}(s)}$}.
-    \customFigure[0.5]{../Images/L12_5.png}{}
-\end{notes}
+\begin{definition}
+    If the \textcolor{blue}{\textbf{minimizer}} is the turn-taker at $s$, then \textcolor{blue}{$\beta_s$} decreases to the minimum value of $s$'s successors as they are explored, and \textcolor{red}{$\alpha_s$} $=$ \textcolor{red}{$\alpha_{\text{parent}(s)}$}.
+    \begin{itemize}
+        \item If \textcolor{blue}{$\beta_s$} decreases beyond \textcolor{red}{$\alpha_s$}, then $s$ unreachable under perfect play. 
+    \end{itemize}
+\end{definition}
 \newpage
 
 \subsection{Examples}
+\subsubsection{Zero Sum Turn-Based Games}
 \begin{example}
     \begin{itemize}
         \item \textbf{Given:} Cavemen is injured from his hunt. He has extra food, but needs medicine.
@@ -77,4 +87,23 @@
         \vspace{-1.5em}
         \customFigure[0.5]{../Images/L12_3.png}{Decision Process}
     \end{itemize}
+\end{example}
+
+\subsubsection{$\alpha$ Cuts}
+\begin{example}
+    \begin{itemize}
+        \item Explored 14, 12 and now $\beta_{\text{parent}(s)} = \beta_s = 5$, so this will be compared for $\alpha_s$ until $\alpha_s > \beta_s$.
+        \item Iterate: 
+        \begin{itemize}
+            \item $\alpha_s = -\infty < \alpha_s' = 2 \rightarrow \alpha_s = 2$, but $\alpha_s = 2 < \beta_s = 5$ 
+            \item $\alpha_s = 2 < \alpha_s' = 4 \rightarrow \alpha_s = 4$, but $\alpha_s = 4 < \beta_s = 5$
+            \item $\alpha_s = 4 < \alpha_s' = 9 \rightarrow \alpha_s = 9$, and $\alpha_s = 9 > \beta_s = 5$, therefore, prune all the other branches that haven't been explored yet. 
+        \end{itemize}
+    \end{itemize}
+    \customFigure[0.5]{../Images/L12_4.png}{}
+\end{example}
+
+\subsubsection{$\beta$ Cuts}
+\begin{example}
+    \customFigure[0.5]{../Images/L12_5.png}{}
 \end{example}
