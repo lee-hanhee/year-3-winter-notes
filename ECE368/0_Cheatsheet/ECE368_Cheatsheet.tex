@@ -668,6 +668,11 @@
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\alpha(z_n)$, $O(K^2)$ for message at time $n$
 
+    (2) \textbf{Backward:} \\
+    $\beta(z_n) \equiv P[\underbrace{X_{n+1} = x_{n+1},\ldots,X_N=x_N}_{\text{obs so far}} \mid \underbrace{Z_n = z_n}_{\text{cur. state}}]$ \\
+    $\beta(z_n) \equiv P[x_{n+1},\ldots,x_N \mid z_n]$ \\
+    *$\beta(z_N) = 1$ \\
+
 
     
 
