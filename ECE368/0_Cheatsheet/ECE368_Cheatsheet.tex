@@ -658,7 +658,13 @@
     2. Given HMM and $\underline{x}$, find most likely $z_n$ or sequence of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
 
     \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \forall \underline{x}$ \\
-    
+    (1) \textbf{Forward:} \\
+    $\alpha(z_n) \equiv P[\underbrace{X_1 = x_1,\ldots,X_n=x_n}_{\text{obs so far}}, \underbrace{Z_n = z_n}_{\text{cur. state}}]$, $1 \leq n \leq N$\\
+    $\alpha(z_n) \equiv P[x_1,\ldots,x_n,z_n]$ \\
+    *$\alpha(z_1) = P(x_1,z_1) = P(z_1)P(x_1 \mid z_1)$ \\
+    *$\alpha(z_n) = P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \alpha(z_{n-1})$ \\
+    (2) \textbf{Backward:} \\
+
 
     
 
