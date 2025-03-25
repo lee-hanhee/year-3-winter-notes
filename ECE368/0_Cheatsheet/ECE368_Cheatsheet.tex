@@ -697,7 +697,7 @@
     *$\boxed{c_n = \sum_{z_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ 
 
     \textcolor{green}{\textbf{2. Backward:}} \\
-    $\hat{\beta}(z_n) = \frac{\beta(z_n)}{\prod_{m=n+1}^N c_m}$ \\
+    $\hat{\beta}(z_n) = \frac{\beta(z_n)}{\prod_{m=n+1}^N c_m} = \frac{\beta(z_n)}{P(x_{n+1},\ldots,x_N \mid x_1,\ldots,x_n)}$ \\
     
 
 
