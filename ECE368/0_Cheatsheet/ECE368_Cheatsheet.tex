@@ -638,6 +638,25 @@
     (2) For each pair of nodes $i,j$ that are not connected by an edge, add a clique $C$ that contains $i,j$ and define $\psi_C$ \\
     (3) For each node $i$, add a clique $C$ that contains $i$ and its parents and define $\psi_C$
 
+    \textcolor{red}{\textbf{Hidden Markov Model (HMM):}} \\
+    *\textbf{State-transition Prob.} \\ 
+    $P(z_n \mid z_{n-1}) \equiv P[Z_n = z_n \mid Z_{n-1} = z_{n-1}], \; Z \leq n \leq N$ \\
+    *\textbf{Initial State Dist.} $P(z_1) \equiv P[Z_1 = z_1]$ \\
+    *\textbf{Emission Prob.} \\
+    $P(x_n \mid z_n) \equiv P[X_n = x_n \mid Z_n = z_n], \; 1 \leq n \leq N$ \\
+    *\textbf{Note:} Can be continuous (density).
+
+    \textcolor{blue}{\textbf{Notes:}} \\
+    (1) $Z_n$ nodes are head-to-tail or tail-to-tail and $Z_1,\ldots,Z_N$ are unobserved\\
+    $\implies$ No indep. among $X_n$'s, also $\{X_n\}$ are not a MC.
+
+    (2) Latent var. $Z_1,\ldots,Z_N$ are MC $\implies$ $Z_{n+1} \perp Z_{n-1} \mid Z_n$ \\
+    $\implies$ $\{X_1,X_2\} \perp \{X_3,\ldots,X_N\} \mid \{Z_3\}$
+
+    \textcolor{blue}{\textbf{Common Problems}} \\ 
+    1. Given HMM, find $P(\underline{x})$ for any $\underline{x} = \{x_1,\ldots,x_N\}$ \\
+    2. Given HMM and $\underline{x}$, find most likely $z_n$ or sequence of states $\underline{z} = \{z_1,\ldots,z_N\}$ \\
+    3. Given $\underline{x}$, find most likely HMM. 
 
     
 
