@@ -716,8 +716,22 @@
     \textcolor{blue}{\textbf{Viterbi Algo:}} Given HMM and $\underline{x}$, find most likely $\underline{z}$ \\
     $\hat{\underline{z}} = \arg \max_{\underline{z}} P(\underline{z} \mid \underline{x}) = \arg \max_{\underline{z}} P(\underline{x}, \underline{z})$?
 
-    \textcolor{green}{\textbf{Dynamic Programming:}} Path length \\ $- \log P(\underline{x}, \underline{z}) = - \left[\log P(z_1) + \sum_{n=2}^N \log P(z_n \mid z_{n-1}) + \sum_{n=1}^N \log P(x_n \mid z_n)\right]$ \\
+    \textcolor{green}{\textbf{Dynamic Programming:}} Path length $- \log P(\underline{x}, \underline{z})$ \\ $= - \left[\log P(z_1) + \sum_{n=2}^N \log P(z_n \mid z_{n-1}) + \sum_{n=1}^N \log P(x_n \mid z_n)\right]$ \\
+    If $(\hat{z}_1,\ldots,\hat{z}_M)$ is the shrotest path to state $\hat{z}_M$, the $(\hat{z}_1,\ldots,\hat{z}_n,z_{M-1})$ is the shortest path to state $z_{M-1}$ 
     
+    So to find the shortest path to any state $z_M^o$ \\
+    1. For each state $z_{M-1}$, find shortest path to it. \\
+    2. Then consider distances b/w all $K$ pairs of ($z_{M-1},z_M^o$) and find the shortest path to $z_M^o$ \\
+    $\min_{z_1,\ldots,z_{M-1}} \text{path length}(z_M^o)$ \\
+    $\min_{z_{M-1}} \left[ \min_{z_1,\ldots,z_{M-2}} \text{path length}(z_{M-1}) + \text{dist} (z_{M-1},z_M^o)\right]$ 
+
+    \textcolor{green}{\textbf{Current Highest Log-Prob to State $z_n$:}} \\
+    $w_n(z_n) = \max_{z_1,\ldots,z_{n-1}} \log P(x_1,\ldots,x_n,z_1,\ldots,z_n)$ \\
+    *$w_1(z_1) = \max_{z_1} \log P(z_1) + \log P(x_1 \mid z_1)$ \\
+    % *$w_{n+1}(z_{n+1}) = \max_{z_1,\ldots,z_n} \log P(x_1,\ldots,x_{n+1},z_1,\ldots,z_{n+1})$ \\
+    % *$P(x_1,\ldots,x_{n+1},z_1,\ldots,z_{n+1}) = P(x_1,\ldots,x_n,z_1,\ldots,z_n) P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n)$ \\
+    *$w_{n+1}(z_{n+1}) = \max_{z_n} w_n(z_n) + \log P(z_{n+1} \mid z_n) + \log P(x_{n+1} \mid z_{n+1})$ \\
+
     \textcolor{green}{\textbf{Trellis Diagram of MC}} Unfolding of MC over time \\
 
 
