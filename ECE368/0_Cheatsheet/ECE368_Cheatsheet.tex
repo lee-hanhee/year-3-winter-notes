@@ -693,15 +693,15 @@
     *Does not shrink as $n \uparrow$ \\
     $c_n \equiv P(x_n \mid x_1,\ldots,x_{n-1})$ \\
     Then $P(x_1,\ldots,x_n) = \prod_{m=1}^n c_m$ \\
-    *$\boxed{\hat{\alpha}(z_n) = \frac{1}{c_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ \\
-    *$\boxed{c_n = \sum_{z_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ 
+    $\boxed{\hat{\alpha}(z_n) = \frac{1}{c_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ \\
+    $\boxed{c_n = \sum_{z_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ 
 
     \textcolor{green}{\textbf{2. Backward:}} \\
     $\hat{\beta}(z_n) = \frac{\beta(z_n)}{\prod_{m=n+1}^N c_m}$ \\
-    *$\boxed{\hat{\beta}(z_n) = \frac{1}{c_{n+1}} \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$ \\
-    *$\boxed{c_{n+1} = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$
+    $\boxed{\hat{\beta}(z_n) = \frac{1}{c_{n+1}} \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$ \\
+    $\boxed{c_{n+1} = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$
 
-    \textcolor{green}{\textbf{3. Forward and Backward}} \\
+    \textcolor{green}{\textbf{3. Forward and Backward}} $\gamma (z_n) = \hat{\alpha}(z_n) \hat{\beta}(z_n)$ \\
     
 
 
