@@ -658,25 +658,28 @@
     2. Given HMM and $\underline{x}$, find most likely $z_n$ or sequence of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
 
     \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \forall \underline{x}$ \\
-    (1) \textbf{Forward:} \\
+    \textcolor{green}{\textbf{Forward:}} \\
     $\alpha(z_n) \equiv P[\underbrace{X_1 = x_1,\ldots,X_n=x_n}_{\text{obs so far}}, \underbrace{Z_n = z_n}_{\text{cur. state}}]$, $1 \leq n \leq N$\\
     $\alpha(z_n) \equiv P[x_1,\ldots,x_n,z_n]$ \\
     *$\alpha(z_1) = P(x_1,z_1) = P(z_1)P(x_1 \mid z_1)$ \\
     $\boxed{\alpha(z_n) = P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \alpha(z_{n-1})}$ \\
-    $\boxed{\alpha(z_N) = P(\underline{x}, z_N)} \implies P(\underline{x}) = \sum_{z_N} \alpha(z_N)$ \\
+    $\boxed{\alpha(z_N) = P(\underline{x}, z_N) \implies P(\underline{x}) = \sum_{z_N} \alpha(z_N)}$ \\
     * $\{\alpha(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n+1}$ \\
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\alpha(z_n)$, $O(K^2)$ for message at time $n$
 
-    (2) \textbf{Backward:} \\
+    \textcolor{green}{\textbf{Backward:}} \\
     $\beta(z_n) \equiv P[\underbrace{X_{n+1} = x_{n+1},\ldots,X_N=x_N}_{\text{future obs}} \mid \underbrace{Z_n = z_n}_{\text{cur. state}}]$ \\
     $\beta(z_n) \equiv P[x_{n+1},\ldots,x_N \mid z_n]$ \\
     *$\beta(z_N) = 1 \; \forall z_n$ \\
     $\boxed{\beta(z_n) = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \beta(z_{n+1})}$ \\
-    $\boxed{P(\underline{x}) = \sum_{z_1} P(z_1) P(x_1 \mid z_1) \beta(z_1)}$ \\
+    $\boxed{\beta(z_1) \text{=} P(x_2,\ldots,x_n \mid z_1) \implies P(\underline{x}) = \sum_{z_1} P(z_1) P(x_1 \mid z_1) \beta(z_1)}$ \\
     *$\{\beta(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n-1}$ \\
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\beta(z_n)$, $O(K^2)$ for message at time $n$
+
+    \textcolor{green}{\textbf{Forward Backward:}} \\
+    $\alpha (z_n) \beta(z_n) = P(x_1,\ldots,x_n,z_n) P(x_{n+1},\ldots,x_N \mid z_n)$ \\
 
 
     
