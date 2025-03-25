@@ -657,7 +657,7 @@
     1. Given HMM, find $P(\underline{x})$ for any $\underline{x} = \{x_1,\ldots,x_N\}$ \\
     2. Given HMM and $\underline{x}$, find most likely $z_n$ or sequence of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
 
-    \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \forall \underline{x}$ \\
+    \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \; \forall \underline{x}$ \\
     \textcolor{green}{\textbf{Forward:}} \\
     $\alpha(z_n) \equiv P[\underbrace{X_1 = x_1,\ldots,X_n=x_n}_{\text{obs so far}}, \underbrace{Z_n = z_n}_{\text{cur. state}}]$, $1 \leq n \leq N$\\
     $\alpha(z_n) \equiv P[x_1,\ldots,x_n,z_n]$ \\
@@ -678,8 +678,12 @@
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\beta(z_n)$, $O(K^2)$ for message at time $n$
 
-    \textcolor{green}{\textbf{Forward Backward:}} \\
-    $\alpha (z_n) \beta(z_n) = P(x_1,\ldots,x_n,z_n) P(x_{n+1},\ldots,x_N \mid z_n)$ \\
+    \textcolor{green}{\textbf{Forward Backward:}} $\alpha (z_n) \beta(z_n) = P(\underline{x}, z_n)$ \\
+    $P(\underline{x}) = \sum_{z_n} \alpha(z_n) \beta(z_n) \; \forall n$ 
+
+    \textcolor{blue}{\textbf{Viterbi Algorithm:}} Given HMM and $\underline{x}$, find most likely $z_n$
+    $\gamma (z_n) \equiv P(z_n \mid \underline{x}), \; 1 \leq n \leq N$ \\
+    
 
 
     
