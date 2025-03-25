@@ -671,7 +671,12 @@
     (2) \textbf{Backward:} \\
     $\beta(z_n) \equiv P[\underbrace{X_{n+1} = x_{n+1},\ldots,X_N=x_N}_{\text{obs so far}} \mid \underbrace{Z_n = z_n}_{\text{cur. state}}]$ \\
     $\beta(z_n) \equiv P[x_{n+1},\ldots,x_N \mid z_n]$ \\
-    *$\beta(z_N) = 1$ \\
+    *$\beta(z_N) = 1 \; \forall z_n$ \\
+    $\boxed{\beta(z_n) = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \beta(z_{n+1})}$ \\
+    $\boxed{P(\underline{x}) = \sum_{z_1} P(z_1) P(x_1 \mid z_1) \beta(z_1)}$ \\
+    *$\{\beta(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n-1}$ \\
+    *\textbf{Complexity:} $O(K^2 N)$ \\
+    *$O(K)$ for each $\beta(z_n)$, $O(K^2)$ for message at time $n$
 
 
     
