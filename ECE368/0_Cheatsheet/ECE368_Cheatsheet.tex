@@ -663,7 +663,7 @@
     $\alpha(z_n) \equiv P[x_1,\ldots,x_n,z_n]$ \\
     *$\alpha(z_1) = P(x_1,z_1) = P(z_1)P(x_1 \mid z_1)$ \\
     $\boxed{\alpha(z_n) = P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \alpha(z_{n-1})}$ \\
-    $\boxed{\alpha(z_n) = P(\underline{x}, z_n)} \implies P(\underline{x}) = \sum_{z_N} \alpha(z_N)$ \\
+    $\boxed{\alpha(z_N) = P(\underline{x}, z_N)} \implies P(\underline{x}) = \sum_{z_N} \alpha(z_N)$ \\
     * $\{\alpha(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n+1}$ \\
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\alpha(z_n)$, $O(K^2)$ for message at time $n$
