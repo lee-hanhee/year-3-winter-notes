@@ -681,9 +681,11 @@
     \textcolor{green}{\textbf{Forward Backward:}} $\alpha (z_n) \beta(z_n) = P(\underline{x}, z_n)$ \\
     $P(\underline{x}) = \sum_{z_n} \alpha(z_n) \beta(z_n) \; \forall n$ 
 
-    \textcolor{blue}{\textbf{Viterbi Algorithm:}} Given HMM and $\underline{x}$, find most likely $z_n$
+    \textcolor{blue}{\textbf{Viterbi Algo:}} Given HMM and $\underline{x}$, find most likely $z_n$\\
     $\gamma (z_n) \equiv P(z_n \mid \underline{x}), \; 1 \leq n \leq N$ \\
-    
+    $\boxed{\gamma(z_n) = \frac{\alpha(z_n) \beta(z_n)}{\sum_{z_n'} \alpha(z_n') \beta(z_n')}}$ \\
+    $\boxed{z_n^* = \arg \max_{z_n} \gamma(z_n)}$ \\
+
 
 
     
