@@ -685,6 +685,14 @@
     $\gamma (z_n) \equiv P(z_n \mid \underline{x}), \; 1 \leq n \leq N$ \\
     $\boxed{\gamma(z_n) = \frac{\alpha(z_n) \beta(z_n)}{\sum_{z_n'} \alpha(z_n') \beta(z_n')}}$ \\
     $\boxed{z_n^* = \arg \max_{z_n} \gamma(z_n)}$ \\
+    *\text{Complexity:} $O(K^2 N)$ \\
+
+    \textcolor{green}{\textbf{Scaling:}} \\
+    *$\alpha(z_n),\beta(z_n)$ can be small for large/small $n$ \\ 
+    *Cannot use log b/c of sum operation. \\
+    $\hat{\alpha}(z_n) = \frac{\alpha(z_n)}{P(x_1,\ldots,x_n)} = P(z_n \mid x_1,\ldots,x_n)$ \\
+    
+
 
 
 
