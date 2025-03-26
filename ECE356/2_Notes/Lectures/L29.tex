@@ -1,0 +1,24 @@
+\subsection{Proportional Derivative (PD) Controller}
+\begin{definition}
+    \begin{equation}
+        C(s) = K(T_d s + 1)
+    \end{equation}
+\end{definition}
+
+\subsection{Proportional Integral (PI) Controller}
+\begin{definition}
+    \begin{equation}
+        C(s) = K \left(1 + \frac{1}{T_I s}\right) = K \frac{T_I s + 1}{T_I s}
+    \end{equation}
+\end{definition}
+
+\subsection{Proportional Integral Derivative (PID) Controller}
+\begin{definition}
+    \begin{equation}
+        C(s) = K(T_D s + 1)\left(1 + \frac{1}{T_I s}\right) = K_p + \frac{K_I}{s} + K_D s
+    \end{equation}
+    \begin{itemize}
+        \item $K,T_I,T_D >0$ 
+    \end{itemize}
+\end{definition}
+
