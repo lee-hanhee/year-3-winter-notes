@@ -1,3 +1,7 @@
+\begin{motivation}
+    A lead controller approximates a PD controller as $\alpha \to 0$. 
+\end{motivation}
+
 \begin{definition}
     \begin{equation}
         C(s) = K \frac{T_s + 1}{\alpha T_s + 1}
@@ -11,6 +15,10 @@
 \subsection{Bode Plot}
 \begin{notes}
     \customFigure[0.75]{../Images/L30_0.png}{}
+    \begin{itemize}
+        \item $w_{\max} = \frac{1}{\sqrt{\alpha} T}$
+        \item $\phi_{\max} = \alpha \sin \left(\frac{1-\alpha}{1+\alpha}\right)$
+    \end{itemize}
 \end{notes}
 
 
