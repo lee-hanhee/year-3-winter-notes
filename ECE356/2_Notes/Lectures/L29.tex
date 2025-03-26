@@ -46,7 +46,7 @@
 
 \subsection{Proportional Integral (PI) Controller}
 \begin{motivation}
-
+    Increase the "system type" for better tracking (IMP) w/o affecting high frequencies. 
 \end{motivation}
 
 \begin{definition}
@@ -66,16 +66,17 @@
 
 \subsubsection{Bode Plot}
 \begin{notes}
-    \begin{equation*}
-        |C(j\omega)|_{\text{dB}} = 20 \log |K| + 20 \log |j \omega T_I + 1|
-    \end{equation*}
-    \begin{equation*}
-        \angle C(j\omega) = \angle K + \angle (j \omega T_I + 1)
-    \end{equation*}
-    \customFigure[0.5]{../Images/L29_3.png}{}
+    \customFigure[0.75]{../Images/L29_4.png}{}
 \end{notes}
 
 \subsubsection{Design Procedure}
+\begin{process}
+    \begin{enumerate}
+        \item Choose $K$ to meet asymptotic tracking or bandwidth (loosely increase $w_{gc}$) requirements (often set $K = 1$)
+        \item Find the crossover frequency $\omega_{gc}$ of $K G(j \omega)$. Suppose we are happy w/ the PM and $\omega_{gc}$. 
+        \item Set $\frac{1}{T_I} \ll \omega_{gc}$. Typically want $\frac{1}{T_I}$ b/w $0.01 \omega_{gc}$ and $0.1 \omega_{gc}$
+    \end{enumerate}
+\end{process}
 
 \subsection{Proportional Integral Derivative (PID) Controller}
 \begin{definition}
