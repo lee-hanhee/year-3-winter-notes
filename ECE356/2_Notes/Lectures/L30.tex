@@ -29,7 +29,14 @@
 \begin{process}
     \begin{enumerate}
         \item Choose $K$ to satisfy asymptotic tracking (i.e. steady-state error) specifications or bandwidth (i.e. $\omega_{gc}$) requirements.
-        \item Draw the Bode plot of $K G(j \omega)$ and find PM. Given the desired $\text{PM}_{\text{desired}}$, let $\Delta \phi = \text{PM}_{\text{desired}} - \text{PM}$. Set $\phi_{\max} = \Delta \phi + \text{Extra Margin}$
+        \item Draw Bode plot of $K G(j \omega)$ and find PM. Given a desired $\text{PM}_{\text{desired}}$, let $\Delta \text{PM} = \text{PM}_{\text{desired}} - \text{PM}$. Set $\phi_{\max} = \Delta \text{PM} + \text{Extra Margin}$
+        \begin{itemize}
+            \item Rule of thumb: $\text{Extra Margin} = 30^\circ$
+            \begin{itemize}
+                \item Why? Since lead controller increases $\omega_{gc}$, this ends up decreasing the resulting PM. So to compensate, we add the extra margin. 
+            \end{itemize}
+        \end{itemize}
+        \item $\alph
     \end{enumerate}
 \end{process}
 
