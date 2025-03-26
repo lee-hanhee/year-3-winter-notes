@@ -1,16 +1,81 @@
+\subsection{Goal}
+\begin{motivation}
+    \customFigure[0.5]{../Images/L29_0.png}{}
+    Design $C(s)$ so that the feedback loop: 
+    \begin{itemize}
+        \item BIBO Stable: Verify using Nyquist criterion
+        \begin{itemize}
+            \item $\text{roots}(1 + C(s)P(s)) \subseteq \mathbb{C}^-$
+            \item $C(s)G(s)$ has no pole-zero cancellations in $\overline{\mathbb{C}^+}$
+        \end{itemize}
+        \item Satisfies certain performance specifications: Tune using Bode plots
+    \end{itemize}
+\end{motivation}
+
 \subsection{Proportional Derivative (PD) Controller}
+\begin{motivation}
+    Increase PM at higher frequencies. 
+\end{motivation}
+
 \begin{definition}
     \begin{equation}
-        C(s) = K(T_d s + 1)
+        C(s) = K(T_D s + 1)
+    \end{equation}
+    \begin{itemize}
+        \item $K,T_D > 0$
+    \end{itemize}
+    \vspace{1em}
+
+    Since $U(s) = C(s)E(s)$, 
+    \begin{equation}
+        u(t) = \underbrace{K T_D e(t)}_{D} + \underbrace{K e(t)}_{P}
     \end{equation}
 \end{definition}
 
+\subsubsection{Bode Plot}
+\begin{notes}
+    \begin{equation*}
+        |C(j\omega)|_{\text{dB}} = 20 \log |K| + 20 \log |j \omega T_D + 1|
+    \end{equation*}
+    \begin{equation*}
+        \angle C(j\omega) = \angle K + \angle (j \omega T_D + 1)
+    \end{equation*}
+    \customFigure[0.5]{../Images/L29_1.png}{}
+\end{notes}
+
+
 \subsection{Proportional Integral (PI) Controller}
+\begin{motivation}
+
+\end{motivation}
+
 \begin{definition}
     \begin{equation}
         C(s) = K \left(1 + \frac{1}{T_I s}\right) = K \frac{T_I s + 1}{T_I s}
     \end{equation}
+    \begin{itemize}
+        \item $K,T_I > 0$
+    \end{itemize}
+    \vspace{1em}
+
+    Since $U(s) = C(s)E(s)$, 
+    \begin{equation}
+        u(t) = \underbrace{K e(t)}_{P} + \underbrace{\frac{K}{T_I} \int_0^t e(\tau) d\tau}_{I}
+    \end{equation}
 \end{definition}
+
+\subsubsection{Bode Plot}
+\begin{notes}
+    \begin{equation*}
+        |C(j\omega)|_{\text{dB}} = 20 \log |K| + 20 \log |j \omega T_I + 1|
+    \end{equation*}
+    \begin{equation*}
+        \angle C(j\omega) = \angle K + \angle (j \omega T_I + 1)
+    \end{equation*}
+    \customFigure[0.5]{../Images/L29_3.png}{}
+\end{notes}
+
+\subsubsection{Design Procedure}
 
 \subsection{Proportional Integral Derivative (PID) Controller}
 \begin{definition}
@@ -21,4 +86,22 @@
         \item $K,T_I,T_D >0$ 
     \end{itemize}
 \end{definition}
+
+\subsection{Examples}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} $G(s) = \frac{1}{j \omega (j \omega + 1)}$, $C(s) = K(T_D s + 1)$
+        \item \textbf{Problem:} Sketch Bode plots of $C(s)G(s)$ for PD controllers: 
+        \begin{itemize}
+            \item $K = 1$, $T_D = 10 \rightarrow 20 \log |K| = 0$
+            \item $K = 10$, $T_D = 10 \rightarrow 20 \log |K| = 20$
+            \item Corner frequency: $\omega_c = \frac{1}{T_D} = 10^{-1}$
+        \end{itemize}
+        \item \textbf{Solution:} 
+        \customFigure[0.75]{../Images/L29_2.png}{}
+    \end{enumerate}
+\end{example}
+
+
+
 
