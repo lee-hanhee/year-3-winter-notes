@@ -11,6 +11,10 @@
         \]
         \item $R_t$ = reward for transition $t$, i.e., $(S_{T-1}, A_T, S_T)$
         \item $O_t$ = observation of $S_t$
+        \begin{itemize}
+            \item Measurement of a state (i.e. appproximation, so may not be exact)
+            \item \textbf{Key:} Since actual state is unknown, so are legal actions. 
+        \end{itemize}
     \end{itemize}
     \vspace{1em}
 
@@ -22,22 +26,28 @@
             Initial state distribution & $p_0(s) := \mathbb{P}[S_0 = s]$ \\
             \midrule
             Transition distribution & $p(s'|s,a) := \mathbb{P}[S_t = s' | A_t = a, S_{t-1} = s]$ \\
+            \multicolumn{2}{p{\linewidth}}
+            {
+            \begin{itemize}
+                \item Assume $\mathcal{A}(s) = \mathcal{A}(s') := \mathcal{A}\; \forall s, s'$ (i.e. since actual state is unknown, so are legal actions, so assume all actions are legal):
+                \begin{itemize}
+                    \item if $a \notin \mathcal{A}(s)$, then $p(s' | s, a) = 0$ for all $s' \neq s$
+                \end{itemize}                
+            \end{itemize}
+            } \\
+            \midrule
             Reward function & $r(s,a,s') :=$ reward for transition $(s, a, s')$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
-                \item Since actual state is unknown, so are legal actions. 
-                \item Can fix by assuming $\mathcal{A}(s) = \mathcal{A}(s') := \mathcal{A}\; \forall s, s'$:
+                \item Assume $\mathcal{A}(s) = \mathcal{A}(s') := \mathcal{A}\; \forall s, s'$ (i.e. since actual state is unknown, so are legal actions, so assume all actions are legal):
                 \begin{itemize}
-                    \item if $a \notin \mathcal{A}(s)$, then $p(s' | s, a) = 0$ for all $s' \neq s$
                     \item if $a \notin \mathcal{A}(s)$, then $r(s, a, s') = 0$ for all $s'$
                 \end{itemize}                
             \end{itemize}
             } \\
             \midrule
             Policy for choosing actions & $\pi_t(a | o_0, \dots, o_t) := \mathbb{P}[A_t = a | O_0 = o_0, \dots, O_t = o_t]$ \\
-            \midrule
-            Measurement model & $m(o | s) := \mathbb{P}[O_t = o | S_t = s]$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
@@ -51,9 +61,11 @@
                 \end{itemize}
             \end{itemize}
             } \\
+            \midrule
+            Measurement model & $m(o | s) := \mathbb{P}[O_t = o | S_t = s]$ \\
             \midrule 
             Belief after $t$ observations &  $b_t(s_t | a_{1:t}, o_{0:t}) = \mathbb{P}[S_t = s_t | A_t = a_t, O_{0:t} = o_{0:t}]$ \\
-            & $b_t(s_t | a_{1:t}, o_{0:t}) = m(o_t | s_t) \sum_{s_{t-1}} p(s_t | s_{t-1}, a_t) b_{t-1}(s_{t-1} | a_{1:t-1}, o_{1:t-1})$ \\
+            & $b_t(s_t | a_{1:t}, o_{0:t}) = m(o_t | s_t) \sum_{s_{t-1}} p(s_t | s_{t-1}, a_t) b_{t-1}(s_{t-1} | a_{1:t-1}, o_{0:t-1})$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
@@ -77,8 +89,55 @@
         \item Assuming $A_t \perp O_0, \dots, O_{t-1} \mid O_t$. WHERE DOES THIS COME INTO PLAY. 
     \end{itemize}
 \end{notes}
+
+\subsection{Belief (Probability Distribution) Over the States:}
+\begin{notes} Assume actual state is the most likely state. 
+    \customFigure[0.5]{../Images/L10_5.png}{}
+    \begin{itemize}
+        \item Usually assume uniform distribution before you observe anything. 
+        \item \textbf{Flow:} Measurement $\rightarrow$ Take action $\rightarrow$ Update belief $\rightarrow$ Take action. 
+    \end{itemize}
+\end{notes}
 \newpage
 
+\subsection{Examples}
 \begin{example}
-    
+    \begin{enumerate}
+        \item \textbf{Given:}
+        \begin{itemize}
+            \item Now suppose Cavemen wants to feed child: 
+            \begin{itemize}
+                \item Cannot know satiety of child exactly. 
+                \item Whether apple is edible or not must be inferred from senses. 
+            \end{itemize}
+            \item Possible obsevations for the apple: 
+            \customFigure[0.5]{../Images/L10_1.png}{}
+            \item Possible states for the child's satiety:
+            \customFigure[0.5]{../Images/L10_2.png}{}
+            \item Measurement distribution for the apple: 
+            \customFigure[0.5]{../Images/L10_4.png}{$m(o_1 | s) = P(o_1 | s)$}
+            \begin{itemize}
+                \item $\sum = 1$ across the rows
+                \item What is the probability of observing a certain state of the apple given the true state?
+            \end{itemize}
+            \item Measurement distribution for child's satiety:
+            \customFigure[0.5]{../Images/L10_3.png}{$m(o_2 | s) = P(o_2 | s)$}
+            \begin{itemize}
+                \item $\sum = 1$ across the rows
+                \item What is the probability of observing a certain state of the child given the true state?
+            \end{itemize}
+            \item \textbf{Key:} Assume independence between the observations of the child's satiety and the apple's edibility: $P(o | s) = P(o_1 | s) \cdot P(o_2 | s)$.
+        \end{itemize}
+        \item \textbf{Problem}
+        \begin{itemize}
+            \item Initial distribution, $b_0(s_0)$ over states is uniform. 
+            \item Action sequence is $\langle a_1, a_2, a_3 \rangle = \langle \text{seed}, \text{clock}, \text{clock} \rangle$.
+            \item Observation sequence is $\langle o_0, o_1, o_2, o_3 \rangle = \langle \left(\text{:(,blank}\right), \left(\text{:(,ga)}\right), \left(\text{:(,sra)}\right), \left(\text{:|,sra)}\right) \rangle$.
+            \item Find state distribution: $b_3 (s_3 \mid a_{1:3}, o_{0:3})$.
+        \end{itemize}
+        \item \textbf{Solution:}
+    \end{enumerate}
+    \begin{center}
+    \end{center}
 \end{example}
+
