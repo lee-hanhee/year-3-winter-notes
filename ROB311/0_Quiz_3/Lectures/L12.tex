@@ -1,4 +1,3 @@
-\subsection{Zero-Sum Turn-Based Games}
 \begin{summary}
     In a \textbf{zero-sum turn-based games}, we assume that 
     \begin{itemize}
@@ -39,7 +38,6 @@
         \item Minimizer is trying to minimize the reward of agent 1 (i.e. maximize the reward of agent 2)
     \end{itemize}
 \end{warning}
-\newpage
 
 \subsection{$\alpha$/$\beta$ Pruning}
 \begin{motivation}
@@ -70,6 +68,51 @@
 \end{definition}
 \newpage
 
+\subsection{Monte-Carlo Tree Search (MCTS) Algorithm}
+\begin{process}
+    \begin{enumerate}
+        \item Selection: Traverse using an alternate policy until a node has unexplored children. 
+        \customFigure[0.4]{../Images/L12_6.png}{}
+        \item Expansion: Expand an unexplored child; initialize $n$ and $\hat{q}$.
+        \customFigure[0.4]{../Images/L12_7.png}{}
+        \item Simulation: Traverse using the random policy until a terminal node is reached. 
+        \customFigure[0.4]{../Images/L12_8.png}{}
+        \item Back-propogation: Get the reward and reverse; update $n$ and $\hat{q}$.
+        \customFigure[0.4]{../Images/L12_9.png}{}
+    \end{enumerate}
+\end{process}
+
+\subsubsection{Selection}
+\begin{notes}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Expansion}
+\begin{notes}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Simulation}
+\begin{notes}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Back-Propogation}
+\begin{notes}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{notes}
+\newpage
+
+
+
 \subsection{Examples}
 \subsubsection{Zero Sum Turn-Based Games}
 \begin{example}
@@ -90,6 +133,7 @@
                 \item Red triangle: Maximizing agent
                 \item Blue triangle: Minimizing agent
                 \item White circles with \#s: terminal states
+                \item Rewards: In red b/c it's for the maximizer. The minimizer's reward is the negative of the maximizer's reward.
             \end{itemize}
             \item Actions: Square boxes are actions
         \end{itemize}
@@ -132,4 +176,22 @@
         \end{itemize}
     \end{itemize}
     \customFigure[0.5]{../Images/L12_5.png}{}
+\end{example}
+
+\subsubsection{Alpha Beta Pruning}
+\begin{process}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{process}
+
+\begin{example} \href{https://pascscha.ch/info2/abTreePractice/}{Alpha-Beta Pruning Practice}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{example}
+
+\subsubsection{Monte-Carlo Tree Search (MCTS) Algorithm}
+\begin{example}
+    
 \end{example}
