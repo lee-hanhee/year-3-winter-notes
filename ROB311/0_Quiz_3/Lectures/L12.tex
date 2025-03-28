@@ -69,46 +69,47 @@
 \newpage
 
 \subsection{Monte-Carlo Tree Search (MCTS) Algorithm}
-\begin{process}
+\begin{algo}
     \begin{enumerate}
         \item Selection: Traverse using an alternate policy until a node has unexplored children. 
         \customFigure[0.4]{../Images/L12_6.png}{}
-        \item Expansion: Expand an unexplored child; initialize $n$ and $\hat{q}$.
+        \begin{itemize}
+            \item Our Agent (Upper Triangle): Uses UCB to choose the next node to explore
+            \item Other Agent (Down Triangle): Can't control their actions, so this agent picks w/ their own heuristic.
+            \item Square Boxes: Estimated values (i.e. $n$ and $\hat{q}$)
+            \item Ends when there is at least one action that hasn't been explored yet. In this case, two actions ahven't been explored. 
+            \item Can skip expansion and simulation if the most recently expanded node is a terminal state.
+        \end{itemize}
+        \item Expansion: Expand an unexplored child; initialize $n(a)$ and $\hat{q}(s,a)$.
         \customFigure[0.4]{../Images/L12_7.png}{}
+        \begin{itemize}
+            \item $\hat{q}(s,a)$ is initialized to 0 and $n(a)$ is initialized to 1 b/c we've visited this node once.
+            \item Randomly pick an unexplored action unless there is only one action left.
+            \item Can skip similuation if the most recently expanded node is a terminal state. 
+        \end{itemize}
         \item Simulation: Traverse using the random policy until a terminal node is reached. 
         \customFigure[0.4]{../Images/L12_8.png}{}
-        \item Back-propogation: Get the reward and reverse; update $n$ and $\hat{q}$.
+        \begin{itemize}
+            \item Using random policy to simulate the game until a terminal state is reached (i.e. reward is obtained)
+        \end{itemize}
+        \item Back-propogation: Get the reward and reverse; update $n(a)$ and $\hat{q}(s,a)$.
         \customFigure[0.4]{../Images/L12_9.png}{}
+        \begin{itemize}
+            \item Go up the path in yellow and update the values of $n(a)$ and $\hat{q}(s,a)$ for OUR agent only (i.e. the upper triangle)
+        \end{itemize}
     \end{enumerate}
-\end{process}
+\end{algo}
 
-\subsubsection{Selection}
-\begin{notes}
+\begin{warning}
     \begin{itemize}
-        \item 
+        \item Works for more than 2 agents. 
+        \item Don't need to know anyone else's reward function. 
+        \item Has to be turn taking but can be not alternating (i.e. immediate switch between agents)
+        \item Can augment simultaneous actions 
+        \item Communication 
+        \item Works fo rnon-zero sum games. 
     \end{itemize}
-\end{notes}
-
-\subsubsection{Expansion}
-\begin{notes}
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Simulation}
-\begin{notes}
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{notes}
-
-\subsubsection{Back-Propogation}
-\begin{notes}
-    \begin{itemize}
-        \item 
-    \end{itemize}
-\end{notes}
+\end{warning}
 \newpage
 
 
