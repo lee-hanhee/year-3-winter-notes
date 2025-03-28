@@ -1,37 +1,35 @@
-\begin{summary}
-    In a RL problem, $p(\cdot \mid \cdot, \cdot)$ and/or $r(\cdot \cdot, \cdot)$ unknown. 
-\end{summary}
-
-\subsection{Estimating Q-Star Empirically}
-\begin{summary}
+\begin{summary} In a RL problem, $p(\cdot \mid \cdot, \cdot)$ and/or $r(\cdot \cdot, \cdot)$ unknown, so we have to estimate q-star empirically. 
     \begin{center}
         \begin{tabular}{ll}
             \toprule
-            $\gamma$ & \textbf{Equation} \\
+            \textbf{Equation} \\
             \midrule
-            0 & $q^*(s,a) = \lim_{K \to \infty} \bar{R}_K$ \\
+            $q^*(s,a) = \lim_{K \to \infty} \bar{R}_K$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $\bar{R}_K = \frac{1}{K} \sum_{k=1}^{K} r_k$: empirical average reward. 
                 \item $r_k$: reward obtained in the $k^\text{th}$ simulation.
                 \item $K$: \# of times action $a$ taken in state $s$ (\# of simulations)
+                \item $\gamma = 0$
             \end{itemize}
             } \\
             \midrule
-            0 & $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( r(s,a,s') - q^*(s,a) \right)$ \\
+            $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( r(s,a,s') - q^*(s,a) \right)$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $N(s,a)$: \# of times action $a$ taken in state $s$.
+                \item $\gamma = 0$
             \end{itemize}
             } \\
             \midrule 
-            $\neq 0$ & $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( \left[ r(s,a,s') + \gamma \max_{a'} q^*(s', a') \right] - q^*(s,a) \right)$ \\
+            $q^*(s,a) \gets q^*(s,a) + \frac{1}{N(s,a)} \left( \left[ r(s,a,s') + \gamma \max_{a'} q^*(s', a') \right] - q^*(s,a) \right)$ \\
             \multicolumn{2}{p{\linewidth}}
             {
             \begin{itemize}
                 \item Using old $q^*$ values to estimate. 
+                \item $\gamma \neq 0$
             \end{itemize}
             } \\
             \bottomrule
