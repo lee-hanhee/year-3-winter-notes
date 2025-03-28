@@ -32,12 +32,17 @@
                 \item $\gamma \neq 0$
             \end{itemize}
             } \\
+            \midrule
+            $\pi (a \mid s) = \begin{cases}
+                1 & a = \arg \max_{a'} q^* (s,a) \\
+                0 & \text{otherwise}
+            \end{cases}$\\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
 
-\subsubsection{Running Average Update Rule}
+\subsection{Running Average Update Rule}
 \begin{definition}
     \begin{equation*}
         \bar{x} \gets \bar{x} + \alpha (x_{\text{new}} - \bar{x}).
@@ -59,9 +64,9 @@ procedure Q_LEARNING():
             get next state, $s'$, and reward $r$
             update $N(s, a)$ and $q^*(s, a)$ as follows:
 
-            $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
+                $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
             
-            $N(s, a) \leftarrow N(s, a) + 1$
+                $N(s, a) \leftarrow N(s, a) + 1$
             
             $s \leftarrow s'$
         end while
@@ -84,9 +89,9 @@ procedure Q_LEARNING():
             get next state, $s'$, and reward $r$
             update $N(s, a)$ and $q^*(s, a)$ as follows:
 
-            $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
+                $q^*(s, a) \leftarrow q^*(s, a) + \frac{1}{N(s, a)} \left( r(s, a, s') + \gamma \max_{a'} q^*(s', a') - q^*(s, a) \right)$
             
-            $N(s, a) \leftarrow N(s, a) + 1$
+                $N(s, a) \leftarrow N(s, a) + 1$
             
             $l \leftarrow l + 1$
             $s \leftarrow s'$
@@ -144,7 +149,7 @@ procedure Q_LEARNING():
                 \item In episode $k$, choose the optimal action with probability $\varepsilon(k)$, where:
                 \begin{itemize}
                     \item $\varepsilon(0) \approx 0$
-                    \item $\varepsilon(k)$ is increasing
+                    \item $\varepsilon(k)$ is increasing as you keep exploring. 
                     \item $\varepsilon(k) \to 1$ as $k \to \infty$
                 \end{itemize}
                 \item Common choice for $\varepsilon(k)$ is $1 - \frac{1}{k}$.
