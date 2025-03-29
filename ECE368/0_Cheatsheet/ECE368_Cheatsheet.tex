@@ -586,7 +586,9 @@
     *\textbf{Purpose:} Clarify the dependencies among a set of RVs to simplify the calculation of joint probabilities. 
 
     \textcolor{blue}{\textbf{Factorization of Joint Dist.}} Suppose the dependencies among RVs can be represented by a DAG, then \\
-    $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid \text{pa}\{X_i\})$ 
+    $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid \text{pa}\{X_i\})$ \\
+    *\textbf{General Form:} $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid x_{i-1},x_{i-2},\ldots,x_0)$
+    -$P(x_1 \mid x_0) = P(x_1)
 
     \textcolor{blue}{\textbf{Topological Ordering:}} Often index the RVs s.t. each child has an index greater than those of the parents. 
 
