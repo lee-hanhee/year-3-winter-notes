@@ -45,6 +45,8 @@
     \textcolor{blue}{\textbf{Axioms:}} (1) $P(A) \geq 0 \; \forall A \in \Omega$, (2) $P(\Omega) = 1$, \\
     (3) If $A \cap B = \emptyset$, then $P(A \cup B) = P(A) + P(B) \; \forall A, B \in \Omega$
 
+    \textcolor{blue}{\textbf{Additive Rule:}} $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ 
+
     \textcolor{blue}{\textbf{Cond. Prob.}} $P(A|B) = \frac{P(A \cap B)}{P(B)}$ \\
     *Prob. measured on new sample space $B$. \\ 
     *$P(A \cap B) = P(A|B) P(B) = P(B|A) P(A)$
@@ -52,6 +54,9 @@
     \textcolor{darkgreen}{\textbf{Independence:}} $P(A|B) = P(A) \Leftrightarrow P(A \cap B) = P(A) P(B)$
 
     \textcolor{blue}{\textbf{Total Prob. Thm:}} If $H_1, H_2, \ldots, H_n$ form a partition of $\Omega$, then $P(A) = \sum_{i=1}^n P(A|H_i) P(H_i)$.
+
+    \textcolor{darkgreen}{\textbf{Partition:}} $H_1,\ldots,H_n$ is a partition if \\
+    (1) $H_i \cap H_j = \emptyset$ for $i \neq j$, (2) $H_1 \cup H_2 \cup \ldots \cup H_n = \Omega$.
 
     \textcolor{blue}{\textbf{Bayes' Rule:}} $P(H_k|A) \text{=} \frac{P(H_k \cap A)}{P(A)} \text{=} \frac{P(A|H_k) P(H_k)}{\sum_{i=1}^n P(A|H_i) P(H_i)}$ \\
     *Posteriori: $P(H_k|A)$, Likelihood: $P(A|H_k)$, Prior: $P(H_k)$ 
@@ -64,12 +69,16 @@
     \textcolor{blue}{\textbf{Prob. Density Fn (PDF):}} $f_X(x) = \frac{d}{dx} F_X(x)$ \\
     *$P[a \leq X \leq b] = \int_a^b f_X(x) \, dx$ 
 
-    \textcolor{blue}{\textbf{Exp.:}} $E[h(X)] \text{=} \int_{-\infty}^{\infty} h(x) f_X(x) dx$ \\
-    $E[h(X)]= \sum_{k=-\infty}^{\infty} h(k) P_X(x_i \text{=} k)$ 
+    \textcolor{blue}{\textbf{Exp.:}} \\ 
+    *$E[h(X)] \text{=} \int_{-\infty}^{\infty} h(x) f_X(x) dx$ \\
+    *$E[h(X)]= \sum_{k=-\infty}^{\infty} h(k) P_X(x_i \text{=} k)$ \\
+    *$E[aX+b] = aE[X] + b$ 
 
-    \textcolor{darkgreen}{\textbf{Variance:}} $\sigma_X^2 = \text{Var}[X] = E[(X - E[X])^2] = E[X^2] - E[X]^2$
+    \textcolor{blue}{\textbf{Variance:}} $\sigma_X^2 = \text{Var}[X] = E[(X - E[X])^2] = E[X^2] - E[X]^2$ \\
+    *$\text{Var}[aX + b] = a^2 \text{Var}[X]$ \\
+    *$\text{Var}[aX + bY] = a^2 \text{Var}[X] + b^2 \text{Var}[Y] + 2ab \text{Cov}[X, Y]$ 
 
-    \textcolor{darkgreen}{\textbf{Cond. Exp.:}} $E[X|A] = \int_{-\infty}^{\infty} x f_X(x|A) \, dx$ 
+    % \textcolor{darkgreen}{\textbf{Cond. Exp.:}} $E[X|A] = \int_{-\infty}^{\infty} x f_X(x|A) \, dx$ 
 
     \textcolor{red}{\textbf{2 RVs:}}  \\
     \textcolor{blue}{\textbf{Joint PMF:}} $P_{X,Y}(x, y) = P[X = x, Y = y]$
@@ -79,7 +88,8 @@
 
     \textcolor{blue}{\textbf{Exp.:}} $E[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f_{X,Y}(x, y) \, dx \, dy$
 
-    \textcolor{darkgreen}{\textbf{Correlation:}} $E[XY]$
+    \textcolor{darkgreen}{\textbf{Correlation:}} $E[XY]$ \\ 
+    *\textbf{Indep:} $E[XY] = E[X]E[Y]$ 
 
     \textcolor{darkgreen}{\textbf{Covar.:}} $\text{Cov}[X, Y] \text{=} E[(X - \mu_X)(Y - \mu_Y)] \text{=} E[XY] - E[X] E[Y]$
 
@@ -95,8 +105,19 @@
     \textcolor{blue}{\textbf{Cond. PDF:}} $f_{X|Y}(x|y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \mid f_{Y|X}(y|x)$
 
     \textcolor{blue}{\textbf{Bayes' Rule}} \\ 
-    $f_{Y|X}(y|x) \text{=} \frac{f_{X,Y} (x,y)}{f_X (x)} \text{=} \frac{f_{X|Y} (x|y) f_Y (y)}{\int_{-\infty}^{\infty} f_{X|Y} (x|y') f_Y (y') \, dy'}$ \\
-    *$P_{Y|X}(y|x) = \frac{P_{X,Y}(x, y)}{P_X(x)} = \frac{P_{X|Y}(x|y) P_Y(y)}{\sum_{j=1}^\infty P_{X|Y}(x|y_j) P_Y(y_j)}$
+    *$f_{Y|X}(y|x) \text{=} \frac{f_{X,Y} (x,y)}{f_X (x)} \text{=} \frac{f_{X|Y} (x|y) f_Y (y)}{\int_{-\infty}^{\infty} f_{X|Y} (x|y') f_Y (y') \, dy'}$ \\
+    *$P_{Y|X}(y|x) = \frac{P_{X,Y}(x, y)}{P_X(x)} = \frac{P_{X|Y}(x|y) P_Y(y)}{\sum_{j=1}^\infty P_{X|Y}(x|y_j) P_Y(y_j)}$ 
+
+    $P_{\Theta | \underline{X}} (\theta | \underline{x}) = \begin{cases}
+        \frac{P_{\underline{X} | \Theta} (\underline{x} | \theta) P_\Theta (\theta)}{P_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ disc.} \\
+        \frac{f_{\underline{X} | \Theta} (\underline{x} | \theta) P_\Theta (\theta)}{f_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ cont.}
+    \end{cases}$ \\
+    $f_{\Theta | \underline{X}} (\theta | \underline{x}) = \begin{cases}
+        \frac{P_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta)}{P_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ disc.} \\
+        \frac{f_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta)}{f_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ cont.} 
+    \end{cases}$ \\
+    *$f_{\underline{X}} (\underline{x}) = \int_{-\infty}^{\infty} f_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta) \, d\theta$ \\
+    *$P_{\underline{X}} (\underline{x}) = \sum_{j=1}^{\infty} P_{\underline{X} | \Theta} (\underline{x} | \theta_j) P_\Theta (\theta_j)$
 
     \textcolor{blue}{\textbf{Ind.:}} $f_{X|Y}(x|y) = f_X(x) \; \forall y \Leftrightarrow f_{X,Y}(x, y) = f_X(x) f_Y(y) $ 
     
@@ -107,7 +128,21 @@
     \textcolor{blue}{\textbf{Orthogonal:}} $E[XY] = 0$
 
     \textcolor{blue}{\textbf{Cond. Exp.:}} $E[Y] = E[E[Y|X]]$ or $E[E[h(Y)|X]]$ \\
+    $E[Y] = \int_{-\infty}^{\infty} E[Y|X] f_X(x) \, dx$ \\
+    *$E[Y \mid X] = \int_{-\infty}^{\infty} y f_{Y|X} (y|x) \, dy$ \\
     *$E[E[Y|X]]$ w.r.t. $X \mid E[Y|X]$ w.r.t. $Y$. 
+
+    \textcolor{blue}{\textbf{Q Fcn:}} $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$ 
+
+    \textcolor{blue}{\textbf{Counting:}} 
+    
+    \textcolor{darkgreen}{\textbf{Permutations:}} $P(n, k) = \frac{n!}{(n-k)!}$ \\
+    *Order matters
+
+    \textcolor{darkgreen}{\textbf{Combinations:}} $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \\
+    *Order doesn't matter
+
+    \textcolor{darkgreen}{\textbf{Multinomial Coeff.:}} $\binom{n}{n_1,\ldots,n_m} = \frac{n!}{n_1! \ldots n_m!}$ \\
 
     \textcolor{red}{\textbf{PMF/PDF:}} Make sure normalized to 1. 
      
@@ -167,16 +202,6 @@
     *Cont: $\hat{\theta} = \arg \max_\theta f_{\Theta | \underline{X}} (\theta | \underline{x}) = \arg \max_\theta f_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta)$ \\
     *$f_{\Theta | \underline{X}} (\theta | \underline{x})$: Posteriori, $f_{\underline{X} | \Theta} (\underline{x} | \theta)$: Likelihood, $f_\Theta (\theta)$: Prior
 
-    \textcolor{darkgreen}{\textbf{Bayes' Rule:}} $P_{\Theta | \underline{X}} (\theta | \underline{x}) = \begin{cases}
-        \frac{P_{\underline{X} | \Theta} (\underline{x} | \theta) P_\Theta (\theta)}{P_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ disc.} \\
-        \frac{f_{\underline{X} | \Theta} (\underline{x} | \theta) P_\Theta (\theta)}{f_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ cont.}
-    \end{cases}$ \\
-    $f_{\Theta | \underline{X}} (\theta | \underline{x}) = \begin{cases}
-        \frac{P_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta)}{P_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ disc.} \\
-        \frac{f_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta)}{f_{\underline{X}} (\underline{x})} & \text{if } \underline{X} \text{ cont.} 
-    \end{cases}$ \\
-    *Independent of $\theta$: $f_{\underline{X}} (\underline{x}) = \int_{-\infty}^{\infty} f_{\underline{X} | \Theta} (\underline{x} | \theta) f_\Theta (\theta) \, d\theta$ \\
-
     \textcolor{blue}{\textbf{Least Mean Squares (LMS) Estimation:}} Assume prior $P_\Theta (\theta)$ or $f_\Theta (\theta)$ w/ obs. $\underline{X} = \underline{x}$. \\
     *$\hat{\theta} = g(\underline{x}) = \mathbb{E} [\Theta | \underline{X} = \underline{x}] \; \mid \; \hat{\Theta} = g(\underline{X}) = \mathbb{E} [\Theta | \underline{X}]$ \\
 
@@ -193,6 +218,8 @@
 
     \textcolor{darkgreen}{\textbf{TII Err. (False Accept.):}} Accept $H_0$ when $H_1$ is true. \\
     *$\beta(R) = P[\underline{X} \in R^c \mid H_1]$ (missed detection)
+
+    \textcolor{darkgreen}{\textbf{Prob. of Error:}} $P = \alpha \pi_0 + \beta (1-\pi_0)$ \\
 
     \textcolor{blue}{\textbf{Likelihood Ratio Test:}} $\forall \underline{x} \; L(\underline{x}) = \frac{P_{\underline{X}} (\underline{x}|H_1)}{P_{\underline{X}} (\underline{x}|H_0)} \overset{H_1}{\underset{H_0}{\gtrless}} 1 \text{ or } \xi$ \\
     *\textbf{Max. Likelihood Test:} $1$, \textbf{Likelihood Ratio Test:} $\xi$
@@ -218,9 +245,6 @@
     
     % $p(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} p(\underline{x} \mid H_0)\pi_0 \; \mid \; f(\underline{x} \mid H_1)\pi_j \overset{H_1}{\underset{H_0}{\gtrless}} f(\underline{x} \mid H_0)\,\pi_0$ \\
     % *$p(H_j \mid \underline{x}) \text{=} \frac{p_{\underline{X}} (\underline{x} \mid H_j) P [H_j]}{p_{\underline{X}} (\underline{x} \mid H_0) P[H_0] + p_{\underline{X}} (\underline{x} \mid H_1) P[H_1]}$: A posteriori 
-
-    \textcolor{orange}{\textbf{Gaussian to Q Fcn:}} 1. Find $Q(x) = \frac{1}{\sqrt{2\pi}} \int_x^\infty e^{-t^2/2} \, dt$. \\
-    2. Use table to find $Q(x)$ for $x \geq 0$. 
 
     \textcolor{darkgreen}{\textbf{Min. Cost Bayes' Dec. Rule:}} $C_{ij}$ is cost of choosing $H_j$ when $H_i$ is true. Given obs. $\underline{X} = \underline{x}$, the expected cost of choosing $H_j$ is $A_j (\underline{x}) = \sum_{i=0}^1 C_{ij} \, P[H_i | \underline{X} = \underline{x}]$. 
     
