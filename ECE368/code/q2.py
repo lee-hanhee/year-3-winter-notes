@@ -68,7 +68,7 @@ def hmm_q2():
     beta = np.zeros((T, num_states))
 
     # Initialization
-    beta[T-1, :] = 1.0 / c[T-1]
+    beta[T-1, :] = 1.0 
 
     # Backward recursion
     for t in range(T-2, -1, -1):
@@ -123,29 +123,28 @@ def hmm_q2():
     # ----------------------------------------------------------------
     # Print results
     # ----------------------------------------------------------------
-    print("\n c")
+    print("\nc[time]")
     for n in range(T):
         print(f"c[{n+1}] = {c[n]}")
         
-    print("\n alphaHat")
+    print("\nalphaHa[time][state]")
     for n in range(T):
         print(f"alpha_hat[{n+1}] = {alpha[n, :]}")
 
-    print("\n betaHat")
+    print("\nbetaHat[time][state]")
     for n in range(T):
         print(f"beta_hat[{n+1}] = {beta[n, :]}")
         
-    print("\n gamma")
-    for n in range(T):
-        print(f"gamma[{n+1}] = {gamma[n, :]}")
+    print("\ngamma[time][state]")
+    print(f"gamma[{1+1}] = {gamma[1, :]}")
         
     print(f"Most likely state for n=2 is z2* = {z2_star}")
     
-    print("\n w")
+    print("\nw[time][state]")
     for n in range(T):
         print(f"w[{n+1}] = {w[n, :]}")
     
-    print("\n psi")
+    print("\npsi[time][state]")
     for n in range(T):
         print(f"psi[{n+1}] = {psi[n, :]}")
 

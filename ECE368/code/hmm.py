@@ -66,9 +66,6 @@ def hmm_forward_backward():
     # -- Initialization: beta_T(i) = 1 after scaling
     beta_hat[T-1, :] = 1.0
 
-    # scale by c[T-1] to match alpha-hat scaling
-    beta_hat[T-1, :] /= c[T-1]
-
     # -- Backward recursion
     for n in range(T-2, -1, -1):
         for i in range(num_states):
@@ -94,15 +91,15 @@ def hmm_forward_backward():
     # ------------------
     # 5. Display results clearly
     # ------------------    
-    print("\n alphaHat")
+    print("\nalphaHat[time][state]")
     for n in range(T):
-        print(f"alpha_hat[{n+1}] = {alpha_hat[n, :]}")
+        print(f"alphaHat[{n+1}] = {alpha_hat[n, :]}")
 
-    print("\n betaHat")
+    print("\nbetaHat[time][state]")
     for n in range(T):
-        print(f"beta_hat[{n+1}] = {beta_hat[n, :]}")
+        print(f"betaHat[{n+1}] = {beta_hat[n, :]}")
 
-    print("\n gamma")
+    print("\ngamma[time][state]")
     for n in range(T):
         print(f"gamma[{n+1}] = {gamma[n, :]}")
 
