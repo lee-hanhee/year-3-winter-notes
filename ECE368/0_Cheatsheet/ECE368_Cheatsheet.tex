@@ -579,16 +579,16 @@
 
     \textcolor{green}{\textbf{Rate of Convergence:}} Depends on the 2nd largest eigenvalue of $P^T$ i.e. $(\lambda_2)^n$ is the rate of convergence.
 
-    \textcolor{red}{\textbf{Bayesian Network:}} Network of RVs $X_1,\ldots,X_n$ w/ directed edges \\ 
+    \textcolor{red}{\textbf{Bayesian Network (DAG):}} Network of RVs $X_1,\ldots,X_n$ w/ directed edges \\ 
     *\textbf{Not State-Transition Diagram:} 1 RV w/ different values w/ different probabilities to each value. \\
-    *\textbf{Fully Connected Graph:} No special dependency structure, so doesn't give additional info as we can write joint dist. from defn. (true for any graph). \\
-    *\textbf{Non-Fully Connected Graph (Absence of Links):} Conveys useful info about the dependency structure. \\
-    *\textbf{Purpose:} Clarify the dependencies among a set of RVs to simplify the calculation of joint probabilities. 
+    *\textbf{Fully Connected Graph (General):} No special dependency structure, so doesn't give additional info as we can write joint dist. from defn. (true for any graph). \\
+    *\textbf{Non-Fully Connected Graph (Bayes' Net):} Conveys useful info about the dependency structure. 
+    % *\textbf{Purpose:} Clarify the dependencies among a set of RVs to simplify the calculation of joint probabilities. 
 
     \textcolor{blue}{\textbf{Factorization of Joint Dist.}} Suppose the dependencies among RVs can be represented by a DAG, then \\
     $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid \text{pa}\{X_i\})$ \\
-    *\textbf{General Form:} $P(x_1,\ldots,x_n) = \prod_{i=1}^N P(x_i \mid x_{i-1},x_{i-2},\ldots,x_0)$
-    -$P(x_1 \mid x_0) = P(x_1)
+    *\textbf{General:} $P(\underline{x}) = \prod_{i=1}^N P(x_i \mid x_{i-1},x_{i-2},\ldots)$ \\
+    -$P(x_1 \mid x_0) = P(x_1)$
 
     \textcolor{blue}{\textbf{Topological Ordering:}} Often index the RVs s.t. each child has an index greater than those of the parents. 
 
@@ -598,11 +598,11 @@
     (1) $P(a,b \mid c) = P(a \mid c) P(b \mid c) \; \forall a,b,c$ (i.e. A and B are indep. given C) \\
     (2) $P(a \mid b,c) = P(a \mid c) \; \forall a,b,c$ (i.e. B gives no add. info about A given C)
 
-    \textcolor{green}{\textbf{Common Cause (Tail to Tail):}} $A \perp B \mid C$, o.w. $A \not\perp B$ 
+    \textcolor{green}{\textbf{Common Cause (T-T):}} $A \perp B \mid C$, o.w. $A \not\perp B$ 
 
-    \textcolor{green}{\textbf{Causal Chain (Head to Tail or Tail to Head):}} $A \perp B \mid C$, o.w. $A \not\perp B$
+    \textcolor{green}{\textbf{Causal Chain (H-T/T-H):}} $A \perp B \mid C$, o.w. $A \not\perp B$
 
-    \textcolor{green}{\textbf{Common Effect (Head to Head):}} $A \perp B$, o.w. $A \not\perp B \mid C \text{ or its descendants}$ \\
+    \textcolor{green}{\textbf{Common Effect (H-H):}} $A \perp B$, o.w. $A \not\perp B \mid C \text{ or its descendants}$ \\
     *\textbf{Explaining Away:} If $A \rightarrow B \leftarrow C$, then if you observe $B$, then the other cause $A$ is less likely to be the cause for the effect $B$.
 
     \textcolor{blue}{\textbf{Directed Separation (D-seperation):}} For non-overlapping subsets of RVs $\mathcal{A}, \mathcal{B}, \mathcal{C}$, if all undirected paths blocked, then $\mathcal{A}$ and $\mathcal{B}$ are \textbf{d-separated} by $\mathcal{C}$, i.e. $\mathcal{A} \perp \mathcal{B} \mid \mathcal{C}$
@@ -616,29 +616,29 @@
     *$\mathcal{N}$: Set of all RVs \\
     *$\mathcal{M} = \text{parents} \cup \text{children} \cup \text{co-parents}$: Blocks all paths b/w $X_i$ and the remaining nodes.
 
-    \textcolor{red}{\textbf{Markov Random Field:}} Represent RVs as an undirected graph s.t. conditional independence $\mathcal{A} \perp \mathcal{B} \mid \mathcal{C}$ hold iff all paths b/w $\mathcal{A}$ and $\mathcal{B}$ so through $\mathcal{C}$. \\
+    \textcolor{red}{\textbf{Markov Random Field:}} Represent RVs as an \textbf{undirected} graph s.t. conditional independence $\mathcal{A} \perp \mathcal{B} \mid \mathcal{C}$ hold iff all paths b/w $\mathcal{A}$ and $\mathcal{B}$ so through $\mathcal{C}$. \\
     *\textbf{Markov blanket of $X_i:$} $= \text{set of neighbours of } X_i$ \\
-    *\textbf{No Order:} No longer a way to order the RVs.
+    *\textbf{No Order:} Simplifies, but no way to order the RVs, so lose directivity, lose info.
 
-    \textcolor{blue}{\textbf{Factorization of Joint Dist.}} 2 \textbf{non-neighbouring} nodes (RVs) are conditionally indep. given the set of nodes that separate them: \\
-    $P(x_i, x_j \mid C) = P(x_i \mid C) P(x_j \mid C) \; \forall i,j$ \\
-    *\textbf{i.e.} $x_i$ and $x_j$ should not appear in the same factor. 
+    \textcolor{blue}{\textbf{Independence:}} See if all paths b/w $\mathcal{A}$ and $\mathcal{B}$ are blocked by $\mathcal{C}$ (i.e. given $\mathcal{C}$) 
+    % \textcolor{blue}{\textbf{Cond Indep.}} 2 \textbf{non-neighbouring} nodes (RVs) are conditionally indep. given the set of nodes that separate them: \\
+    % $P(x_i, x_j \mid C) = P(x_i \mid C) P(x_j \mid C) \; \forall i,j$ \\
+    % *\textbf{i.e.} $x_i$ and $x_j$ should not appear in the same factor. 
 
     \textcolor{blue}{\textbf{Clique:}} A set of nodes s.t. there is link b/w any pair of them
 
-    \textcolor{green}{\textbf{Maximal Clique:}} A clique s.t. we cannot add another node and maintain a clique. 
+    \textcolor{green}{\textbf{Maximal Clique:}} A clique s.t. we cannot add another node in the set and maintain a clique. 
 
-    \textcolor{blue}{\textbf{Hammersley-Clifford Theorem:}} Let $\underline{x}_C$ denote the values of RVs in set $C$. Any strictly postiive dist. $P(\underline{x})$ that satisfies a Markov random field can be factorized as \\
-    $P(\underline{x}) = \frac{1}{Z} \prod_{C} \psi_C(\underline{x}_C) = \frac{1}{Z} e^{-\sum_C E(\underline{x}_C)}$ \\
-    *$Z= \sum_{\underline{x}} \prod_C \psi_C (\underline{x}_C)$: Normalization constant \\
-    *$\Pi_C$: Product of all maximal cliques \\
-    *$\psi_C(\underline{x}_C) = e^{-E(\underline{x}_C)}$: Potential function over the clique $C$ (not necessarily a prob.) \\
-    *$E(\underline{x}_C)$: Energy function over the clique $C$ 
+    \textcolor{blue}{\textbf{Hammersley-Clifford Theorem:}} Let $\underline{x}_c$ denote the values of RVs in set $C$. Any strictly postiive dist. $P(\underline{x})$ that satisfies a Markov random field can be factorized as \\
+    $P(\underline{x}) = \frac{1}{Z} \prod_{c \in C} \psi_c(\underline{x}_c) \overset{e.g.}{=} \frac{1}{Z} e^{-\sum_c E(\underline{x}_c)}$ \\
+    *$Z= \sum_{\underline{x}} \prod_{c \in C} \psi_c (\underline{x}_c)$: Normalization constant \\
+    *$\Pi_{c \in C}$: Product of all maximal cliques \\
+    *$\psi_c(\underline{x}_c) \overset{e.g.}{=} e^{-E(\underline{x}_c)}$: Potential function over the clique $c$ (not necessarily a prob.) \\
+    *$E(\underline{x}_c)$: Energy function over the clique $c$ 
 
-    \textcolor{blue}{\textbf{Conversion from Bayesian Net to Markov Random Field}} Always possible, but some dependency structure will be lost \\
-    (1) For each clique $C$, define a potential function $\psi_C$ \\
-    (2) For each pair of nodes $i,j$ that are not connected by an edge, add a clique $C$ that contains $i,j$ and define $\psi_C$ \\
-    (3) For each node $i$, add a clique $C$ that contains $i$ and its parents and define $\psi_C$
+    \textcolor{blue}{\textbf{Moralization or Marrying the Parents (BN to MRF)}} Always possible, but some dependency structure will be lost \\
+    1. Add edges b/w all pairs of parents of the same child \\ 
+    2. Remove all directed edges (i.e. make it undirected) 
 
     \textcolor{red}{\textbf{Hidden Markov Model (HMM):}} \\
     *\textbf{State-transition Prob.} \\ 
