@@ -783,24 +783,26 @@
     \textcolor{red}{\textbf{Viterbi Algo: Given HMM and $\underline{x}$, find most likely $\underline{z}$}} \\
     $\hat{\underline{z}} = \arg \max_{\underline{z}} P(\underline{z} \mid \underline{x}) = \arg \max_{\underline{z}} P(\underline{x}, \underline{z})$?
 
-    \textcolor{blue}{\textbf{Dynamic Programming:}} Path length $- \log P(\underline{x}, \underline{z})$ \\ $= - \left[\log P(z_1) + \sum_{n=2}^N \log P(z_n \mid z_{n-1}) + \sum_{n=1}^N \log P(x_n \mid z_n)\right]$ \\
-    If $(\hat{z}_1,\ldots,\hat{z}_M)$ is the shrotest path to state $\hat{z}_M$, the $(\hat{z}_1,\ldots,\hat{z}_n,z_{M-1})$ is the shortest path to state $z_{M-1}$ 
+    \textcolor{blue}{\textbf{Path Length:}} $- \log P(\underline{x}, \underline{z})$ \\ $= - \left[\log P(z_1) + \sum_{n=2}^N \log P(z_n \mid z_{n-1}) + \sum_{n=1}^N \log P(x_n \mid z_n)\right]$ 
+    % If $(\hat{z}_1,\ldots,\hat{z}_M)$ is the shrotest path to state $\hat{z}_M$, the $(\hat{z}_1,\ldots,\hat{z}_n,z_{M-1})$ is the shortest path to state $z_{M-1}$ 
     
-    So to find the shortest path to any state $z_M^o$ \\
-    1. For each state $z_{M-1}$, find shortest path to it. \\
-    2. Then consider distances b/w all $K$ pairs of ($z_{M-1},z_M^o$) and find the shortest path to $z_M^o$ \\
-    $\min_{z_1,\ldots,z_{M-1}} \text{path length}(z_M^o)$ \\
-    $\min_{z_{M-1}} \left[ \min_{z_1,\ldots,z_{M-2}} \text{path length}(z_{M-1}) + \text{dist} (z_{M-1},z_M^o)\right]$ 
+    % So to find the shortest path to any state $z_M^o$ \\
+    % 1. For each state $z_{M-1}$, find shortest path to it. \\
+    % 2. Then consider distances b/w all $K$ pairs of ($z_{M-1},z_M^o$) and find the shortest path to $z_M^o$ \\
+    % $\min_{z_1,\ldots,z_{M-1}} \text{path length}(z_M^o)$ \\
+    % $\min_{z_{M-1}} \left[ \min_{z_1,\ldots,z_{M-2}} \text{path length}(z_{M-1}) + \text{dist} (z_{M-1},z_M^o)\right]$ 
 
     \textcolor{blue}{\textbf{Current Highest Log-Prob to State $z_n$:}} \\
     $w_n(z_n) = \max_{z_1,\ldots,z_{n-1}} \log P(x_1,\ldots,x_n,z_1,\ldots,z_n)$ \\
-    *$w_1(z_1) = \max_{z_1} \log P(z_1) + \log P(x_1 \mid z_1)$ \\
+    *\textbf{Base Case:} $w_1(z_1) = \log P(z_1) + \log P(x_1 \mid z_1)$ 
     % *$w_{n+1}(z_{n+1}) = \max_{z_1,\ldots,z_n} \log P(x_1,\ldots,x_{n+1},z_1,\ldots,z_{n+1})$ \\
     % *$P(x_1,\ldots,x_{n+1},z_1,\ldots,z_{n+1}) = P(x_1,\ldots,x_n,z_1,\ldots,z_n) P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n)$ \\
-    *$w_{n+1}(z_{n+1}) = \max_{z_n} w_n(z_n) + \log P(z_{n+1} \mid z_n) + \log P(x_{n+1} \mid z_{n+1})$ \\
 
-    At $n=N$, $\max_{z_N} w_N(z_N)$ is the highest log-prob. \\
-    Then backtrack to find the most likely sequence of states. \\ 
+    % \textcolor{blue}{\textbf{Recursion:}} \\ 
+    % *$w_{n+1}(z_{n+1}) = \max_{z_n} w_n (z_n) + \log P(z_{n+1} \mid z_n) + \log P(x_{n+1} \mid z_{n+1})$ \\
+
+    % At $n=N$, $\max_{z_N} w_N(z_N)$ is the highest log-prob. \\
+    % Then backtrack to find the most likely sequence of states. \\ 
     \textcolor{blue}{\textbf{Trellis Diagram of MC}} Unfolding of MC over time 
 
     \textcolor{blue}{\textbf{Viterbi Algorithm:}} \\
@@ -810,10 +812,7 @@
     $\psi_n(z_{n+1}) = \arg \max_{z_n} w_n(z_n) + \log P(z_{n+1} \mid z_n)$ \\
     2. $\hat{z}_N = \arg \max_{z_N} w_N(z_N)$ \\
     3. Output: $\hat{\underline{z}} = (\hat{z}_1,\ldots,\hat{z}_N)$ where $\hat{z}_n = \psi_n(\hat{z}_{n+1})$ \\
-    % 2. Termination: $\max_{z_N} w_N(z_N)$ \\
-    % 4. Backtrack: $\hat{z}_N = \arg \max_{z_N} w_N(z_N)$ \\
-    % For $n=N-1$ to $1$: $\hat{z}_n = \arg \max_{z_n} \left[ w_n(z_n) + \log P(z_{n+1} \mid z_n) + \log P(x_{n+1} \mid z_{n+1})\right]$ \\
-    % 5. $\hat{\underline{z}} = \{\hat{z}_1,\ldots,\hat{z}_N\}$
+    *\textbf{Complexity:} $O(K^2 N)$, $O(K^2)$ per step. 
 
     }
 \end{paracol}
