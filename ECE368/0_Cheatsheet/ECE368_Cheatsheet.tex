@@ -699,15 +699,16 @@
     *\textbf{Note:} Can be continuous (density).
 
     \textcolor{blue}{\textbf{Notes:}} \\
-    (1) $Z_n$ nodes are head-to-tail or tail-to-tail and $Z_1,\ldots,Z_N$ are unobserved\\
+    (1) $Z_n$ nodes are H-T or T-T and $Z_1,\ldots,Z_N$ are unobserved\\
     $\implies$ No indep. among $X_n$'s, also $\{X_n\}$ are not a MC.
 
     (2) Latent var. $Z_1,\ldots,Z_N$ are MC $\implies$ $Z_{n+1} \perp Z_{n-1} \mid Z_n$ \\
-    $\implies$ $\{X_1,X_2\} \perp \{X_3,\ldots,X_N\} \mid \{Z_3\}$
+    $\implies$ e.g. $\{X_1,X_2\} \perp \{X_3,\ldots,X_N\} \mid \{Z_3\}$
 
     \textcolor{blue}{\textbf{Common Problems}} \\ 
     1. Given HMM, find $P(\underline{x})$ for any $\underline{x} = \{x_1,\ldots,x_N\}$ \\
-    2. Given HMM and $\underline{x}$, find most likely $z_n$ or sequence of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
+    2. Given HMM/$\underline{x}$, find most likely $z_n$ \\
+    3. Given HMM/$\underline{x}$, find most likely seq. of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
 
     \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \; \forall \underline{x}$ \\
     \textcolor{green}{\textbf{Forward:}} \\
