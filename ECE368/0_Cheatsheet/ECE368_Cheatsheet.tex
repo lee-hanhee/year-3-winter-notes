@@ -710,57 +710,71 @@
     2. Given HMM/$\underline{x}$, find most likely $z_n$ \\
     3. Given HMM/$\underline{x}$, find most likely seq. of states $\underline{z} = \{z_1,\ldots,z_N\}$ 
 
-    \textcolor{blue}{\textbf{Message Passing Algos:}} Given HMM, find $P(\underline{x}) \; \forall \underline{x}$ \\
-    \textcolor{green}{\textbf{Forward:}} \\
+    \textcolor{red}{\textbf{Message Passing Algos: Given HMM, find $P(\underline{x}) \; \forall \underline{x}$}} \\
+    \textcolor{blue}{\textbf{Forward:}} \\
+    \textcolor{green}{\textbf{Defn of $\alpha$:}} \\
     $\alpha(z_n) \equiv P[\underbrace{X_1 = x_1,\ldots,X_n=x_n}_{\text{obs so far}}, \underbrace{Z_n = z_n}_{\text{cur. state}}]$, $1 \leq n \leq N$\\
     $\alpha(z_n) \equiv P[x_1,\ldots,x_n,z_n]$ \\
-    *$\alpha(z_1) = P(x_1,z_1) = P(z_1)P(x_1 \mid z_1)$ \\
+    \textcolor{green}{\textbf{Recursion:}} \\
+    $\boxed{\alpha(z_1) = P(x_1,z_1) = P(z_1)P(x_1 \mid z_1)}$ \\
     $\boxed{\alpha(z_n) = P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \alpha(z_{n-1})}$ \\
-    $\boxed{\alpha(z_N) = P(\underline{x}, z_N) \implies P(\underline{x}) = \sum_{z_N} \alpha(z_N)}$ \\
-    * $\{\alpha(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n+1}$ \\
+    $\boxed{P(\underline{x}) = \sum_{z_N} \alpha(z_N)}$ \\
+    \textcolor{green}{\textbf{Algo:}} $\{\alpha(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n+1}$ \\
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\alpha(z_n)$, $O(K^2)$ for message at time $n$
 
-    \textcolor{green}{\textbf{Backward:}} \\
+    \textcolor{blue}{\textbf{Backward:}} \\
+    \textcolor{green}{\textbf{Defn of $\beta$:}} \\
     $\beta(z_n) \equiv P[\underbrace{X_{n+1} = x_{n+1},\ldots,X_N=x_N}_{\text{future obs}} \mid \underbrace{Z_n = z_n}_{\text{cur. state}}]$ \\
     $\beta(z_n) \equiv P[x_{n+1},\ldots,x_N \mid z_n]$ \\
-    *$\beta(z_N) = 1 \; \forall z_n$ \\
+    \textcolor{green}{\textbf{Recursion:}} \\
+    $\boxed{\beta(z_N) = 1 \; \forall z_n}$ \\
     $\boxed{\beta(z_n) = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \beta(z_{n+1})}$ \\
-    $\boxed{\beta(z_1) \text{=} P(x_2,\ldots,x_n \mid z_1) \implies P(\underline{x}) = \sum_{z_1} P(z_1) P(x_1 \mid z_1) \beta(z_1)}$ \\
-    *$\{\beta(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_n$ to $Z_{n-1}$ \\
+    $\boxed{P(\underline{x}) = \sum_{z_1} P(z_1) P(x_1 \mid z_1) \beta(z_1)}$ \\
+    \textcolor{green}{\textbf{Algo:}} $\{\beta(z_n)\}_{z_n = 1,\ldots,K}$: Message from $Z_{n-1}$ to $Z_n$ \\
     *\textbf{Complexity:} $O(K^2 N)$ \\
     *$O(K)$ for each $\beta(z_n)$, $O(K^2)$ for message at time $n$
 
-    \textcolor{green}{\textbf{Forward Backward (Same Time):}} $\alpha (z_n) \beta(z_n) = P(\underline{x}, z_n)$ \\
-    $P(\underline{x}) = \sum_{z_n} \alpha(z_n) \beta(z_n) \; \forall n$ 
+    \textcolor{blue}{\textbf{Forward Backward (Same Time):}} 
+    
+    $\alpha (z_n) \beta(z_n) = P(\underline{x}, z_n) \implies P(\underline{x}) = \sum_{z_n} \alpha(z_n) \beta(z_n) \; \forall n$ 
 
-    \textcolor{blue}{\textbf{Approx. Algo:}} Given HMM and $\underline{x}$, find most likely $z_n$\\
-    $\gamma (z_n) \equiv P(z_n \mid \underline{x}), \; 1 \leq n \leq N$ \\
-    $\boxed{\gamma(z_n) = \frac{\alpha(z_n) \beta(z_n)}{\sum_{z_n'} \alpha(z_n') \beta(z_n')}}$ \\
-    $\boxed{z_n^* = \arg \max_{z_n} \gamma(z_n)}$ \\
-    *\text{Complexity:} $O(K^2 N)$ 
+    \textcolor{red}{\textbf{Given HMM and $\underline{x}$, find most likely $z_n$}} 
 
-    \textcolor{green}{\textbf{Scaling:}} $\alpha(z_n),\beta(z_n)$ can be small for large/small $n$ \\ 
-    \textbf{1. Forward:} \\
+    \textcolor{blue}{\textbf{Defn of $\gamma$:}} \\
+    $\gamma (z_n) \equiv P(z_n \mid \underline{x}), \; 1 \leq n \leq N$ 
+
+    \textcolor{blue}{\textbf{Solution:}} \\
+    $\gamma(z_n) = \frac{\alpha(z_n) \beta(z_n)}{\sum_{z_n'} \alpha(z_n') \beta(z_n')}$ \\
+    $z_n^* = \arg \max_{z_n} \gamma(z_n)$ \\
+    *\textbf{Complexity:} $O(K^2 N)$ 
+
+    \textcolor{blue}{\textbf{Scaling Problem:}} $\alpha/\beta$ can be small for large/small $n$ \\ 
+    \textcolor{green}{\textbf{1. Forward:}} \\
+    \textcolor{purple}{\textbf{Defn of $\hat{\alpha}$:}} \\
     $\hat{\alpha}(z_n) \equiv \frac{\alpha(z_n)}{P(x_1,\ldots,x_n)} = P(z_n \mid x_1,\ldots,x_n)$ \\
     *Does not shrink as $n \uparrow$ \\
+    \textcolor{purple}{\textbf{Defn of $c_n$:}} \\
     $c_n \equiv P(x_n \mid x_1,\ldots,x_{n-1})$ \\
-    Then $P(x_1,\ldots,x_n) = \prod_{m=1}^n c_m$ \\
+    \textcolor{purple}{\textbf{Recursion:}}\\
     $\boxed{\hat{\alpha}(z_n) = \frac{1}{c_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ \\
-    $\boxed{c_n = \sum_{z_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ 
+    $\boxed{c_n = \sum_{z_n} P(x_n \mid z_n) \sum_{z_{n-1}} P(z_n \mid z_{n-1}) \hat{\alpha}(z_{n-1})}$ \\ 
+    $\boxed{P(x_1,\ldots,x_n) = \prod_{m=1}^N c_m}$
 
     \textcolor{green}{\textbf{2. Backward:}} \\
+    \textcolor{purple}{\textbf{Defn of $\hat{\beta}$:}} \\
     $\hat{\beta}(z_n) = \frac{\beta(z_n)}{\prod_{m=n+1}^N c_m}$ \\
+    \textcolor{purple}{\textbf{Recursion:}} \\
     $\boxed{\hat{\beta}(z_n) = \frac{1}{c_{n+1}} \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$ \\
-    $\boxed{c_{n+1} = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$
+    % $\boxed{c_{n+1} = \sum_{z_{n+1}} P(x_{n+1} \mid z_{n+1}) P(z_{n+1} \mid z_n) \hat{\beta}(z_{n+1})}$
 
     \textcolor{green}{\textbf{3. Forward-Backward}} $\boxed{\gamma (z_n) = \hat{\alpha}(z_n) \hat{\beta}(z_n)}$ \\
 
     \textcolor{blue}{\textbf{Forward-Backward Algo}} 
     *Have to fwd, then bwd pass. \\
     0. $c_1 = P(x_1) = \sum_{z_1} P(z_1) P(x_1 \mid z_1)$ \\
-    $\hat{\alpha}(z_1) = \frac{1}{c_1} P(z_1) P(x_1 \mid z_1) $ \\
-    1. Fwd message passing to compute $\hat{\alpha}(z_n)$ and $c_n$, $2 \leq n \leq N$ \\
+    1. $\hat{\alpha}(z_1) = \frac{1}{c_1} P(z_1) P(x_1 \mid z_1) $ \\
+    Fwd message passing to compute $\hat{\alpha}(z_n)$ and $c_n$, $2 \leq n \leq N$ \\
     2. $\hat{\beta}(z_N) = \beta(z_N) =1$ \\
     Bwd message passing to compute $\hat{\beta}(z_n)$, $1 \leq n \leq N-1$ \\
     3. $\gamma(z_n) = \hat{\alpha}(z_n) \hat{\beta}(z_n)$ \\
