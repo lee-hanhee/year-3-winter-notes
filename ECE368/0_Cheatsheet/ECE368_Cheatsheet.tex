@@ -109,6 +109,32 @@
     \textcolor{blue}{\textbf{Cond. Exp.:}} $E[Y] = E[E[Y|X]]$ or $E[E[h(Y)|X]]$ \\
     *$E[E[Y|X]]$ w.r.t. $X \mid E[Y|X]$ w.r.t. $Y$. 
 
+    \textcolor{red}{\textbf{PMF/PDF:}} Make sure normalized to 1. 
+     
+    \textcolor{blue}{\textbf{Bernoulli:}} Probability of success $x=1$ or failure $x=0$ in 1 trial, w/ success occurring w/ prob. $p$ 
+
+    \textcolor{blue}{\textbf{Binomial:}} Probability of obtaining $k$ successes in $n$ i.i.d. trials, each w/ success prob. $p$. 
+
+    \textcolor{blue}{\textbf{Geometric:}} Probability that the 1st success occurs on the kth i.i.d. trials, each w/ success prob. $p$. 
+
+    \textcolor{blue}{\textbf{Negative Binomial:}} Probability that the $r$th success occurs on the $k$th i.i.d. trials, each w/ success prop. $p$. 
+
+    \textcolor{blue}{\textbf{Hypergeometric:}} Probability of drawing $k$ successes in $r$ draws from a population of $N$, which contains $m$ successes, w/o replacement. 
+
+    \textcolor{blue}{\textbf{Poisson:}} Probability of observing $k$ events in a fixed interval, given a constant rate $\lambda$, assuming events indep.
+
+    \textcolor{blue}{\textbf{Multinomial:}} Probability of obtaining counts ($n_1,\ldots,n_r$) in $n$ trials, where each outcome belongs to one of $r$ categories w/ probabilities $(p_1,\ldots,p_r)$.
+
+    \textcolor{blue}{\textbf{Uniform:}} Any value in $[a,b]$ is equally likely, w/ constant density $\frac{1}{b-a}$.
+
+    \textcolor{blue}{\textbf{Exponential:}} Probability of waiting time $x$ until the 1st event in a Poisson process w/ rate $\lambda$, modelling time b/w indep. events. 
+
+    \textcolor{blue}{\textbf{Gamma:}} Probability of waiting time $x$ until $\alpha$ events in a Poisson process w/ rate $\lambda$, generalizing the exponential distribution.
+
+    \textcolor{blue}{\textbf{Gaussian:}} Probability of observing $x$ in a normal distribution w/ mean $\mu$ and variance $\sigma^2$, modelling continuous data.
+
+    \textcolor{blue}{\textbf{Beta:}} $[0,1]$ w/ $\alpha,\beta$, used as a prior in Bayesian inference. 
+
     \textcolor{red}{\textbf{Estimation:}} Estimate unknown parameter $\theta$ from $n$ i.i.d. measurements $X_1, X_2, \ldots, X_n$, $\hat{\Theta}(\underline{X}) = g(X_1, X_2, \ldots, X_n)$
 
     \textcolor{blue}{\textbf{Estimation Error:}} $\hat{\Theta}(\underline{X}) - \theta$. 
@@ -209,34 +235,34 @@
 
     \textbf{Notation:} $P_{\underline{X} | \Theta} (\underline{x} | \theta)$, only put RVs in subscript, not values. $P_{\underline{X}} (\underline{x} | H_i)$, didn't put $H$ in subscript b/c it's not a RV.
 
-    \textbf{Binomial} \# of successes in $n$ trials, each w/ prob. $p$ \\
-    $ b(x \mid n, p) = \binom{n}{x} p^x (1 - p)^{n - x}, x = 0, 1, 2, \dots $ \\
-    *$ E[X] = \mu = np \; \mid \; Var(X) = \sigma^2 = np(1 - p) $
+    % \textbf{Binomial} \# of successes in $n$ trials, each w/ prob. $p$ \\
+    % $ b(x \mid n, p) = \binom{n}{x} p^x (1 - p)^{n - x}, x = 0, 1, 2, \dots $ \\
+    % *$ E[X] = \mu = np \; \mid \; Var(X) = \sigma^2 = np(1 - p) $
 
-    \textbf{Multinomial} \# of $x_i$ successes in $n$ trials, each w/ prob. $p_i$ \\
-    $ f(x_i \mid p_i \forall i, n) = \frac{n!}{x_1! \dots x_m!} p_1^{x_1} \dots p_m^{x_m} $  \\
-    *$ \sum_{i} x_i = n $, and $ \sum_{i=1}^{m} p_i = 1 $ \\
-    *$ E[X_i] = \mu_i = np_i \; \mid \; Var(X_i) = \sigma^2_i = np_i(1 - p_i) $
+    % \textbf{Multinomial} \# of $x_i$ successes in $n$ trials, each w/ prob. $p_i$ \\
+    % $ f(x_i \mid p_i \forall i, n) = \frac{n!}{x_1! \dots x_m!} p_1^{x_1} \dots p_m^{x_m} $  \\
+    % *$ \sum_{i} x_i = n $, and $ \sum_{i=1}^{m} p_i = 1 $ \\
+    % *$ E[X_i] = \mu_i = np_i \; \mid \; Var(X_i) = \sigma^2_i = np_i(1 - p_i) $
 
-    \textbf{Hypergeometric} \# of successes in $n$ draws from $N$ items, $k$ of which are successes \\
-    $ h(x \mid N, n, k) = \frac{\binom{k}{x} \binom{N-k}{n-x}}{\binom{N}{n}}$ \\
-    *$\max\{0, n - (N - k)\} \leq x \leq \min\{n, k\} $ \\
-    *$E[X] = \mu = \frac{nk}{N} \; \mid \; Var(X) = \sigma^2 = \frac{N-n}{N-1} \cdot n \cdot \frac{k}{N} \cdot \left(1 - \frac{k}{N} \right) $
+    % \textbf{Hypergeometric} \# of successes in $n$ draws from $N$ items, $k$ of which are successes \\
+    % $ h(x \mid N, n, k) = \frac{\binom{k}{x} \binom{N-k}{n-x}}{\binom{N}{n}}$ \\
+    % *$\max\{0, n - (N - k)\} \leq x \leq \min\{n, k\} $ \\
+    % *$E[X] = \mu = \frac{nk}{N} \; \mid \; Var(X) = \sigma^2 = \frac{N-n}{N-1} \cdot n \cdot \frac{k}{N} \cdot \left(1 - \frac{k}{N} \right) $
 
-    \textbf{Negative Binomial} \# of trials until $k$ successes, each w/ prob. $p$ \\
-    $ b^*(x \mid k, p) = \binom{x-1}{k-1} p^k (1 - p)^{x - k}$ \\
-    *$x \geq k, x = k, k+1, \dots $ \\
-    *$ E[X] = \mu = \frac{k}{p} \; \mid \; Var(X) = \sigma^2 = \frac{k(1 - p)}{p^2} $
+    % \textbf{Negative Binomial} \# of trials until $k$ successes, each w/ prob. $p$ \\
+    % $ b^*(x \mid k, p) = \binom{x-1}{k-1} p^k (1 - p)^{x - k}$ \\
+    % *$x \geq k, x = k, k+1, \dots $ \\
+    % *$ E[X] = \mu = \frac{k}{p} \; \mid \; Var(X) = \sigma^2 = \frac{k(1 - p)}{p^2} $
 
-    \textbf{Geometric} \# of trials until 1st success, each w/ prob. $p$ \\
-    $ g(x \mid p) = p(1 - p)^{x - 1}$ \\
-    *$x \geq 1, x = 1, 2, 3, \dots $ \\
-    *$ E[X] = \mu = \frac{1}{p} \; \mid \; Var(X) = \sigma^2 = \frac{1 - p}{p^2} $
+    % \textbf{Geometric} \# of trials until 1st success, each w/ prob. $p$ \\
+    % $ g(x \mid p) = p(1 - p)^{x - 1}$ \\
+    % *$x \geq 1, x = 1, 2, 3, \dots $ \\
+    % *$ E[X] = \mu = \frac{1}{p} \; \mid \; Var(X) = \sigma^2 = \frac{1 - p}{p^2} $
 
-    \textbf{Poisson} \# of events in a fixed interval w/ rate $\lambda$ \\
-    $ p(x \mid \lambda t) = \frac{e^{-\lambda t} (\lambda t)^x}{x!}$ \\
-    *$x \geq 0, x = 0, 1, 2, \dots $ \\
-    *$ E[X] = \mu = \lambda t \; \mid \; Var(X) = \sigma^2 = \lambda t $
+    % \textbf{Poisson} \# of events in a fixed interval w/ rate $\lambda$ \\
+    % $ p(x \mid \lambda t) = \frac{e^{-\lambda t} (\lambda t)^x}{x!}$ \\
+    % *$x \geq 0, x = 0, 1, 2, \dots $ \\
+    % *$ E[X] = \mu = \lambda t \; \mid \; Var(X) = \sigma^2 = \lambda t $
 
     \textcolor{blue}{\textbf{Beta Prior}} $\Theta$ is a Beta R.V. w/ $\alpha,\beta>0$\\
     $f_\Theta (\theta) = \begin{cases}
