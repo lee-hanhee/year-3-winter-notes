@@ -109,25 +109,73 @@
                 \item P1: 
                 \begin{equation*}
                     x = \begin{cases}
-                        1 & \text{if } y > \frac{1}{6} \text{ i.e. } c > 0 \\
+                        1 & \text{if } y > \frac{1}{6} \text{ i.e. } c > 0 \text{ since positive want maximum positive}\\
                         & \\
-                        [0,1] & \text{if } y=\frac{1}{6} \text{ i.e. }c = 0 \\
+                        [0,1] & \text{if } y=\frac{1}{6} \text{ i.e. }c = 0 \text{ doesn't matter since 0} \\
                         & \\
-                        0 & \text{if } y < \frac{1}{6} \text{ i.e. } c < 0 
+                        0 & \text{if } y < \frac{1}{6} \text{ i.e. } c < 0 \text{ since negative want maximum negative}
                     \end{cases}
                 \end{equation*}
                 \item P2:
                 \begin{equation*}
                     y = \begin{cases}
-                        1 & \text{if } x > \frac{3}{6} \text{ i.e. } c > 0 \\
+                        1 & \text{if } x > \frac{3}{6} \text{ i.e. } c > 0 \text{ since positive want maximum positive}\\
                         & \\
-                        [0,1] & \text{if } x=\frac{3}{6} \text{ i.e. }c = 0 \\
+                        [0,1] & \text{if } x=\frac{3}{6} \text{ i.e. }c = 0 \text{ doesn't matter since 0} \\
                         & \\
-                        0 & \text{if } x < \frac{3}{6} \text{ i.e. } c < 0 
+                        0 & \text{if } x < \frac{3}{6} \text{ i.e. } c < 0 \text{ since negative want maximum negative}
                     \end{cases}
                 \end{equation*}
             \end{itemize}
-            \item \textbf{Finding all equilibrium:} 
+            \item \textbf{Finding all equilibrium:} Lines on the graph represents where your reward is maximized. 
+            \customFigure[0.5]{../Images/L11_9.png}{}
+            \begin{itemize}
+                \item \textbf{Case 1:} $x=0$ and $y=0$
+                \begin{itemize}
+                    \item $P(\text{P1 chooses A1}) = 0$ 
+                    \item $P(\text{P1 chooses A2}) = 1$
+                    \item $P(\text{P2 chooses B1}) = 0$
+                    \item $P(\text{P2 chooses B2}) = 1$
+                \end{itemize}
+                \item \textbf{Case 2:} $x=1/2$ and $y=1/6$
+                \begin{itemize}
+                    \item $P(\text{P1 chooses A1}) = 1/2$
+                    \item $P(\text{P1 chooses A2}) = 1/2$
+                    \item $P(\text{P2 chooses B1}) = 1/6$
+                    \item $P(\text{P2 chooses B2}) = 5/6$
+                \end{itemize}
+                \item \textbf{Case 3:} $x=1$ and $y=1$
+                \begin{itemize}
+                    \item $P(\text{P1 chooses A1}) = 1$
+                    \item $P(\text{P1 chooses A2}) = 0$
+                    \item $P(\text{P2 chooses B1}) = 1$
+                    \item $P(\text{P2 chooses B2}) = 0$
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Unstable Equilibrium:} P1 moves left and right b/c $x$ is associated with $x$-axis. P2 moves up and down b/c $y$ is associated with $y$-axis.
+            \customFigure[0.5]{../Images/L11_10.png}{}
+            \begin{itemize}
+                \item Stability means that in a radius disc around the equilibrium, if you move a little bit, you will still be in the equilibrium (have to check all relevant quadrants)
+                \begin{itemize}
+                    \item If one quadrant is unstable, then don't need to check the other quadrants as the equilibrium point is unstable. 
+                    \item Simulatenous (both players move at the same time) and sequential (one player moves first and the other player moves second) 
+                \end{itemize}
+                \item \textbf{Case 1:} $x=0$ and $y=0$ is stable
+                \begin{itemize}
+                    \item Q1: Always converges to $(0,0)$ since P1 moves left to red and P2 moves down to turquoise.
+                \end{itemize}
+                \item \textbf{Case 2:} $x=1/2$ and $y=1/6$ is unstable
+                \begin{itemize}
+                    \item Q1 (Top Left): P1 moves right to red and P2 moves up to turquoise $\implies (1,1)$
+                    \item Q2 (Top Right): P1 moves right to red and P2 moves up to turquoise $\implies (1,1)$
+                    \item Q3 (Bottom Left): P1 moves left to red and P2 moves down to turquoise $\implies (0,0)$
+                    \item Q4 (Bottom Right): P1 moves left to red and P2 moves down to turquoise $\implies (0,0)$
+                \end{itemize}
+                \item \textbf{Case 3:} $x=1$ and $y=1$ is stable
+                \begin{itemize}
+                    \item Q1: Always converges to $(1,1)$ since P1 moves left to red and P2 moves down to turquoise.
+                \end{itemize}
+            \end{itemize}
         \end{enumerate}
     \end{enumerate}
 
