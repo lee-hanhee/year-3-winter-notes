@@ -86,7 +86,7 @@
                     \item One-hot vector of $M_i$ components, $\mathbf{e}_{i,j}$
                 \end{itemize}} \\
             \midrule
-            Agent $i$'s set of possible actions & $\mathcal{A}_i = \{a_i \in \{0,1\}^{M_i} \mid \sum_{j \in [M_i]} a_{i,j} = 1\}$ \\
+            Agent $i$'s set of possible actions & $\mathcal{A}_i = \left\{a_i \in \{0,1\}^{M_i} \mid \sum_{j \in [M_i]} a_{i,j} = 1\right\}$ \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item Agent $i$'s chosen action with $a_i \in \mathcal{A}_i$
@@ -148,7 +148,7 @@
                     \item \textbf{Notational Convenience:} $x_{-i} = (x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_P)$ so that $x=(x_i,x_{-i})$. 
                 \end{itemize}} \\
             \midrule
-            No-regret strategies & $\bar{r}_i(x_1,\ldots,x_P) \geq \bar{r}_i(x_i',x_{-i}) \; \forall x_i' \in \Delta_i$ \\
+            No-regret strategies & $\bar{r}_i(x_i^*,x_{-i}^*) \geq \bar{r}_i(x_i,x_{-i}^*) \; \forall x_i \in \Delta_i$ \\
             & $x_i^* \in \text{bs}_i (x_{-i}^*)$ \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
@@ -162,7 +162,8 @@
             \midrule
             Joint best-strategy mapping $\text{bs}: \Delta \to \Delta$ & $\text{bs}(x) = (\text{bs}_1(x_{-1}),\ldots,\text{bs}_P(x_{-P}))$ \\
             \midrule
-            Existence of strategy equilibria & Any strategy equilibrium, $x^*$ is a fixed point of $x^* = \text{bs}(x^*)$ \\
+            Existence of strategy equilibria & Any strategy equilibrium, $x^*$ is a fixed pt. \\
+            & of $x^* = \text{bs}(x^*)$ \\
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
                     \item Fixed pt. always exists. 
@@ -175,13 +176,13 @@
 \subsubsection{Simplifying Games}
 \begin{notes} May be able to reduce $M_i$ by eliminating useless actions/strategies: 
     \begin{itemize}
-        \item \textbf{Equivalent Stategies:} $x_i^{(1)} \equiv s_i^{(2)}$
+        \item \textbf{Equivalent Stategies:} $x_i^{(1)} \equiv x_i^{(2)}$
         \begin{equation*}
             \bar{r}_i(x_i^{(1)},x_{-i}) = \bar{r}_i(x_i^{(2)},x_{-i}) \; \forall x_{-i} 
         \end{equation*}
         \item \textbf{Dominated Strategies:} $x_i$ 
         \begin{equation*}
-            \exists x_i' \text{ s.t. } \bar{r}_i(x_i',x_{-i}) \geq \bar{r}_i(x_i,x_{-i}) \; \forall x_{-i} \text{ and } \exists x_{-i}' \text{ s.t. } \bar{r}_i(x_i',x_{-i}') > \bar{r}_i(x_i,x_{-i}')
+            \exists x_i' \text{ s.t. } \bar{r}_i(x_i',x_{-i}) \leq \bar{r}_i(x_i,x_{-i}) \; \forall x_{-i}
         \end{equation*}
     \end{itemize}
     Can remove dominated and equilvalent strategies w/o changing the game. 
@@ -224,6 +225,13 @@
         \end{enumerate}
     \end{enumerate}
 \end{example}
+
+\begin{warning}
+    \begin{itemize}
+        \item aEq doesn't mean that the actual outcome is fight,fight. 
+        \item aEq doesn't mean it is socially optimal (i.e. equilibria may not be optimal). 
+    \end{itemize}
+\end{warning}
 \newpage
 
 \begin{example}
@@ -265,8 +273,29 @@
         \begin{enumerate}
             \item $\text{aOpt} = \{(\text{Share, Share}), (\text{Fight, Share}), (\text{Share, Fight})\}$
             \begin{itemize}
-                \item FINISH
-            \end{itemize}
+                \item \textbf{(Fight, Fight) $\rightarrow$ (1, 1):} \\
+                Both players could be better off by choosing (Share, Share), which gives (2, 2). \\
+                Since there exists another outcome where no one is worse off and at least one player is better off, this is not an optimal action profile. \\
+                $\Rightarrow$ \textbf{Not optimal}.
+                
+                \item \textbf{(Fight, Share) $\rightarrow$ (4, 0):} \\
+                The caveman gets the highest possible payoff (4), but the lion gets 0. \\
+                Any other outcome that gives the lion more than 0 will reduce the caveman’s payoff. \\
+                So, every other option makes at least one player worse off. \\
+                $\Rightarrow$ \textbf{Optimal}.
+                
+                \item \textbf{(Share, Fight) $\rightarrow$ (0, 4):} \\
+                The lion gets the highest possible payoff (4), but the caveman gets 0. \\
+                Any other outcome that gives the caveman more than 0 will reduce the lion’s payoff. \\
+                So, every other option makes at least one player worse off. \\
+                $\Rightarrow$ \textbf{Optimal}.
+                
+                \item \textbf{(Share, Share) $\rightarrow$ (2, 2):} \\
+                Both players receive a fair and equal payoff. \\
+                No other outcome makes both players better off at the same time. \\
+                So, changing this would hurt at least one of them. \\
+                $\Rightarrow$ \textbf{Optimal}.
+            \end{itemize}                                 
         \end{enumerate}
     \end{enumerate}
 \end{example}
@@ -277,25 +306,23 @@
     \begin{enumerate}
         \item For each $i$, compute $\text{bs}_i (x_{-i})$ for all $x_{-i}$
         \item Define $\text{bsp}_i$ so that $\text{bsp}_i = \{(x_i',x_{-i}), \; \forall x_i' \in \text{bs}_i (x_{-i}), \; \forall x_{-i} \in \Delta_{-i}\}$
-        \item Strategy equilibria are then $\text{bEq} = \bigcap_{i\in [P]} \text{bsp}_i$.
-    \end{enumerate}
-\end{process}
-
-\begin{process} \textbf{Convergence}
-    \begin{enumerate}
-        \item For each $i$, compute $\text{bs}_i (x_{-i})$ for all $x_{-i}$
-        \item Define $\text{bsp}_i$ so that $\text{bsp}_i = \{(x_i',x_{-i}), \; \forall x_i' \in \text{bs}_i (x_{-i}), \; \forall x_{-i} \in \Delta_{-i}\}$
         \item Strategy equilibria are then $\text{sEq} = \bigcap_{i\in [P]} \text{bsp}_i$.
-        \begin{itemize}
-            \item Requires each agent, $j$, to know $\bar{r}_1,\ldots,\bar{r}_P$
-        \end{itemize}
     \end{enumerate}
+    \begin{itemize}
+        \item Requires each agent, $j$, to know $\bar{r}_1,\ldots,\bar{r}_P$
+    \end{itemize}
 \end{process}
 \newpage
 
 \begin{example}
     \begin{enumerate}
-        \item 
+        \item 4-1, pg. 29-35
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    \begin{enumerate}
+        \item 4-1, pg. 46-47
     \end{enumerate}
 \end{example}
 
@@ -346,7 +373,7 @@
             \begin{itemize}
                 \item P1: 
                 \begin{equation*}
-                    x = \begin{cases}
+                    \text{bs}_{\text{A}}(x) = \begin{cases}
                         1 & \text{if } y > \frac{1}{6} \text{ i.e. } c > 0 \text{ since positive want maximum positive}\\
                         & \\
                         [0,1] & \text{if } y=\frac{1}{6} \text{ i.e. }c = 0 \text{ doesn't matter since 0} \\
@@ -356,7 +383,7 @@
                 \end{equation*}
                 \item P2:
                 \begin{equation*}
-                    y = \begin{cases}
+                    \text{bs}_{\text{B}}(y) = \begin{cases}
                         1 & \text{if } x > \frac{3}{6} \text{ i.e. } c > 0 \text{ since positive want maximum positive}\\
                         & \\
                         [0,1] & \text{if } x=\frac{3}{6} \text{ i.e. }c = 0 \text{ doesn't matter since 0} \\
@@ -416,21 +443,20 @@
             \end{itemize}
         \end{enumerate}
     \end{enumerate}
-
 \end{example}
 \newpage
-
-\begin{example}
-    
-\end{example}
-\newpage
-
-\begin{example}
-    
-\end{example}
 
 \subsubsection{Simplifying Games}
 \begin{example}
-    
+    \begin{enumerate}
+        \item \textbf{Given:} 
+        \customFigure[0.5]{../Images/L11_8.png}{}
+        \item \textbf{Problem:} Simplify the game 
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item 'Leave' action for Cavemen is dominated so it will never choose this action b/c it can get more reward by choosing Fight or Share. 
+            \item As aresult, we can remove it from the game and have a 2 action, 2 player game, rather than a 2-3 action, 2 player game.
+        \end{enumerate}
+    \end{enumerate}
 \end{example}
 
