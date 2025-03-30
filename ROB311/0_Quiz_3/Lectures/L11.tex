@@ -73,13 +73,13 @@
 \end{summary}
 
 \subsection{Actions (Deterministic)}
-\begin{summary}
+\begin{summary} Allow each agent to choose action deterministically.
     \begin{center}
         \begin{tabular}{ll}
             \toprule
             \textbf{Name} & \textbf{Function:} \\
             \midrule
-            Action $j$ for agent $i$ & $[0 \cdots 0 \; 1 \; 0 \cdots 0]$ \\
+            Action $j$ for agent $i$ & $[0 \cdots 0 \; 1 \; 0 \cdots 0]^T$ \\
             \midrule
             \multicolumn{2}{p{\linewidth}}{
                 \begin{itemize}
@@ -119,15 +119,72 @@
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
 
 \subsection{Strategies (Probabilistic)}
-\begin{summary}
-
+\begin{summary} Allow each agent to choose action based on a distribution/strategy. 
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            Stategy for agent $i$ & $[0.05 \cdots 0.2 \; 0.7 \; 0 \cdots 0.05]^T$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Vector of $M_i$ components, that are non-negative and sum to 1
+                \end{itemize}} \\
+            \midrule
+            Agent $i$'s set of possible strategies & $\Delta_i = \Delta^{M_i} = \left\{x_i \in [0,1]^{M_i}, \sum_{j \in [M_i]} x_{i,j} = 1 \right\}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Agent $i$'s chosen strategy with $x_i \in \Delta_i$
+                \end{itemize}} \\
+            \midrule
+            Expected reward & $\bar{r}_i(x_1,\ldots,x_P) = \mathbb{E}[r_i(a)] = \sum_{a_i \in \mathcal{A}_i} \pi(a) r_i(a)$ \\
+            \midrule
+            Stategy profile is a tuple of strategies & $x=(x_1,\ldots,x_P)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Notational Convenience:} $x_{-i} = (x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_P)$ so that $x=(x_i,x_{-i})$. 
+                \end{itemize}} \\
+            \midrule
+            No-regret strategies & $\bar{r}_i(x_1,\ldots,x_P) \geq \bar{r}_i(x_i',x_{-i}) \; \forall x_i' \in \Delta_i$ \\
+            & $x_i^* \in \text{bs}_i (x_{-i}^*)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Agent $i$ will not regret using $x_i^*$ when others use $x_{-i}^*$.
+                \end{itemize}} \\
+            \midrule
+            Best strategy mapping $\text{bs}_i$: $\Delta_{-i} \to \Delta_i$ & $\text{bs}_i (x_{-i}) = \arg \max_{x_i \in \Delta_i} \bar{r}_i (x_i,x_{-i})$ \\
+            & $ = \{x_i \in \Delta_i \mid \bar{r}_i (x_i,x_{-i}) = \max_{x_i' \in \Delta_i} \bar{r}_i (x_i',x_{-i})\}$ \\
+            \midrule
+            Strategy equilibria is any strategy, $x^*$ in which no agent regrets & $x_i^* \in \text{bs}_i (x_{-i}^*) \; \forall i \in [P]$ \\
+            \midrule
+            Joint best-strategy mapping $\text{bs}: \Delta \to \Delta$ & $\text{bs}(x) = (\text{bs}_1(x_{-1}),\ldots,\text{bs}_P(x_{-P}))$ \\
+            \midrule
+            Existence of strategy equilibria & Any strategy equilibrium, $x^*$ is a fixed point of $x^* = \text{bs}(x^*)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Fixed pt. always exists. 
+                \end{itemize}} \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
 \end{summary}
 
 \subsubsection{Simplifying Games}
-\begin{notes}
-
+\begin{notes} May be able to reduce $M_i$ by eliminating useless actions/strategies: 
+    \begin{itemize}
+        \item \textbf{Equivalent Stategies:} $x_i^{(1)} \equiv s_i^{(2)}$
+        \begin{equation*}
+            \bar{r}_i(x_i^{(1)},x_{-i}) = \bar{r}_i(x_i^{(2)},x_{-i}) \; \forall x_{-i} 
+        \end{equation*}
+        \item \textbf{Dominated Strategies:} $x_i$ 
+        \begin{equation*}
+            \exists x_i' \text{ s.t. } \bar{r}_i(x_i',x_{-i}) \geq \bar{r}_i(x_i,x_{-i}) \; \forall x_{-i} \text{ and } \exists x_{-i}' \text{ s.t. } \bar{r}_i(x_i',x_{-i}') > \bar{r}_i(x_i,x_{-i}')
+        \end{equation*}
+    \end{itemize}
+    Can remove dominated and equilvalent strategies w/o changing the game. 
 \end{notes}
 \newpage
 
@@ -215,7 +272,33 @@
 \end{example}
 \newpage
 
-\subsubsection{Finding Strategy Equilibria}
+\subsubsection{Finding/Convergence Strategy Equilibria}
+\begin{process} \textbf{Finding}
+    \begin{enumerate}
+        \item For each $i$, compute $\text{bs}_i (x_{-i})$ for all $x_{-i}$
+        \item Define $\text{bsp}_i$ so that $\text{bsp}_i = \{(x_i',x_{-i}), \; \forall x_i' \in \text{bs}_i (x_{-i}), \; \forall x_{-i} \in \Delta_{-i}\}$
+        \item Strategy equilibria are then $\text{bEq} = \bigcap_{i\in [P]} \text{bsp}_i$.
+    \end{enumerate}
+\end{process}
+
+\begin{process} \textbf{Convergence}
+    \begin{enumerate}
+        \item For each $i$, compute $\text{bs}_i (x_{-i})$ for all $x_{-i}$
+        \item Define $\text{bsp}_i$ so that $\text{bsp}_i = \{(x_i',x_{-i}), \; \forall x_i' \in \text{bs}_i (x_{-i}), \; \forall x_{-i} \in \Delta_{-i}\}$
+        \item Strategy equilibria are then $\text{sEq} = \bigcap_{i\in [P]} \text{bsp}_i$.
+        \begin{itemize}
+            \item Requires each agent, $j$, to know $\bar{r}_1,\ldots,\bar{r}_P$
+        \end{itemize}
+    \end{enumerate}
+\end{process}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{example}
+
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given/Problem:} Find all equilibria of the following one-shot game or state that none exist.
@@ -334,5 +417,20 @@
         \end{enumerate}
     \end{enumerate}
 
+\end{example}
+\newpage
+
+\begin{example}
+    
+\end{example}
+\newpage
+
+\begin{example}
+    
+\end{example}
+
+\subsubsection{Simplifying Games}
+\begin{example}
+    
 \end{example}
 
