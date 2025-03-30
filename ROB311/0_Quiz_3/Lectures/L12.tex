@@ -150,6 +150,7 @@
         \end{itemize}
     \end{itemize}
 \end{example}
+\newpage
 
 \subsubsection{$\alpha$ Cuts}
 \begin{example}
@@ -178,6 +179,7 @@
     \end{itemize}
     \customFigure[0.5]{../Images/L12_5.png}{}
 \end{example}
+\newpage
 
 \subsubsection{Alpha Beta Pruning}
 \begin{process}
@@ -191,8 +193,62 @@
         \item 
     \end{enumerate}
 \end{example}
+\newpage
 
 \subsubsection{Monte-Carlo Tree Search (MCTS) Algorithm}
 \begin{example}
-    
+    \begin{enumerate}
+        \item \textbf{Given:} Consider a simplified two-player turn-based game tree. You are currently at the root node $S_0$, which has three possible actions $a_1, a_2, a_3$. The current statistics of its children are as follows:
+        \vspace{1em}
+        \begin{center}
+        \begin{tabular}{ccc}
+        \toprule
+        \textbf{Action} & $N(s_0, a)$ & $\bar{X}(s_0, a)$ \\
+        \midrule
+        $a_1$ & 10 & 0.6 \\
+        $a_2$ & 5 & 0.8 \\
+        $a_3$ & 0 & -- \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        \vspace{1em}
+        \begin{itemize}
+            \item $N(s_0, a)$: Number of times action $a$ has been selected at state $s_0$
+            \item $\bar{X}(s_0, a)$: Average reward obtained from action $a$ at state $s_0$
+            \item $\text{UCB} = \bar{X}(s_0, a) + \sqrt{\frac{\ln(t)}{N(s_0, a)}}$ 
+            \begin{itemize}
+                \item $t$: Total number of actions taken at $s_0$
+            \end{itemize}
+        \end{itemize}
+        \item \textbf{Problems:} 
+        \begin{itemize}
+            \item If we were to use the UCB algorithm, which nodes get selected during the selection phase? Which node gets expanded during the expansion phase?
+            \item Suppose from the expanded node, simulation is performed until termination. A reward of $+1$ is obtained. Update the statistics at $s_0$ accordingly.
+            \item Then, repeat the question, assuming a reward of $-1$ is attained after the simulation phase.
+        \end{itemize}
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item \textbf{Selection 1:} $s_0$ since we traverse until a node has unexplored children (i.e. $s_3$ is unexplored)
+            \item \textbf{Expansion 1:} $s_3$ is automatically expanded since it is the only unexplored child of $s_0$ w/ $N(s_0, a_3) = 1$ and $\bar{X}(s_0, a_3) = 0$
+            \item \textbf{Simulation 1:} Get a reward of $+1$ 
+            \item \textbf{Back Propogation 1:} For this edge from $s_0$ to $s_3$, we update the statistics as follows:
+            \begin{itemize}
+                \item $N(s_0, a_3) = 1$
+                \item $\bar{X}(s_0, a_3) = \frac{1}{1} = 1$
+            \end{itemize}
+            \item \textbf{Selection 2:} $s_0$ and choose the action with the highest UCB value for $s_1$, $s_2$, and $s_3$:
+            \begin{itemize}
+                \item $UCB(s_0, a_1) = 0.6 + \sqrt{\frac{\ln(16)}{10}} = 1.13$ 
+                \item $UCB(s_0, a_2) = 0.8 + \sqrt{\frac{\ln(16)}{5}} = 1.54$ 
+                \item $UCB(s_0, a_3) = 1 + \sqrt{\frac{\ln(16)}{1}} = 2.67$. Therefore, choose $s_3$ as part of the selection phase and assume it has unexplored children.
+            \end{itemize}
+            \item \textbf{Expansion 2:} Not enough info but assume we expand an unexplored child. 
+            \item \textbf{Simulation 2:} Get a reward of $-1$
+            \item \textbf{Back Propogation 2:} For this edge from $s_0$ to $s_3$, we update the statistics as follows:
+            \begin{itemize}
+                \item $N(s_0, a_3) = 2$
+                \item $\bar{X}(s_0, a_3) = \frac{1 + (-1)}{2} = 0$
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
 \end{example}
