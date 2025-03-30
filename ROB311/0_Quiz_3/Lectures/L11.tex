@@ -44,23 +44,178 @@
     \end{center}
 \end{summary}
 
-\subsection{Action Equilibria}
+\subsection{Policy Equilibria}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{No Regret:} $\pi$ is no-regret if $\pi_j$ maximizes $q_j$ when $\pi_{-j}$ is fixed. 
+        \item If all agents play perfectly, then we expect
+        \begin{equation*}
+            \pi (a \mid s) = \begin{cases}
+                1 & \text{if } a= a^*(s) \\
+                0 & \text{otherwise}
+            \end{cases}
+        \end{equation*}
+        \begin{itemize}
+            \item $a_j^*(s) = \arg \max_{a_j \in \mathcal{A}_j(s)} q_j(s,a_j,a_{-j}^*)$ is the best action for agent $j$ given the other agents' policies.
+        \end{itemize}
+    \end{itemize}
+\end{notes}
+\newpage
 
-\subsubsection{Finding Action Equilibria}
+\subsection{Single Action Games}
+\begin{summary}
+    In a \textbf{Single Action Game}, we assume that:
+    \begin{itemize}
+        \item $N=1$ (one-shot game)
+        \item Initial state is $s_0 \in \mathcal{S}$
+        \item Agent $j$ wants to find policy, $\pi_i (a_i \mid s_0)$ so $\mathbb{E}[r_i(p)]$ is maximized
+    \end{itemize}
+\end{summary}
 
-\subsection{Strategy Equilibria}
+\subsection{Actions (Deterministic)}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Name} & \textbf{Function:} \\
+            \midrule
+            Action $j$ for agent $i$ & $[0 \cdots 0 \; 1 \; 0 \cdots 0]$ \\
+            \midrule
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item One-hot vector of $M_i$ components, $\mathbf{e}_{i,j}$
+                \end{itemize}} \\
+            \midrule
+            Agent $i$'s set of possible actions & $\mathcal{A}_i = \{a_i \in \{0,1\}^{M_i} \mid \sum_{j \in [M_i]} a_{i,j} = 1\}$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Agent $i$'s chosen action with $a_i \in \mathcal{A}_i$
+                \end{itemize}} \\
+            \midrule
+            Action profile is a tuple of actions & $a=(a_1,\ldots,a_P)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Notational Convenience:} $a_{-i} = (a_1,\ldots,a_{i-1},a_{i+1},\ldots,a_P)$ so that $a=(a_i,a_{-i})$. 
+                \end{itemize}} \\
+            \midrule 
+            Optimal action profile & $a^+ \text{ s.t. } \forall a \exists i \text{ s.t. } r_i(a) < r_i(a^+)$ \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item An action profile w.r.t. which any other action profile leaves at least one player worse off.
+                \end{itemize}} \\
+            \midrule 
+            Set of optimal action profiles & $\text{aOpt} = \{a^+ \mid \forall a \exists i: r_i(a) < r_i(a^+)\}$ \\
+            \midrule
+            Best-action mapping, $\text{ba}_i$: $\mathcal{A}_{-i} \to \mathcal{A}_i$ & $\text{ba}_i (a_{-i}) = \arg \max_{a_i \in \mathcal{A}_i} r_i (a_i,a_{-i})$ \\
+            & $ = \{a_i \in \mathcal{A}_i \mid r_i (a_i,a_{-i}) = \max_{a_i' \in \mathcal{A}_i} r_i (a_i',a_{-i})\}$ \\
+            \midrule 
+            Agent $i$ will \textbf{not regret} playing $a_i^*$ when others play $a_{-i}^*$ if & $r_i (a_i^*,a_{-i}^*) \geq r_i (a_i,a_{-i}^*) \; \forall a_i \in \mathcal{A}_i$ \\
+            & or $a_i^* \in \text{ba}_i (a_{-i}^*)$ \\
+            \midrule
+            Action equilibria is any action, $a^*$ in which no agent regrets & $a_i^* \in \text{ba}_i (a_{-i}^*) \; \forall i \in [P]$ \\
+            \midrule
+            Existence of action equilibria & May not always exist, i.e., it may be that $\text{aEq} = \emptyset$ \\
+            \bottomrule            
+        \end{tabular}
+    \end{center}
+\end{summary}
 
-\subsubsection{Finding Strategy Equilibria}
+\subsection{Strategies (Probabilistic)}
+\begin{summary}
 
-\subsubsection{Existence of Stategy Equilibria}
+\end{summary}
 
-\subsubsection{Convergence of Stategy Equilibria}
+\subsubsection{Simplifying Games}
+\begin{notes}
+
+\end{notes}
+\newpage
 
 \subsection{Examples}
 \subsubsection{Finding Action Equilibria}
+\begin{process} To find action equilibria:
+    \begin{enumerate}
+        \item For each $i$, compute $\text{ba}_i (a_{-i})$ for all $a_{-i}$
+        \item Define $\text{bap}_i$ so that $\text{bap}_i = \{(a_i',a_{-i}), \; \forall a_i' \in \text{ba}_i (a_{-i}), \; \forall a_{-i} \in \mathcal{A}_{-i}\}$
+        \item Action equilibria are then $\text{aEq} = \bigcap_{i\in [P]} \text{bap}_i$.
+    \end{enumerate}
+\end{process}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
+        \customFigure[0.5]{../Images/L11_3.png}{}
+        \item \textbf{Problem:} Find the action equilibria 
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item \textbf{Best Action Profiles:}
+            \begin{itemize}
+                \item Cavemen: $\text{bap}_{\text{cavemen}} = \{(\text{Fight, Fight}), (\text{Fight, Share})\}$. Cavemen fights no matter what. 
+                \begin{itemize}
+                    \item If lion fights, then cavemen fights to get maximum reward in this scenario of $+1$. 
+                    \item If lion shares, then caveman fights to get maximum reward in this scenario of $+4$.
+                \end{itemize}
+                \item Lion: $\text{bap}_{\text{lion}} = \{(\text{Fight, Fight}), (\text{Share, Fight})\}$. Lion fights no matter what.
+                \begin{itemize}
+                    \item If caveman fights, then lion fights to get maximum reward in this scenario of $+1$.
+                    \item If caveman shares, then lion fights to get maximum reward in this scenario of $+4$.
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Best Action Equilibria:} Intersection of the best action profiles.
+            \begin{itemize}
+                \item $\text{aEq} = \text{bap}_{\text{cavemen}} \cap \text{bap}_{\text{lion}} = \{(\text{Fight, Fight})\}$
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
+        \customFigure[0.5]{../Images/L11_4.png}{}
+        \item \textbf{Problem:} Find the action equilibria 
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item \textbf{Best Action Profiles:}
+            \begin{itemize}
+                \item Cavemen: $\text{bap}_{\text{cavemen}} = \{(\text{Fight, Fight}), (\text{Share, Share})\}$. Cavemen fights no matter what. 
+                \begin{itemize}
+                    \item If lion fights, then cavemen fights to get maximum reward in this scenario of $+3$. 
+                    \item If lion shares, then caveman shares to get maximum reward in this scenario of $+1$.
+                \end{itemize}
+                \item Lion: $\text{bap}_{\text{lion}} = \{(\text{Fight, Share}), (\text{Share, Fight})\}$. Lion fights no matter what.
+                \begin{itemize}
+                    \item If caveman fights, then lion shares to get maximum reward in this scenario of $+3$.
+                    \item If caveman shares, then lion fights to get maximum reward in this scenario of $+1$.
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Best Action Equilibria:} Intersection of the best action profiles.
+            \begin{itemize}
+                \item $\text{aEq} = \text{bap}_{\text{cavemen}} \cap \text{bap}_{\text{lion}} = \emptyset$
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
+\newpage
 
 \subsubsection{Optimal Action Profiles}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
+        \customFigure[0.5]{../Images/L11_3.png}{}
+        \item \textbf{Problem:} Find the optimal action profiles: 
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item $\text{aOpt} = \{(\text{Share, Share}), (\text{Fight, Share}), (\text{Share, Fight})\}$
+            \begin{itemize}
+                \item FINISH
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+\end{example}
 \newpage
+
+\subsubsection{Finding Strategy Equilibria}
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given/Problem:} Find all equilibria of the following one-shot game or state that none exist.
