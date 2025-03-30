@@ -60,4 +60,76 @@
 \subsubsection{Finding Action Equilibria}
 
 \subsubsection{Optimal Action Profiles}
+\newpage
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given/Problem:} Find all equilibria of the following one-shot game or state that none exist.
+        \vspace{1em}
+            \begin{center}
+            \begin{tabular}{ccc}
+            \toprule
+            & \textbf{B1 (y)} & \textbf{B2 (1-y)} \\
+            \midrule
+            \textbf{A1 (x)} & (5, 3) & (1, 0) \\
+            \textbf{A2 (1-x)} & (0, 1) & (2, 4) \\
+            \bottomrule
+            \end{tabular}
+            \end{center}
+        \vspace{1em}
+        \begin{itemize}
+            \item (\#,\#) is the payoff to P1 and P2 respectively for a given action profile.
+        \end{itemize}
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item \textbf{Define Probabilities:}
+            \begin{itemize}
+                \item Let $y$ be the probability that B1 plays action B1 so $1-y$ is the probability that B1 plays action B2.
+                \item Let $x$ be the probability that A1 plays action A1 so $1-x$ is the probability that A1 plays action A2.
+            \end{itemize}
+            \item \textbf{Expected Rewards:} 
+            \begin{itemize}
+                \item P1: 
+                \begin{align*}
+                    E[x] = 5xy + 1x(1-y) + 0(1-x)y + 2(1-x)(1-y) &= 5xy + x - xy + 2 - 2x - 2y + 2xy \\
+                    &= 5xy - xy + 2xy + x - 2x - 2y + 2 \\
+                    &= 6xy - x - 2y + 2 \quad \text{simplify} \\
+                    &= \underbrace{(6y - 1)}_{c}x + 2 - 2y \quad \text{linear in $x$} 
+                \end{align*}
+                \item P2:
+                \begin{align*}
+                    E[y] = 3xy + 0x(1-y) + 1(1-x)y + 4(1-x)(1-y) &= 3xy + 0 + y - xy + 4 - 4x - 4y + 4xy \\
+                    &= 3xy - xy + 4xy + y - 4x - 4y + 4 \\
+                    &= 6xy - 4x - 3y + 4 \quad \text{simplify} \\
+                    &= \underbrace{(6x - 3)}_{c}y + 4 - 4x \quad \text{linear in $y$}
+                \end{align*}
+                \item \textbf{Note:} $E[x]$ is linear in $x$ and $E[y]$ is linear in $y$.
+            \end{itemize}
+            \item \textbf{Constrained Argmax Expected Rewards w.r.t $x \in [0,1]$ (since P1):} If it was cost, then minimize. Also don't care about constant term in $y$ since we are derivating w.r.t $x$.
+            \begin{itemize}
+                \item P1: 
+                \begin{equation*}
+                    x = \begin{cases}
+                        1 & \text{if } y > \frac{1}{6} \text{ i.e. } c > 0 \\
+                        & \\
+                        [0,1] & \text{if } y=\frac{1}{6} \text{ i.e. }c = 0 \\
+                        & \\
+                        0 & \text{if } y < \frac{1}{6} \text{ i.e. } c < 0 
+                    \end{cases}
+                \end{equation*}
+                \item P2:
+                \begin{equation*}
+                    y = \begin{cases}
+                        1 & \text{if } x > \frac{3}{6} \text{ i.e. } c > 0 \\
+                        & \\
+                        [0,1] & \text{if } x=\frac{3}{6} \text{ i.e. }c = 0 \\
+                        & \\
+                        0 & \text{if } x < \frac{3}{6} \text{ i.e. } c < 0 
+                    \end{cases}
+                \end{equation*}
+            \end{itemize}
+            \item \textbf{Finding all equilibrium:} 
+        \end{enumerate}
+    \end{enumerate}
+
+\end{example}
 
