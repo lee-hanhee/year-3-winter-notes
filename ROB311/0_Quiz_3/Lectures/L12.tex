@@ -252,3 +252,56 @@
         \end{enumerate}
     \end{enumerate}
 \end{example}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Consider (partial) 2-player turn-taking game-tree in which 21 iterations of MCTS have already been performed: 
+        \customFigure[0.5]{../Images/L12_11.png}{}
+        \begin{itemize}
+            \item Total reward: Numerator
+            \item Total number of times action $a$ has been selected at state $s$: Denominator
+        \end{itemize}
+        \item \textbf{Problem:} If we use UCB to rank order state-action pairs, which of the following states will be chosen during the 22nd selection phase. 
+        \item \textbf{Solution:}
+        \begin{itemize}
+            \item $\text{UCB}(AB) = 7/10 + \sqrt{\frac{\ln(21)}{10}} = 1.25$
+            \begin{itemize}
+                \item $\text{UCB}(BE) = 2/4 + \sqrt{\frac{\ln(10)}{4}} = 1.26$
+                \item $\text{UCB}(BF) = 1/6 + \sqrt{\frac{\ln(10)}{6}} = 0.79$
+            \end{itemize}
+            \item $\text{UCB}(AC) = 5/8 + \sqrt{\frac{\ln(21)}{8}} = 1.24$
+            \item $\text{UCB}(AD) = 0/3 + \sqrt{\frac{\ln(21)}{3}} = 1.01$
+            \item Therefore, choose A,B,E by selecting the nodes with the highest UCB values.
+        \end{itemize}
+    \end{enumerate}
+\end{example}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Consider (partial) 2-player turn-taking game-tree in which 9 iterations of MCTS have already been performed: 
+        \customFigure[0.5]{../Images/L12_12.png}{}
+        \begin{itemize}
+            \item \textbf{Fix:} $CG$ has $0/2$ not $0/1$ and $CH$ has $0/1$ not $1/1$
+        \end{itemize}
+        \item \textbf{Problem:} Suppose path chosen during the 10th selection phase had the state sequence $\langle A,C,H \rangle$ (i.e. $H$ is the state expanded during the 10th expansion phase)
+        \begin{itemize}
+            \item The simulation phase lasts for $12$ transitions, after which a terminal state is reached. 
+            \item The reward to the last turn-taker was $+4$.
+            \item Find $q(A,\langle A,B \rangle)$, $q(A,\langle A,C \rangle)$, $q(C,\langle C,H \rangle)$
+        \end{itemize}
+        \item \textbf{Solution:}
+        \begin{itemize}
+            \item Assuming P1 starts at $A$, then P2 goes at $C$, then P1 goes at $H$, that means after 12 transitions (\textbf{even number}), P1 is the last turn-taker, therefore, P1 gets the reward of $+4$.
+            \item \textbf{Backpropogation:}
+            \begin{itemize}
+                \item $N(C,\langle C,H \rangle) = 1$, $X(C,\langle C,H \rangle) = 4$ so $4/1$
+                \item $N(A,\langle A,C \rangle) = 4$, $X(A,\langle A,C \rangle) = 2+4=6$ so $6/4$
+                \item $q(A,\langle A,B \rangle) = 2/5 = 0.4$
+                \item $q(A,\langle A,C \rangle) = 6/4 = 1.5$
+                \item $q(C,\langle C,H \rangle) = 4/1 = 4$
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+\end{example}
