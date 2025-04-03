@@ -141,11 +141,6 @@
 \newpage
 
 \begin{example} 
-    \begin{itemize}
-        \item Action sequence is $\langle a_1, a_2, a_3 \rangle = \langle \text{plant seed}, \text{wait}, \text{wait} \rangle$.
-        \item Observation sequence is $\langle o_0, o_1, o_2, o_3 \rangle = \langle \left[\text{:(,no apple}\right], \left[\text{:(,ga)}\right], \left[\text{:(,ra)}\right], \left[\text{:|,ra)}\right] \rangle$.
-        \item Find state distribution: $b_3 (s_3 \mid a_{1:3}, o_{0:3})$.
-    \end{itemize}
     \begin{equation}
         b_0(s_0 \mid o_0) = \frac{m(o_0 \mid s_0)}{\sum_s m(o_0 \mid s)}
     \end{equation}
@@ -155,56 +150,60 @@
     \begin{center}
         \begin{tabular}{cccccc}
             \toprule 
-            s & $b_0(s)$ & $b_0(s_0 \mid o_0)$ & $b_1(s_1 \mid o_{0:1}, a_1)$ & $b_2(s_2 \mid o_{0:2}, a_{1:2})$ & $b_3(s_3 \mid o_{0:3}, a_{1:3})$ \\
+            s & $b_0(s)$ & $b_0(s_0 \mid o_0)$ & $b_1(s_1 \mid a_1, o_{0:1})$ & $b_2(s_2 \mid a_{1:2}, o_{0:2})$ & $b_3(s_3 \mid a_{1:3}, o_{0:3})$ \\
             \midrule
-            No meat & $1/6$ & $0.4545$ & & & \\
+            No meat & $1/6$ & $0.4545$ & $0$ & & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $\sum_s m(\left[\text{:(,no apple}\right] \mid s) = (1.0)(0.8) + (0.2)(0.8) + (0.0)(0.8) + (0.0)(0.8) + (1.0)(0.8) + (1.0)(0.0) = 1.76$
                 \item $b_0(\text{No meat} \mid \left[\text{:(,no apple}\right]) = \frac{(1.0)(0.8)}{1.76} = \frac{0.8}{1.76} = 0.4545$     
-                \item $b_1(\text{No meat} \mid \text{plant seed}, \left[\text{:(,no apple}\right], \left[\text{:(,ga}\right]) = (0.0)(0.8) \left[(0 \cdot 0.4545) \right]$
+                \item $b_1(\text{No meat} \mid \text{plant seed}, \left[\text{:(,no apple}\right], \left[\text{:(,ga}\right]) = (0.0)(0.8) \left[\underbrace{(0 \cdot 0)}_{s_{0}=\text{NA}, \; a_1=\text{plant seed}} \right] = 0$
             \end{itemize}
             } \\
             \midrule
-            Green apple & $1/6$ & $0.0909$ & & & \\
+            Green apple & $1/6$ & $0.0909$ & $0.2182$ & & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $b_0(\text{Green apple} \mid o_0) = \frac{(0.2)(0.8)}{1.76} = \frac{0.16}{1.76} = 0.0909$  
-                \item $b_1(\text{Green apple} \mid a_1, o_{0:1}) = (0.0)(0.8) \left[(0 \cdot 0.0909) \right]$
+                \item $b_1(\text{Green apple} \mid a_1, o_{0:1}) = (0.6)(0.8) \left[\underbrace{(1 \cdot 0.4545)}_{s_{0}=\text{No meat}, \; a_1=\text{plant seed}} \right] = 0.2182$
             \end{itemize}
             } \\
             \midrule
-            Red apple & $1/6$ & $0$ & & & \\
+            Red apple & $1/6$ & $0$ & $0$ & & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $b_0(\text{Red apple} \mid o_0) = \frac{(0.0)(0.8)}{1.76} = \frac{0.0}{1.76} = 0$
+                \item $b_1(\text{Red apple} \mid a_1, o_{0:1}) = (0.3)(0.8) \left[\underbrace{(0 \cdot 0)}_{s_{0}=\text{NA}, \; a_1=\text{plant seed}} \right] = 0$
             \end{itemize}
             } \\
             \midrule
-            Rotten apple & $1/6$ & $0$ & & & \\
+            Rotten apple & $1/6$ & $0$ & $0$ & & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $b_0(\text{Rotten apple} \mid o_0) = \frac{(0.0)(0.8)}{1.76} = \frac{0.0}{1.76} = 0$
+                \item $b_1(\text{Rotten apple} \mid a_1, o_{0:1}) = (0.0)(0.8) \left[\underbrace{(0 \cdot 0)}_{s_{0}=\text{NA}, \; a_1=\text{plant seed}} \right] = 0$
             \end{itemize}
             } \\
             \midrule
-            Meat & $1/6$ & $0.4545$ & & & \\
+            Meat & $1/6$ & $0.4545$ & $0$& & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $b_0(\text{Meat} \mid o_0) = \frac{(1.0)(0.8)}{1.76} = \frac{0.8}{1.76} = 0.4545$
+                \item $b_1(\text{Meat} \mid a_1, o_{0:1}) = (0.0)(0.8) \left[\underbrace{(0 \cdot 0)}_{s_{0}=\text{NA}, \; a_1=\text{plant seed}} \right] = 0$
             \end{itemize}
             } \\
             \midrule
-            Dead & $1/6$ & $0$ & & & \\
+            Dead & $1/6$ & $0$ & $0$& & \\
             \multicolumn{6}{p{\linewidth}}
             {
             \begin{itemize}
                 \item $b_0(\text{Dead} \mid o_0) = \frac{(1.0)(0.0)}{1.76} = \frac{0.0}{1.76} = 0$   
+                \item $b_1(\text{Dead} \mid a_1, o_{0:1}) = (0.0)(0.0) \left[\underbrace{(0 \cdot 0)}_{s_{0}=\text{NA}, \; a_1=\text{plant seed}} \right] = 0$
             \end{itemize}
             } \\
             \bottomrule
