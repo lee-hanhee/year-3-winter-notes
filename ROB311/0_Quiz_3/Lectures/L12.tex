@@ -69,7 +69,7 @@
 \newpage
 
 \subsection{Examples}
-\subsubsection{Zero Sum Turn-Based Games}
+\subsubsection{Min-Max Algorithm}
 \begin{example}
     \begin{itemize}
         \item \textbf{Given:} Cavemen is injured from his hunt. He has extra food, but needs medicine.
@@ -94,8 +94,30 @@
         \end{itemize}
         \item \textbf{Solution:} Backtracking through the game tree, we can find the optimal path for the maximizer and minimizer.
         \begin{itemize}
-            \item \textbf{Maximizer Turn:} LL: Accept to get reward of 8, L: Accept to get reward of 16, R: Accept to get reward of 2, RR: Accept to get reward of 4
-            \item \textbf{Minimizer Turn:} LL: 1 medicine to make maximizer get reward of 8, R: 1 medicine to make maximizer get reward of 2
+            \item \textbf{Maximizer Turn:} 
+            \begin{itemize}
+                \item \textbf{Left Branch:}
+                \begin{itemize}
+                    \item Far Left: Accept to get reward of 8, 
+                    \item Mid Left: Accept to get reward of 16, 
+                \end{itemize}
+                \item \textbf{Right Branch:}
+                \begin{itemize}
+                    \item Mid Left: Accept to get reward of 2, 
+                    \item Far Left: Accept to get reward of 4
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{Minimizer Turn:} 
+            \begin{itemize}
+                \item \textbf{Left Branch:}
+                \begin{itemize}
+                    \item L: 1 medicine to make maximizer get reward of 8, 
+                \end{itemize}
+                \item \textbf{Right Branch:}
+                \begin{itemize}
+                    \item L: 1 medicine to make maximizer get reward of 2
+                \end{itemize}
+            \end{itemize}
             \item \textbf{Maximizer Turn:} 1 food to make maximizer get reward of 8 b/c going right will make maximizer get reward of 2
             \item \textbf{Optimal Path:} Therefore, the optimal path will be LLL b/c the maximizer will get a reward of 8, while the minimizer will reduce the reward from 16 to 8.
             \begin{itemize}
@@ -138,12 +160,15 @@
 \subsubsection{Alpha Beta Pruning}
 \begin{process}
     \begin{enumerate}
-        \item 
+        \item Initialize $\alpha = -\infty$ and $\beta = +\infty$
+        \item Iterate through the game tree:
+        \begin{itemize}
+            \item If the maximizer is the turn-taker, then update $\alpha$ to the maximum value of $s$'s successors as they are explored.
+            \item If the minimizer is the turn-taker, then update $\beta$ to the minimum value of $s$'s successors as they are explored.
+        \end{itemize}
+        \item Nodes are pruned if $\alpha \geq \beta$
     \end{enumerate}
 \end{process}
 
 \begin{example} \href{https://pascscha.ch/info2/abTreePractice/}{Alpha-Beta Pruning Practice}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
 \end{example}
