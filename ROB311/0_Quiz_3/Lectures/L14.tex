@@ -1,55 +1,84 @@
 \begin{algo}
     \begin{enumerate}
         \item Selection: Traverse using an alternate policy until a node has unexplored children. 
+        \begin{equation}
+            \text{UCB}(s,a) = u(s,a) + \sqrt{\frac{\log_{10}(n)}{n(s,a)}}
+        \end{equation}
+        \begin{itemize}
+            \item \textbf{Edge:} $(s,a)$ w/ $u(s,a)/n(s,a)$
+            \begin{itemize}
+                \item $u(s,a)$: Average reward obtained from action $a$ at state $s$
+                \item $n(s,a)$: Number of times action $a$ has been selected at state $s$
+            \end{itemize}
+            \item $n$: Total number of actions taken at $s$
+        \end{itemize}
         \customFigure[0.4]{../Images/L12_6.png}{}
         \begin{itemize}
-            \item Our Agent (Upper Triangle): Uses UCB to choose the next node to explore
-            \item Other Agent (Down Triangle): Can't control their actions, so this agent picks w/ their own heuristic.
-            \item Square Boxes: Estimated values (i.e. $n$ and $\hat{q}$)
-            \item Ends when there is at least one action that hasn't been explored yet. In this case, two actions ahven't been explored. 
-            \item Can skip expansion and simulation if the most recently expanded node is a terminal state.
+            \item \textbf{Icons:}
+            \begin{itemize}
+                \item Our Agent (Upper Triangle): Uses UCB to choose the next node to explore
+                \item Other Agent (Down Triangle): Can't control their actions, so this agent picks w/ their own heuristic.
+                \item Square Boxes: Estimated values (i.e. $n$ and $\hat{q}$)
+            \end{itemize}
+            \item \textbf{Termination:} Ends when there is at least one action that hasn't been explored yet. In this case, two actions haven't been explored. 
+            \item \textbf{Skip:} Can skip expansion and simulation if the most recently expanded node is a terminal state.
         \end{itemize}
         \item Expansion: Expand an unexplored child; initialize $n(a)$ and $\hat{q}(s,a)$.
         \customFigure[0.4]{../Images/L12_7.png}{}
         \begin{itemize}
-            \item $\hat{q}(s,a)$ is initialized to 0 and $n(a)$ is initialized to 1 b/c we've visited this node once.
-            \item Randomly pick an unexplored action unless there is only one action left.
-            \item Can skip similuation if the most recently expanded node is a terminal state. 
-        \end{itemize}
-        \item Simulation: Traverse using the random policy until a terminal node is reached. 
-        \customFigure[0.4]{../Images/L12_8.png}{}
-        \begin{itemize}
-            \item Using random policy to simulate the game until a terminal state is reached (i.e. reward is obtained)
-        \end{itemize}
-        \item Back-propogation: Get the reward and reverse; update $n(a)$ and $\hat{q}(s,a)$.
-        \customFigure[0.4]{../Images/L12_9.png}{}
-        \begin{itemize}
-            \item Go up the path in yellow and update the values of $n(a)$ and $\hat{q}(s,a)$ for OUR agent only (i.e. the upper triangle)
+            \item \textbf{Initialize:} $\hat{q}(s,a)$ is initialized to 0 and $n(s,a)$ is initialized to 1 b/c we've visited this node once.
+            \item \textbf{Termination:} Randomly pick an unexplored action unless there is only one action left.
+            \item \textbf{Skip:} Can skip simulation if the most recently expanded node is a terminal state. 
         \end{itemize}
     \end{enumerate}
 \end{algo}
 
-\begin{warning}
-    \begin{itemize}
-        \item Works for more than 2 agents. 
-        \item Don't need to know anyone else's reward function. 
-        \item Has to be turn taking but can be not alternating (i.e. immediate switch between agents)
-        \item Can augment simultaneous actions 
-        \item Communication 
-        \item Works fo rnon-zero sum games. 
-    \end{itemize}
-\end{warning}
+\begin{algo}
+    \begin{enumerate}
+        \item Simulation: Traverse using the random policy until a terminal node is reached. 
+        \customFigure[0.4]{../Images/L12_8.png}{}
+        \begin{itemize}
+            \item \textbf{Overview:} Using random policy to simulate the game until a terminal state is reached (i.e. reward is obtained).
+        \end{itemize}
+        \item Back-propogation: Get the reward and reverse; update $n(a)$ and $\hat{q}(s,a)$.
+        \customFigure[0.4]{../Images/L12_9.png}{}
+        \begin{itemize}
+            \item \textbf{Two Player:} Go up the path in yellow and update the values of $n(s,a)$ and $\hat{q}(s,a)$ for OUR agent only (i.e. the upper triangle) except the simulation edges.
+            \item \textbf{One Player:} Go up the path in yellow and update the values of $n(s,a)$ and $\hat{q}(s,a)$ for everything except the simulation edges.
+            \item \textbf{Key:} Do not update the edges that were obtained from simulation due to it being a random policy. Only update the edges from selection and expansion.
+        \end{itemize}
+    \end{enumerate}
+\end{algo}
+
+% \begin{warning}
+%     \begin{itemize}
+%         \item Works for more than 2 agents. 
+%         \item Don't need to know anyone else's reward function. 
+%         \item Has to be turn taking but can be not alternating (i.e. immediate switch between agents)
+%         \item Can augment simultaneous actions 
+%         \item Communication 
+%         \item Works fo rnon-zero sum games. 
+%     \end{itemize}
+% \end{warning}
 
 \subsection{1 Player vs. 2 Player Turn-Taking Game Tree}
 \begin{notes}
     \begin{itemize}
         \item 1 Player: 
         \begin{itemize}
-            \item 
+            \item Don't have to worry about who gets the reward at the end for simulation. Always P1
+            \item Selection: Have to calculate UCB for all edges. 
+            \item Backpropogation: Keep track of $n(s,a)$ and $\hat{q}(s,a)$ for all edges. 
         \end{itemize}
         \item 2 Player: 
         \begin{itemize}
-            \item 
+            \item Have to worry about who gets the reward at the end for simulation. 
+            \begin{itemize}
+                \item Even number of transitions for simulation: P1 gets the reward
+                \item Odd number of transitions for simulation: P2 gets the reward
+            \end{itemize}
+            \item Selection: Have to calculate UCB for our agent only and given the other agent's policy. 
+            \item Backpropogation: Don't keep track of $n(s,a)$ and $\hat{q}(s,a)$ for the other agent. 
         \end{itemize}
     \end{itemize}
 \end{notes}
