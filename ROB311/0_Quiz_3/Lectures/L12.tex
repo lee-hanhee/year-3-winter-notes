@@ -163,12 +163,26 @@
         \item Initialize $\alpha = -\infty$ and $\beta = +\infty$
         \item Iterate through the game tree:
         \begin{itemize}
-            \item If the maximizer is the turn-taker, then update $\alpha$ to the maximum value of $s$'s successors as they are explored.
-            \item If the minimizer is the turn-taker, then update $\beta$ to the minimum value of $s$'s successors as they are explored.
+            \item If the maximizer is the turn-taker, then update $\alpha$ to the maximum value of $s$'s direct children as they are explored.
+            \item If the minimizer is the turn-taker, then update $\beta$ to the minimum value of $s$'s direct children as they are explored.
         \end{itemize}
         \item Nodes are pruned if $\alpha \geq \beta$
     \end{enumerate}
 \end{process}
 
+\begin{warning}
+    \begin{itemize}
+        \item Minimizer nodes: $\beta$ gets changed and $\alpha$ never gets changed
+        \item Maximizer nodes: $\alpha$ gets changed and $\beta$ never gets changed
+        \item Pattern: Go down the left branch of the tree until you reach a leaf node, then go back up to the parent node and go down the right branch of the tree until you reach a leaf node, ...
+        \item Pruning: When you shortcut to just take the max value at the leaf (maximizer) or min value at the leaf (minimizer), make sure to prune the other branches that haven't been explored yet if $\alpha \geq \beta$
+    \end{itemize}
+
+\end{warning}
+
 \begin{example} \href{https://pascscha.ch/info2/abTreePractice/}{Alpha-Beta Pruning Practice}
+\end{example}
+
+\begin{example}
+    \customFigure[1]{../Images/L12_13.png}{}
 \end{example}
