@@ -50,37 +50,6 @@
 \end{summary}
 \newpage
 
-\subsection{Attribution}
-\begin{motivation}
-    One tool in the interpretability toolkit
-\end{motivation}
-
-\begin{definition}
-    Attribution techniques assign ranked importance values to parts of the input that relate to the output. 
-\end{definition}
-
-\subsubsection{Issues}
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Issue} & \textbf{Description} \\
-            \midrule
-            \textbf{Spurious Correlations} & Correlations learned by a model that appear predictive in the training data, \\
-            & but do not reflect true causal relationships in the real world. \\
-            \midrule
-            \textbf{Dataset Biases} & Systematic distortions in the training data \\
-            & that misrepresent the underlying population or task, \\
-            & leading to unfair or inaccurate model predictions. \\
-            \midrule
-            \textbf{Imperfect Model} & Models do not have perfect accuracy so attributions \\
-            & are likely to not be perfectly accurate \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
 \subsection{Examples}
 \subsubsection{Interpretability in LLMs}
 \begin{example}
@@ -88,83 +57,5 @@
     \begin{itemize}
         \item \textbf{LS:} Inputs feed into a neural network (NN), which then outputs some prediction. Interpretability is easier here.
         \item \textbf{LLM:} Interpretability is very hard for next token prediction so need to use mechanistic interpretability.
-    \end{itemize}
-\end{example}
-\newpage
-
-\subsubsection{Attribution for Scientific Discovery: Olfaction}
-\begin{example}
-    \begin{enumerate}
-        \item \textbf{Overview:} Identifying mechanisms and patterns is at the heart of formulating a scientific hypothesis.
-        \begin{itemize}
-            \item \textbf{Olfaction:} Sense of smell from chemicals 
-        \end{itemize}
-        \item \textbf{Boelens' Rose Rule:} A chemical compound smells like rose if: 
-        \begin{itemize}
-            \item \textbf{Functional Group:} OH, OR or OCOR
-            \item \textbf{Carbon Chain:} Carbon atoms
-            \item \textbf{F:} Alpha-branched, unsaturated, or aromatic phenyl moiety. 
-        \end{itemize}
-        \customFigure[0.75]{../../Images/L16_2.png}{}
-        \item \textbf{Problem:} Want to build attributions that can explain the rose rule.
-        \item \textbf{Solution:} Easily build attributions with generalized linear models and bag of subgraphs for graphs (in a linear way).
-        \customFigure[0.75]{../../Images/L16_3.png}{}
-        \begin{itemize}
-            \item \textbf{Molecular Fingerprints:} Molecular structures (graphs) are converted into vectors.
-            \begin{itemize}
-                \item \textbf{Bag of Subgraphs:} Each dimension encodes the presence of a subgraph.
-            \end{itemize}
-            \item \textbf{Model:} A GLM processes these fingerprint vectors to output a prediction (smell like rose or not).
-            \begin{itemize}
-                \item $W$: Learned weights 
-                \item $x$: Molecular fingerprint vector
-            \end{itemize}
-            \item \textbf{Attribution:} \( att = W \cdot x \) provides a linear attribution score per subgraph, indicating its contribution to the prediction.
-            \item \textbf{Interpretation:} Positive weights in \( W \) correlate with subgraphs associated with positive labels (e.g., rose scent).
-        \end{itemize}        
-        \newpage
-        \item \textbf{Spurious Correlation Issue:} Statistical patterns in our dataset can affect the weights (and explanations) of our model
-        \customFigure[0.75]{../../Images/L16_4.png}{}
-        \begin{itemize}            
-            \item \textbf{Spurious Correlation vs. Significant Subgraph:} Distinguishes between features that are 
-            \begin{itemize}
-                \item \textbf{Actual Correlation:} Significant subgraphs
-                \item \textbf{Spurious Correlation:} Coincidentally correlated with the target label in the training data.
-            \end{itemize}
-        
-            \item \textbf{Training Set:} GLM learns to associate both real and spurious features with the label "rose" during training (i.e. red subgraph and blue spurious correlation).
-        
-            \item \textbf{Test Set:} If the spurious correlations are not present in the test data (i.e. blue not present), the model may:
-            \begin{itemize}
-                \item fail to predict the correct label.
-                \item provide misleading or weak attributions.
-                \item still succeed due to overlapping structure but without reliable attribution.
-            \end{itemize}
-        \end{itemize}
-        \item \textbf{Imperfect Model:}
-        \customFigure[0.75]{../../Images/L16_5.png}{}
-        \begin{itemize}
-            \item \textbf{Purpose:} If a model does not perform perfectly, its attributions—used for interpretability—may also be unreliable or misleading.        
-            \item \textbf{Interpretation:}
-            \begin{itemize}
-                \item \textbf{AuROC = 1.0}, while the model achieves perfect accuracy, the attributions may still reflect spurious or dataset-specific patterns rather than causal substructures.
-                \item \textbf{AuROC = 0.75}, the model makes occasional errors, and the attributions become weaker and less focused.
-                \item \textbf{AuROC = 0.5}, the model performs no better than random guessing, and the attributions are essentially meaningless or noise.
-            \end{itemize}
-            \item \textbf{Solution:} Use an MLP, but lose access to interpretable weights. 
-        \end{itemize}        
-    \end{enumerate}
-\end{example}
-
-\begin{warning}
-    Perfect models does not mean perfect attributions as it depends on data, splits, etc. 
-\end{warning}
-\newpage
-
-\subsubsection{Spurious Correlation: Wolf vs. Dog}
-\begin{example}
-    \customFigure[0.75]{../../Images/L16_6.png}{}
-    \begin{itemize}
-        \item \textbf{Spurious Correlation:} Predicts wolf not because of the characteristics of the wolf, but because of the snow.
     \end{itemize}
 \end{example}
