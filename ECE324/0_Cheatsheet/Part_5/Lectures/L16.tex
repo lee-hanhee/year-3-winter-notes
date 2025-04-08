@@ -1,5 +1,22 @@
 \begin{motivation}
-
+    A single metric is an incomplete description of most real-world tasks. 
+    \begin{enumerate}
+        \item Improve models
+        \item Justify models \\
+        $
+        \left.
+        \begin{array}{l}
+        \text{a. Creators} \\
+        \text{b. Operators} \\
+        \text{c. Executors} \\
+        \text{d. Decision} \\
+        \text{e. Auditors} \\
+        \text{f. Data Subjects}
+        \end{array}
+        \right\} \text{Stakeholders of a AI System}
+        $
+        \item Discover Insights 
+    \end{enumerate}
 \end{motivation}
 
 \subsection{What is Interpretability?}
@@ -13,8 +30,24 @@
 \end{definition}
 
 \subsection{Types of Interpretability}
-
-\subsubsection{Neural Network Analogies}
+\begin{summary}
+    \customFigure[0.5]{../../Images/L16_0.png}{}
+    \begin{itemize}
+        \item \textbf{ML Interpretability:} 
+        \begin{itemize}
+            \item \textbf{By-design:} Interpretability built directly into the model (e.g., decision trees, linear models).
+            \item \textbf{Post-hoc:} Interpretability techniques are applied after the model is trained, without altering the model.
+            \begin{itemize}
+                \item \textbf{Model-agnostic:} Interpretation methods that can be applied to any model.
+                \begin{itemize}
+                    \item \textbf{Global:} Provides an overall understanding of the model’s behavior across the entire dataset.
+                    \item \textbf{Local:} Explains the model’s prediction for a specific input instance.
+                \end{itemize}
+                \item \textbf{Model-specific:} Interpretation methods that are tailored to specific models.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}    
+\end{summary}
 
 
 
