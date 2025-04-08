@@ -99,7 +99,7 @@
 \subsection{Examples}
 \subsubsection{Interpretability in LLMs}
 \begin{example}
-    \customFigure[0.75]{../../Images/L16_1.png}{}
+    \customFigure[0.5]{../../Images/L16_1.png}{}
     \begin{itemize}
         \item \textbf{LS:} Inputs feed into a neural network (NN), which then outputs some prediction. Interpretability is easier here.
         \item \textbf{LLM:} Interpretability is very hard for next token prediction so need to use mechanistic interpretability.
@@ -158,6 +158,16 @@
         \end{itemize}
         \item \textbf{Imperfect Model:}
         \customFigure[0.75]{../../Images/L16_5.png}{}
+        \begin{itemize}
+            \item \textbf{Purpose:} If a model does not perform perfectly, its attributions—used for interpretability—may also be unreliable or misleading.        
+            \item \textbf{Interpretation:}
+            \begin{itemize}
+                \item \textbf{AuROC = 1.0}, the model is perfectly accurate, and the attribution highlights the truly relevant subgraphs.
+                \item \textbf{AuROC = 0.75}, the model makes occasional errors, and the attributions become weaker and less focused.
+                \item \textbf{AuROC = 0.5}, the model performs no better than random guessing, and the attributions are essentially meaningless or noise.
+            \end{itemize}
+            \item \textbf{Solution:} Use an MLP, but lose access to interpretable weights. 
+        \end{itemize}        
     \end{enumerate}
 \end{example}
 \newpage
