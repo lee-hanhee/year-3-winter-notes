@@ -1,24 +1,45 @@
 \subsection{Does Interpretability Make Us Better?}
+\begin{notes}
+    Maybe
+    \begin{itemize}
+        \item Machine concepts can be different than human concepts. 
+        \customFigure[0.5]{../../Images/L17_8.png}{}
+    \end{itemize}
+\end{notes}
 
 \subsection{Mechanistic Interpretability}
 \begin{motivation}
     Necessary b/c AI and humans use different representations and perform different tasks. 
 \end{motivation}
 \begin{definition}
-    Reverse engineering the algorithm of a NN. 
-    \customFigure[0.5]{../../Images/L17_6.png}{}
+    Reverse engineering the algorithm of a NN.
+\end{definition}
+
+\subsubsection{Iterative Process}
+\begin{notes}
+    \customFigure[0.75]{../../Images/L17_6.png}{}
     \begin{itemize}
-        \item \textbf{Step 1 Network:} The process begins with a trained neural network whose structure and learned parameters are opaque and require analysis.
-        \item \textbf{Step 2 Decomposition:} The network is decomposed into interpretable components, such as identifying groups of neurons or paths that contribute to specific outputs.
-        \item \textbf{Step 3 Hypotheses:} Researchers formulate hypotheses about the function of specific neurons or subnetworks. These are often expressed as simplified algorithms mapping input representations to outputs.
-        \item \textbf{Step 4 Validation:} The hypotheses are empirically tested against the network's behavior to validate whether they accurately explain the underlying computation.
-        \item \textbf{Iterative Process:} If validation fails or is inconclusive, the process loops back to earlier stages (decomposition or hypothesis generation) to refine the understanding.
+        \item \textbf{Step 1 Network:} Trained neural network.
+        \item \textbf{Step 2 Decomposition:} Network is decomposed into interpretable components, such as 
+        \begin{itemize}
+            \item identifying groups of neurons
+            \item paths that contribute to specific outputs.
+        \end{itemize}
+        \item \textbf{Step 3 Hypotheses:} Formulate hypotheses about the function of specific neurons or subnetworks. 
+        \item \textbf{Step 4 Validation:} Hypotheses are empirically tested against the network's behavior to validate whether they accurately explain the underlying computation.
     \end{itemize}    
+\end{notes}
+
+\subsubsection{Superposition}
+\begin{notes} Neural networks encode multiple abstract concepts in overlapping representations, and introduces strategies for disentangling them.
     \customFigure[0.5]{../../Images/L17_7.png}{}
     \begin{itemize}
-        \item 
-    \end{itemize}
-\end{definition}
+        \item \textbf{Linear Representation Hypothesis:} Neural activations can be linearly decomposed into directions corresponding to distinct features. 
+        \item \textbf{Superposition:} Multiple concepts are often encoded within the same neuron or direction in the representation space.
+        \item \textbf{Sparse Dictionary Learning:} Techniques such as sparse coding or L1 regularization can help disentangle overlapping representations by promoting sparsity to assign each neuron to a specific concept.
+    \end{itemize}    
+\end{notes}
+\newpage
 
 \subsection{Attribution Study}
 \begin{summary}
@@ -42,6 +63,11 @@
 \end{summary}
 
 \subsection{Examples}
+\subsubsection{Sanity Checks for Saliency Maps}
+\begin{example}
+    
+\end{example}
+
 \subsubsection{Finding Concepts within LLMs}
 \begin{example}
     
