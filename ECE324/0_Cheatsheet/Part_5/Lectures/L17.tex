@@ -25,10 +25,17 @@
             \toprule
             \textbf{Method} & \textbf{Description} \\
             \midrule
-            \textbf{CAM (Gradient-less)} & \\
+            \textbf{Class Activation Mapping (CAM - Gradient-less)} & $L_{\text{CAM}}^c = \sum_k w_k^c A^k$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item 
+                \item \textbf{What?} Produces a heatmap highlighting image regions important for a classification decision
+                \item \textbf{How?} Weighting the feature maps of the final convolutional layer by the output layer weights.
+                \begin{itemize}
+                    \item $w_k^c$: weight of the $k$-th feature map for class $c$
+                    \item $A^k$: $k$-th feature map (image-shaped)
+                    \item $L_{\text{CAM}}^c$: class activation map for class $c$
+                \end{itemize}
+                
             \end{itemize}} \\
             \midrule
             \textbf{Integrated Gradients} & \\
