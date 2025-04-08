@@ -1,12 +1,3 @@
-\subsection{Does Interpretability Make Us Better?}
-\begin{notes}
-    Maybe
-    \begin{itemize}
-        \item Machine concepts can be different than human concepts. 
-        \customFigure[0.5]{../../Images/L17_8.png}{}
-    \end{itemize}
-\end{notes}
-
 \subsection{Mechanistic Interpretability}
 \begin{motivation}
     Necessary b/c AI and humans use different representations and perform different tasks. 
@@ -61,14 +52,40 @@
 
 \begin{summary}
 \end{summary}
+\newpage
 
 \subsection{Examples}
 \subsubsection{Sanity Checks for Saliency Maps}
 \begin{example}
-    
+    \customFigure[0.6]{../../Images/L17_9.png}{}
+    \customFigure[0.6]{../../Images/L17_10.png}{}
+    \customFigure[0.6]{../../Images/L17_11.png}{Randomly initialized neural networks give okay attributions}
+\end{example}
+\newpage
+
+\subsubsection{Are they really that important?}
+\begin{example} Removing importance pixels, replace for mean and retrain model.
+    \customFigure[0.75]{../../Images/L17_12.png}{}
 \end{example}
 
-\subsubsection{Finding Concepts within LLMs}
+\subsubsection{What does a Neural Network think a Banana is?}
 \begin{example}
-    
+    Starting from noise, optimizing for a class label.
+    \customFigure[0.75]{../../Images/L17_13.png}{}
+\end{example}
+\newpage
+
+\subsubsection{Does Interpretability Make Us Better?}
+\begin{notes}
+    Maybe
+    \begin{itemize}
+        \item Machine concepts can be different than human concepts. 
+        \customFigure[0.5]{../../Images/L17_8.png}{}
+        \item Can align human concepts with machine concepts.
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Finding Concepts within LLMs}
+\begin{example} Features that activate on abstract concepts. 
+    \customFigure[0.75]{../../Images/L17_14.png}{}
 \end{example}
