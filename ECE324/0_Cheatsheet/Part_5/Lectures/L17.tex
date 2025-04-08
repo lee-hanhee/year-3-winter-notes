@@ -1,0 +1,62 @@
+\subsection{General Trick: Gradients as Importance}
+\begin{definition}
+    Use the gradient as a proxy for importance:
+    \begin{equation*}
+        \text{att} \approx \frac{dy}{dx} \cdot x
+    \end{equation*}
+    \customFigure[0.75]{../../Images/L16_7.png}{}
+\end{definition}
+
+\begin{warning}
+    The shape of the gradient is the same as the shape of the input.
+    \begin{itemize}
+        \item $\frac{d\text{image}}{dy} \rightarrow \text{image-shaped gradient}$
+    \end{itemize}
+    \begin{itemize}
+        \item $\frac{d\text{graph}}{dy} \rightarrow \text{graph-shaped gradient}$
+    \end{itemize}
+    \customFigure[0.75]{../../Images/L17_0.png}{}
+\end{warning}
+
+\subsection{Attribution Methods}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Method} & \textbf{Description} \\
+            \midrule
+            \textbf{CAM (Gradient-less)} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \midrule
+            \textbf{Integrated Gradients} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \midrule
+            \textbf{Gradient $\times$ Input} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \midrule
+            \textbf{GradCAM} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \midrule
+            \textbf{Smooth Grad} & \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item 
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+
+\subsection{Examples}

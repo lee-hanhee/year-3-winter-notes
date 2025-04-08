@@ -86,16 +86,6 @@
 \end{summary}
 \newpage
 
-\subsubsection{Tools}
-\begin{summary}
-    Use the gradient as a proxy for importance:
-    \begin{equation*}
-        \text{att} \approx \frac{dy}{dx} \cdot x
-    \end{equation*}
-    \customFigure[0.75]{../../Images/L16_7.png}{}
-\end{summary}
-\newpage
-
 \subsection{Examples}
 \subsubsection{Interpretability in LLMs}
 \begin{example}
@@ -162,7 +152,7 @@
             \item \textbf{Purpose:} If a model does not perform perfectly, its attributions—used for interpretability—may also be unreliable or misleading.        
             \item \textbf{Interpretation:}
             \begin{itemize}
-                \item \textbf{AuROC = 1.0}, the model is perfectly accurate, and the attribution highlights the truly relevant subgraphs.
+                \item \textbf{AuROC = 1.0}, while the model achieves perfect accuracy, the attributions may still reflect spurious or dataset-specific patterns rather than causal substructures.
                 \item \textbf{AuROC = 0.75}, the model makes occasional errors, and the attributions become weaker and less focused.
                 \item \textbf{AuROC = 0.5}, the model performs no better than random guessing, and the attributions are essentially meaningless or noise.
             \end{itemize}
@@ -170,6 +160,10 @@
         \end{itemize}        
     \end{enumerate}
 \end{example}
+
+\begin{warning}
+    Perfect models does not mean perfect attributions as it depends on data, splits, etc. 
+\end{warning}
 \newpage
 
 \subsubsection{Spurious Correlation: Wolf vs. Dog}
