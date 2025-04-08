@@ -1,7 +1,0 @@
-\babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Lab 0: Setup}{3}{section.1}%
-\contentsline {section}{\numberline {2}Development Containers (devcontainers)}{3}{section.2}%
-\contentsline {section}{\numberline {3}Git}{3}{section.3}%
-\contentsline {section}{\numberline {4}GitHub}{3}{section.4}%
-\contentsline {section}{\numberline {5}Lab 1}{5}{section.5}%
-\contentsline {section}{\numberline {6}Lab 2}{7}{section.6}%
