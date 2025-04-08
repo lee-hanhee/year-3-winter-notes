@@ -15,8 +15,13 @@
     \begin{itemize}
         \item $\frac{d\text{graph}}{dy} \rightarrow \text{graph-shaped gradient}$
     \end{itemize}
-    \customFigure[0.75]{../../Images/L17_0.png}{}
+    \customFigure[0.5]{../../Images/L17_0.png}{}
 \end{warning}
+
+\subsubsection{Saliency Maps}
+\begin{definition}
+    Attribution method that highlights the most important regions in an input image for a model's prediction. 
+\end{definition}
 
 \subsection{Attribution Methods}
 \begin{summary}
@@ -44,27 +49,65 @@
                 \item \textbf{What?} Feature importance via gradient magnitude
                 \customFigure[0.6]{../../Images/L17_2.png}{}
             \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Method} & \textbf{Description} \\
             \midrule
-            \textbf{Integrated Gradients} & \\
+            \textbf{GradCAM} & $L_{\text{Grad-CAM}}^c = \text{ReLU} \left(\sum_k \alpha_k^c A^k \right)$\\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item 
+                \item \textbf{What?} Class-discriminative localization via gradients to highlight important regions in the input image for predicting a specific class. 
+                \item \textbf{How?} Using gradients flowing into the final convolutional layer to produce a coarse localization map.
+                \begin{itemize}
+                    \item \textbf{Similar to CAM:} CAM with gradient information and ReLU activation
+                    \item $\alpha_k^c = \frac{1}{Z} \sum_i \sum_j \frac{\partial y^c}{\partial A_{ij}^k}$: weight of the $k$-th feature map for class $c$
+                    \item $A^k$: $k$-th feature map (image-shaped)
+                \end{itemize}
+                \customFigure[0.5]{../../Images/L17_3.png}{}
             \end{itemize}} \\
             \midrule
-            \textbf{GradCAM} & \\
+            \textbf{Smooth Grad} & $\tilde{G}(\mathbf{x}) = \frac{1}{N} \sum_{i=1}^N \nabla F(\mathbf{x} + \mathcal{N}(0,\sigma^2))$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item 
-            \end{itemize}} \\
-            \midrule
-            \textbf{Smooth Grad} & \\
-            \multicolumn{2}{p{\linewidth}}{
-            \begin{itemize}
-                \item 
+                \item \textbf{What?} Reduce noise in saliency maps using SmoothGrad 
+                \item \textbf{How?} By averaging the gradients of the model's output with noise as well. 
+                \customFigure[0.6]{../../Images/L17_4.png}{}
             \end{itemize}} \\
             \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
+\newpage
 
-\subsection{Examples}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Method} & \textbf{Description} \\
+            \midrule
+            \textbf{Attention Maps + Gradients} & An attribution method that combines attention weights \\
+            & with input gradients to estimate the contribution of each input token \\ 
+            & to the model’s prediction \\
+            \midrule
+            \textbf{Integrated Gradients} & \textbf{Completeness:} $\sum_{i=1}^{d} \mathrm{IG}_i(\mathbf{x}) = F(\mathbf{x}) - F(\mathbf{x}')$ \\
+            & \textbf{Linearity:} $\mathrm{IG}_{F+G}(\mathbf{x}) = \mathrm{IG}_F(\mathbf{x}) + \mathrm{IG}_G(\mathbf{x})$ \\
+            & \textbf{Implementation Invariance:} $F'(\mathbf{x}) = F(\mathbf{x}) \Rightarrow \mathrm{IG}'(\mathbf{x}) = \mathrm{IG}(\mathbf{x})$ \\
+            & \textbf{Sensitivity:} $\mathbf{x}_i - \mathbf{x}'_i \ne 0 \land F(\mathbf{x}) \ne F(\mathbf{x}') \Rightarrow \exists i \text{ s.t. } \mathrm{IG}_i(\mathbf{x}) \ne 0$ \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \item \textbf{What?} Decompose predictions into feature contributions by aiming to explain the contribution of each input feature to a model's prediction. 
+                \item \textbf{How?} By accumulating gradients along a path from a baseline input to the actual input. 
+                \customFigure[0.5]{../../Images/L17_5.png}{}
+            \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
