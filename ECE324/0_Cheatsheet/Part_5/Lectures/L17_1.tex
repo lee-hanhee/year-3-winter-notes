@@ -64,7 +64,24 @@
 
 \subsubsection{Attribution Qualities in a Controlled Setting}
 \begin{example}
-    
+    \begin{enumerate}
+        \item \textbf{Given}
+        \customFigure[0.75]{../../Images/L17_16.png}{}
+        \item \textbf{1 Attribution Accuracy:} Attribution performance for perfect models (>0.95 AUROC). Values are average for 10\% top performing models across 195 hyperparameter combinations and 7 random seeds.
+        \customFigure[0.75]{../../Images/L17_17.png}{}
+        \item \textbf{1/3 Attribution Accuracy \& Consistency During Training:} Prediction and attribution performance during training of a GCN for a subgraph logic task. Shaded area is variance across 10 random seeds. 
+        \customFigure[0.75]{../../Images/L17_18.png}{}
+        \item \textbf{1/3 Attribution Accuracy \& Consistency During Training: Performance for Untrained Networks} Attribution performance for untrained networks for a subgraph logic task. Boxplots are from 25 random seeds. 
+        \customFigure[0.75]{../../Images/L17_19.png}{}
+        \item \textbf{3 Attribution Consistency: Regularization} Attribution performance for networks with different L2 regularization coefficient for a subgraph logic task. Boxplots are from 10 random seeds. 
+        \customFigure[0.75]{../../Images/L17_20.png}{}
+        \item \textbf{2 Attribution Faithfulness via Label Noise:} Attribution performance for handicapped models: Noise is added to labels to limit predictive performance. Boxplots come from 25 random seeds.
+        \customFigure[0.75]{../../Images/L17_22.png}{}
+        \item \textbf{2 Attribution Faithfulness:} Attribution performance in datasets with spurious correlations. We introduce the correlated presence of another subgraph and measure attribution on the correlated and uncorrelated tasks. 
+        \customFigure[0.75]{../../Images/L17_25.png}{}
+        \item \textbf{4 Attribution Stability:} We perturb multiple times a graph without changing the label and look at the delta in attribution performance. 
+        \customFigure[0.75]{../../Images/L17_26.png}{}
+    \end{enumerate}
 \end{example}
 \newpage
 
