@@ -6,6 +6,28 @@
     \end{itemize}
 \end{notes}
 
+\subsection{Inputs and Outputs of LLMs}
+\begin{notes}
+    \begin{itemize}
+        \item \textbf{Inputs:} Tokenizing text and embedding layers
+        \customFigure[0.6]{../../Images/L15_1.png}{}
+        \vspace{-1em}
+        \begin{itemize}        
+            \item \textbf{Text to Tokens:} The input text is split into subword chunks using a tokenizer.
+            \item \textbf{Token to IDs:} Each token is mapped to a unique integer ID based on a fixed vocabulary.
+            \item \textbf{Embedding Lookup:} Token IDs are passed through an embedding layer, producing vector representations of the tokens.
+            \item \textbf{Text Embeddings:} The output of the embedding layer is a sequence of learned vectors (color-coded), one for each token, which serve as input to the Transformer model.
+        \end{itemize}        
+        \item \textbf{Outputs:} Auto-regressive decoding of tokens (one at a time) using previous outputs
+        \customFigure[0.6]{../../Images/L15_2.png}{}
+        \vspace{-1em}
+        \begin{itemize}
+            \item \textbf{Auto-Regressive Decoding:} Predicts each output token sequentially. At time step $t$, the decoder generates the $t^\text{th}$ token using previously generated outputs from steps $1$ to $t-1$.
+        \end{itemize}        
+    \end{itemize}
+\end{notes}
+\newpage
+
 \subsection{Transformers \& LLMs}
 \begin{summary}
     \begin{center}
@@ -17,22 +39,56 @@
             \midrule
             Text to Text Tasks & Many tasks can be framed as text-to-text problems. \\
             \midrule
-            Transformers \& Masking: Encoders \& Decoders & \\
+            Transformers \& Masking: Encoders \& Decoders & Transfomers fit the encoder decoder paradigm. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \customFigure[0.6]{../../Images/L15_0.png}{}
+                \vspace{-1em}
+                \item \textbf{T5 (Encoder-Decoder):}
+                \begin{itemize}
+                    \item \textbf{Encoder:} Input tokens $x_1, x_2, x_3, x_4$ are processed by the encoder.
+                    \begin{itemize}
+                        \item \textbf{Fully-visible masking} is used from the encoder to the decoder (dark grey lines).
+                    \end{itemize}
+                    \item \textbf{Decoder:} Decoder attends to all encoder outputs and previously generated outputs $y_1, y_2$.
+                    \begin{itemize}
+                        \item \textbf{Causal masking} to prevent attending to future outputs.
+                    \end{itemize}
+                \end{itemize}
+            
+                \item \textbf{GPT-3 (Decoder-only Language Model):}
+                \begin{itemize}
+                    \item Inputs consist of all prior tokens ($x_1, x_2, x_3, y_1, y_2, \ldots$).
+                    \item \textbf{Causal masking} throughout to ensure autoregressive behavior—i.e., each token only attends to previous tokens.
+                \end{itemize}
+            
+                \item \textbf{Attention Mask Patterns:} Dark squares denote visible connections; light squares denote masked (inaccessible) tokens.
+                \begin{itemize}
+                    \item \textbf{Fully-visible mask:} Every token can attend to every other token 
+                    \item \textbf{Causal mask:} Tokens can only attend to previous or current tokens 
+                \end{itemize}
+            \end{itemize}} \\
             \midrule 
             Masked Language Modelling & Predicting masked tokens in a sequence. \\
+            \multicolumn{2}{p{\linewidth}}{
+            \begin{itemize}
+                \customFigure[0.6]{../../Images/L15_3.png}{}
+                \vspace{-1em}
+                \item \textbf{Original Text:} Selected spans (e.g., "for inviting", "last") are masked and replaced with sentinel tokens.
+                \item \textbf{Inputs:} The corrupted version of the sentence is given as input to the model:
+                \begin{itemize}
+                    \item Tokens \texttt{<X>} and \texttt{<Y>} indicate the location and order of the masked spans.
+                \end{itemize}
+                \item \textbf{Targets:} The decoder is trained to predict the concatenated masked spans, each preceded by its corresponding token:
+            \end{itemize}} \\
             \midrule
-            Inputs & Tokenizing Text \& Embedding Layers \\
-            \midrule
-            Outputs & Auto-Regressive Decoding of Tokens \\
-            & Decoding one token at a time, using previous outputs \\
         \end{tabular}
     \end{center}
 \end{summary}
-\newpage
 
 \subsection{Scaling LLMs}
 \begin{motivation}
-    
+
 \end{motivation}
 
 \subsubsection{Techniques}
