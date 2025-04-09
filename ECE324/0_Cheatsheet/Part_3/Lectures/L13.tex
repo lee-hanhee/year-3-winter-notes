@@ -87,15 +87,13 @@
             \end{itemize}
             \item These define the directed edges: $(0,1), (0,2), (1,3), (2,0), (2,4)$.
         \end{itemize}
-        \item \textbf{Gather Operation:}
+        \item \textbf{Gather Operation:} Gathers features from the source nodes using the \texttt{index} vector.
         \begin{itemize}
-            \item Gathers features from the source nodes using the \texttt{index} vector.
             \item This step retrieves features for each edge from the source node.
             \item PyTorch syntax: \texttt{torch.gather(input, dim, index)}
         \end{itemize}
-        \item \textbf{Scatter Operation:}
+        \item \textbf{Scatter Operation:} Scatters (adds) gathered features to destination nodes.
         \begin{itemize}
-            \item Scatters (adds) gathered features to destination nodes.
             \item For each destination node, incoming messages are aggregated using a reduction operation (e.g., \texttt{sum}).
             \item PyTorch Scatter syntax: \texttt{torch\_scatter.scatter(src, index, dim, reduce='sum')}
         \end{itemize}
