@@ -173,6 +173,39 @@
 \newpage
 
 \subsection{High-Level Impacts}
-\begin{summary}
+\subsubsection{Costs}
+\begin{notes}
+    \begin{itemize}
+        \item Scaling LLMs parameters $\alpha$ Cost 
+        \item R\&D Staff, AI Accelerator Chips, other server components, cluster-level interconnect, and energy costs for training and experiments of ML models. 
+    \end{itemize}
+\end{notes}
 
-\end{summary}
+\subsubsection{Neural Scaling Laws: Predicting Performance in DL}
+\begin{notes}
+    Understanding the relationship b/w model size, data, and compute. 
+    \begin{itemize}
+        \item $\text{Performance} \propto N^{\alpha}, D^{\beta}, C^{\gamma}$
+        \begin{itemize}
+            \item $D$: Dataset size (tokens), $N$: \# of parameters, $C$: Compute time (FLOPS)
+        \end{itemize}
+        \customFigure[0.5]{../../Images/L15_13.png}{}
+        \vspace{-1em}
+        \customFigure[0.5]{../../Images/L15_14.png}{}
+        \vspace{-1em}
+        \customFigure[0.5]{../../Images/L15_15.png}{}
+    \end{itemize}
+\end{notes}
+
+\subsubsection{Bitter Lesson}
+\begin{warning}
+    \begin{itemize}
+        \item \textbf{1)} AI researchers have historically attempted to embed explicit knowledge into their agents.
+        
+        \item \textbf{2)} This approach often yields short-term gains and can be personally rewarding to the researcher.
+    
+        \item \textbf{3)} However, such knowledge-based systems eventually plateau and may even hinder long-term progress.
+    
+        \item \textbf{4)} Major breakthroughs typically result from a contrasting strategy—scaling up computation and leveraging learning and search algorithms instead of hand-crafted knowledge.
+    \end{itemize}    
+\end{warning}
