@@ -76,7 +76,7 @@
 
 \subsubsection{Gather + Scatter for Advanced Indexing}
 \begin{notes}
-    \customFigure[0.75]{../../Images/L13_5.png}{}
+    \customFigure[0.75]{../../Images/L13_5.png}{Arrows depict how values are selected (\texttt{gather}) and accumulated (\texttt{scatter}) to produce the \texttt{output}}
     \begin{itemize}    
         \item \textbf{Adjacency List Representation:}
         \begin{itemize}
@@ -90,18 +90,10 @@
         \item \textbf{Gather Operation:} Gathers features from the source nodes using the \texttt{index} vector.
         \begin{itemize}
             \item This step retrieves features for each edge from the source node.
-            \item PyTorch syntax: \texttt{torch.gather(input, dim, index)}
         \end{itemize}
         \item \textbf{Scatter Operation:} Scatters (adds) gathered features to destination nodes.
         \begin{itemize}
             \item For each destination node, incoming messages are aggregated using a reduction operation (e.g., \texttt{sum}).
-            \item PyTorch Scatter syntax: \texttt{torch\_scatter.scatter(src, index, dim, reduce='sum')}
-        \end{itemize}
-        \item \textbf{Visual Example:}
-        \begin{itemize}
-            \item The top two rows show \texttt{index} and \texttt{input} tensors.
-            \item Arrows depict how values are selected (\texttt{gather}) and accumulated (\texttt{scatter}) to produce the \texttt{output} vector.
-            \item For example, values $5$ and $3$ are both mapped to index $0$, and their sum $8$ appears in the output.
         \end{itemize}
     \end{itemize}    
 \end{notes}
@@ -126,7 +118,7 @@
     \end{itemize}    
 \end{notes}
 
-\subsection{Hyperparameters}
+\subsection{Hyperparameters of GNNs}
 \begin{notes}
     \begin{itemize}
         \item Number of layers
@@ -139,7 +131,22 @@
         \item Optimization
     \end{itemize}
 \end{notes}
-\newpage
+
+\subsection{GCN vs. GAT Node Update:}
+\begin{notes}
+    \textbf{GCN:}
+    \[
+    x_i^{n+1} = \text{act} \left( \sum_{j \in \text{neighbors}} W^n x_j^n \right)
+    \]
+
+    \textbf{GAT:}
+    \[
+    x_i^{n+1} = \text{act} \left( \sum_{j \in \text{neighbors}} \alpha_{ij} W^n x_j^n \right)
+    \]
+    \begin{itemize}
+        \item $\alpha_{ij} \approx \langle Q * x_i, K * x_j \rangle / N$
+    \end{itemize}
+\end{notes}
 
 \subsection{Examples}
 \subsubsection{Message passing / GraphNets on a small graph}
@@ -185,5 +192,49 @@
         \customFigure[0.75]{../../Images/L12_3.png}{}
         \item \textbf{Prediction:}
         \customFigure[0.75]{../../Images/L12_4.png}{}
+    \end{enumerate}
+\end{example}
+\newpage
+
+\subsubsection{GraphNets: Example on Methane Molecules}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:}
+        \customFigure[0.75]{../../Images/L13_6.png}{}
+        \begin{itemize}
+            \item 5 nodes, each with 3-dim. 
+            \item 4 edges, each with 2-dim.
+            \item 1 global, with 1-dim.
+        \end{itemize}
+        \item \textbf{Edge Block $f_E$:}
+        \customFigure[0.75]{../../Images/L13_7.png}{}
+        \begin{enumerate}
+            \item \textbf{Edge of Interest:} $E_i$ connects two nodes, labeled as H and C, $[1 \times 2]$.
+        
+            \item \textbf{Prepare Data:} 
+            \begin{itemize}
+                \item $E_i$: Edge, shape $[1 \times 2]$.
+                \item $X_H$: Feature vector of source node (H), shape $[1 \times 3]$.
+                \item $X_C$: Feature vector of destination node (C), shape $[1 \times 3]$.
+                \item $U$: Global graph-level feature vector, shape $[1 \times 1]$.
+            \end{itemize}
+
+            \item \textbf{Aggregation (Sum):} These features are concatenated into a single vector of shape $[1 \times 9]$.
+            
+            \item \textbf{MLP Update:} The aggregated $[1 \times 9]$ vector is passed through a MLP. 
+
+            \item \textbf{Output:} The MLP outputs an updated edge representation $E_{i,\text{new}}$ of shape $[1 \times 2]$.
+        \end{enumerate}
+        \newpage
+        \item \textbf{Node Block $f_V$:}
+        \customFigure[0.75]{../../Images/L13_8.png}{}
+        \begin{enumerate}
+            \item Same idea for the nodes, but note after the update, the node can change dimensions after the update. 
+        \end{enumerate}
+        \item \textbf{Global Block $f_U$:}
+        \customFigure[0.75]{../../Images/L13_9.png}{}
+        \begin{enumerate}
+            \item Same idea for the nodes, but note after the update, the node can change dimensions after the update. 
+        \end{enumerate}
     \end{enumerate}
 \end{example}
