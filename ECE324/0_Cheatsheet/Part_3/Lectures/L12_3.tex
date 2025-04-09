@@ -16,66 +16,7 @@
                 \customFigure[0.75]{../Images/L12_21.png}{}
                 \vspace{-4em}
             \end{center}} \\
-            \midrule
-            \textbf{Conditioning Info} & Many ways of adding context to a specific part of a graph \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_23.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
-\subsection{Graph Topics}
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Concept} & \textbf{Description} \\
-            \midrule
-            Learning subgraph representations & Learning a function that works on portions of a graph \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_25.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
-            Batching in graphs & Very context dependent, no general solution \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_26.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
-        \end{tabular}
-    \end{center}
-\end{summary}
-\newpage
-
-\begin{summary}
-    \begin{center}
-        \begin{tabular}{ll}
-            \toprule
-            \textbf{Concept} & \textbf{Description} \\
-            \midrule
-            Heterogeneous graphs & Different types of nodes and edges \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_27.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
-            Interpretability & Many ways to extract information from graphs \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_28.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
-            Attention & Transformers can be viewed as a GNN on a fully connected graph \\
-            \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_29.png}{}
-                \vspace{-4em}
-            \end{center}} \\
-            \midrule
+            \bottomrule
         \end{tabular}
     \end{center}
 \end{summary}
@@ -86,7 +27,7 @@
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:} Nodes (Atoms), Edges (Bonds), Globals (Properties)
-        \customFigure[0.75]{../../Images/L12_2.png}{}
+        \customFigure[0.25]{../../Images/L12_2.png}{}
         \item \textbf{Task:} Predict the smell of the molecule. 
         \item \textbf{Message Passing:}
         \customFigure[0.75]{../../Images/L12_3.png}{}
@@ -97,5 +38,26 @@
 
 \subsubsection{Message passing / GraphNets on a small graph}
 \begin{example}
-    \customFigure[0.75]{../../Images/L12_24.png}{}
+    \customFigure[0.75]{../Images/L12_24.png}{}
+    \begin{itemize}
+        \item \textbf{Input Graph:} 3 nodes (0, 1, 2) and 2 edges: $(0,1)$ and $(1,2)$.
+        \begin{itemize}
+            \item Nodes and edges are initialized with features that will be updated through message passing.
+        \end{itemize}
+    
+        \item \textbf{Step 1 – Update Edges:} Messages are passed along edges.
+        \begin{itemize}
+            \item Edge attributes are updated based on the features of the connected nodes.
+            \item Each edge (e.g., $0 \rightarrow 1$, $1 \rightarrow 2$) aggregates information from the connected nodes to compute new edge embeddings.
+        \end{itemize}
+    
+        \item \textbf{Step 2 – Update Nodes:} Each node collects messages from incoming edges.
+        \begin{itemize}
+            \item Node features are updated by aggregating information from its neighbors
+        \end{itemize}
+    
+        \item \textbf{Step 3 – Update Global State:} A global context vector is computed based on the set of updated node and edge embeddings.
+    
+        \item \textbf{Output Graph:} Graph with updated node, edge, and global features.
+    \end{itemize}    
 \end{example}

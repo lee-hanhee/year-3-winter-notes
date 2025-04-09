@@ -1,3 +1,55 @@
 \subsection{Message Passing}
 
 \subsection{GraphNets}
+
+\subsection{Conditioning Information}
+\begin{notes}
+    Many ways of adding context to a specific part of a graph \\
+    \customFigure[0.75]{../Images/L12_23.png}{}
+    \begin{itemize}
+        \item \textbf{Purpose:} This slide illustrates methods for incorporating contextual information into node-level updates in a graph, enabling richer representations via conditioning.
+    
+        \item \textbf{Context Sources:}
+        \begin{itemize}
+            \item \textbf{Node embedding:} The current embedding of the node being updated.
+            \item \textbf{Adjacent nodes embedding:} Features from neighboring nodes.
+            \item \textbf{Adjacent edges embedding:} Features from edges connected to the current node.
+            \item \textbf{Global embedding:} A summary embedding of the entire graph or subgraph, providing global context.
+        \end{itemize}
+    
+        \item \textbf{Conditioning Function \(\text{cond}(x|z)\):}
+        \begin{itemize}
+            \item Combines all relevant embeddings (\(x\)) conditioned on context (\(z\)) to form a joint representation.
+            \item Implements mechanisms such as:
+            \begin{itemize}
+                \item Concatenation
+                \item Linear layer followed by addition
+                \item Feature-wise Linear Modulation (FiLM)
+            \end{itemize}
+        \end{itemize}
+    
+        \item \textbf{Update Function \(f_{v_n}\):}
+        \begin{itemize}
+            \item A learnable function (e.g., MLP) that maps the conditioned representation to an updated node embedding.
+            \item Enables expressive modeling of interactions between local and contextual features.
+        \end{itemize}
+    
+        \item \textbf{Outcome:} The node embedding is updated based on local features and additional context, improving task-specific performance (e.g., node classification, prediction).
+    
+        \item \textbf{Conclusion:} Conditioning functions enable targeted integration of contextual information into node updates, enhancing the representational power of graph neural networks.
+    \end{itemize}    
+\end{notes}
+
+\subsection{Hyperparameters}
+\begin{notes}
+    \begin{itemize}
+        \item Number of layers
+        \item Dimensionality of embeddings (node, edge, globals)
+        \item Update functions (MLPs, Attention)
+        \item Conditioning mechanisms (concat, add, linear, FiLM)
+        \item Message passing (Nodes, Edges, Globals)
+        \item Aggregation operations (sum, mean, max, min)
+        \item Regularization
+        \item Optimization
+    \end{itemize}
+\end{notes}
