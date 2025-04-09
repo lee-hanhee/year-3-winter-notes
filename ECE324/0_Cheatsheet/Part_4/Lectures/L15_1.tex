@@ -1,0 +1,178 @@
+\begin{motivation}
+    Engineering LLMs for massive computation and dataset ingestion. 
+\end{motivation}
+
+\subsection{Matrix Multiplication and FLOPS}
+\begin{definition}
+    \begin{itemize}
+        \item \textbf{Matrix Multiplication:} The operation of multiplying two matrices, resulting in a new matrix. 
+        \item \textbf{FLOPS:} Floating Point Operations Per Second, a measure of computational performance.
+    \end{itemize}
+\end{definition} 
+\newpage
+
+\subsection{Techniques to Scale LLMs}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Technique} & \textbf{Description} \\
+            \midrule
+            Hardware Accelerators & GPUs, TPUs, Chips \\
+            \midrule
+            Data Parallelism: Sharding & Many ways to partition and distribute data across multiple devices. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.75]{../../Images/L15_4.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \midrule
+            Data Mixtures & Combining diverse datasets to enhance generalization \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.5]{../../Images/L15_5.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Technique} & \textbf{Description} \\
+            \midrule
+            Mixture of Experts & Scaling LLMs with sparsity \\
+            & Improving LLM capacity and efficiency via conditional computation \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \customFigure[0.75]{../../Images/L15_6.png}{}
+                    \item Ensemble of experts. 
+                    \item Router model decides which expert to use. 
+                \end{itemize}} \\
+            \midrule
+            Supervised/Instruction-Tuning & Optimizing for hard to optimize rewards (usability) \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item Collect demonstration data and train a supervised policy. 
+                    \item Collect comparison data and train a reward model. 
+                    \item Optimize a policy against the reward model using the PPO RL algorithm.
+                \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Technique} & \textbf{Description} \\
+            \midrule
+            Quantization & Reducing model size and cost \\ 
+            & Process of mapping values from a larger set to a smaller set. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.75]{../../Images/L15_7.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \midrule
+            Multi-modal tokens & Numerical representations for pieces of data. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \item \textbf{Text:} Text chunks to tokens 
+                    \item \textbf{Image:} Image patches to tokens
+                    \item \textbf{Audio:} Sound wave chunks to tokens
+                    \item \textbf{Graphs:} Nodes are tokens 
+                \end{itemize}} \\
+            \midrule
+            Vision Transformers (ViT) & Applying transformers for image recognition \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.9]{../../Images/L15_8.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Technique} & \textbf{Description} \\
+            \midrule
+            CLIP & Connecting images and text through contrastive learning \\
+            & Aligning image and text tokens into a shared embedding space \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.9]{../../Images/L15_9.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \midrule
+            LoRA & Low-Rank Reparameterization Adaptation \\
+            & Achieve parameter-efficient fine-tuning of LLMs via Low-Rank Updates \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \customFigure[0.4]{../../Images/L15_10.png}{}                    
+                        \item \textbf{Key Idea:} Instead of updating the full weight matrix $W \in \mathbb{R}^{d \times d}$, LoRA introduces a low-rank decomposition:
+                        \begin{itemize}
+                            \item $A \in \mathbb{R}^{d \times r}$ is a small trainable matrix initialized from a Gaussian distribution.
+                            \item $B \in \mathbb{R}^{r \times d}$ is another trainable matrix (often initialized as zero).
+                            \item Only $A$ and $B$ are trained during fine-tuning.
+                        \end{itemize}
+                        \item \textbf{Benefits:} When $r$ is small, this approach has a small \# of parameters and fast fine tuning. 
+                        \item \textbf{Update:} $W' = W + A B$. 
+                \end{itemize}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Technique} & \textbf{Description} \\
+            \midrule
+            Reasoning \& Test-Time Compute & Instead of spending compute at training, \\ 
+            & spend compute at test time (inference) \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{itemize}
+                    \customFigure[0.75]{../../Images/L15_11.png}{Process Reward Model (PRM)}                    
+                    \item \textbf{Key Concept:} Model dynamically explores multiple reasoning paths at test time and selects the best one based on feedback from a reward model.
+                
+                    \item \textbf{Pipeline Overview:}
+                    \begin{itemize}
+                        \item A \textbf{math problem} is provided as input.
+                        \item A \textbf{LLM} generates multiple candidate reasoning steps or intermediate solutions.
+                        \item A \textbf{PRM} evaluates the quality of each step based on how useful or promising it is for reaching a final solution.
+                        \item A \textbf{search strategy} uses PRM feedback to guide further generation, refining or reordering the steps.
+                        \item The best sequence of reasoning steps is selected to produce the \textbf{final answer}.
+                    \end{itemize}
+                \end{itemize}} \\
+            \midrule
+            Reasoning & Chain/Tree of Thoughts \\
+            & Planning answers instead of answering right away. \\
+            \multicolumn{2}{p{\linewidth}}{
+                \begin{center}
+                    \customFigure[0.75]{../../Images/L15_12.png}{}
+                    \vspace{-2em}
+                \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{High-Level Impacts}
+\begin{summary}
+
+\end{summary}
