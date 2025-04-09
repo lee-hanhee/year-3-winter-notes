@@ -4,14 +4,16 @@
             \toprule
             \textbf{Concept} & \textbf{Description} \\
             \midrule
-            \textbf{Message passing} & Pool information, aggregate it, transform it, and update it \\
+            \textbf{Message passing} & Pool information, aggregate information, \\
+            & transform graph w/ $f$, and update graph \\
             \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_20.png}{}
+                \customFigure[0.75]{../Images/L12_20.png}{}
                 \vspace{-4em}
             \end{center}} \\
-            Propogation pattern of message passing & After a few layers we get increasingly more complex patterns of info. \\
+            \midrule
+            \textbf{Propogation pattern of message passing} & After a few layers we get $\uparrow$ more complex patterns of info. \\
             \multicolumn{2}{p{\linewidth}}{\begin{center}
-                \customFigure[0.5]{../Images/L12_21.png}{}
+                \customFigure[0.75]{../Images/L12_21.png}{}
                 \vspace{-4em}
             \end{center}} \\
             \midrule
@@ -80,8 +82,19 @@
 \newpage
 
 \subsection{Examples}
-
+\subsubsection{Molecules}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Nodes (Atoms), Edges (Bonds), Globals (Properties)
+        \customFigure[0.75]{../../Images/L12_2.png}{}
+        \item \textbf{Task:} Predict the smell of the molecule. 
+        \item \textbf{Message Passing:}
+        \customFigure[0.75]{../../Images/L12_3.png}{}
+        \item \textbf{Prediction:}
+        \customFigure[0.75]{../../Images/L12_4.png}{}
+    \end{enumerate}
+\end{example}
 \subsubsection{Message passing / GraphNets on a small graph}
 \begin{example}
-    \customFigure[0.5]{../Images/L12_24.png}{}
+    \customFigure[0.75]{../../Images/L12_24.png}{}
 \end{example}
