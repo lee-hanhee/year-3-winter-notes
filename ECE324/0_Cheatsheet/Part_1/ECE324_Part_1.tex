@@ -360,6 +360,18 @@
             \multicolumn{4}{p{\linewidth}}{
             \begin{itemize}
                 \item \textbf{Overview:} Dynamically compute attention weights for neighbor aggregation.
+                \customFigure[0.75]{../../Images/L14_5.png}{}
+                \begin{itemize}
+                    \item \textbf{Attention:} Computed for all nodes in the graph, then masked out.
+                    \begin{itemize}
+                        \item Mask is applied so only \textbf{neighbors} are considered.
+                    \end{itemize}
+                    \item \textbf{Result:} Pure yellow node is updated w/ a new node value that is bright yellow w/ different values for each node relationships. 
+                    \begin{itemize}
+                        \item Only $w_1,w_2,w_3$ b/c $w_4$ is masked out.
+                    \end{itemize}
+                \end{itemize}
+                \item \textbf{Self-Attention:} GAT $\rightarrow$ Self-Attention when mask is removed. 
             \end{itemize}} \\
             \bottomrule
         \end{tabular}

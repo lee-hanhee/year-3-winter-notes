@@ -51,6 +51,25 @@
         \end{tabular}
     \end{center}
 \end{summary}
+
+\subsection{Transformers are GNNs}
+\begin{summary} Transformers are a special case of GNN
+    \begin{center}
+        \begin{tabular}{lll}
+            \toprule
+            \textbf{} & \textbf{GNN} & \textbf{Transformer} \\
+            \midrule
+            \textbf{Connectivity (Adjacency)} & Sparse & Full \\
+            \textbf{Edge Learning} & Yes & No (Implicitly) \\
+            \textbf{Message Computation} & $M(n_i, n_j, e_{ij})$ & $\langle n_i, n_j \rangle$ \\
+            \textbf{Communication per step} & \# Number of Neighboring nodes & $\sim$ \# Number of Heads \\
+            \textbf{Data requirements} & Low & High \\
+            \textbf{Computation} & Slow due to gather operations & Fast, Optimizable $\sim$ Matrix Multiplications \\
+            \textbf{Training} & Straightforward & Pre-training is needed \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
 \newpage
 
 \subsection{Attention Mechanism}
@@ -88,30 +107,42 @@
 
 \end{process}
 
+\subsubsection{Attention Maps: Visualizing Where the Model Attends}
+\begin{notes} Softmax bias:
+    \begin{itemize}
+        \item Values between 0 and 1
+        \item Categorical like
+        \item Attend to one token at a time
+    \end{itemize}
+    \customFigure[0.3]{../../Images/L14_6.png}{}
+\end{notes}
+\newpage
+
 \subsubsection{Self-Attention vs. Cross-Attention}
 \begin{notes}
-    
+    \begin{itemize}
+        \item \textbf{Self-Attention:} Attention allows connections between the same sequence without masking. 
+        \begin{equation*}
+            \text{Self-Attention}(x) = \text{Attention}(Q(x), K(x), V(x))
+        \end{equation*}
+        \item \textbf{Cross-Attention:} Attention allows connections between different sequences.
+        \begin{equation*}
+            \text{Cross-Attention}(x, y) = \text{Attention}(Q(x), K(y), V(x))
+        \end{equation*}
+    \end{itemize}
 \end{notes}
 
-\subsubsection{Multi-Head Attention}
+\subsubsection{Multi-Headed Attention}
 \begin{notes}
-    
+    Multiple attention mechanisms in parallel, each with different linear maps.
+    \begin{itemize}
+        \item Ensemble-like approach. 
+        \item Same compute and \# of parameters. 
+        \item \textbf{Strategy:} Expand and contract tensors to new axis: number of heads. 
+    \end{itemize}
+    \customFigure[0.5]{../../Images/L14_8.png}{}
 \end{notes}
-
-\subsection{Transformers}
-\begin{notes}
-
-\end{notes}
-
-\subsubsection{Transformer Block}
-\begin{notes}
-    
-\end{notes}
-
-\subsubsection{Transformers are GNNs}
-\begin{summary} Transformers are a special case of GNN
-    % Insert table
-\end{summary}
+\newpage
 
 \subsection{Examples}
 \subsubsection{Tokens}
@@ -122,4 +153,10 @@
 \subsubsection{Positional Encoding}
 \begin{example}
     \customFigure[0.75]{../../Images/L14_1.png}{}
+\end{example}
+\newpage
+
+\subsubsection{Cross-Attention}
+\begin{example}
+    \customFigure[0.5]{../../Images/L14_7.png}{}
 \end{example}
