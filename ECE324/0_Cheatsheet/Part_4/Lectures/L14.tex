@@ -1,34 +1,92 @@
 \begin{motivation}
-
+    One of the core mechanisms inside of current LLMs. 
 \end{motivation}
 
-\subsection{Tokens: Inputs for Transformer/Attention Layers}
-\begin{definition}
-    
-\end{definition}
+\begin{warning}
+    Convolution takes in a single node, while attention takes in all nodes. 
+\end{warning}
 
-\subsubsection{Positional Encoding}
-\begin{definition}
-    
-\end{definition}
-
-\subsection{Attention}
-\begin{process}
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
-\end{process}
-
+\subsection{Transformer}
 \begin{notes}
-    
-\end{notes}
-
-\subsubsection{Residuals, Norms, and FFN}
-\begin{notes}
+    \customFigure[0.5]{../../Images/L14_3.png}{}
     \begin{itemize}
-        \item 
+        \item \textbf{Transformer Layer:} 
+        \begin{itemize}
+            \item Attention mechanism (multi-headed)
+            \item Positional encodings
+        \end{itemize}
+        \item With massive unsupervised datasets: 
+        \begin{itemize}
+            \item Masked self-supervised training
+            \item Contrastive training
+        \end{itemize}
     \end{itemize}
 \end{notes}
+\newpage
+
+\subsubsection{Transformer Layer}
+\begin{summary}
+    \customFigure[0.3]{../../Images/L14_4.png}{}
+    \vspace{-1em}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Component} & \textbf{Description} \\
+            \midrule
+            Positional encoding & Learn to map integer positions into a vectorized representation. \\
+            & $\text{PE}_{(\text{pos},i)} = 
+            \begin{cases}
+                \sin\left(\frac{\text{pos}}{10000^{\frac{i}{d_{model}}}}\right) & \text{if } i \text{ is even} \\
+                \cos\left(\frac{\text{pos}}{10000^{\frac{i-1}{d_{model}}}}\right) & \text{if } i \text{ is odd}
+            \end{cases}$ \\
+            \midrule
+            Multi-Head Attention & Computes attention scores for each token in the sequence. \\
+            \midrule
+            LayerNorm & Stabilizes activations and accelerates training. \\
+            \midrule
+            Residual Connection & Preserve information and enable deeper networks. \\
+            \midrule
+            FFN/MLP & Increases the expressive power of the learned representation, often using GELU activations. \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
+
+\subsection{Attention Mechanism}
+\begin{process}
+    \begin{enumerate}
+        \item \textbf{Inputs:} Tokens tensor, Mask
+        \begin{itemize}
+            \item \textbf{Tokens:} Inputs for Transformer/Attention Layers, which is a numerical representation of pieces of data.
+            \item \textbf{Mask:} A binary matrix that indicates which tokens to give attention to.
+        \end{itemize}
+        \item \textbf{Preprocessing:} Linear maps Tokens into Queries, Keys, and Values.
+        \begin{itemize}
+            \item $Q = \text{Tokens} \cdot W_Q$: Represents the current token's context.
+            \item $K = \text{Tokens} \cdot W_K$: Represents the context of all tokens.
+            \item $V = \text{Tokens} \cdot W_V$: Represents the information to be passed on.
+        \end{itemize}
+        \item \textbf{Attention scores:} $\text{Scores} = \frac{QK^T}{\sqrt{d_k}} \cdot \text{Mask}$
+        \begin{itemize}
+            \item $\text{score}_{ij} = \frac{(q_i \cdot k_j) m_{ij}}{\sqrt{d_k}}$
+        \end{itemize}
+        \item \textbf{Attention Normalization:} $\text{Attention Weights} = \text{softmax}(\text{scores})$
+        \begin{itemize}
+            \item $\text{score}_{ij}^{\text{normalized}} = \frac{\text{exp}(\text{score}_{ij})}{\sum_{k=1}^n \text{exp}{(\text{score}_{ik})}}$
+        \end{itemize}
+        \item \textbf{Value update:} $\text{New Values} = \text{Attention Weights} \cdot V$
+        \begin{itemize}
+            \item $v_i^{\text{new}} = \sum_{j=1}^n \text{score}_{ij}^{\text{normalized}} v_j$
+        \end{itemize}
+        \item \textbf{Post Processing:} Apply LayerNorm, Residual connections, and a FFN.
+        \item \textbf{Outputs:} Updated tokens tensor
+    \end{enumerate}
+    \begin{equation}
+        \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}\cdot \text{Mask}}\right)V
+    \end{equation}
+
+\end{process}
 
 \subsubsection{Self-Attention vs. Cross-Attention}
 \begin{notes}
@@ -36,6 +94,9 @@
 \end{notes}
 
 \subsubsection{Multi-Head Attention}
+\begin{notes}
+    
+\end{notes}
 
 \subsection{Transformers}
 \begin{notes}
@@ -55,5 +116,10 @@
 \subsection{Examples}
 \subsubsection{Tokens}
 \begin{example}
-    
+    \customFigure[0.5]{../../Images/L14_0.png}{}
+\end{example}
+
+\subsubsection{Positional Encoding}
+\begin{example}
+    \customFigure[0.75]{../../Images/L14_1.png}{}
 \end{example}
