@@ -1,42 +1,44 @@
 \subsection{Message Passing}
-
-\subsection{GraphNets}
+\begin{summary}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Concept} & \textbf{Description} \\
+            \midrule
+            \textbf{Message passing} & Pool information, aggregate information, \\
+            & transform graph w/ $f$, and update graph \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.75]{../Images/L12_20.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \midrule
+            \textbf{Propogation pattern of message passing} & After a few layers we get $\uparrow$ more complex patterns of info. \\
+            \multicolumn{2}{p{\linewidth}}{\begin{center}
+                \customFigure[0.75]{../Images/L12_21.png}{}
+                \vspace{-4em}
+            \end{center}} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{summary}
+\newpage
 
 \subsection{Conditioning Information}
 \begin{notes}
     Many ways of adding context to a specific part of a graph \\
-    \customFigure[0.75]{../Images/L12_23.png}{}
-    \begin{itemize}
-        \item \textbf{Purpose:} This slide illustrates methods for incorporating contextual information into node-level updates in a graph, enabling richer representations via conditioning.
-    
+    \customFigure[0.9]{../Images/L12_23.png}{}
+    \begin{itemize}    
         \item \textbf{Context Sources:}
         \begin{itemize}
-            \item \textbf{Node embedding:} The current embedding of the node being updated.
+            \item \textbf{Node embedding:} Current embedding of the node being updated.
             \item \textbf{Adjacent nodes embedding:} Features from neighboring nodes.
             \item \textbf{Adjacent edges embedding:} Features from edges connected to the current node.
             \item \textbf{Global embedding:} A summary embedding of the entire graph or subgraph, providing global context.
         \end{itemize}
     
-        \item \textbf{Conditioning Function \(\text{cond}(x|z)\):}
-        \begin{itemize}
-            \item Combines all relevant embeddings (\(x\)) conditioned on context (\(z\)) to form a joint representation.
-            \item Implements mechanisms such as:
-            \begin{itemize}
-                \item Concatenation
-                \item Linear layer followed by addition
-                \item Feature-wise Linear Modulation (FiLM)
-            \end{itemize}
-        \end{itemize}
+        \item \textbf{Conditioning Function \(\text{cond}(x|z)\):} Combines all relevant embeddings (\(x\)) conditioned on context (\(z\)) to form a joint representation.
     
-        \item \textbf{Update Function \(f_{v_n}\):}
-        \begin{itemize}
-            \item A learnable function (e.g., MLP) that maps the conditioned representation to an updated node embedding.
-            \item Enables expressive modeling of interactions between local and contextual features.
-        \end{itemize}
-    
-        \item \textbf{Outcome:} The node embedding is updated based on local features and additional context, improving task-specific performance (e.g., node classification, prediction).
-    
-        \item \textbf{Conclusion:} Conditioning functions enable targeted integration of contextual information into node updates, enhancing the representational power of graph neural networks.
+        \item \textbf{Update Function \(f_{v_n}\):} A learnable function (e.g., MLP) that maps the conditioned representation to an updated node embedding.
     \end{itemize}    
 \end{notes}
 
@@ -53,3 +55,44 @@
         \item Optimization
     \end{itemize}
 \end{notes}
+\newpage
+
+\subsection{Examples}
+\subsubsection{Molecules}
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Nodes (Atoms), Edges (Bonds), Globals (Properties)
+        \customFigure[0.25]{../../Images/L12_2.png}{}
+        \item \textbf{Task:} Predict the smell of the molecule. 
+        \item \textbf{Message Passing:}
+        \customFigure[0.75]{../../Images/L12_3.png}{}
+        \item \textbf{Prediction:}
+        \customFigure[0.75]{../../Images/L12_4.png}{}
+    \end{enumerate}
+\end{example}
+
+\subsubsection{Message passing / GraphNets on a small graph}
+\begin{example}
+    \customFigure[0.75]{../Images/L12_24.png}{}
+    \begin{itemize}
+        \item \textbf{Input Graph:} 3 nodes (0, 1, 2) and 2 edges: $(0,1)$ and $(1,2)$.
+        \begin{itemize}
+            \item Nodes and edges are initialized with features that will be updated through message passing.
+        \end{itemize}
+    
+        \item \textbf{Step 1 – Update Edges:} Messages are passed along edges.
+        \begin{itemize}
+            \item Edge attributes are updated based on the features of the connected nodes.
+            \item Each edge (e.g., $0 \rightarrow 1$, $1 \rightarrow 2$) aggregates information from the connected nodes to compute new edge embeddings.
+        \end{itemize}
+    
+        \item \textbf{Step 2 – Update Nodes:} Each node collects messages from incoming edges.
+        \begin{itemize}
+            \item Node features are updated by aggregating information from its neighbors
+        \end{itemize}
+    
+        \item \textbf{Step 3 – Update Global State:} A global context vector is computed based on the set of updated node and edge embeddings.
+    
+        \item \textbf{Output Graph:} Graph with updated node, edge, and global features.
+    \end{itemize}    
+\end{example}
