@@ -65,6 +65,10 @@
         \end{tabular}
     \end{center}
 \end{summary}
+
+\begin{warning}
+    Perfect models does not mean perfect attributions as it depends on data, splits, etc. 
+\end{warning}
 \newpage
 
 \subsection{Examples}
@@ -99,7 +103,7 @@
             \item \textbf{Interpretation:} Positive weights in \( W \) correlate with subgraphs associated with positive labels (e.g., rose scent).
         \end{itemize}        
         \newpage
-        \item \textbf{Spurious Correlation Issue:} Statistical patterns in our dataset can affect the weights (and explanations) of our model
+        \item \textbf{Spurious Correlation and Dataset Bias Issue:} Statistical patterns in our dataset can affect the weights (and explanations) of our model
         \customFigure[0.75]{../../Images/L16_4.png}{}
         \begin{itemize}            
             \item \textbf{Spurious Correlation vs. Significant Subgraph:} Distinguishes between features that are 
@@ -127,14 +131,10 @@
                 \item \textbf{AuROC = 0.75}, the model makes occasional errors, and the attributions become weaker and less focused.
                 \item \textbf{AuROC = 0.5}, the model performs no better than random guessing, and the attributions are essentially meaningless or noise.
             \end{itemize}
-            \item \textbf{Solution:} Use an MLP, but lose access to interpretable weights. 
+            \item \textbf{Solution:} Use an MLP to improve performance, but lose access to interpretable weights. 
         \end{itemize}        
     \end{enumerate}
 \end{example}
-
-\begin{warning}
-    Perfect models does not mean perfect attributions as it depends on data, splits, etc. 
-\end{warning}
 \newpage
 
 \subsubsection{Spurious Correlation: Wolf vs. Dog}
