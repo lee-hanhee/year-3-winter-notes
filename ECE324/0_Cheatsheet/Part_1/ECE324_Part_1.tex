@@ -288,6 +288,7 @@
             \multicolumn{4}{p{\linewidth}}{
             \begin{itemize}
                 \item $x_t$: Input, $h_t$: Hidden state, $y_t$: Output
+                \vspace{-1em}
             \end{itemize}} \\
             \midrule
             GRU & $x_t,h_{t-1}$ & $y_t,h_t$ & $z_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
@@ -298,6 +299,8 @@
             \begin{itemize}
                 \item $z_t$: Update gate, $r_t$: Reset gate
                 \item $h_t$: Hidden state
+                \customFigure[0.25]{../../Images/L12_7.png}{}
+                \vspace{-1em}
             \end{itemize}} \\
             \midrule
             LSTM & $x_t,h_{t-1}$ & $h_t,c_t$ & $f_t = \text{sigmoid}(\text{Linear}(x_t) + \text{Linear}(h_{t-1}))$ \\
@@ -310,6 +313,7 @@
             \begin{itemize}
                 \item $f_t$: Forget gate, $i_t$: Input/Update gate, $o_t$: Output gate
                 \item $h_t$: Hidden state, $c_t$: Cell state
+                \customFigure[0.25]{../../Images/L12_8.png}{}
             \end{itemize}} \\
             \bottomrule
         \end{tabular}
