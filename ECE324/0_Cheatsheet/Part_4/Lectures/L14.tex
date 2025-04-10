@@ -40,7 +40,8 @@
                 \cos\left(\frac{\text{pos}}{10000^{\frac{i-1}{d_{model}}}}\right) & \text{if } i \text{ is odd}
             \end{cases}$ \\
             \midrule
-            Multi-Head Attention & Computes attention scores for each token in the sequence. \\
+            Multi-Head Attention & Multiple attention mechanisms in parallel, each with different linear maps \\ 
+            & that computes each token in the sequence. \\
             \midrule
             LayerNorm & Stabilizes activations and accelerates training. \\
             \midrule
@@ -121,7 +122,7 @@
 \subsubsection{Self-Attention vs. Cross-Attention}
 \begin{notes}
     \begin{itemize}
-        \item \textbf{Self-Attention:} Attention allows connections between the same sequence without masking. 
+        \item \textbf{Self-Attention:} Attention allows connections between the same sequence.
         \begin{align*}
             \text{Self-Attention}(x,\text{mask}) &= \text{Attention}(\text{Linear}(x), \text{Linear}(x), \text{Linear}(x),\text{mask}) \\
             &= \text{Attention}(Q(x), K(x), V(x),\text{mask}) 
@@ -142,21 +143,20 @@
         \item Same compute and \# of parameters. 
         \item \textbf{Strategy:} Expand and contract tensors to new axis: number of heads. 
     \end{itemize}
-    \customFigure[0.5]{../../Images/L14_8.png}{}
+    \customFigure[0.75]{../../Images/L14_8.png}{}
 \end{notes}
 \newpage
 
 \subsection{Examples}
 \subsubsection{Tokens}
 \begin{example}
-    \customFigure[0.5]{../../Images/L14_0.png}{}
+    \customFigure[0.4]{../../Images/L14_0.png}{}
 \end{example}
 
 \subsubsection{Positional Encoding}
 \begin{example}
-    \customFigure[0.75]{../../Images/L14_1.png}{}
+    \customFigure[0.65]{../../Images/L14_1.png}{}
 \end{example}
-\newpage
 
 \subsubsection{Cross-Attention}
 \begin{example}
