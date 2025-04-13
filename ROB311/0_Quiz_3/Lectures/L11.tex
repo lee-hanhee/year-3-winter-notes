@@ -60,6 +60,10 @@
         \end{itemize}
     \end{itemize}
 \end{notes}
+
+\begin{warning}
+    No regret if it got the highest reward given the other players' action. 
+\end{warning}
 \newpage
 
 \subsection{Single Action Games}
@@ -199,17 +203,84 @@
     \end{enumerate}
 \end{process}
 
+\begin{process}
+    \begin{enumerate}
+        \item Fix strategy (i.e. prob. 1) for other player, then find best move for current player by getting max reward. 
+        \item See if there's intersection between best responses.
+    \end{enumerate}
+\end{process}
+
 \begin{warning}
     \begin{itemize}
         \item Action equilibrium is a pure equilibrium (i.e. prob. 1 or 0)
+        \begin{itemize}
+            \item aEq doesn't mean that the actual outcome is fight,fight. 
+            \item aEq doesn't mean it is socially optimal (i.e. equilibria may not be optimal). 
+        \end{itemize}
         \item Mixed equilibrium is a probabilistic equilibrium (i.e. prob. $p$)
+        \begin{itemize}
+            \item Every action equilibrium is a mixed equilibrium, but not vice versa.
+        \end{itemize}
     \end{itemize}
 \end{warning}
+\newpage
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Consider a 2-player single-action game, in which each player has 2 actions. Let $a_1$ and $a_2$ be their chosen actions and $r_1(a_1, a_2), r_2(a_1, a_2)$ be the resulting rewards. 
+            
+            \[
+            \begin{array}{c c|c|c}
+            a_1 & a_2 & r_1(a_1, a_2) & r_2(a_1, a_2) \\
+            \hline
+            1 & 1 & 2 & 2 \\
+            1 & 2 & 4 & 1 \\
+            2 & 1 & 1 & 4 \\
+            2 & 2 & 3 & 3 \\
+            \end{array}
+            \]
+        \item \textbf{Solution:} 
+        \begin{itemize}
+            \item Convert:
+            \[
+            \begin{array}{c|c|c}
+            & a_2 = 1 & a_2 = 2 \\
+            \hline
+            a_1 = 1 & (2,2) & (4,1) \\
+            a_1 = 2 & (1,4) & (3,3) \\
+            \end{array}
+            \]
+            \item \textbf{Fix} $a_2$, \textbf{choose }$a_1$:
+            \begin{align*}
+            \text{If } a_2 = 1 &\Rightarrow a_1 = 1 \Rightarrow (1,1) \\
+            \text{If } a_2 = 2 &\Rightarrow a_1 = 1 \Rightarrow (1,2) \\
+            &\Rightarrow \text{bap}_1 = \{(1,1), (1,2)\}
+            \end{align*}
+
+            \item \textbf{Fix} $a_1$, \textbf{choose }$a_2$:
+            \begin{align*}
+            \text{If } a_1 = 1 &\Rightarrow a_2 = 1 \Rightarrow (1,1) \\
+            \text{If } a_1 = 2 &\Rightarrow a_2 = 1 \Rightarrow (2,1) \\
+            &\Rightarrow \text{bap}_2 = \{(1,1), (2,2)\}
+            \end{align*}
+
+            \noindent
+            \textbf{Intersection:}
+            \[
+                \text{aEq} = \text{bap}_1 \cap \text{bap}_2 = \{(1,1)\}
+            \]
+        \end{itemize}
+        \item Therefore, the action equilibria is $(1,1)$.
+    \end{enumerate}
+
+\end{example}
+\newpage
 
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
         \customFigure[0.5]{../Images/L11_3.png}{}
+        \vspace{-1em}
         \item \textbf{Problem:} Find the action equilibria 
         \item \textbf{Solution:}
         \begin{enumerate}
@@ -234,18 +305,11 @@
     \end{enumerate}
 \end{example}
 
-\begin{warning}
-    \begin{itemize}
-        \item aEq doesn't mean that the actual outcome is fight,fight. 
-        \item aEq doesn't mean it is socially optimal (i.e. equilibria may not be optimal). 
-    \end{itemize}
-\end{warning}
-\newpage
-
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
         \customFigure[0.5]{../Images/L11_4.png}{}
+        \vspace{-1em}
         \item \textbf{Problem:} Find the action equilibria 
         \item \textbf{Solution:}
         \begin{enumerate}
@@ -272,6 +336,58 @@
 \newpage
 
 \subsubsection{Optimal Action Profiles}
+\begin{process}
+    \begin{enumerate}
+        \item Switching action profiles will leave at least one player worse off.
+        \begin{itemize}
+            \item That is, no unilateral deviation by any player should result in both players being better off.
+        \end{itemize}
+    \end{enumerate}
+\end{process} 
+
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:}
+         \[
+        \begin{array}{c c|c|c}
+        a_1 & a_2 & r_1(a_1, a_2) & r_2(a_1, a_2) \\
+        \hline
+        1 & 1 & 2 & 2 \\
+        1 & 2 & 4 & 1 \\
+        2 & 1 & 1 & 4 \\
+        2 & 2 & 3 & 3 \\
+        \end{array}
+        \]
+        
+        \item \textbf{Solution:}
+        \begin{itemize}
+            \item \textbf{At action profile }$(1,1)$:
+            \[
+            \text{Switch to }(2,2): \text{ both players are better off} \Rightarrow \text{not optimal}
+            \]
+        
+            \item \textbf{At action profile }$(1,2)$:
+            \[
+            \text{Switch to }(1,1), (2,1), (2,2): \text{ Player 1 will be worse off for all switches} \Rightarrow \text{optimal}
+            \]
+        
+            \item \textbf{At action profile }$(2,1)$:
+            \[
+            \text{Switch to }(1,1), (1,2), (2,2): \text{ Player 2 will be worse off for all switches} \Rightarrow \text{optimal}
+            \]
+        
+            \item \textbf{At action profile }$(2,2)$:
+            \begin{align*}
+                \text{Switch to }(1,1): &\text{ Both Player 1 and Player 2 will be worse off} \\
+                \text{Switch to }(2,1): &\text{ Player 1 will be worse off} \\
+                \text{Switch to }(1,2): &\text{ Player 2 will be worse off} \Rightarrow \text{optimal} 
+            \end{align*}
+            \item Therefore, $(1,2)$, $(2,1)$, and $(2,2)$ are optimal action profiles.
+        \end{itemize}
+    \end{enumerate}
+\end{example}
+\newpage
+
 \begin{example}
     \begin{enumerate}
         \item \textbf{Given:} Suppose lion and cavemen both want meat. Each must decide whether to fight for the food or share it. 
@@ -299,8 +415,7 @@
                 $\Rightarrow$ \textbf{Optimal}.
                 
                 \item \textbf{(Share, Share) $\rightarrow$ (2, 2):} \\
-                Both players receive a fair and equal payoff. \\
-                No other outcome makes both players better off at the same time. \\
+                Both players receive a fair and equal payoff. No other outcome makes both players better off at the same time. \\
                 So, changing this would hurt at least one of them. \\
                 $\Rightarrow$ \textbf{Optimal}.
             \end{itemize}                                 
