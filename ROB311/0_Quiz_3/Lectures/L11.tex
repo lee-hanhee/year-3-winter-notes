@@ -575,6 +575,95 @@
 \end{example}
 \newpage
 
+\begin{example}
+    \begin{enumerate}
+
+        \item \textbf{Given:} A 2-player game where each player has two actions. Let $a_1$ and $a_2$ denote the actions of Player 1 and Player 2, respectively. Let $r_1(a_1, a_2)$ and $r_2(a_1, a_2)$ denote the payoffs to Player 1 and Player 2.
+    
+        \[
+        \begin{array}{c c | c | c}
+        a_1 & a_2 & r_1(a_1,a_2) & r_2(a_1,a_2) \\
+        \hline
+        1 & 1 & 2 & 0 \\
+        1 & 2 & 0 & 1 \\
+        2 & 1 & 0 & 1 \\
+        2 & 2 & 4 & 0 \\
+        \end{array}
+        \]
+    
+        Define strategy variables:
+        \begin{itemize}
+            \item Let Player 1 play $a_1 = 1$ with probability $x$, and $a_1 = 2$ with probability $1 - x$.
+            \item Let Player 2 play $a_2 = 1$ with probability $y$, and $a_2 = 2$ with probability $1 - y$.
+        \end{itemize}
+    
+        \item \textbf{Problem:}
+    
+        Find the mixed strategy Nash equilibrium $(x^*, y^*)$ for this game.
+    
+        \item \textbf{Solution:}
+    
+        \begin{enumerate}
+            \item \textbf{Convert:}
+            \[
+                \begin{array}{c|c|c}
+                & a_2 = 1 & a_2 = 2 \\
+                \hline
+                a_1 = 1 & (2,0) & (0,1) \\
+                a_1 = 2 & (0,1) & (4,0) \\
+                \end{array}
+            \] 
+            \item \textbf{Expected payoff for Player 1:}
+            \[
+            \begin{aligned}
+            \mathbb{E}[r_1] &= 2xy + 4(1 - x)(1 - y) \\
+            &= 2xy + 4 - 4x - 4y + 4xy \\
+            &= 6xy - 4x - 4y + 4 \\
+            &= (6y - 4)x + 4 - 4y
+            \end{aligned}
+            \]
+        
+            \item \textbf{Expected payoff for Player 2:}
+            \[
+            \begin{aligned}
+            \mathbb{E}[r_2] &= x(1 - y) + (1-x)y \\
+            &= x - xy + y - xy \\
+            &= -2xy + x + y \\
+            &=(1 - 2x)y + x
+            \end{aligned}
+            \]
+        
+            \item \textbf{Best response conditions:}
+            \[
+            x = 
+            \begin{cases}
+            1 & \text{if } y > \frac{2}{3} \\
+            \\
+            [0,1] & \text{if } y = \frac{2}{3} \\
+            \\
+            0 & \text{if } y < \frac{2}{3}
+            \end{cases}
+            \qquad
+            y = 
+            \begin{cases}
+            0 & \text{if } x > \frac{1}{2} \\
+            \\
+            [0,1] & \text{if } x = \frac{1}{2} \\
+            \\
+            1 & \text{if } x < \frac{1}{2}
+            \end{cases}
+            \]
+        
+            \item \textbf{Equilibrium:}
+            \[
+            \text{At } x = \frac{1}{2}, \quad y = \frac{2}{3} \Rightarrow \text{Mixed Strategy Nash Equilibrium is } \left( \frac{1}{2}, \frac{2}{3} \right)
+            \]
+        \end{enumerate}
+    
+    \end{enumerate}
+\end{example}
+\newpage
+
 \subsubsection{Simplifying Games}
 \begin{example}
     \begin{enumerate}
