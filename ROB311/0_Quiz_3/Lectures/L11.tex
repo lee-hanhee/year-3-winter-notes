@@ -664,6 +664,48 @@
 \end{example}
 \newpage
 
+\begin{example}
+    \begin{enumerate}
+        \item \textbf{Given:} Consider a 2-player single-action game, where each player has 2 actions. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ denote the mixed strategies of Player 1 and Player 2, respectively.
+    
+        \customFigure[0.75]{../Images/L11_12.png}{Best response functions $\text{bsp}_1(y_1)$ and $\text{bsp}_2(x_1)$}
+    
+        \item \textbf{Problem:} For each of the following strategy profiles expressed as $((x_1, x_2), (y_1, y_2))$, determine whether it is:
+        \begin{itemize}
+            \item an equilibrium of the game or not, and
+            \item if it is an equilibrium, whether it is stable or unstable under best-response dynamics.
+        \end{itemize}
+    
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item[i.] $((0,1), (0,1))$
+    
+            \textit{Explanation:} As shown in the plot, arrows diverge from this point rather than converge. Therefore:
+            \[
+            \boxed{\text{Unstable Equilibrium}}
+            \]
+    
+            \item[ii.] $((0.6, 0.4), (0.8, 0.2))$
+    
+            \textit{Explanation:}  
+            This point does not lie on either player's best response curve. Therefore: 
+            \[
+            \boxed{\text{Non-equilibrium}}
+            \]
+    
+            \item[iii.] $((0.4, 0.6), (0.2, 0.8))$
+    
+            \textit{Explanation:}  
+            As shown in the plot, arrows converge towards this point. Therefore:
+            \[
+            \boxed{\text{Stable Equilibrium}}
+            \]
+        \end{enumerate}
+    
+    \end{enumerate}
+\end{example}
+\newpage
+
 \subsubsection{Simplifying Games}
 \begin{process}
     \begin{enumerate}
@@ -672,7 +714,6 @@
         \item Cross out actions that don't get used. 
     \end{enumerate}
 \end{process}
-\newpage
 
 \begin{example}
     \begin{enumerate}
@@ -727,6 +768,7 @@
     
     \end{enumerate}
 \end{example}
+\newpage
 
 \begin{example}
     \begin{enumerate}
@@ -738,6 +780,41 @@
             \item 'Leave' action for Cavemen is dominated so it will never choose this action b/c it can get more reward by choosing Fight or Share. 
             \item As aresult, we can remove it from the game and have a 2 action, 2 player game, rather than a 2-3 action, 2 player game.
         \end{enumerate}
+    \end{enumerate}
+\end{example}
+
+\subsubsection{Iterative Game}
+\begin{example}
+    \begin{enumerate}
+
+        \item \textbf{Given:} The best response curves $\text{bsp}_1(y_1)$ and $\text{bsp}_2(x_1)$ for Player 1 and Player 2 are given below:
+    
+        \customFigure[0.75]{../Images/L11_11.png}{}
+    
+        Let $x_i^{(k)}$ and $y_i^{(k)}$ represent the probabilities with which Player 1 and Player 2 choose Action $i \in \{1, 2\}$ after $k$ iterations of best-response play.
+    
+        \item \textbf{Problem:} Determine the specified probability values of Player 1 or Player 2's mixed strategies after a certain number of iterations of best-response dynamics, based on the initial probabilities and the given best-response plot.
+    
+        \item \textbf{Solution:}
+        \begin{enumerate}
+            \item[i.] Find $x_2^{(3)}$ when $x_1^{(0)} = 0.2$ and $y_1^{(0)} = 0.4$.
+
+            \[
+            x_2^{(3)} = 1/1
+            \]
+    
+            \item[ii.] Find $x_2^{(19)}$ when $x_1^{(0)} = 0.8$ and $y_1^{(0)} = 0.2$.
+    
+            \[
+            x_2^{(19)} = 1/5
+            \]
+    
+            \item[iii.] Find $y_2^{(221)}$ when $x_2^{(0)} = 1.0$ and $y_1^{(0)} = 0.2$.
+            \[
+            y_2^{(221)} = 0/1
+            \]
+        \end{enumerate}
+    
     \end{enumerate}
 \end{example}
 
