@@ -195,7 +195,7 @@
             & $\text{=} \sum_{a, s'} \pi(a \mid s) p(s' \mid s, a) \left( r(s, a, s') + \gamma \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} \text{=} s'] \right)$ \\
             \multicolumn{2}{p{\linewidth}}{
             \begin{itemize}
-                \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$: Base case.
+                \item $\mathbb{E}_{\pi}[G_{T_{\max}} \mid S_{T_{\max}} = s] = 0$: Base case, $\mathbb{E}_{\pi}[G_{\tau + 1} \mid S_{\tau + 1} = s'] = 0$: Expected future return after $\tau + 1$.
             \end{itemize}} \\
             \bottomrule            
         \end{tabular}
@@ -276,23 +276,25 @@
 
 \subsubsection{Intuition on Formulae}
 \begin{notes}
-    \begin{equation*}
-        \mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')
-    \end{equation*}
-    \begin{itemize}
-        \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
-        \item $r(s, a, s')$: Reward of getting to $s'$ from $s$ w/ action $a$
-    \end{itemize}
-    \vspace{1em}
-
-    \begin{equation*}
-        \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']
-    \end{equation*}
-    \begin{itemize}
-        \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
-        \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$: Expected future return at $\tau + 1$ from $s'$ at $\tau + 1$.
-        \item $\sum_{a, s'}$: Sum over all possible future states and current actions to get expected future return at $\tau + 1$ from $s$ at $\tau$.
-    \end{itemize}
+    \begin{enumerate}
+        \item Expected immediate reward at $\tau + 1$ given $S_\tau = s$, following policy $\pi$:
+        \begin{equation*}
+            \mathbb{E}_{\pi}[R_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) r(s, a, s')
+        \end{equation*}
+        \begin{itemize}
+            \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+            \item $r(s, a, s')$: Reward of getting to $s'$ from $s$ w/ action $a$
+        \end{itemize}
+        \item Expected future return at $\tau + 1$ given $S_\tau = s$, following policy $\pi$:
+        \begin{equation*}
+            \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau} = s] = \sum_{a, s'} \pi(a \mid s) p(s' \mid a, s) \mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']
+        \end{equation*}
+        \begin{itemize}
+            \item $\pi(a \mid s) p(s' \mid a, s)$: Prob. of getting to $s'$ from $s$ w/ action $a$
+            \item $\mathbb{E}_{\pi}[G_{\tau+1} \mid S_{\tau+1} = s']$: Expected future return at $\tau + 1$ from $s'$ at $\tau + 1$.
+            \item $\sum_{a, s'}$: Sum over all possible future states and current actions to get expected future return at $\tau + 1$ from $s$ at $\tau$.
+        \end{itemize}
+    \end{enumerate}
 \end{notes}
 \newpage
 

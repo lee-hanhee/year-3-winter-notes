@@ -177,10 +177,14 @@
 
 \begin{warning}
     \begin{itemize}
-        \item Write the complement probability to make life easier. (HIGHLY RECOMMENDED)
-        \item To determine the conditional probability summation of a variable, look at its parents (inward arrows)
-        \item Inner sum must have all probabilities with that variable in it that you are summing over. 
-        \item TO determine $g_?$, look at which variable you aren't summing over and also aren't query/evidence variables, then it will be a fn of the remaining variables.
+        \item \textbf{Complement Prob.:} Write the complement probability to make life easier. 
+        \item \textbf{Conditional Prob. Given Parents:} To determine the conditional probability summation of a variable, look at its parents (inward arrows)
+        \item \textbf{$g(?)$:} Look at which variable you aren't summing over, then it will be a fn of the remaining variables.
+        \item \textbf{Double Check:} Make sure 
+        \begin{itemize}
+            \item All necessary PDFs are in the sum. 
+            \item Inner sum must have all probabilities with that variable in it that you are summing over. 
+        \end{itemize}
     \end{itemize}
 \end{warning}
 \newpage
