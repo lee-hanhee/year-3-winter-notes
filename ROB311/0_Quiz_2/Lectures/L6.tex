@@ -114,9 +114,35 @@
         \item $\mathcal{J} = \{\text{pt}(X),X, \text{ch}(X)), (e,e')\}$ shows that $\text{pt}(X)$ and $\text{ch}(X)$ are independent given $X$ (causal chain).
         \item Given $Z_4$'s parent, apply junction rules to determine that $Z_4$ is independent of its non-descendants.
         \item $\mathcal{J} = \{X, \text{ch}(X), Z_4, (e',e_4)\}$ shows that $X$ and $Z_4$ are independent given $\text{ch}(X)$ (causal chain).
-        \item CHECK THIS OVER AGAIN WITH THE PROFESSOR.
     \end{itemize}
 \end{notes}
+
+\subsection{Flow Chart}
+\begin{summary}
+    \begin{center}
+        \begin{tikzpicture}[
+            every node/.style={
+                rectangle, draw, align=center, text width=6cm, rounded corners, font=\small
+            },
+            level distance=2.2cm,
+            sibling distance=10cm
+        ]
+        
+        \node {2 variables independent?}
+          child {node {Get all undirected paths between the 2 variables}
+            child {node {Is one junction blocked based off cc, ce, cc $\forall$ paths?\\
+                        (i.e. independent given $\mathcal{K} \; \forall$ paths)}
+              child {node {Yes, then independent given $\mathcal{K}$}}
+              child {node {No, then not independent given $\mathcal{K}$}
+                child {node {Only one path needs to be unblocked \\
+                $\Rightarrow$ all junctions are ub}}
+              }
+            }
+          };
+        
+    \end{tikzpicture}
+    \end{center}
+\end{summary}
 \newpage
 
 \subsection{Canonical Problems}
@@ -146,12 +172,22 @@
 
 \begin{warning}
     \begin{itemize}
-        \item Be careful of common effect, in which it is blocked by default. 
-        \item Be careful of decesdents of a common effect (i.e. outward arrows from a common effect) as given it may not be blocked.
+        \item \textbf{Common effect:} Blocked by default. 
+        \begin{itemize}
+            \item \textbf{Decesdents: of a common effect:} Outward arrows from a common effect node as given it may not be blocked.
+            \item \textbf{Subset:} If $\mathcal{K}$ includes variables that cause all undirected paths to be blocked, then variables are independent. BUT be careful of common effect, in which it is blocked by default so YOU DONT INCLUDE IT IN $\mathcal{K}$.
+        \end{itemize}
         \item Cyclic paths are not blocked by default.
-        \item If $\mathcal{K}$ includes variables that cause all undirected paths to be blocked, then variables are independent. BUT be careful of common effect, in which it is blocked by default so YOU DONT INCLUDE IT IN $\mathcal{K}$.
     \end{itemize}
 \end{warning}
+
+\subsubsection{Find all Subsets}
+\begin{notes}
+    \begin{itemize}
+        \item For each full independence set, add an OR b/w each subset. Be careful of common effect. 
+    \end{itemize}
+\end{notes}
+\newpage 
 
 \begin{example}
     \begin{enumerate}
