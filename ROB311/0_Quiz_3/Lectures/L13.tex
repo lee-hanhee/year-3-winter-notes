@@ -142,3 +142,116 @@
 
     \customFigure[0.5]{../Images/L11_0.png}{}
 \end{summary}
+
+\subsection{Examples}
+\begin{example}
+    \begin{enumerate}
+
+        \item \textbf{Problem 1:}
+    
+        Consider the policy:
+        \[
+        \pi(a|s) = 
+        \begin{cases}
+        0.99 & \text{if } a = \arg\max_{a'} q(s, a') \\
+        0.01 & \text{otherwise}
+        \end{cases}
+        \]
+    
+        Which of the following best describes its behaviour?
+        \begin{itemize}
+            \item (A) It mostly exploits
+            \item (B) It mostly explores
+            \item (C) It mostly explores initially, but mostly exploits in the long-run
+            \item (D) It mostly exploits initially, but mostly explores in the long-run
+            \item (E) None of the above
+        \end{itemize}
+    
+        \item \textbf{Solution 1:}
+    
+        \textbf{Correct answer: (A)} It mostly exploits.  
+        \textit{Explanation:} The policy heavily favors the action with the highest Q-value (with 99% probability), showing a strong bias toward exploitation.
+    
+        \item \textbf{Problem 2:}
+    
+        Consider the policy:
+        \[
+        \pi(a|s) = \frac{\exp\left(\frac{q(s,a)}{\tau}\right)}{\sum\limits_{a' \in \mathcal{A}(s)} \exp\left(\frac{q(s,a')}{\tau}\right)}
+        \]
+        where $\tau$ decreases each episode.
+    
+        Which of the following best describes its behaviour?
+        \begin{itemize}
+            \item (A) It mostly exploits
+            \item (B) It mostly explores
+            \item (C) It mostly explores initially, but mostly exploits in the long-run
+            \item (D) It mostly exploits initially, but mostly explores in the long-run
+            \item (E) None of the above
+        \end{itemize}
+    
+        \item \textbf{Solution 2:}
+    
+        \textbf{Correct answer: (C)} It mostly explores initially, but mostly exploits in the long-run.  
+        \textit{Explanation:} The softmax policy allows for exploration when $\tau$ is high. As $\tau \rightarrow 0$, it becomes increasingly greedy, converging to exploitation.
+    
+        \item \textbf{Problem 3:}
+    
+        Consider the policy:
+        \[
+        \pi(a|s) = 
+        \begin{cases}
+        1 & \text{if } a = \arg\max_{a'} f(s, a') \\
+        0 & \text{otherwise}
+        \end{cases}
+        \]
+        where
+        \[
+        f(s,a) = 
+        \begin{cases}
+        q(s,a) + C \sqrt{\frac{\log(\tau)}{N(s,a)}} & \text{if } N(s,a) > 0 \\
+        \infty & \text{else}
+        \end{cases}
+        \]
+        for some constant $C > 0$ and increasing $\tau$.
+    
+        Which of the following best describes its behaviour?
+        \begin{itemize}
+            \item (A) It mostly exploits
+            \item (B) It mostly explores
+            \item (C) It mostly explores initially, but mostly exploits in the long-run
+            \item (D) It mostly exploits initially, but mostly explores in the long-run
+            \item (E) None of the above
+        \end{itemize}
+    
+        \item \textbf{Solution 3:}
+    
+        \textbf{Correct answer: (C)} It mostly explores initially, but mostly exploits in the long-run.  
+        \textit{Explanation:} This is a UCB (Upper Confidence Bound) policy. The exploration bonus decreases as $N(s,a)$ increases, so the agent prioritizes exploring under-visited actions early on but exploits later.
+    
+        \item \textbf{Problem 4:}
+    
+        Consider the policy:
+        \[
+        \pi(a|s) = 
+        \begin{cases}
+        1 & \text{if } a = \arg\min_{a'} N(s, a') \\
+        0 & \text{otherwise}
+        \end{cases}
+        \]
+    
+        Which of the following best describes its behaviour?
+        \begin{itemize}
+            \item (A) It mostly exploits
+            \item (B) It mostly explores
+            \item (C) It mostly explores initially, but mostly exploits in the long-run
+            \item (D) It mostly exploits initially, but mostly explores in the long-run
+            \item (E) None of the above
+        \end{itemize}
+    
+        \item \textbf{Solution 4:}
+    
+        \textbf{Correct answer: (B)} It mostly explores.  
+        \textit{Explanation:} This policy always chooses the least-visited action. It does not consider value (Q-function) and is purely driven by state-action visitation counts, thus ensuring exploration.
+    
+    \end{enumerate}
+\end{example}

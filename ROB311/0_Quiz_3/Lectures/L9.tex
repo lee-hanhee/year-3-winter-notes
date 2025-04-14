@@ -174,3 +174,57 @@ procedure Q_LEARNING():
         \end{tabular}
     \end{center}
 \end{notes}
+\newpage
+
+\subsection{Examples}
+\begin{example}
+    \begin{enumerate}
+
+        \item \textbf{Given:} Consider the following pseudo-code for Q-learning (incomplete):
+    
+\begin{lstlisting}
+$N(s, a) \gets 0,\quad \forall s, a$
+$q^*(s, a) \gets 0,\quad \forall s, a$
+for each episode do
+    $s \gets s_0$
+    $l \gets 0$
+    while $s \notin \mathcal{T}$ and $l < l_{\max}$ do
+        randomly choose an action $a \in \mathcal{A}(s)$
+        get next state $s'$, and reward $r(s,a,s')$
+        $N(s,a) \gets N(s,a) + 1$
+        $q^*(s,a) \gets$ update rule
+        $s \gets s'$
+        $l \gets l + 1$
+    end while
+end for
+\end{lstlisting}
+    
+        \item \textbf{Problem 1:} Now consider replacing the update rule in line 10 with:
+        \[
+        q^*(s,a) \gets \left(1 - \frac{1}{N(s,a)}\right) q^*(s,a) + \frac{1}{N(s,a)} \left( r(s,a,s') + \gamma \max_{a'} q^*(s',a') \right)
+        \]
+    
+        Will the resulting algorithm be equivalent to vanilla Q-learning?
+    
+        \item \textbf{Solution 1:} Yes 
+    
+        \item \textbf{Problem 2:} Which line in the pseudo-code should be modified to adjust the amount of exploration versus exploitation?
+    
+        \item \textbf{Solution 2:} Line 7
+
+        \textit{Explanation:} Exploration vs. exploitation is controlled by the action selection strategy. Modifying line 7 (e.g., from random to $\epsilon$-greedy or softmax selection) directly adjusts this trade-off.
+    
+        \item \textbf{Problem 3:} Suppose vanilla Q-learning is used in an infinite MDP (i.e., an MDP with infinitely long paths). Which of the following best describes how $l_{\max}$ and $\gamma$ are related?
+    
+        \begin{itemize}
+            \item (A) $l_{\max}$ should be an increasing function of $\gamma$
+            \item (B) $l_{\max}$ should be a decreasing function of $\gamma$
+            \item (C) $l_{\max}$ and $\gamma$ are often chosen independently
+        \end{itemize}
+    
+        \item \textbf{Solution 3:} (A) $l_{\max}$ should be an increasing function of $\gamma$
+
+        \textit{Explanation:} A higher $\gamma$ implies longer-term reward importance, so the agent must simulate longer episodes to capture long-term effects accurately.
+    
+    \end{enumerate}
+\end{example}
